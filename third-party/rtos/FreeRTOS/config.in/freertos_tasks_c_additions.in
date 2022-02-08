@@ -1,0 +1,16 @@
+#ifndef _FREERTOS_TASK_C_ADDITIONS_H_
+#define _FREERTOS_TASK_C_ADDITIONS_H_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // _FREERTOS_TASK_C_ADDITIONS_H_
+
