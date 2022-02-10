@@ -98,6 +98,7 @@ if(BUILD_OPENWIZE)
     message(STATUS "Add OpenWize Build ")
     #include(${SOURCES_PATH}/OpenWize.cmake)
     add_subdirectory(sources)
+    list(APPEND DOC_SOURCE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/sources)
 endif(BUILD_OPENWIZE)
 
 #################################################################################
@@ -154,5 +155,15 @@ if(DOC_COMPILE)
     list(APPEND DOC_SOURCE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/docs")
     string(REPLACE ";" " " DOXYFILE_SOURCE_DIRS "${DOC_SOURCE_DIRS}")
     message("Main DOXYFILE_SOURCE_DIRS : ${DOXYFILE_SOURCE_DIRS}")
-    add_subdirectory("docs")
+    #add_subdirectory("docs")
+    # Add build support for doxygen
+    find_package(doxygen_support)
+    
+    #install(
+    #    FILES ${CMAKE_CURRENT_SOURCE_DIR}/logo_GRDF_150-89.png ${CMAKE_CURRENT_SOURCE_DIR}/logo_Wize_alliance.png ${CMAKE_CURRENT_SOURCE_DIR}/ParametersTables.png 
+    #    DESTINATION ${DOXYFILE_INSTALL_DIR}/html 
+    #)
+    
 endif(DOC_COMPILE)
+
+

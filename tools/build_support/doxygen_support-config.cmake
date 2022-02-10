@@ -7,10 +7,10 @@ find_package(Doxygen)
 if(DOXYGEN_FOUND)
     # Try to find a Doxyfile.in 
     find_file(DOXYFILE_IN "Doxyfile.in"
-        PATHS "${CMAKE_CURRENT_SOURCE_DIR}" "./"
+        PATHS "${CMAKE_CURRENT_SOURCE_DIR}" "./" "docs" "tools/build_support"
         NO_DEFAULT_PATH
         DOC "Path to the doxygen configuration template file"
-        )
+        REQUIRED)
     #set(DOXYFILE "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in")
   
     include(FindPackageHandleStandardArgs)
