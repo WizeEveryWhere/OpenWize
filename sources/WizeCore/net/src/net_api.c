@@ -324,7 +324,14 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 		if (eCtl & NETDEV_CTL_PHY_CMD)
 		{
 			// FIXME : how to pass argument
-			ret = pIf->pfIoctl(pNetdev->pPhydev, (phy_ctl_e)(eCtl & ~(NETDEV_CTL_PHY_CMD)), args);
+
+			uint32_t phy_ctl = eCtl & ~(NETDEV_CTL_PHY_CMD);
+			if(eCtl > PHY_CTL_CMD)
+			{
+				phy_ctl = (phy_ctl_e)args;
+			}
+
+			ret = pIf->pfIoctl(pNetdev->pPhydev, (phy_ctl_e)(phy_ctl), args);
 			if ( ret )
 			{
 				pNetdev->eErrType = NETDEV_ERROR_PHY;
@@ -363,7 +370,8 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 								i32Ret = NETDEV_STATUS_ERROR;
 								break;
 							}
-							i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_STR_ERR, (uint32_t)(&args));
+							//i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_STR_ERR, (uint32_t)(&args));
+							i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_STR_ERR, (args));
 							break;
 						case NETDEV_ERROR_PROTO:
 							pCtx->u8ProtoErr = 0;
@@ -384,7 +392,8 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 								i32Ret = NETDEV_STATUS_ERROR;
 								break;
 							}
-							i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_ERR, (uint32_t)(&args));
+							//i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_ERR, (uint32_t)(&args));
+							i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_STR_ERR, (args));
 							break;
 						case NETDEV_ERROR_PROTO:
 							i32Ret = pCtx->u8ProtoErr;
@@ -404,7 +413,8 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 					switch (pNetdev->eErrType)
 					{
 						case NETDEV_ERROR_PHY:
-							i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_STR_ERR, (uint32_t)(&args));
+							//i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_STR_ERR, (uint32_t)(&args));
+							i32Ret = pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_STR_ERR, (args));
 							break;
 						case NETDEV_ERROR_PROTO:
 							*((uint32_t*)args) = (uint32_t)Wize_Proto_GetStrErr(pCtx->u8ProtoErr);

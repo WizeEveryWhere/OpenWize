@@ -56,7 +56,7 @@ if [[ "${PROBE_INDEX}" == "" ]]
 then 
     echo "Error! Give a probe index to be able to continu.";
     echo "Available devices :"
-    ${PROG_TOOL} -l st-link
+    ${PROG_TOOL} -l #st-link
     exit;
 fi
 

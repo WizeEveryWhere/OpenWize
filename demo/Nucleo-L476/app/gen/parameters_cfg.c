@@ -1,6 +1,6 @@
 /*!
   * @file parameters_cfg.c
-  * @brief This file was generated from ../../../Config/param_config/WizeUp/MergedParam.xml(Modif. : 2021-07-19 12:02:52.009483100 +0200).
+  * @brief This file was generated from ./cfg/MergedParam.xml(Modif. : 2022-02-10 16:30:42.008812000 +0100).
   * 
   *****************************************************************************
   * @copyright 2020, GRDF, Inc.  All rights reserved.
@@ -21,7 +21,7 @@
   *
   * Generation Date
   * ----------------
-  * 19/07/2021 12:07 [nono]
+  * 10/02/2022 16:46 [neo]
   *
   */
 
@@ -127,10 +127,10 @@ const param_s a_ParamAccess[0xFF] = {
     INIT_ACCESS_TABLE(0x5D, NA, NA, IMM, REF_N, 0, 0, 0x0),
     INIT_ACCESS_TABLE(0x5E, NA, NA, IMM, REF_N, 0, 0, 0x0),
     INIT_ACCESS_TABLE(0x5F, NA, NA, IMM, REF_N, 0, 0, 0x0),
-    INIT_ACCESS_TABLE(0x60, RO, RO, IMM, REF_N, 6, 117, 0x0),
-    INIT_ACCESS_TABLE(0x61, RO, RO, IMM, REF_N, 2, 123, 0x0),
-    INIT_ACCESS_TABLE(0x62, RW, RW, IMM, REF_N, 6, 125, 0x0),
-    INIT_ACCESS_TABLE(0x63, RW, RW, IMM, REF_N, 1, 131, 0x0),
+    INIT_ACCESS_TABLE(0x60, NA, NA, IMM, REF_N, 0, 0, 0x0),
+    INIT_ACCESS_TABLE(0x61, NA, NA, IMM, REF_N, 0, 0, 0x0),
+    INIT_ACCESS_TABLE(0x62, NA, NA, IMM, REF_N, 0, 0, 0x0),
+    INIT_ACCESS_TABLE(0x63, NA, NA, IMM, REF_N, 0, 0, 0x0),
     INIT_ACCESS_TABLE(0x64, NA, NA, IMM, REF_N, 0, 0, 0x0),
     INIT_ACCESS_TABLE(0x65, NA, NA, IMM, REF_N, 0, 0, 0x0),
     INIT_ACCESS_TABLE(0x66, NA, NA, IMM, REF_N, 0, 0, 0x0),
@@ -284,8 +284,8 @@ const param_s a_ParamAccess[0xFF] = {
     INIT_ACCESS_TABLE(0xFA, NA, NA, IMM, REF_N, 0, 0, 0x0),
     INIT_ACCESS_TABLE(0xFB, NA, NA, IMM, REF_N, 0, 0, 0x0),
     INIT_ACCESS_TABLE(0xFC, NA, NA, IMM, REF_N, 0, 0, 0x0),
-    INIT_ACCESS_TABLE(0xFD, RW, NA, IMM, REF_N, 1, 132, 0x0),
-    INIT_ACCESS_TABLE(0xFE, RW, NA, IMM, REF_N, 1, 133, 0x0),
+    INIT_ACCESS_TABLE(0xFD, RW, NA, IMM, REF_N, 1, 117, 0x0),
+    INIT_ACCESS_TABLE(0xFE, RW, NA, IMM, REF_N, 1, 118, 0x0),
 };
 
 /******************************************************************************/

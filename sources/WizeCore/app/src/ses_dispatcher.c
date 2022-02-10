@@ -109,7 +109,7 @@ static void _ses_disp_get_param_(void)
 
 
 
-	Param_Access(L6KmacIndex,           &v1, 0 );
+	Param_Access(L6NetwIdSelect,           &v1, 0 );
 	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_NETWID, v1);
 
 	*/
@@ -130,7 +130,7 @@ static void _ses_disp_get_param_(void)
 
 	Param_Access(L7TRANSMIT_LENGTH_MAX, &(sProto_Cfg.u8TransLenMax), 0 );
 	Param_Access(L7RECEIVE_LENGTH_MAX,  &(sProto_Cfg.u8RecvLenMax), 0 );
-	Param_Access(L6KmacIndex,           &(sProto_Cfg.u8NetId), 0 );
+	Param_Access(L6NetwIdSelect,        &(sProto_Cfg.u8NetId), 0 );
 
 	sProto_Cfg.AppInst = L6APP_INST;
 	sProto_Cfg.AppAdm = L6APP_ADM;

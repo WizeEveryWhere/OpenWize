@@ -6,6 +6,16 @@ macro(get_cfg)
     # Setup cfg
     message("****************************************")
     version_from_git(${TOOL_BUILD_SUPPORT} "version.h")
+
+    if(NOT BUILD_CFG)
+        # Check if an empty file with app name exist in the current build dir  
+        set(app_file "${CMAKE_BINARY_DIR}/app")
+        if (EXISTS "${app_file}")
+            file(STRINGS ${app_file} APP LIMIT_COUNT 1)
+            set(BUILD_CFG ${APP})
+        endif()
+    endif()
+
     message(STATUS "Selected build config : ")
     message("   -> File : \"${BUILD_CFG}\"")
     message("   -> From : \"${BUILD_CFG_DIR}\"")
@@ -14,6 +24,7 @@ macro(get_cfg)
     if (NOT EXISTS "${build_cfg_file}")
         message(FATAL_ERROR "${build_cfg_file} not found\n")
     endif()
+    
 	# Add ".cmake" file
     include("${build_cfg_file}")
 

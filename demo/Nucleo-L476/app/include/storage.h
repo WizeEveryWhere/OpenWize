@@ -36,8 +36,6 @@ extern "C" {
 
 void Storage_Init(uint8_t bForce);
 void Storage_SetDefault(void);
-uint8_t Storage_Store(void);
-uint8_t Storage_Get(void);
 
 #ifdef __cplusplus
 }

@@ -23,11 +23,53 @@ void app_entry(void)
 }
 
 /******************************************************************************/
+void *main_hTask;
+static void MainTask(void const * argument);
+#define MAIN_TASK_NAME main
+#define MAIN_TASK_FCT MainTask
+#define MAIN_STACK_SIZE 300
+#define MAIN_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+1)
+SYS_TASK_CREATE_DEF(main, MAIN_STACK_SIZE, MAIN_PRIORITY);
+
 void App_Init(void)
 {
-	LoItf_Setup();
+	main_hTask = SYS_TASK_CREATE_CALL(main, MAIN_TASK_FCT, NULL);
 }
 
+static void MainTask(void const * argument)
+{
+	(void)argument;
+
+	uint8_t i;
+	uint8_t pData[50];
+	uint8_t u8Size;
+
+	// Set the L6App
+	pData[0] = 0x05;
+	// Set the rest of the message
+	strncpy(&pData[1], "Hello World!", 50);
+	u8Size = strlen( (char*)pData) ;
+
+	i = 0;
+	while(1)
+	{
+		LOG_INF("---------- \n");
+		switch(i)
+		{
+			case 0:
+				LOG_INF("Main Install\n");
+				WizeApi_ExecPing();
+				break;
+			default :
+				LOG_INF("Main Data %d\n", i);
+				WizeApi_SendEx(pData, u8Size, APP_DATA);
+				break;
+		}
+		i++;
+		if(i > 9) {i = 0;}
+		msleep(2000);
+	}
+}
 /******************************************************************************/
 
 #ifdef __cplusplus

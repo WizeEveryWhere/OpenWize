@@ -52,48 +52,19 @@ extern "C" {
 
 #include "wize_api.h"
 
-#include "storage.h"
-
 static fakeuart_device_t fakeuart_ctx;
 phydev_t sPhyDev;
 
-extern boot_state_t gBootState;
 
 void Sys_Init(void)
 {
 	uint8_t u8LogLevel;
 	uint8_t u8Tstmp;
-	// check wake-up(s)
-	if (gBootState.state & (WKUP_PIN_MSK | INTERNAL_WKUP_MSK))
-	{
-		uint32_t *pSRAM2 = (uint32_t*)(0x10000000);
-		if (*pSRAM2 == 0x00000000) // backup domain has been reseted
-		{
-			gBootState.state |= BACKUP_RESET_MSK;
-			// Restore minimal context (exit from shutdown or backup domain reset)
-			// - L6Cpt DATA
-			// - L6Cpt RSP
-			// - PeriodicInstallCpt
-			// - FullPowerCpt
-		}
-
-		// check wake-up internal : RTC ALARM or RTC WAKEUP TIMER
-		if (gBootState.state & INTERNAL_WKUP_MSK)
-		{
-		}
-		// check wake-up external : WAKUPE PINs
-		if (gBootState.state & WKUP_PIN_MSK)
-		{
-		}
-	}
-
 
 	// Do not buffer stdout, so that single chars are output without any delay to the console.
 	setvbuf(stdout, NULL, _IONBF, 0);
 	// Do not buffer stdin, so that single chars are output without any delay to the console.
 	setvbuf(stdin, NULL, _IONBF, 0);
-	// setup timezone
-	//tzset();
 
   	/* Show the welcome message */
 #ifndef HAS_NO_BANNER
@@ -121,46 +92,24 @@ void Sys_Init(void)
 	//Logger_SetLevel( u8LogLevel, u8Tstmp );
 	Logger_SetLevel( LOG_LV_FRM_OUT | LOG_LV_ERR | LOG_LV_WRN | LOG_LV_INF | LOG_LV_DBG, LOG_TSTAMP_HIRES | LOG_TSTAMP_TRUNC );
 
-	LOG_INF("SYS boot 0x%x\n", gBootState);
 
 	assert(0 == Phy_PhyFake_setup(&sPhyDev, &fakeuart_ctx) );
-
-	if (gBootState.state & BACKUP_RESET_MSK)
-	{
-		LOG_INF("SYS Clear Ctx\n");
-		WizeApi_CtxClear();
-	}
-
 
 	// Init storage
 	Storage_Init(0);
 
-  	// Init Time Mgr
-	WizeApi_CtxRestore();
    	// Setup Time Event
   	TimeEvt_Setup();
 	// setup wize device
 	WizeApi_Setup(&sPhyDev);
-
-	// Setup phy device
-	//Phy_device_setup( &sPhyDev, ...);
-
-	// Init wize device
-	//WizeApi_Init(&sPhyDev);
-
-
   	WizeApi_Enable(1);
 }
 
 void Sys_Fini(void)
 {
-	WizeApi_CtxSave();
-	// BSP_LowPower_Enter(mode);
-	// BSP_Boot_Reboot(bReset);
 }
 
 
-//__attribute__ (( noreturn, always_inline )) inline void Sys_Start(void)
 __attribute__ (( always_inline )) void Sys_Start(void)
 {
     /* Start scheduler */

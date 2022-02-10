@@ -44,10 +44,7 @@ setup_install(
     TARGET ${MODULE_NAME} 
     DEPENDS 
         Board_NucL476RG 
-        localitf 
-        flashstorage 
         phyfake 
-        perf_utils 
         bsp 
         Openwize::Openwize
     )

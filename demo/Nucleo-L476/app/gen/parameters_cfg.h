@@ -1,6 +1,6 @@
 /*!
   * @file parameters_cfg.h
-  * @brief This file was generated from ../../../Config/param_config/WizeUp/MergedParam.xml(Modif. : 2021-07-19 12:02:52.009483100 +0200).
+  * @brief This file was generated from ./cfg/MergedParam.xml(Modif. : 2022-02-10 16:30:42.008812000 +0100).
   * 
   *****************************************************************************
   * @copyright 2020, GRDF, Inc.  All rights reserved.
@@ -21,7 +21,7 @@
   *
   * Generation Date
   * ----------------
-  * 19/07/2021 12:07 [nono]
+  * 10/02/2022 16:46 [neo]
   *
   */
 
@@ -36,7 +36,7 @@ extern C {
 
 /******************************************************************************/
 #define PARAM_ACCESS_CFG_SZ (0xFF)
-#define PARAM_DEFAULT_SZ (0x86)
+#define PARAM_DEFAULT_SZ (0x77)
 
 extern const param_s a_ParamAccess[PARAM_ACCESS_CFG_SZ];
 extern const uint8_t a_ParamDefault[PARAM_DEFAULT_SZ];
@@ -64,26 +64,22 @@ typedef enum {
     CLOCK_DRIFT_CORRECTION = 0x22, //!< Correction of device clock frequency
     CIPH_CURRENT_KEY = 0x28, //!< Current key number
     CIPH_KEY_COUNT = 0x29, //!< Number of encryption keys available in the device
-    L6KmacIndex = 0x2A, //!< Kmac key index
+    L6NetwIdSelect = 0x2A, //!< Kmac key index
     PING_RX_DELAY = 0x30, //!< Fixed waiting time after transmission of an INSTPING message by the device and before opening the INSTPONG message listening window
     PING_RX_LENGTH = 0x31, //!< Duration of the INSTPONG message listening window by the device
     PING_RX_DELAY_MIN = 0x32, //!< Minimum value of the PING_RX_DELAY parameter
     PING_RX_LENGTH_MAX = 0x33, //!< Maximum value of the PING_RX_LENGTH parameter
     PING_LAST_EPOCH = 0x34, //!< Execution time of the last connectivity test (INSTPING/INSTPONG)
     PING_NBFOUND = 0x35, //!< Number of different INSTPONG messages received in response to the last connectivity test
-    PING_REPLY1 = 0x36, //!< Response 1 received for the last connectivity test (Bigest L7RssiDown)
+    PING_REPLY1 = 0x36, //!< Response 1 received for the last connectivity test (Bigger L7RssiDown)
     PING_REPLY2 = 0x37, //!< Response 2 received for the last connectivity test
     PING_REPLY3 = 0x38, //!< Response 3 received for the last connectivity test
     PING_REPLY4 = 0x39, //!< Response 4 received for the last connectivity test
     PING_REPLY5 = 0x3A, //!< Response 5 received for the last connectivity test
     PING_REPLY6 = 0x3B, //!< Response 6 received for the last connectivity test
     PING_REPLY7 = 0x3C, //!< Response 7 received for the last connectivity test
-    PING_REPLY8 = 0x3D, //!< Response 8 received for the last connectivity test (Weakess L7RssiDown)
+    PING_REPLY8 = 0x3D, //!< Response 8 received for the last connectivity test (Lower L7RssiDown)
     EXECPING_PERIODE = 0x3E, //!< Periodic time of execping sending by the device, in months
-    RADIO_NUMBER = 0x60, //!< Radio module serial number
-    RADIO_MANUFACTURER = 0x61, //!< Radio Module manufacturer code
-    MODULE_NUMBER = 0x62, //!< Module Identification number
-    MODULE_MANUFACTURER = 0x63, //!< Module manufacturer code
     LOGGER_LEVEL = 0xFD, //!< Get or Set the Logger level
     LOGGER_TIME_OPT = 0xFE, //!< Get or Set the Logger time option
     LAST_ID = 0xFE, //!< Don't remove, it marks the end of table.

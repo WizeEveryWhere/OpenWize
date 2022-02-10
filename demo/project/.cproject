@@ -183,10 +183,10 @@
 				<useDefaultCommand>false</useDefaultCommand>
 				<runAllBuilders>false</runAllBuilders>
 			</target>
-			<target name="wize_app" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+			<target name="Nucleo-L476/Nucleo-L476" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>xargs</buildCommand>
 				<buildArguments>${ProjDirPath}/../../tools/build_support/prep_app.sh</buildArguments>
-				<buildTarget>wize_app</buildTarget>
+				<buildTarget>Nucleo-L476/Nucleo-L476</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>false</useDefaultCommand>
 				<runAllBuilders>false</runAllBuilders>

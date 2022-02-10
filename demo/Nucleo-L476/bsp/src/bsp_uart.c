@@ -284,11 +284,11 @@ uint8_t BSP_Uart_SetCallback (uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pC
 
 uint8_t BSP_Uart_Init(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint32_t u32Tmo)
 {
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
 	if (u8DevId >= UART_ID_MAX)
 	{
 		return DEV_INVALID_PARAM;
 	}
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler; //paUART_BusHandle[UART_ID_COM];
 
 	__HAL_UART_DISABLE(huart);
 
@@ -341,11 +341,11 @@ uint8_t BSP_Uart_Init(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint
 uint8_t BSP_Uart_Transmit(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 {
 	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
-
 	if (u8DevId >= UART_ID_MAX)
 	{
 		return DEV_INVALID_PARAM;
 	}
+
 	/* Check that a Tx process is not already ongoing */
 	if (huart->gState == HAL_UART_STATE_READY)
 	{
@@ -379,7 +379,12 @@ uint8_t BSP_Uart_Transmit(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 
 uint8_t BSP_Uart_Receive(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 {
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler; //paUART_BusHandle[UART_ID_COM];
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+
 	register uint32_t itflags = READ_REG(huart->Instance->CR1);
 	/* Check that a Rx process is not already ongoing */
 	if (huart->RxState == HAL_UART_STATE_READY)
@@ -447,6 +452,37 @@ uint8_t BSP_Uart_Receive(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 	}
 }
 
+uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+
+	register uint32_t itflags = READ_REG(huart->Instance->CR1);
+	if(itflags & USART_CR1_RXNEIE)
+	{
+		CLEAR_BIT(huart->Instance->CR1, (USART_CR1_RXNEIE | USART_CR1_PEIE));
+		CLEAR_BIT(huart->Instance->CR3, USART_CR3_EIE);
+
+		/* Reset Rx transfer counter */
+	    huart->RxXferCount = 0U;
+
+	    /* Clear RxISR function pointer */
+	    huart->pRxBuffPtr = NULL;
+
+	    /* Clear the Error flags in the ICR register */
+	    __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_PEF | UART_CLEAR_FEF);
+
+		/* Discard the received data */
+		__HAL_UART_SEND_REQ(huart, UART_RXDATA_FLUSH_REQUEST);
+
+		/* Restore huart->RxState to Ready */
+	    huart->RxState = HAL_UART_STATE_READY;
+	}
+	return DEV_SUCCESS;
+}
 /*******************************************************************************/
 
 #ifdef __cplusplus

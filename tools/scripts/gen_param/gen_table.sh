@@ -132,26 +132,34 @@ function printIDs {
 # in : the parameter id
 # in : the value of parameter
 # in : the size of parameter
+# in : the description of parameter
 function printVal {        
     local vFile=$1;
     local value=$2;
     local size=$3;
+    local desc=$4;
     local i=0;
     #echo "value = ${value}; size = ${size}"
+    #printf "value = ${value}; size = ${size}\n"
+
     if ! [[ ${value} =~ ${re} ]]
     then
-        #echo "not"
+        #echo "value = ${value}; size = ${size}"
         for i in $(seq 0 $((${size} -1)) )
         do
             s=${value:$i:1};
             if [[ ${s} != "" ]]
             then
                 printf "'%c', " ${s} >> ${vFile};
+                #echo "value = ${s}" | hexdump -C
             else
                 printf "'%s', " "\0" >> ${vFile};
+                echo ""
+                #echo "... is a string"
             fi
         done
-        printf "\n" >> ${vFile};
+        printf " //!< %s\n   " "${desc}" >> ${vFile};
+        #printf "\n" >> ${vFile};
         
     else
         #echo "value = ${value}; size = ${size}"
@@ -174,7 +182,8 @@ function printVal {
                 v=$(( ${v} >> 8))
             done
         fi
-        printf "\n" >> ${vFile};
+        printf " //!< %s\n   " "${desc}" >> ${vFile};
+        #printf "\n" >> ${vFile};
     fi
 }
 
@@ -222,7 +231,7 @@ function buildParametersTables {
     
     # print value file header    
     printf "\n/******************************************************************************/\n" >> ${vFile};
-    printf "const uint8_t a_ParamDefault[] = {\n" >> ${vFile};
+    printf "const uint8_t a_ParamDefault[] = {\n   " >> ${vFile};
     
     ##
     local i=0;
@@ -257,7 +266,6 @@ function buildParametersTables {
                 restr="0";
             fi
             
-            
             mID=${pID[$i]};
             
             # Print in access table
@@ -271,18 +279,21 @@ function buildParametersTables {
             value=$(echo ${var}|tr -d '\n');
             
             # Print the parameter value 
-            printVal "${vFile}" "${value}" ${size};
+            printVal "${vFile}" "${value}" ${size} "${desc}";
+            
+            printf "Id [%s] = %s // %s \n" "${mID}" "${value}" "${desc}";
             
             # Compute the next offset
             offset=$((offset+${size}));
             # Next parameter id
-            i=$(($i+1));           
+            i=$(($i+1));
         else
             name=""
             desc="Unused"
             mID=$(echo "obase=16; ibase=10; ${j};" | bc );
             
-            printf "Id[%s] is missing\n" "${mID}";
+            #printf "Id[%s] is missing\n" "${mID}";
+            #printf "Id [%s] not present \n" "${mID}";
             # Print in parameter id table
             printAccess "${sFile}" "${mID}" "NA" "NA" "IMM" "REF_N" 0 0 0;
         fi
@@ -543,12 +554,13 @@ extern "C" {
 DEST_PATH=".";
 
 pFile="parameters.xsd";
-xFile="${pFile}";
+base_path=$(dirname $0);
+
+xFile=${base_path}/"${pFile}";
 
 ################################################################################
 #mFile="DefaultParams_LAN.xml"
-xmlFile="DefaultParams_DdC.xml"
-#xmlFile="DefaultParams_test.xml"
+xmlFile="DefaultParams_test.xml"
 
 while [ $# -gt 0 ]
 do

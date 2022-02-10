@@ -55,10 +55,7 @@ endif(USE_FREERTOS)
 set(MOD_DIR_LST 
     "demo/Nucleo-L476/bsp" 
     "demo/Nucleo-L476/board" 
-    "demo/Nucleo-L476/device/FlashStorage" 
-    "demo/Nucleo-L476/device/LocalItf" 
     "demo/Nucleo-L476/device/PhyFake" 
-    "demo/Nucleo-L476/device/Utils/Perf" 
     "demo/Nucleo-L476/app" 
     )
 

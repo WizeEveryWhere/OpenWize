@@ -61,7 +61,7 @@ typedef enum {
     CLOCK_DRIFT_CORRECTION = 0x22, //!< Correction of device clock frequency
     CIPH_CURRENT_KEY = 0x28, //!< Current key number
     CIPH_KEY_COUNT = 0x29, //!< Number of encryption keys available in the device
-    L6KmacIndex = 0x2A, //!< Kmac key index
+	L6NetwIdSelect = 0x2A, //!< Kmac key index
     PING_RX_DELAY = 0x30, //!< Fixed waiting time after transmission of an INSTPING message by the device and before opening the INSTPONG message listening window
     PING_RX_LENGTH = 0x31, //!< Duration of the INSTPONG message listening window by the device
     PING_RX_DELAY_MIN = 0x32, //!< Minimum value of the PING_RX_DELAY parameter

@@ -121,40 +121,24 @@ const key_s sDefaultKey[KEY_MAX_NB] =
 KEY_SECTION(".data.keys") key_s _a_Key_[KEY_MAX_NB];
 
 /******************************************************************************/
-#include "platform.h"
-#include "bsp_boot.h"
-
-PERM_SECTION(".param") uint8_t boot_count;
-/******************************************************************************/
-#include "flash_storage.h"
-
-#define STORAGE_FLASH_ADDRESS  (0x08078000UL) // Page and double-word aligned
-const struct flash_store_s * pStorage_FlashArea;
 
 /******************************************************************************/
 /******************************************************************************/
-struct _store_special_s
-{
-	device_id_t sDeviceInfo;
-};
 
 void Storage_Init(uint8_t bForce)
 {
-	pStorage_FlashArea = (const struct flash_store_s *) STORAGE_FLASH_ADDRESS;
-	if(bForce || pStorage_FlashArea->sHeader.u16Status == 0xFFFF)
-	{
-		Storage_SetDefault();
-		if ( Storage_Store() == 1)
-		{
-			// error
-			printf("Flash : Failed to store ");
-		}
-	}
-	if ( Storage_Get() == 1)
-	{
-		// error
-		printf("Flash : Failed to read ");
-	}
+	uint8_t tmp;
+	Storage_SetDefault();
+	// set the current key id to 0, so un-ciphered
+	tmp = 0;
+	Param_Access(CIPH_CURRENT_KEY, &tmp, 1);
+	tmp = 1;
+	// set sessions delay and length to 1
+	Param_Access(EXCH_RX_DELAY, &tmp, 1);
+	Param_Access(EXCH_RX_LENGTH, &tmp, 1);
+	Param_Access(EXCH_RESPONSE_DELAY, &tmp, 1);
+	Param_Access(PING_RX_DELAY, &tmp, 1);
+	Param_Access(PING_RX_LENGTH, &tmp, 1);
 }
 
 void Storage_SetDefault(void)
@@ -163,58 +147,6 @@ void Storage_SetDefault(void)
 
 	Param_Init(a_ParamDefault);
 	memcpy(_a_Key_, sDefaultKey, sizeof(_a_Key_));
-}
-
-uint8_t Storage_Store(void)
-{
-	struct _store_special_s store_special;
-	struct storage_area_s sStorageArea;
-	// Prepare first part with device ID, phy power and rssi cal. values
-	WizeApi_GetDeviceId(&(store_special.sDeviceInfo));
-
-	sStorageArea.u32SrcAddr[0] = (uint32_t)(&store_special);
-	sStorageArea.u32SrcAddr[1] = (uint32_t)(a_ParamValue);
-	sStorageArea.u32SrcAddr[2] = (uint32_t)(_a_Key_);
-	sStorageArea.u32Size[0] = sizeof(struct _store_special_s);
-	sStorageArea.u32Size[1] = PARAM_DEFAULT_SZ;
-	sStorageArea.u32Size[2] = sizeof(_a_Key_);
-	sStorageArea.pFlashArea = (const struct flash_store_s *) STORAGE_FLASH_ADDRESS;;
-	if ( FlashStorage_StoreInit(&sStorageArea) != DEV_SUCCESS)
-	{
-		return 1;
-	}
-	if ( FlashStorage_StoreWrite(&sStorageArea) != DEV_SUCCESS)
-	{
-		return 1;
-	}
-	if ( FlashStorage_StoreFini(&sStorageArea) != DEV_SUCCESS)
-	{
-		return 1;
-	}
-	return 0;
-}
-
-uint8_t Storage_Get(void)
-{
-	struct _store_special_s store_special;
-	struct storage_area_s sStorageArea;
-
-	sStorageArea.u32SrcAddr[0] = (uint32_t)(&store_special);
-	sStorageArea.u32SrcAddr[1] = (uint32_t)(a_ParamValue);
-	sStorageArea.u32SrcAddr[2] = (uint32_t)(_a_Key_);
-	sStorageArea.u32Size[0] = sizeof(struct _store_special_s);
-	sStorageArea.u32Size[1] = PARAM_DEFAULT_SZ;
-	sStorageArea.u32Size[2] = sizeof(_a_Key_);
-	sStorageArea.pFlashArea = (const struct flash_store_s *) STORAGE_FLASH_ADDRESS;;
-	if ( FlashStorage_StoreRead(&sStorageArea) != DEV_SUCCESS)
-	{
-		return 1;
-	}
-
-	// Init special
-	WizeApi_SetDeviceId( &(store_special.sDeviceInfo) );
-
-	return 0;
 }
 
 #ifdef __cplusplus

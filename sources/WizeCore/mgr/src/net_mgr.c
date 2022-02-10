@@ -858,7 +858,7 @@ static int32_t _net_mgr_listen_with_retry_(netdev_t *pNetDev, uint8_t u8Retry)
 static int32_t _net_mgr_error_(netdev_t *pNetDev)
 {
 	int32_t eRet = 0;
-	const char *pErrStr;
+	const char *pErrStr = NULL;
 	// Get the current error
 	WizeNet_Ioctl(pNetDev, NETDEV_CTL_GET_STR_ERR, (uint32_t)(&pErrStr));
 	switch(pNetDev->eErrType)

@@ -246,9 +246,9 @@ static int32_t _do_cmd(phydev_t *pPhydev, uint8_t eCmd)
 		switch(eCmd)
 		{
 			case PHY_CTL_CMD_PWR_OFF:
-				break;
 			case PHY_CTL_CMD_PWR_ON:
 			case PHY_CTL_CMD_RESET:
+				BSP_Uart_AbortReceive(UART_ID_PHY);
 			default:
 				break;
 		}
@@ -258,8 +258,8 @@ static int32_t _do_cmd(phydev_t *pPhydev, uint8_t eCmd)
 		switch (eCmd)
 		{
 			case PHY_CTL_CMD_READY:
-				break;
 			case PHY_CTL_CMD_SLEEP:
+				BSP_Uart_AbortReceive(UART_ID_PHY);
 				break;
 			default:
 				break;
@@ -370,7 +370,7 @@ static int32_t _do_RX(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulat
 		pPhydev->eChannel = eChannel;
 		pPhydev->eModulation = eModulation;
 
-		pDevice->eError = BSP_Uart_Receive(UART_ID_COM, pDevice->pBuf, BUF_SZ);
+		pDevice->eError = BSP_Uart_Receive(UART_ID_PHY, pDevice->pBuf, BUF_SZ);
 		if ( pDevice->eError == DEV_SUCCESS)
 		{
 			pDevice->eState = RECEIVING_STATE;
@@ -507,7 +507,7 @@ static int32_t _ioctl(phydev_t *pPhydev, uint32_t eCtl, uint32_t args)
 	{
 		if(eCtl == PHY_CTL_GET_STR_ERR)
 		{
-			*((char*)args) = phyfake_error_msgs[pDevice->eError];
+			*((uint32_t*)args) = (uint32_t)(phyfake_error_msgs[pDevice->eError]);  // 0x08017cf8 : phyfake_error_msgs[2]
 			pDevice->eError = FAKEUART_ERR_NONE;
 		}
 		else {
