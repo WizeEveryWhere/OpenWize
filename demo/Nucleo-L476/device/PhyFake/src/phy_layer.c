@@ -527,6 +527,10 @@ static int32_t _ioctl(phydev_t *pPhydev, uint32_t eCtl, uint32_t args)
 						// TODO :
 					}
 					break;
+				case PHY_CTL_GET_PA:
+					// TODO :
+					*(uint8_t*)args = 0;
+					break;
 				case PHY_CTL_GET_TX_FREQ_OFF:
 					*(uint8_t*)args = pPhydev->i16TxFreqOffset;
 					break;

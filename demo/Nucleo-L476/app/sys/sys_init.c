@@ -81,15 +81,6 @@ void Sys_Init(void)
 #endif
 
 	// Change logger level
-	if ( Param_Access(LOGGER_LEVEL, (uint8_t*)(&u8LogLevel), 0) == 0 )
-	{
-		u8LogLevel = LOG_LV_FRM_OUT | LOG_LV_ERR | LOG_LV_WRN | LOG_LV_INF | LOG_LV_DBG;
-	}
-	if ( Param_Access(LOGGER_TIME_OPT, (uint8_t*)(&u8Tstmp), 0) == 0 )
-	{
-		u8Tstmp = LOG_TSTAMP_HIRES | LOG_TSTAMP_TRUNC;
-	}
-	//Logger_SetLevel( u8LogLevel, u8Tstmp );
 	Logger_SetLevel( LOG_LV_FRM_OUT | LOG_LV_ERR | LOG_LV_WRN | LOG_LV_INF | LOG_LV_DBG, LOG_TSTAMP_HIRES | LOG_TSTAMP_TRUNC );
 
 

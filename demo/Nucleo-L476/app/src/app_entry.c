@@ -7,7 +7,6 @@ extern "C" {
 
 extern void Sys_Init(void);
 extern void Sys_Start(void);
-extern void LoItf_Setup(void);
 
 void App_Init(void);
 
@@ -23,20 +22,20 @@ void app_entry(void)
 }
 
 /******************************************************************************/
-void *main_hTask;
-static void MainTask(void const * argument);
-#define MAIN_TASK_NAME main
-#define MAIN_TASK_FCT MainTask
-#define MAIN_STACK_SIZE 300
-#define MAIN_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+1)
-SYS_TASK_CREATE_DEF(main, MAIN_STACK_SIZE, MAIN_PRIORITY);
+void* hTask;
+static void Main_Task(void const * argument);
+#define APP_TASK_NAME main
+#define APP_TASK_FCT Main_Task
+#define APP_STACK_SIZE 300
+#define APP_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+1)
+SYS_TASK_CREATE_DEF(main, APP_STACK_SIZE, APP_PRIORITY);
 
 void App_Init(void)
 {
-	main_hTask = SYS_TASK_CREATE_CALL(main, MAIN_TASK_FCT, NULL);
+	hTask = SYS_TASK_CREATE_CALL(main, APP_TASK_FCT, NULL);
 }
 
-static void MainTask(void const * argument)
+static void Main_Task(void const * argument)
 {
 	(void)argument;
 
