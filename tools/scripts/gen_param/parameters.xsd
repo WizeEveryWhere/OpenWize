@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.grdf.fr/smart-solutions/TU/1.0.0" targetNamespace="http://www.grdf.fr/smart-solutions/TU/1.0.0">
+    
+    <xs:element name="ParamCfg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ParameterList" type="tns:ParameterListType">
+                    <xs:unique name="uniqueParamID">
+                        <xs:selector xpath="Parameter" />
+                        <xs:field xpath="@id" />
+                    </xs:unique>
+                </xs:element>
+
+                <xs:element name="RestrictionList" type="tns:RestrictionListType">
+                    <xs:unique name="uniqueRestrID">
+                        <xs:selector xpath="Restriction" />
+                        <xs:field xpath="@id" />
+                    </xs:unique>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="ParameterListType">
+        <xs:sequence>
+            <xs:element name="Parameter" type="tns:ParameterType" minOccurs="0" maxOccurs="255"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RestrictionListType">
+        <xs:sequence>
+            <xs:element name="Restriction" type="tns:RestrictionType" minOccurs="0" maxOccurs="20"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+   
+    <!-- Access Management ************************************************* -->
+
+    <!-- The parameter element type --><!-- Parameter Value -->
+    <xs:complexType name="ParameterType">
+        <xs:simpleContent>
+            <xs:extension base="tns:ValueType">
+                <!-- Parameter ID -->
+                <xs:attribute name="id"   type="tns:IdType"         use="required"></xs:attribute>
+                <!-- Parameter Restriction -->
+                <xs:attribute name="restr" type="tns:RestrictionId" ></xs:attribute>
+                <!-- Parameter Referenced -->
+                <xs:attribute name="ref"  type="tns:ReferencedType" ></xs:attribute>
+                <!-- Parameter Local Access -->
+                <xs:attribute name="loc"  type="tns:AccessType"     use="required"></xs:attribute>
+                <!-- Parameter Remote Access -->
+                <xs:attribute name="rem"  type="tns:AccessType"     use="required"></xs:attribute>
+                <!-- Parameter Size in byte -->
+                <xs:attribute name="size" type="tns:SizeType"       use="required"></xs:attribute>
+                <!-- Parameter Effectivness -->
+                <xs:attribute name="eff"  type="tns:EffectType"></xs:attribute>
+                <!-- Parameter Name -->
+                <xs:attribute name="name" type="tns:NameType"></xs:attribute>
+                <!-- Parameter Description -->
+                <xs:attribute name="desc" type="tns:DescType"></xs:attribute>                
+            </xs:extension>
+        </xs:simpleContent>
+        <!-- xs:assert test="string-length($value) &lt; @Size"/> -->
+    </xs:complexType>
+    
+    <!-- The Type of Id attribute -->
+    <xs:simpleType name="IdType" >
+        <xs:restriction base="xs:hexBinary">
+            <xs:length value="1"/>
+            <xs:pattern value="[0-E][1-F]|[1-F][0-E]"/>
+            <!--xs:minExclusive value="00"/-->
+            <!--xs:maxExclusive value="FF"/-->
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- The Type of Size attribute -->
+    <xs:simpleType name="SizeType" >
+        <xs:restriction base="xs:unsignedByte">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="255"/>
+        </xs:restriction>
+    </xs:simpleType>
+   
+    <!-- The Type of Referenced attribute -->
+    <xs:simpleType name="ReferencedType" >
+        <!-- Referenced  - V -->
+        <!--  no         - REF_N -->
+        <!--  yes        - REF_Y -->
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="REF_N"></xs:enumeration>
+            <xs:enumeration value="REF_Y"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- The Type of Access attribute -->
+    <xs:simpleType name="AccessType" >
+        <!-- Access      - V -->
+        <!-- No access   - NA -->
+        <!-- Read only   - RO -->
+        <!-- Write only  - WO -->
+        <!-- Read/Write  - RW -->
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NA"></xs:enumeration>
+            <xs:enumeration value="RO"></xs:enumeration>
+            <xs:enumeration value="WO"></xs:enumeration>
+            <xs:enumeration value="RW"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- The Type of Effectivness attribute -->
+    <xs:simpleType name="EffectType" >
+        <!-- Effectivness           - V -->
+        <!-- Immediat               - IMM -->
+        <!-- After acknowledge      - ACK -->
+        <!-- Next maintenace period - MNT -->
+        <!-- Next Gas Hour          - HGA -->
+        <!-- Next 0h00 UTC          - UTC -->
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="IMM"></xs:enumeration>
+            <xs:enumeration value="ACK"></xs:enumeration>
+            <xs:enumeration value="MNT"></xs:enumeration>
+            <xs:enumeration value="HGA"></xs:enumeration>
+            <xs:enumeration value="UTC"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- The Type of Name attribute -->
+    <xs:simpleType name="NameType" >
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- The Type of Description attribute -->
+    <xs:simpleType name="DescType" >
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="400" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- The Type of Value field -->
+    <xs:simpleType name="ValueType" >
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="72" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- The Coding for restriction attribute -->
+    <xs:simpleType name="RestrictionId" >
+        <xs:restriction base="xs:hexBinary">
+            <xs:length value="1"/>
+            <!--xs:minExclusive value="00"/-->
+            <!--xs:maxExclusive value="FF"/-->
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+    <!-- Restriction Management ******************************************** -->
+
+    <!-- The restriction element type -->
+    <xs:complexType name="RestrictionType">
+        <xs:simpleContent>
+            <xs:extension base="tns:RestrValueType">
+                <!-- Parameter ID -->
+                <xs:attribute name="id"   type="tns:IdType"    use="required"></xs:attribute>
+                <!-- Restriction type -->
+                <xs:attribute name="rtype" type="tns:RestrType" use="required"></xs:attribute>
+                <!-- Restriction size -->
+                <xs:attribute name="rsize" type="tns:RestrSize" use="required"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- The restriction Type attribute -->
+    <xs:simpleType name="RestrType" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MODULO"></xs:enumeration>
+            <xs:enumeration value="RANGE"></xs:enumeration>
+            <xs:enumeration value="ENUM"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- The restriction Size attribute -->
+    <xs:simpleType name="RestrSize" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="8BITS"></xs:enumeration>
+            <xs:enumeration value="16BITS"></xs:enumeration>
+            <xs:enumeration value="32BITS"></xs:enumeration>
+            <xs:enumeration value="64BITS"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+   
+    <!-- The Type of Value field -->
+    <xs:simpleType name="RestrValueType" >
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:simpleType>
+                        <xs:list itemType="xs:byte"/>
+                    </xs:simpleType>
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="15" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:simpleType>
+                        <xs:list itemType="xs:short"/>
+                    </xs:simpleType>
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="15" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:simpleType>
+                        <xs:list itemType="xs:integer"/>
+                    </xs:simpleType>
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="15" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:simpleType>
+                        <xs:list itemType="xs:long"/>
+                    </xs:simpleType>
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="15" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>    
+
+</xs:schema>
+ 

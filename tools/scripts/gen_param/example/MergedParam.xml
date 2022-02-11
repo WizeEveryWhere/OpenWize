@@ -1,0 +1,106 @@
+
+<tns:ParamCfg xmlns:tns="http://www.grdf.fr/smart-solutions/TU/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.grdf.fr/smart-solutions/TU/1.0.0/Parameter.xsd ">
+  <ParameterList>
+    <Parameter id="01" loc="RW" rem="RW" size="1" restr="01" name="PARAM_01" desc="Parameter 01; Range; 8BITS">
+      0x00
+    </Parameter>
+    <Parameter id="02" loc="RW" rem="RW" size="2" restr="02" name="PARAM_02" desc="Parameter 02; Range; 16BITS">
+      0x0078
+    </Parameter>
+    <Parameter id="03" loc="RW" rem="RW" size="4" restr="03" name="PARAM_03" desc="Parameter 03; Range; 32BITS">
+      0x00780078
+    </Parameter>
+    <Parameter id="04" loc="RW" rem="RW" size="8" restr="04" name="PARAM_04" desc="Parameter 04; Range; 64BITS">
+      0x0078007800780078
+    </Parameter>
+    <Parameter id="05" loc="RW" rem="RW" size="1" restr="05" name="PARAM_05" desc="Parameter 05; Enum; 8BITS">
+      0x00
+    </Parameter>
+    <Parameter id="06" loc="RW" rem="RW" size="2" restr="06" name="PARAM_06" desc="Parameter 06; Enum; 16BITS">
+      0x0078
+    </Parameter>
+    <Parameter id="07" loc="RW" rem="RW" size="4" restr="07" name="PARAM_07" desc="Parameter 07; Enum; 32BITS">
+      0x00780078
+    </Parameter>
+    <Parameter id="08" loc="RW" rem="RW" size="8" restr="08" name="PARAM_08" desc="Parameter 08; Enum; 64BITS">
+      0x0078007800780078
+    </Parameter>
+    <Parameter id="09" loc="RW" rem="RW" size="1" restr="05" name="PARAM_09" desc="Parameter 09; Modulo; 8BITS">
+      0x00
+    </Parameter>
+    <Parameter id="0A" loc="RW" rem="RW" size="2" restr="06" name="PARAM_0A" desc="Parameter 0A; Modulo; 16BITS">
+      0x0078
+    </Parameter>
+    <Parameter id="0B" loc="RW" rem="RW" size="4" restr="07" name="PARAM_0B" desc="Parameter 0B; Modulo; 32BITS">
+      0x00780078
+    </Parameter>
+    <Parameter id="0C" loc="RW" rem="RW" size="8" restr="08" name="PARAM_0C" desc="Parameter 0C; Modulo; 64BITS">
+      0x0078007800780078
+    </Parameter>
+    <Parameter id="10" loc="RW" rem="RW" size="6" name="PARAM_10" desc="Parameter 10; ">
+      azerty
+    </Parameter>
+    <Parameter id="11" loc="RO" rem="RW" size="6" name="PARAM_11" desc="Parameter 11; loc RO">
+      azerty
+    </Parameter>
+    <Parameter id="12" loc="RW" rem="RO" size="6" restr="00" name="PARAM_12" desc="Parameter 12; rem RO">
+      azerty
+    </Parameter>
+    <Parameter id="20" loc="RW" rem="RW" size="6" eff="IMM" ref="REF_N" name="PARAM_20" desc="Parameter 20; REF_N">
+      azerty
+    </Parameter>
+    <Parameter id="21" loc="RO" rem="RW" size="6" eff="ACK" name="PARAM_21" desc="Parameter 21; ACK">
+      azerty
+    </Parameter>
+    <Parameter id="22" loc="RW" rem="RO" size="6" eff="MNT" name="PARAM_22" desc="Parameter 22; MNT">
+      azerty
+    </Parameter>
+    <Parameter id="23" loc="RO" rem="RW" size="6" eff="HGA" name="PARAM_23" desc="Parameter 23; HGA">
+      azerty
+    </Parameter>
+    <Parameter id="24" loc="RW" rem="RO" size="6" eff="UTC" name="PARAM_24" desc="Parameter 24; UTC">
+      azerty
+    </Parameter>
+    <Parameter id="25" loc="NA" rem="NA" size="8" name="PARAM_25" desc="Parameter 25; ">
+      youpi la
+    </Parameter>
+  </ParameterList>
+  <RestrictionList>
+    <Restriction id="01" rtype="RANGE" rsize="8BITS">
+      20 200
+    </Restriction>
+    <Restriction id="02" rtype="RANGE" rsize="16BITS">
+      20 2000
+    </Restriction>
+    <Restriction id="03" rtype="RANGE" rsize="32BITS">
+      20 200000
+    </Restriction>
+    <Restriction id="04" rtype="RANGE" rsize="64BITS">
+      20 200000000000
+    </Restriction>
+    <Restriction id="05" rtype="ENUM" rsize="8BITS">
+      2 12 48 144
+    </Restriction>
+    <Restriction id="06" rtype="ENUM" rsize="16BITS">
+      2 12 48 144 2000
+    </Restriction>
+    <Restriction id="07" rtype="ENUM" rsize="32BITS">
+      2 12 48 144 2000 200000
+    </Restriction>
+    <Restriction id="08" rtype="ENUM" rsize="64BITS">
+      2 12 48 144 2000 200000 200000000000
+    </Restriction>
+    <Restriction id="09" rtype="MODULO" rsize="8BITS">
+      5
+    </Restriction>
+    <Restriction id="0A" rtype="MODULO" rsize="16BITS">
+      50
+    </Restriction>
+    <Restriction id="0B" rtype="MODULO" rsize="32BITS">
+      5000
+    </Restriction>
+    <Restriction id="0C" rtype="MODULO" rsize="64BITS">
+      50000
+    </Restriction>
+  </RestrictionList>
+</tns:ParamCfg>

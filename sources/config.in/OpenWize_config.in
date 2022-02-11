@@ -1,0 +1,14 @@
+
+#ifndef __OPENWIZE_CONF_H
+#define __OPENWIZE_CONF_H
+
+#cmakedefine USE_CRYPTO_SAMPLE      1U // Enable the use of Crypto sample provided by OpenWize.
+#cmakedefine USE_CRC_SAMPLE         1U // Enable the use of CRC_sw sample provided by OpenWize.
+#cmakedefine USE_REEDSOLOMON_SAMPLE 1U // Enable the use of ReedSolomon sample provided by OpenWize.
+#cmakedefine USE_PARAMETERS_SAMPLE  1U // Enable the use of Parameters sample provided by OpenWize.
+#cmakedefine USE_IMGSTORAGE_SAMPLE  1U // Enable the use of ImgStorage sample provided by OpenWize.
+#cmakedefine USE_TIMEEVT_SAMPLE     1U // Enable the use of TimeEvt sample provided by OpenWize.
+#cmakedefine USE_LOGGER_SAMPLE      1U // Enable the use of Logger sample provided by OpenWize.
+#cmakedefine IS_LOGGER_ENABLE       1U // Enable the Logger in OpenWize.
+
+#endif /* __OPENWIZE_CONF_H */

@@ -1,0 +1,313 @@
+/**
+  * @file: rtos_macro.h
+  * @brief: This file define/implement wrappers around RTOS API functions
+  * 
+  *****************************************************************************
+  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted (subject to the limitations in the disclaimer
+  * below) provided that the following conditions are met:
+  *    - Redistributions of source code must retain the above copyright notice,
+  *      this list of conditions and the following disclaimer.
+  *    - Redistributions in binary form must reproduce the above copyright 
+  *      notice, this list of conditions and the following disclaimer in the 
+  *      documentation and/or other materials provided with the distribution.
+  *    - Neither the name of GRDF, Inc. nor the names of its contributors
+  *      may be used to endorse or promote products derived from this software
+  *      without specific prior written permission.
+  *
+  *****************************************************************************
+  *
+  * Revision history
+  * ----------------
+  * 1.0.0 : 2020/11/15[GBI]
+  * Initial version
+  *
+  *
+  */
+#ifndef _RTOS_MACRO_H_
+#define _RTOS_MACRO_H_
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <limits.h>
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "timers.h"
+#include "queue.h"
+#include "semphr.h"
+#include "event_groups.h"
+
+#define FORCE_INLINE __attribute__((always_inline)) inline
+/*=============================================================================*/
+#if defined ( __OS__ )
+// Use an Operation System
+#if OS_FreeRTOS == 1
+// Use FreeRTOS
+
+/*******************************************************************************/
+#ifdef USE_RTOS_TRACE
+#define RTOS_TRACE_QUEUES(suff) vQueueAddToRegistry(handle, suff);
+#define RTOS_TRACE_TASK(suff) #suff"Tsk"
+#else
+#define RTOS_TRACE_QUEUES(suff)
+#define RTOS_TRACE_TASK(suff) NULL
+#endif
+
+/*******************************************************************************/
+#define SYS_TASK_CREATE_CALL(suffixe, main, arg) sys_task_create_##suffixe(main, arg)
+#define SYS_TASK_CREATE_DEF(suffixe, stack_size, priority) \
+FORCE_INLINE extern void* sys_task_create_##suffixe(void (*_main_)(void const*), void * const argument); \
+\
+static StaticTask_t xTaskStore_##suffixe; \
+static StackType_t  xStack_##suffixe[ stack_size ]; \
+FORCE_INLINE void* sys_task_create_##suffixe(void (*_main_)(void const*), void * const argument) \
+{ \
+    return (void*)(xTaskCreateStatic((TaskFunction_t)_main_, RTOS_TRACE_TASK(suffixe), stack_size, argument, (UBaseType_t)priority, xStack_##suffixe, &xTaskStore_##suffixe )); \
+}
+
+/*******************************************************************************/
+#define SYS_MUTEX_CREATE_CALL(suffixe) sys_mutex_create_##suffixe()
+#define SYS_MUTEX_CREATE_DEF(suffixe) \
+static FORCE_INLINE void* sys_mutex_create_##suffixe(void); \
+ \
+static StaticSemaphore_t xMutexStore_##suffixe; \
+static FORCE_INLINE void* sys_mutex_create_##suffixe(void) \
+{ \
+	void *handle; \
+	handle = (void*)(xSemaphoreCreateMutexStatic((StaticSemaphore_t*)&xMutexStore_##suffixe )); \
+	RTOS_TRACE_QUEUES(#suffixe"Mux") \
+	return handle; \
+}
+
+/*******************************************************************************/
+#define SYS_BINSEM_CREATE_CALL(suffixe) sys_binsem_create_##suffixe()
+#define SYS_BINSEM_CREATE_DEF(suffixe) \
+static FORCE_INLINE void* sys_binsem_create_##suffixe(void); \
+ \
+static StaticSemaphore_t xBinSemStore_##suffixe; \
+static FORCE_INLINE void* sys_binsem_create_##suffixe(void) \
+{ \
+	void *handle; \
+	handle = (void*)(xSemaphoreCreateBinaryStatic((StaticSemaphore_t*)&xBinSemStore_##suffixe )); \
+	RTOS_TRACE_QUEUES(#suffixe"Bin") \
+	return handle; \
+}
+
+/*******************************************************************************/
+#define SYS_CNTSEM_CREATE_CALL(suffixe) sys_cntsem_create_##suffixe()
+#define SYS_CNTSEM_CREATE_DEF(suffixe, max, init) \
+static FORCE_INLINE void* sys_cntsem_create_##suffixe(void); \
+ \
+static StaticSemaphore_t xCntSemStore_##suffixe; \
+static FORCE_INLINE void* sys_cntsem_create_##suffixe(void) \
+{ \
+	void *handle; \
+	handle = (void*)(xSemaphoreCreateCountingStatic((UBaseType_t)max, (UBaseType_t)init, (StaticSemaphore_t*)&xCntSemStore_##suffixe )); \
+	RTOS_TRACE_QUEUES(#suffixe"Sem") \
+	return handle; \
+}
+
+/*******************************************************************************/
+#define SYS_EVENT_CREATE_CALL(suffixe) sys_event_create_##suffixe()
+#define SYS_EVENT_CREATE_DEF(suffixe) \
+static FORCE_INLINE void* sys_event_create_##suffixe(void); \
+ \
+static StaticEventGroup_t xEvtGrpStore_##suffixe; \
+static FORCE_INLINE void* sys_event_create_##suffixe(void) \
+{ \
+	void *handle; \
+	handle = (void*)(xEventGroupCreateStatic((StaticEventGroup_t*)&xEvtGrpStore_##suffixe )); \
+	return handle; \
+}
+
+/*******************************************************************************/
+#define SYS_QUEUE_CREATE_CALL(suffixe) sys_queue_create_##suffixe()
+#define SYS_QUEUE_CREATE_DEF(suffixe, len, size) \
+static FORCE_INLINE void* sys_queue_create_##suffixe(void); \
+ \
+static StaticQueue_t xQueueStore_##suffixe; \
+static uint8_t ucQueueArea_##suffixe[ len * size ];\
+static FORCE_INLINE void* sys_queue_create_##suffixe(void) \
+{ \
+	void *handle; \
+	handle = (void*)(xQueueCreateStatic((UBaseType_t)len, (UBaseType_t)size, ucQueueArea_##suffixe, (StaticQueue_t*)&xQueueStore_##suffixe )); \
+	RTOS_TRACE_QUEUES(#suffixe"Que") \
+	return handle; \
+}
+
+/*******************************************************************************/
+
+/* Acquire mutex */
+static FORCE_INLINE 
+uint32_t sys_mutex_acquire(void *hMutex, uint32_t timeout)
+{
+    return xSemaphoreTake((SemaphoreHandle_t)hMutex, timeout);
+}
+
+static FORCE_INLINE
+uint32_t sys_mutex_acquire_isr(void *hMutex)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    return xSemaphoreTakeFromISR((SemaphoreHandle_t)hMutex, &xHigherPriorityTaskWoken );
+}
+
+/* Release mutex */
+static FORCE_INLINE
+uint32_t sys_mutex_release(void *hMutex)
+{
+    return xSemaphoreGive((SemaphoreHandle_t)hMutex);
+}
+
+static FORCE_INLINE
+uint32_t sys_mutex_release_isr(void *hMutex)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    return xSemaphoreGiveFromISR( (SemaphoreHandle_t)hMutex, &xHigherPriorityTaskWoken );
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_set(void *hNotity, uint32_t flags)
+{
+    return xTaskNotify(hNotity, flags, eSetBits);
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_set_isr(void *hNotity, uint32_t flags)
+{
+    uint32_t ret;
+    BaseType_t xHigherPriorityTaskWoken;
+    ret = xTaskNotifyFromISR(hNotity, flags, eSetBits, &xHigherPriorityTaskWoken );
+    portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+    return ret;
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_give_isr(void *hNotity)
+{
+    BaseType_t xHigherPriorityTaskWoken;
+    vTaskNotifyGiveFromISR(hNotity, &xHigherPriorityTaskWoken );
+    portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_wait(uint32_t *pFlags, uint32_t timeout)
+{
+    return xTaskNotifyWait(0, ULONG_MAX, pFlags, timeout);
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_take(uint32_t timeout)
+{
+    return ulTaskNotifyTake(pdTRUE, timeout);
+}
+
+static FORCE_INLINE
+uint32_t sys_get_pid(void)
+{
+    return (uint32_t)xTaskGetCurrentTaskHandle();
+}
+#endif // OS_FreeRTOS == 1
+
+/*=============================================================================*/
+#else // defined ( __OS__ )
+
+/*******************************************************************************/
+#define SYS_TASK_CREATE_CALL(suffixe, main, arg) (void*)1
+#define SYS_TASK_CREATE_DEF(suffixe, stack_size, priority) 
+/*******************************************************************************/
+#define SYS_MUTEX_CREATE_CALL(suffixe) (void*)1
+#define SYS_MUTEX_CREATE_DEF(suffixe)
+/*******************************************************************************/
+#define SYS_BINSEM_CREATE_CALL(suffixe) (void*)1
+#define SYS_BINSEM_CREATE_DEF(suffixe)
+/*******************************************************************************/
+#define SYS_CNTSEM_CREATE_CALL(suffixe) (void*)1
+#define SYS_CNTSEM_CREATE_DEF(suffixe, max, init)
+/*******************************************************************************/
+#define SYS_EVENT_CREATE_CALL(suffixe) (void*)1
+#define SYS_EVENT_CREATE_DEF(suffixe)
+/*******************************************************************************/
+#define SYS_QUEUE_CREATE_CALL(suffixe) (void*)1
+#define SYS_QUEUE_CREATE_DEF(suffixe, len, size)
+/*******************************************************************************/
+uint32_t sys_mutex_acquire(void *hMutex, uint32_t timeout)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_mutex_acquire_isr(void *hMutex)
+{
+    while(0);
+    return 1;
+}
+
+/* Release mutex */
+static FORCE_INLINE
+uint32_t sys_mutex_release(void *hMutex)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_mutex_release_isr(void *hMutex)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_set(void *hNotity, uint32_t flags)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_set_isr(void *hNotity, uint32_t flags)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_give_isr(void *hNotity)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_wait(uint32_t *pFlags, uint32_t timeout)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_flag_take(uint32_t timeout)
+{
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_get_pid(void)
+{
+    while(0);
+    return 1;
+}
+#endif // defined ( __OS__ )
+/*=============================================================================*/
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* _RTOS_MACRO_H_ */
