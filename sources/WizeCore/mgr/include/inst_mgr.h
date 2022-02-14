@@ -28,11 +28,7 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup InstMgr
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -80,6 +76,4 @@ void InstMgr_Setup(struct ses_ctx_s *pCtx);
 #endif
 #endif /* _INST_MGR_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

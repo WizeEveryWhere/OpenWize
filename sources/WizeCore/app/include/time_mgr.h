@@ -28,15 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup TimeMgr
+ * @ingroup WizeCore
  * @{
  *
  */
-
 #ifndef _TIME_MGR_H_
 #define _TIME_MGR_H_
 #ifdef __cplusplus
@@ -89,6 +84,4 @@ void TimeMgr_Setup(struct time_upd_s *pTimeUpdCtx);
 #endif
 #endif /* _TIME_MGR_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

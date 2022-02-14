@@ -27,6 +27,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -701,3 +707,5 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

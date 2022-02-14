@@ -1,6 +1,6 @@
 /**
   * @file: wize_banner.h
-  * @brief: // TODO This file ...
+  * @brief: This file the Wize Alliance banner
   * 
   *****************************************************************************
   * @Copyright 2019, GRDF, Inc.  All rights reserved.
@@ -21,11 +21,17 @@
   *
   * Revision history
   * ----------------
-  * 1.0.0 : 2020/10/25[TODO: your name]
+  * 1.0.0 : 2020/10/25[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _WIZE_BANNER_H_
 #define _WIZE_BANNER_H_
 #ifdef __cplusplus
@@ -54,3 +60,5 @@ extern "C" {
 }
 #endif
 #endif /* _WIZE_BANNER_H_ */
+
+/*! @} */

@@ -29,14 +29,10 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup RS
- * @{
+ *
  */
-
 #ifndef _RS_H_
 #define _RS_H_
 #ifdef __cplusplus
@@ -100,6 +96,4 @@ const int16_t* RS_GetIndexOf_ptr(uint32_t *u32_indexOfSz);
 #endif
 #endif /* _RS_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

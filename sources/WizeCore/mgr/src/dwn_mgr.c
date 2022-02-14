@@ -43,11 +43,7 @@ static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx);
 #define SES_NAME "DWN"
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup DwnMgr
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -354,8 +350,6 @@ static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx)
 	return i32NextBlkOffset;
 }
 
-/*! @} */
-/*! @} */
 /*! @} */
 
 #ifdef __cplusplus

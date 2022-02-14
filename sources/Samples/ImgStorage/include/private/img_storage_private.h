@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifndef _IMG_STORAGE_PRIVATE_H_
 #define _IMG_STORAGE_PRIVATE_H_
 
@@ -194,3 +200,5 @@ typedef struct img_mgr_ctx_s img_mgr_ctx_t;
 }
 #endif
 #endif /* _IMG_STORAGE_PRIVATE_H_ */
+
+/*! @} */

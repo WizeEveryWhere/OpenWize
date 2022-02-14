@@ -28,13 +28,13 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "key_priv.h"
 #include "utils_secure.h"
@@ -104,6 +104,8 @@ uint8_t Crypto_WriteKey(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId)
 	return _set_key_(p_Key, u8_KeyId);
 }
 
-/*! @} */
-/*! @} */
+#ifdef __cplusplus
+}
+#endif
+
 /*! @} */

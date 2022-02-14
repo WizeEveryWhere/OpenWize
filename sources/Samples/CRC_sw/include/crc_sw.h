@@ -28,12 +28,9 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crc_sw
- * @{
+ *
  */
 
 #ifndef _CRC_SW_H_
@@ -52,6 +49,4 @@ uint8_t CRC_Compute(uint8_t * p_Buf, uint8_t u8_Sz, uint16_t *p_Crc);
 #endif
 #endif /* _CRC_SW_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

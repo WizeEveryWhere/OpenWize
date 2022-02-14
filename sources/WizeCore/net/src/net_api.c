@@ -27,6 +27,12 @@
   * Replace Setter/Getter function by one Ioctl function
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -630,3 +636,5 @@ static void _evt_cb(void *p_CbParam, uint32_t evt)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

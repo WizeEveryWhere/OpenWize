@@ -29,15 +29,10 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup NetMgr
+ * @ingroup WizeCore
  * @{
  *
  */
-
 #ifndef _NET_MGR_H_
 #define _NET_MGR_H_
 
@@ -121,12 +116,9 @@ int32_t NetMgr_Send(net_msg_t *pxNetMsg, uint32_t u32TimeOut);
 int32_t NetMgr_Listen(net_msg_t *pxNetMsg, uint32_t u32TimeOut, net_listen_type_e eListenType);
 int32_t NetMgr_ListenReady(void);
 
-/*! @} */
-/*! @} */
-/*! @} */
-
-
 #ifdef __cplusplus
 }
 #endif
 #endif /* _NET_MGR_H_ */
+
+/*! @} */

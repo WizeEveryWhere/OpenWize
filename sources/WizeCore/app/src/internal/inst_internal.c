@@ -27,6 +27,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -234,3 +240,5 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pxNetMsg)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

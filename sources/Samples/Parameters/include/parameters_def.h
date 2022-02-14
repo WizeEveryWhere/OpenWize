@@ -28,14 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Parameters
- * @{
+ *
  */
-
 #ifndef _PARAMETERS_DEF_H_
 #define _PARAMETERS_DEF_H_
 #ifdef __cplusplus
@@ -290,6 +286,4 @@ typedef struct {
 #endif
 #endif /* _PARAMETERS_DEF_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

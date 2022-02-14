@@ -27,6 +27,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -429,3 +435,5 @@ static void _logger_main_(void const* argument)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

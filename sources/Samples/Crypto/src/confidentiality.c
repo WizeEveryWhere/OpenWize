@@ -28,13 +28,13 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
+#ifdef __cplusplus
+}
+#endif
 
 #include <stdint.h>
 #include <stddef.h>
@@ -140,6 +140,8 @@ static uint8_t _crypt_(uint8_t *p_Out, uint8_t *p_In, uint8_t u8_Sz,
 	return u8_ret;
 }
 
-/*! @} */
-/*! @} */
+#ifdef __cplusplus
+}
+#endif
+
 /*! @} */

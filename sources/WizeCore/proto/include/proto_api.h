@@ -26,16 +26,12 @@
   *
   *
   */
+
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup Protocol
+ * @ingroup WizeCore
  * @{
  *
  */
-
 #ifndef _PROTO_API_H_
 #define _PROTO_API_H_
 
@@ -58,6 +54,4 @@ const char * Wize_Proto_GetStrErr(uint8_t eErr);
 #endif
 #endif /* _PROTO_API_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

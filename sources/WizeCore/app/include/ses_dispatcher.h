@@ -21,11 +21,17 @@
   *
   * Revision history
   * ----------------
-  * 1.0.0 : 2020/11/22[TODO: your name]
+  * 1.0.0 : 2020/11/22[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _SES_DISPATCHER_H_
 #define _SES_DISPATCHER_H_
 #ifdef __cplusplus
@@ -249,3 +255,5 @@ static inline uint32_t _get_pos(uint32_t ulFlg)
 }
 #endif
 #endif /* _SES_DISPATCHER_H_ */
+
+/*! @} */

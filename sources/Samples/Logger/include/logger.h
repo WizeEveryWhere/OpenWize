@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifndef _LOGGER_H_
 #define _LOGGER_H_
 #ifdef __cplusplus
@@ -192,3 +198,5 @@ void Logger_Frame(char *pStr, uint8_t *pData, uint8_t u8NbData);
 }
 #endif
 #endif /* _LOGGER_H_ */
+
+/*! @} */

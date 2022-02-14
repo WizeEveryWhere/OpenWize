@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifndef _IMG_STORAGE_H_
 #define _IMG_STORAGE_H_
 #ifdef __cplusplus
@@ -63,3 +69,5 @@ int8_t ImgStore_Setup(uint32_t u32ImgAdd, pfWriteFlash_t pfWrite, pfEraseFlash_t
 }
 #endif
 #endif /* _IMG_STORAGE_H_ */
+
+/*! @} */

@@ -44,11 +44,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
 #define SES_NAME "ADM"
 #define ADM_MGR_EXP_TIMEOUT_MSK 0x10
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup AdmMgr
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -300,8 +296,6 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 	return u32BackEvt;
 }
 
-/*! @} */
-/*! @} */
 /*! @} */
 
 #ifdef __cplusplus

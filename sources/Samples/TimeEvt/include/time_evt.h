@@ -28,15 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Libraries
- * @{
- * @ingroup TimeEvt
+ * @ingroup Samples
  * @{
  *
  */
-
 #ifndef _TIME_EVT_H_
 #define _TIME_EVT_H_
 #ifdef __cplusplus
@@ -117,6 +112,4 @@ void TimeEvt_EventHandler(void);
 #endif
 #endif /* _TIME_EVT_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

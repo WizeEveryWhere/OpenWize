@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifndef _COLOR_H_
 #define _COLOR_H_
 #ifdef __cplusplus
@@ -57,3 +63,5 @@ extern "C" {
 }
 #endif
 #endif /* _COLOR_H_ */
+
+/*! @} */

@@ -27,6 +27,7 @@
   * Integrate a more complete management for sending and listening.
   *
   */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -72,15 +73,10 @@ SYS_BINSEM_CREATE_DEF(netdev);
 /******************************************************************************/
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup NetMgr
+ * @ingroup WizeCore
  * @{
  *
  */
-
 
 /*!
  * @brief This function setup the NetMgr module
@@ -915,8 +911,6 @@ static int32_t _net_mgr_try_abort_(netdev_t *pNetDev)
 	return eRet;
 }
 
-/*! @} */
-/*! @} */
 /*! @} */
 
 #ifdef __cplusplus

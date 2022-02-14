@@ -28,14 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Parameters
- * @{
+ *
  */
-
 #ifndef _PARAMETERS_H_
 #define _PARAMETERS_H_
 
@@ -66,6 +62,4 @@ uint8_t Param_RemoteAccess(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir);
 #endif
 #endif /* _PARAMETERS_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

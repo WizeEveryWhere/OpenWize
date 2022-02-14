@@ -4,13 +4,13 @@
 Advanced documentation
 **********************
 
-Code organisation
+Code organization
 =================
 
 Softwares modules are organized with src/ and include/ directories, that respectively hold source and header files. In module root folder a "CMakeList.txt" file define one or more build target in order to be able to build that module. Furthermore, when is required and module is unitary "testable", a "unittest" directory containing unit tests source code and its CMakeList.txt is present. 
 
 Typical module look like this :
-::
+:::::::::::::::::::::::::::::::
 
   module
   ├── CMakeLists.txt
@@ -26,10 +26,10 @@ Typical module look like this :
       └── TestModule.c
 
 "sources" directory
------------------
+-------------------
 
 The "sources" directory is organized as follow :
-::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
    sources
    ├── config.in
@@ -48,7 +48,7 @@ The "sources" directory is organized as follow :
        └── proto
 
 
-There are mainly two subdirectories "Samples" and "WizeCore". "WizeCore" is the stack implementation, while "Samples" contains some required libraries by the Wize stack. The WizeCore is split in four folders, each one corresponding more or less to an abstraction layer. 
+There are mainly two sub-directories "Samples" and "WizeCore". "WizeCore" is the stack implementation, while "Samples" contains some required libraries by the Wize stack. The WizeCore is split in four folders, each one corresponding more or less to an abstraction layer. 
 
 "Samples" sub directory
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,19 +66,20 @@ There are mainly two subdirectories "Samples" and "WizeCore". "WizeCore" is the 
    *ImgStorage* library provide an interface for storing downloaded firmware block on physical memory.
 
 ``Parameters``
-   *Parameters* library provide interface to 
+   *Parameters* library provide interface to set and get parameters. 
 
 ``TimeEvt``
-
+   *TimeEvt* module provide event to task at required time.  
 
 ``Logger``
-
+   *Logger*module provide a way to log out messages (inf, warning, error, debug).
+   
 
 "WizeCore" sub directory
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``proto``
-   *proto* implement all necéssary to treat the link and presentation layer from the Wize protocol, that is :
+   *proto* implement all necessary to treat the link and presentation layer from the Wize protocol, that is :
 
    - build/extract the Link and Presentation Layers information
    - cipher/uncipher the application message
@@ -95,15 +96,15 @@ There are mainly two subdirectories "Samples" and "WizeCore". "WizeCore" is the 
 
    - drive the protocol in *proto*
    - provide an abstract layer to higher level, with function like "send(...)" or "recev(...)".
-   - provide an interface to the phy driver implemetation
+   - provide an interface to the phy driver implementation
 
    *net* depends on *proto* 
 
 ``mgr``
    *mgr* implement four managers :
 
-   - *adm_mgr*, *inst_mgr* and *dwn_mgr* manage respectively the administration, installation and download sessions. Their role is mainly to ensure the session timming correctness.
-   - *net_mgr* is a kind of high level driver for the *net* module. In particular, it manage the net+phy ressources in thread-safe maner and ensure the timming correctness if the "send" and "listen" windows.
+   - *adm_mgr*, *inst_mgr* and *dwn_mgr* manage respectively the administration, installation and download sessions. Their role is mainly to ensure the session timing correctness.
+   - *net_mgr* is a kind of high level driver for the *net* module. In particular, it manage the net+phy resources in thread-safe manner and ensure the timing correctness if the "send" and "listen" windows.
 
    *mgr* depends on *net*, *TimeEvt*, *Logger* and *FreeRTOS*.
 
@@ -120,28 +121,28 @@ There are mainly two subdirectories "Samples" and "WizeCore". "WizeCore" is the 
 
 
 Demo directory
------------------
+--------------
 ::
 
     Nucleo-L476
-    ├── app
+    ├── app : application code
     │   ├── CMakeLists.txt
     │   ├── cfg     : contains the defaults parameters configuration xml files 
     │   ├── gen     : contains the defaults parameters tables as .c and .h files
     │   ├── include : application include directory
     │   ├── src     : application source directory
     │   └── sys     : contains some code to initialization modules (RTOS, Logger, Stack...) other than the application itself
-    ├── board
+    ├── board : Contains the to initialize the board low level (peripherals, clocks) 
     │   ├── CMakeLists.txt
-    │   ├── include : application include directory
-    │   ├── ld      : application include directory 
-    │   ├── src     : application include directory
-    │   └── startup : application include directory
+    │   ├── include : 
+    │   ├── ld      :  
+    │   ├── src     : 
+    │   └── startup : 
     ├── bsp : Restricted and simple Board Support Package
     │   ├── CMakeLists.txt
     │   ├── include
     │   └── src
-    ├── device
+    ├── device 
     │   └── PhyFake : Wrapper around UART to "simulate" a Phy device (aka. RF device)
     │       ├── CMakeLists.txt
     │       ├── include
@@ -151,17 +152,81 @@ Demo directory
     └── Nucleo-L476.cmake    : main cmake file to build and link everthing together
 
 
-
-build options
-compilation options
-
-
-porting on new board
-
-
-
-Extra
-=====
+.. 
+   Build system
+   ============
+   
+   The build system is based on CMake tool which generate makefiles. Each directory to build shall include a *CMakeList.txt* file that gives rules "how to" and "what to " build.
+   Furthermore, some other *cmake* files provide helping support for common or generic rules. These last files are located in the *tools/build_suuport* directory.     
+   
+   
+   - toolchain-config.cmake
+      This file gives rules to select the toolchain to use. It rely on *native_toolchain-config.cmake* and *cross_toolchain-config.cmake*. 
+   
+   - config_support-config.cmake and install_support-config.cmake files provides 
+   
+   
+   - project_support-config.cmake
+   
+   
+   
+   Build Options
+   -------------
+   
+   - DOC_COMPILE : Enable the Documentation compilation. Default is OFF.
+   - BUILD_OPENWIZE : . Default is ON.
+   - USE_FREERTOS : . Default is OFF.
+   - BUILD_DEMO : . Default is OFF.
+   - BUILD_TEST : . Default is OFF.
+   - BUILD_UNITTEST : . Default is OFF.
+   - BUILD_INTEGRATION_TEST : . Default is OFF.
+   - BUILD_SYSTEM_TEST : . Default is OFF.
+   - ENABLE_NATIVE_UNITTEST : Enable unit-test native execution. Default is OFF.
+   - ENABLE_EMEBED_UNITTEST  : . Default is OFF.
+   
+   
+   
+   - USE_FREERTOS_SAMPLE : Enable the use of FreeRTOS sample provided by OpenWize. Default is ON)
+   - USE_CRYPTO_SAMPLE : Enable the use of Crypto sample provided by OpenWize. Default is ON)
+   - USE_CRC_SAMPLE : Enable the use of CRC_sw sample provided by OpenWize. Default is ON)
+   - USE_REEDSOLOMON_SAMPLE : Enable the use of ReedSolomon sample provided by OpenWize. Default is ON)
+   - USE_PARAMETERS_SAMPLE : Enable the use of Parameters sample provided by OpenWize. Default is ON)
+   - USE_IMGSTORAGE_SAMPLE : Enable the use of ImgStorage sample provided by OpenWize. Default is ON)
+   - USE_TIMEEVT_SAMPLE : Enable the use of TimeEvt sample provided by OpenWize. Default is ON)
+   
+   - IS_LOGGER_ENABLE : Enable the Logger in OpenWize. Default is ON)
+   - USE_LOGGER_SAMPLE : Enable the use of Logger sample provided by OpenWize. Default is ON)
+   
+   
+   
+   Compilation options
+   -------------------
+   
+   
+   
+   
+   
+   
+   Porting guide
+   =============
+   
+   PHY device
+   ----------
+   
+   
+   
+   
+   Board
+   -----
+   
+   
+   Compiler
+   --------
+    
+   
+   
+   Extra
+   =====
 
 
 Modifing the default parameters
@@ -194,8 +259,8 @@ Then, call "gen_table.sh" :
    gen_table.sh --in ./cfg/MergedParam.xml --out .
 
 
-It will generate 3 files in "gen" directory: 
-::
+It will generate 3 files in "gen" directory:
+::::::::::::::::::::::::::::::::::::::::::::
 
    gen
    ├──parameters_cfg.h     : access and restriction table declaration

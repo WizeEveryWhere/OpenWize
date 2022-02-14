@@ -28,13 +28,13 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
+#ifdef __cplusplus
+}
+#endif
 
 #include <stdint.h>
 #include <stddef.h>
@@ -164,6 +164,8 @@ static uint8_t _SHA256_(uint8_t p_Sha256[SHA256_SIZE], uint8_t *p_Data, uint32_t
 	return u8_ret;
 }
 
-/*! @} */
-/*! @} */
+#ifdef __cplusplus
+}
+#endif
+
 /*! @} */

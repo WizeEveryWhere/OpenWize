@@ -28,14 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
-
 #ifndef Crypto_UTILS_SECURE_H_
 #define Crypto_UTILS_SECURE_H_
 #ifdef __cplusplus
@@ -58,6 +54,4 @@ extern void *secure_memset (void *__s, int __c, size_t __n);
 #endif
 #endif /* Crypto_UTILS_SECURE_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

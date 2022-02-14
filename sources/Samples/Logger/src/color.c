@@ -27,6 +27,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -50,3 +56,6 @@ const char *color_str[LOG_LV_ID_MAX] =
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */
+

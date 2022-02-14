@@ -27,6 +27,12 @@
   * Replace Setter/Getter function by one Ioctl function
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _NET_API_PRIVATE_H_
 #define _NET_API_PRIVATE_H_
 
@@ -196,3 +202,5 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args);
 }
 #endif
 #endif /* _NET_API_PRIVATE_H_ */
+
+/*! @} */

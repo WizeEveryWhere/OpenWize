@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _INST_INTERNAL_H_
 #define _INST_INTERNAL_H_
 
@@ -78,3 +84,5 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pxNetMsg);
 }
 #endif
 #endif /* _INST_INTERNAL_H_ */
+
+/*! @} */

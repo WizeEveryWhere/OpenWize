@@ -1,6 +1,6 @@
 /**
   * @file: wize_api.h
-  * @brief: // TODO This file ...
+  * @brief: This file define the Wize API functions
   * 
   *****************************************************************************
   * @Copyright 2019, GRDF, Inc.  All rights reserved.
@@ -28,15 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup API
+ * @ingroup WizeCore
  * @{
  *
  */
-
 #ifndef _WIZE_API_H_
 #define _WIZE_API_H_
 
@@ -93,11 +88,9 @@ void WizeApi_CtxRestore(void);
 
 /******************************************************************************/
 
-/*! @} */
-/*! @} */
-/*! @} */
-
 #ifdef __cplusplus
 }
 #endif
 #endif /* _WIZE_API_H_ */
+
+/*! @} */

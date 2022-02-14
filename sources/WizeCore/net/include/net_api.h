@@ -28,15 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Device
- * @{
- * @ingroup Wize
+ * @ingroup WizeCore
  * @{
  *
  */
-
 #ifndef _NET_API_H_
 #define _NET_API_H_
 #ifdef __cplusplus
@@ -73,6 +68,4 @@ typedef union
 #endif
 #endif /* _NET_API_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

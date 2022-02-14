@@ -26,6 +26,13 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
+
 #ifndef _APP_LAYER_H_
 #define _APP_LAYER_H_
 #ifdef __cplusplus
@@ -213,3 +220,5 @@ typedef struct {
 }
 #endif
 #endif /* _APP_LAYER_H_ */
+
+/*! @} */

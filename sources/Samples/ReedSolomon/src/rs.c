@@ -29,14 +29,10 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup RS
- * @{
+ *
  */
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -626,6 +622,4 @@ void RS_Encode(uint8_t p_Data[RS_MESSAGE_SZ], uint8_t p_Out[RS_PARITY_SZ])
 }
 #endif
 
-/*! @} */
-/*! @} */
 /*! @} */

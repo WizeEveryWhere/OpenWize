@@ -29,15 +29,10 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Parameters
- * @{
+ *
  */
-
-
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
@@ -499,6 +494,4 @@ uint8_t Param_RemoteAccess(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir){
     return u8_ret;
 }
 
-/*! @} */
-/*! @} */
 /*! @} */

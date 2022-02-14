@@ -62,11 +62,7 @@ static uint32_t _time_mgr_check_upd_time_(struct time_upd_s *pCtx, uint32_t cur_
 static void _time_mgr_evtCb_(void);
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup TimeMgr
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -292,8 +288,6 @@ static void _time_mgr_evtCb_(void)
 	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
 
-/*! @} */
-/*! @} */
 /*! @} */
 
 #ifdef __cplusplus

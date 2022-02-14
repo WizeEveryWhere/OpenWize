@@ -3,6 +3,12 @@ if(NOT DEFINED GIT_EXECUTABLE)
     find_package(Git QUIET REQUIRED)
 endif()
 
+option(GET_GIT_AUTHOR_NAME "Get and add the GIT_AUTHOR_NAME" OFF)
+option(GET_GIT_AUTHOR_EMAIL "Get and add the GIT_AUTHOR_EMAIL" OFF)
+
+option(GET_GIT_COMMIT_SUBJECT "Get and add the GIT_COMMIT_SUBJECT" OFF)
+option(GET_GIT_COMMIT_BODY "Get and add the GIT_COMMIT_BODY" OFF)
+
 set(_state_variable_names
     GIT_RETRIEVED_STATE
     GIT_HEAD_SHA1
@@ -15,11 +21,11 @@ set(_state_variable_names
     GIT_FW_VER_MIN
     GIT_FW_VER_REV
     # ************
-    #GIT_AUTHOR_NAME
-    #GIT_AUTHOR_EMAIL
+    GIT_AUTHOR_NAME
+    GIT_AUTHOR_EMAIL
     GIT_COMMIT_DATE_ISO8601
-    #GIT_COMMIT_SUBJECT
-    #GIT_COMMIT_BODY
+    GIT_COMMIT_SUBJECT
+    GIT_COMMIT_BODY
 )
 
 macro(RunGitCommand)
@@ -96,7 +102,7 @@ function(gitinfo _working_dir)
         endif()
         
         if(${var_name} STREQUAL "GIT_TAG")
-            RunGitCommand(describe --tag ${object})
+            RunGitCommand(describe --exact-match --tag ${object})
             set(TAG_FOUND FALSE)
             set(BAD_FORMATTING FALSE)
             
@@ -170,16 +176,21 @@ function(gitinfo _working_dir)
             set(ENV{GIT_FW_VER_TYPE} \"${GIT_FW_VER_TYPE_V}\")
             
         endif()
+        
         if(${var_name} STREQUAL "GIT_AUTHOR_NAME")
-            RunGitCommand(show -s "--format=%an" ${object})
-            if(exit_code EQUAL 0)
-                set(ENV{GIT_AUTHOR_NAME} ${output})
+            if(GET_GIT_AUTHOR_NAME)
+                RunGitCommand(show -s "--format=%an" ${object})
+                if(exit_code EQUAL 0)
+                    set(ENV{GIT_AUTHOR_NAME} ${output})
+                endif()
             endif()
         endif()
         if(${var_name} STREQUAL "GIT_AUTHOR_EMAIL")
-            RunGitCommand(show -s "--format=%ae" ${object})
-            if(exit_code EQUAL 0)
-                set(ENV{GIT_AUTHOR_EMAIL} ${output})
+            if(GET_GIT_AUTHOR_EMAIL)
+                RunGitCommand(show -s "--format=%ae" ${object})
+                if(exit_code EQUAL 0)
+                    set(ENV{GIT_AUTHOR_EMAIL} ${output})
+                endif()
             endif()
         endif()
         if(${var_name} STREQUAL "GIT_COMMIT_DATE_ISO8601")

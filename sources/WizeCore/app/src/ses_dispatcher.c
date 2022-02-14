@@ -27,6 +27,13 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -62,7 +69,9 @@ static void _ses_disp_bckflg_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag);
 static uint32_t _ses_disp_postCmd_(struct ses_disp_ctx_s *pCtx);
 static void _adm_mgr_get_param_(struct adm_mgr_ctx_s *pCtx);
 static void _inst_mgr_get_param_(struct inst_mgr_ctx_s *pCtx);
+
 /******************************************************************************/
+
 /*!
  * @static
  * @brief This function get parameters from global table and setup internal variables.
@@ -718,3 +727,5 @@ static void _inst_mgr_get_param_(struct inst_mgr_ctx_s *pCtx)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

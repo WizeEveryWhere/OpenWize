@@ -28,11 +28,7 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Libraries
- * @{
- * @ingroup TimeEvt
+ * @ingroup Samples
  * @{
  *
  */
@@ -513,6 +509,4 @@ void _remove(struct time_evt_ctx_s *pCtx, struct time_evt_s *pDel)
 }
 #endif
 
-/*! @} */
-/*! @} */
 /*! @} */

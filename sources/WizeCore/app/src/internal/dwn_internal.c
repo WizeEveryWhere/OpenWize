@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -35,8 +41,8 @@ extern "C" {
 #include <assert.h>
 #include <string.h>
 
-
-
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

@@ -28,13 +28,15 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 #ifndef Crypto_KEY_PRIV_H_
 #define Crypto_KEY_PRIV_H_
@@ -64,6 +66,4 @@ extern KEY_STORE key_s _a_Key_[];
 #endif
 #endif /* Crypto_KEY_PRIV_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

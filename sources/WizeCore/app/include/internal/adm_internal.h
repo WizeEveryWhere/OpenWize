@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _ADM_INTERNAL_H_
 #define _ADM_INTERNAL_H_
 #ifdef __cplusplus
@@ -41,3 +47,5 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 }
 #endif
 #endif /* _ADM_INTERNAL_H_ */
+
+/*! @} */

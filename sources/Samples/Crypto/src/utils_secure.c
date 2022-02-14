@@ -28,14 +28,13 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include <stddef.h>
 
 /*!
@@ -80,6 +79,8 @@ void *secure_memset (void *__s, int __c, size_t __n){
 	  return __s;
 }
 
-/*! @} */
-/*! @} */
+#ifdef __cplusplus
+}
+#endif
+
 /*! @} */

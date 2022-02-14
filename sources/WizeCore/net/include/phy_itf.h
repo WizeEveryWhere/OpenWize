@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _PHY_ITF_H_
 #define _PHY_ITF_H_
 #ifdef __cplusplus
@@ -215,3 +221,5 @@ struct phydev_s {
 }
 #endif
 #endif /* _PHY_ITF_H_ */
+
+/*! @} */

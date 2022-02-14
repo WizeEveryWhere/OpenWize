@@ -28,13 +28,14 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crc_sw
- * @{
+ *
  */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "crc_sw.h"
 
@@ -136,6 +137,8 @@ inline uint8_t CRC_Check(uint16_t u16_CrcA, uint16_t u16_CrcB)
 	return (u16_CrcA == u16_CrcB)?(1):(0);
 }
 
-/*! @} */
-/*! @} */
+#ifdef __cplusplus
+}
+#endif
+
 /*! @} */

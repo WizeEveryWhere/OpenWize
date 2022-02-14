@@ -27,7 +27,11 @@
   *
   */
 
-
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifndef _PARAMETERS_LAN_IDS_H_
 #define _PARAMETERS_LAN_IDS_H_
 
@@ -86,3 +90,5 @@ typedef enum {
 }
 #endif
 #endif /* _PARAMETERS_LAN_IDS_H_ */
+
+/*! @} */

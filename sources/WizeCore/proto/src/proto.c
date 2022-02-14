@@ -28,11 +28,7 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup Protocol
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -1039,6 +1035,4 @@ static uint8_t _decrypt_(
 }
 #endif
 
-/*! @} */
-/*! @} */
 /*! @} */

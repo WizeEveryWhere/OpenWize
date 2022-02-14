@@ -26,8 +26,15 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _PHY_LAYER_H_
 #define _PHY_LAYER_H_
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -75,3 +82,5 @@ typedef enum {
 }
 #endif
 #endif /* _PHY_LAYER_H_ */
+
+/*! @} */

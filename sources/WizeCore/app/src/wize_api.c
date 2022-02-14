@@ -26,19 +26,16 @@
   *
   *
   */
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup API
+ * @ingroup WizeCore
  * @{
  *
  */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <assert.h>
 #include <string.h>
@@ -419,10 +416,8 @@ void WizeApi_Enable(uint8_t bFlag)
 	//SesDisp_Init(&sSesDispCtx, bFlag);
 }
 
-/*! @} */
-/*! @} */
-/*! @} */
-
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

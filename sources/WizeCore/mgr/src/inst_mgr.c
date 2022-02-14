@@ -41,11 +41,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
 /******************************************************************************/
 #define SES_NAME "INST"
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup InstMgr
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -241,8 +237,6 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 	return u32BackEvt;
 }
 
-/*! @} */
-/*! @} */
 /*! @} */
 
 #ifdef __cplusplus

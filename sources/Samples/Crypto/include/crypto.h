@@ -28,12 +28,9 @@
   */
 
 /*!
- * @ingroup Sources
+ * @ingroup Samples
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
 
 #ifndef Crypto_CRYPTO_H_
@@ -163,6 +160,4 @@ uint8_t Crypto_WriteKey(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId);
 #endif
 #endif /* Crypto_CRYPTO_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

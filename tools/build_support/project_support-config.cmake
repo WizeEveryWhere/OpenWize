@@ -39,18 +39,6 @@ option(BUILD_SYSTEM_TEST "" OFF)
 option(ENABLE_NATIVE_UNITTEST "Enable unit-test native execution" OFF)
 option(ENABLE_EMEBED_UNITTEST "" OFF)
 
-# if ON 
-# - cross-tool
-# - all flags
-# - build "lib_test.a"
-# - based on given FreeRTOS 
-
-# - keys are external
-# - parameters are external
-
-# - Openwize utest
-# - demo utest 
-
 ################################################################################
 # Init build config
 get_cfg()
@@ -67,9 +55,7 @@ if(BUILD_OPENWIZE)
     set(BUILD_TINYCRYPT TRUE)
 endif()
 
-#add_subdirectory(tools/foo_test)
-
-
+#-------------------------------------------------------------------------------
 # testing/Unity (must be the first one)
 if(BUILD_UNITY)
     message(STATUS "Add Unity Build ")
@@ -96,7 +82,6 @@ endif()
 # sources
 if(BUILD_OPENWIZE)
     message(STATUS "Add OpenWize Build ")
-    #include(${SOURCES_PATH}/OpenWize.cmake)
     add_subdirectory(sources)
     list(APPEND DOC_SOURCE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/sources)
 endif(BUILD_OPENWIZE)

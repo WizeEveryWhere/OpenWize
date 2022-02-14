@@ -28,11 +28,7 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup Protocol
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -383,6 +379,4 @@ struct proto_ctx_s
 #endif
 #endif /* _PROTO_PRIVATE_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

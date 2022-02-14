@@ -1,6 +1,6 @@
 /**
   * @file: proto_public.h
-  * @brief: This file contains the common ptotocol definitions.
+  * @brief: This file contains the common protocol definitions.
   * 
   *****************************************************************************
   * @Copyright 2019, GRDF, Inc.  All rights reserved.
@@ -28,15 +28,10 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup Protocol
+ * @ingroup WizeCore
  * @{
  *
  */
-
 #ifndef _PROTO_H_
 #define _PROTO_H_
 
@@ -195,6 +190,4 @@ typedef struct net_msg_s
 #endif
 #endif /* _PROTO_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

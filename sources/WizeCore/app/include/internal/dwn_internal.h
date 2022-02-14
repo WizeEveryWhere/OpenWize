@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _DWN_INTERNAL__H_
 #define _DWN_INTERNAL__H_
 #ifdef __cplusplus
@@ -57,3 +63,5 @@ struct ann_dwn_ctx_s
 }
 #endif
 #endif /* _DWN_INTERNAL__H_ */
+
+/*! @} */

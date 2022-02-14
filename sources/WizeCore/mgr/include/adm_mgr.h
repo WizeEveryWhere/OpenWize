@@ -28,11 +28,7 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup AdmMgr
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -90,6 +86,4 @@ void AdmMgr_Setup(struct ses_ctx_s *pCtx);
 #endif
 #endif /* _ADM_MGR_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

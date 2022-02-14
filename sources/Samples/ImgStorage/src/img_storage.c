@@ -27,6 +27,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup Samples
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -469,3 +475,5 @@ void _clr_pending(struct img_mgr_ctx_s *pCtx)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

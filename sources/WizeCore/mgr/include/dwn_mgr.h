@@ -28,11 +28,7 @@
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup DwnMgr
+ * @ingroup WizeCore
  * @{
  *
  */
@@ -102,6 +98,4 @@ void DwnMgr_Setup(struct ses_ctx_s *pCtx);
 #endif
 #endif /* _DWN_MGR_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

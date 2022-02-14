@@ -26,6 +26,12 @@
   *
   *
   */
+
+/*!
+ * @ingroup WizeCore
+ * @{
+ *
+ */
 #ifndef _SES_COMMON_H_
 #define _SES_COMMON_H_
 #ifdef __cplusplus
@@ -259,3 +265,5 @@ static const char * const _ses_log_str_[] =
 }
 #endif
 #endif /* _SES_DISPATCHER_H_ */
+
+/*! @} */
