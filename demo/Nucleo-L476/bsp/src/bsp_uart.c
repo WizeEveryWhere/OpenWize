@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_uart.c
+  * @file bsp_uart.c
   * @brief: This file expose public functions of uart devices.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,24 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/20[BPI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/20 [BPI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Board
- * @{
- * @ingroup BSP
+ * @addtogroup nucleo_L476_bsp
  * @{
  */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -488,3 +485,5 @@ uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

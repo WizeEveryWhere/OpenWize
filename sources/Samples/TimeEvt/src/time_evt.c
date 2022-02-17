@@ -1,9 +1,10 @@
 /**
-  * @file: time_evt.c
-  * @brief: This file implement a basic time event management.
+  * @file time_evt.c
+  * @brief This file implement a basic time event management.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/09[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/09[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup time_evt
  * @{
  *
  */
@@ -53,18 +53,30 @@ struct time_evt_ctx_s
 	void *pLock;                 //!< Lock the access to the context (RTOS)
 	uint64_t u64LastUpdate;      //!< Last time update
 };
-SYS_MUTEX_CREATE_DEF(timeevt);
 
 /*!
  * @brief This define the TimeEvt context instance
  */
 struct time_evt_ctx_s sTimeEvtCtx;
 
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+SYS_MUTEX_CREATE_DEF(timeevt);
+
 void _reset(struct time_evt_ctx_s *pCtx);
 void* _current(struct time_evt_ctx_s *pCtx);
 void _update(struct time_evt_ctx_s *pCtx, uint64_t u64Now);
 void _insert(struct time_evt_ctx_s *pCtx, struct time_evt_s *pNew);
 void _remove(struct time_evt_ctx_s *pCtx, struct time_evt_s *pDel);
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 

@@ -1,9 +1,10 @@
 /**
   * @file: inst_internal.h
-  * @brief: This file define the functions and structures to treat the install L7
+  * @brief This file define the functions and structures to treat the install L7
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/11[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/11[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_inst_layer
  * @{
  *
  */
@@ -44,8 +44,21 @@ extern "C" {
 
 #include <stdint.h>
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define NB_PING_REPLPY 8
 
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @brief This struct defines the ping_reply configuration.
+ */
 struct ping_reply_config_s{
 	union {
 		uint8_t AutoAdj_ClkFreq;     /*!< Clock and Frequency Offset Auto-Adjustment */
@@ -58,22 +71,28 @@ struct ping_reply_config_s{
 	uint8_t AutoAdj_Rssi;   /*!< Clock and Frequency Offset Auto-Adjustment received frame RSSI min.*/
 };
 
+/*!
+ * @brief This struct defines the ping_reply element list.
+ */
 typedef struct ping_reply_list_s{
-	struct ping_reply_list_s *pNext;
-	inst_pong_t xPingReply;
-	uint32_t u32RecvEpoch;
-	uint32_t u32PongEpoch;
-	int16_t i16PongFreqOff;
+	struct ping_reply_list_s *pNext; /*!< Pointer on the next element */
+	inst_pong_t xPingReply;          /*!< Content values of the received pong */
+	uint32_t u32RecvEpoch;           /*!< Pong Reception Epoch */
+	uint32_t u32PongEpoch;           /*!< Pong Send Epoch */
+	int16_t i16PongFreqOff;          /*!< Pong Frequency offset */
 } ping_reply_list_t;
 
+/*!
+ * @brief This struct defines the ping_reply context.
+ */
 struct ping_reply_ctx_s
 {
-	ping_reply_list_t aPingReplyList[NB_PING_REPLPY];
-	ping_reply_list_t *pWorst;
-	ping_reply_list_t *pBest;
-	uint32_t u32PingEpoch;
-	uint8_t u8NbPong;
-	struct ping_reply_config_s sPingReplyConfig;
+	ping_reply_list_t aPingReplyList[NB_PING_REPLPY]; /*!< Table of received Pong */
+	ping_reply_list_t *pWorst;                        /*!< Pointer on the worst RSSI */
+	ping_reply_list_t *pBest;                         /*!< Pointer on the best RSSI */
+	uint32_t u32PingEpoch;                            /*!< Ping Send Epoch */
+	uint8_t u8NbPong;                                 /*!< Number of received Pong */
+	struct ping_reply_config_s sPingReplyConfig;      /*!< ping_reply configuration */
 };
 
 void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg);

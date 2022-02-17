@@ -2,8 +2,9 @@
   * @file time_mgr.h
   * @brief This file implement the time correction related functions
   * 
-  *****************************************************************************
-  * @Copyright 2021, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/06/28[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/06/28[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_time_mgr
  * @{
  *
  */

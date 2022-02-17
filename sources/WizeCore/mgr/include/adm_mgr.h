@@ -1,8 +1,9 @@
 /*!
   * @file: adm_mgr.h
-  * @brief:This file declare functions to use the Administration session  Manager
+  * @brief This file declare functions to use the Administration session  Manager
   * 
-  *****************************************************************************
+  * @details
+  *
   * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/15 12:14:27 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/15 12:14:27 [GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_admin_mgr
  * @{
  *
  */
@@ -46,6 +46,12 @@ extern "C" {
 #include "ses_common.h"
 
 /******************************************************************************/
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #undef RECV_BUFFER_SZ
 #define RECV_BUFFER_SZ 229 // L7: 229; L6: 13 ; L2: 12
 
@@ -59,24 +65,30 @@ typedef enum
 	ADM_RSP_READY = 0b10,
 } adm_rsp_pend_e;
 
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @brief This struct defines the admin manager internal context.
+ */
 struct adm_mgr_ctx_s
 {
-	net_msg_t sDataMsg;
-	net_msg_t sCmdMsg;
-	net_msg_t sRspMsg;
+	net_msg_t sDataMsg;                /**< Data message content */
+	net_msg_t sCmdMsg;                 /**< Command message content */
+	net_msg_t sRspMsg;                 /**< Response message content */
 
-	uint8_t aDataBuff[SEND_BUFFER_SZ];
-    uint8_t aRecvBuff[RECV_BUFFER_SZ];
-    uint8_t aSendBuff[SEND_BUFFER_SZ];
+	uint8_t aDataBuff[SEND_BUFFER_SZ]; /**< Buffer that hold the data frame to send*/
+    uint8_t aRecvBuff[RECV_BUFFER_SZ]; /**< Buffer that hold the received command frame */
+    uint8_t aSendBuff[SEND_BUFFER_SZ]; /**< Buffer that hold the response frame to send*/
 
-	uint8_t u8ExchRxDelay;      // [1s; 255s]
-	uint8_t u8ExchRespDelay;    // [0s; 255s]
-	uint8_t u8ExchRxLength;     // 0 : disable, otherwise [5ms; 1.27s]
+	uint8_t u8ExchRxLength;            /**< Admin reception window length (0 : disable, otherwise [5ms; 1.27s]) */
+	uint8_t u8ExchRxDelay;     		   /**< Opening reception window delay ([1s; 255s]) */
+	uint8_t u8ExchRespDelay;    	   /**< Admin response delay ([0s; 255s]) */
 
-	uint8_t u8ParamUpdate;
-	uint8_t u8Pending;
-	uint8_t u8ByPassCmd;
-
+	uint8_t u8Pending;                 /**< Received command is pending */
+	uint8_t u8ByPassCmd;               /**< Bypass the Received command */
 };
 
 void AdmMgr_Setup(struct ses_ctx_s *pCtx);

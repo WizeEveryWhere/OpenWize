@@ -1,9 +1,10 @@
 /**
   * @file: net_mgr.c
-  * @brief: This file implement functions to manage network device in a multi-thread environment..
+  * @brief This file implement functions to manage network device in a multi-thread environment..
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,13 +18,12 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/28[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/28[GBI]
   * Initial version
-  * 2.0.0 : 2021/10/19[GBI]
+  * @par 2.0.0 : 2021/10/19[GBI]
   * Integrate a more complete management for sending and listening.
   *
   */
@@ -41,10 +41,39 @@ extern "C" {
 #include "logger.h"
 /******************************************************************************/
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+// Define the net_mgr stack size
+#define NET_MGR_TASK_STACK_SIZE 300
+// Define the net_mgr task prority
+#define NET_MGR_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
+
+// Define the timeout on trying to acquire net_dev
 #define NET_DEV_ACQUIRE_TIMEOUT() 5
+// Define the timeout on trying to acquire net_mgr
 #define NET_MGR_ACQUIRE_TIMEOUT() 10
+// Define the timeout to "be notified" by an event
 #define NET_MGR_EVT_TIMEOUT() 0xFFFFFFFF
 
+// Define the mask when the tmo has already been expanded
+#define _NET_MGR_EXPAND_TMO_MSK_ 0x10
+// Define the mask when the "ready to listen again" is notified
+#define _NET_MGR_REARM_LISTEN_ 0x20
+
+// Define the number of retries in case of "Phy get received" failure
+#define _NET_MGR_RECV_RETRIES_ 3
+// Define the number of retries in case of "Phy transmit" failure
+#define _NET_MGR_TRANS_RETRIES_ 3
+
+/******************************************************************************/
+// Static context variables
+static struct wize_ctx_s sWizeCtx;
+static netdev_t sNetDev;
+
+// Static functions
 static void _net_mgr_main_(void const * argument);
 static void _net_mgr_evtCb_(uint32_t evt);
 static inline void _net_mgr_notify_caller_(uint32_t evt);
@@ -54,26 +83,19 @@ static int32_t _net_mgr_listen_with_retry_(netdev_t *pNetDev, uint8_t u8Retry);
 static int32_t _net_mgr_error_(netdev_t *pNetDev);
 static int32_t _net_mgr_try_abort_(netdev_t *pNetDev);
 
-static struct wize_ctx_s sWizeCtx;
-static netdev_t sNetDev;
-
-// Wize Net Task, Mutex,
-#define NET_MGR_TASK_STACK_SIZE 300
-#define NET_MGR_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
+// net_mgr Task, Mutex, BinSem
 SYS_TASK_CREATE_DEF(netmgr, NET_MGR_TASK_STACK_SIZE, NET_MGR_TASK_PRIORITY);
 SYS_MUTEX_CREATE_DEF(netmgr);
-SYS_EVENT_CREATE_DEF(netmgr);
-
-//SYS_MUTEX_CREATE_DEF(netdev);
 SYS_BINSEM_CREATE_DEF(netdev);
-
-#define _NET_EXPAND_TMO_MSK_ 0x10
-#define _NET_REARM_LISTEN_ 0x20 /**< Ready for listen again */
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_net_mgr
  * @{
  *
  */
@@ -81,22 +103,24 @@ SYS_BINSEM_CREATE_DEF(netdev);
 /*!
  * @brief This function setup the NetMgr module
  *
+ * @param [in] pPhyDev  Pointer on the Phy device structure
+ * @param [in] pWizeNet Pointer on the Wize network context
+ *
  * @return None
  */
 void NetMgr_Setup(phydev_t *pPhyDev, wize_net_t *pWizeNet)
 {
 	int32_t i32Ret = -1;
 
-	//sNetDev.hLock = SYS_MUTEX_CREATE_CALL(netdev);
+	// Create a binary semaphore to lock the netdev_s resource
 	sNetDev.hLock = SYS_BINSEM_CREATE_CALL(netdev);
 	assert(sNetDev.hLock);
 
+	// Create a mutex to lock the net_mgr
 	sWizeCtx.hMutex = SYS_MUTEX_CREATE_CALL(netmgr);
 	assert(sWizeCtx.hMutex);
 
-
-	sWizeCtx.hEvents = SYS_EVENT_CREATE_CALL(netmgr);
-	assert(sWizeCtx.hEvents);
+	// Create the net_mgr task
 	sWizeCtx.hTask = SYS_TASK_CREATE_CALL(netmgr, _net_mgr_main_, NULL);
 	assert(sWizeCtx.hTask);
 
@@ -107,17 +131,16 @@ void NetMgr_Setup(phydev_t *pPhyDev, wize_net_t *pWizeNet)
 	assert(!i32Ret);
 	sWizeCtx.hCaller = NULL;
 
-	sWizeCtx.u8RecvRetries = 3;
-	sWizeCtx.u8TransRetries = 3;
+	sWizeCtx.u8RecvRetries = _NET_MGR_RECV_RETRIES_;
+	sWizeCtx.u8TransRetries = _NET_MGR_TRANS_RETRIES_;
 }
 
 /*!
  * @brief This function initialize the NetMgr module
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_Init(void)
 {
@@ -136,10 +159,9 @@ int32_t NetMgr_Init(void)
 /*!
  * @brief This function de-initialize the NetMgr module
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_Uninit(void)
 {
@@ -159,10 +181,9 @@ int32_t NetMgr_Uninit(void)
  * @param [in] hTaskToNotify Task handle which will get events back from NetMgr.
  *                           If NULL, then the caller task will be notified.
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_Open(void *hTaskToNotify)
 {
@@ -192,9 +213,8 @@ int32_t NetMgr_Open(void *hTaskToNotify)
 /*!
  * @brief This function release the device
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_Close(void)
 {
@@ -215,10 +235,9 @@ int32_t NetMgr_Close(void)
  * @param [in] eChannel Channel to set
  * @param [in] eMod     Modulation to set
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_SetUplink(phy_chan_e eChannel, phy_mod_e eMod)
 {
@@ -246,10 +265,9 @@ int32_t NetMgr_SetUplink(phy_chan_e eChannel, phy_mod_e eMod)
  * @param [in] eChannel Channel to set
  * @param [in] eMod     Modulation to set
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_SetDwlink(phy_chan_e eChannel, phy_mod_e eMod)
 {
@@ -277,10 +295,9 @@ int32_t NetMgr_SetDwlink(phy_chan_e eChannel, phy_mod_e eMod)
  * @param [in] eCtl CTL to set
  * @param [in] args extra argument
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_Ioctl(uint32_t eCtl, uint32_t args)
 {
@@ -304,10 +321,9 @@ int32_t NetMgr_Ioctl(uint32_t eCtl, uint32_t args)
  * @param[in] pxNetMsg   Pointer to the message to send
  * @param[in] u32TimeOut Timeout in millisecond
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_Send(net_msg_t *pxNetMsg, uint32_t u32TimeOut)
 {
@@ -361,12 +377,11 @@ int32_t NetMgr_Send(net_msg_t *pxNetMsg, uint32_t u32TimeOut)
  *                        field select the filtered message).
  * @param[in] u32TimeOut  Timeout in millisecond
  * @param[in] eListenType Listen type define the relationship between the
- *                        timeout and the receipting message.
+ *                        timeout and the received message.
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_Listen(net_msg_t *pxNetMsg, uint32_t u32TimeOut, net_listen_type_e eListenType)
 {
@@ -414,11 +429,10 @@ int32_t NetMgr_Listen(net_msg_t *pxNetMsg, uint32_t u32TimeOut, net_listen_type_
 }
 
 /*!
- * @brief This function notify that previous listen fnet_msg_t buffer is no more pending.
+ * @brief This function notify that previous listened net_msg_t buffer is no more pending.
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 int32_t NetMgr_ListenReady(void)
 {
@@ -427,7 +441,7 @@ int32_t NetMgr_ListenReady(void)
 	// check if caller own the NetMgr mutex
 	if (sWizeCtx.hCaller == xTaskGetCurrentTaskHandle( ) )
 	{
-		xTaskNotify(sWizeCtx.hTask, _NET_REARM_LISTEN_, eSetBits);
+		xTaskNotify(sWizeCtx.hTask, _NET_MGR_REARM_LISTEN_, eSetBits);
 	}
 	else
 	{
@@ -572,13 +586,12 @@ static inline void _net_mgr_notify_caller_(uint32_t evt)
  * @param[in] pNetDev Pointer to NetDev device
  * @param[in] u32Evt  Event to treat
  *
- * @retval
- * @li @link net_event_e::NET_EVENT_SUCCESS @endlink
- * @li @link net_event_e::NET_EVENT_ERROR @endlink
- * @li @link net_event_e::NET_EVENT_SEND_DONE @endlink
- * @li @link net_event_e::NET_EVENT_RECV_DONE @endlink
- * @li @link net_event_e::NET_EVENT_FRM_PASSED @endlink
- * @li @link net_event_e::NET_EVENT_TIMEOUT @endlink
+ * @retval NET_EVENT_SUCCESS (see @link net_event_e::NET_EVENT_SUCCESS @endlink)
+ * @retval NET_EVENT_ERROR (see @link net_event_e::NET_EVENT_ERROR @endlink)
+ * @retval NET_EVENT_SEND_DONE (see @link net_event_e::NET_EVENT_SEND_DONE @endlink)
+ * @retval NET_EVENT_RECV_DONE (see @link net_event_e::NET_EVENT_RECV_DONE @endlink)
+ * @retval NET_EVENT_FRM_PASSED (see @link net_event_e::NET_EVENT_FRM_PASSED @endlink)
+ * @retval NET_EVENT_TIMEOUT (see @link net_event_e::NET_EVENT_TIMEOUT @endlink)
  */
 static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 {
@@ -589,7 +602,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 	u32BackEvt = NET_EVENT_SUCCESS;
 	pxNetMsg = (net_msg_t*)(sWizeCtx.pBuffDesc);
 
-	if(u32Evt & _NET_REARM_LISTEN_)
+	if(u32Evt & _NET_MGR_REARM_LISTEN_)
 	{
 		sWizeCtx.bListenPend = 0;
 	}
@@ -725,7 +738,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 		if (sWizeCtx.eListenType == NET_LISTEN_TYPE_DETECT)
 		{
 			// check if we have already expand the timeout or detected starting frame
-			if ( !(sWizeCtx.u8Detected) || (sWizeCtx.u8Detected & _NET_EXPAND_TMO_MSK_) )
+			if ( !(sWizeCtx.u8Detected) || (sWizeCtx.u8Detected & _NET_MGR_EXPAND_TMO_MSK_) )
 			{
 				sWizeCtx.u8Detected = 0;
 				u32BackEvt |= NET_EVENT_TIMEOUT;
@@ -733,7 +746,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 			else
 			{
 				// set expand timeout
-				sWizeCtx.u8Detected = _NET_EXPAND_TMO_MSK_;
+				sWizeCtx.u8Detected = _NET_MGR_EXPAND_TMO_MSK_;
 				if ( TimeEvt_TimerStart(
 						&sWizeCtx.sTimeOut,
 						0, sWizeCtx.i16ExpandTmo,
@@ -769,10 +782,9 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
  * @param[in] pxNetMsg Pointer to the message to send
  * @param[in] u8Retry  Number of retry
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 static int32_t _net_mgr_send_with_retry_(netdev_t *pNetDev, net_msg_t *pxNetMsg, uint8_t u8Retry)
 {
@@ -810,10 +822,9 @@ static int32_t _net_mgr_send_with_retry_(netdev_t *pNetDev, net_msg_t *pxNetMsg,
  * @param[in] pNetDev  Pointer to device to listen the message
  * @param[in] u8Retry  Number of retry
  *
- * @retval
- * @li @link net_status_e::NET_STATUS_OK @endlink
- * @li @link net_status_e::NET_STATUS_ERROR @endlink
- * @li @link net_status_e::NET_STATUS_BUSY @endlink
+ * @retval NET_STATUS_OK (see @link net_status_e::NET_STATUS_OK @endlink)
+ * @retval NET_STATUS_ERROR (see @link net_status_e::NET_STATUS_ERROR @endlink)
+ * @retval NET_STATUS_BUSY (see @link net_status_e::NET_STATUS_BUSY @endlink)
  */
 static int32_t _net_mgr_listen_with_retry_(netdev_t *pNetDev, uint8_t u8Retry)
 {

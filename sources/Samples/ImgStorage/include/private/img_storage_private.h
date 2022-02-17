@@ -1,9 +1,10 @@
 /**
-  * @file: img_storage_private.h
-  * @brief: This file define data structure of the image storage module.
+  * @file img_storage_private.h
+  * @brief This file define data structure of the image storage module.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/08/25[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/08/25[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup ing_storage
  * @{
  *
  */
@@ -43,9 +43,14 @@ extern "C" {
 #include <stdint.h>
 #include <stddef.h>
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #ifndef FLASH_PAGE_SIZE
 /*!
- * @def FLASH_PAGE
+ * @def FLASH_PAGE_SIZE
  * @brief Define the size of one page of FLASH memory
  */
     #define FLASH_PAGE_SIZE 2048
@@ -76,7 +81,6 @@ extern "C" {
 
 	#define IMG_MAX_SZ 169984 //!< This is fixed to 83 pages (1/3 of hyp.512ko flash memory), 14336 bytes remains,
 #endif
-
 
 #define IMG_NB_PAGES IMG_MAX_SZ/FLASH_PAGE_SIZE // 128
 
@@ -145,6 +149,11 @@ extern "C" {
 
 #define PENDING_LINE_NB 25 //(BANK_SZ/BLOCK_SZ)/4 /8
 #define PENDING_LINE_PEND_BYTES 24
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /*!
  * @brief This structure hold a pending entry

@@ -1,9 +1,10 @@
 /**
-  * @file: phy_layer.c
-  * @brief: This file implement the phy device driver
+  * @file phy_layer.c
+  * @brief This file implement the phy fake device driver
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,24 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/05/15[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/05/15 [GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
+ * @addtogroup nucleo_L476_device
  * @{
- * @ingroup Device
+ * @defgroup nucleo_L476_device_phyfake PhyFake
  * @{
- * @ingroup Wize
- * @{
- *
  */
 
 #ifdef __cplusplus
@@ -46,6 +43,9 @@ extern "C" {
 
 #include "phy_layer_private.h"
 
+/*!
+ * @brief This convenient table hold the human error representation
+ */
 const char * const phyfake_error_msgs[] =
 {
     [FAKEUART_ERR_NONE]      = "PhyFake ERR_NONE",
@@ -118,13 +118,12 @@ static const phy_if_t _phy_if = {
 /*!
  * @brief  This function prepare the Phy device with constant configuration
  *
- * @param [in]  pPhydev Pointer
+ * @param [in]  pPhydev Pointer on the Phy device instance
+ * @param [in]  pCtx    Pointer on the Phy device context
  *
- * @return      Status
- * - PHY_STATUS_OK     Function has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 int32_t Phy_PhyFake_setup(phydev_t *pPhydev, fakeuart_device_t *pCtx)
 {
@@ -149,11 +148,9 @@ static void _frame_it(void *p_CbParam, void *p_Arg);
  *
  * @param [in]  pPhydev Pointer on the Phy device instance
  *
- * @return      Status
- * - PHY_STATUS_OK     Function has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _init(phydev_t *pPhydev)
 {
@@ -191,11 +188,9 @@ static int32_t _init(phydev_t *pPhydev)
  *
  * @param [in]  pPhydev Pointer on the Phy device instance
  *
- * @return      Status
- * - PHY_STATUS_OK     Function has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _uninit(phydev_t *pPhydev)
 {
@@ -214,6 +209,7 @@ static int32_t _uninit(phydev_t *pPhydev)
 /******************************************************************************/
 
 /*!
+ * @static
  * @brief  This is the main FSM.
  *
  * @details This function ensure that transition between state are respected.
@@ -223,10 +219,9 @@ static int32_t _uninit(phydev_t *pPhydev)
  * @param [in] pPhydev    Pointer on the Phy device instance
  * @param [in] eCmd       Requested command to execute
  *
- * @return             Status
- * - PHY_STATUS_OK     Requested command has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _do_cmd(phydev_t *pPhydev, uint8_t eCmd)
 {
@@ -269,6 +264,7 @@ static int32_t _do_cmd(phydev_t *pPhydev, uint8_t eCmd)
 }
 
 /*!
+ * @static
  * @brief  Interruption handler to treat the frame event
  *
  * @param [in] p_CbParam Pointer on call-back parameter
@@ -322,11 +318,9 @@ static void _frame_it(void *p_CbParam, void *p_Arg)
  * @param [in]  eChannel    Channel use to TX
  * @param [in]  eModulation Modulation use to TX
  *
- * @return      Status
- * - PHY_STATUS_OK     Requested command has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _do_TX(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)
 {
@@ -355,11 +349,9 @@ static int32_t _do_TX(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulat
  * @param [in]  eChannel    Channel use to RX
  * @param [in]  eModulation Modulation use to RX
  *
- * @return      Status
- * - PHY_STATUS_OK     Requested command has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _do_RX(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)
 {
@@ -388,11 +380,9 @@ static int32_t _do_RX(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulat
  * @param [in]  eChannel    Channel on which the Noise must be measured
  * @param [in]  eModulation Modulation on which the Noise must be measured
  *
- * @return      Status
- * - PHY_STATUS_OK     Requested command has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _do_CCA(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)
 {
@@ -409,11 +399,9 @@ static int32_t _do_CCA(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModula
  * @param [in]  pBuf    Pointer to get data to send
  * @param [in]  u8Len   Reference on the data length to send
  *
- * @return      Status
- * - PHY_STATUS_OK     Requested command has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _set_send(phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len)
 {
@@ -450,11 +438,9 @@ static int32_t _set_send(phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len)
  * @param [in]  pBuf    Pointer on buffer to get received data
  * @param [in]  u8Len   Reference on received number of bytes
  *
- * @return      Status
- * - PHY_STATUS_OK     Requested command has been successfully executed
- * - PHY_STATUS_BUSY   The device is busy (transmitting or receiving)
- * - PHY_STATUS_ERROR  Enable to communicate with the device (communication or state failure)
- *
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _get_recv(phydev_t *pPhydev, uint8_t *pBuf, uint8_t* u8Len)
 {
@@ -486,14 +472,13 @@ static int32_t _get_recv(phydev_t *pPhydev, uint8_t *pBuf, uint8_t* u8Len)
  * @static
  * @brief  This function Get/Set internal configuration variable
  *
- * @param [in]     pPhydev Pointer on the Phy device instance
- * @param [in]     eCtl    Id of configuration variable to get/set (see phy_ctl_e)
- * @param [in/out] args    scalar or pointer that hold the value to set/get
+ * @param [in]      pPhydev Pointer on the Phy device instance
+ * @param [in]      eCtl    Id of configuration variable to get/set (see phy_ctl_e)
+ * @param [in, out] args    scalar or pointer that hold the value to set/get
  *
- * @retval
- * @li @link phy_status_e::PHY_STATUS_OK @endlink
- * @li @link phy_status_e::PHY_STATUS_ERROR @endlink
- * @li @link phy_status_e::PHY_STATUS_BUSY @endlink
+ * @retval PHY_STATUS_OK (see @link phy_status_e::PHY_STATUS_OK @endlink)
+ * @retval PHY_STATUS_ERROR (see @link phy_status_e::PHY_STATUS_ERROR @endlink)
+ * @retval PHY_STATUS_BUSY (see @link phy_status_e::PHY_STATUS_BUSY @endlink)
  */
 static int32_t _ioctl(phydev_t *pPhydev, uint32_t eCtl, uint32_t args)
 {
@@ -568,6 +553,5 @@ static int32_t _ioctl(phydev_t *pPhydev, uint32_t eCtl, uint32_t args)
 }
 #endif
 
-/*! @} */
 /*! @} */
 /*! @} */

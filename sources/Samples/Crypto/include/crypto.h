@@ -1,9 +1,10 @@
 /**
-  * @file: crypto.h
-  * @brief: This file expose the crypto API for integrity and confidentiality.
+  * @file crypto.h
+  * @brief This file expose the crypto API for integrity and confidentiality.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/12/31[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/12/31[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup crypto
  * @{
  *
  */
@@ -108,6 +108,11 @@ typedef enum{
 #define KEY_LOG_ID 18
 
 /*!
+ * @cond INTERNAL
+ * @{
+ */
+
+/*!
  * @def KEY_TOTAL_BYTE_SIZE
  * @brief Define the total number of byte for a key
  */
@@ -133,10 +138,15 @@ typedef enum{
 #define CTR_SIZE KEY_USED_BYTE_SIZE
 
 /*!
- * @def SHA256_SZ
+ * @def SHA256_SIZE
  * @brief Define the size of sha256
  */
 #define SHA256_SIZE 32
+
+/*!
+ * @}
+ * @endcond
+ */
 
 // Data confidentiality
 uint8_t Crypto_Encrypt(uint8_t *p_Out, uint8_t *p_In, uint8_t u8_Sz,

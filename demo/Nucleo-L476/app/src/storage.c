@@ -1,9 +1,10 @@
 /**
-  * @file: storage.c
+  * @file storage.c
   * @brief: // TODO This file ...
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/02/07[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/02/07 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup nucleo_L476_app
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -52,6 +58,9 @@ PERM_SECTION(".param") uint8_t a_ParamValue[PARAM_DEFAULT_SZ];
 #include "phy_layer.h"
 #include "wize_api.h"
 
+/*!
+ * @brief This define hard-coded default device id
+ */
 const device_id_t sDefaultDevId =
 {
 //==========================================================================
@@ -93,6 +102,9 @@ const device_id_t sDefaultDevId =
 #include "crypto.h"
 #include "key_priv.h"
 
+/*!
+ * @brief This define some hard-coded default keys
+ */
 const key_s sDefaultKey[KEY_MAX_NB] =
 {
 	[0] = {
@@ -118,6 +130,9 @@ const key_s sDefaultKey[KEY_MAX_NB] =
 	}}
 };
 
+/*!
+  * @brief  Table of keys
+  */
 KEY_SECTION(".data.keys") key_s _a_Key_[KEY_MAX_NB];
 
 /******************************************************************************/
@@ -125,6 +140,14 @@ KEY_SECTION(".data.keys") key_s _a_Key_[KEY_MAX_NB];
 /******************************************************************************/
 /******************************************************************************/
 
+/*!
+  * @brief  This initialize the storage area
+  *
+  * @param [in] bForce Force to defaults.
+  *
+  * @retval  None
+  *
+  */
 void Storage_Init(uint8_t bForce)
 {
 	uint8_t tmp;
@@ -141,6 +164,12 @@ void Storage_Init(uint8_t bForce)
 	Param_Access(PING_RX_LENGTH, &tmp, 1);
 }
 
+/*!
+  * @brief  Set to defaults device id, all parameters and all keys
+  *
+  * @retval  None
+  *
+  */
 void Storage_SetDefault(void)
 {
 	WizeApi_SetDeviceId(&sDefaultDevId);
@@ -152,3 +181,5 @@ void Storage_SetDefault(void)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

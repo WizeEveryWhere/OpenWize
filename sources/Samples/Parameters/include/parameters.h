@@ -2,7 +2,8 @@
   * @file parameters.h
   * @brief This file define function to deal with parameters.
   * 
-  *****************************************************************************
+  * @details
+  *
   * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/20 00:10:08 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/20 [GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup parameters
  * @{
  *
  */

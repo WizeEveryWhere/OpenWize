@@ -1,9 +1,10 @@
 /**
   * @file: phy_layer.h
-  * @brief: This file define the available modulation, channel and power
+  * @brief This file define the available modulation, channel and power
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/13[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/13[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_phy_itf
  * @{
  *
  */
@@ -46,12 +46,12 @@ extern "C" {
  * @brief This define the available channel
  */
 typedef enum {
-    PHY_CH100  = 0x0, /*!< 100+0*10 100 0x64 */
-    PHY_CH110  = 0x1, /*!< 100+1*10 110 0x6E */
-    PHY_CH120  = 0x2, /*!< 100+2*10 120 0x78 */
-    PHY_CH130  = 0x3, /*!< 100+3*10 130 0x82 */
-    PHY_CH140  = 0x4, /*!< 100+4*10 140 0x8C */
-    PHY_CH150  = 0x5, /*!< 100+5*10 150 0x96 */
+    PHY_CH100  = 0x0, /*!< (100 + 0) * 10 = 100 (0x64) */
+    PHY_CH110  = 0x1, /*!< (100 + 1) * 10 = 110 (0x6E) */
+    PHY_CH120  = 0x2, /*!< (100 + 2) * 10 = 120 (0x78) */
+    PHY_CH130  = 0x3, /*!< (100 + 3) * 10 = 130 (0x82) */
+    PHY_CH140  = 0x4, /*!< (100 + 4) * 10 = 140 (0x8C) */
+    PHY_CH150  = 0x5, /*!< (100 + 5) * 10 = 150 (0x96) */
     //
 	PHY_NB_CH,
 } phy_chan_e;

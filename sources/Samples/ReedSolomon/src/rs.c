@@ -1,10 +1,11 @@
 /**
-  * @file: rs.c
-  * @brief: This file implement the functions to encode and decode the
+  * @file rs.c
+  * @brief This file implement the functions to encode and decode the
   * Reed-Solomon error correction code.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,18 +19,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/01/01[SCO]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/01/01[SCO]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup reed_solomon
  * @{
  *
  */
@@ -73,7 +73,6 @@ static void _generate_gf_(void);
 static void _gen_poly_(void);
 
 /*!
-  * @fn const uint8_t* RS_GetGG_ptr(uint32_t *u32_ggSz)
   * @brief  This function give the generator polynomial pointer.
   *
   * @param[in,out] *u32_ggSz This pointer will hold the generator polynomial size.
@@ -87,7 +86,6 @@ const uint8_t* RS_GetGG_ptr(uint32_t *u32_ggSz)
 }
 
 /*!
-  * @fn const uint8_t* RS_GetAlphaOf_ptr(uint32_t *u32_alphaOfSz)
   * @brief  This function give the alpha_to pointer.
   *
   * @param[in,out] *u32_alphaOfSz This pointer will hold the alpha_to size.
@@ -101,7 +99,6 @@ const uint8_t* RS_GetAlphaOf_ptr(uint32_t *u32_alphaOfSz)
 }
 
 /*!
-  * @fn const int16_t* RS_GetIndexOf_ptr(uint32_t *u32_indexOfSz)
   * @brief  This function give the index_of pointer.
   *
   * @param[in,out] *u32_indexOfSz This pointer will hold the index_of size.
@@ -115,7 +112,6 @@ const int16_t* RS_GetIndexOf_ptr(uint32_t *u32_indexOfSz)
 }
 
 /*!
-  * @fn uint32_t RS_GetMsgSize(void)
   * @brief  This function give the message size (in byte).
   *
   * @return The message size.
@@ -126,7 +122,6 @@ uint32_t RS_GetMsgSize(void)
 }
 
 /*!
-  * @fn uint32_t RS_GetParitySize(void)
   * @brief  This function give the parity word size (in byte).
   *
   * @return The parity word size.
@@ -141,7 +136,7 @@ uint32_t RS_GetParitySize(void)
   *
   * @brief  This private function generate the Galois-Field
   *
-  * @detail Generate GF(2**mm) from the irreducible polynomial p(X) in
+  * @details Generate GF(2**mm) from the irreducible polynomial p(X) in
   * pp[0]..pp[mm] lookup tables:
   *    - index->polynomial form  alpha_to[] contains j=alpha**i;
   *    - polynomial form -> index form  index_of[j=alpha**i] = i alpha=2 is the
@@ -187,7 +182,7 @@ static void _generate_gf_(void)
   *
   * @brief  This private function compute the generator polynomial.
   *
-  * @detail Obtain the generator polynomial of the tt-error correcting, length
+  * @details Obtain the generator polynomial of the tt-error correcting, length
   * nn=(2**mm -1) Reed Solomon code  from the product of (X+alpha**i), i=1..2*tt
   *
   */
@@ -223,7 +218,6 @@ static void _gen_poly_(void)
 }
 
 /*!
-  * @fn void RS_Init(void)
   * @brief  This function initialize the Galois field and polynomial generator
   * tables.
   *
@@ -238,7 +232,6 @@ void RS_Init(void)
 }
 
 /*!
-  * @fn  uint8_t RS_Decode(uint8_t b_recd [RS_MESSAGE_SZ + RS_PARITY_SZ])
   * @brief  This function detect and correct the given message.
   *
   * @param [in,out] b_recd  Pointer on source and destination data (Message
@@ -564,7 +557,6 @@ uint8_t RS_Decode(uint8_t b_recd [RS_MESSAGE_SZ + RS_PARITY_SZ])
 }
 
 /*!
-  * @fn  void RS_Encode(uint8_t p_Data[RS_MESSAGE_SZ], uint8_t p_Out[RS_PARITY_SZ])
   * @brief  This function generate the parity word of the given message
   *
   * @param [in]  p_Data    Pointer on message (source data).

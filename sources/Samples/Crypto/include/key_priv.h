@@ -1,9 +1,10 @@
 /**
-  * @file: key_priv.h
-  * @brief: This file define the key container structure.
+  * @file key_priv.h
+  * @brief This file define the key container structure.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/27[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/27[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup crypto
  * @{
  *
  */
@@ -48,7 +48,6 @@ extern "C" {
 #include "crypto.h"
 
 /*!
- * @struct
  * @brief This structure hold a key used for en/de-cryption and authentication.
  */
 typedef struct  {
@@ -56,7 +55,6 @@ typedef struct  {
 } key_s;
 
 /*!
- * @var
  * @brief This table hold all keys used in the system
  */
 extern KEY_STORE key_s _a_Key_[];

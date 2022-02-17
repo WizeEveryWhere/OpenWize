@@ -1,9 +1,10 @@
 /**
   * @file: net_api_private.h
-  * @brief: This file declare all required to access network device (aka. netdev_t).
+  * @brief This file declare all required to access network device (aka. netdev_t).
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,19 +18,18 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/05/21[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/05/21[GBI]
   * Initial version
-  * 2.0.0 : 2021/10/24[GBI]
+  * @par 2.0.0 : 2021/10/24[GBI]
   * Replace Setter/Getter function by one Ioctl function
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_net_api
  * @{
  *
  */
@@ -40,12 +40,20 @@
 extern "C" {
 #endif
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 #ifndef RECV_BUF_SZ
 #define RECV_BUF_SZ 256
 #endif
 #ifndef SEND_BUF_SZ
 #define SEND_BUF_SZ 256
 #endif
+/*!
+ * @}
+ * @endcond
+ */
 
 #include "net_api.h"
 #include "phy_itf.h"
@@ -176,9 +184,9 @@ struct medium_cfg_s {
  */
 typedef struct wize_net_s {
 	struct proto_ctx_s  sProtoCtx;  /*!< Hold the protocol context (see
-	                                     @link struct proto_ctx_s @endlink)*/
+	                                     @link proto_ctx_s @endlink)*/
 	struct medium_cfg_s sMediumCfg; /*!< Hold the medium configuration (see
-	                                     @link struct medium_cfg_s @endlink)*/
+	                                     @link medium_cfg_s @endlink)*/
 
 	uint8_t u8ProtoErr;             /*!< Hold the last error code (see
 	                                     @link ret_code_e @endlink).*/

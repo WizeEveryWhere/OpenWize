@@ -1,9 +1,10 @@
 /*!
-  * @file: confidentiality.c
-  * @brief: This file expose functions to encrypt or decrypt a given message.
+  * @file confidentiality.c
+  * @brief This file expose functions to encrypt or decrypt a given message.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/25[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/25[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup crypto
  * @{
  *
  */
@@ -53,11 +53,9 @@ static uint8_t _crypt_(uint8_t *p_Out, uint8_t *p_In, uint8_t u8_Sz,
 
 
 /*!
-  * @fn inline uint8_t Crypto_Encrypt(uint8_t *p_Out, uint8_t *p_In,
-  * 				   uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)
   * @brief Wrapper around _crypt_ function.
   *
-  * @detail This function encrypt (with the AES128 in CTR mode) a given message.
+  * @details This function encrypt (with the AES128 in CTR mode) a given message.
   *
   * @param [in,out] p_Out Pointer on output buffer (Cipher text).
   * @param [in,out] p_In Pointer on input buffer (Plain text).
@@ -76,11 +74,9 @@ inline uint8_t Crypto_Encrypt(uint8_t *p_Out, uint8_t *p_In, uint8_t u8_Sz,
 }
 
 /*!
-  * @fn inline uint8_t Crypto_Decrypt(uint8_t *p_Out, uint8_t *p_In,
-  * 				   uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)
   * @brief Wrapper around the _crypt_ function.
   *
-  * @detail This function decrypt (with the AES128 in CTR mode) a given message.
+  * @details This function decrypt (with the AES128 in CTR mode) a given message.
   *
   * @param [in,out] p_Out Pointer on output buffer (Plain text).
   * @param [in,out] p_In Pointer on input buffer (Cipher text).

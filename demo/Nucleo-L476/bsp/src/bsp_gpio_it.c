@@ -1,9 +1,10 @@
 /*!
-  * @file: BSP_GpioIt_it.c
-  * @brief: This file contains functions to deal with external interrupt lines.
+  * @file bsp_gpio_it.c
+  * @brief This file contains functions to deal with external interrupt lines.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,19 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/14 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup nucleo_L476_bsp
+ * @{
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -256,3 +261,5 @@ void BSP_GpioIt_Handler(int8_t i8_ItLineId)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

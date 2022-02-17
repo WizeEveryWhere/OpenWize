@@ -1,9 +1,10 @@
 /**
   * @file: ses_dispatcher.h
-  * @brief: // TODO This file ...
+  * @brief This file define the session dispatcher structures
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/11/22[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/11/22[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_app
  * @{
  *
  */
@@ -47,59 +47,14 @@ extern "C" {
 #include "inst_internal.h"
 #include "adm_internal.h"
 
-/*
- * State :
- * 			IDLE
- * 			SENDING
- * 			LISTENING
- * 			WAITING
- *
- * Flag  :
- * 			ERROR / FAILED
- * 			SENT
- * 			RECEIVED
- * 			COMPLETE / SUCCESS
- * 			CORRUPTED / EMPTY
- *
- * 			wRX_DELAY / wDAY / wDELTA_SEC
- * 			wTX_DELAY / wRSP_DELAY
- * 			wTMO / wTMO_EX
- * Event :
- * 			OPEN / START
- * 			CLOSE / STOP / CANCEL
- * 			SEND_DONE
- * 			RECV_DONE
- * 			RECV_DETECT
- * 			TIMEOUT
- * 			DELAY_EXPIRED
- *
- * Action :
- * 			SEND
- * 			LISTEN
- * 			RECEIVE
- * 			ABORT
- *
- * 			TIME_ADD
- * 			TIME_DEL
- *
- * 			ADM_INT_CMD
- *
- * 			INST_INT_Init
- * 			INST_INT_Add
- * 			INST_INT_End
- *
- * 			DOWN_INT_Init
- * 			DOWN_INT_StoreBlock
- * 			DOWN_INT_IsComplete
- * 			DOWN_INT_ComputeSHA256
- *
- *
- */
-
 /******************************************************************************/
 
 #define SES_MGR_EVT_POS 24
 #define SES_MGR_FLG_POS 16
+
+/*!
+ * @brief This enumeration define
+ */
 typedef enum
 {
 	SES_MGR_EVT_MSK        = 0xFF000000,
@@ -110,6 +65,9 @@ typedef enum
 	SES_MGR_ADM_EVT_CLOSE  = (SES_ADM << SES_MGR_EVT_POS) | SES_EVT_CLOSE,
 } ses_mgr_evt_e;
 
+/*!
+ * @brief This enumeration define
+ */
 typedef enum
 {
 	SES_MGR_FLG_NONE    = 0x0,
@@ -126,6 +84,9 @@ typedef enum
 	SES_MGR_INST_FLG_FAILED  = (SES_INST << SES_MGR_FLG_POS) | SES_MGR_FLG_FAILED,
 } ses_mgr_flg_e;
 
+/*!
+ * @brief This enumeration define
+ */
 typedef enum
 {
 	GLO_FLG_NONE              = 0x00000000,
@@ -187,13 +148,18 @@ typedef enum
 	GLO_FLG_DWN_TIMEOUT       = 0x20000000,
 } glo_flg_e;
 
-
+/*!
+ * @brief This enumeration define
+ */
 typedef enum
 {
 	SES_DISP_STATE_DISABLE,
 	SES_DISP_STATE_ENABLE,
 } ses_disp_state_e;
 
+/*!
+ * @brief This enumeration define
+ */
 typedef enum
 {
 	SES_ADM_CMD_PEND  = 0x01,
@@ -204,7 +170,9 @@ typedef enum
 	SES_DWN_SES_PEND  = 0x40,
 } ses_disp_pending_e;
 
-
+/*!
+ * @brief This struct defines the session dispatcher context.
+ */
 struct ses_disp_ctx_s
 {
 	void *hTask;
@@ -246,9 +214,6 @@ static inline uint32_t _get_pos(uint32_t ulFlg)
 		return (32 -  __builtin_clzl (flg));
 	}
 	return 0;
-
-	//__asm volatile ("clz %0, %1" : "=r" (result) : "r" (flg) );
-	//return (31 -  result);
 }
 
 #ifdef __cplusplus

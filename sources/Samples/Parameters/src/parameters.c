@@ -3,7 +3,8 @@
   * @brief This file expose all parameter function's for local, remote and
   *         direct access.
   * 
-  *****************************************************************************
+  * @details
+  *
   * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
@@ -18,18 +19,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/20 00:08:20 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/20 00:08:20 [GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup parameters
  * @{
  *
  */
@@ -191,7 +191,7 @@ static uint8_t _check_conform_enum_(restr_s *p_Restr, uint8_t* p_Data)
 
 /*!
   * @static
-  * @brief Check that given value conform to the modulo value (see @link CHECK_MODULO @endlink).
+  * @brief Check that given value conform to the modulo value.
   *
   * @param [in] *p_Restr point on the restriction table
   * @param [in] *p_Data point on the data to check
@@ -224,7 +224,7 @@ static uint8_t _check_conform_modulo_(restr_s *p_Restr, uint8_t* p_Data)
 
 /*!
   * @static
-  * @brief Check that given value conform to the range value (see @link CHECK_RANGE @endlink).
+  * @brief Check that given value conform to the range value.
   *
   * @param [in] *p_Restr point on the restriction table
   * @param [in] *p_Data point on the data to check
@@ -257,7 +257,6 @@ static uint8_t _check_conform_range_(restr_s *p_Restr, uint8_t* p_Data)
 
 
 /*!
-  * @fn  void Param_Init(const uint8_t *p_Param)
   * @brief Init parameters by with default values
   *
   * @param [in] p_Param Pointer on input parameters table.
@@ -269,7 +268,6 @@ void Param_Init(const uint8_t *p_Param)
 }
 
 /*!
-  * @fn  inline uint8_t Param_IsValidId(uint8_t u8_Id)
   * @brief Check if Id is in acess table.
   *
   * @param [in] u8_Id The parameter Id.
@@ -281,7 +279,6 @@ uint8_t Param_IsValidId(uint8_t u8_Id){
 }
 
 /*!
-  * @fn  inline uint8_t Param_GetSize(uint8_t u8_Id)
   * @brief Get the parameter size.
   *
   * @param [in] u8_Id The parameter Id.
@@ -292,7 +289,6 @@ uint8_t Param_GetSize(uint8_t u8_Id){
 }
 
 /*!
-  * @fn inline param_access_e Param_GetLocAccess(uint8_t u8_Id)
   * @brief Get the local access rights field of the parameter
   *
   * @param [in] u8_Id The parameter Id.
@@ -303,7 +299,6 @@ param_access_e Param_GetLocAccess(uint8_t u8_Id){
 }
 
 /*!
-  * @fn  inline param_access_e Param_GetRemAccess(uint8_t u8_Id)
   * @brief Get the remote access rights field of the parameter
   *
   * @param [in] u8_Id The parameter Id.
@@ -314,7 +309,6 @@ param_access_e Param_GetRemAccess(uint8_t u8_Id){
 }
 
 /*!
-  * @fn inline param_effective_e Param_GetEffect(uint8_t u8_Id)
   * @brief Get the "effective" field of the parameter
   *
   * @param [in] u8_Id The parameter Id.
@@ -325,7 +319,6 @@ param_effective_e Param_GetEffect(uint8_t u8_Id){
 }
 
 /*!
-  * @fn inline param_effective_e Param_GetReferenced(uint8_t u8_Id)
   * @brief Get the "referenced" field of the parameter
   *
   * @param [in] u8_Id The parameter Id.
@@ -337,7 +330,6 @@ param_ref_e Param_GetReferenced(uint8_t u8_Id){
 
 
 /*!
-  * @fn  inline uint32_t Param_GetAddOf(uint8_t u8_Id)
   * @brief   Get the memory address of the parameter
   *
   * @param [in] u8_Id The parameter Id.
@@ -352,7 +344,6 @@ uint32_t Param_GetAddOf(uint8_t u8_Id){
 }
 
 /*!
-  * @fn  inline uint8_t Param_GetRestrId(uint8_t u8_Id)
   * @brief Get the restriction id of the parameter
   *
   * @param [in] u8_Id The parameter Id.
@@ -363,7 +354,6 @@ uint8_t Param_GetRestrId(uint8_t u8_Id){
 }
 
 /*!
-  * @fn const void* Param_GetRestrTableAdd(uint8_t u8_Id)
   * @brief Get the restriction table address of the parameter
   *
   * @param [in] u8_Id The parameter Id.
@@ -379,7 +369,6 @@ const void* Param_GetRestrTableAdd(uint8_t u8_Id){
 }
 
 /*!
-  * @fn uint8_t Param_CheckConformity(uint8_t u8_Id, uint8_t* p_Data)
   * @brief Check that given value conform to its restriction definition.
   *
   * @param [in] u8_Id id of the parameter to check
@@ -411,7 +400,6 @@ uint8_t Param_CheckConformity(uint8_t u8_Id, uint8_t* p_Data){
 }
 
 /*!
-  * @fn  uint8_t Param_Access(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir)
   * @brief  Pseudo-Direct access to the parameters table
   * 
   * @param [in]     u8_Id    The parameter Id.
@@ -437,7 +425,6 @@ uint8_t Param_Access(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir){
 }
 
 /*!
-  * @fn  uint8_t Param_LocalAccess(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir)
   * @brief  Local access to the parameters table
   * 
   * @param [in]     u8_Id    The parameter Id.
@@ -466,7 +453,6 @@ uint8_t Param_LocalAccess(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir){
 }
 
 /*!
-  * @fn  uint8_t Param_RemoteAccess(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir)
   * @brief  Remote access to the parameters table
   * 
   * @param [in]     u8_Id    The parameter Id.

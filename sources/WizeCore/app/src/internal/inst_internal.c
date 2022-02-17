@@ -1,10 +1,11 @@
 /**
-  * @file: inst_internal.c
-  * @brief: This file implement the functions to treat the install L7
+  * @file inst_internal.c
+  * @brief This file implement the functions to treat the install L7
   * content.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,18 +19,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/11[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/11[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_inst_layer
  * @{
  *
  */
@@ -46,7 +46,7 @@ extern "C" {
 #include <string.h>
 #include <time.h>
 /*
- * Note : on ping_reply_list_t organization
+ * Note : The ping_reply_list_t is a linked list organization as follow :
  *
  *                  ___
  * pWorst   ]----->|   |
@@ -71,11 +71,22 @@ extern "C" {
  *            pNext  |____|
  *
  *
+ * - It can accept at most "NB_PING_REPLPY" pong values
+ * - Pointer "pWorst" and "pBest" gives respectively the worst and best pong in term of received RSSI
+ * - If the couple (Gateway, MLAN id) is already in the list, this pong is discarded
  */
 
 
 /******************************************************************************/
 
+/*!
+  * @brief This function initialize the ping_reply context
+  *
+  * @param [in,out] ping_reply_ctx Pointer on the current context
+  * @param [in,out] pNetMsg        Pointer on ping message to send
+  *
+  * @return  None
+  */
 void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 {
 	uint8_t idx;
@@ -123,6 +134,94 @@ void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 	ping_reply_ctx->u32PingEpoch = t - EPOCH_UNIX_TO_OURS;// TODO : time take stack but doesn't release it
 }
 
+/*!
+  * @brief This function add a pong to the "ping_reply"
+  *
+  * @param [in,out] ping_reply_ctx Pointer on the current context
+  * @param [in,out] pNetMsg        Pointer on received pong message
+  *
+  * @return  None
+  */
+void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
+{
+	// warning RSSI => 0 : best; 255 : worst
+	uint8_t idx;
+	time_t t;
+	ping_reply_list_t *pCurrent;
+	ping_reply_list_t *pNew;
+
+	// increment the number of received pong
+	if (ping_reply_ctx->u8NbPong < 255) {
+		ping_reply_ctx->u8NbPong++;
+	}
+
+	// check couple concentrator ID - MLAN ID
+	for (idx = 0; idx < NB_PING_REPLPY; idx++)
+	{
+		if ( memcmp( (void*)&(ping_reply_ctx->aPingReplyList[idx].xPingReply), (void*)(pNetMsg->pData), 7) == 0 )
+		{
+			// The couple Concentrator,MLAN is already in the list
+			// ...should never happened : 1 pong per K-MLAN
+			return;
+		}
+	}
+
+	// set Current as the worst
+	pCurrent = ping_reply_ctx->pWorst;
+
+	// check if we must drop the new entry
+	if (pNetMsg->u8Rssi < pCurrent->xPingReply.L7RssiDownstream)
+	{
+		// the new entry RSSI is worst than worst, so drop it
+		return;
+	}
+
+	// find the right "place/position" to insert the new entry
+	while (pCurrent != ping_reply_ctx->pBest)
+	{
+		if (pNetMsg->u8Rssi >= pCurrent->pNext->xPingReply.L7RssiDownstream)
+		{
+			// go to the next
+			pCurrent = pCurrent->pNext;
+		}
+		else // pNetMsg->u8Rssi > pCurrent->pNext->xPingReply.L7RssiDownstream
+		{
+			break;
+		}
+	}
+	// prepare to take the container of the worst one
+	pNew = ping_reply_ctx->pWorst;
+	// replace the "worst" one
+	ping_reply_ctx->pBest->pNext = ping_reply_ctx->pWorst->pNext;
+	ping_reply_ctx->pWorst = ping_reply_ctx->pBest->pNext;
+
+	// fill the new one
+	memcpy(&(pNew->xPingReply), pNetMsg->pData, 8);
+	pNew->xPingReply.L7RssiDownstream = pNetMsg->u8Rssi;
+    time(&t);
+	pNew->u32RecvEpoch = t - EPOCH_UNIX_TO_OURS;
+	pNew->u32PongEpoch = pNetMsg->u32Epoch;
+	pNew->i16PongFreqOff = pNetMsg->i16TxFreqOffset;
+
+	// insert between pCurrent and pCurrent->pNext
+	pNew->pNext = pCurrent->pNext;
+	pCurrent->pNext = pNew;
+    // check if it is the "new best"
+	if (pCurrent == ping_reply_ctx->pBest)
+	{
+		ping_reply_ctx->pBest = pNew;
+	}
+}
+
+/*!
+  * @brief This function terminate the ping_reply (aka. write ping_reply values
+  * into the parameters table).
+  *
+  * @param [in,out] ping_reply_ctx Pointer on the current context
+  *
+  * @retval  0 : no pong received
+  * @retval  1 : at least one pong has been received
+  */
 uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx)
 {
 	int8_t idx;
@@ -163,77 +262,6 @@ uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx)
 	else
 	{
 		return 1;
-	}
-}
-
-void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pxNetMsg)
-{
-	// warning RSSI => 0 : best; 255 : worst
-	uint8_t idx;
-	time_t t;
-	ping_reply_list_t *pCurrent;
-	ping_reply_list_t *pNew;
-
-	// increment the number of received pong
-	if (ping_reply_ctx->u8NbPong < 255) {
-		ping_reply_ctx->u8NbPong++;
-	}
-
-	// check couple concentrator ID - MLAN ID
-	for (idx = 0; idx < NB_PING_REPLPY; idx++)
-	{
-		if ( memcmp( (void*)&(ping_reply_ctx->aPingReplyList[idx].xPingReply), (void*)(pxNetMsg->pData), 7) == 0 )
-		{
-			// The couple Concentrator,MLAN is already in the list
-			// ...should never happened : 1 pong per K-MLAN
-			return;
-		}
-	}
-
-	// set Current as the worst
-	pCurrent = ping_reply_ctx->pWorst;
-
-	// check if we must drop the new entry
-	if (pxNetMsg->u8Rssi < pCurrent->xPingReply.L7RssiDownstream)
-	{
-		// the new entry RSSI is worst than worst, so drop it
-		return;
-	}
-
-	// find the right "place/position" to insert the new entry
-	while (pCurrent != ping_reply_ctx->pBest)
-	{
-		if (pxNetMsg->u8Rssi >= pCurrent->pNext->xPingReply.L7RssiDownstream)
-		{
-			// go to the next
-			pCurrent = pCurrent->pNext;
-		}
-		else // pxNetMsg->u8Rssi > pCurrent->pNext->xPingReply.L7RssiDownstream
-		{
-			break;
-		}
-	}
-	// prepare to take the container of the worst one
-	pNew = ping_reply_ctx->pWorst;
-	// replace the "worst" one
-	ping_reply_ctx->pBest->pNext = ping_reply_ctx->pWorst->pNext;
-	ping_reply_ctx->pWorst = ping_reply_ctx->pBest->pNext;
-
-	// fill the new one
-	memcpy(&(pNew->xPingReply), pxNetMsg->pData, 8);
-	pNew->xPingReply.L7RssiDownstream = pxNetMsg->u8Rssi;
-    time(&t);
-	pNew->u32RecvEpoch = t - EPOCH_UNIX_TO_OURS;
-	pNew->u32PongEpoch = pxNetMsg->u32Epoch;
-	pNew->i16PongFreqOff = pxNetMsg->i16TxFreqOffset;
-
-	// insert between pCurrent and pCurrent->pNext
-	pNew->pNext = pCurrent->pNext;
-	pCurrent->pNext = pNew;
-    // check if it is the "new best"
-	if (pCurrent == ping_reply_ctx->pBest)
-	{
-		ping_reply_ctx->pBest = pNew;
 	}
 }
 

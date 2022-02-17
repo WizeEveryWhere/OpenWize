@@ -1,9 +1,10 @@
 /**
-  * @file: wize_api.c
-  * @brief: This file expose API to the external.
+  * @file wize_api.c
+  * @brief This file expose API to the external.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/14[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_api
  * @{
  *
  */

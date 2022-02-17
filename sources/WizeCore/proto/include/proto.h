@@ -1,9 +1,10 @@
 /**
-  * @file: proto_public.h
-  * @brief: This file contains the common protocol definitions.
+  * @file proto.h
+  * @brief This file contains the common protocol definitions.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/07 [GBI]
   * Initial version
-  *
   *
   */
 
+
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_proto
  * @{
  *
  */
@@ -41,7 +41,7 @@ extern "C" {
 
 #include <stdint.h>
 /*!
- * @def L6VER_WIZE_REV_x_y
+ * @def L6VER_WIZE_REV_1_2
  * @brief This macro define the Wize revision number.
  */
 #define L6VER_WIZE_REV_0_0 (0x0) //!< Wize Revision 0.0
@@ -179,8 +179,8 @@ typedef struct net_msg_s
 		uint8_t Option;          /*!< Application payload option */
 		struct
 		{
-			uint8_t App:1;      /*!< Application paylaod has L6App embedded. */
-			uint8_t Ciph:1;     /*!< Application paylaod has ciphered L7 */
+			uint8_t App:1;      /*!< Application payload has L6App embedded. */
+			uint8_t Ciph:1;     /*!< Application payload has ciphered L7 */
 		} Option_b;
 	};
 } net_msg_t;

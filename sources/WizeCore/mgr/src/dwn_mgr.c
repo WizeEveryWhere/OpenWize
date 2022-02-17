@@ -1,9 +1,10 @@
 /**
-  * @file down_mgr.c
+  * @file dwn_mgr.c
   * @brief This file implement everything required to deal with Download session.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,15 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/03/15 12:14:27 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/03/15 12:14:27 [GBI]
   * Initial version
   *
   *
   */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -33,6 +34,11 @@ extern "C" {
 #include "dwn_mgr.h"
 
 #include "rtos_macro.h"
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 SYS_MUTEX_CREATE_DEF(dwnmgr);
 
 static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx);
@@ -41,9 +47,13 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
 static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx);
 /******************************************************************************/
 #define SES_NAME "DWN"
+/*!
+ * @}
+ * @endcond
+ */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_dwn_mgr
  * @{
  *
  */
@@ -78,7 +88,6 @@ static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx)
 	assert(pCtx);
 	pPrvCtx = (struct dwn_mgr_ctx_s*)pCtx->pPrivate;
 	pPrvCtx->sRecvMsg.pData = pPrvCtx->aRecvBuff;
-	pPrvCtx->u8ParamUpdate = 0;
 	pCtx->eState = SES_STATE_IDLE;
 }
 
@@ -87,13 +96,14 @@ static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx)
  * @brief This is the FSM that treat input/output events
  *
  * @param [in] pCtx    Pointer in the current context
- * @param [in] u32Flag Input event from outside (see ses_evt_e)
+ * @param [in] u32Evt  Input event from outside (see ses_evt_e)
  *
- * @retval return ses_flag_e::SES_FLG_NONE
- *         return ses_flag_e::SES_FLG_ERROR
- *         return ses_flag_e::SES_FLG_COMPLETE
- *         return ses_flag_e::SES_FLG_BLK_RECV
- *         return ses_flag_e::SES_FLG_FRM_PASSED
+ * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
+ * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
+ * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
+ * @retval SES_FLG_BLK_RECV (see @link ses_flag_e::SES_FLG_BLK_RECV @endlink)
+ * @retval SES_FLG_FRM_PASSED (see @link ses_flag_e::SES_FLG_FRM_PASSED @endlink)
+ * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
  */
 static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 {

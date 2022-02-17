@@ -1,9 +1,10 @@
 /**
-  * @file: color.h
-  * @brief: This file contains coloring useful macro
+  * @file color.h
+  * @brief This file contains coloring useful macro
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/11/19[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/11/19[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup logger
  * @{
  *
  */
@@ -37,6 +37,11 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #define STR(s) #s
 #define BLACK   0
@@ -58,6 +63,11 @@ extern "C" {
 #define FGC(color) COLOR(FG, color)
 #define BGC(color) COLOR(BG, color)
 #define SGR(...) ESC_CHAR __VA_ARGS__ "m"
+
+/*!
+ * @}
+ * @endcond
+ */
 
 #ifdef __cplusplus
 }

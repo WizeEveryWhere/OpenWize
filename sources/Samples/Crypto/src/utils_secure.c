@@ -1,9 +1,10 @@
 /**
-  * @file: utils_secure.c
-  * @brief: This file expose some function that required to be in secure area.
+  * @file utils_secure.c
+  * @brief This file expose some function that required to be in secure area.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/12/31[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/12/31[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup crypto
  * @{
  *
  */
@@ -38,13 +38,12 @@ extern "C" {
 #include <stddef.h>
 
 /*!
-  * @fn void *secure_memcpy (void *__restrict __dest,
-  *                                    const void *__restrict __src, size_t __n)
   *
   * @brief This function is intended to replaced memcpy into secure area.
   *
   * @param [in] __dest The destination pointer
   * @param [in] __src  The source pointer
+  * @param [in] __n    Number of byte to copy
   * @retval return the destination pointer
   *
   */
@@ -62,8 +61,6 @@ void *secure_memcpy (void *__restrict __dest, const void *__restrict __src,
 }
 
 /*!
-  * @fn void *secure_memset (void *__s, int __c, size_t __n)
-  *
   * @brief This function is intended to replaced memset into secure area.
   *
   * @param [in] __s The destination pointer

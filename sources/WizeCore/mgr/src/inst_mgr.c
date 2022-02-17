@@ -1,9 +1,10 @@
 /**
   * @file: inst_mgr.c
-  * @brief: This file implement everything required to deal with install session.
+  * @brief This file implement everything required to deal with install session.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,15 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/03/15 12:14:27 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/03/15 12:14:27 [GBI]
   * Initial version
   *
   *
   */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -33,15 +34,26 @@ extern "C" {
 #include "inst_mgr.h"
 
 #include "rtos_macro.h"
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 SYS_MUTEX_CREATE_DEF(instmgr);
 
 static void _inst_mgr_ini_(struct ses_ctx_s *pCtx);
 static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
 
 /******************************************************************************/
+
 #define SES_NAME "INST"
 /*!
- * @ingroup WizeCore
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @addtogroup wize_inst_mgr
  * @{
  *
  */
@@ -79,7 +91,6 @@ static void _inst_mgr_ini_(struct ses_ctx_s *pCtx)
 	assert(pPrvCtx);
 	pPrvCtx->sRspMsg.pData = pPrvCtx->aRecvBuff;
 	pPrvCtx->sCmdMsg.pData = pPrvCtx->aSendBuff;
-	pPrvCtx->u8ParamUpdate = 0;
 	pCtx->eState = SES_STATE_IDLE;
 }
 
@@ -90,13 +101,13 @@ static void _inst_mgr_ini_(struct ses_ctx_s *pCtx)
  * @param [in] pCtx    Pointer in the current context
  * @param [in] u32Evt Input event from outside (see ses_evt_e)
  *
- * @retval return ses_flag_e::SES_FLG_NONE
- *         return ses_flag_e::SES_FLG_ERROR
- *         return ses_flag_e::SES_FLG_PING_SENT
- *         return ses_flag_e::SES_FLG_PONG_RECV
- *         return ses_flag_e::SES_FLG_COMPLETE
- *         return ses_flag_e::SES_FLG_FRM_PASSED
- *         return ses_flag_e::SES_FLG_TIMEOUT
+ * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
+ * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
+ * @retval SES_FLG_PING_SENT (see @link ses_flag_e::SES_FLG_PING_SENT @endlink)
+ * @retval SES_FLG_PONG_RECV (see @link ses_flag_e::SES_FLG_PONG_RECV @endlink)
+ * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
+ * @retval SES_FLG_FRM_PASSED (see @link ses_flag_e::SES_FLG_FRM_PASSED @endlink)
+ * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
  */
 static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 {

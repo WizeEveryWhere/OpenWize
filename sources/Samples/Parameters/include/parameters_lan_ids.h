@@ -2,8 +2,9 @@
   * @file parameters_lan_ids.h
   * @brief This define the generic LAN parameters ids
   * 
-  *****************************************************************************
-  * @copyright 2020, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/11/22[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/11/22[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup parameters
  * @{
  *
  */
@@ -42,6 +42,9 @@ extern C {
 #include "parameters_def.h"
 
 /******************************************************************************/
+/*!
+ * @brief This enum defines the lan parameter ids.
+ */
 typedef enum {
     VERS_HW_TRX = 0x01, //!< Hardware version number of the device (or transceiver for a remote module)
     VERS_FW_TRX = 0x02, //!< Software version number run by the device (or transceiver for a remote module)

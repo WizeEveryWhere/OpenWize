@@ -1,9 +1,10 @@
 /**
   * @file: phy_itf.h
-  * @brief: This file define the interface between the phy and net devices.
+  * @brief This file define the interface between the phy and net devices.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/10/30[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/10/30[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_phy_itf
  * @{
  *
  */
@@ -41,6 +41,10 @@ extern "C" {
 #include <stdint.h>
 #include "phy_layer.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 //------------------------------------------------------------------------------
 #define PHY_WM2400_PREAMBLE_DATA 0x5555
 #define PHY_WM2400_PREAMBLE_SIZE 16
@@ -90,6 +94,10 @@ extern "C" {
 	/*! Define the default TX frequency offset (just for initialization) */
 	#define DEFAULT_TX_FREQ_OFFSET 0
 #endif
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 
@@ -177,18 +185,18 @@ typedef struct phydev_s phydev_t;
  */
 typedef struct phy_if_s {
 	// Function
-    int32_t (*pfInit)(phydev_t *pPhydev);
-    int32_t (*pfUnInit)(phydev_t *pPhydev);
+    int32_t (*pfInit)(phydev_t *pPhydev);   /*!< Initialization function */
+    int32_t (*pfUnInit)(phydev_t *pPhydev); /*!< Un-Initialization function */
 
-    int32_t (*pfTx)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation);
-    int32_t (*pfRx)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation);
-    int32_t (*pfNoise)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation);
+    int32_t (*pfTx)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation); /*!< TX or Send function */
+    int32_t (*pfRx)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation); /*!< RX or listen function */
 
-    int32_t (*pfSetSend)(phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len);
-    int32_t (*pfGetRecv)(phydev_t *pPhydev, uint8_t *pBuf, uint8_t *u8Len);
+    int32_t (*pfNoise)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation); /*!< Function to measure the noise (on TX Channel) */
 
-    int32_t (*pfIoctl)(phydev_t *pPhydev, uint32_t eCtl, uint32_t args);
+    int32_t (*pfSetSend)(phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len);  /*!< Set or write the frame to send into the PHY device internal buffer */
+    int32_t (*pfGetRecv)(phydev_t *pPhydev, uint8_t *pBuf, uint8_t *u8Len); /*!< Get or read the received frame from the PHY device internal buffer */
 
+    int32_t (*pfIoctl)(phydev_t *pPhydev, uint32_t eCtl, uint32_t args); /*!< IOCTL function */
 } phy_if_t;
 
 /*!
@@ -197,7 +205,7 @@ typedef struct phy_if_s {
 struct phydev_s {
 	const phy_if_t *pIf;          /*!< Pointer on device interface */
     void *pCxt;                   /*!< Device internal context */
-    uint32_t lock;                /*!< DEvice lock */
+    uint32_t lock;                /*!< Device lock */
     phydev_evt_cb_t pfEvtCb;      /*!< Event notifier callback function */
     void *pCbParam;
 
@@ -214,7 +222,7 @@ struct phydev_s {
 	uint8_t     bCrcOn;            /*!< Enable/Disable PHY crc computation */
 	uint8_t     bPreSyncOn;        /*!< Enable/Disable interrupt on PREMABLE and SYNCHRO */
 
-	phy_test_mode_e eTestMode;     /*!< Internal : Current TEst mode */
+	phy_test_mode_e eTestMode;     /*!< Current Test mode (internal)*/
 };
 
 #ifdef __cplusplus

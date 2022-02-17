@@ -1,9 +1,10 @@
 /**
-  * @file: phy_layer_private.h
-  * @brief: // TODO This file ...
+  * @file phy_layer_private.h
+  * @brief // TODO This file ...
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,22 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/11/24[TODO: your name]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/11/24 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup nucleo_L476_device
+ * @{
+ * @defgroup nucleo_L476_device_phyfake PhyFake
+ * @{
+ */
+
 #ifndef _PHY_LAYER_PRIVATE_H_
 #define _PHY_LAYER_PRIVATE_H_
 #ifdef __cplusplus
@@ -34,8 +42,21 @@ extern "C" {
 
 #include "phy_itf.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 #define BUF_SZ 515 // 2 (packet len) + 256*2 because it communicate on uart, so we need to convert hex to char + 1 (EOB)
 
+/*!
+ * @}
+ * @endcond
+ */
+
+
+/*!
+ * @brief This enum defines the PḧyFake state.
+ */
 typedef enum
 {
 	IDLE_STATE         = 0x00,
@@ -45,6 +66,9 @@ typedef enum
 	RECEIVING_STATE    = 0x20,
 } fakeuart_state_e;
 
+/*!
+ * @brief This enum defines the PhyFake error
+ */
 typedef enum
 {
 	FAKEUART_ERR_NONE      = DEV_SUCCESS,
@@ -54,6 +78,9 @@ typedef enum
 	FAKEUART_INVALID_PARAM = DEV_INVALID_PARAM,
 } fakeuart_error_e;
 
+/*!
+ * @brief This struct defines PhyFake device context
+ */
 typedef struct
 {
 	uint8_t eState;
@@ -68,3 +95,6 @@ int32_t Phy_PhyFake_setup(phydev_t *pPhydev, fakeuart_device_t *pCtx);
 }
 #endif
 #endif /* _PHY_LAYER_PRIVATE_H_ */
+
+/*! @} */
+/*! @} */

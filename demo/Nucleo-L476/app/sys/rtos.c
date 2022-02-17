@@ -1,9 +1,10 @@
 /**
-  * @file: rtos.c
+  * @file rtos.c
   * @brief: // TODO This file ...
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,19 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/05[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/05 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup nucleo_L476_app
+ * @{
+ */
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -98,3 +103,5 @@ void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime )
   // Function called in tasks.c (in portTASK_FUNCTION).
   // TO BE COMPLETED or TO BE REPLACED by a user one, overriding that weak one.
 }
+
+/*! @} */

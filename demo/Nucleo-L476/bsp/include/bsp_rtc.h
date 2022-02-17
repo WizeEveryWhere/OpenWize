@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_rtc.h
+  * @file bsp_rtc.h
   * @brief: This file defines functions to deal with RTC (Time, Wake-up, Alarm).
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/08/29[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/08/29 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup nucleo_L476_bsp
+ * @{
+ */
+
 #ifndef _BSP_RTC_H_
 #define _BSP_RTC_H_
 #ifdef __cplusplus
@@ -77,3 +83,5 @@ void BSP_Rtc_Alarm_SetHandler (const uint8_t u8AlarmId, pfHandlerCB_t const pfCb
 }
 #endif
 #endif /* _BSP_RTC_H_ */
+
+/*! @} */

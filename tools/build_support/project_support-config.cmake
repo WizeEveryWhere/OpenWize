@@ -137,9 +137,9 @@ endif()
 ################################################################################
 # Add doc rule
 if(DOC_COMPILE)
-    list(APPEND DOC_SOURCE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/docs")
+    list(APPEND DOC_SOURCE_DIRS "${CMAKE_SOURCE_DIR}/docs")
     string(REPLACE ";" " " DOXYFILE_SOURCE_DIRS "${DOC_SOURCE_DIRS}")
-    message("Main DOXYFILE_SOURCE_DIRS : ${DOXYFILE_SOURCE_DIRS}")
+    #message("Main DOXYFILE_SOURCE_DIRS : ${DOXYFILE_SOURCE_DIRS}")
     #add_subdirectory("docs")
     # Add build support for doxygen
     find_package(doxygen_support)

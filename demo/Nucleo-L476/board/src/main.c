@@ -72,7 +72,7 @@ extern void app_entry(void);
 /* USER CODE END 0 */
 
 /**
-  * @brief  The application entry point.
+  * @brief  The main entry point.
   * @retval int
   */
 int main(void)
@@ -186,6 +186,10 @@ void SystemClock_Config(void)
   }
 }
 
+/**
+  * @brief Peripheral Clcok Initialization Function
+  * @retval None
+  */
 void PeriphClock_Config(void)
 {
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
@@ -206,6 +210,10 @@ void PeriphClock_Config(void)
   }
 }
 
+/**
+  * @brief LSE Clock Initialization Function
+  * @retval None
+  */
 void LSEClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -231,7 +239,6 @@ void LSEClock_Config(void)
 
 /**
   * @brief USART2 Initialization Function
-  * @param None
   * @retval None
   */
 static void MX_UART2_Init(void)
@@ -265,6 +272,11 @@ static void MX_UART2_Init(void)
 
 }
 
+/**
+  * @static
+  * @brief LPUART1 Initialization Function
+  * @retval None
+  */
 static void MX_LPUART1_Init(void)
 {
 
@@ -297,6 +309,11 @@ static void MX_LPUART1_Init(void)
 
 }
 
+/**
+  * @static
+  * @brief UART4 Initialization Function
+  * @retval None
+  */
 static void MX_UART4_Init(void)
 {
 
@@ -332,8 +349,8 @@ static void MX_UART4_Init(void)
 }
 
 /**
+  * @static
   * @brief GPIO Initialization Function
-  * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)

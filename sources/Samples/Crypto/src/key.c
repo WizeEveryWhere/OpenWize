@@ -1,9 +1,10 @@
 /**
-  * @file: key.c
-  * @brief: This file expose some helping function to deal with secured keys
+  * @file key.c
+  * @brief This file expose some helping function to deal with secured keys
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/27[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/27[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Samples
+ * @addtogroup crypto
  * @{
  *
  */
@@ -47,11 +47,9 @@ static inline uint8_t _set_key_(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId);
 
 /*!
  *  @static
-  * @fn uint8_t _set_key_(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId)
-  *
   * @brief This function set (write) a key at specified key id.
   *
-  * @param [in] p_Key[KEY_SIZE] The given key to set.
+  * @param [in] p_Key    The given key to set.
   * @param [in] u8_KeyId The key id to use.
   * @retval CRYPTO_OK (1) if everything is fine
   * @retval CRYPTO_KID_UNK_ERR (2) id the key id is out of box
@@ -90,12 +88,11 @@ static inline uint8_t _set_key_(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId)
 }
 
 /*!
-  * @fn uint8_t Crypto_WriteKey(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId)
-  *
   * @brief This function set (write) a key at specified key id.
   *
-  * @param [in] p_Key[KEY_SIZE] The given key to set.
+  * @param [in] p_Key    The given key to set.
   * @param [in] u8_KeyId The key id to use.
+  *
   * @retval CRYPTO_OK (1) if everything is fine
   * @retval CRYPTO_KID_UNK_ERR (2) id the key id is out of box
   */

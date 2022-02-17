@@ -1,9 +1,10 @@
 /**
   * @file: ses_common.h
-  * @brief: // TODO This file ...
+  * @brief // TODO This file ...
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/03/16[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/03/16[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_mgr
  * @{
  *
  */
@@ -107,6 +107,9 @@ typedef enum {
 	SES_LOG_DAYLIGHT_CHG,
 } ses_log_e;
 
+/*!
+ * @brief This enum define session state
+ */
 typedef enum
 {
 	SES_STATE_DISABLE,
@@ -118,38 +121,41 @@ typedef enum
 	SES_STATE_WAITING_TX_DELAY
 } ses_state_e;
 
+/*!
+ * @brief This enum define the session return flags
+ */
 typedef enum
 {
 	// -------------------------------------------------------------------------
 	// SES_FLG__MSK           = 0x0000000F,
 	// ----
-	SES_FLG_NONE              = 0x00000000,
-	SES_FLG_FAILED            = 0x00000001,
-	SES_FLG_SUCCESS           = 0x00000002,
-	SES_FLG_ERROR             = 0x00000004,
-	SES_FLG_TIMEOUT           = 0x00000008,
+	SES_FLG_NONE              = 0x00000000, /*!< Nothing  */
+	SES_FLG_FAILED            = 0x00000001, /*!< Failed */
+	SES_FLG_SUCCESS           = 0x00000002, /*!< Success */
+	SES_FLG_ERROR             = 0x00000004, /*!< Error */
+	SES_FLG_TIMEOUT           = 0x00000008, /*!< Time Out*/
 
 	// -------------------------------------------------------------------------
-	SES_FLG_RECV_MSK          = 0x000001F0,
+	SES_FLG_RECV_MSK          = 0x000001F0, /*!< Convenient mask on recv flags */
 	// ----
-	SES_FLG_CMD_RECV          = 0x00000070,
-	SES_FLG_PONG_RECV         = 0x00000080,
-	SES_FLG_BLK_RECV          = 0x00000100,
+	SES_FLG_CMD_RECV          = 0x00000070, /*!< Command has been received */
+	SES_FLG_PONG_RECV         = 0x00000080, /*!< Pong has been received*/
+	SES_FLG_BLK_RECV          = 0x00000100, /*!< SW Block has been received */
 
 	// -------------------------------------------------------------------------
-	SES_FLG_SENT_MSK          = 0x00000E00,
+	SES_FLG_SENT_MSK          = 0x00000E00, /*!< Convenient mask on send flags */
 	// ----
-	SES_FLG_DATA_SENT         = 0x00000200,
-	SES_FLG_RSP_SENT          = 0x00000400,
-	SES_FLG_PING_SENT         = 0x00000800,
+	SES_FLG_DATA_SENT         = 0x00000200, /*!< Data has been sent */
+	SES_FLG_RSP_SENT          = 0x00000400, /*!< Response has been sent */
+	SES_FLG_PING_SENT         = 0x00000800, /*!< Ping has been sent */
 
 	// -------------------------------------------------------------------------
-	// SES_FLG__MSK           = 0x0000F000,
+	// SES_FLG__MSK           = 0x0000F000, /*!< */
 	// ----
-	SES_FLG_COMPLETE          = 0x00001000,
-	SES_FLG_OUT_DATE          = 0x00002000,
-	SES_FLG_CORRUPTED         = 0x00004000,
-	SES_FLG_FRM_PASSED        = 0x00008000,
+	SES_FLG_COMPLETE          = 0x00001000, /*!< Session is complete */
+	SES_FLG_OUT_DATE          = 0x00002000, /*!< Message is out of date */
+	SES_FLG_CORRUPTED         = 0x00004000, /*!< Image is corrupted */
+	SES_FLG_FRM_PASSED        = 0x00008000, /*!< Frame is by passed*/
 } ses_flg_e;
 
 typedef enum

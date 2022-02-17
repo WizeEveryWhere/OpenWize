@@ -1,9 +1,10 @@
 /**
-  * @file: fault_handler.c
+  * @file fault_handler.c
   * @brief: This file contains basic fault handlers with a kind of core dump..
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,19 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/01[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/01 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup nucleo_L476_bsp
+ * @{
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -258,3 +263,5 @@ void UsageFault_Handler(void)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

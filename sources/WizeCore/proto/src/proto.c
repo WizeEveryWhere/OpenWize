@@ -1,9 +1,10 @@
 /**
-  * @file: proto.c
-  * @brief: This file implement the Wize Protocol build and extract functionalities
-  * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @file proto.c
+  * @brief This file implement the Wize Protocol build and extract functionalities
+  *
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,18 +18,16 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/07[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/07 [GBI]
   * Initial version
-  *
   *
   */
 
 /*!
- * @ingroup WizeCore
+ * @addtogroup wize_proto
  * @{
  *
  */
@@ -48,6 +47,9 @@ extern "C" {
 
 /******************************************************************************/
 //#ifdef WIZE_OPT_USE_CONST_ERR_MSG
+/*!
+ * @brief This table defines the protocol error string messages
+ */
 const char * const wize_err_msg[] = {
     [PROTO_SUCCESS]            = "SUCCESS",
     [PROTO_FAILED]             = "FAILED",
@@ -88,6 +90,11 @@ static uint8_t _exchange_build(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg);
 
 /******************************************************************************/
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #ifdef WIZE_PROTO_HAS_GETBITMAP
 uint8_t DM_GetBitmap(uint16_t u16_Id) __attribute__(( weak ))
 {
@@ -95,37 +102,41 @@ uint8_t DM_GetBitmap(uint16_t u16_Id) __attribute__(( weak ))
 }
 #endif
 
+
 #define PADDING_SZ ( CTR_SIZE - (L2DWNID_SZ + L6_DWN_VERS_SZ + L6_DWN_B_NUM_SZ) )
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 
 /*!
-  * @fn uint8_t Wize_ProtoExtract(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg)
   * @brief This function extract the Presentation and Link Layer. The resulting
   * Application Layer is set into the given net_msg_t buffer.
   *
   * @param [in,out] *pCtx Pointer on structure that hold the protocol context.
   * @param [in,out] *pNetMsg Pointer on structure that hold the Application message.
   *
-  * @retval
-  * @li @link ret_code_e::PROTO_SUCCESS @endlink Success (everything goes right)
-  * @li @link ret_code_e::PROTO_FRAME_RS_ERR @endlink
-  * @li @link ret_code_e::PROTO_DW_BLK_PASS_INF @endlink
-  * @li @link ret_code_e::PROTO_DOWNLOAD_VER_WRN @endlink
-  * @li @link ret_code_e::PROTO_FRAME_CRC_ERR @endlink
-  * @li @link ret_code_e::PROTO_HEAD_END_AUTH_ERR @endlink
-  * @li @link ret_code_e::PROTO_GATEWAY_AUTH_WRN @endlink
-  * @li @link ret_code_e::PROTO_PROTO_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_KEYID_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_NETWID_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_FRAME_PASS_INF @endlink
-  * @li @link ret_code_e::PROTO_FRAME_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_FRAME_SZ_ERR @endlink
-  * @li @link ret_code_e::PROTO_APP_MSG_SZ_ERR @endlink
-  * @li @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlin
+  * @retval PROTO_SUCCESS (see @link ret_code_e::PROTO_SUCCESS @endlink)
+  * @retval PROTO_FRAME_RS_ERR (see @link ret_code_e::PROTO_FRAME_RS_ERR @endlink)
+  * @retval PROTO_DW_BLK_PASS_INF (see @link ret_code_e::PROTO_DW_BLK_PASS_INF @endlink)
+  * @retval PROTO_DOWNLOAD_VER_WRN (see @link ret_code_e::PROTO_DOWNLOAD_VER_WRN @endlink)
+  * @retval PROTO_FRAME_CRC_ERR (see @link ret_code_e::PROTO_FRAME_CRC_ERR @endlink)
+  * @retval PROTO_HEAD_END_AUTH_ERR (see @link ret_code_e::PROTO_HEAD_END_AUTH_ERR @endlink)
+  * @retval PROTO_GATEWAY_AUTH_WRN (see @link ret_code_e::PROTO_GATEWAY_AUTH_WRN @endlink)
+  * @retval PROTO_PROTO_UNK_ERR (see @link ret_code_e::PROTO_PROTO_UNK_ERR @endlink)
+  * @retval PROTO_KEYID_UNK_ERR (see @link ret_code_e::PROTO_KEYID_UNK_ERR @endlink)
+  * @retval PROTO_NETWID_UNK_ERR (see @link ret_code_e::PROTO_NETWID_UNK_ERR @endlink)
+  * @retval PROTO_FRAME_PASS_INF (see @link ret_code_e::PROTO_FRAME_PASS_INF @endlink)
+  * @retval PROTO_FRAME_UNK_ERR (see @link ret_code_e::PROTO_FRAME_UNK_ERR @endlink)
+  * @retval PROTO_FRAME_SZ_ERR (see @link ret_code_e::PROTO_FRAME_SZ_ERR @endlink)
+  * @retval PROTO_APP_MSG_SZ_ERR (see @link ret_code_e::PROTO_APP_MSG_SZ_ERR @endlink)
+  * @retval PROTO_STACK_MISMATCH_ERR (see @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CRC_ERR (see @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink)
+  * @retval PROTO_INTERNAL_HASH_ERR (see @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CIPH_ERR  (see @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink)
   *
   */
 uint8_t Wize_ProtoExtract(
@@ -169,21 +180,19 @@ uint8_t Wize_ProtoExtract(
 }
 
 /*!
-  * @fn uint8_t Wize_ProtoBuild(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg)
   * @brief This function build the Presentation and Link Layer. The Application
   * Layer must be into the given net_msg_t buffer
   *
   * @param [in,out] *pCtx Pointer on structure that hold the protocol context.
   * @param [in,out] *pNetMsg Pointer on structure that hold the Application message.
   *
-  * @retval
-  * @li @link ret_code_e::PROTO_SUCCESS @endlink Success (everything goes right)
-  * @li @link ret_code_e::PROTO_FRAME_SZ_ERR @endlink
-  * @li @link ret_code_e::PROTO_APP_MSG_SZ_ERR @endlink
-  * @li @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink
+  * @retval PROTO_SUCCESS (see @link ret_code_e::PROTO_SUCCESS @endlink)
+  * @retval PROTO_FRAME_SZ_ERR (see @link ret_code_e::PROTO_FRAME_SZ_ERR @endlink)
+  * @retval PROTO_APP_MSG_SZ_ERR (see @link ret_code_e::PROTO_APP_MSG_SZ_ERR @endlink)
+  * @retval PROTO_STACK_MISMATCH_ERR (see @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CIPH_ERR (see @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink)
+  * @retval PROTO_INTERNAL_HASH_ERR (see @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CRC_ERR (see @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink)
   *
   */
 uint8_t Wize_ProtoBuild(
@@ -220,8 +229,6 @@ uint8_t Wize_ProtoBuild(
 }
 
 /*!
-  * @fn uint8_t Wize_ProtoStats_RxUpdate(struct proto_ctx_s *pCtx, uint8_t
-  * u8ErrCode, uint8_t u8Rssi)
   * @brief This function update the reception statistics.
   *
   * @param [in,out] *pCtx     Pointer on structure that hold the protocol context.
@@ -294,14 +301,12 @@ void Wize_ProtoStats_RxUpdate(
 }
 
 /*!
-  * @fn uint8_t Wize_ProtoStats_TxUpdate(struct proto_ctx_s *pCtx, uint8_t
-  * u8ErrCode, uint8_t u8Noise)
   * @brief This function update the transmission statistics.
   *
   * @param [in,out] *pCtx     Pointer on structure that hold the protocol context.
   * @param [in]     u8ErrCode Protocol error code returned from previous
   *                           Wize_ProtoBuild call.
-  * @param [in]     u8Rssi    Noise from previous transmission.
+  * @param [in]     u8Noise   Noise from previous transmission.
   *
   * @retval None
   *
@@ -335,7 +340,6 @@ void Wize_ProtoStats_TxUpdate(
 }
 
 /*!
-  * @fn uint8_t Wize_ProtoStats_RxClear(struct proto_ctx_s *pCtx)
   * @brief This function clear the reception statistics.
   *
   * @param [in,out] *pCtx     Pointer on structure that hold the protocol context.
@@ -362,7 +366,6 @@ void Wize_ProtoStats_RxClear(
 }
 
 /*!
-  * @fn uint8_t Wize_ProtoStats_TxClear(struct proto_ctx_s *pCtx)
   * @brief This function clear the transmission statistics.
   *
   * @param [in,out] *pCtx     Pointer on structure that hold the protocol context.
@@ -386,7 +389,6 @@ void Wize_ProtoStats_TxClear(
 	}
 }
 /*!
-  * @fn uint8_t Wize_Proto_GetStrErr(uint8_t eErr)
   * @brief This function return a pointer on string error.
   *
   * @param [in] eErr  The error code number.
@@ -406,7 +408,6 @@ const char * Wize_Proto_GetStrErr(uint8_t eErr)
 
 /*!
   * @static
-  * uint8_t _download_extract(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg)
   * @brief This function extract the Download Layer. The resulting
   * Application Layer is set into the given net_msg_t buffer.
   * buffer.
@@ -414,17 +415,16 @@ const char * Wize_Proto_GetStrErr(uint8_t eErr)
   * @param [in,out] *pCtx Pointer on structure that hold the protocol context.
   * @param [in,out] *pNetMsg Pointer on structure that hold the Application message.
   *
-  * @retval
-  * @li @link ret_code_e::PROTO_SUCCESS @endlink Success (everything goes right)
-  * @li @link ret_code_e::PROTO_FRAME_RS_ERR @endlink
-  * @li @link ret_code_e::PROTO_FRAME_CRC_ERR @endlink
-  * @li @link ret_code_e::PROTO_HEAD_END_AUTH_ERR @endlink
-  * @li @link ret_code_e::PROTO_FRAME_PASS_INF @endlink
-  * @li @link ret_code_e::PROTO_DW_BLK_PASS_INF @endlink
-  * @li @link ret_code_e::PROTO_DOWNLOAD_VER_WRN @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink
+  * @retval PROTO_SUCCESS (see @link ret_code_e::PROTO_SUCCESS @endlink)
+  * @retval PROTO_FRAME_RS_ERR (see @link ret_code_e::PROTO_FRAME_RS_ERR @endlink)
+  * @retval PROTO_FRAME_CRC_ERR (see @link ret_code_e::PROTO_FRAME_CRC_ERR @endlink)
+  * @retval PROTO_HEAD_END_AUTH_ERR (see @link ret_code_e::PROTO_HEAD_END_AUTH_ERR @endlink)
+  * @retval PROTO_FRAME_PASS_INF (see @link ret_code_e::PROTO_FRAME_PASS_INF @endlink)
+  * @retval PROTO_DW_BLK_PASS_INF (see @link ret_code_e::PROTO_DW_BLK_PASS_INF @endlink)
+  * @retval PROTO_DOWNLOAD_VER_WRN (see @link ret_code_e::PROTO_DOWNLOAD_VER_WRN @endlink)
+  * @retval PROTO_INTERNAL_CRC_ERR (see @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink)
+  * @retval PROTO_INTERNAL_HASH_ERR (see @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CIPH_ERR (see @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink)
   *
   */
 static uint8_t _download_extract(
@@ -527,7 +527,6 @@ static uint8_t _download_extract(
 
 /*!
   * @static
-  * uint8_t _exchange_extract(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg)
   * @brief This function extract the Exchange Layer. The resulting
   * Application Layer is set into the given net_msg_t buffer.
   * buffer.
@@ -535,21 +534,20 @@ static uint8_t _download_extract(
   * @param [in,out] *pCtx Pointer on structure that hold the protocol context.
   * @param [in,out] *pNetMsg Pointer on structure that hold the Application message.
   *
-  * @retval
-  * @li @link ret_code_e::PROTO_SUCCESS @endlink Success (everything goes right)
-  * @li @link ret_code_e::PROTO_FRAME_CRC_ERR @endlink
-  * @li @link ret_code_e::PROTO_HEAD_END_AUTH_ERR @endlink
-  * @li @link ret_code_e::PROTO_GATEWAY_AUTH_WRN @endlink
-  * @li @link ret_code_e::PROTO_PROTO_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_KEYID_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_NETWID_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_FRAME_PASS_INF @endlink
-  * @li @link ret_code_e::PROTO_FRAME_UNK_ERR @endlink
-  * @li @link ret_code_e::PROTO_APP_MSG_SZ_ERR @endlink
-  * @li @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlin
+  * @retval PROTO_SUCCESS (see @link ret_code_e::PROTO_SUCCESS @endlink)
+  * @retval PROTO_FRAME_CRC_ERR (see @link ret_code_e::PROTO_FRAME_CRC_ERR @endlink)
+  * @retval PROTO_HEAD_END_AUTH_ERR (see @link ret_code_e::PROTO_HEAD_END_AUTH_ERR @endlink)
+  * @retval PROTO_GATEWAY_AUTH_WRN (see @link ret_code_e::PROTO_GATEWAY_AUTH_WRN @endlink)
+  * @retval PROTO_PROTO_UNK_ERR (see @link ret_code_e::PROTO_PROTO_UNK_ERR @endlink)
+  * @retval PROTO_KEYID_UNK_ERR (see @link ret_code_e::PROTO_KEYID_UNK_ERR @endlink)
+  * @retval PROTO_NETWID_UNK_ERR (see @link ret_code_e::PROTO_NETWID_UNK_ERR @endlink)
+  * @retval PROTO_FRAME_PASS_INF (see @link ret_code_e::PROTO_FRAME_PASS_INF @endlink)
+  * @retval PROTO_FRAME_UNK_ERR (see @link ret_code_e::PROTO_FRAME_UNK_ERR @endlink)
+  * @retval PROTO_APP_MSG_SZ_ERR (see @link ret_code_e::PROTO_APP_MSG_SZ_ERR @endlink)
+  * @retval PROTO_STACK_MISMATCH_ERR (see @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CRC_ERR (see @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink)
+  * @retval PROTO_INTERNAL_HASH_ERR (see @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CIPH_ERR (see @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink)
   *
   */
 static uint8_t _exchange_extract(
@@ -779,7 +777,6 @@ static uint8_t _exchange_extract(
 
 /*!
   * @static
-  * uint8_t _exchange_build(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg)
   * @brief This function build the Exchange Layer. The Application
   * Layer must be into the given net_msg_t buffer
   * buffer.
@@ -787,13 +784,11 @@ static uint8_t _exchange_extract(
   * @param [in,out] *pCtx Pointer on structure that hold the protocol context.
   * @param [in,out] *pNetMsg Pointer on structure that hold the Application message.
   *
-  * @retval
-  * @li @link ret_code_e::PROTO_SUCCESS @endlink Success (everything goes right)
-  * @li @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink
-  * @li @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink
-  *
+  * @retval PROTO_SUCCESS (see @link ret_code_e::PROTO_SUCCESS @endlink)
+  * @retval PROTO_STACK_MISMATCH_ERR (see @link ret_code_e::PROTO_STACK_MISMATCH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CIPH_ERR (see @link ret_code_e::PROTO_INTERNAL_CIPH_ERR @endlink)
+  * @retval PROTO_INTERNAL_HASH_ERR (see @link ret_code_e::PROTO_INTERNAL_HASH_ERR @endlink)
+  * @retval PROTO_INTERNAL_CRC_ERR (see @link ret_code_e::PROTO_INTERNAL_CRC_ERR @endlink)
   */
 static uint8_t _exchange_build(
 		struct proto_ctx_s *pCtx,
@@ -982,9 +977,9 @@ static uint8_t _exchange_build(
   *
   * @param [in,out] *p_In point on data to encrypt (plaintext). This will be
   * replaced by the encrypted one.
-  * @param [in] u8_Sz length, in byte, of the data stream to encrypt.
-  * @param [in] p_Ctr[CTR_SIZE] initial value for the AES counter.
-  * @param [in] u8_KeyId the key id to be used for encryption.
+  * @param [in] u8_Sz     length, in byte, of the data stream to encrypt.
+  * @param [in] p_Ctr     initial value for the AES counter.
+  * @param [in] u8_KeyId  the key id to be used for encryption.
   * @return See the return codes from @link Crypto_Encrypt @endlink function.
   */
 static uint8_t _encrypt_(
@@ -1010,9 +1005,9 @@ static uint8_t _encrypt_(
   *
   * @param [in,out] *p_In point on data to decrypt (plaintext). This will be
   * replaced by the decrypted one.
-  * @param [in] u8_Sz length, in byte, of the data stream to decrypt.
-  * @param [in] p_Ctr[CTR_SIZE] initial value for the AES counter.
-  * @param [in] u8_KeyId the key id to be used for decryption.
+  * @param [in] u8_Sz     length, in byte, of the data stream to decrypt.
+  * @param [in] p_Ctr     initial value for the AES counter.
+  * @param [in] u8_KeyId  the key id to be used for decryption.
   * @return See the return codes from @link Crypto_Decrypt @endlink function.
   */
 static uint8_t _decrypt_(

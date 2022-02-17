@@ -6,12 +6,14 @@ option(BUILD_DOC "Build documentation" ON)
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
     # Try to find a Doxyfile.in 
-    find_file(DOXYFILE_IN "Doxyfile.in"
+    #find_file(DOXYFILE_IN "Doxyfile.in"
+    find_file(DOXYFILE_IN "Doxyfile"
         PATHS "${CMAKE_CURRENT_SOURCE_DIR}" "./" "docs" "tools/build_support"
         NO_DEFAULT_PATH
         DOC "Path to the doxygen configuration template file"
         REQUIRED)
     #set(DOXYFILE "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in")
+    set(DOXYFILE_IMG_PATH "${CMAKE_SOURCE_DIR}/docs/pics")
   
     include(FindPackageHandleStandardArgs)
     find_package_handle_standard_args(DOXYFILE_IN DEFAULT_MSG "DOXYFILE_IN")
@@ -29,9 +31,9 @@ if(DOXYGEN_FOUND)
         if(NOT DOXYFILE_SOURCE_DIRS)
             set(DOXYFILE_SOURCE_DIRS "")
         endif()
-        set(DOXYFILE_LATEX "YES" CACHE BOOL "Generate LaTeX API documentation")
-        set(DOXYFILE_MATHJAX "YES" CACHE BOOL "Use MATHJAX to render formulas in HTML")
-        set(DOXYFILE_PDFLATEX "NO" CACHE BOOL "Use pdflatex for better quality pdf files")
+        set(DOXYFILE_LATEX FALSE CACHE BOOL "Generate LaTeX API documentation")
+        set(DOXYFILE_MATHJAX FALSE CACHE BOOL "Use MATHJAX to render formulas in HTML")
+        set(DOXYFILE_PDFLATEX FALSE CACHE BOOL "Use pdflatex for better quality pdf files")
         set(DOXYFILE_CITE_BIB_FILES "")
 
         mark_as_advanced(
@@ -43,6 +45,9 @@ if(DOXYGEN_FOUND)
             DOXYFILE_IN 
             DOXYFILE_OUT 
             )
+
+        #message("DOXYFILE_SOURCE_DIRS       : ${DOXYFILE_SOURCE_DIRS}")
+        #message("DOXYFILE_EXTRA_SOURCE_DIRS : ${DOXYFILE_EXTRA_SOURCE_DIRS}")
 
         set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES 
             "${DOXYFILE_OUTPUT_DIR}/html"
