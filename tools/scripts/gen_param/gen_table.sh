@@ -239,8 +239,22 @@ function buildParametersTables {
     local offset=0
     local mID=0
     for j in $(seq 0 ${idMax_dec})
-    do       
+    do
         pID_dec=$(echo "obase=10; ibase=16; ${pID[$i]};" | bc )
+        
+        if [[ ${is_silent} == 1 ]]
+        then
+            printf ".";
+            if [[ $(( $j % 50 )) == 0 ]]
+            then
+                printf "\n";
+            fi
+            
+            if [[ $j == ${idMax_dec} ]]
+            then
+                printf "\n";
+            fi
+        fi
         
         #echo "j=$j; i=$i; pID_dec=${pID_dec}; pID[$i]=${pID[$i]}"
         if [[ $j == ${pID_dec} ]]
@@ -281,7 +295,10 @@ function buildParametersTables {
             # Print the parameter value 
             printVal "${vFile}" "${value}" ${size} "${desc}";
             
-            printf "Id [%s] = %s // %s \n" "${mID}" "${value}" "${desc}";
+            if [[ ${is_silent} == 0 ]]
+            then
+                printf "Id [%s] = %s // %s \n" "${mID}" "${value}" "${desc}";
+            fi
             
             # Compute the next offset
             offset=$((offset+${size}));
@@ -298,7 +315,7 @@ function buildParametersTables {
             printAccess "${sFile}" "${mID}" "NA" "NA" "IMM" "REF_N" 0 0 0;
         fi
         #printf "Param[%s]\n" "${mID}";
-       
+
     done;
 
     idMax_dec=$(echo "obase=16; ibase=10; ${offset};" | bc );
@@ -549,6 +566,14 @@ extern "C" {
     # End:Value file build    
     printFooter "${valueFile}" "${value_str_foot}";
 }
+
+# 
+is_silent=1;
+if [[ ! ( -z ${IS_VERBOSE_ENV} ) && ${IS_VERBOSE_ENV} == 1 ]]
+then
+    is_silent=0;
+fi
+
 
 #
 DEST_PATH=".";
