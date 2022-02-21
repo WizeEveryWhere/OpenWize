@@ -26,6 +26,8 @@ else(RTOS_CONF_FILE)
     message(FATAL_ERROR "RTOS_CONF_FILE is not defined")
 endif(RTOS_CONF_FILE)
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/FreeRTOS_option.cmake)
+
 # Set FreeRTOS main path
 set(RTOS_MAIN_PATH "FreeRTOS-Kernel")
 
