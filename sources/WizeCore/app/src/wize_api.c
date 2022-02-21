@@ -108,7 +108,6 @@ wize_api_ret_e WizeApi_ExecPing(void)
 
 	if ( xSemaphoreTake( pCtx->hMutex, SES_MGR_INST_REQ_TMO_MSK ) )
 	{
-		((struct inst_mgr_ctx_s*)(pCtx->pPrivate))->u8ParamUpdate = 0;
 		// Request for INSTALL session
 		xTaskNotify(sSesDispCtx.hTask, SES_MGR_INST_EVT_OPEN, eSetValueWithOverwrite);
 		u32Ret = xEventGroupWaitBits(sSesDispCtx.hEvents, SES_MGR_INST_FLG_ALL_MSK, pdTRUE, pdFALSE, SES_MGR_INST_FLG_TMO_MSK);
@@ -238,7 +237,6 @@ wize_api_ret_e WizeApi_SendEx(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)
 		// Ensure that only one request at the time
 		if ( xSemaphoreTake( pCtx->hMutex, SES_MGR_ADM_REQ_TIMEOUT_MSK ) )
 		{
-			((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->u8ParamUpdate = 0;
 			// Request for DATA, ADMIN session
 			net_msg_t *pMsg = &((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->sDataMsg;
 			pMsg->pData = pData;
@@ -309,7 +307,6 @@ wize_api_ret_e WizeApi_Send(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)
 		}
 		if ( xSemaphoreTake( pCtx->hMutex, SES_MGR_ADM_REQ_TIMEOUT_MSK ) )
 		{
-			((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->u8ParamUpdate = 0;
 			// Request for DATA, ADMIN session
 			net_msg_t *pMsg = &((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->sDataMsg;
 			pMsg->pData = pData;
