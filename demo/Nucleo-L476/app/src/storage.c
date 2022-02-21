@@ -1,6 +1,6 @@
 /**
   * @file storage.c
-  * @brief: // TODO This file ...
+  * @brief This file implement storage functions
   * 
   * @details
   *
@@ -40,8 +40,23 @@ extern "C" {
 #include <string.h>
 #include "storage.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+#ifndef PERM_SECTION
 #define PERM_SECTION(psection) __attribute__(( section(psection) )) __attribute__((used))
+#endif
+
+#ifndef KEY_SECTION
 #define KEY_SECTION(ksection) __attribute__(( section(ksection) )) __attribute__((used))  __attribute__(( aligned (2048) ))
+#endif
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 #include "parameters_cfg.h"
@@ -49,9 +64,25 @@ extern "C" {
 
 extern const uint8_t a_ParamDefault[];
 
+/*!
+  * @brief The parameters values table size
+  */
 const uint16_t u16_ParamValueSz = PARAM_DEFAULT_SZ;
+
+/*!
+  * @brief The parameters access table size
+  */
 const uint8_t u8_ParamAccessCfgSz = PARAM_ACCESS_CFG_SZ;
+
+/*!
+  * @brief The restriction table size
+  */
 const uint8_t u8_ParamRestrCfgSz = PARAM_RESTR_CFG_SZ;
+
+
+/*!
+  * @brief Table of parameters values
+  */
 PERM_SECTION(".param") uint8_t a_ParamValue[PARAM_DEFAULT_SZ];
 
 /******************************************************************************/
@@ -131,7 +162,7 @@ const key_s sDefaultKey[KEY_MAX_NB] =
 };
 
 /*!
-  * @brief  Table of keys
+  * @brief Table of keys
   */
 KEY_SECTION(".data.keys") key_s _a_Key_[KEY_MAX_NB];
 

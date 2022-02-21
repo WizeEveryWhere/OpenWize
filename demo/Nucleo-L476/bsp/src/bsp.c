@@ -1,6 +1,6 @@
 /**
   * @file bsp.c
-  * @brief: This file contains functions to initialize the BSP.
+  * @brief This file contains functions to initialize the BSP.
   * 
   * @details
   *
@@ -44,6 +44,13 @@ extern "C" {
 /******************************************************************************/
 /* Usefull  */
 /******************************************************************************/
+/*!
+  * @brief Function convert a hexa represented as 2 bytes char into hexa value (1 byte).
+  *
+  * @param [in] u16Char Two byte char to convert
+  * 
+  * @return converted one byte hex value
+  */
 uint8_t ascii2hex(uint16_t u16Char)
 {
 	register uint8_t t;
@@ -60,6 +67,13 @@ uint8_t ascii2hex(uint16_t u16Char)
 	return hex;
 }
 
+/*!
+  * @brief Function convert a hexa value (1 byte) into its 2 bytes char representation.
+  *
+  * @param [in] u8Hex One byte hexa value to convert
+  * 
+  * @return converted two bytes char representation
+  */
 uint16_t hex2ascii(uint8_t u8Hex)
 {
 	uint8_t t;
@@ -79,6 +93,11 @@ uint16_t hex2ascii(uint8_t u8Hex)
 /******************************************************************************/
 /* Alias for HAL */
 /******************************************************************************/
+/*!
+  * @brief Alias for HAL_Delay function
+  *
+  * @param [in] milisecond Number of milisecond to wait
+  */
 //inline __attribute__((always_inline))
 void msleep(uint32_t milisecond) { HAL_Delay(milisecond); }
 
@@ -103,13 +122,13 @@ int __io_putchar(int ch){
 		nb = 2;
 		((uint8_t *)&ch)[1] = '\r';
 	}
-	HAL_UART_Transmit(aDevUart[STDOUT_UART_ID].hHandler, (uint8_t *)&ch, nb, CONSOLE_TX_TIMEOUT);
+	HAL_UART_Transmit(aDevUart[STDOUT_UART_ID].hHandle, (uint8_t *)&ch, nb, CONSOLE_TX_TIMEOUT);
 	return ch;
 }
 
 int __io_getchar(void){
 	int c;
-	HAL_UART_Receive(aDevUart[STDOUT_UART_ID].hHandler, (uint8_t*)&c, 1, CONSOLE_RX_TIMEOUT);
+	HAL_UART_Receive(aDevUart[STDOUT_UART_ID].hHandle, (uint8_t*)&c, 1, CONSOLE_RX_TIMEOUT);
 	return c;
 }
 #endif
@@ -120,6 +139,13 @@ extern void __init_sys_calls__(void);
 
 boot_state_t gBootState;
 
+/*!
+  * @brief This function initialize the bsp
+  *
+  * @param [in] u32BootState The current boot state
+  * 
+  * @return None
+  */
 void BSP_Init(uint32_t u32BootState)
 {
 

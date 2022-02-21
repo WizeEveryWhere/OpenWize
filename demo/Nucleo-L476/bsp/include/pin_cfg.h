@@ -41,6 +41,11 @@ extern "C" {
 
 #include <stm32l4xx_hal.h>
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 /**************************** GPIO pinout *************************************/
 // SWD
 #define TMS_Pin GPIO_PIN_13
@@ -60,6 +65,11 @@ extern "C" {
 #define B1_GPIO_Port GPIOC
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
+
+/*!
+ * @}
+ * @endcond
+ */
 
 #ifdef __cplusplus
 }

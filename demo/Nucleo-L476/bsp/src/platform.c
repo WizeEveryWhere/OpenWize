@@ -1,6 +1,6 @@
 /**
   * @file platform.c
-  * @brief: This file contains some specific platform constants and call-back..
+  * @brief This file contains some specific platform constants and call-back..
   * 
   * @details
   *
@@ -40,6 +40,11 @@ extern "C" {
 #include "bsp.h"
 #include <stm32l4xx_hal.h>
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 extern RTC_HandleTypeDef hrtc;
 
 extern UART_HandleTypeDef huart2;
@@ -49,15 +54,15 @@ extern UART_HandleTypeDef hlpuart1;
 uart_dev_t aDevUart[UART_ID_MAX] =
 {
 	[UART_ID_CONSOLE] = {
-			.hHandler = &huart2,
+			.hHandle = &huart2,
 			.pfEvent = NULL
 	},
 	[UART_ID_COM]     = {
-			.hHandler = &huart4,
+			.hHandle = &huart4,
 			.pfEvent = NULL
 	},
 	[UART_ID_PHY]     = {
-			.hHandler = &hlpuart1,
+			.hHandle = &hlpuart1,
 			.pfEvent = NULL
 	},
 };
@@ -104,7 +109,7 @@ static void _send_event_to_cb_(UART_HandleTypeDef *huart, uint32_t evt)
 	register uint8_t id;
 	for (id = 0; id < UART_ID_MAX; id++)
 	{
-		if (aDevUart[id].hHandler == huart)
+		if (aDevUart[id].hHandle == huart)
 		{
 			if (aDevUart[id].pfEvent != NULL)
 			{
@@ -136,6 +141,11 @@ __weak void HAL_UART_AbortReceiveCpltCallback(UART_HandleTypeDef *huart)
 }
 
 /******************************************************************************/
+
+/*!
+ * @}
+ * @endcond
+ */
 
 #ifdef __cplusplus
 }

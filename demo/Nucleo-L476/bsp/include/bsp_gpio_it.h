@@ -1,6 +1,6 @@
 /*!
   * @file bsp_gpio_it.h
-  * @brief: This file defines functions to deal with external interrupt lines.
+  * @brief This file defines functions to deal with external interrupt lines.
   * 
   * @details
   *
@@ -41,7 +41,7 @@ extern "C" {
 #include "common.h"
 #include "bsp_gpio.h"
 
-/*! \enum gpio_irq_trg_cond_e GPIO trigger condition enumerations */
+/** This enum define the GPIO trigger condition */
 typedef enum {
 	GPIO_IRQ_NONE_EDGE      =(0b0000),     /*!< Trigger an interrupt on a none edge.    */
     GPIO_IRQ_RISING_EDGE    =(0b0001),     /*!< Trigger an interrupt on a rising edge.    */

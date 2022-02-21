@@ -1,8 +1,7 @@
 /**
   * @file bsp_rtc.c
-  * @brief: This file contains functions to deal with RTC (Time, Wake-up, Alarm).
+  * @brief This file contains functions to deal with RTC (Time, Wake-up, Alarm).
   * 
-  *****************************************************************************
   * @details
   *
   * @copyright 2019, GRDF, Inc.  All rights reserved.
@@ -41,10 +40,21 @@ extern "C" {
 #include "platform.h"
 #include <stm32l4xx_hal.h>
 
-__attribute__((weak)) __attribute__((used)) dayligth_sav_e _dayligth_sav_ = NONE_TIME_CHANGE;
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+__attribute__((weak)) __attribute__((used)) daylight_sav_e _daylight_sav_ = NONE_TIME_CHANGE;
 __attribute__((weak)) __attribute__((used)) uint32_t _wakeup_period_ = 86400; // in seconds
 __attribute__((used)) static pfEventCB_t pfWakeUpTimerCallBack;
 __attribute__((used)) static pfEventCB_t pfUpdateTimeCallBack;
+
+/*!
+ * @}
+ * @endcond
+ */
+
 /*******************************************************************************/
 
 extern void Error_Handler(void);
@@ -53,6 +63,14 @@ extern RTC_HandleTypeDef hrtc;
 static void _rtc_wakeUptimer_handler_(void);
 /*******************************************************************************/
 
+/*!
+  * @brief This function setup the RTC clock
+  *
+  * @param [in] clock_sel RTC clock selection
+  * 
+  * @return None
+  * 
+  */
 void BSP_Rtc_Setup_Clk(uint32_t clock_sel)
 {
 	RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
@@ -64,6 +82,15 @@ void BSP_Rtc_Setup_Clk(uint32_t clock_sel)
 	}
 }
 
+/*!
+  * @brief This function setup the RTC divider
+  *
+  * @param [in] div_s DIV_S factor
+  * @param [in] div_a DIV_A factor
+  * 
+  * @return None
+  * 
+  */
 void BSP_Rtc_Setup(uint16_t div_s, uint8_t div_a)
 {
 	hrtc.Instance = RTC;
@@ -87,17 +114,42 @@ void BSP_Rtc_Setup(uint16_t div_s, uint8_t div_a)
 }
 /*******************************************************************************/
 
+/*!
+  * @brief This function write to backup register
+  *
+  * @param [in] regNum The backup register numbre to write
+  * @param [in] data   The value to write in
+  * 
+  * @return None
+  * 
+  */
 void BSP_Rtc_Backup_Write(uint32_t regNum, uint32_t data)
 {
   HAL_RTCEx_BKUPWrite(&hrtc, regNum, data);
 }
 
+/*!
+  * @brief This function read from backup register
+  *
+  * @param [in] regNum The backup register numbre to read from
+  * 
+  * @return The read value
+  * 
+  */
 uint32_t BSP_Rtc_Backup_Read(uint32_t regNum)
 {
    return HAL_RTCEx_BKUPRead(&hrtc, regNum);
 }
 /*******************************************************************************/
 
+/*!
+  * @brief This function set the current time
+  *
+  * @param [in] t The current time to set (in epoch)
+  * 
+  * @return None
+  * 
+  */
 void BSP_Rtc_Time_Write(time_t t)
 {
 	struct tm *pTimeInfo;
@@ -129,6 +181,14 @@ void BSP_Rtc_Time_Write(time_t t)
 	}
 }
 
+/*!
+  * @brief This function read the current time 
+  *
+  * @param [in] tp Pointer on timeval structure to hold the read time
+  * 
+  * @return None
+  * 
+  */
 void BSP_Rtc_Time_ReadMicro(struct timeval * tp)
 {
     RTC_DateTypeDef sDate;
@@ -154,6 +214,12 @@ void BSP_Rtc_Time_ReadMicro(struct timeval * tp)
     }
 }
 
+/*!
+  * @brief This function get the millisecond epoch time 
+  *
+  * @return the millisecond epoch time
+  * 
+  */
 uint64_t BSP_Rtc_Time_GetEpochMs(void)
 {
 	struct timeval tp;
@@ -161,6 +227,12 @@ uint64_t BSP_Rtc_Time_GetEpochMs(void)
 	return ( (tp.tv_sec*1000)+ (tp.tv_usec/1000) );
 }
 
+/*!
+  * @brief This function get the epoch time 
+  *
+  * @return the epoch time
+  * 
+  */
 time_t BSP_Rtc_Time_Read(void)
 {
 	struct timeval tp;
@@ -168,20 +240,31 @@ time_t BSP_Rtc_Time_Read(void)
 	return (time_t)( tp.tv_sec );
 }
 
-void BSP_Rtc_Time_UpdateDayligth(dayligth_sav_e dayligth_sav)
+/*!
+  * @brief This function update the RTC clock with summer/winter time
+  *
+  * @param [in] daylight_sav The daylight 
+  * 
+  * @return None 
+  * 
+  */
+void BSP_Rtc_Time_UpdateDaylight(daylight_sav_e daylight_sav)
 {
-    if (dayligth_sav == WINTER_TIME_CHANGE)
+    if (daylight_sav == WINTER_TIME_CHANGE)
     {
     	__HAL_RTC_DAYLIGHT_SAVING_TIME_SUB1H(&hrtc, 1);
     }
-    else if (dayligth_sav == SUMMER_TIME_CHANGE)
+    else if (daylight_sav == SUMMER_TIME_CHANGE)
     {
     	__HAL_RTC_DAYLIGHT_SAVING_TIME_ADD1H(&hrtc, 0);
     }
     // else, do nothing
 }
 
-
+/*!
+  * @brief This function force the RTC wake-up interrupt (in one second)
+  *
+  */
 void BSP_Rtc_Time_ForceNotify(void)
 {
 	HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 1, RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
@@ -194,6 +277,10 @@ void BSP_Rtc_Time_ForceNotify(void)
 	 */
 }
 
+/*!
+  * @brief This function is not implemented
+  *
+  */
 void BSP_Rtc_Alarm_ForceNotify(void)
 {
 	/*
@@ -207,24 +294,42 @@ void BSP_Rtc_Alarm_ForceNotify(void)
 }
 
 
-
+/*!
+  * @brief This function set the callback for "time changed"
+  *
+  * @param [in] pfCb Callback function 
+  * 
+  */
 void BSP_Rtc_Time_Update_SetCallback (pfEventCB_t const pfCb)
 {
 	pfUpdateTimeCallBack = pfCb;
 }
 
 /*******************************************************************************/
+
+/*!
+  * @brief This function enable the RTC wake-up timer
+  *
+  */
 void BSP_Rtc_WakeUpTimer_Enable(void)
 {
 	BSP_Rtc_WakeUpTimer_SetHandler(NULL);
 	BSP_Rtc_WakeUptimer_Reload();
 }
 
+/*!
+  * @brief This function disable the RTC wake-up timer
+  * 
+  */
 void BSP_Rtc_WakeUpTimer_Disable(void)
 {
 	HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
 }
 
+/*!
+  * @brief This function reload the RTC wake-up timer to the next wake-up event (i.e. the next midnight)
+  * 
+  */
 void BSP_Rtc_WakeUptimer_Reload(void)
 {
     RTC_DateTypeDef sDate;
@@ -253,11 +358,23 @@ void BSP_Rtc_WakeUptimer_Reload(void)
 	}
 }
 
+/*!
+  * @brief This function set the callback for the wake-up timer event
+  *
+  * @param [in] pfCb Callback funtion
+  * 
+  */
 void BSP_Rtc_WakeUpTimer_SetCallback (pfEventCB_t const pfCb)
 {
 	pfWakeUpTimerCallBack = pfCb;
 }
 
+/*!
+  * @brief This function set the RTC wake-up timer interrupt handler
+  *
+  * @param [in] pfCb Interrupt handler
+  * 
+  */
 void BSP_Rtc_WakeUpTimer_SetHandler (pfHandlerCB_t const pfCb)
 {
 	if (pfCb)
@@ -271,6 +388,13 @@ void BSP_Rtc_WakeUpTimer_SetHandler (pfHandlerCB_t const pfCb)
 }
 /*******************************************************************************/
 
+/*!
+  * @brief This function start the given alarm
+  *
+  * @param [in] u8AlarmId The alarm id to start
+  * @param [in] u32Elapse The elapse time in second before alarm occurs
+  * 
+  */
 void BSP_Rtc_Alarm_Start(const uint8_t u8AlarmId, uint32_t u32Elapse)
 {
 	RTC_TimeTypeDef sTime;
@@ -327,6 +451,13 @@ void BSP_Rtc_Alarm_Start(const uint8_t u8AlarmId, uint32_t u32Elapse)
 	}
 }
 
+/*!
+  * @brief This function start the given alarm at milisecond scale
+  *
+  * @param [in] u8AlarmId The alarm id to start
+  * @param [in] u64Elapse The elapse time in millisecond before alarm occurs
+  * 
+  */
 void BSP_Rtc_Alarm_StartMs(const uint8_t u8AlarmId, uint64_t u64Elapse)
 {
 	RTC_TimeTypeDef sTime;
@@ -400,6 +531,12 @@ void BSP_Rtc_Alarm_StartMs(const uint8_t u8AlarmId, uint64_t u64Elapse)
 	}
 }
 
+/*!
+  * @brief This function stop the given alarm
+  *
+  * @param [in] u8AlarmId The alarm id to stop
+  * 
+  */
 void BSP_Rtc_Alarm_Stop(const uint8_t u8AlarmId)
 {
 	uint32_t Alarm;
@@ -414,6 +551,13 @@ void BSP_Rtc_Alarm_Stop(const uint8_t u8AlarmId)
 	HAL_RTC_DeactivateAlarm(&hrtc, Alarm);
 }
 
+/*!
+  * @brief This function set the alarm interrupt handler
+  *
+  * @param [in] u8AlarmId The alarm id 
+  * @param [in] pfCb      The interrupt handler
+  * 
+  */
 void BSP_Rtc_Alarm_SetHandler (const uint8_t u8AlarmId, pfHandlerCB_t const pfCb)
 {
 	if (u8AlarmId)
@@ -453,6 +597,17 @@ void BSP_Rtc_Alarm_SetHandler (const uint8_t u8AlarmId, pfHandlerCB_t const pfCb
  * At next wake-up timer interrupt
  * - nothing
  */
+ 
+ /*!
+  * @static
+  * @brief This function is default RTC wake-up timer interrupt handler
+  *
+  * @details When wake-up interrupt occurs, both pfUpdateTimeCallBack and 
+  * pfWakeUpTimerCallBack callback function will be called. The first one 
+  * is intended to treat the time update (time management). The second one
+  * is free to be used.
+  * 
+  */
 static void _rtc_wakeUptimer_handler_(void)
 {
 	// if "new clock update" is required, set it

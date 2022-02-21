@@ -1,6 +1,6 @@
 /*!
   * @file platform.h
-  * @brief: This file defines some specific platform constants..
+  * @brief This file defines some specific platform constants..
   * 
   * @details
   *
@@ -32,33 +32,44 @@
  * @{
  */
 
-#ifndef _PLATFORME_H_
-#define _PLATFORME_H_
+#ifndef _PLATFORM_H_
+#define _PLATFORM_H_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-//#include "pin_cfg.h"
-
-typedef enum
-{
-	UART_ID_CONSOLE,
-	UART_ID_COM,
-	UART_ID_PHY,
-	//
-	UART_ID_MAX
-} uart_id_e;
-
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #define STDOUT_UART_ID UART_ID_CONSOLE
 
 #define RTC_PREDIV_S 1023
 #define RTC_PREDIV_A 31
 
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @brief This enum define the UART device id
+ */
+typedef enum
+{
+	UART_ID_CONSOLE, /*!< Concole id */
+	UART_ID_COM,     /*!< Communication Id */
+	UART_ID_PHY,     /*!< Phy id */
+	//
+	UART_ID_MAX
+} uart_id_e;
+
+
 #ifdef __cplusplus
 }
 #endif
-#endif /* _Port_PLATFORME_H_ */
+#endif /* _Port_PLATFORM_H_ */
 
 /*! @} */

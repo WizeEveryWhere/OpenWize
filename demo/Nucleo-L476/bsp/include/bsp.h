@@ -1,6 +1,6 @@
 /**
   * @file bsp.h
-  * @brief: This file defines functions to initialize the BSP.
+  * @brief This file defines functions to initialize the BSP.
   * 
   * @details
   *

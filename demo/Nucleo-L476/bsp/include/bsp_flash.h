@@ -1,6 +1,6 @@
 /**
   * @file bsp_flash.h
-  * @brief: // TODO This file ...
+  * @brief This file define the bsp function to access the flash memory
   * 
   * @details
   *

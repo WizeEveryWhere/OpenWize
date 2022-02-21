@@ -1,6 +1,6 @@
 /**
   * @file bsp_rtc.h
-  * @brief: This file defines functions to deal with RTC (Time, Wake-up, Alarm).
+  * @brief This file defines functions to deal with RTC (Time, Wake-up, Alarm).
   * 
   * @details
   *
@@ -40,6 +40,11 @@ extern "C" {
 
 #include "common.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 extern pfHandlerCB_t pfWakeUpTimerEvent;
 extern pfHandlerCB_t pfAlarmAEvent;
 extern pfHandlerCB_t pfAlarmBEvent;
@@ -48,7 +53,12 @@ typedef enum {
 	WINTER_TIME_CHANGE = -1,
 	NONE_TIME_CHANGE   = 0,
 	SUMMER_TIME_CHANGE = 1,
-} dayligth_sav_e;
+} daylight_sav_e;
+
+/*!
+ * @}
+ * @endcond
+ */
 
 void BSP_Rtc_Setup_Clk(uint32_t clock_sel);
 void BSP_Rtc_Setup(uint16_t div_s, uint8_t div_a);
@@ -61,7 +71,7 @@ void BSP_Rtc_Time_ReadMicro(struct timeval * tp);
 uint64_t BSP_Rtc_Time_GetEpochMs(void);
 time_t BSP_Rtc_Time_Read(void);
 
-void BSP_Rtc_Time_UpdateDayligth(dayligth_sav_e dayligth_sav);
+void BSP_Rtc_Time_UpdateDaylight(daylight_sav_e dayligth_sav);
 void BSP_Rtc_Time_Update (time_t t);
 void BSP_Rtc_Time_ForceNotify(void);
 void BSP_Rtc_Alarm_ForceNotify(void);

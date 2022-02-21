@@ -1,6 +1,6 @@
 /**
   * @file fault_handler.c
-  * @brief: This file contains basic fault handlers with a kind of core dump..
+  * @brief This file contains basic fault handlers with a kind of core dump..
   * 
   * @details
   *
@@ -38,6 +38,11 @@ extern "C" {
 
 #include <cmsis_compiler.h>
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #ifndef TRACE_DUMP_CORE
 #define TRACE_DUMP_CORE(...) fprintf (stderr, __VA_ARGS__ );
@@ -259,6 +264,11 @@ void UsageFault_Handler(void)
 #endif
 	while(1);
 }
+
+/*!
+ * @}
+ * @endcond
+ */
 
 #ifdef __cplusplus
 }

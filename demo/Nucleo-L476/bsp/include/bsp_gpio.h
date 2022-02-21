@@ -1,6 +1,6 @@
 /*!
   * @file bsp_gpio.h
-  * @brief: This file defines functions to deal with GPIOs.
+  * @brief This file defines functions to deal with GPIOs.
   * 
   * @details
   *
@@ -40,8 +40,18 @@ extern "C" {
 
 #include "common.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define GPIO_PIN(name) (uint16_t)name##_Pin
 #define GPIO_PORT(name) (uint32_t)name##_GPIO_Port
+
+/*!
+ * @}
+ * @endcond
+ */
 
 uint8_t BSP_Gpio_InputEnable (const uint32_t u32Port, const uint16_t u16Pin, const uint8_t bFlag);
 uint8_t BSP_Gpio_OutputEnable(const uint32_t u32Port, const uint16_t u16Pin, const uint8_t bFlag);

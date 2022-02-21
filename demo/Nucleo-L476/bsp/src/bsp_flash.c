@@ -1,6 +1,6 @@
 /**
   * @file bsp_flash.c
-  * @brief: // TODO This file ...
+  * @brief This file implement bsp functions to access the internal flash device
   * 
   * @details
   *
@@ -40,14 +40,6 @@ extern "C" {
 #include "platform.h"
 #include <string.h>
 #include <stm32l4xx_hal.h>
-/*
- * Flash
- * Page : 2048 bytes
- * Alignment : 8 bytes words
- *
- * Erase : at page level
- *
- */
 
 /**
   * @brief  Erase the given flash page area

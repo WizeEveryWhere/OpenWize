@@ -1,6 +1,6 @@
 /**
   * @file rtos.c
-  * @brief: // TODO This file ...
+  * @brief This file implement the FreeRTOS hook(s)
   * 
   * @details
   *
@@ -35,6 +35,11 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 /******************************************************************************/
 #if (configSUPPORT_STATIC_ALLOCATION == 1)
@@ -103,5 +108,10 @@ void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime )
   // Function called in tasks.c (in portTASK_FUNCTION).
   // TO BE COMPLETED or TO BE REPLACED by a user one, overriding that weak one.
 }
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /*! @} */

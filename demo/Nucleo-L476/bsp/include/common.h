@@ -1,6 +1,6 @@
 /*!
   * @file common.h
-  * @brief: This file contains common definitions.
+  * @brief This file contains common definitions.
   * 
   * @details
   *
@@ -46,6 +46,11 @@ extern "C" {
 #include <time.h>
 #include <machine/endian.h>
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define DEBUG_STDIO 1
 #ifndef DEBUG_STDIO
 #   define DEBUG_STDIO 0
@@ -70,22 +75,29 @@ typedef void (*pfEvtCb_t)(void *p_CbParam,  uint32_t evt);
 
 typedef void (*pf_cb_t)(void *p_CbParam, void *p_Arg);
 
-typedef enum
-{
-    DEV_SUCCESS      , /*!< Generic success.     */
-    DEV_FAILURE      , /*!< Generic Failure.     */
-	DEV_BUSY         , /*!< Device is Busy */
-	DEV_TIMEOUT      , /*!< Device Timeout */
-    DEV_INVALID_PARAM, /*!< Parameter is invalid */
-} dev_res_e;
-
-
 #ifndef ENTER_CRITICAL_REGION
 	#define ENTER_CRITICAL_REGION()
 #endif
 #ifndef EXIT_CRITICAL_REGION
 	#define EXIT_CRITICAL_REGION()
 #endif
+
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @brief This enum define the common return code from devices
+ */
+typedef enum
+{
+    DEV_SUCCESS      , /*!< Generic success */
+    DEV_FAILURE      , /*!< Generic Failure */
+	DEV_BUSY         , /*!< Device is Busy */
+	DEV_TIMEOUT      , /*!< Device Timeout */
+    DEV_INVALID_PARAM, /*!< Parameter is invalid */
+} dev_res_e;
 
 #ifdef __cplusplus
 }

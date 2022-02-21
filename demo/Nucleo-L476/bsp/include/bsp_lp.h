@@ -1,6 +1,6 @@
 /**
   * @file bsp_lp.h
-  * @brief: // TODO This file ...
+ * @brief This file define the function to deal with low power
   * 
   * @details
   *
@@ -40,12 +40,15 @@ extern "C" {
 
 #include "common.h"
 
+/*!
+ * @brief This enum define the sleep mode
+ */
 typedef enum {
-	LP_SLEEP_MODE,
-	LP_STOP1_MODE,
-	LP_STOP2_MODE,
-	LP_STDBY_MODE,
-	LP_SHTDWN_MODE,
+	LP_SLEEP_MODE,  /*!< Sleep mode (CPU is sleeping) */
+	LP_STOP1_MODE,  /*!< Stop 1 mode */
+	LP_STOP2_MODE,  /*!< Stop 2 mode */
+	LP_STDBY_MODE,  /*!< Standby mode */
+	LP_SHTDWN_MODE, /*!< Shutdown mode */
 } lp_mode_e;
 
 void BSP_LowPower_Enter(lp_mode_e eLpMode);

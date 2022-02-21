@@ -68,7 +68,6 @@ static void MX_UART4_Init(void);
 /* USER CODE BEGIN 0 */
 #include "bsp.h"
 extern void app_entry(void);
-#define MAX_BOOT_CNT 5
 /* USER CODE END 0 */
 
 /**
@@ -80,6 +79,8 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
+#define MAX_BOOT_CNT 5
+  //uint32_t u32PrevBootState;
   uint32_t u32BootCnt;
   uint32_t u32UnauthAcc;
   uint32_t u32BootState;
@@ -100,6 +101,7 @@ int main(void)
   // Get boot state
   u32BootState = BSP_Boot_GetState();
 
+#define MAX_BOOT_CNT 5
   // check if instability
   if(u32BootState & INSTAB_DETECT)
   {
@@ -204,6 +206,7 @@ void PeriphClock_Config(void)
   PeriphClkInit.Lpuart1ClockSelection = RCC_LPUART1CLKSOURCE_PCLK1;
 
   PeriphClkInit.I2c2ClockSelection = RCC_I2C2CLKSOURCE_PCLK1;
+
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
@@ -238,6 +241,7 @@ void LSEClock_Config(void)
 }
 
 /**
+  * @static
   * @brief USART2 Initialization Function
   * @retval None
   */

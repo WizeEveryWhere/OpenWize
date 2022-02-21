@@ -1,6 +1,6 @@
 /**
   * @file phy_layer_private.h
-  * @brief // TODO This file ...
+  * @brief This file define the phy fake device driver.
   * 
   * @details
   *

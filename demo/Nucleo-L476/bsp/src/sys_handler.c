@@ -1,6 +1,6 @@
 /**
   * @file sys_handler.c
-  * @brief: This file contains systems/platform handlers.
+  * @brief This file contains systems/platform handlers.
   * 
   * @details
   *
@@ -38,6 +38,11 @@ extern "C" {
 
 #include <cmsis_compiler.h>
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 void __init_sys_handlers__(void)
 {
@@ -101,6 +106,11 @@ void SysTick_Handler(void)
 
 }
 #endif
+
+/*!
+ * @}
+ * @endcond
+ */
 
 #ifdef __cplusplus
 }

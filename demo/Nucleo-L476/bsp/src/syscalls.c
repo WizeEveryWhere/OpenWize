@@ -1,6 +1,6 @@
 /**
   * @file syscalls.c
-  * @brief: This file implement the libc wrapper functions
+  * @brief This file implement the libc wrapper functions
   * 
   * @details
   *
@@ -33,10 +33,21 @@
  */
 
 /******************************************************************************/
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 void __init_sys_calls__(void)
 {
 	return;
 }
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 /* Libc time wrapper functions */
@@ -45,6 +56,11 @@ void __init_sys_calls__(void)
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 extern void BSP_Rtc_Time_ReadMicro(struct timeval * tp);
 __attribute__((used)) int
@@ -83,11 +99,21 @@ int _times(struct tms *buf)
 	return -1;
 }
 
+/*!
+ * @}
+ * @endcond
+ */
+
 /******************************************************************************/
 /* Libc sbrk wrapper functions */
 /******************************************************************************/
 #include <errno.h>
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 extern int errno;
 register char * stack_ptr asm("sp");
@@ -117,12 +143,22 @@ _sbrk(int incr)
 	return (caddr_t) prev_heap_end;
 }
 
+/*!
+ * @}
+ * @endcond
+ */
+
 /******************************************************************************/
 /* Libc wrapper functions */
 /******************************************************************************/
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <signal.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 char *__env[1] = { 0 };
 char **environ = __env;
@@ -236,5 +272,10 @@ int _execve(char *name, char **argv, char **env)
 	errno = ENOMEM;
 	return -1;
 }
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /*! @} */
