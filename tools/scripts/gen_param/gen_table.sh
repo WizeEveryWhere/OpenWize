@@ -62,8 +62,9 @@ cat << EOF > ${toFile}
   * @file $(basename ${toFile})
   * @brief This file was generated from ${baseFile}.
   * 
-  *****************************************************************************
-  * @copyright 2020, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -77,11 +78,10 @@ cat << EOF > ${toFile}
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Generation Date
-  * ----------------
-  * ${now} [${USER}]
+  * @par Generation Date
+  * 
+  * @par x.x.x : ${now} [${USER}]
   *
   */
 
@@ -227,10 +227,13 @@ function buildParametersTables {
     printf "#define PARAM_DEFAULT_SZ (0xUndefSizeForNow)\n\n" >> ${hFile};
     printf "extern const param_s a_ParamAccess[PARAM_ACCESS_CFG_SZ];\n" >> ${hFile};
     printf "extern const uint8_t a_ParamDefault[PARAM_DEFAULT_SZ];\n\n" >> ${hFile};
+    
+    printf "/*!\n * @brief This enum define the parameter id\n */\n" >> ${hFile};
     printf "typedef enum {\n" >> ${hFile};
     
     # print value file header    
     printf "\n/******************************************************************************/\n" >> ${vFile};
+    printf "/*!\n * @brief This array define the parameter default value\n */\n" >> ${vFile};
     printf "const uint8_t a_ParamDefault[] = {\n   " >> ${vFile};
     
     ##
