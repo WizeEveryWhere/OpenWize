@@ -35,15 +35,25 @@ function(gen_param)
             set(verbo 0)
         endif()
         
+        find_program(XMLSTARLET xmlstarlet REQUIRED)
+        if(NOT XMLSTARLET)
+            message(FATAL_ERROR "xmlstarlet not found!\nInstall it :\n\t sudo apt-get install xmlstarlet\n")
+        endif()
+        
+        find_program(XMLMERGE xmlmerge REQUIRED)
+        if(NOT XMLMERGE)
+            message(FATAL_ERROR "xmlmerge not found!\nInstall it :\n\t sudo apt-get install gwenhywfar-tools\n")
+        endif()
+        
         execute_process (
             COMMAND 
                 bash -c "xmlmerge ${GEN_PARAM_SOURCE}/DefaultParams.xml ${GEN_PARAM_SOURCE}/DefaultRestr.xml -o ${GEN_PARAM_SOURCE}/MergedParam.xml"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             )
-    
+
         execute_process (
             COMMAND 
-                bash -c "export IS_VERBOSE_ENV=${verbo}; export PATH=$PATH:./third-party/.OpenWize/tools/scripts/gen_param; gen_table.sh --in ${GEN_PARAM_SOURCE}/MergedParam.xml --dest ${GEN_PARAM_DESTINATION};"
+                bash -c "export IS_VERBOSE_ENV=${verbo}; export PATH=$PATH:./tools/scripts/gen_param:./third-party/.OpenWize/tools/scripts/gen_param; gen_table.sh --in ${GEN_PARAM_SOURCE}/MergedParam.xml --dest ${GEN_PARAM_DESTINATION};"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             )
     endif()

@@ -83,7 +83,7 @@
         100</Parameter>
     <Parameter id="12" loc="RW" rem="RW" size="2"
                name="TX_FREQ_OFFSET" 
-               desc="Absolute transmission correction frequency of">
+               desc="Absolute transmission correction frequency offset">
         0</Parameter>
     
     <Parameter id="18" loc="RW" rem="RW" size="1" 

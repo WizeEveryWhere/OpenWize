@@ -1,6 +1,8 @@
 
 <tns:ParamCfg xmlns:tns="http://www.grdf.fr/smart-solutions/TU/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.grdf.fr/smart-solutions/TU/1.0.0/Parameter.xsd ">
+
   <ParameterList>
+
     <Parameter id="01" loc="RO" rem="RO" size="2" name="VERS_HW_TRX" desc="Hardware version number of the device (or transceiver for a remote module)">
       0x0100
     </Parameter>
@@ -31,7 +33,7 @@
     <Parameter id="11" loc="RW" rem="RW" size="2" name="TX_DELAY_FULLPOWER" desc="Maximum time between two COMMAND messages before the device automatically returns to maximum transmission power">
       100
     </Parameter>
-    <Parameter id="12" loc="RW" rem="RW" size="2" name="TX_FREQ_OFFSET" desc="Absolute transmission correction frequency of">
+    <Parameter id="12" loc="RW" rem="RW" size="2" name="TX_FREQ_OFFSET" desc="Absolute transmission correction frequency offset">
       0
     </Parameter>
     <Parameter id="18" loc="RW" rem="RW" size="1" name="EXCH_RX_DELAY" desc="Fixed wait time after transmission of a DATA message by the device and before opening the COMMAND message listening window">
@@ -88,7 +90,7 @@
     <Parameter id="35" loc="RO" rem="RO" size="1" name="PING_NBFOUND" desc="Number of different INSTPONG messages received in response to the last connectivity test">
       0
     </Parameter>
-    <Parameter id="36" loc="RO" rem="RO" size="9" name="PING_REPLY1" desc="Response 1 received for the last connectivity test (Bigger L7RssiDown)">
+    <Parameter id="36" loc="RO" rem="RO" size="9" name="PING_REPLY1" desc="Response 1 received for the last connectivity test (Bigest L7RssiDown)">
       0
     </Parameter>
     <Parameter id="37" loc="RO" rem="RO" size="9" name="PING_REPLY2" desc="Response 2 received for the last connectivity test ">
@@ -109,7 +111,7 @@
     <Parameter id="3C" loc="RO" rem="RO" size="9" name="PING_REPLY7" desc="Response 7 received for the last connectivity test ">
       0
     </Parameter>
-    <Parameter id="3D" loc="RO" rem="RO" size="9" name="PING_REPLY8" desc="Response 8 received for the last connectivity test (Lower L7RssiDown)">
+    <Parameter id="3D" loc="RO" rem="RO" size="9" name="PING_REPLY8" desc="Response 8 received for the last connectivity test (Lowest L7RssiDown)">
       0
     </Parameter>
     <Parameter id="3E" loc="RW" rem="RW" size="1" ref="REF_N" name="EXECPING_PERIODE" desc="Periodic time of execping sending by the device, in months">
@@ -123,6 +125,7 @@
     </Parameter>
   </ParameterList>
   <RestrictionList>
+
     <Restriction id="01" rtype="ENUM" rsize="8BITS">
       100 110 120 130 140 150
     </Restriction>

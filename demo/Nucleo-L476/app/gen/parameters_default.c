@@ -1,6 +1,6 @@
 /*!
   * @file parameters_default.c
-  * @brief This file was generated from ./cfg/MergedParam.xml(Modif. : 2022-02-10 16:30:42.008812000 +0100).
+  * @brief This file was generated from demo/Nucleo-L476/app/cfg/MergedParam.xml(Modif. : 2022-03-06 08:07:01.873089600 +0100).
   * 
   *****************************************************************************
   * @copyright 2020, GRDF, Inc.  All rights reserved.
@@ -21,7 +21,7 @@
   *
   * Generation Date
   * ----------------
-  * 10/02/2022 16:46 [neo]
+  * 06/03/2022 08:07 [neo]
   *
   */
 
@@ -40,7 +40,7 @@ const uint8_t a_ParamDefault[] = {
    0x0, //!< Modulation to be used for all message receptions (except firmware download)
    0x0, //!< Transceiver nominal transmission power
    0x0,0x0, //!< Maximum time between two COMMAND messages before the device automatically returns to maximum transmission power
-   0x0,0x0, //!< Absolute transmission correction frequency of
+   0x0,0x0, //!< Absolute transmission correction frequency offset
    0x5, //!< Fixed wait time after transmission of a DATA message by the device and before opening the COMMAND message listening window
    0x8, //!< Duration of the COMMAND message listening window by the device
    0x5, //!< Time between reception of a COMMAND message by the device and transmission of the corresponding RESPONSE message
@@ -59,14 +59,14 @@ const uint8_t a_ParamDefault[] = {
    0x14, //!< Maximum value of the PING_RX_LENGTH parameter
    0x0,0x0,0x0,0x0, //!< Execution time of the last connectivity test (INSTPING/INSTPONG)
    0x0, //!< Number of different INSTPONG messages received in response to the last connectivity test
-   0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 1 received for the last connectivity test (Bigger L7RssiDown)
+   0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 1 received for the last connectivity test (Bigest L7RssiDown)
    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 2 received for the last connectivity test
    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 3 received for the last connectivity test
    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 4 received for the last connectivity test
    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 5 received for the last connectivity test
    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 6 received for the last connectivity test
    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 7 received for the last connectivity test
-   0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 8 received for the last connectivity test (Lower L7RssiDown)
+   0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0, //!< Response 8 received for the last connectivity test (Lowest L7RssiDown)
    0x6, //!< Periodic time of execping sending by the device, in months
    0x0, //!< Get or Set the Logger level
    0x0, //!< Get or Set the Logger time option

@@ -1,4 +1,4 @@
- 
+
 if(NOT DEFINED GIT_EXECUTABLE)
     find_package(Git QUIET REQUIRED)
 endif()

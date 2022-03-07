@@ -3,18 +3,27 @@ Demo application
 ================
 
 - This application is provide as a simple demonstrator of OpenWize stack targeting an ST Nucleo-L476RG board. 
+
 - The Nucleo-L476RG board doesn't integrate any RF device, so to overcome this, the demo application use the ``PhyFake`` device, which input/output frames over an UART peripheral.
+
 - This demo is very simple so, there is no console or local interface to communicate with it. Instead, application periodically send DATA and INSTALL (aka. PING) message and use the provided *Logger* module to print out messages (info, warning, debug, error). 
-- The *Logger* is connected to the MCU USART2 peripheral :
+
+- The *Logger* is connected to the MCU USART2 peripheral
+
    - Configuration : 115200 bps, 8 bits data, no parity, 1 stop bit.
    - This USART is mapped onto CN1 (USB-mini).
+
 - The *PhyFake* is connected to the MCU LPUART1 peripheral :
+
    - Configuration : 115200 bps, 8 bits data, no parity, 1 stop bit.
+   
    - This USART is mapped onto : 
+   
       - RX : PC0 (CN7-38)
       - TX : PC1 (CN7-36).
 
 - Some default parameters have been set to :
+
    .. list-table:: 
      :align: center
      :widths: auto 
@@ -49,7 +58,7 @@ Build the application
 .. code-block:: bash
 
    cd Openwize
-   mkdir _build
+   mkdir -p _build
 
 .. code-block:: bash
 
@@ -63,7 +72,7 @@ The firmware files are installed in OpenWize/*_install* directory
 
    _install/
       └── bin
-          ├── DemoApp      : The "elf" file (i.e. with debug symbols)
+          ├── DemoApp.elf  : The "elf" file (i.e. with debug symbols)
           ├── DemoApp.bin  : Pure binary file
           ├── DemoApp.lst  : Disassembly listing
           └── DemoApp.map  : Symbols and files mapping
@@ -71,7 +80,8 @@ The firmware files are installed in OpenWize/*_install* directory
 
 Load and run the firmware
 -------------------------
-To be able to load and run the demo application, you will need an ST Nucleo-L476 board and and USB-to-UART converter.
+To be able to load and run the demo application, you will need an ST Nucleo-L476
+board and and USB-to-UART converter.
 
 #. Connect your Nucleo-L476RG board to your computer
 #. Connect the USB-to-UART to your computer
@@ -87,7 +97,7 @@ To be able to load and run the demo application, you will need an ST Nucleo-L476
 
    .. code-block::
 
-      Error! Give a probe index to be able to continu.
+      Error! Give a probe index to be able to continue.
       Available devices :
             -------------------------------------------------------------------
                               STM32CubeProgrammer v2.2.0                  
@@ -125,7 +135,7 @@ To be able to load and run the demo application, you will need an ST Nucleo-L476
       Description: N/A
       Manufacturer: N/A
       
-.. .........
+.........
 
    In this example, the probe id id 0 :
    
@@ -148,13 +158,11 @@ To be able to load and run the demo application, you will need an ST Nucleo-L476
 Debug the demo application
 --------------------------
 
-In the directory "OpenWize/demo/project", we provides Eclipse project files. Open the STMCube32 IDE and *Import* as *Existing Projects into Workspace*.
+In the directory "OpenWize/demo/project", we provides Eclipse project files. Open
+the STMCube32 IDE and *Import* as *Existing Projects into Workspace*.
 
 
 
---------------------------------------------
-
+.. *****************************************************************************
 .. references
-
 .. _`STM32CubeIDE`: https://www.st.com/en/development-tools/stm32cubeide.html#get-software
-.. _`Installation`: INSTALLATION.rst

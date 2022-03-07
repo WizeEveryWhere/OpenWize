@@ -1,6 +1,6 @@
 /*!
   * @file parameters_cfg.h
-  * @brief This file was generated from ./cfg/MergedParam.xml(Modif. : 2022-02-10 16:30:42.008812000 +0100).
+  * @brief This file was generated from demo/Nucleo-L476/app/cfg/MergedParam.xml(Modif. : 2022-03-06 08:07:01.873089600 +0100).
   * 
   *****************************************************************************
   * @copyright 2020, GRDF, Inc.  All rights reserved.
@@ -21,7 +21,7 @@
   *
   * Generation Date
   * ----------------
-  * 10/02/2022 16:46 [neo]
+  * 06/03/2022 08:07 [neo]
   *
   */
 
@@ -52,7 +52,7 @@ typedef enum {
     RF_DOWNLINK_MOD = 0x0B, //!< Modulation to be used for all message receptions (except firmware download)
     TX_POWER = 0x10, //!< Transceiver nominal transmission power
     TX_DELAY_FULLPOWER = 0x11, //!< Maximum time between two COMMAND messages before the device automatically returns to maximum transmission power
-    TX_FREQ_OFFSET = 0x12, //!< Absolute transmission correction frequency of
+    TX_FREQ_OFFSET = 0x12, //!< Absolute transmission correction frequency offset
     EXCH_RX_DELAY = 0x18, //!< Fixed wait time after transmission of a DATA message by the device and before opening the COMMAND message listening window
     EXCH_RX_LENGTH = 0x19, //!< Duration of the COMMAND message listening window by the device
     EXCH_RESPONSE_DELAY = 0x1A, //!< Time between reception of a COMMAND message by the device and transmission of the corresponding RESPONSE message
@@ -71,14 +71,14 @@ typedef enum {
     PING_RX_LENGTH_MAX = 0x33, //!< Maximum value of the PING_RX_LENGTH parameter
     PING_LAST_EPOCH = 0x34, //!< Execution time of the last connectivity test (INSTPING/INSTPONG)
     PING_NBFOUND = 0x35, //!< Number of different INSTPONG messages received in response to the last connectivity test
-    PING_REPLY1 = 0x36, //!< Response 1 received for the last connectivity test (Bigger L7RssiDown)
+    PING_REPLY1 = 0x36, //!< Response 1 received for the last connectivity test (Bigest L7RssiDown)
     PING_REPLY2 = 0x37, //!< Response 2 received for the last connectivity test
     PING_REPLY3 = 0x38, //!< Response 3 received for the last connectivity test
     PING_REPLY4 = 0x39, //!< Response 4 received for the last connectivity test
     PING_REPLY5 = 0x3A, //!< Response 5 received for the last connectivity test
     PING_REPLY6 = 0x3B, //!< Response 6 received for the last connectivity test
     PING_REPLY7 = 0x3C, //!< Response 7 received for the last connectivity test
-    PING_REPLY8 = 0x3D, //!< Response 8 received for the last connectivity test (Lower L7RssiDown)
+    PING_REPLY8 = 0x3D, //!< Response 8 received for the last connectivity test (Lowest L7RssiDown)
     EXECPING_PERIODE = 0x3E, //!< Periodic time of execping sending by the device, in months
     LOGGER_LEVEL = 0xFD, //!< Get or Set the Logger level
     LOGGER_TIME_OPT = 0xFE, //!< Get or Set the Logger time option
