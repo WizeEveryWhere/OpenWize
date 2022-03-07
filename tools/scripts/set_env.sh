@@ -1,5 +1,21 @@
 #!/bin/bash
 
+#STM32CubeIde_ver=1.1.0
+STM32CubeIde_ver=1.8.0
+
+
+if [[ ${STM32CubeIde_ver} == '1.8.0' ]]
+then
+    ExplGnuPath="com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346";
+    ExplProgPath="com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.0.100.202110141430";
+else
+    ExplGnuPath="com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.linux64_1.0.0.201904181610";
+    ExplProgPath="com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_1.1.0.201910081157";
+fi
+
+ExplBasePath="/opt/Application/st/stm32cubeide_${STM32CubeIde_ver}/plugins"
+
+
 #-------------------------------------------------------------------------------
 # Save the ~/.bashrc into ~/.bashrc_save
 function _save_bashrc(){
@@ -49,9 +65,7 @@ fi
 # Create the ~/.bash_tools script
 function create_bashtools(){
     local _m_path=$1;
-    local _m_RTOS_PATH=$2;
-    local _m_STM32FW=$3;
-    local _m_cube_prog_path=$4;
+    local _m_cube_prog_path=$2;
     local _m="$HOME";
     local m_file=".bash_tools"
     
@@ -83,7 +97,7 @@ EOF
 # Install the environment variable into ~/.bash_tools and ~/.bashrc
 function install_env(){
     # cross-tools
-    expl_path="/opt/Application/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.linux64_1.0.0.201904181610/tools";
+    expl_path="${ExplBasePath}/${ExplGnuPath}/tools";
     
     echo "Set the cross-tools path : (expl: ${expl_path})";
     read -p "Path : " m_path;
@@ -100,8 +114,8 @@ function install_env(){
     echo "";
    
     # stmcube programmer
-    expl_path="/opt/Application/st/stm32cubeide_1.1.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_1.1.0.201910081157/tools";
-
+    expl_path="${ExplBasePath}/${ExplProgPath}/tools";
+    
     echo "Set the STM32Cube programmer path : (expl: ${expl_path})";
     read -p "Path : " m_cube_prog_path;
     if [[ -z "${m_cube_prog_path}" ]]
@@ -130,7 +144,7 @@ function install_env(){
             echo "";
             echo "You have to set the following variables for each new shell:";
             echo "export CROSS_TOOL_PATH=${m_path}";
-            echo "export CUBE_PROG_PATH=${_m_cube_prog_path}";
+            echo "export CUBE_PROG_PATH=${m_cube_prog_path}";
             ;;
         *) 
             echo "Answer is not correct.";;

@@ -62,7 +62,21 @@ This will also clone the following required submodules :
 Install the STM32Cube IDE
 -------------------------
 
-Go to the STMicroelectronic web page (`STM32CubeIDE`_), on *STM32CubeIDE Generic Linux Installer* line, select the version 1.1.0 and download it. Unzip the zip file somewhere in temporary directory, then execute the resulting file ("st-stm32cubeide_1.1.0_4551_20191014_1140_amd64.sh") and follow the instruction. Note that preferred installation path as ""/opt/Application/st". After few minutes, the STM32CubeIDE installation is completed. 
+.. |STMCubeIdeVersion| replace:: 1.8.0
+.. |STMCubeIdeExecutable| replace:: st-stm32cubeide_1.8.0_11526_20211125_0815_amd64.sh
+.. |PreferdInstPath| replace:: /opt/Application/st/stm32cubeide_1.8.0
+
+.. only:: comment
+   .. |STMCubeIdeVersion| replace:: 1.1.0
+   .. |STMCubeIdeExecutable| replace:: st-stm32cubeide_1.1.0_4551_20191014_1140_amd64.sh
+   .. |PreferdInstPath| replace:: /opt/Application/st/stm32cubeide_1.1.0
+
+Go to the STMicroelectronic web page (`STM32CubeIDE`_), on *STM32CubeIDE Generic Linux Installer* line, select the version |STMCubeIdeVersion| and download it. 
+Unzip the zip file somewhere in temporary directory, then execute the resulting file ("|STMCubeIdeExecutable|") and follow the instruction. 
+
+Note that preferred installation path as "|PreferdInstPath|". 
+
+After few minutes, the STM32CubeIDE installation is completed. 
 
 Setup environment variables
 ---------------------------

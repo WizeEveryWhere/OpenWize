@@ -28,6 +28,9 @@ The contributions :
 .. 
    Before opening an issue
    -----------------------
+   git config user.name "Your Name Here"
+   git config user.email your@email.com
+   
    Commit Style
    ^^^^^^^^^^^^
    [FEATURE]
