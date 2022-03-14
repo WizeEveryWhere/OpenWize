@@ -28,7 +28,8 @@
   */
 
 /*!
- * @addtogroup nucleo_L476_bsp
+ * @addtogroup common
+ * @ingroup bsp
  * @{
  */
 
@@ -105,6 +106,8 @@ void msleep(uint32_t milisecond) { HAL_Delay(milisecond); }
 /* Libc print wrapper functions */
 /******************************************************************************/
 
+/*! @cond INTERNAL @{ */
+
 extern uart_dev_t aDevUart[UART_ID_MAX];
 
 #ifdef USE_SEMIHOSTING
@@ -136,6 +139,9 @@ int __io_getchar(void){
 extern void __init_exception_handlers__(void);
 extern void __init_sys_handlers__(void);
 extern void __init_sys_calls__(void);
+
+/*! @} @endcond */
+
 
 boot_state_t gBootState;
 

@@ -1,3 +1,5 @@
+.. *****************************************************************************
+
 *WizeCore* sub directory
 ------------------------
 
@@ -43,3 +45,5 @@
    - deal with downloaded firmware image (store, validate)
 
    *app* depends on *mgr*, *TimeEvt*, *ImgStorage*, *Parameters*, *Logger* and *FreeRTOS*.
+
+.. *****************************************************************************

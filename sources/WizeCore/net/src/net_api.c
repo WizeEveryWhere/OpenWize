@@ -437,7 +437,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 			{
 				switch (eCtl)
 				{
-					/***********************************************************/
+				    /*--------------------------------------------------------*/
 					case NETDEV_CTL_CFG_MEDIUM:
 						if( (void*)args == NULL)
 						{
@@ -491,7 +491,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						pCtx->sMediumCfg.eTxPower = (phy_power_e)args;
 						break;
 
-					/***********************************************************/
+					/*--------------------------------------------------------*/
 					case NETDEV_CTL_CFG_PROTO:
 						if( (void*)args == NULL)
 						{
@@ -516,7 +516,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						pCtx->sProtoCtx.sProtoConfig.DwnId[2] = (uint8_t)(args );
 						break;
 
-					/***********************************************************/
+					/*--------------------------------------------------------*/
 					case NETDEV_CTL_SET_DEVID:
 						if( (void*)args == NULL)
 						{
@@ -535,7 +535,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						memcpy((uint8_t*)args, pCtx->sProtoCtx.aDeviceManufID, MFIELD_SZ);
 						memcpy(&(((uint8_t*)args)[MFIELD_SZ]), pCtx->sProtoCtx.aDeviceAddr, AFIELD_SZ);
 						break;
-					/***********************************************************/
+					/*--------------------------------------------------------*/
 					default:
 						break;
 				}
@@ -545,9 +545,9 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 	return i32Ret;
 }
 
-/******************************************************************************/
-/******************************************************************************/
-// Private internal function
+/*==============================================================================
+ * Private internal function
+ *============================================================================*/
 
 /*!
  * @static

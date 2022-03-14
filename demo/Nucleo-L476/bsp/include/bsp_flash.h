@@ -27,10 +27,11 @@
   *
   */
 
-/*!
- * @addtogroup nucleo_L476_bsp
- * @{
+/*! @addtogroup flash
+ *  @ingroup bsp
+ *  @{
  */
+
 #ifndef _BSP_FLASH_H_
 #define _BSP_FLASH_H_
 #ifdef __cplusplus

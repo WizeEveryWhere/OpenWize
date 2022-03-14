@@ -8,7 +8,7 @@ if(DOXYGEN_FOUND)
     # Try to find a Doxyfile.in 
     #find_file(DOXYFILE_IN "Doxyfile.in"
     find_file(DOXYFILE_IN "Doxyfile"
-        PATHS "${CMAKE_CURRENT_SOURCE_DIR}" "./" "docs" "tools/build_support"
+        PATHS "${CMAKE_CURRENT_SOURCE_DIR}" "tools/build_support" "docs" "./"
         NO_DEFAULT_PATH
         DOC "Path to the doxygen configuration template file"
         REQUIRED)

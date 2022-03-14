@@ -3,17 +3,18 @@
 #STM32CubeIde_ver=1.1.0
 STM32CubeIde_ver=1.8.0
 
+#--------------
+ExplBasePath="/opt/Application/st/stm32cubeide_${STM32CubeIde_ver}/plugins";
 
-if [[ ${STM32CubeIde_ver} == '1.8.0' ]]
-then
-    ExplGnuPath="com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_2.0.0.202105311346";
-    ExplProgPath="com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.0.100.202110141430";
-else
-    ExplGnuPath="com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.linux64_1.0.0.201904181610";
-    ExplProgPath="com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_1.1.0.201910081157";
-fi
+#--------------
+GnuTool_BasePath="com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32";
+StProg_BasePath="com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer";
+Jlink_BasePath="com.st.stm32cube.ide.mcu.externaltools.jlink";
 
-ExplBasePath="/opt/Application/st/stm32cubeide_${STM32CubeIde_ver}/plugins"
+#--------------
+GnuPath=$(find ${ExplBasePath} -type d -name "${GnuTool_BasePath}*");
+StProgPath=$(find ${ExplBasePath} -type d -name "${StProg_BasePath}*");
+JlinkPath=$(find ${ExplBasePath} -type d -name "${Jlink_BasePath}*");
 
 
 #-------------------------------------------------------------------------------
@@ -63,11 +64,16 @@ fi
 
 #-------------------------------------------------------------------------------
 # Create the ~/.bash_tools script
-function create_bashtools(){
+function create_bashtools()
+{
     local _m_path=$1;
-    local _m_cube_prog_path=$2;
+    local _GnuPath=$2;
+    local _StProgPath=$3;
+    local _JlinkPath=$4;
+    
     local _m="$HOME";
     local m_file=".bash_tools"
+    
     
     echo "Creating ${_m}/${m_file}"
     if [[ -e ${_m}/${m_file} ]]
@@ -75,18 +81,22 @@ function create_bashtools(){
         rm -f ${_m}/${m_file}
     fi
     now=`date`
+
 cat << EOF > ${_m}/${m_file}
 #!/bin/bash 
 # bash_tools, generated the ${now}
 
 # Use to find cross-tools
-export CROSS_TOOL_PATH=${_m_path}
+export CROSS_TOOL_PATH=${_GnuPath}
 
 # Use to find STM32CubeProgrammer
-export CUBE_PROG_PATH=${_m_cube_prog_path}
+export ST_PROG_PATH=${_StProgPath}
+
+# Use to find Segger Jlink
+export JLINK_PROG_PATH=${_JlinkPath}
 
 # Set the PATH env. variable
-export PATH=\$PATH:\${CROSS_TOOL_PATH}/bin:\${CUBE_PROG_PATH}/bin
+export PATH=\$PATH:\${CROSS_TOOL_PATH}:\${ST_PROG_PATH}:\${JLINK_PROG_PATH};
 
 EOF
     set_bashrc;
@@ -95,15 +105,17 @@ EOF
 
 #-------------------------------------------------------------------------------
 # Install the environment variable into ~/.bash_tools and ~/.bashrc
-function install_env(){
-    # cross-tools
-    expl_path="${ExplBasePath}/${ExplGnuPath}/tools";
+function install_env()
+{
+    #--------------------
+    # stm32 main path
+    expl_path="${ExplBasePath}";
     
-    echo "Set the cross-tools path : (expl: ${expl_path})";
+    echo "Set the STM32Cube installation main path : (expl: ${expl_path})";
     read -p "Path : " m_path;
     if [[ -z "${m_path}" ]]
     then
-        echo "Cross-Tool path set to default : ${expl_path}";
+        echo "STM32Cube path set to default : ${expl_path}";
         m_path=${expl_path};
     fi
     if [[ !(-d  ${m_path}) ]]
@@ -112,39 +124,65 @@ function install_env(){
         exit;
     fi
     echo "";
-   
-    # stmcube programmer
-    expl_path="${ExplBasePath}/${ExplProgPath}/tools";
     
-    echo "Set the STM32Cube programmer path : (expl: ${expl_path})";
-    read -p "Path : " m_cube_prog_path;
-    if [[ -z "${m_cube_prog_path}" ]]
+    #--------------------
+    # Check if GNU tools are found
+    GnuPath+=/tools/bin
+    if [[ ! -e ${GnuPath} ]]
     then
-        echo "STM32Cube programmer path set to default : ${expl_path}";
-        m_cube_prog_path=${expl_path};
+        echo "${GnuPath}";
+        echo "Was not found !!!!";
+        echo "";
+    else
+        echo "Found : ${GnuPath}";
     fi
-    if [[ !(-d  ${m_cube_prog_path}) ]]
+
+    #--------------------
+    # Check if ST Programer tools are found
+    StProgPath+=/tools/bin
+    if [[ ! -e ${StProgPath} ]]
     then
-        echo "The given path dosen't exist!!!";
-        exit;
+        echo "${StProgPath}";
+        echo "Was not found !!!!";
+        echo "";
+    else
+        echo "Found : ${StProgPath}";
     fi
-    echo "";
-   
-    #
+    
+    #--------------------
+    # Check if Segger JLink tools are found
+    JlinkPath+=/tools/bin
+    if [[ ! -e ${JlinkPath} ]]
+    then
+        echo "${JlinkPath}";
+        echo "Was not found !!!!";
+        echo "";
+    else
+        echo "Found : ${JlinkPath}";
+    fi
+
+    #--------------------
     echo "Do you want to install in your environment variable (bashrc) (recommended)";
     read -p "Answer (yes or no): " m_answer;
     case ${m_answer} in
         [yYoO]*) 
-            create_bashtools "${m_path}" "${m_cube_prog_path}";
+            create_bashtools "${m_path}" "${GnuPath}" "${StProgPath}" "${JlinkPath}";
             echo "...now, you can start a new shell, the variable will be set."
             ;;
         [nN]*) 
-            export CROSS_TOOL_PATH=${m_path}
-            export CUBE_PROG_PATH=${m_cube_prog_path}
+            export CROSS_TOOL_PATH=${GnuPath}
+            export ST_PROG_PATH=${StProgPath}
+            export JLINK_PROG_PATH=${JlinkPath}
+            export PATH=$PATH:${CROSS_TOOL_PATH}:${ST_PROG_PATH}:${JLINK_PROG_PATH};
             echo "";
             echo "You have to set the following variables for each new shell:";
-            echo "export CROSS_TOOL_PATH=${m_path}";
-            echo "export CUBE_PROG_PATH=${m_cube_prog_path}";
+            echo "export CROSS_TOOL_PATH=${GnuPath}";
+            echo "export ST_PROG_PATH=${StProgPath}";
+            echo "export JLINK_PROG_PATH=${JlinkPath}";
+            echo "";
+            echo "export PATH=\$PATH:\${CROSS_TOOL_PATH}:\${ST_PROG_PATH}:\${JLINK_PROG_PATH}";
+            echo "";
+            
             ;;
         *) 
             echo "Answer is not correct.";;

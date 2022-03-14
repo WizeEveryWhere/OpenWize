@@ -28,9 +28,8 @@
   */
 
 /*!
- * @addtogroup nucleo_L476_device
- * @{
- * @defgroup nucleo_L476_device_phyfake PhyFake
+ * @addtogroup phy_fake
+ * @ingroup device
  * @{
  */
 

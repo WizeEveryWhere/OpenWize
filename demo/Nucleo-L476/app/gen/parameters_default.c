@@ -1,6 +1,6 @@
 /*!
   * @file parameters_default.c
-  * @brief This file was generated from demo/Nucleo-L476/app/cfg/MergedParam.xml(Modif. : 2022-03-07 19:18:18.226425600 +0100).
+  * @brief This file was generated from demo/Nucleo-L476/app/cfg/MergedParam.xml(Modif. : 2022-03-14 06:36:30.109935700 +0100).
   * 
   * @details
   *
@@ -21,7 +21,7 @@
   *
   * @par Generation Date
   * 
-  * @par x.x.x : 07/03/2022 19:18 [neo]
+  * @par x.x.x : 14/03/2022 06:36 [neo]
   *
   */
 

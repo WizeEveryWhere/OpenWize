@@ -28,8 +28,9 @@
   */
 
 /*!
- * @addtogroup nucleo_L476_bsp
- * @{
+ *  @addtogroup boot
+ *  @ingroup bsp
+ *  @{
  */
 
 #ifndef _BSP_BOOT_H_

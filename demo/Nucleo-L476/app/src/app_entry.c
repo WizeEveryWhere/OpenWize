@@ -28,7 +28,7 @@
   */
 
 /*!
- * @addtogroup nucleo_L476_app
+ * @addtogroup app
  * @{
  */
 

@@ -80,8 +80,9 @@ The firmware files are installed in OpenWize/*_install* directory
 
 Load and run the firmware
 -------------------------
+
 To be able to load and run the demo application, you will need an ST Nucleo-L476
-board and and USB-to-UART converter.
+board and USB-to-UART converter.
 
 #. Connect your Nucleo-L476RG board to your computer
 #. Connect the USB-to-UART to your computer
@@ -90,17 +91,14 @@ board and and USB-to-UART converter.
    .. code-block:: bash
 
       cd OpenWize
-      export PATH=$PATH:$(pwd)/tools/scripts/test_support
-      twk_load_stlink.sh -h
+      STM32_Programmer_CLI -l
 
    You should get something like that :
 
    .. code-block::
-
-      Error! Give a probe index to be able to continue.
-      Available devices :
+   
             -------------------------------------------------------------------
-                              STM32CubeProgrammer v2.2.0                  
+                              STM32CubeProgrammer v2.9.0-RC01                  
             -------------------------------------------------------------------
 
       =====  DFU Interface   =====
@@ -150,7 +148,8 @@ board and and USB-to-UART converter.
    
    .. code-block:: bash
 
-      twk_load_stlink.sh ../_install/bin/DemoApp.bin 0
+      STM32_Programmer_CLI -c port=SWD mode=UR reset=HWrst index=0 -d _install/bin//DemoApp.bin 0x08000000
+
 
    You should be able to the *Logger* messages on *ttyACM0* and Wize frames on *ttyUSB0*.
 

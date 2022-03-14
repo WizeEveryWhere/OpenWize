@@ -28,8 +28,9 @@
   */
 
 /*!
- * @addtogroup nucleo_L476_app
- * @{
+ *  @addtogroup sys
+ *  @ingroup app
+ *  @{
  */
 
 #include "FreeRTOS.h"

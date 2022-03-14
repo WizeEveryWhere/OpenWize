@@ -1,10 +1,10 @@
+.. *****************************************************************************
 
-*****************
 Code Organization
-*****************
+=================
 
-Introduction
-============
+Repository structure
+--------------------
 
 The repository structure is the following
 
@@ -38,9 +38,8 @@ The repository structure is the following
    └── CMakeLists.txt : the main CMakeList.txt file
 
 
-
 Sources directory
-=================
+-----------------
 
 .. rubric::  The *sources* directory is organized as follow :
 
@@ -61,18 +60,20 @@ or less to an abstraction layer.
    │   ├── Parameters   
    │   ├── ReedSolomon  
    │   └── TimeEvt
-   └── WizeCore
-       ├── app
-       ├── mgr
-       ├── net
-       └── proto
+   ├── WizeCore
+   │   ├── app
+   │   ├── mgr
+   │   ├── net
+   │   ├── proto
+   │   └── CMakeLists.txt
+   ├── CMakeLists.txt
+   └── OpenWize_Options.cmake
 
-
-.. include:: wizecore_subdir.rst
 .. include:: samples_subdir.rst
+.. include:: wizecore_subdir.rst
 
 Demo directory
-==============
+--------------
 
 ::
 
@@ -103,13 +104,6 @@ Demo directory
     ├── STM32HALConfig.cmake : STM32 HAL configuration file for this board/bsp
     └── Nucleo-L476.cmake    : main cmake file to build and link everything together
 
-
 .. include:: demo_subdir.rst
 
-TBD
-
-
 .. *****************************************************************************
-.. references
-.. _`Wize Lan Protocol Specifications`: https://www.wize-alliance.com/Downloads/Technical
-

@@ -28,7 +28,8 @@
   */
 
 /*!
- * @addtogroup nucleo_L476_bsp
+ * @addtogroup low_power
+ * @ingroup bsp
  * @{
  */
 

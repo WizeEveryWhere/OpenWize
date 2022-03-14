@@ -28,9 +28,11 @@
   */
 
 /*!
- * @addtogroup nucleo_L476_app
- * @{
+ *  @addtogroup sys
+ *  @ingroup app
+ *  @{
  */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
