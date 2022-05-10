@@ -1,0 +1,18 @@
+[submodule "third-party/libraries/Tinycrypt/tinycrypt"]
+	path = third-party/libraries/Tinycrypt/tinycrypt
+	url = https://github.com/intel/tinycrypt.git
+[submodule "third-party/testing/Unity/CMock"]
+	path = third-party/testing/Unity/CMock
+	url = https://github.com/ThrowTheSwitch/CMock.git
+[submodule "third-party/firmware/STM32/stm32l4xx_hal_driver"]
+	path = third-party/firmware/STM32/stm32l4xx_hal_driver
+	url = https://github.com/STMicroelectronics/stm32l4xx_hal_driver.git
+[submodule "third-party/firmware/STM32/cmsis_device_l4"]
+	path = third-party/firmware/STM32/cmsis_device_l4
+	url = https://github.com/STMicroelectronics/cmsis_device_l4.git
+[submodule "third-party/firmware/STM32/cmsis_core"]
+	path = third-party/firmware/STM32/cmsis_core
+	url = https://github.com/STMicroelectronics/cmsis_core.git
+[submodule "third-party/rtos/FreeRTOS/FreeRTOS-Kernel"]
+	path = third-party/rtos/FreeRTOS/FreeRTOS-Kernel
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git
