@@ -29,11 +29,11 @@ author = u'GRDF'
 
 
 # The short X.Y version
-version = u''
+version = u'1.0'
 #version = get_version()
 
 # The full version, including alpha/beta/rc tags
-release = u'1.0'
+release = u'1.0.0'
 #release = version
 
 
@@ -187,10 +187,10 @@ epub_exclude_files = ['search.html']
 import sphinx_rtd_theme
 
 extensions = [
-'sphinx_rtd_theme',
-'sphinx.ext.intersphinx',
-'breathe',
-#'sphinxcontrib.moderncmakedomain',
+	'sphinx_rtd_theme',
+	'sphinx.ext.intersphinx',
+	'breathe',
+	#'sphinxcontrib.moderncmakedomain',
 ]
 # pip install sphinxcontrib-moderncmakedomain
 
