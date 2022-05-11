@@ -31,7 +31,7 @@
 
    - *adm_mgr*, *inst_mgr* and *dwn_mgr* manage respectively the administration, installation and download sessions. Their role is mainly to ensure the session timing correctness.
    
-   - *net_mgr* is a kind of high level driver for the *net* module. In particular, it manage the net+phy resources in thread-safe manner and ensure the timing correctness if the "send" and "listen" windows.
+   - *net_mgr* is a kind of high level driver for the *net* module. In particular, it manage the net+phy resources in thread-safe manner and ensure the timing correctness in the "send" and "listen" windows.
 
    *mgr* depends on *net*, *TimeEvt*, *Logger* and *FreeRTOS*.
 
