@@ -7,20 +7,20 @@ Cloning this repository
 
 .. code-block:: bash
 
-   git clone --recurse-submodules https://github.com/GRDF/OpenWize.git
+   git clone --recurse-submodules https://github.com/WizeEveryWhere/OpenWize.git
 
-.. with selecting "develop" branch: git clone -b develop --recurse-submodules https://github.com/GRDF/OpenWize.git
+.. with selecting "develop" branch: git clone -b develop --recurse-submodules https://github.com/WizeEveryWhere/OpenWize.git
 
 or alternatively 
 
 .. code-block:: bash
 
-   git clone https://github.com/GRDF/OpenWize.git
+   git clone https://github.com/WizeEveryWhere/OpenWize.git
    cd OpenWize
    git submodule init --recursive
    git submodule update --recursive
    
-.. with selecting "develop" branch: git clone -b develop https://github.com/GRDF/OpenWize.git
+.. with selecting "develop" branch: git clone -b develop https://github.com/WizeEveryWhere/OpenWize.git
 
 
 This will also clone the following required submodules :
