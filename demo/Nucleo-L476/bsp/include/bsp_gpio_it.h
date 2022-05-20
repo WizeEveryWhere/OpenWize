@@ -1,9 +1,10 @@
 /*!
-  * @file: bsp_gpio_it.h
-  * @brief: This file defines functions to deal with external interrupt lines.
+  * @file bsp_gpio_it.h
+  * @brief This file defines functions to deal with external interrupt lines.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/14 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup gpio_it
+ * @ingroup bsp
+ * @{
+ */
+
 #ifndef _BSP_GPIO_IT_H_
 #define _BSP_GPIO_IT_H_
 #ifdef __cplusplus
@@ -35,7 +42,7 @@ extern "C" {
 #include "common.h"
 #include "bsp_gpio.h"
 
-/*! \enum gpio_irq_trg_cond_e GPIO trigger condition enumerations */
+/** This enum define the GPIO trigger condition */
 typedef enum {
 	GPIO_IRQ_NONE_EDGE      =(0b0000),     /*!< Trigger an interrupt on a none edge.    */
     GPIO_IRQ_RISING_EDGE    =(0b0001),     /*!< Trigger an interrupt on a rising edge.    */
@@ -58,3 +65,5 @@ void BSP_GpioIt_Handler(int8_t i8_ItLineId);
 }
 #endif
 #endif /* _BSP_GPIO_IT_H_ */
+
+/*! @} */

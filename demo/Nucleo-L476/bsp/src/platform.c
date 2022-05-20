@@ -1,9 +1,10 @@
 /**
-  * @file: platform.c
-  * @brief: This file contains some specific platform constants and call-back..
+  * @file platform.c
+  * @brief This file contains some specific platform constants and call-back..
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/09/09[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/09/09 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup platform
+ * @ingroup bsp
+ * @{
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,6 +40,11 @@ extern "C" {
 #include "platform.h"
 #include "bsp.h"
 #include <stm32l4xx_hal.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 extern RTC_HandleTypeDef hrtc;
 
@@ -44,15 +55,15 @@ extern UART_HandleTypeDef hlpuart1;
 uart_dev_t aDevUart[UART_ID_MAX] =
 {
 	[UART_ID_CONSOLE] = {
-			.hHandler = &huart2,
+			.hHandle = &huart2,
 			.pfEvent = NULL
 	},
 	[UART_ID_COM]     = {
-			.hHandler = &huart4,
+			.hHandle = &huart4,
 			.pfEvent = NULL
 	},
 	[UART_ID_PHY]     = {
-			.hHandler = &hlpuart1,
+			.hHandle = &hlpuart1,
 			.pfEvent = NULL
 	},
 };
@@ -99,7 +110,7 @@ static void _send_event_to_cb_(UART_HandleTypeDef *huart, uint32_t evt)
 	register uint8_t id;
 	for (id = 0; id < UART_ID_MAX; id++)
 	{
-		if (aDevUart[id].hHandler == huart)
+		if (aDevUart[id].hHandle == huart)
 		{
 			if (aDevUart[id].pfEvent != NULL)
 			{
@@ -132,6 +143,13 @@ __weak void HAL_UART_AbortReceiveCpltCallback(UART_HandleTypeDef *huart)
 
 /******************************************************************************/
 
+/*!
+ * @}
+ * @endcond
+ */
+
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

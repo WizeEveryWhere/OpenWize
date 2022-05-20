@@ -2,7 +2,8 @@
   * @file parameters_def.h
   * @brief This file define structure and enum to deal with parameters.
   * 
-  *****************************************************************************
+  * @details
+  *
   * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
@@ -17,25 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/20 00:09:40 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/20 00:09:40 [GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
+ * @addtogroup parameters
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Parameters
- * @{
+ *
  */
-
 #ifndef _PARAMETERS_DEF_H_
 #define _PARAMETERS_DEF_H_
 #ifdef __cplusplus
@@ -72,6 +68,11 @@ typedef enum {
 	REF_N = 0b0, //!< Not saved into the referential
     REF_Y = 0b1, //!< Saved into the referential
 }param_ref_e;
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 /*!
  * @def ACCESS_MSK
@@ -144,6 +145,11 @@ typedef enum {
 #define REM_ACCESS_MSK 0b11
 
 /*!
+ * @}
+ * @endcond
+ */
+
+/*!
  * @brief This structure defines the parameter properties.
  */
 typedef struct __attribute__((__packed__)){
@@ -160,7 +166,12 @@ typedef struct __attribute__((__packed__)){
 						     @li b1-b0 : remote Read/Write (@link param_access_e @endlink).
 						   */
 	uint8_t   u8_restId;   //!< Restriction table id (0x00 means no restriction)
-}param_s;
+} param_s;
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 /*!
  * @def RESTR_MSK
@@ -189,7 +200,7 @@ typedef struct __attribute__((__packed__)){
 #define SZ_RESTR_POS 4
 /*!
  * @def SZ_RESTR_SZ
- * @briefThis define the number of bits used for the restriction size
+ * @brief This define the number of bits used for the restriction size
  */
 #define SZ_RESTR_SZ 3
 /*!
@@ -229,6 +240,11 @@ typedef struct __attribute__((__packed__)){
 #define CHECK_ENUM_VAL(val, enumval) ( (val == enumval)?(1):(0) )
 
 /*!
+ * @}
+ * @endcond
+ */
+
+/*!
  * @brief This enum defines the parameter restriction type.
  */
 typedef enum {
@@ -255,6 +271,11 @@ typedef struct {
 	uint8_t u8_restr;    //!< [0-2]: Restriction type ; [3-5] : Restriction size.
 	uint8_t u8_nb;       //!< Number of element into the restriction table value
 }restr_s;
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #ifdef PARAM_USE_ADDRESS
 #define INIT_ACCESS_TABLE(id, loc, rem, eff, var, restr_id) [id] = { \
@@ -285,11 +306,14 @@ typedef struct {
 	.p_Table = restr_p_table \
 }
 
+/*!
+ * @}
+ * @endcond
+ */
+
 #ifdef __cplusplus
 }
 #endif
 #endif /* _PARAMETERS_DEF_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

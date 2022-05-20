@@ -1,9 +1,10 @@
 /*!
-  * @file: platform.h
-  * @brief: This file defines some specific platform constants..
+  * @file platform.h
+  * @brief This file defines some specific platform constants..
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,40 +18,59 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/09/09[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/09/09 [GBI]
   * Initial version
   *
   *
   */
-#ifndef _PLATFORME_H_
-#define _PLATFORME_H_
+
+/*!
+ * @addtogroup platform
+ * @ingroup bsp
+ * @{
+ */
+
+#ifndef _PLATFORM_H_
+#define _PLATFORM_H_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-//#include "pin_cfg.h"
-
-typedef enum
-{
-	UART_ID_CONSOLE,
-	UART_ID_COM,
-	UART_ID_PHY,
-	//
-	UART_ID_MAX
-} uart_id_e;
-
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #define STDOUT_UART_ID UART_ID_CONSOLE
 
 #define RTC_PREDIV_S 1023
 #define RTC_PREDIV_A 31
 
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @brief This enum define the UART device id
+ */
+typedef enum
+{
+	UART_ID_CONSOLE, /*!< Concole id */
+	UART_ID_COM,     /*!< Communication Id */
+	UART_ID_PHY,     /*!< Phy id */
+	//
+	UART_ID_MAX
+} uart_id_e;
+
+
 #ifdef __cplusplus
 }
 #endif
-#endif /* _Port_PLATFORME_H_ */
+#endif /* _PLATFORM_H_ */
+
+/*! @} */

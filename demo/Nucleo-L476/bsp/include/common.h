@@ -1,9 +1,10 @@
 /*!
-  * @file: common.h
-  * @brief: This file contains common definitions.
+  * @file common.h
+  * @brief This file contains common definitions.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/15[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/15 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup common
+ * @ingroup bsp
+ * @{
+ */
+
 #ifndef _COMMON_H_
 #define _COMMON_H_
 #ifdef __cplusplus
@@ -39,6 +46,11 @@ extern "C" {
 #include <assert.h>
 #include <time.h>
 #include <machine/endian.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #define DEBUG_STDIO 1
 #ifndef DEBUG_STDIO
@@ -64,16 +76,6 @@ typedef void (*pfEvtCb_t)(void *p_CbParam,  uint32_t evt);
 
 typedef void (*pf_cb_t)(void *p_CbParam, void *p_Arg);
 
-typedef enum
-{
-    DEV_SUCCESS      , /*!< Generic success.     */
-    DEV_FAILURE      , /*!< Generic Failure.     */
-	DEV_BUSY         , /*!< Device is Busy */
-	DEV_TIMEOUT      , /*!< Device Timeout */
-    DEV_INVALID_PARAM, /*!< Parameter is invalid */
-} dev_res_e;
-
-
 #ifndef ENTER_CRITICAL_REGION
 	#define ENTER_CRITICAL_REGION()
 #endif
@@ -81,7 +83,26 @@ typedef enum
 	#define EXIT_CRITICAL_REGION()
 #endif
 
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @brief This enum define the common return code from devices
+ */
+typedef enum
+{
+    DEV_SUCCESS      , /*!< Generic success */
+    DEV_FAILURE      , /*!< Generic Failure */
+	DEV_BUSY         , /*!< Device is Busy */
+	DEV_TIMEOUT      , /*!< Device Timeout */
+    DEV_INVALID_PARAM, /*!< Parameter is invalid */
+} dev_res_e;
+
 #ifdef __cplusplus
 }
 #endif
 #endif /* _COMMON_H_ */
+
+/*! @} */

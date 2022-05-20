@@ -1,9 +1,10 @@
 /**
-  * @file: img_storage..h
-  * @brief: This file define function api to deal with Software image storage.
+  * @file img_storage.h
+  * @brief This file define function api to deal with Software image storage.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/11[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/11[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup ing_storage
+ * @{
+ *
+ */
 #ifndef _IMG_STORAGE_H_
 #define _IMG_STORAGE_H_
 #ifdef __cplusplus
@@ -63,3 +69,5 @@ int8_t ImgStore_Setup(uint32_t u32ImgAdd, pfWriteFlash_t pfWrite, pfEraseFlash_t
 }
 #endif
 #endif /* _IMG_STORAGE_H_ */
+
+/*! @} */

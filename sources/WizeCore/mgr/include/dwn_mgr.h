@@ -2,8 +2,9 @@
   * @file dwn_mgr.h
   * @brief This file declare functions to use the Download session Manager
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,22 +18,17 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/04[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/04[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup DwnMgr
+ * @addtogroup wize_dwn_mgr
  * @{
  *
  */
@@ -50,9 +46,21 @@ extern "C" {
 #include "ses_common.h"
 
 /******************************************************************************/
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 #undef RECV_BUFFER_SZ
 #define RECV_BUFFER_SZ 210 // L7: 210; L6: 8 ; L2: 38
+/*!
+ * @}
+ * @endcond
+ */
 
+/*!
+ * @brief This struct defines the download manager internal context.
+ */
 struct dwn_mgr_ctx_s
 {
 	net_msg_t sRecvMsg;
@@ -80,7 +88,6 @@ struct dwn_mgr_ctx_s
 	// uint8_t L7DcHwId[2];
 	// uint8_t L7SwVersionIni[2];
 	// uint8_t L7Klog[32];
-	uint8_t u8ParamUpdate;
 	uint8_t u8Pending;
 
 
@@ -102,6 +109,4 @@ void DwnMgr_Setup(struct ses_ctx_s *pCtx);
 #endif
 #endif /* _DWN_MGR_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

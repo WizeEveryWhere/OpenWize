@@ -1,9 +1,10 @@
 /**
-  * @file: net_api.c
-  * @brief: This file implement all required function to access network device (aka. netdev_t).
+  * @file net_api.c
+  * @brief This file implement all required function to access network device (aka. netdev_t).
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,16 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/06/05[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/06/05[GBI]
   * Initial version
-  * 2.0.0 : 2021/10/24[GBI]
+  * @par 2.0.0 : 2021/10/24[GBI]
   * Replace Setter/Getter function by one Ioctl function
   *
   */
+
+/*!
+ * @addtogroup wize_net_api
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -47,10 +53,9 @@ static void _evt_cb(void *p_CbParam, uint32_t evt);
  * @param [in] pWizeCtx Pointer on network context
  * @param [in] pPhydev  Pointer on the PHY device context
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink)
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  *
  */
 int32_t WizeNet_Setup(netdev_t* pNetdev, wize_net_t* pWizeCtx, phydev_t *pPhydev)
@@ -72,10 +77,9 @@ int32_t WizeNet_Setup(netdev_t* pNetdev, wize_net_t* pWizeCtx, phydev_t *pPhydev
  * @param [in] pNetdev   Pointer on netdev_t device
  * @param [in] pfcbEvent Event call-back to upper layer (still in interrupt)
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink)
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  *
  */
 int32_t WizeNet_Init(netdev_t* pNetdev, netdev_evt_cb_t pfcbEvent)
@@ -107,10 +111,9 @@ int32_t WizeNet_Init(netdev_t* pNetdev, netdev_evt_cb_t pfcbEvent)
  *
  * @param [in] pNetdev Pointer on netdev_t device
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink)
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  *
  */
 int32_t WizeNet_Uninit(netdev_t* pNetdev)
@@ -134,10 +137,9 @@ int32_t WizeNet_Uninit(netdev_t* pNetdev)
  * @param [in] pNetdev Pointer on netdev_t device
  * @param [in] pNetMsg Pointer on structure that hold the message
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink)
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  *
  */
 int32_t WizeNet_Send(netdev_t* pNetdev, net_msg_t *pNetMsg)
@@ -207,10 +209,9 @@ int32_t WizeNet_Send(netdev_t* pNetdev, net_msg_t *pNetMsg)
  * @param [in] pNetdev Pointer on netdev_t device
  * @param [in] pNetMsg Pointer on structure that will hold the message
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink)
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  *
  */
 int32_t WizeNet_Recv(netdev_t* pNetdev, net_msg_t *pNetMsg)
@@ -262,10 +263,9 @@ int32_t WizeNet_Recv(netdev_t* pNetdev, net_msg_t *pNetMsg)
  *
  * @param [in] pNetdev Pointer on netdev_t device
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink)
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  *
  */
 int32_t WizeNet_Listen(netdev_t* pNetdev)
@@ -304,10 +304,9 @@ int32_t WizeNet_Listen(netdev_t* pNetdev)
  * @param [in]     eCtl    Id of configuration variable to get/set (see netdev_ctl_e)
  * @param [in,out] args    scalar or pointer that hold the value to set/get
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink)
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  */
 int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 {
@@ -438,7 +437,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 			{
 				switch (eCtl)
 				{
-					/***********************************************************/
+				    /*--------------------------------------------------------*/
 					case NETDEV_CTL_CFG_MEDIUM:
 						if( (void*)args == NULL)
 						{
@@ -492,7 +491,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						pCtx->sMediumCfg.eTxPower = (phy_power_e)args;
 						break;
 
-					/***********************************************************/
+					/*--------------------------------------------------------*/
 					case NETDEV_CTL_CFG_PROTO:
 						if( (void*)args == NULL)
 						{
@@ -517,7 +516,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						pCtx->sProtoCtx.sProtoConfig.DwnId[2] = (uint8_t)(args );
 						break;
 
-					/***********************************************************/
+					/*--------------------------------------------------------*/
 					case NETDEV_CTL_SET_DEVID:
 						if( (void*)args == NULL)
 						{
@@ -536,7 +535,7 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						memcpy((uint8_t*)args, pCtx->sProtoCtx.aDeviceManufID, MFIELD_SZ);
 						memcpy(&(((uint8_t*)args)[MFIELD_SZ]), pCtx->sProtoCtx.aDeviceAddr, AFIELD_SZ);
 						break;
-					/***********************************************************/
+					/*--------------------------------------------------------*/
 					default:
 						break;
 				}
@@ -546,9 +545,9 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 	return i32Ret;
 }
 
-/******************************************************************************/
-/******************************************************************************/
-// Private internal function
+/*==============================================================================
+ * Private internal function
+ *============================================================================*/
 
 /*!
  * @static
@@ -556,10 +555,9 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
  *
  * @param [in]  pNetdev Pointer on netdev_t device
  *
- * @retval
- * @li @link netdev_status_e::NETDEV_STATUS_OK @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_ERROR @endlink
- * @li @link netdev_status_e::NETDEV_STATUS_BUSY @endlink
+ * @retval NETDEV_STATUS_OK (see @link netdev_status_e::NETDEV_STATUS_OK @endlink))
+ * @retval NETDEV_STATUS_ERROR (see @link netdev_status_e::NETDEV_STATUS_ERROR @endlink)
+ * @retval NETDEV_STATUS_BUSY (see @link netdev_status_e::NETDEV_STATUS_BUSY @endlink)
  *
  */
 static int32_t _check_idle_state(netdev_t* pNetdev)
@@ -630,3 +628,5 @@ static void _evt_cb(void *p_CbParam, uint32_t evt)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

@@ -1,10 +1,11 @@
 
 /**
-  * @file: logger.c
-  * @brief: This file implement a Logger module to help print log messages.
+  * @file logger.c
+  * @brief This file implement a Logger module to help print log messages.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,15 +19,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/11/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/11/14[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup logger
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -48,6 +54,11 @@ extern const char *color_str[LOG_LV_ID_MAX];
  */
 uint8_t gLoggerLevel = LOG_LV_QUIET;
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 /* @def This macro define the logger stack size */
 #define LOGGER_TASK_STACK_SIZE 200
 /* @def This macro define the logger task priority */
@@ -68,6 +79,11 @@ static int32_t _logger_add_timestamp_(int32_t id);
 static int32_t _logger_acquire_id_();
 static void _logger_release_id_(int32_t id);
 static void _logger_main_( void const* argument);
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /* @struct This structure hold the logger context variables*/
 struct logger_ctx_s
@@ -172,8 +188,9 @@ void Logger_Put(char *str, uint32_t u32Nb)
 /*!
  * @brief This function "post" a formated string to the logger
  *
- * @param[in] format  Formated string
- * @param[in] va_args List of variable to log
+ * @param[in] level  Level of verbosity
+ * @param[in] format Formated string
+ * @param[in] ...    va_args List of variable to log
  *
  * @return None
  */
@@ -429,3 +446,5 @@ static void _logger_main_(void const* argument)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

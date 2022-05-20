@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_rtc.h
-  * @brief: This file defines functions to deal with RTC (Time, Wake-up, Alarm).
+  * @file bsp_rtc.h
+  * @brief This file defines functions to deal with RTC (Time, Wake-up, Alarm).
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/08/29[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/08/29 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup rtc
+ * @ingroup bsp
+ * @{
+ */
+
 #ifndef _BSP_RTC_H_
 #define _BSP_RTC_H_
 #ifdef __cplusplus
@@ -33,6 +40,11 @@ extern "C" {
 #endif
 
 #include "common.h"
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 extern pfHandlerCB_t pfWakeUpTimerEvent;
 extern pfHandlerCB_t pfAlarmAEvent;
@@ -42,7 +54,12 @@ typedef enum {
 	WINTER_TIME_CHANGE = -1,
 	NONE_TIME_CHANGE   = 0,
 	SUMMER_TIME_CHANGE = 1,
-} dayligth_sav_e;
+} daylight_sav_e;
+
+/*!
+ * @}
+ * @endcond
+ */
 
 void BSP_Rtc_Setup_Clk(uint32_t clock_sel);
 void BSP_Rtc_Setup(uint16_t div_s, uint8_t div_a);
@@ -55,7 +72,7 @@ void BSP_Rtc_Time_ReadMicro(struct timeval * tp);
 uint64_t BSP_Rtc_Time_GetEpochMs(void);
 time_t BSP_Rtc_Time_Read(void);
 
-void BSP_Rtc_Time_UpdateDayligth(dayligth_sav_e dayligth_sav);
+void BSP_Rtc_Time_UpdateDaylight(daylight_sav_e dayligth_sav);
 void BSP_Rtc_Time_Update (time_t t);
 void BSP_Rtc_Time_ForceNotify(void);
 void BSP_Rtc_Alarm_ForceNotify(void);
@@ -77,3 +94,5 @@ void BSP_Rtc_Alarm_SetHandler (const uint8_t u8AlarmId, pfHandlerCB_t const pfCb
 }
 #endif
 #endif /* _BSP_RTC_H_ */
+
+/*! @} */

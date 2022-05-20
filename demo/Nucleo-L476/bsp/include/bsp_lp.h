@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_lp.h
-  * @brief: // TODO This file ...
+  * @file bsp_lp.h
+ * @brief This file define the function to deal with low power
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/11/04[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/11/04 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup low_power
+ * @ingroup bsp
+ * @{
+ */
+
 #ifndef _BSP_LP_H_
 #define _BSP_LP_H_
 #ifdef __cplusplus
@@ -34,12 +41,15 @@ extern "C" {
 
 #include "common.h"
 
+/*!
+ * @brief This enum define the sleep mode
+ */
 typedef enum {
-	LP_SLEEP_MODE,
-	LP_STOP1_MODE,
-	LP_STOP2_MODE,
-	LP_STDBY_MODE,
-	LP_SHTDWN_MODE,
+	LP_SLEEP_MODE,  /*!< Sleep mode (CPU is sleeping) */
+	LP_STOP1_MODE,  /*!< Stop 1 mode */
+	LP_STOP2_MODE,  /*!< Stop 2 mode */
+	LP_STDBY_MODE,  /*!< Standby mode */
+	LP_SHTDWN_MODE, /*!< Shutdown mode */
 } lp_mode_e;
 
 void BSP_LowPower_Enter(lp_mode_e eLpMode);
@@ -49,3 +59,5 @@ void BSP_LowPower_Enter(lp_mode_e eLpMode);
 }
 #endif
 #endif /* _BSP_LP_H_ */
+
+/*! @} */

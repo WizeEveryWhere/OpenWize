@@ -1,10 +1,11 @@
 /**
   * @file: adm_mgr.c
-  * @brief: This file implement everything required to deal with administration
+  * @brief This file implement everything required to deal with administration
   * session.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,11 +19,10 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/21 09:06:26 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/21 09:06:26 [GBI]
   * Initial version
   *
   *
@@ -35,6 +35,11 @@ extern "C" {
 #include "adm_mgr.h"
 
 #include "rtos_macro.h"
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 SYS_MUTEX_CREATE_DEF(admmgr);
 
 static void _adm_mgr_ini_(struct ses_ctx_s *pCtx);
@@ -44,11 +49,12 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
 #define SES_NAME "ADM"
 #define ADM_MGR_EXP_TIMEOUT_MSK 0x10
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup AdmMgr
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @addtogroup wize_admin_mgr
  * @{
  *
  */
@@ -87,7 +93,6 @@ static void _adm_mgr_ini_(struct ses_ctx_s *pCtx)
 	pPrvCtx->sRspMsg.pData = pPrvCtx->aSendBuff;
 	pPrvCtx->sCmdMsg.pData = pPrvCtx->aRecvBuff;
 	pPrvCtx->u8Pending = 0;
-	pPrvCtx->u8ParamUpdate = 0;
 	pCtx->eState = SES_STATE_IDLE;
 }
 
@@ -98,13 +103,15 @@ static void _adm_mgr_ini_(struct ses_ctx_s *pCtx)
  * @param [in] pCtx    Pointer in the current context
  * @param [in] u32Evt Input event from outside (see ses_evt_e)
  *
- * @retval return ses_flag_e::SES_FLG_NONE
- *         return ses_flag_e::SES_FLG_ERROR
- *         return ses_flag_e::SES_FLG_SUCCESS
- *         return ses_flag_e::SES_FLG_SENT
- *         return ses_flag_e::SES_FLG_RECEIVED
- *         return ses_flag_e::SES_FLG_COMPLETE
- *         return ses_flag_e::SES_FLG_TIMEOUT
+ * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
+ * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
+ * @retval SES_FLG_SUCCESS (see @link ses_flag_e::SES_FLG_SUCCESS @endlink)
+ * @retval SES_FLG_SENT (see @link ses_flag_e::SES_FLG_SENT @endlink)
+ * @retval SES_FLG_RECEIVED (see @link ses_flag_e::SES_FLG_RECEIVED @endlink)
+ * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
+ * @retval SES_FLG_FRM_PASSED (see @link ses_flag_e::SES_FLG_FRM_PASSED @endlink)
+ * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
+ *
  */
 static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 {
@@ -300,8 +307,6 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 	return u32BackEvt;
 }
 
-/*! @} */
-/*! @} */
 /*! @} */
 
 #ifdef __cplusplus

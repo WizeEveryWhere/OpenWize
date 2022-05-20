@@ -1,9 +1,10 @@
 /**
-  * @file: crc_sw.c
-  * @brief: This file expose function to compute and check a CRC.
+  * @file crc_sw.c
+  * @brief This file expose function to compute and check a CRC.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,28 +18,33 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/01/01[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/01/01[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
+ * @addtogroup crc_sw
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crc_sw
- * @{
+ *
  */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "crc_sw.h"
 
 #include <stddef.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 static const uint16_t a_CrcTab[] = {
   0x0000, 0x3D65, 0x7ACA, 0x47AF, 0xF594, 0xC8F1, 0x8F5E, 0xB23B,// 1x 8
@@ -76,6 +82,11 @@ static const uint16_t a_CrcTab[] = {
   0x1E73, 0x2316, 0x64B9, 0x59DC, 0xEBE7, 0xD682, 0x912D, 0xAC48
 };
 
+/*!
+ * @}
+ * @endcond
+ */
+
 static uint16_t _update_crc16_(const uint16_t *p_Table, uint16_t u16_Crc, uint8_t u8_C);
 
 /*!
@@ -96,7 +107,6 @@ static uint16_t _update_crc16_(const uint16_t *p_Table, uint16_t u16_Crc, uint8_
 }
 
 /*!
- * @fn uint8_t CRC_Compute(uint8_t * p_Buf, uint8_t u8_Sz, uint16_t *p_Crc)
  * @brief This function compute the CRC as defined by the EN13757 standard
  *
  * @param[in]  p_Buf Pointer in the message buffer
@@ -124,7 +134,6 @@ uint8_t CRC_Compute(uint8_t * p_Buf, uint8_t u8_Sz, uint16_t *p_Crc)
 }
 
 /*!
- * @fn inline uint8_t CRC_Check(uint16_t u16_CrcA, uint16_t u16_CrcB)
  * @brief Check if two CRC are equal
  *
  * @param[in] u16_CrcA First CRC
@@ -136,6 +145,8 @@ inline uint8_t CRC_Check(uint16_t u16_CrcA, uint16_t u16_CrcB)
 	return (u16_CrcA == u16_CrcB)?(1):(0);
 }
 
-/*! @} */
-/*! @} */
+#ifdef __cplusplus
+}
+#endif
+
 /*! @} */

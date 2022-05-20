@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_uart.c
-  * @brief: This file expose public functions of uart devices.
+  * @file bsp_uart.c
+  * @brief This file expose public functions of uart devices.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,24 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/20[BPI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/20 [BPI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Board
- * @{
- * @ingroup BSP
+ * @addtogroup uart
+ * @ingroup bsp
  * @{
  */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -43,7 +41,6 @@ extern "C" {
 #include "platform.h"
 #include <stm32l4xx_hal.h>
 
-extern UART_HandleTypeDef *paUART_BusHandle[UART_ID_MAX];
 extern uart_dev_t aDevUart[UART_ID_MAX];
 /*******************************************************************************/
 
@@ -85,7 +82,7 @@ uint8_t BSP_Console_Send(uint8_t *pData, uint16_t u16Length)
 
 	//eRet = HAL_UART_Transmit(paUART_BusHandle[UART_ID_CONSOLE], pData, u16Length, CONSOLE_TX_TIMEOUT);
 	//eRet = HAL_UART_Transmit_DMA(paUART_BusHandle[UART_ID_CONSOLE], pData, u16Length);
-	eRet = HAL_UART_Transmit_IT(paUART_BusHandle[UART_ID_CONSOLE], pData, u16Length);
+	eRet = HAL_UART_Transmit_IT(aDevUart[UART_ID_CONSOLE].hHandle, pData, u16Length);
 	return eRet;
 }
 
@@ -93,13 +90,22 @@ uint8_t BSP_Console_Received(uint8_t *pData, uint16_t u16Length)
 {
 	dev_res_e eRet = DEV_INVALID_PARAM;
 	//eRet = HAL_UART_Receive(paUART_BusHandle[UART_ID_CONSOLE], pData, u16Length, CONSOLE_RX_TIMEOUT);
-	eRet = HAL_UART_Receive_IT(paUART_BusHandle[UART_ID_CONSOLE], pData, u16Length);
+	eRet = HAL_UART_Receive_IT(aDevUart[UART_ID_CONSOLE].hHandle, pData, u16Length);
 
 	return eRet;
 }
 /******************************************************************************/
-extern uart_dev_t aDevUart[UART_ID_MAX];
 
+/*!
+  * @static
+  * @brief TX interrupt handler
+  *
+  * @param [in] huart Pointer on the uart handle
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given paramater is in valid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * 
+  */
 static void _bsp_com_TxISR_8BIT(UART_HandleTypeDef *huart)
 {
 	uint16_t tmp;
@@ -135,6 +141,16 @@ static void _bsp_com_TxISR_8BIT(UART_HandleTypeDef *huart)
 	}
 }
 
+/*!
+  * @static
+  * @brief RX interrupt handler
+  *
+  * @param [in] huart Pointer on the uart handle
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given paramater is in valid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * 
+  */
 static void _bsp_com_RxISR_8BIT(UART_HandleTypeDef *huart)
 {
 	uint16_t uhMask = huart->Mask;
@@ -269,6 +285,17 @@ static void _bsp_com_RxISR_8BIT(UART_HandleTypeDef *huart)
 	}
 }
 
+/*!
+  * @brief Set the Uart interrupt callback
+  *
+  * @param [in] u8DevId  Uart device id (see @link uart_id_e @endlink)
+  * @param [in] pfEvtCb  Pointer on the callback function
+  * @param [in] pCbParam Pointer on the callback parameter
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given paramater is in valid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * 
+  */
 uint8_t BSP_Uart_SetCallback (uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pCbParam)
 {
 	if (u8DevId >= UART_ID_MAX)
@@ -278,13 +305,24 @@ uint8_t BSP_Uart_SetCallback (uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pC
 	aDevUart[u8DevId].pfEvent = pfEvtCb;
 	aDevUart[u8DevId].pCbParam = pCbParam;
 
-	//HAL_UART_RegisterCallback(paUART_BusHandle[UART_ID_CONSOLE], HAL_UART_RX_COMPLETE_CB_ID, BSP_RxCpltCallback);
 	return DEV_SUCCESS;
 }
 
+/*!
+  * @brief Configure the given uart (interrupt mode)
+  *
+  * @param [in] u8DevId     Uart device id (see @link uart_id_e @endlink)
+  * @param [in] u8CharMatch Character to match
+  * @param [in] u8Mode      Uart detection mode (see @link uart_mode_e @endlink)
+  * @param [in] u32Tmo      Timeout (0 : timeout is not used)
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * 
+  */
 uint8_t BSP_Uart_Init(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint32_t u32Tmo)
 {
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
 	if (u8DevId >= UART_ID_MAX)
 	{
 		return DEV_INVALID_PARAM;
@@ -338,9 +376,21 @@ uint8_t BSP_Uart_Init(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint
 	return DEV_SUCCESS;
 }
 
+/*!
+  * @brief Start to transmit on the given uart (interrupt mode)
+  *
+  * @param [in] u8DevId   Uart device id (see @link uart_id_e @endlink)
+  * @param [in] pData     Pointer on the buffer to send
+  * @param [in] u16Length Size of the message
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * @retval DEV_BUSY if the given device is busy (see @link dev_res_e::DEV_BUSY @endlink)
+  * 
+  */
 uint8_t BSP_Uart_Transmit(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 {
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
 	if (u8DevId >= UART_ID_MAX)
 	{
 		return DEV_INVALID_PARAM;
@@ -377,9 +427,21 @@ uint8_t BSP_Uart_Transmit(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 	}
 }
 
+/*!
+  * @brief Start to receive on the given uart (interrupt mode)
+  *
+  * @param [in] u8DevId   Uart device id (see @link uart_id_e @endlink)
+  * @param [in] pData     Pointer on receiving buffer
+  * @param [in] u16Length Size of expected message
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * @retval DEV_BUSY if the given device is busy (see @link dev_res_e::DEV_BUSY @endlink)
+  * 
+  */
 uint8_t BSP_Uart_Receive(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 {
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
 	if (u8DevId >= UART_ID_MAX)
 	{
 		return DEV_INVALID_PARAM;
@@ -452,9 +514,18 @@ uint8_t BSP_Uart_Receive(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
 	}
 }
 
+/*!
+  * @brief Abort the UART receive (interrupt mode)
+  *
+  * @param [in] u8DevId Uart device id (see @link uart_id_e @endlink)
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * 
+  */
 uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId)
 {
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandler;
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
 	if (u8DevId >= UART_ID_MAX)
 	{
 		return DEV_INVALID_PARAM;
@@ -488,3 +559,5 @@ uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

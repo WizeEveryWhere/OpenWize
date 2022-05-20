@@ -66,15 +66,3 @@ function(setup_config)
         )
 endfunction(setup_config)
 ################################################################################
-# Get SHA and tag from git
-function(version_from_git config_file_path version_file)
-    message(STATUS "Generate ${version_file} file")
-    foreach(var_name ${_state_variable_names})
-        set(${var_name} $ENV{${var_name}})
-        if(SHOW_GITINFO)
-            message(STATUS "   -> Set ${var_name} : ${${var_name}}")
-        endif()
-    endforeach()
-    configure_file("${config_file_path}/version.in" "${version_file}" @ONLY)
-endfunction(version_from_git)
-################################################################################

@@ -17,16 +17,24 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 
+import datetime
+current_year = datetime.datetime.now().year
+
+
 # -- Project information -----------------------------------------------------
 
 project = u'OpenWize'
-copyright = u'2021, GRDF'
+copyright = u'2021 - {}, GRDF'.format(current_year)
 author = u'GRDF'
 
+
 # The short X.Y version
-version = u''
+version = u'1.0'
+#version = get_version()
+
 # The full version, including alpha/beta/rc tags
-release = u'1.0'
+release = u'1.0.0'
+#release = version
 
 
 # -- General configuration ---------------------------------------------------
@@ -58,7 +66,8 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = u'fr'
+#language = u'fr'
+language = u'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -75,6 +84,7 @@ pygments_style = None
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -172,11 +182,58 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
+
 # -- ReadTheDocs Theme configuration -----------------------------------------
 import sphinx_rtd_theme
 
 extensions = [
-'sphinx_rtd_theme',
+	'sphinx_rtd_theme',
+	'sphinx.ext.intersphinx',
+	'breathe',
+	#'sphinxcontrib.moderncmakedomain',
 ]
+# pip install sphinxcontrib-moderncmakedomain
+
+# ------------------------------------------------------------------------------
+# HTML output
 
 html_theme = "sphinx_rtd_theme"
+html_logo = "pics/logo_grdf_simplifie_94-48.png"
+html_theme_options = {
+     'style_nav_header_background':'#3D3D3D'
+}
+
+# html_js_files = [
+#     'js/version_switcher.js',
+# ]
+
+
+rst_epilog = """
+.. |org_brand| replace:: Read the Docs Community
+.. |com_brand| replace:: Read the Docs for Business
+"""
+
+# ------------------------------------------------------------------------------
+
+# Breathe Configuration
+
+import subprocess
+subprocess.call('doxygen', shell=True)
+
+#html_extra_path = ['../build/html']
+
+breathe_projects = {
+    #"OpenWize Developer Documentation" : "../_build/Doxygen/xml"
+    "OpenWize Developer Documentation" : "_build/xml"
+}
+
+breathe_default_project = "OpenWize Developer Documentation"
+
+
+# ------------------------------------------------------------------------------
+# OpenWize'up doc link
+
+intersphinx_mapping = {
+    #'OpenWizeUp': ('https://www.openwize-up/master/', None),
+}
+

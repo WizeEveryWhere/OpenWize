@@ -1,10 +1,11 @@
 /**
-  * @file: adm_internal.c
-  * @brief: This file implement the functions to treat the administration L7
+  * @file adm_internal.c
+  * @brief This file implement the functions to treat the administration L7
   * content.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,15 +19,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/11[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/11[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup wize_admin_layer
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -42,17 +48,95 @@ extern "C" {
 #include <time.h>
 #include <string.h>
 
+
+static void _adm_unknown_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 static void _adm_read_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 static void _adm_write_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 static void _adm_write_key_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 static void _adm_anndownload_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 static void _adm_execping_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 
+
+/******************************************************************************/
+
+/*!
+  * @brief This function treat the command and build the response. The command
+  * is not effectively executed here.
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  *
+  * @retval  0 : response not yet available
+  * @retval  1 : response is available
+  * @retval  2 : action already done
+  */
+uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	uint8_t ret = 1;
+	// check if CMD Id has not previously been received
+	if (pReqMsg->u16Id != pRspMsg->u16Id)
+	{
+		pRspMsg->u8Type = APP_ADMIN;
+		pRspMsg->u16Id = pReqMsg->u16Id;
+		switch (pReqMsg->pData[0]) //L7CommandId
+		{
+			case ADM_READ_PARAM :
+				_adm_read_param_(pReqMsg, pRspMsg);
+				break;
+			case ADM_WRITE_PARAM :
+				_adm_write_param_(pReqMsg, pRspMsg);
+				break;
+			case ADM_WRITE_KEY :
+				_adm_write_key_(pReqMsg, pRspMsg);
+				break;
+			case ADM_ANNDOWNLOAD :
+				_adm_anndownload_(pReqMsg, pRspMsg);
+				break;
+			case ADM_EXECINSTPING :
+				// response not yet available
+				ret = 0;
+				break;
+			default :
+				_adm_unknown_(pReqMsg, pRspMsg);
+				break;
+		}
+	}
+	else // CMD was previously processed
+	{
+		// if RSP is available, send it (previously build RSP)
+		// else, build RSP => EXEC_PING case only
+		if (pReqMsg->pData[0] == ADM_EXECINSTPING)
+		{
+			// build rsp
+			_adm_execping_(pReqMsg, pRspMsg);
+		}
+		ret = 2;
+	}
+	return ret;
+}
+
+/******************************************************************************/
+
+/*!
+  * @brief          This function treat the L7 unknown command
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  *
+  * @return         None
+  */
+static void _adm_unknown_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ResponseId = pReqMsg->pData[0];
+	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ErrorCode = ADM_UNK_CMD;
+	pReqMsg->u8Size = sizeof(admin_rsp_cmderr_t);
+}
+
 /*!
   * @brief          This function treat the L7 read parameter
   *
-  * @param [in,out] *pReqMsg Pointer on request message
-  * @param [in,out] *pRspMsg Pointer on response message
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
 static void _adm_read_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
@@ -141,8 +225,8 @@ static void _adm_read_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 /*!
   * @brief          This function treat the L7 write parameter
   *
-  * @param [in,out] *pReqMsg Pointer on request message
-  * @param [in,out] *pRspMsg Pointer on response message
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
 static void _adm_write_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
@@ -217,8 +301,8 @@ static void _adm_write_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 /*!
   * @brief          This function treat the L7 write key
   *
-  * @param [in,out] *pReqMsg Pointer on request message
-  * @param [in,out] *pRspMsg Pointer on response message
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
 static void _adm_write_key_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
@@ -245,8 +329,8 @@ static void _adm_write_key_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 /*!
   * @brief          This function treat the L7 exec_ping
   *
-  * @param [in,out] *pReqMsg Pointer on request message
-  * @param [in,out] *pRspMsg Pointer on response message
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
 static void _adm_execping_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
@@ -343,8 +427,8 @@ struct adm_config_s sAdmConfig =
 /*!
   * @brief          This function treat the L7 ann_download
   *
-  * @param [in,out] *pReqMsg Pointer on request message
-  * @param [in,out] *pRspMsg Pointer on response message
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
 static void _adm_anndownload_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
@@ -447,7 +531,7 @@ static void _adm_anndownload_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 		}
 
 		// Check Day repeat
-		if ( (pIn->L7DayRepeat < 1) || (pIn->L7DayRepeat > 15) )
+		if ( !(pIn->L7DayRepeat & 0x0F))
 		{
 			((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_ILLEGAL_VALUE;
 			((admin_rsp_err_t*)pOut)->L7ErrorParam = ANN_FIELD_ID_L7DayRepeat;
@@ -555,20 +639,7 @@ static void _adm_anndownload_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 	}
 }
 
-/*!
-  * @brief          This function treat the L7 unknown
-  *
-  * @param [in,out] *pReqMsg Pointer on request message
-  * @param [in,out] *pRspMsg Pointer on response message
-  * @return         None
-  */
-static void _adm_unknown_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ResponseId = pReqMsg->pData[0];
-	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ErrorCode = ADM_UNK_CMD;
-	pReqMsg->u8Size = sizeof(admin_rsp_cmderr_t);
-}
-
+/*
 typedef void (*pfCmd_t)(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 
 struct exec_cmd_s{
@@ -595,16 +666,6 @@ const struct exec_cmd_s aExecCmd[] =
 	[5] = {	.u8CmdId = 0xFF,             .pfCmd = _adm_unknown_,     .rsp_ready = 1, .cmd_imm = 0},
 };
 
-/*!
-  * @brief       This function pre-treat //TODO
-  *
-  * @details     This...//TODO
-  * @param [//TODO: in or out] None.
-  * @retval  0 : response not yet available
-  * @retval  1 : response is available
-  * @retval  2 : action already done
-  */
-/*
 uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	uint8_t ret = 1;
@@ -651,53 +712,9 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 	return ret;
 }
 */
-uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	uint8_t ret = 1;
-	// check if CMD Id has not previously been received
-	if (pReqMsg->u16Id != pRspMsg->u16Id)
-	{
-		pRspMsg->u8Type = APP_ADMIN;
-		pRspMsg->u16Id = pReqMsg->u16Id;
-		switch (pReqMsg->pData[0]) //L7CommandId
-		{
-			case ADM_READ_PARAM :
-				_adm_read_param_(pReqMsg, pRspMsg);
-				break;
-			case ADM_WRITE_PARAM :
-				_adm_write_param_(pReqMsg, pRspMsg);
-				break;
-			case ADM_WRITE_KEY :
-				_adm_write_key_(pReqMsg, pRspMsg);
-				break;
-			case ADM_ANNDOWNLOAD :
-				_adm_anndownload_(pReqMsg, pRspMsg);
-				break;
-			case ADM_EXECINSTPING :
-				// response not yet available
-				ret = 0;
-				break;
-			default :
-				((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ResponseId = pReqMsg->pData[0];
-				((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ErrorCode = ADM_UNK_CMD;
-				pReqMsg->u8Size = sizeof(admin_rsp_cmderr_t);
-				break;
-		}
-	}
-	else // CMD was previously processed
-	{
-		// if RSP is available, send it (previously build RSP)
-		// else, build RSP => EXEC_PING case only
-		if (pReqMsg->pData[0] == ADM_EXECINSTPING)
-		{
-			// build rsp
-			_adm_execping_(pReqMsg, pRspMsg);
-		}
-		ret = 2;
-	}
-	return ret;
-}
 
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

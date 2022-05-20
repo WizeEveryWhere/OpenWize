@@ -17,12 +17,7 @@ macro(set_cross_stm32)
     set(BUILD_STM TRUE)
     # ---
     message("      -> Use VENDOR_MCU     : \"${VENDOR_MCU}\"")
-    #get_property(THIRD_PARTY_PATH GLOBAL PROPERTY THIRD_PARTY_DIR )
-    #set_property(GLOBAL PROPERTY HAL_DIR "${THIRD_PARTY_PATH}/firmware/stm/stm32l4xx_hal_driver" )
-    #set_property(GLOBAL PROPERTY CMSIS_DEVICE_DIR "${THIRD_PARTY_PATH}/firmware/stm/cmsis_device_l4" )
-    #set_property(GLOBAL PROPERTY CMSIS_DIR "${THIRD_PARTY_PATH}/firmware/stm/cmsis_core" )
  
-    # ---
     if(NOT MCU_FLOAT_ABI)
         set(MCU_FLOAT_ABI hard)
         set(tmp "Set")

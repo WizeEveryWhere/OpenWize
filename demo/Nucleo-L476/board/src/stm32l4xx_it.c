@@ -40,6 +40,9 @@ void USART2_IRQHandler(void)
 	}
 }
 
+/**
+  * @brief This function handles UART4 global interrupt.
+  */
 void UART4_IRQHandler(void)
 {
   /* USER CODE BEGIN USART2_IRQn 0 */
@@ -53,6 +56,9 @@ void UART4_IRQHandler(void)
 	}
 }
 
+/**
+  * @brief This function handles LPUART1 global interrupt.
+  */
 void LPUART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART2_IRQn 0 */

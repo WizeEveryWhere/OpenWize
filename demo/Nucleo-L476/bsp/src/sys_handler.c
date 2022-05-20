@@ -1,9 +1,10 @@
 /**
-  * @file: sys_handler.c
-  * @brief: This file contains systems/platform handlers.
+  * @file sys_handler.c
+  * @brief This file contains systems/platform handlers.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/01[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/01 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup platform
+ * @ingroup bsp
+ * @{
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,6 +39,11 @@ extern "C" {
 
 #include <cmsis_compiler.h>
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 void __init_sys_handlers__(void)
 {
@@ -97,6 +108,13 @@ void SysTick_Handler(void)
 }
 #endif
 
+/*!
+ * @}
+ * @endcond
+ */
+
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

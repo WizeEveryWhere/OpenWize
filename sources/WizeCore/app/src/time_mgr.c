@@ -1,10 +1,10 @@
-
 /**
   * @file: time_mgr.c
-  * @brief: This file implement the time correction related functions
+  * @brief This file implement the time correction related functions
   * 
-  *****************************************************************************
-  * @Copyright 2021, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,15 +18,15 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/06/28[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/06/28[GBI]
   * Initial version
   *
   *
   */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -46,6 +46,11 @@ extern "C" {
 #include "parameters_lan_ids.h"
 
 /******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define TIME_MGR_MUTEX_TIMEOUT() 0x80000 // around 500k cycles
 #define TIME_MGR_EVT_PERIOD() 1000 // period in ms
 
@@ -62,11 +67,12 @@ static uint32_t _time_mgr_check_upd_time_(struct time_upd_s *pCtx, uint32_t cur_
 static void _time_mgr_evtCb_(void);
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup TimeMgr
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @addtogroup wize_time_mgr
  * @{
  *
  */
@@ -292,8 +298,6 @@ static void _time_mgr_evtCb_(void)
 	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
 
-/*! @} */
-/*! @} */
 /*! @} */
 
 #ifdef __cplusplus

@@ -1,10 +1,11 @@
 /**
-  * @file: rs.h
-  * @brief: This file expose prototype of encode and decode function for the
+  * @file rs.h
+  * @brief This file expose prototype of encode and decode function for the
   * Reed-Solomon error correction code.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,25 +19,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/01/01[SCO]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/01/01[SCO]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
+ * @addtogroup reed_solomon
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup RS
- * @{
+ *
  */
-
 #ifndef _RS_H_
 #define _RS_H_
 #ifdef __cplusplus
@@ -100,6 +96,4 @@ const int16_t* RS_GetIndexOf_ptr(uint32_t *u32_indexOfSz);
 #endif
 #endif /* _RS_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

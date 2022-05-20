@@ -1,9 +1,10 @@
 /**
-  * @file: logger.h
-  * @brief: This file declare available Logger functions
+  * @file logger.h
+  * @brief This file declare available Logger functions
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/11/15[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/11/15[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup logger
+ * @{
+ *
+ */
 #ifndef _LOGGER_H_
 #define _LOGGER_H_
 #ifdef __cplusplus
@@ -40,7 +46,7 @@ extern "C" {
 #include "OpenWize_config.h"
 
 /*!
- * @enum This enum define the logger output level
+ * This enum define the logger output level
  */
 typedef enum
 {
@@ -55,7 +61,7 @@ typedef enum
 
 #ifdef LOGGER_HAS_COLOR
 /*!
- * @enum This enum define the logger level id, mainly use for add color
+ * This enum define the logger level id, mainly use for add color
  */
 typedef enum
 {
@@ -72,7 +78,7 @@ typedef enum
 #endif
 
 /*!
- * @enum This enum define the Timestamp added to the log output
+ * This enum define the Timestamp added to the log output
  */
 typedef enum
 {
@@ -192,3 +198,5 @@ void Logger_Frame(char *pStr, uint8_t *pData, uint8_t u8NbData);
 }
 #endif
 #endif /* _LOGGER_H_ */
+
+/*! @} */

@@ -83,7 +83,7 @@
         100</Parameter>
     <Parameter id="12" loc="RW" rem="RW" size="2"
                name="TX_FREQ_OFFSET" 
-               desc="Absolute transmission correction frequency of">
+               desc="Absolute transmission correction frequency offset">
         0</Parameter>
     
     <Parameter id="18" loc="RW" rem="RW" size="1" 
@@ -175,7 +175,7 @@
         0</Parameter>
     <Parameter id="36" loc="RO" rem="RO" size="9"
                name="PING_REPLY1" 
-               desc="Response 1 received for the last connectivity test (Bigger L7RssiDown)">
+               desc="Response 1 received for the last connectivity test (Bigest L7RssiDown)">
         0</Parameter>
     <Parameter id="37" loc="RO" rem="RO" size="9"
                name="PING_REPLY2" 
@@ -203,7 +203,7 @@
         0</Parameter>
     <Parameter id="3D" loc="RO" rem="RO" size="9"
                name="PING_REPLY8" 
-               desc="Response 8 received for the last connectivity test (Lower L7RssiDown)">
+               desc="Response 8 received for the last connectivity test (Lowest L7RssiDown)">
         0</Parameter>
     <Parameter id="3E" loc="RW" rem="RW" size="1" 
                ref="REF_N" 

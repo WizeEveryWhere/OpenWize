@@ -25,11 +25,12 @@
 #cmakedefine configUSE_16_BIT_TICKS                  @configUSE_16_BIT_TICKS@
 #cmakedefine configUSE_MUTEXES                       @configUSE_MUTEXES@
 #cmakedefine configUSE_COUNTING_SEMAPHORES           @configUSE_COUNTING_SEMAPHORES@
-#cmakedefine configENABLE_BACKWARD_COMPATIBILITY     @configENABLE_BACKWARD_COMPATIBILITY@
 #cmakedefine configUSE_PORT_OPTIMISED_TASK_SELECTION @configUSE_PORT_OPTIMISED_TASK_SELECTION@
 #cmakedefine configUSE_TICKLESS_IDLE                 @configUSE_TICKLESS_IDLE@
 #cmakedefine configUSE_TASK_FPU_SUPPORT              @configUSE_TASK_FPU_SUPPORT@
 #cmakedefine configUSE_TASK_NOTIFICATIONS            @configUSE_TASK_NOTIFICATIONS@
+
+#cmakedefine configENABLE_BACKWARD_COMPATIBILITY     @configENABLE_BACKWARD_COMPATIBILITY@
 
 /* Co-routine definitions. */
 #cmakedefine configUSE_CO_ROUTINES           @configUSE_CO_ROUTINES@

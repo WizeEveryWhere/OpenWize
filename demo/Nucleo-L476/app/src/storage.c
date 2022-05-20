@@ -1,9 +1,10 @@
 /**
-  * @file: storage.c
-  * @brief: // TODO This file ...
+  * @file storage.c
+  * @brief This file implement storage functions
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/02/07[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/02/07 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup app
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,8 +40,23 @@ extern "C" {
 #include <string.h>
 #include "storage.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+#ifndef PERM_SECTION
 #define PERM_SECTION(psection) __attribute__(( section(psection) )) __attribute__((used))
+#endif
+
+#ifndef KEY_SECTION
 #define KEY_SECTION(ksection) __attribute__(( section(ksection) )) __attribute__((used))  __attribute__(( aligned (2048) ))
+#endif
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 #include "parameters_cfg.h"
@@ -43,15 +64,34 @@ extern "C" {
 
 extern const uint8_t a_ParamDefault[];
 
+/*!
+  * @brief The parameters values table size
+  */
 const uint16_t u16_ParamValueSz = PARAM_DEFAULT_SZ;
+
+/*!
+  * @brief The parameters access table size
+  */
 const uint8_t u8_ParamAccessCfgSz = PARAM_ACCESS_CFG_SZ;
+
+/*!
+  * @brief The restriction table size
+  */
 const uint8_t u8_ParamRestrCfgSz = PARAM_RESTR_CFG_SZ;
+
+
+/*!
+  * @brief Table of parameters values
+  */
 PERM_SECTION(".param") uint8_t a_ParamValue[PARAM_DEFAULT_SZ];
 
 /******************************************************************************/
 #include "phy_layer.h"
 #include "wize_api.h"
 
+/*!
+ * @brief This define hard-coded default device id
+ */
 const device_id_t sDefaultDevId =
 {
 //==========================================================================
@@ -93,6 +133,9 @@ const device_id_t sDefaultDevId =
 #include "crypto.h"
 #include "key_priv.h"
 
+/*!
+ * @brief This define some hard-coded default keys
+ */
 const key_s sDefaultKey[KEY_MAX_NB] =
 {
 	[0] = {
@@ -118,6 +161,9 @@ const key_s sDefaultKey[KEY_MAX_NB] =
 	}}
 };
 
+/*!
+  * @brief Table of keys
+  */
 KEY_SECTION(".data.keys") key_s _a_Key_[KEY_MAX_NB];
 
 /******************************************************************************/
@@ -125,6 +171,14 @@ KEY_SECTION(".data.keys") key_s _a_Key_[KEY_MAX_NB];
 /******************************************************************************/
 /******************************************************************************/
 
+/*!
+  * @brief  This initialize the storage area
+  *
+  * @param [in] bForce Force to defaults.
+  *
+  * @retval  None
+  *
+  */
 void Storage_Init(uint8_t bForce)
 {
 	uint8_t tmp;
@@ -141,6 +195,12 @@ void Storage_Init(uint8_t bForce)
 	Param_Access(PING_RX_LENGTH, &tmp, 1);
 }
 
+/*!
+  * @brief  Set to defaults device id, all parameters and all keys
+  *
+  * @retval  None
+  *
+  */
 void Storage_SetDefault(void)
 {
 	WizeApi_SetDeviceId(&sDefaultDevId);
@@ -152,3 +212,5 @@ void Storage_SetDefault(void)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

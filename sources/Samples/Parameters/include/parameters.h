@@ -2,7 +2,8 @@
   * @file parameters.h
   * @brief This file define function to deal with parameters.
   * 
-  *****************************************************************************
+  * @details
+  *
   * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
@@ -17,25 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/20 00:10:08 [GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/20 [GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
+ * @addtogroup parameters
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Parameters
- * @{
+ *
  */
-
 #ifndef _PARAMETERS_H_
 #define _PARAMETERS_H_
 
@@ -66,6 +62,4 @@ uint8_t Param_RemoteAccess(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir);
 #endif
 #endif /* _PARAMETERS_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

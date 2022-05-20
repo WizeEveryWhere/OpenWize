@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_flash.c
-  * @brief: // TODO This file ...
+  * @file bsp_flash.c
+  * @brief This file implement bsp functions to access the internal flash device
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/02/19[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/02/19 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup flash
+ * @ingroup bsp
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,21 +41,13 @@ extern "C" {
 #include "platform.h"
 #include <string.h>
 #include <stm32l4xx_hal.h>
-/*
- * Flash
- * Page : 2048 bytes
- * Alignment : 8 bytes words
- *
- * Erase : at page level
- *
- */
 
 /**
   * @brief  Erase the given flash page area
-  * @param  u32PageId    : Flash Page Id
+  * @param  u32PageId Flash Page Id
   *
-  * @retval return dev_res_e::DEV_SUCCESS if everything is fine.
-  *         return dev_res_e::DEV_FAILURE if failed.
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_FAILURE if failed (see @link dev_res_e::DEV_FAILURE @endlink)
   */
 dev_res_e BSP_Flash_Erase(uint32_t u32PageId)
 {
@@ -76,11 +75,11 @@ dev_res_e BSP_Flash_Erase(uint32_t u32PageId)
 /*!
   * @brief  Erase the related flash memory area
   *
-  * @param [in] u32Addr Start address of area to erase
-  * @param [in] u32Size Area size to erase
+  * @param [in] u32Address Start address of area to erase
+  * @param [in] u32NbBytes Area size to erase
   *
-  * @retval return dev_res_e::DEV_SUCCESS if everything is fine.
-  *         return dev_res_e::DEV_FAILURE if failed.
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_FAILURE if failed (see @link dev_res_e::DEV_FAILURE @endlink)
   */
 dev_res_e BSP_Flash_EraseArea(uint32_t u32Address, uint32_t u32NbBytes)
 {
@@ -122,12 +121,12 @@ dev_res_e BSP_Flash_EraseArea(uint32_t u32Address, uint32_t u32NbBytes)
 
 /**
   * @brief  Write double-word aligned data
-  * @param  u32Address : Flash Address
-  * @param  pData      : Pointer on data sto store
-  * @param  u32NbDword : The number of double-word of data to store
+  * @param  u32Address  Flash Address
+  * @param  pData       Pointer on data sto store
+  * @param  u32NbDword  The number of double-word of data to store
   *
-  * @retval return dev_res_e::DEV_SUCCESS if everything is fine.
-  *         return dev_res_e::DEV_FAILURE if failed.
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_FAILURE if failed (see @link dev_res_e::DEV_FAILURE @endlink)
   */
 dev_res_e BSP_Flash_Write(uint32_t u32Address, uint64_t *pData, uint32_t u32NbDword)
 {
@@ -160,14 +159,14 @@ dev_res_e BSP_Flash_Write(uint32_t u32Address, uint64_t *pData, uint32_t u32NbDw
 
 /**
   * @brief  Store the given data into Flash memory
-  * @Note : If the number of byte to write is not double-word aligned, the rest
+  * @note : If the number of byte to write is not double-word aligned, the rest
   *         is filled with padding (0xFF).
-  * @param  u32Address : Flash Address
-  * @param  pData      : Pointer on data to store
-  * @param  u32NbBytes : The number of byte of data to store
+  * @param  u32Address  Flash Address
+  * @param  pData       Pointer on data to store
+  * @param  u32NbBytes  The number of byte of data to store
   *
-  * @retval return the next 64 bits aligned flash address if everything is fine.
-  *         return 0xFFFFFFFF if failed.
+  * @retval the next 64 bits aligned flash address if everything is fine.
+  * @retval 0xFFFFFFFF if failed.
   */
 uint32_t BSP_Flash_Store(uint32_t u32Address, void* pData, uint32_t u32NbBytes)
 {
@@ -207,7 +206,7 @@ uint32_t BSP_Flash_Store(uint32_t u32Address, void* pData, uint32_t u32NbBytes)
 
 /**
   * @brief  Obtains the page id from the given address
-  * @param  u32Address: Flash Address
+  * @param  u32Address Flash Address
   * @retval The Flash page id
   */
 uint32_t BSP_Flash_GetPage(uint32_t u32Address)
@@ -218,3 +217,5 @@ uint32_t BSP_Flash_GetPage(uint32_t u32Address)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

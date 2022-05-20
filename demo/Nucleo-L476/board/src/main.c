@@ -68,11 +68,10 @@ static void MX_UART4_Init(void);
 /* USER CODE BEGIN 0 */
 #include "bsp.h"
 extern void app_entry(void);
-#define MAX_BOOT_CNT 5
 /* USER CODE END 0 */
 
 /**
-  * @brief  The application entry point.
+  * @brief  The main entry point.
   * @retval int
   */
 int main(void)
@@ -80,6 +79,8 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
+#define MAX_BOOT_CNT 5
+  //uint32_t u32PrevBootState;
   uint32_t u32BootCnt;
   uint32_t u32UnauthAcc;
   uint32_t u32BootState;
@@ -100,6 +101,7 @@ int main(void)
   // Get boot state
   u32BootState = BSP_Boot_GetState();
 
+#define MAX_BOOT_CNT 5
   // check if instability
   if(u32BootState & INSTAB_DETECT)
   {
@@ -157,6 +159,7 @@ void SystemClock_Config(void)
   /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_MSI;
+  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
   RCC_OscInitStruct.MSICalibrationValue = 0;
   RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_11;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
@@ -186,6 +189,10 @@ void SystemClock_Config(void)
   }
 }
 
+/**
+  * @brief Peripheral Clcok Initialization Function
+  * @retval None
+  */
 void PeriphClock_Config(void)
 {
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
@@ -200,12 +207,17 @@ void PeriphClock_Config(void)
   PeriphClkInit.Lpuart1ClockSelection = RCC_LPUART1CLKSOURCE_PCLK1;
 
   PeriphClkInit.I2c2ClockSelection = RCC_I2C2CLKSOURCE_PCLK1;
+
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
 }
 
+/**
+  * @brief LSE Clock Initialization Function
+  * @retval None
+  */
 void LSEClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -230,8 +242,8 @@ void LSEClock_Config(void)
 }
 
 /**
+  * @static
   * @brief USART2 Initialization Function
-  * @param None
   * @retval None
   */
 static void MX_UART2_Init(void)
@@ -265,6 +277,11 @@ static void MX_UART2_Init(void)
 
 }
 
+/**
+  * @static
+  * @brief LPUART1 Initialization Function
+  * @retval None
+  */
 static void MX_LPUART1_Init(void)
 {
 
@@ -297,6 +314,11 @@ static void MX_LPUART1_Init(void)
 
 }
 
+/**
+  * @static
+  * @brief UART4 Initialization Function
+  * @retval None
+  */
 static void MX_UART4_Init(void)
 {
 
@@ -332,8 +354,8 @@ static void MX_UART4_Init(void)
 }
 
 /**
+  * @static
   * @brief GPIO Initialization Function
-  * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)

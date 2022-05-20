@@ -1,9 +1,10 @@
 /*!
-  * @file: integrity.c
-  * @brief: This file expose functions to compute AES128-CMAC footprint of a given message.
+  * @file integrity.c
+  * @brief This file expose functions to compute AES128-CMAC footprint of a given message.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,24 +18,23 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/25[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/11/25[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
+ * @addtogroup crypto
  * @{
- * @ingroup Libraries 
- * @{
- * @ingroup Crypto
- * @{
+ *
  */
+#ifdef __cplusplus
+}
+#endif
 
 #include <stdint.h>
 #include <stddef.h>
@@ -52,11 +52,9 @@ static uint8_t _AES128_CMAC_(uint8_t *p_Hash, uint8_t *p_Msg, uint8_t u8_Sz,
 static uint8_t _SHA256_(uint8_t p_Sha256[SHA256_SIZE], uint8_t *p_Data, uint32_t u32_Sz);
 
 /*!
-  * @fn inline uint8_t Crypto_AES128_CMAC(uint8_t *p_Hash, uint8_t *p_Msg,
-  *			           uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)
   * @brief Wrapper around the _AES128_CMAC_ function.
   *
-  * @detail This function compute the footprint (with the AES128 in CMAC mode) of a given message.
+  * @details This function compute the footprint (with the AES128 in CMAC mode) of a given message.
   *
   * @param [in,out] p_Hash Pointer on output buffer (footprint).
   * @param [in,out] p_Msg Pointer on input buffer (the message on which the footprint is computed)
@@ -75,10 +73,9 @@ inline uint8_t Crypto_AES128_CMAC(uint8_t *p_Hash, uint8_t *p_Msg, uint8_t u8_Sz
 }
 
 /*!
-  * @fn inline uint8_t Crypto_SHA256(uint8_t p_Digest[SHA256_SIZE], uint8_t *p_Data, uint8_t u8_Sz)
   * @brief Wrapper around the _SHA256_ function.
   *
-  * @detail This function compute the SHA256 of given buffer..
+  * @details This function compute the SHA256 of given buffer..
   *
   * @param [in]  p_Sha256 Pointer on output buffer (sha256, 32 bytes).
   * @param [out] p_Data   Pointer on input buffer (the message on which the footprint is computed)
@@ -164,6 +161,8 @@ static uint8_t _SHA256_(uint8_t p_Sha256[SHA256_SIZE], uint8_t *p_Data, uint32_t
 	return u8_ret;
 }
 
-/*! @} */
-/*! @} */
+#ifdef __cplusplus
+}
+#endif
+
 /*! @} */

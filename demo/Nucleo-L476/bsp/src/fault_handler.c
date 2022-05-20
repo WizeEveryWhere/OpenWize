@@ -1,9 +1,10 @@
 /**
-  * @file: fault_handler.c
-  * @brief: This file contains basic fault handlers with a kind of core dump..
+  * @file fault_handler.c
+  * @brief This file contains basic fault handlers with a kind of core dump..
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/01[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/01 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup common
+ * @ingroup bsp
+ * @{
+ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,6 +39,11 @@ extern "C" {
 
 #include <cmsis_compiler.h>
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #ifndef TRACE_DUMP_CORE
 #define TRACE_DUMP_CORE(...) fprintf (stderr, __VA_ARGS__ );
@@ -255,6 +266,13 @@ void UsageFault_Handler(void)
 	while(1);
 }
 
+/*!
+ * @}
+ * @endcond
+ */
+
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

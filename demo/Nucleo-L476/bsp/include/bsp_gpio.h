@@ -1,9 +1,10 @@
 /*!
-  * @file: bsp_gpio.h
-  * @brief: This file defines functions to deal with GPIOs.
+  * @file bsp_gpio.h
+  * @brief This file defines functions to deal with GPIOs.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/12/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2019/12/14 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup gpio
+ * @ingroup bsp
+ * @{
+ */
+
 #ifndef _BSP_GPIO_H_
 #define _BSP_GPIO_H_
 #ifdef __cplusplus
@@ -34,8 +41,18 @@ extern "C" {
 
 #include "common.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define GPIO_PIN(name) (uint16_t)name##_Pin
 #define GPIO_PORT(name) (uint32_t)name##_GPIO_Port
+
+/*!
+ * @}
+ * @endcond
+ */
 
 uint8_t BSP_Gpio_InputEnable (const uint32_t u32Port, const uint16_t u16Pin, const uint8_t bFlag);
 uint8_t BSP_Gpio_OutputEnable(const uint32_t u32Port, const uint16_t u16Pin, const uint8_t bFlag);
@@ -49,3 +66,5 @@ uint8_t BSP_Gpio_SetHigh (const uint32_t u32Port, const uint16_t u16Pin);
 }
 #endif
 #endif /* _BSP_GPIO_H_ */
+
+/*! @} */

@@ -1,10 +1,11 @@
 
 /**
-  * @file: img_storage.c
-  * @brief: This file implement functions to deal with Software image storage.
+  * @file img_storage.c
+  * @brief This file implement functions to deal with Software image storage.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,15 +19,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/11[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/11[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup ing_storage
+ * @{
+ *
+ */
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,14 +40,22 @@ extern "C" {
 #include "img_storage_private.h"
 #include "crypto.h"
 
-//#include "bsp_flash.h"
-
 #include <assert.h>
 #include <string.h>
 
 /******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define PENDING_LINE_EMPTY_MSK 0x4000
 #define PENDING_LINE_FULL_MSK 0x8000
+
+/*!
+ * @}
+ * @endcond
+ */
 
 uint8_t _get_bitmap_line(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id);
 uint8_t _get_bitmap_bit(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id);
@@ -274,7 +288,6 @@ uint8_t ImgStore_Verify(uint8_t *pImgHash, uint8_t u8DigestSz)
 }
 
 /*!
-  * @fn uint8_t ImgStore_GetBitmapLine(uint16_t u16_Id)
   * @brief Get the line value (from bitmap) of the given block Id.
   *
   * @param [in] u16_Id The Id of the block.
@@ -286,7 +299,6 @@ uint8_t ImgStore_GetBitmapLine(uint16_t u16_Id)
 }
 
 /*!
-  * @fn uint16_t ImgStore_GetMaxBlockNb(void)
   * @brief Get the maximum admissible block number
   *
   * @retval The maximum block number
@@ -296,7 +308,6 @@ uint16_t ImgStore_GetMaxBlockNb(void)
 	return (uint16_t)sImgMgrCtx.u32Size;
 }
 /*!
-  * @fn uint8_t ImgStore_GetPending(void)
   * @brief Get the pending flag.
   *
   * @retval return img_pend_e::PENDING_SETUP
@@ -310,7 +321,6 @@ inline img_pend_e ImgStore_GetPending(void)
 }
 
 /*!
-  * @fn uint8_t ImgStore_SetPending(void)
   * @brief Set the pending flag.
   *
   * @param [in] ePend The pending flag to set
@@ -359,7 +369,9 @@ int8_t ImgStore_Init(uint16_t u16NbExpectedBlk)
 /*!
   * @brief  Initialize the image manager context.
   *
-  * @param [in] u32ImgAdd        Software Image address (64 bits aligned)
+  * @param [in] u32ImgAdd  Software Image address (64 bits aligned)
+  * @param [in] pfWrite    Function pointer on write sub function
+  * @param [in] pfErase    Function pointer on erase sub function
   *
   * @retval  0 Success
   * @retval  1 Failed (at least one of given parameters is out of range)
@@ -469,3 +481,5 @@ void _clr_pending(struct img_mgr_ctx_s *pCtx)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

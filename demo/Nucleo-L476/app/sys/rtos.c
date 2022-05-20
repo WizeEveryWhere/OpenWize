@@ -1,9 +1,10 @@
 /**
-  * @file: rtos.c
-  * @brief: // TODO This file ...
+  * @file rtos.c
+  * @brief This file implement the FreeRTOS hook(s)
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,19 +18,29 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/05[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/05 [GBI]
   * Initial version
   *
   *
   */
 
+/*!
+ *  @addtogroup sys
+ *  @ingroup app
+ *  @{
+ */
+
 #include "FreeRTOS.h"
 #include "task.h"
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 /******************************************************************************/
 #if (configSUPPORT_STATIC_ALLOCATION == 1)
@@ -98,3 +109,10 @@ void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime )
   // Function called in tasks.c (in portTASK_FUNCTION).
   // TO BE COMPLETED or TO BE REPLACED by a user one, overriding that weak one.
 }
+
+/*!
+ * @}
+ * @endcond
+ */
+
+/*! @} */

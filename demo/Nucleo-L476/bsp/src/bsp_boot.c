@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_boot.c
-  * @brief: // TODO This file ...
+  * @file bsp_boot.c
+  * @brief Function to boot/reboot the platform
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,24 +18,47 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/05[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/05 [GBI]
   * Initial version
   *
   *
   */
 
+/*!
+ *  @addtogroup boot
+ *  @ingroup bsp
+ *  @{
+ */
+
 #include "bsp_boot.h"
 #include "platform.h"
 #include <stm32l4xx_hal.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #ifndef BOOT_STATE_BKPR
 #define BOOT_STATE_BKPR BKP31R
 #endif
 
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+  * @brief Reboot
+  *
+  * @param [in] bReset Reset the backup domain (1 ;yes, 0: no)
+  *
+  * @return None
+  *
+  */
 void BSP_Boot_Reboot(uint8_t bReset)
 {
 	if (bReset)
@@ -45,6 +69,12 @@ void BSP_Boot_Reboot(uint8_t bReset)
 	NVIC_SystemReset();
 }
 
+/*!
+  * @brief Get the boot state
+  *
+  * @return the boot state as u32 (see @link boot_state_t @endlink)
+  *
+  */
 uint32_t BSP_Boot_GetState(void)
 {
 	register uint32_t u32BootState = 0;
@@ -110,3 +140,5 @@ uint32_t BSP_Boot_GetState(void)
 	RTC->BOOT_STATE_BKPR = u32BootState;
 	return u32BootState;
 }
+
+/*! @} */

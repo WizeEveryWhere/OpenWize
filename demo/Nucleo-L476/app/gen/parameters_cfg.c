@@ -1,9 +1,10 @@
 /*!
   * @file parameters_cfg.c
-  * @brief This file was generated from ./cfg/MergedParam.xml(Modif. : 2022-02-10 16:30:42.008812000 +0100).
+  * @brief This file was generated from demo/Nucleo-L476/app/cfg/MergedParam.xml(Modif. : 2022-03-14 06:36:30.109935700 +0100).
   * 
-  *****************************************************************************
-  * @copyright 2020, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,11 +18,10 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Generation Date
-  * ----------------
-  * 10/02/2022 16:46 [neo]
+  * @par Generation Date
+  * 
+  * @par x.x.x : 14/03/2022 06:36 [neo]
   *
   */
 

@@ -2,8 +2,9 @@
   * @file proto_private.h
   * @brief This file define common structures, enum, ...
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,22 +18,16 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2019/11/22[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/07 [GBI]
   * Initial version
-  *
   *
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup Protocol
+ * @addtogroup wize_proto
  * @{
  *
  */
@@ -46,6 +41,11 @@ extern "C" {
 #include <stddef.h>
 #include <assert.h>
 #include "proto.h"
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 /******************************************************************************/
 //! ID used before Wize was register
@@ -208,6 +208,10 @@ L6_HASH_KENC_SZ + L6_TSTAMP_SZ + L6_HASH_KMAC_SZ + \
  /* 2 */ \
 CRC_SZ))
 
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 /*!
@@ -383,6 +387,4 @@ struct proto_ctx_s
 #endif
 #endif /* _PROTO_PRIVATE_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

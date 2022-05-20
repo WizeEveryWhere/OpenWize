@@ -1,9 +1,10 @@
 /**
-  * @file: bsp_lp.c
-  * @brief: // TODO This file ...
+  * @file bsp_lp.c
+  * @brief This implement the bsp function to accesss the low power
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/11/04[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/11/04 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup low_power
+ * @ingroup bsp
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -37,6 +44,11 @@ extern "C" {
 
 #include "pin_cfg.h"
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define GP_PORT_NAME(name) name ##_GPIO_Port
 #define GP_PIN_NAME(name) name##_Pin
 
@@ -44,10 +56,19 @@ extern "C" {
 #define GP_PIN(name)  GP_PIN_NAME(name)
 #define LINE_INIT(name) GP_PORT(name), GP_PIN(name)
 
+/*!
+ * @}
+ * @endcond
+ */
 
 #include "bsp_gpio_it.h"
 extern RTC_HandleTypeDef hrtc;
 extern UART_HandleTypeDef *paUART_BusHandle[UART_ID_MAX];
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 #define WKUP_PIN_NAME DEBUG_RXD
 #define WKUP_UART_ID UART_ID_CONSOLE
@@ -268,6 +289,17 @@ void BSP_LowPower_Init (void)
 
 }
 
+/*!
+ * @}
+ * @endcond
+ */
+
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 // PA0, PC13, PE6, PA2, PC5.
 #define PA0_WKUP_PIN  PWR_WAKEUP_PIN1 // PWR_CR3_EWUP1
 #define PC13_WKUP_PIN PWR_WAKEUP_PIN2_LOW //PWR_WAKEUP_PIN2 // PWR_CR3_EWUP2
@@ -275,8 +307,22 @@ void BSP_LowPower_Init (void)
 #define PA2_WKUP_PIN  PWR_WAKEUP_PIN4 // PWR_CR3_EWUP4
 #define PC5_WKUP_PIN  PWR_WAKEUP_PIN5 // PWR_CR3_EWUP5
 
+/*!
+ * @}
+ * @endcond
+ */
+
+/*!
+ * @brief This define the current wake-up pin
+ */
 #define WAKEUP_PIN PC13_WKUP_PIN
 
+/*!
+  * @brief This function enter in the given low power mode
+  *
+  * @param [in] eLpMode The low power mode (see @link lp_mode_e @endlink)
+  *
+  */
 void BSP_LowPower_Enter (lp_mode_e eLpMode)
 {
 	HAL_SuspendTick();
@@ -329,3 +375,5 @@ void BSP_LowPower_Enter (lp_mode_e eLpMode)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

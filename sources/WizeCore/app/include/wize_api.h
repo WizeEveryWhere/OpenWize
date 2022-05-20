@@ -1,9 +1,10 @@
 /**
   * @file: wize_api.h
-  * @brief: // TODO This file ...
+  * @brief This file define the Wize API functions
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,26 +18,19 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/14 [GBI]
   * Initial version
-  *
   *
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup API
+ * @addtogroup wize_api
  * @{
  *
  */
-
 #ifndef _WIZE_API_H_
 #define _WIZE_API_H_
 
@@ -53,12 +47,13 @@ extern "C" {
 /******************************************************************************/
 /******************************************************************************/
 
+/*
 uint16_t WizeApi_Img_GetMaxNumBlk(void);
 int8_t WizeApi_Img_Init(uint32_t u32ImgAdd, uint16_t u16NbExpectedBlk);
 void WizeApi_Img_AddBlk(uint16_t u16_BlkId, uint8_t *p_Blk);
 uint8_t WizeApi_Img_IsComplete(void);
 uint8_t WizeApi_Img_GetSHA256(uint8_t *pImgHash, uint8_t u8ReqSize);
-
+*/
 /******************************************************************************/
 /*!
  * @brief This enum define the return code from Wize API
@@ -93,11 +88,9 @@ void WizeApi_CtxRestore(void);
 
 /******************************************************************************/
 
-/*! @} */
-/*! @} */
-/*! @} */
-
 #ifdef __cplusplus
 }
 #endif
 #endif /* _WIZE_API_H_ */
+
+/*! @} */

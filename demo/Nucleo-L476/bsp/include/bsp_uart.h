@@ -1,9 +1,10 @@
 /*!
-  * @file: bsp_uart.h
-  * @brief: //TODO:
+  * @file bsp_uart.h
+  * @brief This file define bsp functions to access UART preipheral
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/30[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/30 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup uart
+ * @ingroup bsp
+ * @{
+ */
+
 #ifndef _BSP_UART_H_
 #define _BSP_UART_H_
 #ifdef __cplusplus
@@ -34,42 +41,57 @@ extern "C" {
 
 #include "common.h"
 
+/*!
+ * @brief This enum define possible events from UART
+ */
 typedef enum
 {
-	UART_EVT_NONE     = 0x00,
-	UART_EVT_TX_CPLT  = 0x01,
-	UART_EVT_RX_CPLT  = 0x02,
-	UART_EVT_RX_HCPLT = 0x04,
-	UART_EVT_RX_ABT   = 0x08,
+	UART_EVT_NONE     = 0x00, /*!< None */
+	UART_EVT_TX_CPLT  = 0x01, /*!< Transmition is complete */
+	UART_EVT_RX_CPLT  = 0x02, /*!< Reception is complete */
+	UART_EVT_RX_HCPLT = 0x04, /*!< */
+	UART_EVT_RX_ABT   = 0x08, /*!< */
 } uart_evt_e;
 
+/*!
+ * @brief This enum define flags ... from UART
+ */
 typedef enum
 {
-	UART_FLG_NONE,
-	UART_FLG_RX_TMO,
-	UART_FLG_RX_OVFL,
-	UART_FLG_RX_SOB,
-	UART_FLG_RX_EOB,
+	UART_FLG_NONE,    /*!< */
+	UART_FLG_RX_TMO,  /*!< */
+	UART_FLG_RX_OVFL, /*!< */
+	UART_FLG_RX_SOB,  /*!< */
+	UART_FLG_RX_EOB,  /*!< */
 } uart_flag_e;
 
+/*!
+ * @brief This enum define the "detection" mode for UART
+ */
 typedef enum
 {
-	UART_MODE_NONE,
-	UART_MODE_EOB,
-	UART_MODE_ADDR,
+	UART_MODE_NONE, /*!< None (wait until the buffer reach the geiven size) */
+	UART_MODE_EOB,  /*!< Event is sent when character match the end of block */
+	UART_MODE_ADDR, /*!< Event is sent when character match the start of block */
 } uart_mode_e;
 
+/*!
+ * @brief This structure define the UART device
+ */
 typedef struct
 {
-    uint8_t bus_id;
-    uint8_t u8CharMatch;
-   	uint8_t u8Mode;
-   	uint32_t u32Tmo;
-    pfEvtCb_t pfEvent;
-    void *pCbParam;
-    void *hHandler;
+    uint8_t bus_id;       /*!< Peripheral Bus Id */
+   	uint8_t u8Mode;       /*!< Current UART device mode */
+    uint8_t u8CharMatch;  /*!< Character to match (if mode is enabled) */
+   	uint32_t u32Tmo;      /*!< Time-out value (0 : disable) */
+    pfEvtCb_t pfEvent;    /*!< Function pointer on event call-back */
+    void *pCbParam;       /*!< Pointer on Call-back parameter */
+    void *hHandle;        /*!< Pointer on HAL UART handle*/
 } uart_dev_t;
 
+/*!
+ * @brief This type define a pointer on UART device structure
+ */
 typedef uart_dev_t* p_uart_dev_t;
 
 /*******************************************************************************/
@@ -80,10 +102,19 @@ typedef uart_dev_t* p_uart_dev_t;
 #define CONSOLE_RX_TIMEOUT 0xFFFF
 #endif
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 extern pfHandlerCB_t pfConsoleTXEvent;
 extern pfHandlerCB_t pfConsoleRXEvent;
 
 extern pfHandlerCB_t pfConsoleWakupEvent;
+
+/*!
+ * @}
+ * @endcond
+ */
 
 int __io_putchar(int ch);
 int __io_getchar(void);
@@ -105,3 +136,5 @@ uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId);
 }
 #endif
 #endif /* _BSP_UART_H_ */
+
+/*! @} */

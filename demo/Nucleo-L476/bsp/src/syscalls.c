@@ -1,9 +1,10 @@
 /**
-  * @file: sys_call.c
-  * @brief: This file implement the libc wrapper functions
+  * @file syscalls.c
+  * @brief This file implement the libc wrapper functions
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,21 +18,37 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/10/01[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/10/01 [GBI]
   * Initial version
   *
   *
   */
 
+/*!
+ * @addtogroup platform
+ * @ingroup bsp
+ * @{
+ */
+
 /******************************************************************************/
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 void __init_sys_calls__(void)
 {
 	return;
 }
+
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
 /* Libc time wrapper functions */
@@ -40,6 +57,11 @@ void __init_sys_calls__(void)
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 extern void BSP_Rtc_Time_ReadMicro(struct timeval * tp);
 __attribute__((used)) int
@@ -78,11 +100,21 @@ int _times(struct tms *buf)
 	return -1;
 }
 
+/*!
+ * @}
+ * @endcond
+ */
+
 /******************************************************************************/
 /* Libc sbrk wrapper functions */
 /******************************************************************************/
 #include <errno.h>
 #include <stdio.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 extern int errno;
 register char * stack_ptr asm("sp");
@@ -112,12 +144,22 @@ _sbrk(int incr)
 	return (caddr_t) prev_heap_end;
 }
 
+/*!
+ * @}
+ * @endcond
+ */
+
 /******************************************************************************/
 /* Libc wrapper functions */
 /******************************************************************************/
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <signal.h>
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
 char *__env[1] = { 0 };
 char **environ = __env;
@@ -231,3 +273,10 @@ int _execve(char *name, char **argv, char **env)
 	errno = ENOMEM;
 	return -1;
 }
+
+/*!
+ * @}
+ * @endcond
+ */
+
+/*! @} */

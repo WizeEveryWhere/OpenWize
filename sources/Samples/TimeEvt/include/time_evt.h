@@ -1,9 +1,10 @@
 /**
-  * @file: time_evt.h
-  * @brief: This file contains the basic time event management definitions.
+  * @file time_evt.h
+  * @brief This file contains the basic time event management definitions.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,26 +18,20 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/09[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/09[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Libraries
- * @{
- * @ingroup TimeEvt
+ * @addtogroup time_evt
  * @{
  *
  */
-
 #ifndef _TIME_EVT_H_
 #define _TIME_EVT_H_
 #ifdef __cplusplus
@@ -117,6 +112,4 @@ void TimeEvt_EventHandler(void);
 #endif
 #endif /* _TIME_EVT_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

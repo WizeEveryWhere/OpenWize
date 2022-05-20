@@ -1,10 +1,10 @@
-
 /**
-  * @file: sys_init.c
-  * @brief: // TODO This file ...
+  * @file sys_init.c
+  * @brief This file implement (just for convenient) some "system" initialization
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/11/04[TODO: your name]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/11/04 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ *  @addtogroup sys
+ *  @ingroup app
+ *  @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -52,10 +58,19 @@ extern "C" {
 
 #include "wize_api.h"
 
+/*!
+ * @brief This is the context for the uart use as fake phy
+ */
 static fakeuart_device_t fakeuart_ctx;
+
+/*!
+ * @brief This store the phy device structure
+ */
 phydev_t sPhyDev;
 
-
+/*!
+ * @brief This function initialize the "system part"
+ */
 void Sys_Init(void)
 {
 	uint8_t u8LogLevel;
@@ -96,11 +111,17 @@ void Sys_Init(void)
   	WizeApi_Enable(1);
 }
 
+/*!
+ * @brief This function finalize the "system part"
+ */
 void Sys_Fini(void)
 {
 }
 
 
+/*!
+ * @brief Start the RTOS scheduler
+ */
 __attribute__ (( always_inline )) void Sys_Start(void)
 {
     /* Start scheduler */
@@ -110,3 +131,5 @@ __attribute__ (( always_inline )) void Sys_Start(void)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

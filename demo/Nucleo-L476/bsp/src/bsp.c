@@ -1,9 +1,10 @@
 /**
-  * @file: bsp.c
-  * @brief: This file contains functions to initialize the BSP.
+  * @file bsp.c
+  * @brief This file contains functions to initialize the BSP.
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2021/09/09[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2021/09/09 [GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup common
+ * @ingroup bsp
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -38,6 +45,13 @@ extern "C" {
 /******************************************************************************/
 /* Usefull  */
 /******************************************************************************/
+/*!
+  * @brief Function convert a hexa represented as 2 bytes char into hexa value (1 byte).
+  *
+  * @param [in] u16Char Two byte char to convert
+  * 
+  * @return converted one byte hex value
+  */
 uint8_t ascii2hex(uint16_t u16Char)
 {
 	register uint8_t t;
@@ -54,6 +68,13 @@ uint8_t ascii2hex(uint16_t u16Char)
 	return hex;
 }
 
+/*!
+  * @brief Function convert a hexa value (1 byte) into its 2 bytes char representation.
+  *
+  * @param [in] u8Hex One byte hexa value to convert
+  * 
+  * @return converted two bytes char representation
+  */
 uint16_t hex2ascii(uint8_t u8Hex)
 {
 	uint8_t t;
@@ -73,12 +94,19 @@ uint16_t hex2ascii(uint8_t u8Hex)
 /******************************************************************************/
 /* Alias for HAL */
 /******************************************************************************/
+/*!
+  * @brief Alias for HAL_Delay function
+  *
+  * @param [in] milisecond Number of milisecond to wait
+  */
 //inline __attribute__((always_inline))
 void msleep(uint32_t milisecond) { HAL_Delay(milisecond); }
 
 /******************************************************************************/
 /* Libc print wrapper functions */
 /******************************************************************************/
+
+/*! @cond INTERNAL @{ */
 
 extern uart_dev_t aDevUart[UART_ID_MAX];
 
@@ -97,13 +125,13 @@ int __io_putchar(int ch){
 		nb = 2;
 		((uint8_t *)&ch)[1] = '\r';
 	}
-	HAL_UART_Transmit(aDevUart[STDOUT_UART_ID].hHandler, (uint8_t *)&ch, nb, CONSOLE_TX_TIMEOUT);
+	HAL_UART_Transmit(aDevUart[STDOUT_UART_ID].hHandle, (uint8_t *)&ch, nb, CONSOLE_TX_TIMEOUT);
 	return ch;
 }
 
 int __io_getchar(void){
 	int c;
-	HAL_UART_Receive(aDevUart[STDOUT_UART_ID].hHandler, (uint8_t*)&c, 1, CONSOLE_RX_TIMEOUT);
+	HAL_UART_Receive(aDevUart[STDOUT_UART_ID].hHandle, (uint8_t*)&c, 1, CONSOLE_RX_TIMEOUT);
 	return c;
 }
 #endif
@@ -112,8 +140,18 @@ extern void __init_exception_handlers__(void);
 extern void __init_sys_handlers__(void);
 extern void __init_sys_calls__(void);
 
+/*! @} @endcond */
+
+
 boot_state_t gBootState;
 
+/*!
+  * @brief This function initialize the bsp
+  *
+  * @param [in] u32BootState The current boot state
+  * 
+  * @return None
+  */
 void BSP_Init(uint32_t u32BootState)
 {
 
@@ -138,3 +176,5 @@ void BSP_Init(uint32_t u32BootState)
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */

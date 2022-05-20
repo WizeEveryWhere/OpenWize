@@ -39,18 +39,6 @@ option(BUILD_SYSTEM_TEST "" OFF)
 option(ENABLE_NATIVE_UNITTEST "Enable unit-test native execution" OFF)
 option(ENABLE_EMEBED_UNITTEST "" OFF)
 
-# if ON 
-# - cross-tool
-# - all flags
-# - build "lib_test.a"
-# - based on given FreeRTOS 
-
-# - keys are external
-# - parameters are external
-
-# - Openwize utest
-# - demo utest 
-
 ################################################################################
 # Init build config
 get_cfg()
@@ -67,9 +55,7 @@ if(BUILD_OPENWIZE)
     set(BUILD_TINYCRYPT TRUE)
 endif()
 
-#add_subdirectory(tools/foo_test)
-
-
+#-------------------------------------------------------------------------------
 # testing/Unity (must be the first one)
 if(BUILD_UNITY)
     message(STATUS "Add Unity Build ")
@@ -96,7 +82,6 @@ endif()
 # sources
 if(BUILD_OPENWIZE)
     message(STATUS "Add OpenWize Build ")
-    #include(${SOURCES_PATH}/OpenWize.cmake)
     add_subdirectory(sources)
     list(APPEND DOC_SOURCE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/sources)
 endif(BUILD_OPENWIZE)
@@ -152,18 +137,10 @@ endif()
 ################################################################################
 # Add doc rule
 if(DOC_COMPILE)
-    list(APPEND DOC_SOURCE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/docs")
+    list(APPEND DOC_SOURCE_DIRS "${CMAKE_SOURCE_DIR}/docs")
     string(REPLACE ";" " " DOXYFILE_SOURCE_DIRS "${DOC_SOURCE_DIRS}")
-    message("Main DOXYFILE_SOURCE_DIRS : ${DOXYFILE_SOURCE_DIRS}")
-    #add_subdirectory("docs")
     # Add build support for doxygen
     find_package(doxygen_support)
-    
-    #install(
-    #    FILES ${CMAKE_CURRENT_SOURCE_DIR}/logo_GRDF_150-89.png ${CMAKE_CURRENT_SOURCE_DIR}/logo_Wize_alliance.png ${CMAKE_CURRENT_SOURCE_DIR}/ParametersTables.png 
-    #    DESTINATION ${DOXYFILE_INSTALL_DIR}/html 
-    #)
-    
 endif(DOC_COMPILE)
 
 

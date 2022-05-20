@@ -1,9 +1,10 @@
 /**
   * @file: proto_api.h
-  * @brief: This file define public function to deal with the Wize protocol
+  * @brief This file define public function to deal with the Wize protocol
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -17,25 +18,19 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/09/14[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/09/07 [GBI]
   * Initial version
   *
-  *
   */
+
 /*!
- * @ingroup Sources
- * @{
- * @ingroup Wize
- * @{
- * @ingroup Protocol
+ * @addtogroup wize_proto
  * @{
  *
  */
-
 #ifndef _PROTO_API_H_
 #define _PROTO_API_H_
 
@@ -58,6 +53,4 @@ const char * Wize_Proto_GetStrErr(uint8_t eErr);
 #endif
 #endif /* _PROTO_API_H_ */
 
-/*! @} */
-/*! @} */
 /*! @} */

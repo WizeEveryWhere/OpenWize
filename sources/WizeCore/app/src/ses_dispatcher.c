@@ -1,10 +1,10 @@
-
 /**
   * @file: ses_dispatcher.c
-  * @brief: This file implement event session dispatching process
+  * @brief This file implement event session dispatching process
   * 
-  *****************************************************************************
-  * @Copyright 2019, GRDF, Inc.  All rights reserved.
+  * @details
+  *
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -18,15 +18,21 @@
   *      may be used to endorse or promote products derived from this software
   *      without specific prior written permission.
   *
-  *****************************************************************************
   *
-  * Revision history
-  * ----------------
-  * 1.0.0 : 2020/11/22[GBI]
+  * @par Revision history
+  *
+  * @par 1.0.0 : 2020/11/22[GBI]
   * Initial version
   *
   *
   */
+
+/*!
+ * @addtogroup wize_app
+ * @{
+ *
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -45,7 +51,13 @@ extern "C" {
 #include "wize_api.h"
 
 #include "rtos_macro.h"
+
 /******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #define SES_DISP_TIMEOUT_EVT 0xFFFFFFFF
 // Wize Session Dispatcher Task
 #define SES_DISP_TASK_NAME sesdisp
@@ -60,99 +72,23 @@ static void _ses_disp_main_(void const * argument);
 static void _ses_disp_fsm_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag);
 static void _ses_disp_bckflg_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag);
 static uint32_t _ses_disp_postCmd_(struct ses_disp_ctx_s *pCtx);
-static void _adm_mgr_get_param_(struct adm_mgr_ctx_s *pCtx);
-static void _inst_mgr_get_param_(struct inst_mgr_ctx_s *pCtx);
-/******************************************************************************/
+static uint32_t _ses_disp_OnDayPass_(struct ses_disp_ctx_s *pCtx);
+
+static void _ses_disp_get_param_(void);
+static inline void _adm_mgr_get_param_(struct adm_mgr_ctx_s *pCtx);
+static inline void _inst_mgr_get_param_(struct inst_mgr_ctx_s *pCtx);
+
 /*!
- * @static
- * @brief This function get parameters from global table and setup internal variables.
- *
- * @param [in] pCtx Pointer in the current context
- *
- * @return      None
+ * @}
+ * @endcond
  */
-static void _ses_disp_get_param_(void)
-{
-	int32_t ret = NETDEV_STATUS_OK;
-	/*
-	uint16_t u16Foffset;
-	uint8_t v1;
-
-	Param_Access(RF_UPLINK_CHANNEL,     &(v1), 0 );
-	v1 = (v1 -100)/10;
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_UPLINK_CH, v1);
-
-	Param_Access(RF_UPLINK_MOD,         &(v1), 0 );
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_UPLINK_MOD, v1);
-
-	Param_Access(L7TRANSMIT_LENGTH_MAX, &(v1), 0 );
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_TRANSLEN, v1);
-
-	Param_Access(TX_POWER,              &(v1), 0 );
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_PWR, v1);
-
-	Param_Access(TX_FREQ_OFFSET,        (uint8_t*)&(u16Foffset), 0 );
-	u16Foffset = __ntohs(u16Foffset);
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_FOFFSET, u16Foffset);
-
-
-
-	Param_Access(RF_DOWNLINK_CHANNEL,   &(v1), 0 );
-	v1 = (v1 -100)/10;
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_DWLINK_CH, v1);
-
-	Param_Access(RF_DOWNLINK_MOD,       &(v1), 0 );
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_DWLINK_MOD, v1);
-
-	Param_Access(L7RECEIVE_LENGTH_MAX,  &(v1), 0 );
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_RECVLEN, v1);
-
-
-
-	Param_Access(L6NetwIdSelect,           &v1, 0 );
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_NETWID, v1);
-
-	*/
-
-	struct medium_cfg_s sMediumCfg;
-	struct proto_config_s sProto_Cfg;
-
-	Param_Access(RF_UPLINK_CHANNEL,     &(sMediumCfg.eTxChannel), 0 );
-	sMediumCfg.eTxChannel = (sMediumCfg.eTxChannel -100)/10;
-	Param_Access(RF_UPLINK_MOD,         &(sMediumCfg.eTxModulation), 0 );
-	Param_Access(TX_POWER,              &(sMediumCfg.eTxPower), 0 );
-	Param_Access(TX_FREQ_OFFSET,        (uint8_t*)&(sMediumCfg.i16TxFreqOffset), 0 );
-	sMediumCfg.i16TxFreqOffset = __ntohs(sMediumCfg.i16TxFreqOffset);
-	Param_Access(RF_DOWNLINK_CHANNEL,   &(sMediumCfg.eRxChannel), 0 );
-	sMediumCfg.eRxChannel = (sMediumCfg.eRxChannel -100)/10;
-	Param_Access(RF_DOWNLINK_MOD,       &(sMediumCfg.eRxModulation), 0 );
-	ret = NetMgr_Ioctl(NETDEV_CTL_CFG_MEDIUM, (uint32_t)(&sMediumCfg));
-
-	Param_Access(L7TRANSMIT_LENGTH_MAX, &(sProto_Cfg.u8TransLenMax), 0 );
-	Param_Access(L7RECEIVE_LENGTH_MAX,  &(sProto_Cfg.u8RecvLenMax), 0 );
-	Param_Access(L6NetwIdSelect,        &(sProto_Cfg.u8NetId), 0 );
-
-	sProto_Cfg.AppInst = L6APP_INST;
-	sProto_Cfg.AppAdm = L6APP_ADM;
-#ifdef L6App
-	Param_Access(L6App,                 &(sProto_Cfg.AppData), 0 ) );
-#else
-		sProto_Cfg.AppData = 0xFE;
-#endif
-	sProto_Cfg.filterDisL2 = 0;
-	sProto_Cfg.filterDisL6 = 0;
-
-	ret |= NetMgr_Ioctl(NETDEV_CTL_CFG_PROTO, (uint32_t)(&sProto_Cfg));
-
-	if ( ret != NETDEV_STATUS_OK)
-	{
-
-	}
-}
 
 /******************************************************************************/
+
 /*!
- * @brief This function initialize the SesDisp (Session Dispatcher) module
+ * @brief This function setup the SesDisp (Session Dispatcher) module
+ *
+ * @param [in] pCtx Pointer on the current context
  *
  * @return None
  */
@@ -185,6 +121,14 @@ void SesDisp_Setup(struct ses_disp_ctx_s *pCtx)
 	pCtx->eState = SES_DISP_STATE_DISABLE;
 }
 
+/*!
+ * @brief This function initialize the SesDisp (Session Dispatcher) module
+ *
+ * @param [in] pCtx    Pointer on the current context
+ * @param [in] bEnable Enable / Disable the Session dispatcher
+ *
+ * @return None
+ */
 void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bEnable)
 {
 	uint8_t i;
@@ -209,7 +153,15 @@ void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bEnable)
 
 /******************************************************************************/
 
-
+/*!
+ * @static
+ * @brief This is the session dispatcher task. It call its FSM to treat events from
+ * Wize API and NetMgr
+ *
+ * @param [in] argument (not used)
+ *
+ * @return None
+ */
 static void _ses_disp_main_(void const * argument)
 {
 	uint32_t ulEvent;
@@ -225,43 +177,18 @@ static void _ses_disp_main_(void const * argument)
 	}
 }
 
+/******************************************************************************/
 
-static uint32_t _ses_disp_OnDayPass_(struct ses_disp_ctx_s *pCtx)
-{
-	uint32_t ulBckFlg = GLO_FLG_NONE;
-	uint8_t temp;
-	uint16_t v;
-
-	Param_Access(EXECPING_PERIODE, &temp, 0);
-	v = temp*30;
-	if (pCtx->u16PeriodInst >= v)
-	{
-		// request for periodic install
-		ulBckFlg |= GLO_FLG_PERIODIC_INST;
-	}
-	else
-	{
-		pCtx->u16PeriodInst++;
-	}
-
-	Param_Access(TX_DELAY_FULLPOWER,  (uint8_t*)&(v), 0 );
-	v = __ntohs(v);
-	if (pCtx->u16FullPower >= v)
-	{
-		// go back in full power
-		temp = PHY_PMAX_minus_0db;
-		Param_Access(TX_POWER, &temp, 1 );
-
-		ulBckFlg |= GLO_FLG_FULL_POWER;
-		pCtx->u16FullPower = 0;
-	}
-	else
-	{
-		pCtx->u16FullPower++;
-	}
-	return ulBckFlg;
-}
-
+/*!
+ * @static
+ * @brief This is the session dispatcher FSM that treat events from
+ * Wize API and NetMgr
+ *
+ * @param [in] pCtx     Pointer on the current session dispatcher context
+ * @param [in] u32Event Received event to treat
+ *
+ * @return None
+ */
 static void _ses_disp_fsm_(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 {
 	uint32_t ulEvt;
@@ -480,7 +407,9 @@ static void _ses_disp_fsm_(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 	// Event from TimeEvt DELAY_EXPIRED => one session should become active
 	if (u32Event & SES_EVT_SES_MGR_MSK)
 	{
-		/*
+
+#if 0
+
 		uint32_t u32Evt = u32Event & SES_EVT_SES_MGR_MSK;
 		ses_type_t eReqSesId = SES_NONE;
 
@@ -528,7 +457,8 @@ static void _ses_disp_fsm_(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 				_ses_disp_bckflg_(pCtx, ulFlg);
 			}
 		}
-		 */
+
+#endif
 
 		if( pCtx->pActive )
 		{
@@ -563,6 +493,15 @@ static void _ses_disp_fsm_(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 	}
 }
 
+/*!
+ * @static
+ * @brief This is function send back to the caller the session result
+ *
+ * @param [in] pCtx    Pointer on the current session dispatcher context
+ * @param [in] u32Flag
+ *
+ * @return None
+ */
 static void _ses_disp_bckflg_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag)
 {
 	uint32_t ulBckFlg;
@@ -593,13 +532,20 @@ static void _ses_disp_bckflg_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag)
 	}
 }
 
+
 /*!
  * @static
- * @brief This
+ * @brief This function effectively execute the "COMMAND" treatment
  *
- * @param [in]
+ * @param [in]  pCtx Pointer on the current session dispatcher context
  *
- * @return      None
+ * @retval
+ * @li @link glo_flg_e::GLO_FLG_NONE @endlink
+ * @li @link glo_flg_e::GLO_FLG_CMD_RECV_READ @endlink
+ * @li @link glo_flg_e::GLO_FLG_CMD_RECV_WRITE @endlink
+ * @li @link glo_flg_e::GLO_FLG_CMD_RECV_KEY @endlink
+ * @li @link glo_flg_e::GLO_FLG_CMD_RECV_ANN @endlink
+ *
  */
 static uint32_t _ses_disp_postCmd_(struct ses_disp_ctx_s *pCtx)
 {
@@ -683,13 +629,107 @@ static uint32_t _ses_disp_postCmd_(struct ses_disp_ctx_s *pCtx)
 
 /*!
  * @static
+ * @brief This is update "Periodic Install" and "Back to Full Power" counter
+ *
+ * @param [in] pCtx Pointer on the current session dispatcher context
+ *
+ * @retval
+ * @li @link glo_flg_e::GLO_FLG_NONE @endlink
+ * @li @link glo_flg_e::GLO_FLG_PERIODIC_INST @endlink
+ * @li @link glo_flg_e::GLO_FLG_FULL_POWER @endlink
+ *
+ */
+static uint32_t _ses_disp_OnDayPass_(struct ses_disp_ctx_s *pCtx)
+{
+	uint32_t ulBckFlg = GLO_FLG_NONE;
+	uint8_t temp;
+	uint16_t v;
+
+	Param_Access(EXECPING_PERIODE, &temp, 0);
+	v = temp*30;
+	if (pCtx->u16PeriodInst >= v)
+	{
+		// request for periodic install
+		ulBckFlg |= GLO_FLG_PERIODIC_INST;
+	}
+	else
+	{
+		pCtx->u16PeriodInst++;
+	}
+
+	Param_Access(TX_DELAY_FULLPOWER,  (uint8_t*)&(v), 0 );
+	v = __ntohs(v);
+	if (pCtx->u16FullPower >= v)
+	{
+		// go back in full power
+		temp = PHY_PMAX_minus_0db;
+		Param_Access(TX_POWER, &temp, 1 );
+
+		ulBckFlg |= GLO_FLG_FULL_POWER;
+		pCtx->u16FullPower = 0;
+	}
+	else
+	{
+		pCtx->u16FullPower++;
+	}
+	return ulBckFlg;
+}
+
+/*!
+ * @static
+ * @brief This function get parameters from global table and setup internal variables.
+ *
+ * @return      None
+ */
+static void _ses_disp_get_param_(void)
+{
+	int32_t ret = NETDEV_STATUS_OK;
+
+	struct medium_cfg_s sMediumCfg;
+	struct proto_config_s sProto_Cfg;
+
+	Param_Access(RF_UPLINK_CHANNEL,     &(sMediumCfg.eTxChannel), 0 );
+	sMediumCfg.eTxChannel = (sMediumCfg.eTxChannel -100)/10;
+	Param_Access(RF_UPLINK_MOD,         &(sMediumCfg.eTxModulation), 0 );
+	Param_Access(TX_POWER,              &(sMediumCfg.eTxPower), 0 );
+	Param_Access(TX_FREQ_OFFSET,        (uint8_t*)&(sMediumCfg.i16TxFreqOffset), 0 );
+	sMediumCfg.i16TxFreqOffset = __ntohs(sMediumCfg.i16TxFreqOffset);
+	Param_Access(RF_DOWNLINK_CHANNEL,   &(sMediumCfg.eRxChannel), 0 );
+	sMediumCfg.eRxChannel = (sMediumCfg.eRxChannel -100)/10;
+	Param_Access(RF_DOWNLINK_MOD,       &(sMediumCfg.eRxModulation), 0 );
+	ret = NetMgr_Ioctl(NETDEV_CTL_CFG_MEDIUM, (uint32_t)(&sMediumCfg));
+
+	Param_Access(L7TRANSMIT_LENGTH_MAX, &(sProto_Cfg.u8TransLenMax), 0 );
+	Param_Access(L7RECEIVE_LENGTH_MAX,  &(sProto_Cfg.u8RecvLenMax), 0 );
+	Param_Access(L6NetwIdSelect,        &(sProto_Cfg.u8NetId), 0 );
+
+	sProto_Cfg.AppInst = L6APP_INST;
+	sProto_Cfg.AppAdm = L6APP_ADM;
+#ifdef L6App
+	Param_Access(L6App,                 &(sProto_Cfg.AppData), 0 ) );
+#else
+	sProto_Cfg.AppData = 0xFE;
+#endif
+	sProto_Cfg.filterDisL2 = 0;
+	sProto_Cfg.filterDisL6 = 0;
+
+	ret |= NetMgr_Ioctl(NETDEV_CTL_CFG_PROTO, (uint32_t)(&sProto_Cfg));
+
+	if ( ret != NETDEV_STATUS_OK)
+	{
+
+	}
+}
+
+/*!
+ * @static
  * @brief This function get parameters from global table and setup internal variables.
  *
  * @param [in] pCtx Pointer in the current context
  *
  * @return      None
  */
-static void _adm_mgr_get_param_(struct adm_mgr_ctx_s *pCtx)
+static inline void _adm_mgr_get_param_(struct adm_mgr_ctx_s *pCtx)
 {
 	Param_Access(EXCH_RX_DELAY,       (uint8_t*)&(pCtx->u8ExchRxDelay), 0);
 	Param_Access(EXCH_RESPONSE_DELAY, (uint8_t*)&(pCtx->u8ExchRespDelay), 0);
@@ -697,7 +737,6 @@ static void _adm_mgr_get_param_(struct adm_mgr_ctx_s *pCtx)
 	Param_Access(CIPH_CURRENT_KEY,    (uint8_t*)&(pCtx->sDataMsg.u8KeyId), 0);
 
 	pCtx->u8ByPassCmd = (pCtx->u8ExchRxLength)?(0):(1);
-	pCtx->u8ParamUpdate = 1;
 }
 
 /*!
@@ -708,13 +747,14 @@ static void _adm_mgr_get_param_(struct adm_mgr_ctx_s *pCtx)
  *
  * @return     None
  */
-static void _inst_mgr_get_param_(struct inst_mgr_ctx_s *pCtx)
+static inline void _inst_mgr_get_param_(struct inst_mgr_ctx_s *pCtx)
 {
 	Param_Access(PING_RX_DELAY, (uint8_t*)&(pCtx->u8InstRxDelay), 0);
 	Param_Access(PING_RX_LENGTH, (uint8_t*)&(pCtx->u8InstRxLength), 0);
-	pCtx->u8ParamUpdate = 1;
 }
 
 #ifdef __cplusplus
 }
 #endif
+
+/*! @} */
