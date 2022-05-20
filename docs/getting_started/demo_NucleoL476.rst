@@ -59,6 +59,7 @@ Build the application
 
    cd Openwize
    mkdir -p _build
+   cd _build
 
 .. code-block:: bash
 

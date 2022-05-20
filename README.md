@@ -1,7 +1,6 @@
 # OpenWize
 
-La suite Openwize correspond à l'implémentation du protole spécifié et maintenu pour l'Alliance Wize. (lien vers l'Alliance à rajouter).
+OpenWize is an implementation of the Wize protocol, specified and maintened by the [Wize Alliance](https://www.wize-alliance.com/)
+The Wize Alliance promotes the use of this protocol in IoT scope.
 
-L'Alliance Wize promeut l'usage de ce protocole dans le domaine de l'IOT.
-
-Pour plus d'information sur OpenWize, suivez ce lien (rajouter le lien)
+For details information see the [documentation](https://wizeeverywhere-openwize.readthedocs.io/en/latest). 
