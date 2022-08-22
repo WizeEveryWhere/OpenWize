@@ -44,14 +44,32 @@ extern "C" {
 #include <bsp_rtc.h>
 #include <bsp_gpio.h>
 #include <bsp_gpio_it.h>
+#include "bsp_lp.h"
+
 #include <bsp_uart.h>
+
+#ifdef USE_SPI
+#include <bsp_spi.h>
+#endif
+
+#ifdef USE_I2C
+#include <bsp_i2c.h>
+#endif
+
 #ifdef HAS_BSP_PWRLINE
 #include <bsp_pwrlines.h>
 #endif
-#include "bsp_lp.h"
+
+#define GP_PORT_NAME(name) name ##_GPIO_Port
+#define GP_PIN_NAME(name) name##_Pin
+
+#define GP_PORT(name) (uint32_t)(GP_PORT_NAME(name))
+#define GP_PIN(name)  GP_PIN_NAME(name)
+#define LINE_INIT(name) GP_PORT(name), GP_PIN(name)
 
 extern uint8_t ascii2hex(uint16_t u16Char);
 extern uint16_t hex2ascii(uint8_t u8Hex);
+
 extern void msleep(uint32_t milisecond);
 extern void Error_Handler(void);
 extern void BSP_Init(uint32_t u32BootState);

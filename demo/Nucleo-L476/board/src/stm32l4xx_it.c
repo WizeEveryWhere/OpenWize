@@ -85,6 +85,40 @@ void TIM6_DAC_IRQHandler(void)
 extern void BSP_GpioIt_Handler(int8_t i8_ItLineId);
 
 /**
+  * @brief This function handles EXTI line[4:0]  interrupt.
+  */
+void EXTI4_0_IRQHandler(void)
+{
+	register uint32_t msk;
+	register uint8_t num;
+	for(num = 0; num < 5; num++)
+	{
+		msk = 0x1 << num;
+		if ( EXTI->PR1 & msk )
+		{
+			BSP_GpioIt_Handler(num);
+			EXTI->PR1 = msk;
+		}
+	}
+}
+
+
+/**
+  * @brief This function handles EXTI line0 interrupt.
+  */
+void EXTI0_IRQHandler(void)
+{
+	register uint32_t msk;
+	uint8_t num = 0;
+	msk = 0x1 << num;
+	if ( EXTI->PR1 & msk )
+	{
+		BSP_GpioIt_Handler(num);
+		EXTI->PR1 = msk;
+	}
+}
+
+/**
   * @brief This function handles EXTI line1 interrupt.
   */
 void EXTI1_IRQHandler(void)

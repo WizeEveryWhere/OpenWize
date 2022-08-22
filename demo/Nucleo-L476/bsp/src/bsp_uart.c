@@ -42,30 +42,13 @@ extern "C" {
 #include <stm32l4xx_hal.h>
 
 extern uart_dev_t aDevUart[UART_ID_MAX];
+
+extern void HAL_UART_MspInit(UART_HandleTypeDef* huart);
+extern void HAL_UART_MspDeInit(UART_HandleTypeDef* huart);
+
 /*******************************************************************************/
-
-void BSP_Console_SetTXCallback (pfHandlerCB_t const pfCb)
-{
-	pfConsoleTXEvent = pfCb;
-}
-
-void BSP_Console_SetRXCallback (pfHandlerCB_t const pfCb)
-{
-	pfConsoleRXEvent = pfCb;
-}
-
-void BSP_Console_SetWakupCallback (pfHandlerCB_t const pfCb)
-{
-	pfConsoleWakupEvent = pfCb;
-}
-
-/*
- * TODO:
- *
- * HAL_UARTEx_StopModeWakeUpSourceConfig(UART_HandleTypeDef *huart, UART_WakeUpTypeDef WakeUpSelection)
- * HAL_UARTEx_EnableStopMode(UART_HandleTypeDef *huart)
- * HAL_UARTEx_DisableStopMode(UART_HandleTypeDef *huart)
- */
+static void _bsp_com_TxISR_8BIT(UART_HandleTypeDef *huart);
+static void _bsp_com_RxISR_8BIT(UART_HandleTypeDef *huart);
 
 /*******************************************************************************/
 uint8_t BSP_Console_Init(void)
@@ -95,16 +78,386 @@ uint8_t BSP_Console_Received(uint8_t *pData, uint16_t u16Length)
 	return eRet;
 }
 /******************************************************************************/
+/*!
+  * @brief Enable the given uart and its related GPIO
+  *
+  * @param [in] u8DevId     Uart device id (see @link uart_id_e @endlink)
+  *
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  *
+  */
+uint8_t BSP_Uart_Enable(uint8_t u8DevId)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+	__HAL_LOCK(huart);
+	HAL_UART_MspInit(huart);
+	huart->RxState = HAL_UART_STATE_READY;
+	huart->gState = HAL_UART_STATE_READY;
+	__HAL_UNLOCK(huart);
+	__HAL_UART_ENABLE(huart);
+	return DEV_SUCCESS;
+}
 
+/*!
+  * @brief Disable the given uart and its related GPIO
+  *
+  * @param [in] u8DevId     Uart device id (see @link uart_id_e @endlink)
+  *
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  *
+  */
+uint8_t BSP_Uart_Disable(uint8_t u8DevId)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+	__HAL_UART_DISABLE(huart);
+	HAL_UART_MspDeInit(huart);
+	return DEV_SUCCESS;
+}
+
+/*!
+  * @brief Configure the given uart (interrupt mode)
+  *
+  * @param [in] u8DevId     Uart device id (see @link uart_id_e @endlink)
+  * @param [in] u8CharMatch Character to match
+  * @param [in] u8Mode      Uart detection mode (see @link uart_mode_e @endlink)
+  * @param [in] u32Tmo      Timeout (0 : timeout is not used)
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * 
+  */
+uint8_t BSP_Uart_Init(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint32_t u32Tmo)
+{
+	  // BRR = fck / Baud
+
+	  /* CR1
+	   * WordLength
+	   * OverSampling
+	   * Parity
+	   * Mode
+	   *
+	   * CR2
+	   * StopBits
+	   * Swap
+	   *
+	   * CR3
+	   * OverrunDisable
+	   * HwFlowCtl
+	   * OneBitSampling
+	   */
+
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+
+	__HAL_UART_DISABLE(huart);
+
+	// Disable all interrupt
+	CLEAR_BIT(huart->Instance->CR1, (
+			USART_CR1_RTOIE |
+			USART_CR1_CMIE | USART_CR1_MME | USART_CR1_PCE |
+			USART_CR1_PEIE | USART_CR1_TXEIE | USART_CR1_TCIE |
+			USART_CR1_RXNEIE | USART_CR1_IDLEIE) );
+
+	aDevUart[u8DevId].u8CharMatch = u8CharMatch;
+	aDevUart[u8DevId].u8Mode = u8Mode;
+
+	if(u32Tmo)
+	{
+		aDevUart[u8DevId].u32Tmo = u32Tmo & 0x00FFFFFF;
+		/* Enable Receiver timeout */
+		SET_BIT(huart->Instance->CR2, USART_CR2_RTOEN);
+		/* Set Receiver timeout value */
+		MODIFY_REG(huart->Instance->RTOR, USART_RTOR_RTO, u32Tmo);
+	}
+	else
+	{
+		aDevUart[u8DevId].u32Tmo = 0;
+		CLEAR_BIT(huart->Instance->CR2, USART_CR2_RTOEN);
+	}
+
+	if (u8Mode != UART_MODE_NONE)
+	{
+		/* Set Address value*/
+		MODIFY_REG(huart->Instance->CR2, USART_CR2_ADD, (u8CharMatch << USART_CR2_ADD_Pos) );
+		/* Set 7 bits Address */
+		SET_BIT(huart->Instance->CR2, USART_CR2_ADDM7);//UART_ADDRESS_DETECT_7B
+
+		if (u8Mode == UART_MODE_ADDR)
+		{
+			SET_BIT(huart->Instance->CR1, (USART_CR1_MME | USART_CR1_WAKE));
+			CLEAR_BIT(huart->Instance->CR1, (USART_CR1_PCE));
+		}
+	}
+	/* Clear all flag : already done with __HAL_UART_DISABLE */
+	// WRITE_REG(huart->Instance->ICR, 0xFFFFFFFF );
+
+	huart->RxISR = _bsp_com_RxISR_8BIT;
+	huart->TxISR = _bsp_com_TxISR_8BIT;
+
+	 __HAL_UART_ENABLE(huart);
+	return DEV_SUCCESS;
+}
+
+/*!
+  * @brief Set the Uart interrupt callback
+  *
+  * @param [in] u8DevId  Uart device id (see @link uart_id_e @endlink)
+  * @param [in] pfEvtCb  Pointer on the callback function
+  * @param [in] pCbParam Pointer on the callback parameter
+  *
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  *
+  */
+uint8_t BSP_Uart_SetCallback (uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pCbParam)
+{
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+	aDevUart[u8DevId].pfEvent = pfEvtCb;
+	aDevUart[u8DevId].pCbParam = pCbParam;
+
+	return DEV_SUCCESS;
+}
+
+/*!
+  * @brief Start to transmit on the given uart (interrupt mode)
+  *
+  * @param [in] u8DevId   Uart device id (see @link uart_id_e @endlink)
+  * @param [in] pData     Pointer on the buffer to send
+  * @param [in] u16Length Size of the message
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * @retval DEV_BUSY if the given device is busy (see @link dev_res_e::DEV_BUSY @endlink)
+  * 
+  */
+uint8_t BSP_Uart_Transmit(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+
+	/* Check that a Tx process is not already ongoing */
+	if (huart->gState == HAL_UART_STATE_READY)
+	{
+		if ((pData == NULL) || (u16Length == 0U))
+		{
+			return DEV_INVALID_PARAM;
+		}
+
+		__HAL_LOCK(huart);
+		huart->gState = HAL_UART_STATE_BUSY_TX;
+		huart->ErrorCode = HAL_UART_ERROR_NONE;
+		huart->pTxBuffPtr  = pData;
+		huart->TxXferSize  = u16Length;
+		huart->TxXferCount = u16Length;
+		huart->TxISR = _bsp_com_TxISR_8BIT;
+		__HAL_UNLOCK(huart);
+
+		/* Enable the Transmit Data Register Empty interrupt */
+		SET_BIT(huart->Instance->CR1, USART_CR1_TXEIE);
+
+		return DEV_SUCCESS;
+	}
+	else
+	{
+		return DEV_BUSY;
+	}
+}
+
+/*!
+  * @brief Start to receive on the given uart (interrupt mode)
+  *
+  * @param [in] u8DevId   Uart device id (see @link uart_id_e @endlink)
+  * @param [in] pData     Pointer on receiving buffer
+  * @param [in] u16Length Size of expected message
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * @retval DEV_BUSY if the given device is busy (see @link dev_res_e::DEV_BUSY @endlink)
+  * 
+  */
+uint8_t BSP_Uart_Receive(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+
+	register uint32_t itflags = READ_REG(huart->Instance->CR1);
+	/* Check that a Rx process is not already ongoing */
+	if (huart->RxState == HAL_UART_STATE_READY)
+	{
+		if ((pData == NULL) || (u16Length == 0U))
+		{
+			return DEV_INVALID_PARAM;
+		}
+
+		__HAL_LOCK(huart);
+		huart->RxState = HAL_UART_STATE_BUSY_RX;
+		huart->ErrorCode = HAL_UART_ERROR_NONE;
+		huart->pRxBuffPtr  = pData;
+		huart->RxXferSize  = u16Length;
+		huart->RxXferCount = u16Length;
+		//huart->RxISR       = NULL;
+		huart->RxISR = _bsp_com_RxISR_8BIT;
+
+		/* Computation of UART mask to apply to RDR register */
+		UART_MASK_COMPUTATION(huart);
+
+		/* Enable the UART Error Interrupt: (Frame error, noise error, overrun error) */
+		SET_BIT(huart->Instance->CR3, USART_CR3_EIE);
+
+		/* Set Receiver timeout value */
+		if(aDevUart[u8DevId].u32Tmo)
+		{
+			/* Set Receiver timeout value */
+			MODIFY_REG(huart->Instance->RTOR, USART_RTOR_RTO, aDevUart[u8DevId].u32Tmo);
+			/* Enable Receiver timeout interrupt*/
+			itflags |= USART_CR1_RTOIE;
+		}
+		else
+		{
+			/* Disable Receiver timeout interrupt*/
+			itflags &= ~(USART_CR1_RTOIE);
+		}
+
+		if(aDevUart[u8DevId].u8Mode != UART_MODE_EOB)
+		//if(aDevUart[u8DevId].u8Mode == UART_MODE_NONE)
+		{
+			/* Disable Character Match interrupt*/
+			itflags &= ~(USART_CR1_CMIE);
+		}
+		else
+		{
+			/* Enable Character Match interrupt*/
+			itflags |= USART_CR1_CMIE;
+		}
+
+		//huart->RxISR = _bsp_com_RxISR_8BIT;
+		/* Enable the UART Parity Error interrupt and Data Register Not Empty interrupt */
+		itflags |= USART_CR1_PEIE | USART_CR1_RXNEIE;
+		__HAL_UNLOCK(huart);
+
+		WRITE_REG(huart->Instance->CR1, itflags);
+
+		__HAL_UART_SEND_REQ(huart, UART_MUTE_MODE_REQUEST);
+
+		return DEV_SUCCESS;
+	}
+	else
+	{
+		return DEV_BUSY;
+	}
+}
+
+/*!
+  * @brief Abort the UART receive (interrupt mode)
+  *
+  * @param [in] u8DevId Uart device id (see @link uart_id_e @endlink)
+  * 
+  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
+  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
+  * 
+  */
+uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return DEV_INVALID_PARAM;
+	}
+
+	register uint32_t itflags = READ_REG(huart->Instance->CR1);
+	if(itflags & USART_CR1_RXNEIE)
+	{
+		CLEAR_BIT(huart->Instance->CR1, (USART_CR1_RXNEIE | USART_CR1_PEIE));
+		CLEAR_BIT(huart->Instance->CR3, USART_CR3_EIE);
+
+		/* Reset Rx transfer counter */
+	    huart->RxXferCount = 0U;
+
+	    /* Clear RxISR function pointer */
+	    huart->pRxBuffPtr = NULL;
+
+	    /* Clear the Error flags in the ICR register */
+	    __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_PEF | UART_CLEAR_FEF);
+
+		/* Discard the received data */
+		__HAL_UART_SEND_REQ(huart, UART_RXDATA_FLUSH_REQUEST);
+
+		/* Restore huart->RxState to Ready */
+	    huart->RxState = HAL_UART_STATE_READY;
+	}
+	return DEV_SUCCESS;
+}
+
+/*!
+  * @brief Get the number of byte received
+  *
+  * @param [in] u8DevId  Uart device id (see @link uart_id_e @endlink)
+  *
+  * @retval the number of bytes received
+  * @retval 0 if the given u8DevId is invalid
+  *
+  */
+uint16_t BSP_Uart_GetNbReceive(uint8_t u8DevId)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return 0;
+	}
+	return (huart->RxXferSize - huart->RxXferCount);
+}
+
+/*!
+  * @brief Get the number of byte transmitted
+  *
+  * @param [in] u8DevId  Uart device id (see @link uart_id_e @endlink)
+  *
+  * @retval the number of bytes transmitted
+  * @retval 0 if the given u8DevId is invalid
+  *
+  */
+uint16_t BSP_Uart_GetNbTransmit(uint8_t u8DevId)
+{
+	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
+	if (u8DevId >= UART_ID_MAX)
+	{
+		return 0;
+	}
+	return (huart->TxXferSize - huart->TxXferCount);
+}
+
+/*******************************************************************************/
 /*!
   * @static
   * @brief TX interrupt handler
   *
   * @param [in] huart Pointer on the uart handle
-  * 
+  *
   * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
   * @retval DEV_INVALID_PARAM if the given paramater is in valid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
-  * 
+  *
   */
 static void _bsp_com_TxISR_8BIT(UART_HandleTypeDef *huart)
 {
@@ -146,10 +499,10 @@ static void _bsp_com_TxISR_8BIT(UART_HandleTypeDef *huart)
   * @brief RX interrupt handler
   *
   * @param [in] huart Pointer on the uart handle
-  * 
+  *
   * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
   * @retval DEV_INVALID_PARAM if the given paramater is in valid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
-  * 
+  *
   */
 static void _bsp_com_RxISR_8BIT(UART_HandleTypeDef *huart)
 {
@@ -285,275 +638,6 @@ static void _bsp_com_RxISR_8BIT(UART_HandleTypeDef *huart)
 	}
 }
 
-/*!
-  * @brief Set the Uart interrupt callback
-  *
-  * @param [in] u8DevId  Uart device id (see @link uart_id_e @endlink)
-  * @param [in] pfEvtCb  Pointer on the callback function
-  * @param [in] pCbParam Pointer on the callback parameter
-  * 
-  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
-  * @retval DEV_INVALID_PARAM if the given paramater is in valid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
-  * 
-  */
-uint8_t BSP_Uart_SetCallback (uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pCbParam)
-{
-	if (u8DevId >= UART_ID_MAX)
-	{
-		return DEV_INVALID_PARAM;
-	}
-	aDevUart[u8DevId].pfEvent = pfEvtCb;
-	aDevUart[u8DevId].pCbParam = pCbParam;
-
-	return DEV_SUCCESS;
-}
-
-/*!
-  * @brief Configure the given uart (interrupt mode)
-  *
-  * @param [in] u8DevId     Uart device id (see @link uart_id_e @endlink)
-  * @param [in] u8CharMatch Character to match
-  * @param [in] u8Mode      Uart detection mode (see @link uart_mode_e @endlink)
-  * @param [in] u32Tmo      Timeout (0 : timeout is not used)
-  * 
-  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
-  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
-  * 
-  */
-uint8_t BSP_Uart_Init(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint32_t u32Tmo)
-{
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
-	if (u8DevId >= UART_ID_MAX)
-	{
-		return DEV_INVALID_PARAM;
-	}
-
-	__HAL_UART_DISABLE(huart);
-
-	// Disable all interrupt
-	CLEAR_BIT(huart->Instance->CR1, (
-			USART_CR1_CMIE | USART_CR1_MME | USART_CR1_PCE |
-			USART_CR1_PEIE | USART_CR1_TXEIE | USART_CR1_TCIE |
-			USART_CR1_RXNEIE | USART_CR1_IDLEIE) );
-
-	aDevUart[u8DevId].u8CharMatch = u8CharMatch;
-	aDevUart[u8DevId].u8Mode = u8Mode;
-
-	if(u32Tmo)
-	{
-		aDevUart[u8DevId].u32Tmo = u32Tmo & 0x00FFFFFF;
-		/* Enable Receiver timeout */
-		SET_BIT(huart->Instance->CR2, USART_CR2_RTOEN);
-		/* Set Receiver timeout value */
-		MODIFY_REG(huart->Instance->RTOR, USART_RTOR_RTO, u32Tmo);
-	}
-	else
-	{
-		aDevUart[u8DevId].u32Tmo = 0;
-		CLEAR_BIT(huart->Instance->CR2, USART_CR2_RTOEN);
-	}
-
-	if (u8Mode != UART_MODE_NONE)
-	{
-		/* Set Address value*/
-		MODIFY_REG(huart->Instance->CR2, USART_CR2_ADD, (u8CharMatch << USART_CR2_ADD_Pos) );
-		/* Set 7 bits Address */
-		SET_BIT(huart->Instance->CR2, USART_CR2_ADDM7);//UART_ADDRESS_DETECT_7B
-
-		if (u8Mode == UART_MODE_ADDR)
-		{
-			SET_BIT(huart->Instance->CR1, (USART_CR1_MME | USART_CR1_WAKE));
-			CLEAR_BIT(huart->Instance->CR1, (USART_CR1_PCE));
-		}
-	}
-	/* Clear all flag : already done with __HAL_UART_DISABLE */
-	// WRITE_REG(huart->Instance->ICR, 0xFFFFFFFF );
-
-	huart->RxISR = _bsp_com_RxISR_8BIT;
-	huart->TxISR = _bsp_com_TxISR_8BIT;
-
-	 __HAL_UART_ENABLE(huart);
-	return DEV_SUCCESS;
-}
-
-/*!
-  * @brief Start to transmit on the given uart (interrupt mode)
-  *
-  * @param [in] u8DevId   Uart device id (see @link uart_id_e @endlink)
-  * @param [in] pData     Pointer on the buffer to send
-  * @param [in] u16Length Size of the message
-  * 
-  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
-  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
-  * @retval DEV_BUSY if the given device is busy (see @link dev_res_e::DEV_BUSY @endlink)
-  * 
-  */
-uint8_t BSP_Uart_Transmit(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
-{
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
-	if (u8DevId >= UART_ID_MAX)
-	{
-		return DEV_INVALID_PARAM;
-	}
-
-	/* Check that a Tx process is not already ongoing */
-	if (huart->gState == HAL_UART_STATE_READY)
-	{
-		if ((pData == NULL) || (u16Length == 0U))
-		{
-			return DEV_INVALID_PARAM;
-		}
-
-		__HAL_LOCK(huart);
-
-		huart->pTxBuffPtr  = pData;
-		huart->TxXferSize  = u16Length;
-		huart->TxXferCount = u16Length;
-		huart->TxISR = _bsp_com_TxISR_8BIT;
-
-		huart->ErrorCode = HAL_UART_ERROR_NONE;
-		huart->gState = HAL_UART_STATE_BUSY_TX;
-
-		__HAL_UNLOCK(huart);
-
-		/* Enable the Transmit Data Register Empty interrupt */
-		SET_BIT(huart->Instance->CR1, USART_CR1_TXEIE);
-
-		return DEV_SUCCESS;
-	}
-	else
-	{
-		return DEV_BUSY;
-	}
-}
-
-/*!
-  * @brief Start to receive on the given uart (interrupt mode)
-  *
-  * @param [in] u8DevId   Uart device id (see @link uart_id_e @endlink)
-  * @param [in] pData     Pointer on receiving buffer
-  * @param [in] u16Length Size of expected message
-  * 
-  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
-  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
-  * @retval DEV_BUSY if the given device is busy (see @link dev_res_e::DEV_BUSY @endlink)
-  * 
-  */
-uint8_t BSP_Uart_Receive(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)
-{
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
-	if (u8DevId >= UART_ID_MAX)
-	{
-		return DEV_INVALID_PARAM;
-	}
-
-	register uint32_t itflags = READ_REG(huart->Instance->CR1);
-	/* Check that a Rx process is not already ongoing */
-	if (huart->RxState == HAL_UART_STATE_READY)
-	{
-		if ((pData == NULL) || (u16Length == 0U))
-		{
-			return DEV_INVALID_PARAM;
-		}
-
-		__HAL_LOCK(huart);
-
-		huart->pRxBuffPtr  = pData;
-		huart->RxXferSize  = u16Length;
-		huart->RxXferCount = u16Length;
-		//huart->RxISR       = NULL;
-		huart->RxISR = _bsp_com_RxISR_8BIT;
-
-		/* Computation of UART mask to apply to RDR register */
-		UART_MASK_COMPUTATION(huart);
-
-		huart->ErrorCode = HAL_UART_ERROR_NONE;
-		huart->RxState = HAL_UART_STATE_BUSY_RX;
-
-		/* Enable the UART Error Interrupt: (Frame error, noise error, overrun error) */
-		SET_BIT(huart->Instance->CR3, USART_CR3_EIE);
-
-		/* Set Receiver timeout value */
-		if(aDevUart[u8DevId].u32Tmo)
-		{
-			/* Set Receiver timeout value */
-			MODIFY_REG(huart->Instance->RTOR, USART_RTOR_RTO, aDevUart[u8DevId].u32Tmo);
-			/* Enable Receiver timeout interrupt*/
-			itflags |= USART_CR1_RTOIE;
-		}
-		else
-		{
-			itflags |= USART_CR1_RTOIE;
-		}
-
-		if(aDevUart[u8DevId].u8Mode != UART_MODE_EOB)
-		//if(aDevUart[u8DevId].u8Mode == UART_MODE_NONE)
-		{
-			itflags &= ~(USART_CR1_CMIE);
-		}
-		else
-		{
-			/* Enable Character Match interrupt*/
-			itflags |= USART_CR1_CMIE;
-		}
-
-		//huart->RxISR = _bsp_com_RxISR_8BIT;
-		/* Enable the UART Parity Error interrupt and Data Register Not Empty interrupt */
-		itflags |= USART_CR1_PEIE | USART_CR1_RXNEIE;
-		__HAL_UNLOCK(huart);
-
-		WRITE_REG(huart->Instance->CR1, itflags);
-
-		__HAL_UART_SEND_REQ(huart, UART_MUTE_MODE_REQUEST);
-
-		return DEV_SUCCESS;
-	}
-	else
-	{
-		return DEV_BUSY;
-	}
-}
-
-/*!
-  * @brief Abort the UART receive (interrupt mode)
-  *
-  * @param [in] u8DevId Uart device id (see @link uart_id_e @endlink)
-  * 
-  * @retval DEV_SUCCESS if everything is fine (see @link dev_res_e::DEV_SUCCESS @endlink)
-  * @retval DEV_INVALID_PARAM if the given parameter is invalid (see @link dev_res_e::DEV_INVALID_PARAM @endlink)
-  * 
-  */
-uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId)
-{
-	UART_HandleTypeDef *huart = aDevUart[u8DevId].hHandle;
-	if (u8DevId >= UART_ID_MAX)
-	{
-		return DEV_INVALID_PARAM;
-	}
-
-	register uint32_t itflags = READ_REG(huart->Instance->CR1);
-	if(itflags & USART_CR1_RXNEIE)
-	{
-		CLEAR_BIT(huart->Instance->CR1, (USART_CR1_RXNEIE | USART_CR1_PEIE));
-		CLEAR_BIT(huart->Instance->CR3, USART_CR3_EIE);
-
-		/* Reset Rx transfer counter */
-	    huart->RxXferCount = 0U;
-
-	    /* Clear RxISR function pointer */
-	    huart->pRxBuffPtr = NULL;
-
-	    /* Clear the Error flags in the ICR register */
-	    __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_OREF | UART_CLEAR_NEF | UART_CLEAR_PEF | UART_CLEAR_FEF);
-
-		/* Discard the received data */
-		__HAL_UART_SEND_REQ(huart, UART_RXDATA_FLUSH_REQUEST);
-
-		/* Restore huart->RxState to Ready */
-	    huart->RxState = HAL_UART_STATE_READY;
-	}
-	return DEV_SUCCESS;
-}
 /*******************************************************************************/
 
 #ifdef __cplusplus

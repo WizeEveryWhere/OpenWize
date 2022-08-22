@@ -40,7 +40,14 @@
  * @{
  */
 
+__attribute__((weak))
 void __init_sys_calls__(void)
+{
+	return;
+}
+
+__attribute__((weak))
+void __fini_sys_calls__(void)
 {
 	return;
 }
@@ -161,9 +168,6 @@ _sbrk(int incr)
  * @{
  */
 
-char *__env[1] = { 0 };
-char **environ = __env;
-
 extern int __io_putchar(int ch) __attribute__((weak));
 extern int __io_getchar(void) __attribute__((weak));
 
@@ -180,7 +184,7 @@ __attribute__((weak)) int _read(int file, char *ptr, int len)
 		*ptr++ = __io_getchar();
 	}
 
-return len;
+	return len;
 }
 
 __attribute__((weak)) int _write(int file, char *ptr, int len)
@@ -278,5 +282,119 @@ int _execve(char *name, char **argv, char **env)
  * @}
  * @endcond
  */
+
+/******************************************************************************/
+/* Libc env wrapper functions */
+/******************************************************************************/
+
+#ifdef USE_LIBC_ENV_WRAP
+
+#include "envlock.h"
+
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+char rtc_init_env[5]="B0=0";
+char test_init_env[5]="B1=0";
+char *__env[3] = {
+	rtc_init_env,
+	test_init_env,
+	0
+};
+char **environ = __env;
+
+int
+__wrap__setenv_r (struct _reent *reent_ptr,
+	const char *name,
+	const char *value,
+	int rewrite)
+{
+	register char *C;
+	int l_value, offset;
+
+	if (strchr(name, '='))
+	{
+		errno = EINVAL;
+		return -1;
+	}
+
+	ENV_LOCK;
+
+	if ((C = _findenv_r (reent_ptr, name, &offset)))
+	{				/* find if already exists */
+		if (!rewrite)
+		{
+			ENV_UNLOCK;
+			return 0;
+		}
+		if(*name == 'B')
+		{
+			*(C) = *(value);
+		}
+		else
+		{
+			l_value = strlen (value);
+			if (strlen (C) >= l_value)
+			{			/* old larger; copy over */
+				while ((*C++ = *value++) != 0);
+			}
+			else
+			{
+				errno = ERANGE;
+			}
+		}
+		ENV_UNLOCK;
+		return 0;
+	}
+	ENV_UNLOCK;
+	return -1;
+}
+
+int
+__wrap__unsetenv_r (struct _reent *reent_ptr,
+        const char *name)
+{
+    errno = EINVAL;
+    return -1;
+}
+
+
+void __init_sys_calls__(void)
+{
+	uint8_t e[2] = {0x00, '\0'};
+	uint32_t data = BSP_Rtc_Backup_Read(0);
+  	*e = (uint8_t)(data);
+  	setenv("B0", (char*)e, 1);
+
+  	*e = (uint8_t)(data >> 8);
+  	setenv("B1", (char*)e, 1);
+
+	return;
+}
+
+void __fini_sys_calls__(void)
+{
+  	uint32_t data;
+  	data = BSP_Rtc_Backup_Read(0);
+  	data |= ( *( (uint8_t*)getenv("B0") ) );
+  	data |= ( *( (uint8_t*)getenv("B1") ) ) << 8;
+  	BSP_Rtc_Backup_Write(0, data);
+  	return;
+}
+
+#else
+
+char *__env[1] = { 0 };
+char **environ = __env;
+
+#endif
+/*!
+ * @}
+ * @endcond
+ */
+ 
+/******************************************************************************/
 
 /*! @} */

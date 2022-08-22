@@ -42,158 +42,17 @@ extern "C" {
 #include "platform.h"
 #include <stm32l4xx_hal.h>
 
-#include "pin_cfg.h"
-
 /*!
  * @cond INTERNAL
  * @{
  */
-
-#define GP_PORT_NAME(name) name ##_GPIO_Port
-#define GP_PIN_NAME(name) name##_Pin
-
-#define GP_PORT(name) (uint32_t)(GP_PORT_NAME(name))
-#define GP_PIN(name)  GP_PIN_NAME(name)
-#define LINE_INIT(name) GP_PORT(name), GP_PIN(name)
-
-/*!
- * @}
- * @endcond
- */
-
-#include "bsp_gpio_it.h"
-extern RTC_HandleTypeDef hrtc;
-extern UART_HandleTypeDef *paUART_BusHandle[UART_ID_MAX];
-
-/*!
- * @cond INTERNAL
- * @{
- */
-
-#define WKUP_PIN_NAME DEBUG_RXD
-#define WKUP_UART_ID UART_ID_CONSOLE
-//#define UART_IS_DEINIT
-
-static inline void _lp_clk_cfg_ (void);
-
-//#define CLK_CFG_HSE_PLL_HSI
-//#define CLK_CFG_MSI_HSI
-static inline void _lp_clk_cfg_ (void)
-{
-#if defined( CLK_CFG_HSE_PLL_HSI )
-	RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-	RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-	uint32_t pFLatency = 0;
-	HAL_RCC_GetOscConfig(&RCC_OscInitStruct);
-	RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE | RCC_OSCILLATORTYPE_HSI;
-	RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-
-	RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-	RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-
-	//RCC_OscInitStruct.OscillatorType |= RCC_OSCILLATORTYPE_HSI;
-	//RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-	//RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-
-	if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-	{
-		Error_Handler();
-	}
-
-	HAL_RCC_GetClockConfig(&RCC_ClkInitStruct, &pFLatency);
-	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK;
-	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, pFLatency) != HAL_OK)
-	{
-		Error_Handler();
-	}
-
-#elif defined (CLK_CFG_MSI_HSI )
-	HAL_RCC_GetOscConfig(&RCC_OscInitStruct);
-	RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_MSI | RCC_OSCILLATORTYPE_HSI;
-	if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-	{
-		Error_Handler();
-	}
-	HAL_RCC_GetClockConfig(&RCC_ClkInitStruct, &pFLatency);
-	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK;
-	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
-	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, pFLatency) != HAL_OK)
-	{
-		Error_Handler();
-	}
-
-#else // (CLK_CFG_MSI)
-	// nothing to do
-#endif
-}
-
-static void _wkup_cb_(void *pParam, void *pArg)
-{
-
-}
-
-static void _lp_entry_ (void)
-{
-	int8_t i8LineId;
-
-#ifdef UART_IS_DEINIT
-	if (HAL_UART_DeInit( paUART_BusHandle[WKUP_UART_ID] ) != HAL_OK)
-	{
-		Error_Handler();
-	}
-	BSP_Gpio_InputEnable( LINE_INIT(WKUP_PIN_NAME), 1);
-#endif
-    BSP_GpioIt_ConfigLine( LINE_INIT(WKUP_PIN_NAME), GPIO_IRQ_FALLING_EDGE);
-    BSP_GpioIt_SetLine( LINE_INIT(WKUP_PIN_NAME), 1);
-    BSP_GpioIt_SetCallback( LINE_INIT(WKUP_PIN_NAME), &_wkup_cb_, NULL );
-
-
-    i8LineId = BSP_GpioIt_GetLineId( GP_PIN(WKUP_PIN_NAME));
-    if (i8LineId < 5)
-    {
-    	// IT line from 0, 1, 2, 3 and 4
-    	HAL_NVIC_EnableIRQ(EXTI0_IRQn + i8LineId);
-    }
-    else
-    {
-        if(i8LineId < 10)
-        {
-        	// IT line from 5 to 9
-        	HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-        }
-        else
-        {
-        	// IT line from 10 to 15
-        	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
-        }
-    }
-#if defined (CLK_CFG_HSE_PLL_HSI) || defined (CLK_CFG_MSI_HSI)
-    // Auto enable HSI when MSI is ready
-    SET_BIT(RCC->CR, RCC_CR_HSIASFS );
-#endif
-}
-
-static void _lp_exit_ (void)
-{
-	BSP_GpioIt_SetLine( LINE_INIT(WKUP_PIN_NAME), 0);
-
-	_lp_clk_cfg_();
-
-#ifdef UART_IS_DEINIT
-	if (HAL_UART_Init( paUART_BusHandle[WKUP_UART_ID] ) != HAL_OK)
-	{
-		Error_Handler();
-	}
-#endif
-}
 
 void BSP_LowPower_Init (void)
 {
 /*
  * Power control register 1 (PWR_CR1) : This register is reset after wakeup
  *                                      from Standby mode.
- * Bit 8 DBP: Disable backup domain write protection In reset state, the RTC and backup registers are
+ * Bit 8 DBP: Disable backup domain write protection
  *
  *
  *
@@ -257,36 +116,6 @@ void BSP_LowPower_Init (void)
  *
  *
  */
-
-/*
- * On LP exit
- * - from SHUTDOWN
- * - from STANDBY
- * - from STOP2
- * - from STOP1
- * - from STOP0
- * - from SLEEP
- *
- *
- */
-
-/*
-	CLEAR_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
-    bPaState = Phy_GetPa();
-
-
-    Phy_OnOff(&sPhyDev, 0);
-
-	BSP_LowPower_Enter(LP_STOP2_MODE);
-
-	Phy_OnOff(&sPhyDev, 1);
-
-
-
-	Phy_SetPa(bPaState);
-    SET_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
-*/
-
 }
 
 /*!
@@ -300,22 +129,20 @@ void BSP_LowPower_Init (void)
  * @{
  */
 
-// PA0, PC13, PE6, PA2, PC5.
-#define PA0_WKUP_PIN  PWR_WAKEUP_PIN1 // PWR_CR3_EWUP1
-#define PC13_WKUP_PIN PWR_WAKEUP_PIN2_LOW //PWR_WAKEUP_PIN2 // PWR_CR3_EWUP2
-#define PE6_WKUP_PIN  PWR_WAKEUP_PIN3 // PWR_CR3_EWUP3
-#define PA2_WKUP_PIN  PWR_WAKEUP_PIN4 // PWR_CR3_EWUP4
-#define PC5_WKUP_PIN  PWR_WAKEUP_PIN5 // PWR_CR3_EWUP5
+__attribute__((weak)) const uint8_t u8WkupPinEn = 0;
+__attribute__((weak)) const uint8_t u8WkupPinPoll = 0;
+__attribute__((weak)) const uint16_t u16LpPuPortA = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortA = 0;
+__attribute__((weak)) const uint16_t u16LpPuPortB = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortB = 0;
+__attribute__((weak)) const uint16_t u16LpPuPortC = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortC = 0;
+
 
 /*!
  * @}
  * @endcond
  */
-
-/*!
- * @brief This define the current wake-up pin
- */
-#define WAKEUP_PIN PC13_WKUP_PIN
 
 /*!
   * @brief This function enter in the given low power mode
@@ -325,50 +152,71 @@ void BSP_LowPower_Init (void)
   */
 void BSP_LowPower_Enter (lp_mode_e eLpMode)
 {
-	HAL_SuspendTick();
-	//HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
-
-	//_lp_entry_();
-
-	HAL_PWR_EnableWakeUpPin(WAKEUP_PIN);
-	HAL_PWREx_EnableInternalWakeUpLine();
-	HAL_PWREx_EnableSRAM2ContentRetention();
-
-	switch(eLpMode)
+	if (eLpMode < LP_NB_MODE)
 	{
-		case LP_SHTDWN_MODE:
-			HAL_PWREx_EnterSHUTDOWNMode();
-			break;
-		case LP_STDBY_MODE:
-			HAL_PWR_EnterSTANDBYMode();
-			break;
-		case LP_STOP1_MODE:
-			HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
-			break;
-		case LP_STOP2_MODE:
-			HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
-			break;
-		case LP_SLEEP_MODE:
-		default:
+		CLEAR_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
+		HAL_SuspendTick();
+		if ( eLpMode > LP_SHTDWN_MODE ) // SLEEP,
+		{
 			HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
-			break;
+		}
+		else
+		{
+			if (eLpMode > LP_STOP2_MODE) // STDBY and SHUTDOWN modes
+			{
+				if (u8WkupPinEn)
+				{
+					/* Init wake-up pin and polarity */
+					CLEAR_BIT(PWR->CR3, u8WkupPinEn );
+					CLEAR_BIT(PWR->CR4, u8WkupPinPoll );
+					/* Set PU/PD on port A */
+					WRITE_REG(PWR->PUCRA, u16LpPuPortA);
+					WRITE_REG(PWR->PDCRA, u16LpPuPortA);
+					/* Set PU/PD on port B */
+					WRITE_REG(PWR->PUCRB, u16LpPuPortA);
+					WRITE_REG(PWR->PDCRB, u16LpPuPortA);
+					/* Set PU/PD on port C */
+					WRITE_REG(PWR->PUCRC, u16LpPuPortA);
+					WRITE_REG(PWR->PDCRC, u16LpPuPortA);
+					/* Set wake-up pin polarity */
+					SET_BIT(PWR->CR4, u8WkupPinPoll );
+					/* Enable wake-up pin, internal wake-up line and  SRAM2 retention*/
+					SET_BIT(PWR->CR3, u8WkupPinEn | PWR_CR3_EIWF | PWR_CR3_RRS | PWR_CR3_APC);
+					/* Clear Wake-up Status */
+					WRITE_REG(PWR->SCR, 0x11F);
+					/* Set LP mode */
+					MODIFY_REG(PWR->CR1, PWR_CR1_LPMS, eLpMode );
+					/* Set SLEEPDEEP bit of Cortex System Control Register */
+					SET_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));
+					__WFI();
+				}
+				// else // Unable to Wake-up from external
+			}
+			else // STOPx modes
+			{
+				MODIFY_REG(PWR->CR1, PWR_CR1_LPMS, eLpMode);
+				BSP_LowPower_OnStopEnter(eLpMode);
+				SET_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));
+				__WFI();
+				CLEAR_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));
+				BSP_LowPower_OnStopExit(eLpMode);
+			}
+		}
+
+		HAL_ResumeTick();
+		SET_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
 	}
-	//_lp_exit_();
-	HAL_ResumeTick();
 }
 
-/*
- * Flash option register (FLASH_OPTR)
- * OB_USER_nRST_STOP
- * OB_USER_nRST_STDBY
- * OB_USER_nRST_SHDW
- *
- * OB_USER_IWDG_SW
- * OB_USER_IWDG_STOP
- * OB_USER_IWDG_STDBY
- * OB_USER_WWDG_SW
- */
+__attribute__((weak)) void BSP_LowPower_OnStopEnter(lp_mode_e eLpMode)
+{
+	(void)eLpMode;
+}
 
+__attribute__((weak)) void BSP_LowPower_OnStopExit(lp_mode_e eLpMode)
+{
+	(void)eLpMode;
+}
 
 /******************************************************************************/
 
