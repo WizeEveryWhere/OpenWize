@@ -65,7 +65,7 @@ extern "C" {
 #define SES_DISP_STACK_SIZE 400
 #define SES_DISP_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
 SYS_TASK_CREATE_DEF(sesdisp, SES_DISP_STACK_SIZE, SES_DISP_PRIORITY);
-SYS_MUTEX_CREATE_DEF(sesdisp);
+SYS_BINSEM_CREATE_DEF(sesdisp);
 SYS_EVENT_CREATE_DEF(sesdisp);
 
 static void _ses_disp_main_(void const * argument);
@@ -99,8 +99,8 @@ void SesDisp_Setup(struct ses_disp_ctx_s *pCtx)
 
 	pCtx->hTask = SYS_TASK_CREATE_CALL(sesdisp, SES_DISP_TASK_FCT, pCtx);
 	assert(pCtx->hTask);
-	pCtx->hMutex = SYS_MUTEX_CREATE_CALL(sesdisp);
-	assert(pCtx->hMutex);
+	pCtx->hLock = SYS_BINSEM_CREATE_CALL(sesdisp);
+	assert(pCtx->hLock);
 	pCtx->hEvents = SYS_EVENT_CREATE_CALL(sesdisp);
 	assert(pCtx->hEvents);
 
@@ -144,6 +144,7 @@ void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bEnable)
 	if (bEnable)
 	{
 		pCtx->eState = SES_DISP_STATE_ENABLE;
+		xSemaphoreGive(pCtx->hLock);
 	}
 	else
 	{
@@ -507,16 +508,19 @@ static void _ses_disp_bckflg_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag)
 	uint32_t ulBckFlg;
 	if (u32Flag & SES_FLG_ERROR)
 	{
-		ulBckFlg = SES_MGR_FLG_FAILED;
+		//ulBckFlg = SES_MGR_FLG_FAILED;
+		ulBckFlg = WIZE_API_FLG_FAILED;
 	}
 	//else if (u32Flag & SES_FLG_SENT)
 	else if (u32Flag & SES_FLG_CMD_RECV)
 	{
-		ulBckFlg = SES_MGR_FLG_REQUEST;
+		//ulBckFlg = SES_MGR_FLG_REQUEST;
+		ulBckFlg = WIZE_API_FLG_REQUEST;
 	}
 	else
 	{
-		ulBckFlg = SES_MGR_FLG_SUCCESS;
+		//ulBckFlg = SES_MGR_FLG_SUCCESS;
+		ulBckFlg = WIZE_API_FLG_SUCCESS;
 	}
 	//ulBckFlg |= (pCtx->eReqId << SES_MGR_FLG_POS);
 	ulBckFlg |= (pCtx->eActiveId << SES_MGR_FLG_POS);
@@ -528,7 +532,16 @@ static void _ses_disp_bckflg_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag)
 		pCtx->eActiveId = SES_NONE;
 		pCtx->pActive = NULL;
 		NetMgr_Close();
+		xSemaphoreGive(pCtx->hLock);
+
+#ifdef WIZEAPI_NOT_BLOCKING
+		if(pCtx->hCaller)
+		{
+			xTaskNotify(pCtx->hCaller, ulBckFlg, eSetBits);
+		}
+#else
 		xEventGroupSetBits(pCtx->hEvents, ulBckFlg);
+#endif
 	}
 }
 

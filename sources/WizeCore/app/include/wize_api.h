@@ -69,6 +69,19 @@ typedef enum
 	WIZE_API_INVALID_PARAM,
 } wize_api_ret_e;
 
+
+/*!
+ * @brief This enumeration define
+ */
+typedef enum
+{
+	WIZE_API_FLG_NONE    = 0x0,
+	WIZE_API_FLG_SUCCESS = 0x1,
+	WIZE_API_FLG_FAILED  = 0x2,
+	WIZE_API_FLG_REQUEST = 0x3,
+
+} wize_api_flg_e;
+
 wize_api_ret_e WizeApi_GetAdmCmd(net_msg_t *pAdmMsg);
 wize_api_ret_e WizeApi_GetAdmRsp(net_msg_t *pAdmMsg);
 wize_api_ret_e WizeApi_GetStats(net_stats_t *pStats);
@@ -77,7 +90,6 @@ wize_api_ret_e WizeApi_GetDeviceId(device_id_t *pDevId);
 
 wize_api_ret_e WizeApi_ExecPing(void);
 wize_api_ret_e WizeApi_Send(uint8_t *pData, uint8_t u8Size, uint8_t u8Type);
-wize_api_ret_e WizeApi_SendEx(uint8_t *pData, uint8_t u8Size, uint8_t u8Type);
 
 void WizeApi_Setup(phydev_t *pPhyDev);
 void WizeApi_Enable(uint8_t bFlag);

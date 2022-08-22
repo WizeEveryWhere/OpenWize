@@ -42,6 +42,12 @@ extern "C" {
 #include "app_layer.h"
 
 uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_Unknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_WriteParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_WriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_Execping(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_Anndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 
 #ifdef __cplusplus
 }

@@ -176,8 +176,9 @@ typedef enum
 struct ses_disp_ctx_s
 {
 	void *hTask;
-	void *hMutex;
+	void *hLock;
 	void *hEvents;
+	void *hCaller;
 	struct ses_ctx_s *pActive;
 	struct ses_ctx_s sSesCtx[SES_NB];
 

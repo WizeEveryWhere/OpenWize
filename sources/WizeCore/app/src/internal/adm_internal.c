@@ -48,15 +48,6 @@ extern "C" {
 #include <time.h>
 #include <string.h>
 
-
-static void _adm_unknown_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-static void _adm_read_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-static void _adm_write_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-static void _adm_write_key_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-static void _adm_anndownload_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-static void _adm_execping_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-
-
 /******************************************************************************/
 
 /*!
@@ -66,13 +57,13 @@ static void _adm_execping_(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
   * @param [in,out] pReqMsg Pointer on request message
   * @param [in,out] pRspMsg Pointer on response message
   *
-  * @retval  0 : response not yet available
-  * @retval  1 : response is available
-  * @retval  2 : action already done
+  * @retval RSP_NOT_READY (see @link admin_rsp_status_e::RSP_NOT_READY @endlink)
+  * @retval RSP_READY (see @link admin_rsp_status_e::RSP_READY @endlink)
+  * @retval RSP_ALREADY_DONE (see @link admin_rsp_status_e::RSP_ALREADY_DONE @endlink)
   */
 uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
-	uint8_t ret = 1;
+	uint8_t ret = RSP_READY;
 	// check if CMD Id has not previously been received
 	if (pReqMsg->u16Id != pRspMsg->u16Id)
 	{
@@ -81,23 +72,24 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 		switch (pReqMsg->pData[0]) //L7CommandId
 		{
 			case ADM_READ_PARAM :
-				_adm_read_param_(pReqMsg, pRspMsg);
+				AdmInt_ReadParam(pReqMsg, pRspMsg);
 				break;
 			case ADM_WRITE_PARAM :
-				_adm_write_param_(pReqMsg, pRspMsg);
+				AdmInt_WriteParam(pReqMsg, pRspMsg);
 				break;
 			case ADM_WRITE_KEY :
-				_adm_write_key_(pReqMsg, pRspMsg);
+				AdmInt_WriteKey(pReqMsg, pRspMsg);
 				break;
 			case ADM_ANNDOWNLOAD :
-				_adm_anndownload_(pReqMsg, pRspMsg);
+				AdmInt_Anndownload(pReqMsg, pRspMsg);
 				break;
 			case ADM_EXECINSTPING :
 				// response not yet available
-				ret = 0;
+				pRspMsg->pData[0] = ~(pReqMsg->pData[0]);
+				ret = RSP_NOT_READY;
 				break;
 			default :
-				_adm_unknown_(pReqMsg, pRspMsg);
+				AdmInt_Unknown(pReqMsg, pRspMsg);
 				break;
 		}
 	}
@@ -108,9 +100,9 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 		if (pReqMsg->pData[0] == ADM_EXECINSTPING)
 		{
 			// build rsp
-			_adm_execping_(pReqMsg, pRspMsg);
+			AdmInt_Execping(pReqMsg, pRspMsg);
 		}
-		ret = 2;
+		ret = RSP_ALREADY_DONE;
 	}
 	return ret;
 }
@@ -125,7 +117,7 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
   *
   * @return         None
   */
-static void _adm_unknown_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+void AdmInt_Unknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ResponseId = pReqMsg->pData[0];
 	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ErrorCode = ADM_UNK_CMD;
@@ -139,7 +131,7 @@ static void _adm_unknown_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
   * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
-static void _adm_read_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	uint8_t idx;
 	uint8_t u8L7TransLenMax;
@@ -229,7 +221,7 @@ static void _adm_read_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
   * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
-static void _adm_write_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+void AdmInt_WriteParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	uint8_t u8ParamId;
 	uint8_t u8ParamSz;
@@ -305,7 +297,7 @@ static void _adm_write_param_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
   * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
-static void _adm_write_key_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+void AdmInt_WriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	admin_cmd_writekey_t *pIn = (admin_cmd_writekey_t*)(pReqMsg->pData);
 	uint8_t *pOut = pRspMsg->pData;
@@ -333,7 +325,7 @@ static void _adm_write_key_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
   * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
-static void _adm_execping_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+void AdmInt_Execping(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	uint8_t *pOut = pRspMsg->pData;
 
@@ -431,7 +423,7 @@ struct adm_config_s sAdmConfig =
   * @param [in,out] pRspMsg Pointer on response message
   * @return         None
   */
-static void _adm_anndownload_(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+void AdmInt_Anndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	admin_cmd_anndownload_t *pIn = (admin_cmd_anndownload_t*)(pReqMsg->pData);
 	uint8_t *pOut = pRspMsg->pData;

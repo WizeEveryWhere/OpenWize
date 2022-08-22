@@ -89,9 +89,37 @@ wize_api_ret_e WizeApi_GetDeviceId(device_id_t *pDevId)
 }
 
 /******************************************************************************/
-#define SES_MGR_INST_REQ_TMO_MSK 0xFFFFFFFFU
-#define SES_MGR_INST_FLG_TMO_MSK 0xFFFFFFFFU
-#define SES_MGR_INST_FLG_ALL_MSK 0x0000FFFFU | (SES_INST << SES_MGR_FLG_POS)
+#ifdef WIZEAPI_NOT_BLOCKING
+	#ifndef WIZEAPI_INST_REQ_TMO
+		#define WIZEAPI_INST_REQ_TMO 2 // in RTOS cycles
+	#endif
+#else
+	#define WIZEAPI_INST_REQ_TMO 0xFFFFFFFFU // in RTOS cycles
+	#define WIZEAPI_INST_FLG_TMO 0xFFFFFFFFU
+	#define WIZEAPI_INST_FLG_ALL 0x0000FFFFU | (SES_INST << SES_MGR_FLG_POS)
+#endif
+
+#if WIZEAPI_INST_REQ_TMO < 2
+#warning ("WIZEAPI_INST_REQ_TMO may be too small")
+#endif
+
+#ifdef WIZEAPI_NOT_BLOCKING
+	#ifndef WIZEAPI_ADM_REQ_TMO
+		#define WIZEAPI_ADM_REQ_TMO 2 // in RTOS cycles
+	#endif
+#else
+	#define WIZEAPI_ADM_REQ_TMO 0xFFFFFFFFU
+	#define WIZEAPI_ADM_FLG_TMO 0xFFFFFFFFU
+	#define WIZEAPI_ADM_FLG_ALL 0x0000FFFFU | (SES_ADM << SES_MGR_FLG_POS)
+#endif
+
+#define WIZEAPI_ADM_GETCMD_TMO 0xFFFFFFFFU
+#define WIZEAPI_ADM_GETRSP_TMO 0xFFFFFFFFU
+
+
+#if WIZEAPI_ADM_REQ_TMO < 2
+#warning ("WIZEAPI_ADM_REQ_TMO may be too small")
+#endif
 
 /*!
  * @brief This function start a INST (PING/PONG) session
@@ -99,24 +127,28 @@ wize_api_ret_e WizeApi_GetDeviceId(device_id_t *pDevId)
  *
  * @retval return wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine
  *         return wize_api_ret_e::WIZE_API_FAILED (1) if INST session failed
-  *         return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused
-  */
+ *         return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused
+ */
 wize_api_ret_e WizeApi_ExecPing(void)
 {
-	struct ses_ctx_s *pCtx = &(sSesDispCtx.sSesCtx[SES_INST]);
+#ifndef WIZEAPI_NOT_BLOCKING
 	uint32_t u32Ret;
+#endif
 
-	if ( xSemaphoreTake( pCtx->hMutex, SES_MGR_INST_REQ_TMO_MSK ) )
+	if ( xSemaphoreTake( sSesDispCtx.hLock, WIZEAPI_INST_REQ_TMO ) )
 	{
+#ifdef WIZEAPI_NOT_BLOCKING
+		sSesDispCtx.hCaller = xTaskGetCurrentTaskHandle( );
+#endif
 		// Request for INSTALL session
 		xTaskNotify(sSesDispCtx.hTask, SES_MGR_INST_EVT_OPEN, eSetValueWithOverwrite);
-		u32Ret = xEventGroupWaitBits(sSesDispCtx.hEvents, SES_MGR_INST_FLG_ALL_MSK, pdTRUE, pdFALSE, SES_MGR_INST_FLG_TMO_MSK);
-
-		xSemaphoreGive(pCtx->hMutex);
+#ifndef WIZEAPI_NOT_BLOCKING
+		u32Ret = xEventGroupWaitBits(sSesDispCtx.hEvents, WIZEAPI_INST_FLG_ALL, pdTRUE, pdFALSE, WIZEAPI_INST_FLG_TMO);
 		if (u32Ret == SES_MGR_INST_FLG_FAILED)
 		{
 			return WIZE_API_FAILED;
 		}
+#endif
 		return WIZE_API_SUCCESS;
 	}
 	else
@@ -127,9 +159,6 @@ wize_api_ret_e WizeApi_ExecPing(void)
 
 
 /******************************************************************************/
-#define SES_MGR_ADM_REQ_TIMEOUT_MSK 0xFFFFFFFFU
-#define SES_MGR_ADM_FLG_TIMEOUT_MSK 0xFFFFFFFFU
-#define SES_MGR_ADM_FLG_ALL_MSK 0x0000FFFFU | (SES_ADM << SES_MGR_FLG_POS)
 
 /*!
  * @brief This function get the last received ADM command message
@@ -147,7 +176,7 @@ wize_api_ret_e WizeApi_GetAdmCmd(net_msg_t *pMsg)
 	uint8_t *pKeep = pMsg->pData;
 	if(pMsg && pMsg->pData)
 	{
-		if ( xSemaphoreTake( pCtx->hMutex, SES_MGR_ADM_REQ_TIMEOUT_MSK ) )
+		if ( xSemaphoreTake( pCtx->hMutex, WIZEAPI_ADM_GETCMD_TMO ) )
 		{
 			pPrvCtx = (struct adm_mgr_ctx_s *)pCtx->pPrivate;
 			memcpy(pMsg, &(pPrvCtx->sCmdMsg), sizeof(net_msg_t));
@@ -183,7 +212,7 @@ wize_api_ret_e WizeApi_GetAdmRsp(net_msg_t *pMsg)
 	uint8_t *pKeep = pMsg->pData;
 	if(pMsg && pMsg->pData)
 	{
-		if ( xSemaphoreTake(  pCtx->hMutex, SES_MGR_ADM_REQ_TIMEOUT_MSK ) )
+		if ( xSemaphoreTake(  pCtx->hMutex, WIZEAPI_ADM_GETRSP_TMO ) )
 		{
 			pPrvCtx = (struct adm_mgr_ctx_s *)pCtx->pPrivate;
 			memcpy(pMsg, &( pPrvCtx->sRspMsg), sizeof(net_msg_t));
@@ -204,7 +233,9 @@ wize_api_ret_e WizeApi_GetAdmRsp(net_msg_t *pMsg)
 }
 
 /*!
- * @brief This function send a DATA message
+ * @brief This function send a DATA message.
+ *
+ * @details : The L6APP has to be at pData[0]
  *
  * @param [in] pData  Pointer on raw data to send
  * @param [in] u8Size Number of byte to send
@@ -216,11 +247,13 @@ wize_api_ret_e WizeApi_GetAdmRsp(net_msg_t *pMsg)
  *         return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused
  *         return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid
  */
-wize_api_ret_e WizeApi_SendEx(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)
+wize_api_ret_e WizeApi_Send(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)
 {
-	//struct dat_mgr_ctx_s *pCtx = sSesDispCtx.pDatMgrCtx;
 	struct ses_ctx_s *pCtx = &(sSesDispCtx.sSesCtx[SES_ADM]);
+
+#ifndef WIZEAPI_NOT_BLOCKING
 	uint32_t u32Ret;
+#endif
 	uint8_t u8L7MaxLen;
 	if ( pData )
 	{
@@ -235,7 +268,7 @@ wize_api_ret_e WizeApi_SendEx(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)
 		}
 
 		// Ensure that only one request at the time
-		if ( xSemaphoreTake( pCtx->hMutex, SES_MGR_ADM_REQ_TIMEOUT_MSK ) )
+		if ( xSemaphoreTake( sSesDispCtx.hLock, WIZEAPI_ADM_REQ_TMO ) )
 		{
 			// Request for DATA, ADMIN session
 			net_msg_t *pMsg = &((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->sDataMsg;
@@ -244,97 +277,34 @@ wize_api_ret_e WizeApi_SendEx(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)
 			pMsg->u8Size = u8Size;
 			pMsg->u8Type = u8Type;
 			pMsg->u16Id++;
-			xTaskNotify(sSesDispCtx.hTask, SES_MGR_ADM_EVT_OPEN, eSetValueWithOverwrite);
-			u32Ret = xEventGroupWaitBits(sSesDispCtx.hEvents, SES_MGR_ADM_FLG_ALL_MSK, pdTRUE, pdFALSE, SES_MGR_ADM_FLG_TIMEOUT_MSK);
-			if (u32Ret == SES_MGR_ADM_FLG_REQUEST)
-			{
-				if (((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->sCmdMsg.pData[0] == ADM_WRITE_PARAM)
-				{
-					u32Ret = WIZE_API_ADM_SUCCESS;
-				}
-				else
-				{
-					u32Ret = WIZE_API_SUCCESS;
-				}
-			}
-			else if (u32Ret == SES_MGR_ADM_FLG_SUCCES)
-			{
-				u32Ret = WIZE_API_SUCCESS;
-			}
-			else {
-				u32Ret = WIZE_API_FAILED;
-			}
-			xSemaphoreGive(pCtx->hMutex);
-			return u32Ret;
-		}
-		else
-		{
-			return WIZE_API_ACCESS_TIMEOUT;
-		}
-	}
-	return WIZE_API_INVALID_PARAM;
-}
 
-/*!
- * @brief This function send a DATA message
- *
- * @param [in] pData  Pointer on raw data to send
- * @param [in] u8Size Number of byte to send
- * @param [in] u8Type Type of frame DATA or DATA_PRIO
- *
- * @retval return wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine
- *         return wize_api_ret_e::WIZE_API_FAILED (1) if ADN session failed
- *         return wize_api_ret_e::WIZE_API_ADM_SUCCESS (2) if ADM CMD has been received
- *         return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused
- *         return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid
- */
-wize_api_ret_e WizeApi_Send(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)
-{
-	//struct dat_mgr_ctx_s *pCtx = sSesDispCtx.pDatMgrCtx;
-	struct ses_ctx_s *pCtx = &(sSesDispCtx.sSesCtx[SES_ADM]);
-	uint32_t u32Ret;
-	uint8_t u8L7MaxLen;
-	if ( pData )
-	{
-		Param_Access(L7TRANSMIT_LENGTH_MAX, (uint8_t*)&u8L7MaxLen, 0);
-		if ( u8Size > u8L7MaxLen)
-		{
-			return WIZE_API_INVALID_PARAM;
-		}
-		if ( (u8Type != APP_DATA) && (u8Type != APP_DATA_PRIO))
-		{
-			return WIZE_API_INVALID_PARAM;
-		}
-		if ( xSemaphoreTake( pCtx->hMutex, SES_MGR_ADM_REQ_TIMEOUT_MSK ) )
-		{
-			// Request for DATA, ADMIN session
-			net_msg_t *pMsg = &((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->sDataMsg;
-			pMsg->pData = pData;
-			pMsg->u8Size = u8Size;
-			pMsg->u8Type = u8Type;
-			pMsg->u16Id++;
+#ifdef WIZEAPI_NOT_BLOCKING
+		sSesDispCtx.hCaller = xTaskGetCurrentTaskHandle( );
+#endif
 			xTaskNotify(sSesDispCtx.hTask, SES_MGR_ADM_EVT_OPEN, eSetValueWithOverwrite);
-			u32Ret = xEventGroupWaitBits(sSesDispCtx.hEvents, SES_MGR_ADM_FLG_ALL_MSK, pdTRUE, pdFALSE, SES_MGR_ADM_FLG_TIMEOUT_MSK);
-			if (u32Ret & SES_MGR_FLG_REQUEST)
+#ifndef WIZEAPI_NOT_BLOCKING
+			u32Ret = xEventGroupWaitBits(sSesDispCtx.hEvents, WIZEAPI_ADM_FLG_ALL, pdTRUE, pdFALSE, WIZEAPI_ADM_FLG_TMO);
+			if (u32Ret == SES_MGR_ADM_FLG_SUCCES)
+			{
+				return WIZE_API_SUCCESS;
+			}
+			else if (u32Ret == SES_MGR_ADM_FLG_REQUEST)
 			{
 				if (((struct adm_mgr_ctx_s*)(pCtx->pPrivate))->sCmdMsg.pData[0] == ADM_WRITE_PARAM)
 				{
-					u32Ret = WIZE_API_ADM_SUCCESS;
+					return WIZE_API_ADM_SUCCESS;
 				}
 				else
 				{
-					u32Ret = WIZE_API_SUCCESS;
+					return WIZE_API_SUCCESS;
 				}
 			}
-			else if (u32Ret & SES_MGR_FLG_SUCCESS)
-			{
-				u32Ret = WIZE_API_SUCCESS;
-			}
 			else {
-				u32Ret = WIZE_API_FAILED;
+				return WIZE_API_FAILED;
 			}
-			xSemaphoreGive(pCtx->hMutex);
-			return u32Ret;
+#else
+			return WIZE_API_SUCCESS;
+#endif
 		}
 		else
 		{

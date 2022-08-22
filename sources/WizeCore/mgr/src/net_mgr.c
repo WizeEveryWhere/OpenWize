@@ -599,7 +599,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 	int32_t eStatus;
 	net_msg_t *pxNetMsg;
 
-	u32BackEvt = NET_EVENT_SUCCESS;
+	u32BackEvt = NET_EVENT_NONE;
 	pxNetMsg = (net_msg_t*)(sWizeCtx.pBuffDesc);
 
 	if(u32Evt & _NET_MGR_REARM_LISTEN_)
@@ -668,6 +668,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 					{
 						// Stop time event
 						TimeEvt_TimerStop(&sWizeCtx.sTimeOut);
+						// TODO : WizeNet_Ioctl(&sNetDev, NETDEV_CTL_PHY_CMD, PHY_CTL_CMD_SLEEP);
 						xSemaphoreGive(sNetDev.hLock);
 					}
 					u32BackEvt |= NET_EVENT_RECV_DONE;
@@ -763,6 +764,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 		}
 
 		/*
+		 * TODO :
 		if( u32BackEvt & (NET_EVENT_ERROR | NET_EVENT_TIMEOUT) )
 		{
 			_net_mgr_try_abort_(pNetDev);

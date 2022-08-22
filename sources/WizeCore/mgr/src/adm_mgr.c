@@ -105,12 +105,13 @@ static void _adm_mgr_ini_(struct ses_ctx_s *pCtx)
  *
  * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
  * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
- * @retval SES_FLG_SUCCESS (see @link ses_flag_e::SES_FLG_SUCCESS @endlink)
- * @retval SES_FLG_SENT (see @link ses_flag_e::SES_FLG_SENT @endlink)
- * @retval SES_FLG_RECEIVED (see @link ses_flag_e::SES_FLG_RECEIVED @endlink)
  * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
- * @retval SES_FLG_FRM_PASSED (see @link ses_flag_e::SES_FLG_FRM_PASSED @endlink)
  * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
+ * @retval SES_FLG_DATA_SENT (see @link ses_flag_e::SES_FLG_DATA_SENT @endlink)
+ * @retval SES_FLG_RSP_SENT (see @link ses_flag_e::SES_FLG_RSP_SENT @endlink)
+ * @retval SES_FLG_CMD_RECV (see @link ses_flag_e::SES_FLG_CMD_RECV @endlink)
+ * @retval SES_FLG_OUT_DATE (see @link ses_flag_e::SES_FLG_OUT_DATE @endlink)
+ * @retval SES_FLG_SUCCESS (see @link ses_flag_e::SES_FLG_SUCCESS @endlink)
  *
  */
 static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
@@ -262,6 +263,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				{
 					if (!pPrvCtx->u8ByPassCmd)
 					{
+						// FIXME : with MCU low frequency, take into account the time required to initialize the PHY device
 						if ( TimeEvt_TimerStart(
 								&pCtx->sTimeEvt,
 								pPrvCtx->u8ExchRxDelay, 0,

@@ -103,11 +103,10 @@ static void _inst_mgr_ini_(struct ses_ctx_s *pCtx)
  *
  * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
  * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
+ * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
+ * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
  * @retval SES_FLG_PING_SENT (see @link ses_flag_e::SES_FLG_PING_SENT @endlink)
  * @retval SES_FLG_PONG_RECV (see @link ses_flag_e::SES_FLG_PONG_RECV @endlink)
- * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
- * @retval SES_FLG_FRM_PASSED (see @link ses_flag_e::SES_FLG_FRM_PASSED @endlink)
- * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
  */
 static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 {
@@ -129,7 +128,12 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 		pPrvCtx->u8Pending = 0;
 		if (pCtx->eState == SES_STATE_LISTENING)
 		{
-			NetMgr_ListenReady();
+			if ( NetMgr_ListenReady() )
+			{
+				// failed, go back into IDLE
+				pCtx->eState = SES_STATE_IDLE;
+				u32BackEvt = SES_FLG_ERROR;
+			}
 		}
 	}
 
@@ -140,6 +144,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 		case SES_STATE_IDLE: // From SES_STATE_IDLE : SES_FLG_ERROR, SES_FLG_NONE
 			if (u32Evt & SES_EVT_OPEN)
 			{
+				pPrvCtx->u8Pending = 0;
 				// send INST PING request
 				if ( NetMgr_Send( &(pPrvCtx->sCmdMsg), 1000 ) )
 				{
@@ -218,6 +223,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7RssiDownstream
 						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7RssiUpstream
 						);
+					pPrvCtx->u8Pending = 1;
 					u32BackEvt |= SES_FLG_PONG_RECV;
 				}
 				else

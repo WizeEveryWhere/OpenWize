@@ -100,6 +100,9 @@ struct dwn_mgr_ctx_s
 
 	uint32_t _u32NextBlkDelay;
 
+	uint32_t _u32RemainInDay;
+	uint32_t _u32RemainInBlock;
+
 };
 
 void DwnMgr_Setup(struct ses_ctx_s *pCtx);

@@ -184,7 +184,7 @@ typedef enum {
 	ANN_TGT_SW_VER                = 0x08, /**< The target SW version is incorrect */
 	ANN_TGT_VER_DWL               = 0x09, /**<  */
 	ANN_DIFF_TIME_OUT_OF_WINDOWS  = 0x0A, /**<  */
-}admin_ann_err_code_e;
+} admin_ann_err_code_e;
 
 /*!
  * @brief This struct defines the administration command frame in case of ANN_DOWNLOAD command
@@ -214,7 +214,7 @@ typedef struct {
  */
 typedef struct {
 	uint8_t L7CommandId; /**< Command id (in @link admin_cmd_id_e @endlink) */
-}admin_cmd_execinstping_t;
+} admin_cmd_execinstping_t;
 
 /*!
  * @brief This struct defines the
@@ -223,7 +223,7 @@ typedef struct {
 	admin_rsp_t header;   /**<  */
 	uint8_t L7NbPong;     /**<  */
 	uint8_t L7Pong[3][9]; /**<  */
-}admin_rsp_execinstping_t;
+} admin_rsp_execinstping_t;
 
 /******************************************************************************/
 /**** Install layer related ****/
@@ -236,7 +236,7 @@ typedef struct {
 	uint8_t L7DownMod;      /**<  */
 	uint8_t L7PingRxDelay;  /**<  */
 	uint8_t L7PingRxLength; /**<  */
-}inst_ping_t;
+} inst_ping_t;
 
 /*!
  * @brief This struct defines the
@@ -246,8 +246,18 @@ typedef struct {
 	uint8_t L7ModemId;        /**<  */
 	uint8_t L7RssiUpstream;   /**<  */
 	uint8_t L7RssiDownstream; /**<  */
-}inst_pong_t;
+} inst_pong_t;
 
+/******************************************************************************/
+/*!
+ * @brief This enumeration define the response status
+ */
+typedef enum
+{
+	RSP_NOT_READY,    /**< Response is not ready */
+	RSP_READY,        /**< Response is ready  */
+	RSP_ALREADY_DONE, /**< Response is ready, action has already be done */
+} admin_rsp_status_e;
 
 /*!
  * @brief This enumeration define
@@ -259,7 +269,7 @@ typedef enum {
 	CLK_CORR	= 0x08,   /**<  */
 	INST_PONG	= 0x1000, /**<  */
 	DEFAULT		= 0x8000, /**<  */
-}main_param_e;
+} main_param_e;
 
 
 #ifdef __cplusplus

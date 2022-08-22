@@ -51,16 +51,15 @@ extern "C" {
  */
 typedef enum {
 	NET_EVENT_NONE        = 0x00, /**< Empty event*/
-	NET_EVENT_SUCCESS     = 0x01, /**< Successful event*/
-	NET_EVENT_ERROR       = 0x02, /**< Error event*/
+	NET_EVENT_ERROR       = 0x01, /**< Error event*/
 	// ----
-	NET_EVENT_SEND_DONE   = 0x04, /**< Message has been sent */
-	NET_EVENT_RECV_DONE   = 0x08, /**< Message has been received */
+	NET_EVENT_SEND_DONE   = 0x02, /**< Message has been sent */
+	NET_EVENT_RECV_DONE   = 0x04, /**< Message has been received */
 	// ----
-	NET_EVENT_TIMEOUT     = 0x10, /**< Timeout event occurs */
-	NET_EVENT_FRM_PASSED  = 0x20, /**< Frame received and passed */
+	NET_EVENT_TIMEOUT     = 0x08, /**< Timeout event occurs */
+	NET_EVENT_FRM_PASSED  = 0x10, /**< Frame received and passed */
 	// ----
-	NET_EVENT_MSK         = 0xFF
+	NET_EVENT_MSK         = 0x1F
 } net_event_e;
 
 /*!

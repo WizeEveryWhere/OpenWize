@@ -101,9 +101,8 @@ static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx)
  * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
  * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
  * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
- * @retval SES_FLG_BLK_RECV (see @link ses_flag_e::SES_FLG_BLK_RECV @endlink)
- * @retval SES_FLG_FRM_PASSED (see @link ses_flag_e::SES_FLG_FRM_PASSED @endlink)
  * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
+ * @retval SES_FLG_BLK_RECV (see @link ses_flag_e::SES_FLG_BLK_RECV @endlink)
  */
 static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 {
@@ -140,6 +139,7 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					break;
 				}
 
+				pPrvCtx->u8Pending = 0;
 				// Init. absolute timer
 				TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ABSOLUTE);
 				// Start the timer for the first download day
@@ -298,6 +298,11 @@ static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx)
 	pCtx->_u8DayCount = pCtx->u8DayRepeat;
 	pCtx->_u32DayNext = pCtx->u32DaysProg;
 	pCtx->_u16BlocksCount = pCtx->u16BlocksCount;
+
+	pCtx->_u32RemainInDay = 86400 - ( (pCtx->u16BlocksCount - 1 )* pCtx->u8DeltaSec + pCtx->u8DownRxLength);
+	pCtx->_u32RemainInDay *= 1000;
+	pCtx->_u32RemainInBlock = pCtx->u8DeltaSec - pCtx->u8DownRxLength;
+	pCtx->_u32RemainInBlock *= 1000;
 
 	// some day, some block have already been passed, so adjust that
 	if (currentEpoch > pCtx->u32DaysProg)
