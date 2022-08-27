@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ParamCfg xmlns:tns="http://www.grdf.fr/smart-solutions/TU/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.grdf.fr/smart-solutions/TU/1.0.0/Restrictions.xsd ">  
+ <RestrictionList>
+    <!-- Warning : the Restriction value or Ordering are is not checked -->
+     
+    <!-- rtype is one of -->
+    <!--     MODULO      -->
+    <!--     RANGE       -->
+    <!--     ENUM        -->
+
+    <!-- rsize is one of -->
+    <!--    8BITS        -->
+    <!--    16BITS       -->
+    <!--    32BITS       -->
+    <!--    64BITS       -->
+
+<!-- As an example :
+    <Restriction id="01" rtype="RANGE" rsize="8BITS"> 
+        2 12 
+    </Restriction>
+    <Restriction id="02" rtype="ENUM" rsize="16BITS"> 
+        2 12 500 8000
+    </Restriction>
+    <Restriction id="03" rtype="MODULO" rsize="32BITS"> 
+        100000
+    </Restriction>
+-->
+    <Restriction id="01" rtype="ENUM" rsize="8BITS"> 
+        100 110 120 130 140 150 
+        <!-- RF_UPLINK_CHANNEL -->
+        <!-- RF_DOWNLINK_CHANNEL -->
+    </Restriction>
+    
+    <Restriction id="02" rtype="RANGE" rsize="8BITS"> 
+        0 2 
+        <!-- RF_UPLINK_MOD -->
+        <!-- RF_DOWNLINK_MOD -->
+        <!-- TX POWER -->
+    </Restriction>
+
+    <Restriction id="03" rtype="RANGE" rsize="8BITS"> 
+        40 200 
+        <!-- L7_TRANSMIT_LEN-->
+    </Restriction>
+    
+    <Restriction id="04" rtype="RANGE" rsize="8BITS"> 
+        50 200 
+        <!-- L7_RECEIVE_LEN-->
+    </Restriction>
+    
+    <Restriction id="05" rtype="RANGE" rsize="8BITS"> 
+        0 14 
+        <!-- CIPH_CURRENT_KEY-->
+    </Restriction>
+    
+ </RestrictionList>
+     
+</tns:ParamCfg>

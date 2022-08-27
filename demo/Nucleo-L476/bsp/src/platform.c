@@ -269,6 +269,7 @@ SPI_HandleTypeDef *paSPI_BusHandle[SPI_ID_MAX] =
 };
 
 #endif
+#endif
 
 /*******************************************************************************/
 #ifdef USE_I2C
