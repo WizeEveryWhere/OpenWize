@@ -42,18 +42,46 @@ extern "C" {
 #include "common.h"
 
 /*!
- * @brief This enum define the sleep mode
+ * @brief This enum define the low power mode
  */
 typedef enum {
+	LP_STOP0_MODE  = 0x0, /*!< Stop 0 mode */
+	LP_STOP1_MODE  = 0x1, /*!< Stop 1 mode */
+	LP_STOP2_MODE  = 0x2, /*!< Stop 2 mode */
+	LP_STDBY_MODE  = 0x3, /*!< Standby mode */
+	LP_SHTDWN_MODE = 0x4, /*!< Shutdown mode */
+	// ---
 	LP_SLEEP_MODE,  /*!< Sleep mode (CPU is sleeping) */
-	LP_STOP1_MODE,  /*!< Stop 1 mode */
-	LP_STOP2_MODE,  /*!< Stop 2 mode */
-	LP_STDBY_MODE,  /*!< Standby mode */
-	LP_SHTDWN_MODE, /*!< Shutdown mode */
+	// ---
+	LP_NB_MODE,
 } lp_mode_e;
+
+/*!
+ * @brief This enum define the wake-up pins
+ */
+typedef enum {
+	LP_WAKEUP_PIN1_EN = 0b00001,  /*!< Wakeup pin 1 (PA0) */
+	LP_WAKEUP_PIN2_EN = 0b00010,  /*!< Wakeup pin 2 (PC13) */
+	LP_WAKEUP_PIN3_EN = 0b00100,  /*!< Wakeup pin 3 (PE6) */
+	LP_WAKEUP_PIN4_EN = 0b01000,  /*!< Wakeup pin 4 (PA2) */
+	LP_WAKEUP_PIN5_EN = 0b10000,  /*!< Wakeup pin 5 (PC5) */
+} lp_wakeup_pin_en_msk;
+
+/*!
+ * @brief This enum define the wake-up pins polarity
+ */
+typedef enum {
+	LP_WAKEUP_PIN1_POL_LOW = 0b00001,  /*!< Wakeup pin 1 falling edge */
+	LP_WAKEUP_PIN2_POL_LOW = 0b00010,  /*!< Wakeup pin 2 falling edge */
+	LP_WAKEUP_PIN3_POL_LOW = 0b00100,  /*!< Wakeup pin 3 falling edge */
+	LP_WAKEUP_PIN4_POL_LOW = 0b01000,  /*!< Wakeup pin 4 falling edge */
+	LP_WAKEUP_PIN5_POL_LOW = 0b10000,  /*!< Wakeup pin 5 falling edge */
+} lp_wakeup_pin_poll_msk;
 
 void BSP_LowPower_Enter(lp_mode_e eLpMode);
 
+void BSP_LowPower_OnStopEnter(lp_mode_e eLpMode);
+void BSP_LowPower_OnStopExit(lp_mode_e eLpMode);
 
 #ifdef __cplusplus
 }

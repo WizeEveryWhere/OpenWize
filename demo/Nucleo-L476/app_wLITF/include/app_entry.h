@@ -1,10 +1,10 @@
 /**
-  * @file stm32l4xx_it.h
-  * @brief This file contains the headers of the interrupt handlers.
+  * @file app_entry.h
+  * @brief Header file for app_entry
   *
   * @details
   *
-  * @copyright 2022, GRDF, Inc.  All rights reserved.
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -21,34 +21,47 @@
   *
   * @par Revision history
   *
-  * @par 1.0.0 : 2022/05/20[GBI]
+  * @par 1.0.0 : 2019/11/20 [GBI]
   * Initial version
   *
   *
   */
 
-/******************************************************************************/
-
-#ifndef __STM32L4xx_IT_H
-#define __STM32L4xx_IT_H
+/*!
+ * @addtogroup app_wLITF
+ * @{
+ */
+#ifndef _APP_ENTRY_H_
+#define _APP_ENTRY_H_
 
 #ifdef __cplusplus
- extern "C" {
-#endif 
+extern "C" {
+#endif
 
-void RTC_WKUP_IRQHandler(void);
-void RTC_Alarm_IRQHandler(void);
-void USART2_IRQHandler(void);
-void TIM6_DAC_IRQHandler(void);
+#include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <limits.h>
 
-void EXTI4_0_IRQHandler(void);
-void EXTI0_IRQHandler(void);
-void EXTI1_IRQHandler(void);
-void EXTI2_IRQHandler(void);
+#include "FreeRTOS.h"
+#include "task.h"
 
+#include "bsp.h"
+
+#include "parameters_cfg.h"
+#include "parameters.h"
+#include "crypto.h"
+
+#include "wize_banner.h"
+#include "wize_api.h"
+
+#include "rtos_macro.h"
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __STM32L4xx_IT_H */
+#endif /* _APP_ENTRY_H_ */
+
+/*! @} */

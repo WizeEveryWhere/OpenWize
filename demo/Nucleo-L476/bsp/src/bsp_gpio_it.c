@@ -50,7 +50,7 @@ typedef enum {
     GPIO_PORTC,      /*!< Port 010 */
 	GPIO_PORTD,      /*!< Port 011 */
 	GPIO_PORTE,      /*!< Port 100 */
-	//GPIO_PORTH,      /*!< Port 2 */
+	//GPIO_PORTH,      /*!< Port  */
     GPIO_NUM_PORTS   /*!< maximum number of ports */
 } gpio_port_e;
 

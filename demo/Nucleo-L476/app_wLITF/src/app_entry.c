@@ -1,10 +1,10 @@
 /**
-  * @file stm32l4xx_it.h
-  * @brief This file contains the headers of the interrupt handlers.
+  * @file app_entry.c
+  * @brief This implement the default entry point after board initialization
   *
   * @details
   *
-  * @copyright 2022, GRDF, Inc.  All rights reserved.
+  * @copyright 2019, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -21,34 +21,53 @@
   *
   * @par Revision history
   *
-  * @par 1.0.0 : 2022/05/20[GBI]
+  * @par 1.0.0 : 2019/11/20 [GBI]
   * Initial version
   *
   *
   */
 
-/******************************************************************************/
-
-#ifndef __STM32L4xx_IT_H
-#define __STM32L4xx_IT_H
+/*!
+ * @addtogroup app_wLITF
+ * @{
+ */
 
 #ifdef __cplusplus
- extern "C" {
-#endif 
+extern "C" {
+#endif
 
-void RTC_WKUP_IRQHandler(void);
-void RTC_Alarm_IRQHandler(void);
-void USART2_IRQHandler(void);
-void TIM6_DAC_IRQHandler(void);
+#include "app_entry.h"
 
-void EXTI4_0_IRQHandler(void);
-void EXTI0_IRQHandler(void);
-void EXTI1_IRQHandler(void);
-void EXTI2_IRQHandler(void);
+extern void Sys_Init(void);
+extern void Sys_Start(void);
+extern void LoItf_Setup(void);
 
+void App_Init(void);
+
+/**
+  * @brief  The application entry point.
+  * @retval None
+  */
+void app_entry(void)
+{
+  	Sys_Init();
+  	App_Init();
+  	Sys_Start();
+}
+
+/******************************************************************************/
+/**
+  * @brief  Called to initialize application before starting the scheduler.
+  */
+void App_Init(void)
+{
+	LoItf_Setup();
+}
+
+/******************************************************************************/
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __STM32L4xx_IT_H */
+/*! @} */

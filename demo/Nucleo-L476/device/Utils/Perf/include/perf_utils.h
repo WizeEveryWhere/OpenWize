@@ -1,6 +1,6 @@
 /**
-  * @file bsp.h
-  * @brief This file defines functions to initialize the BSP.
+  * @file: perf_utils.h
+  * @brief: This file implement the HW cycle counter read (if any)
   * 
   * @details
   *
@@ -21,66 +21,40 @@
   *
   * @par Revision history
   *
-  * @par 1.0.0 : 2020/04/23 [GBI]
+  * @par 1.0.0 : 2019/12/25 [GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @addtogroup common
- * @ingroup bsp
+ * @addtogroup perf
+ * @ingroup device
  * @{
  */
 
-#ifndef _BSP_H_
-#define _BSP_H_
+#ifndef _PERF_UTILS_H_
+#define _PERF_UTILS_H_
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <bsp_boot.h>
-#include <bsp_flash.h>
-#include <bsp_rtc.h>
-#include <bsp_gpio.h>
-#include <bsp_gpio_it.h>
-#include "bsp_lp.h"
+#include <stdint.h>
 
-#include <bsp_uart.h>
-
-#ifdef USE_SPI
-#include <bsp_spi.h>
+#if ( defined(__i386__) || defined(__arm__) ) && (USE_CYCCNT == 1U)
+void __cycle_counter_enable__(uint8_t en);
+uint32_t __cycle_counter_read__(void);
+void __cycle_counter_reset__(void);
+#elif defined(__x86_64__) && (USE_CYCCNT == 1U)
+uint64_t __cycle_counter_read__(void);
+#else
+#warning "No cycle counter is found"
+uint32_t __cycle_counter_read__(void);
 #endif
-
-#ifdef USE_I2C
-#include <bsp_i2c.h>
-#endif
-
-#ifdef HAS_BSP_PWRLINE
-#include <bsp_pwrlines.h>
-#endif
-
-#define GP_PORT_NAME(name) name ##_GPIO_Port
-#define GP_PIN_NAME(name) name##_Pin
-
-#define GP_PORT(name) (uint32_t)(GP_PORT_NAME(name))
-#define GP_PIN(name)  GP_PIN_NAME(name)
-#define LINE_INIT(name) GP_PORT(name), GP_PIN(name)
-
-extern uint8_t ascii2hex(uint16_t u16Char);
-extern uint16_t hex2ascii(uint8_t u8Hex);
-
-extern void msleep(uint32_t milisecond);
-extern void Error_Handler(void);
-extern void BSP_Init(uint32_t u32BootState);
-
-#ifdef  USE_FULL_ASSERT
-extern void assert_failed(char *file, uint32_t line);
-#endif /* USE_FULL_ASSERT */
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* _BSP_H_ */
+#endif /* _PERF_UTILS_H_ */
 
 /*! @} */

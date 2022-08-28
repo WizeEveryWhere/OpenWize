@@ -50,7 +50,7 @@ typedef enum
 	UART_EVT_TX_CPLT  = 0x01, /*!< Transmition is complete */
 	UART_EVT_RX_CPLT  = 0x02, /*!< Reception is complete */
 	UART_EVT_RX_HCPLT = 0x04, /*!< */
-	UART_EVT_RX_ABT   = 0x08, /*!< */
+	UART_EVT_RX_ABT   = 0x08, /*!< Timeout */
 } uart_evt_e;
 
 /*!
@@ -95,21 +95,17 @@ typedef struct
 typedef uart_dev_t* p_uart_dev_t;
 
 /*******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #ifndef CONSOLE_TX_TIMEOUT
 #define CONSOLE_TX_TIMEOUT 2000
 #endif
 #ifndef CONSOLE_RX_TIMEOUT
 #define CONSOLE_RX_TIMEOUT 0xFFFF
 #endif
-
-/*!
- * @cond INTERNAL
- * @{
- */
-extern pfHandlerCB_t pfConsoleTXEvent;
-extern pfHandlerCB_t pfConsoleRXEvent;
-
-extern pfHandlerCB_t pfConsoleWakupEvent;
 
 /*!
  * @}
@@ -119,17 +115,19 @@ extern pfHandlerCB_t pfConsoleWakupEvent;
 int __io_putchar(int ch);
 int __io_getchar(void);
 
-void BSP_Console_SetTXCallback (pfHandlerCB_t const pfCb);
-void BSP_Console_SetRXCallback (pfHandlerCB_t const pfCb);
-void BSP_Console_SetWakupCallback (pfHandlerCB_t const pfCb);
-
+uint8_t BSP_Console_Init(void);
 uint8_t BSP_Console_Send(uint8_t *pData, uint16_t u16Length);
+uint8_t BSP_Console_Received(uint8_t *pData, uint16_t u16Length);
 
-uint8_t BSP_Uart_SetCallback (uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pCbParam);
+uint8_t BSP_Uart_Enable(uint8_t u8DevId);
+uint8_t BSP_Uart_Disable(uint8_t u8DevId);
 uint8_t BSP_Uart_Init(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint32_t u32Tmo);
+uint8_t BSP_Uart_SetCallback (uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pCbParam);
 uint8_t BSP_Uart_Transmit(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length);
 uint8_t BSP_Uart_Receive(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length);
 uint8_t BSP_Uart_AbortReceive(uint8_t u8DevId);
+uint16_t BSP_Uart_GetNbReceive(uint8_t u8DevId);
+uint16_t BSP_Uart_GetNbTransmit(uint8_t u8DevId);
 
 /*******************************************************************************/
 #ifdef __cplusplus
