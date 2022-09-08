@@ -72,6 +72,7 @@ void DwnMgr_Setup(struct ses_ctx_s *pCtx)
 	pCtx->ini = _dwn_mgr_ini_;
 	pCtx->fsm = _dwn_mgr_fsm_;
 	pCtx->eState = SES_STATE_DISABLE;
+	pCtx->eType = SES_DWN;
 }
 
 /*!

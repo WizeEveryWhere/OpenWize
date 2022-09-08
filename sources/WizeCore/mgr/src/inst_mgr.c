@@ -72,6 +72,7 @@ void InstMgr_Setup(struct ses_ctx_s *pCtx)
 	pCtx->ini = _inst_mgr_ini_;
 	pCtx->fsm = _inst_mgr_fsm_;
 	pCtx->eState = SES_STATE_DISABLE;
+	pCtx->eType = SES_INST;
 	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
 }
 

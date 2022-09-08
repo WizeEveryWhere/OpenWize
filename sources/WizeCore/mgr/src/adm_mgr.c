@@ -73,6 +73,7 @@ void AdmMgr_Setup(struct ses_ctx_s *pCtx)
 	pCtx->ini = _adm_mgr_ini_;
 	pCtx->fsm = _adm_mgr_fsm_;
 	pCtx->eState = SES_STATE_DISABLE;
+	pCtx->eType = SES_ADM;
 	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
 }
 
@@ -111,7 +112,6 @@ static void _adm_mgr_ini_(struct ses_ctx_s *pCtx)
  * @retval SES_FLG_RSP_SENT (see @link ses_flag_e::SES_FLG_RSP_SENT @endlink)
  * @retval SES_FLG_CMD_RECV (see @link ses_flag_e::SES_FLG_CMD_RECV @endlink)
  * @retval SES_FLG_OUT_DATE (see @link ses_flag_e::SES_FLG_OUT_DATE @endlink)
- * @retval SES_FLG_SUCCESS (see @link ses_flag_e::SES_FLG_SUCCESS @endlink)
  *
  */
 static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
@@ -171,7 +171,6 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				else
 				{
 					pCtx->eState = SES_STATE_IDLE;
-					u32BackEvt |= SES_FLG_SUCCESS;
 				}
 			}
 			break;

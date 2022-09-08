@@ -66,7 +66,10 @@ extern "C" {
 #define SES_DISP_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
 SYS_TASK_CREATE_DEF(sesdisp, SES_DISP_STACK_SIZE, SES_DISP_PRIORITY);
 SYS_BINSEM_CREATE_DEF(sesdisp);
-SYS_EVENT_CREATE_DEF(sesdisp);
+
+#ifndef WIZEAPI_NOT_BLOCKING
+	SYS_EVENT_CREATE_DEF(sesdisp);
+#endif
 
 static void _ses_disp_main_(void const * argument);
 static void _ses_disp_fsm_(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag);
@@ -101,18 +104,15 @@ void SesDisp_Setup(struct ses_disp_ctx_s *pCtx)
 	assert(pCtx->hTask);
 	pCtx->hLock = SYS_BINSEM_CREATE_CALL(sesdisp);
 	assert(pCtx->hLock);
+
+#ifndef WIZEAPI_NOT_BLOCKING
 	pCtx->hEvents = SYS_EVENT_CREATE_CALL(sesdisp);
 	assert(pCtx->hEvents);
+#endif
 
 	pCtx->sSesCtx[SES_INST].pPrivate = &(pCtx->sInstMgrCtx);
 	pCtx->sSesCtx[SES_ADM].pPrivate = &(pCtx->sAdmMgrCtx);
 	pCtx->sSesCtx[SES_DWN].pPrivate = &(pCtx->sDwnMgrCtx);
-
-	for ( i = 0; i < SES_NB; i++)
-	{
-		pCtx->sSesCtx[i].hTask = pCtx->hTask;
-		pCtx->sSesCtx[i].eType = i;
-	}
 
 	InstMgr_Setup(&(pCtx->sSesCtx[SES_INST]));
 	AdmMgr_Setup(&(pCtx->sSesCtx[SES_ADM]));
@@ -295,7 +295,10 @@ static void _ses_disp_fsm_(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 		else
 		{
 			ulBckFlg = (eApiReqSesId <<  SES_MGR_FLG_POS) | SES_MGR_FLG_FAILED;
+#ifdef WIZEAPI_NOT_BLOCKING
+#else
 			xEventGroupSetBits(pCtx->hEvents, ulBckFlg);
+#endif
 		}
 	}
 
