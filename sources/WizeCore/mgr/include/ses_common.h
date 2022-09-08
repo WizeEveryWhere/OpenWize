@@ -42,7 +42,6 @@ extern "C" {
 #include <stdint.h>
 #include "time_evt.h"
 #include "net_mgr.h"
-#include "app_layer.h"
 #include "logger.h"
 
 typedef union

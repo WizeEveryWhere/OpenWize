@@ -89,6 +89,7 @@ struct wize_ctx_s
 	void *hCaller;				   /*!< Hold the caller task's id */
 	void *hTask;				   /*!< Hold the net_mgr task's id  */
 	void *hMutex;				   /*!< Hold a mutex to lock the net_mgr */
+	void *hOwner;				   /*!< Hold a net_mgr resource */
 
 	void *pBuffDesc;               /*!< Pointer on passed buffer descriptor */
 	uint8_t u8TransRetries;        /*!< Number of transmission retry in case of
