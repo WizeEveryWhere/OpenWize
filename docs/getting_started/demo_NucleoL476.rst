@@ -2,11 +2,11 @@
 Demo application
 ================
 
-- This application is provide as a simple demonstrator of OpenWize stack targeting an ST Nucleo-L476RG board. 
+- This application is provided as a simple demonstration of OpenWize stack targeting an ST Nucleo-L476RG board. 
 
-- The Nucleo-L476RG board doesn't integrate any RF device, so to overcome this, the demo application use the ``PhyFake`` device, which input/output frames over an UART peripheral.
+- The Nucleo-L476RG board doesn't integrate any RF device, so to overcome this, the demo application uses the ``PhyFake`` device, which input/output frames over a UART peripheral.
 
-- This demo is very simple so, there is no console or local interface to communicate with it. Instead, application periodically send DATA and INSTALL (aka. PING) message and use the provided *Logger* module to print out messages (info, warning, debug, error). 
+- This demo is very simple, so, there is no console or local interface to communicate with it. Instead, application periodically sends DATA and INSTALL (aka. PING) message and use the provided *Logger* module to print out messages (info, warning, debug, error). 
 
 - The *Logger* is connected to the MCU USART2 peripheral
 
