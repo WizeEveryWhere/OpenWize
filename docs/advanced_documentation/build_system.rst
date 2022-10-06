@@ -5,7 +5,7 @@ Build system
 Introduction
 ------------
 
-The build system is based on CMake tool which generate makefiles. Each directory
+The build system is based on CMake tool which generates makefiles. Each directory
 to build shall include a *CMakeList.txt* file that gives rules "how to" and 
 "what to " build. Furthermore, some other *cmake* files provide helping support 
 for common or generic rules. These last files are located in the *tools/build_suport* 
@@ -17,7 +17,7 @@ Build Support
 toolchain-config.cmake
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This file gives rules to select the toolchain to use. It rely on *native_toolchain-config.cmake* and *cross_toolchain-config.cmake*. 
+This file gives rules to select the toolchain to use. It relies on *native_toolchain-config.cmake* and *cross_toolchain-config.cmake*. 
 
 native_toolchain-config.cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -32,7 +32,7 @@ Define the arm-none-eabi-xx as cross-compiler to be used.
 config_support-config.cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
-This file provide helper macros or functions to :
+This file provides helper macros or functions to :
 
 - *get_cfg* : this macro will include your own platform specific cmake. Based on command line argument *BUILD_CFG* and *BUILD_CFG_DIR*.
    
@@ -45,7 +45,7 @@ This file provide helper macros or functions to :
 
    Furthermore, this macro will extract the git information and produce the "version.h" file (see `git_info_config.cmake`_).
    
-- *setup_config* : this function generate a *.h* file from *.in* file.  
+- *setup_config* : this function generates a *.h* file from *.in* file.  
 
    .. code-block:: cmake
       
@@ -79,7 +79,7 @@ install_support-config.cmake
 git_info_config.cmake
 ^^^^^^^^^^^^^^^^^^^^^
 
-This file provide functions to extract informations from git and generate a "version.h" file.
+This file provides functions to extract information from git and generates a "version.h" file.
 
 - *gitinfo* : extract the git information
 
@@ -90,7 +90,7 @@ This file provide functions to extract informations from git and generate a "ver
    - <working directory> : base directory where to find git information. 
 
 
-- *version_from_git* : generate the "version.h" file
+- *version_from_git* : generates the "version.h" file
 
    .. code-block:: cmake
       
