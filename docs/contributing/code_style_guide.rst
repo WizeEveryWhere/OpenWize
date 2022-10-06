@@ -101,9 +101,9 @@ Module organization
 
 Softwares modules are organized with src/ and include/ directories, that 
 respectively hold source and header files. In module root folder a "CMakeList.txt"
-file define one or more build target in order to be able to build that module. 
+file defines one or more build target in order to be able to build that module. 
 Furthermore, when is required and module is unitary "testable", a "unittest" 
-directory containing unit tests source code and its CMakeList.txt is present.
+directory containing unit test source code and its CMakeList.txt is present.
    
    .. rubric:: Typical module look like this :
 
@@ -130,7 +130,7 @@ For simple type, we use the (u)intN_t convention from "stdint.h". That is to say
 Variables Names
 """""""""""""""
 
-The generic rule is that variables follows the PascalCase convention. Furthermore, variables are prefixed with their type.
+The generic rule is that variables follow the PascalCase convention. Furthermore, variables are prefixed with their type.
 
 For simple types, the variables are prefixed with their type in their "short" version :
 
