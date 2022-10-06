@@ -86,16 +86,16 @@ Environment variables :
 - CROSS_TOOL_PATH : give the main path of the cross-toolchain, which is used and
   mandatory by the cmake build system.
 - ST_PROG_PATH : give the main path of the STM32Cube programmer tool. This tool
-  is use to upload the binary firmware on the target board from command line, so
+  is used to upload the binary firmware on the target board from command line, so
   not required with the IDE.
 - JLINK_PROG_PATH : give the main path of the Segger programmer tool. This tool
-  is use to upload the binary firmware on the target board from command line, so
+  is used to upload the binary firmware on the target board from command line, so
   not required with the IDE.
 
-The easy way to set these variable is to run the provided script in OpenWize/tools/scripts. 
-This script will create all necessary to set these environment variable on new console or terminal.
+The easy way to set these variables is to run the provided script in OpenWize/tools/scripts. 
+This script will create all necessary to set these environment variables on new console or terminal.
 
-In a console run the script : 
+In a console, run the script : 
 
 .. code-block:: bash
 
@@ -113,7 +113,7 @@ It's also possible to "un-install" :
    ./set_env.sh -u 
 
 Run this script only the first time. Next, in each new open console, these 
-environement variables will be automatically set. 
+environment variables will be automatically set. 
  
 .. *****************************************************************************
 .. references
