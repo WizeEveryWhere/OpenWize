@@ -4,48 +4,49 @@
 Welcome to OpenWize !
 ************************
 
-Wize c’est quoi ?
+What is Wize ?
 =================
 
-Lancé en mars 2017 par GRDF, Suez et Sagemcom, Wize est un protocole ouvert dont le principe repose sur une communication à distance basse consommation, bas débit (entre 1200 et 6400 bits/s) et longue portée.
+Launched in March 2017 by GRDF, Suez and Sagemcom, Wize is an open protocol whose principle is based on low-power, low-bitrate (between 1200 and 6400 bits/s) and long-range remote communication.
 
-Les spécifications du protocole Wize sont maintenues au sein de l’alliance Wize qui est une association à but non lucratif visant à promouvoir l’adoption de ce protocole au sein des réseaux IOT dans le monde de l’industrie et des services publics urbains. L’alliance Wize réunit en 2021 une quarantaine de membres. 
+The Wize protocol specifications are maintained within the Wize Alliance, which is a non-profit association that promotes the adoption of this protocol within IOT networks in the world of industry and urban utilities. In 2021, the Wize Alliance will have about 40 members.
 
-Wize utilise des ondes radio sur une fréquence 169 MHz ouverte et libre de droits en Europe afin de garantir la meilleure des pénétrations pour récolter des données de télémesure dans le domaine de l’Internet des objets.
+Wize uses radio waves on an open and royalty-free 169 MHz frequency in Europe to ensure the best possible penetration for collecting telemetry data in the Internet of Things domain.
 
-Toute la documentation du protocole est accessible gratuitement sur le site de `l’Alliance Wize <https:\\www.wize-alliance.com>`_, ainsi que toutes les informations nécessaires pour devenir membre en quelques clics.
+All the documentation of the protocol is freely available on the `Wize Alliance website <https:\\www.wize-alliance.com>`_, as well as all the information needed to become a member in a few clicks.
 
-Pourquoi un stack 169 MHz en open source ?
+Why a 169 MHz stack in open source ?
 ==========================================
 
-GRDF a commencé ses travaux autour de la fréquence 169 MHZ en 2010 dans le cadre de son projet de télérelève de compteurs communicants Gaz. Le challenge que devait relever GRDF dans le cadre de ce projet était de mettre en place une infrastructure radio sur une bande de fréquence ouverte et libre de droits en Europe, afin de permettre la télérelève des compteurs de gaz de ses 11 millions de clients en s’appuyant sur :
- * Une technologie fiable lui permettant de garantir un taux de relève journalier d’au moins 95%,
- * Une durée de vie des équipements autonome sur pile de 20 ans,
- * Une communication bidirectionnelle permettant l’envoi d’ordre et le téléchargement à distance de firmware à l’intérieur de ses capteurs,
- * Une communication radio sûre et sécurisée de bout en bout.
+GRDF started its work on the 169 MHZ frequency in 2010 as part of its remote reading of gas smart meters project. The challenge for GRDF was to set up a radio infrastructure on an open and free frequency band in Europe, in order to enable the remote reading of gas smart meters for its 11 million customers, based on :
 
-Aucun LPWAN à l’époque (et c’est encore le cas en 2021) ne permettant de répondre à la totalité de ces contraintes, GRDF a pris la décision de développer son propre protocole de communication radio, en s’appuyant sur le standard W-MBUS mode N2 du comité technique européen 294, en y intégrant les fonctionnalités qui manquaient à l’époque à savoir la bidirectionnalité et les mécanismes de sécurisation de la communication.
+ * Reliable technology allowing it to guarantee a daily reading rate of at least 95%,
+ * A 20-year life span for battery-operated equipment,
+ * A bidirectional communication allowing the sending of orders and the remote downloading of firmware inside its sensors,
+ * Safe and secure end-to-end radio communication.
 
-Avec plus de 8 millions de compteurs déployés à mi-2021 et devant les excellentes performances obtenues à l’aide de la technologie mise en place, GRDF a décidé de participer à la promotion l’alliance wize en concevant et en développant une pile de protocole Wize 100% compatible avec les spécifications 1.2 de l’alliance et de publier ce développement en mode open source sous licence MIT. 
+As no LPWAN at that time (and it is still the case in 2021) could meet all these constraints, GRDF decided to develop its own radio communication protocol, based on the W-MBUS mode N2 standard of the European technical committee 294, by integrating the functionalities that were missing at that time, i.e. bidirectionality and communication security mechanisms.
 
-Par cette publication, GRDF a pour objectif d’accélérer l’adoption de cette technologie par le plus grand nombre et de faciliter la conception et la mise sur le marché d’un écosystème de capteurs IOT compatibles Wize le plus riche et le plus large possible pour répondre à ses propres besoins, mais également à ceux éventuels d’autres opérateurs industriels et de gestionnaires de services urbains publics.
+With more than 8 million meters deployed by mid-2021 and in view of the excellent performance obtained with the technology implemented, GRDF has decided to participate in the promotion of the wize alliance by designing and developing a Wize protocol stack that is 100% compatible with the alliance's 1.2 specifications and to publish this development in open source mode under the MIT license. 
 
-OpenWize, le nom donné à cette couche protocolaire, a été développé pour être le plus agnostique possible par rapport au matériel.
+With this publication, GRDF aims to accelerate the adoption of this technology by as many people as possible and to facilitate the design and marketing of the richest and widest possible ecosystem of Wize-compatible IOT sensors to meet its own needs, as well as those of other industrial operators and public urban service managers.
 
-Son architecture modulaire sous FreeRTOS permet cependant d’envisager un portage rapide vers une cible matériel de son choix. En adoptant une démarche open source, vise à enrichir l’écosystème de membres de l’alliance Wize et apportera son soutien à tous les contributeurs qui souhaiteraient s’investir dans les améliorations fonctionnelles ou le portage d’OpenWize.
+OpenWize, the name given to this protocol layer, was developed to be as hardware agnostic as possible.
 
-OpenWize est disponible en téléchargement, mais peut-être également être intégré dans un module hardware open source Wize’Up développé par la société Alciom (www.alciom.com). Dans cette dernière configuration, une société qui découvre la technologie Wize, possède tous les éléments pour accélérer son projet IOT. 
+Its modular architecture under FreeRTOS allows however to consider a quick port to a hardware target of one's choice. By adopting an open source approach, Wize aims to enrich the ecosystem of members of the Wize alliance and will support all contributors who wish to invest in functional improvements or porting of OpenWize.
 
-OpenWize est constitué d'un écosystème qui s'appuie sur deux repositories :
- * le repository OpenWize XXXX qui contient le stack en lui meme qui s'accompagne d'un example rapide de mise en oeuvre.
- * le repository OpenWize'Up YYYY qui contient l'instanciation du stack OpenWize sur la carte Wize'Up développée par un membre de l'Alliance Wize, la société ALCIOM.
+OpenWize is available for download, but can also be integrated into an open source hardware module Wize'Up developed by the company Alciom (www.alciom.com). In this last configuration, a company that discovers the Wize technology, has all the elements to accelerate its IOT project.
+
+OpenWize consists of an ecosystem based on two repositories:
+ * the OpenWize XXXX repository which contains the stack itself and a quick implementation example.
+ * the OpenWize'Up YYYY repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM.
 
 
 
-Les cartes de développement disponibles pour utiliser OpenWize
+The development cards available for using OpenWize
 ==============================================================
 
-Wize’up : un module Wize haute performances et ouvert, la solution idéale pour développer simplement un produit compatible avec les réseaux LPWAN très longue distance Wize.
+Wize'up: a high performance and open Wize module, the ideal solution to simply develop a product compatible with Wize LPWANs.
 
 .. . figure:: pics/wize-up_board.png
 ..   :align: center
@@ -56,58 +57,58 @@ Wize’up : un module Wize haute performances et ouvert, la solution idéale pou
 .. figure:: pics/wize-up_base-board.png
    :align: center
 
-   La carte Wize'Up montée sur sa carte de base
+   The Wize'Up card mounted on its base card
 
 
-Wize’Up est le fruit d’un appel à projet de l’alliance wize, dans lequel les sociétés Alciom et GRDF ont réunies leurs savoirs-faires et expertises pour offrir une solution clés en main d’accélération de projets IOT. Le concept est de fournir un module de communication équipé d’OpenWize, facilement intégrable dans un nouveau design hardware. Ce module s’interface facilement via une liaison UART par l’intermédiaire d’un ensemble de commandes AT. Pour plus d’information sur `Wize’Up <https://www.alciom.com/nos-métiers/produits/wizeup/>`_
+Wize'Up is the result of a call for projects from the wize alliance, in which Alciom and GRDF have combined their skills and expertise to offer a turnkey solution for accelerating IOT projects. The concept is to provide a communication module equipped with OpenWize, easily integrated into a new hardware design. This module interfaces easily via a UART link through a set of AT commands. For more information on `Wize’Up <https://www.alciom.com/nos-métiers/produits/wizeup/>`_
 
 
-Pour plus d'information sur la mise en oeuvre du stack OpenWize sur la carte Wize'Up : (rajouter lien car l'index du readTheDocs de OpenWize'Up)
+For more information on the implementation of the OpenWize stack on the Wize'Up map : (rajouter lien car l'index du readTheDocs de OpenWize'Up)
 
 
-Vous trouverez également au paragraphe **add_link** un example simple d'utilisation d'OpenWize sur une carte de démonstration STM Nucléo L476RG qui ne possède pas de transceiver RF (la trame sort sur une UART de la carte).
+You will also find in the **add_link** paragraph a simple example of using OpenWize on a Nucléo L476RG STM demonstration board that does not have an RF transceiver (the frame is output on a UART on the board).
 
 
-Quels réseaux 169 MHz utiliser avec la technologie Wize
+Which 169 MHz networks to use with Wize technology ?
 =======================================================
 
-Wize est une technologie utilisable en mode « dédié » et en mode « opéré ».
+Wize is a technology that can be used in both "dedicated" and "operated" modes.
 
-En mode « dédié », un client décide d’installer sa propre infrastructure de concentrateurs Wize et s’enregistre en tant qu’opérateur auprès de l’alliance wize. Si vous développez un produit pour un client de ce type, votre client votre communiquera toutes les informations nécessaires pour l’enregistrement de votre produit sur son réseau.
+In "dedicated" mode, a customer decides to install its own infrastructure of Wize hubs and registers as an operator with the wize alliance. If you develop a product for such a customer, your customer will provide you with all the necessary information to register your product on their network.
 
-En mode « opéré », un client décide d’utiliser le réseau d’un opérateur existant afin de faire remonter les données de ses capteurs vers son système d’information. Si vous développez un produit pour un client de ce type, votre client doit vous mettre en relation avec l’opérateur wize qu’il a sélectionné afin que vous puissiez enregistrer votre produit sur son réseau. La liste des opérateurs wize ainsi que les points de contacts associés sont disponibles sur le site de l’alliance.
+In "operated" mode, a customer decides to use the network of an existing operator to send data from its sensors to its information system. If you develop a product for a customer of this type, your customer must put you in touch with the wize operator he has selected so that you can register your product on his network. The list of wize operators as well as the associated contact points are available on the alliance's website.
 
-A noter qu’à partir de la version 1.2, pour faciliter le développement de produit wize, l’alliance wize a introduit le concept Wiz’One qui permet de faire transiter ponctuellement des données sur tous les réseaux wize compatibles 1.2 à des fins de tests unitaires ou d’intégration. Le support de Wiz’One est dépendant de l’opérateur et peut-être associé à certaines restrictions en terme de fonctionnalités.
+Note that from version 1.2, to facilitate the development of wize products, the wize alliance has introduced the Wiz'One concept which allows data to be transmitted on all 1.2 compatible wize networks for unit testing or integration purposes. Wiz'One support is operator dependent and may be associated with certain restrictions in terms of functionality.
 
 
-Pour aller plus loin dans votre développement
+To go further in your development
 =============================================
 
 
-Besoin d'aider ?
-Vous pouvez contacter ....
+Need to help?
+You can contact ....
 
 
-Guide pour contribuer à OpenWize.
+Guide to contributing to OpenWize.
 =================================
 
-Les contributions à OpenWize – Bugs fix, ajout de nouvel fonctionnalités, ajout de documentation, ajouts d’exemples – sont les bienvenus. Ces contributions doivent s’effectuer sous la forme de Github Pull Request.
+Contributions to OpenWize - bug fixes, adding new features, adding documentation, adding examples - are welcome. These contributions should be made in the form of a Github Pull Request.
 
-Prés-requis pour contribuer : (:ref:`Contribuer<Contributing>`)
- * Contribution sous la même licence que celle d’OpenWize.
- * Votre code doit être conforme au style de développement d’OpenWize (:ref:`Guide de l'écriture du code<Coding Style Guide>`)
- * Votre code doit être conforme au style de documentation d’OpenWize (:ref:`Guide de documentation<Documentation Guide>`)
- * Votre code doit être suffisamment documenter pour que sa structure soit facilement compréhensible.
- * Votre code est-il accompagné d’une documentation ou d’exemples qui permettent d’en comprendre facilement l’utilisation.
- * Les commentaires de votre code et votre documentation sont-ils écrits en anglais.
+Prerequisites to contribute: (:ref:`Contribuer<Contributing>`)
+ * Contributed under the same license as OpenWize.
+ * Your code must conform to the OpenWize development style (:ref:`Guide de l'écriture du code<Coding Style Guide>`)
+ * Your code must conform to the OpenWize documentation style (:ref:`Documentation Guide<Documentation Guide>`)
+ * Your code must be sufficiently documented so that its structure is easily understood.
+ * Is your code accompanied by documentation or examples that make it easy to understand its use?
+ * Are your code comments and documentation written in English ?
 
 
 ..
-   User Guide de l'écriture du code
+   User Guide to Writing Code
    --------------------------------
    TBD
 
-   Si vous n’êtes pas sûr de l’ensemble de ces points, n’hésitez pas à ouvrir un issue sur le repository d'OpenWize pour nous poser vos questions.
+   If you are unsure about any of these points, feel free to open an issue on the OpenWize repository to ask us your questions.
 
 .. *****************************************************************************
 .. references
