@@ -25,9 +25,9 @@ GRDF started its work on the 169 MHZ frequency in 2010 as part of its remote rea
  * A bidirectional communication allowing the sending of orders and the remote downloading of firmware inside its sensors,
  * Safe and secure end-to-end radio communication.
 
-As no LPWAN at that time (and it is still the case in 2021) could meet all these constraints, GRDF decided to develop its own radio communication protocol, based on the W-MBUS mode N2 standard of the European technical committee 294, by integrating the functionalities that were missing at that time, i.e. bidirectionality and communication security mechanisms.
+As no LPWAN at that time (and it is still the case in 2022) could meet all these constraints, GRDF decided to develop its own radio communication protocol, based on the W-MBUS mode N2 standard of the European technical committee 294, by integrating the functionalities that were missing at that time, i.e. bidirectionality and communication security mechanisms.
 
-With more than 8 million meters deployed by mid-2021 and in view of the excellent performance obtained with the technology implemented, GRDF has decided to participate in the promotion of the wize alliance by designing and developing a Wize protocol stack that is 100% compatible with the alliance's 1.2 specifications and to publish this development in open source mode under the MIT license. 
+With more than 10 million meters deployed by end-2022 and in view of the excellent performance obtained with the technology implemented, GRDF has decided to participate in the promotion of the wize alliance by designing and developing a Wize protocol stack that is 100% compatible with the alliance's 1.2 specifications and to publish this development in open source mode under the MIT license. 
 
 With this publication, GRDF aims to accelerate the adoption of this technology by as many people as possible and to facilitate the design and marketing of the richest and widest possible ecosystem of Wize-compatible IOT sensors to meet its own needs, as well as those of other industrial operators and public urban service managers.
 
@@ -37,9 +37,9 @@ Its modular architecture under FreeRTOS allows however to consider a quick port 
 
 OpenWize is available for download, but can also be integrated into an open source hardware module Wize'Up developed by the company Alciom (www.alciom.com). In this last configuration, a company that discovers the Wize technology, has all the elements to accelerate its IOT project.
 
-OpenWize consists of an ecosystem based on two repositories:
- * the OpenWize XXXX repository which contains the stack itself and a quick implementation example.
- * the OpenWize'Up YYYY repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM.
+OpenWize consists of an ecosystem based on three repositories:
+ * the OpenWize (lien XXXX) repository which contains the stack itself and a quick implementation example.
+ * the OpenWize'Up (lien YYYY) repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM.
 
 
 
@@ -86,7 +86,7 @@ To go further in your development
 
 
 Need to help?
-You can contact ....
+You can contact Marvin JEANNOT
 
 
 Guide to contributing to OpenWize.
