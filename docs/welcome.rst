@@ -40,6 +40,7 @@ OpenWize is available for download, but can also be integrated into an open sour
 OpenWize consists of an ecosystem based on three repositories:
  * the OpenWize (lien XXXX) repository which contains the stack itself and a quick implementation example.
  * the OpenWize'Up (lien YYYY) repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM.
+ * the banc_lib repository which contains a test tool for Wize protocol with SmartBrick device
 
 
 
