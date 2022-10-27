@@ -3,7 +3,7 @@
 set(MODULE_NAME samples)
 
 ################################################################################
-set(SUB_DIR_LIST CRC_sw Crypto ReedSolomon Parameters ImgStorage TimeEvt Logger)
+set(SUB_DIR_LIST CRC_sw Crypto ReedSolomon Parameters ImgStorage Decomp TimeEvt Logger )
 foreach(SUB_DIR ${SUB_DIR_LIST})
     string(TOLOWER ${SUB_DIR} lib_name)
     add_subdirectory(${SUB_DIR})

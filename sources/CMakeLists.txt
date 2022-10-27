@@ -13,7 +13,7 @@ add_subdirectory("Samples")
 # WizeCore
 add_subdirectory("WizeCore")
 
-# OpenWize lib (including WizeCore, Crypto Crc_sw, ReedSolomon, TimeEvt, Parameters, ImgStorage, Logger libraries)
+# OpenWize lib (including WizeCore, Crypto Crc_sw, ReedSolomon, TimeEvt, Parameters, ImgStorage, Logger, Decomp libraries)
 add_library(
     ${MODULE_NAME} STATIC 
     $<TARGET_OBJECTS:WizeCore::proto> 
@@ -27,6 +27,7 @@ add_library(
     $<TARGET_OBJECTS:Samples::parameters>
     $<TARGET_OBJECTS:Samples::timeevt>
     $<TARGET_OBJECTS:Samples::logger>
+    $<TARGET_OBJECTS:Samples::decomp>
     )
 
 target_link_libraries(
@@ -42,6 +43,7 @@ target_link_libraries(
     Samples::parameters
     Samples::timeevt
     Samples::logger
+    Samples::decomp
     3rd::freertos
     )
 

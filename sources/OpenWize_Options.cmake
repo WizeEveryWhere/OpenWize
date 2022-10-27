@@ -8,6 +8,7 @@ function(display_option)
     message ("      -> USE_CRC_SAMPLE         : ${USE_CRC_SAMPLE}")
     message ("      -> USE_REEDSOLOMON_SAMPLE : ${USE_REEDSOLOMON_SAMPLE}")
     message ("      -> USE_IMGSTORAGE_SAMPLE  : ${USE_IMGSTORAGE_SAMPLE}")
+    message ("      -> USE_DECOMP_SAMPLE      : ${USE_DECOMP_SAMPLE}")
 endfunction(display_option)
 
 ################################################################################
@@ -21,6 +22,7 @@ option(USE_REEDSOLOMON_SAMPLE "Enable the use of ReedSolomon sample provided by 
 option(USE_PARAMETERS_SAMPLE "Enable the use of Parameters sample provided by OpenWize." ON)
 option(USE_IMGSTORAGE_SAMPLE "Enable the use of ImgStorage sample provided by OpenWize." ON)
 option(USE_TIMEEVT_SAMPLE "Enable the use of TimeEvt sample provided by OpenWize." ON)
+option(USE_DECOMP_SAMPLE "Enable the use of Decomp sample provided by OpenWize." ON)
 
 option(IS_LOGGER_ENABLE "Enable the Logger in OpenWize." ON)
 option(USE_LOGGER_SAMPLE "Enable the use of Logger sample provided by OpenWize." ON)

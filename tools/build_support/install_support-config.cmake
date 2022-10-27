@@ -47,11 +47,25 @@ function(setup_install)
             TARGET ${MODULE_NAME} POST_BUILD
             COMMAND "${CMAKE_OBJDUMP}" -h -S -z "$<TARGET_FILE:${MODULE_NAME}>" > "${PROJECT_LST}"
         )
-        
+
         install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_NAME}.bin DESTINATION bin)
         install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_NAME}.map DESTINATION bin)
         install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_NAME}.lst DESTINATION bin)
-    endif ()
+        
+        if(USE_DECOMP_SAMPLE)
+        	find_program(LZMA lzma REQUIRED)
+        	if(NOT LZMA)
+	            message(FATAL_ERROR "lzma not found!\n")
+    	    endif()
+        	execute_process (
+	            COMMAND 
+    	            bash -c "export IS_VERBOSE_ENV=${verbo}; export PATH=$PATH:./tools/scripts/decomp_support:./third-party/.OpenWize/tools/scripts/decomp_support; lzma_script.sh ${MODULE_NAME}.bin;"
+	            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+            )
+        	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${MODULE_NAME}.lzma DESTINATION bin)
+        endif(USE_DECOMP_SAMPLE)
+        
+    endif()
     
         # set target install
 #     install(TARGETS ${SETUP_INSTALL_TARGET} 

@@ -53,6 +53,7 @@ endif()
 
 if(BUILD_OPENWIZE)
     set(BUILD_TINYCRYPT TRUE)
+    set(BUILD_LZMA TRUE)
 endif()
 
 #-------------------------------------------------------------------------------
@@ -77,6 +78,11 @@ endif()
 # libraries/Tinycrypt
 if(BUILD_TINYCRYPT)
     add_subdirectory(third-party/libraries/Tinycrypt)
+endif()
+
+# libraries/Lzma
+if(BUILD_LZMA)
+    add_subdirectory(third-party/libraries/Lzma)
 endif()
 
 # sources
@@ -105,7 +111,11 @@ if(ENABLE_NATIVE_UNITTEST)
     if(BUILD_TINYCRYPT)
         add_to_native(TARGET unity PATH third-party/libraries/Tinycrypt)
     endif()
-
+    
+    if(BUILD_LZMA)
+        add_to_native(TARGET unity PATH "third-party/libraries/Lzma")
+    endif()
+    
     if(BUILD_OPENWIZE)
         add_to_native(TARGET openwize PATH sources)
     endif(BUILD_OPENWIZE)
