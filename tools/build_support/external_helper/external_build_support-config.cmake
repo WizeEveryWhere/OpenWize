@@ -76,15 +76,18 @@ function(setup_external)
         message ("   -> setup external : ${ext_name} ${build_module}")
     endif()
     
-    # Get compile option and definition to propagate
+    # Get compile options and definitions to propagate
     get_directory_property(cmp_option COMPILE_OPTIONS)
     get_directory_property(cmp_def COMPILE_DEFINITIONS)
+    
+    # Get link options to propagate
+    get_directory_property(lnk_option LINK_OPTIONS)
     
     #     
     set(OPTIONS_CACHE_ARGS
         # --- RTOS ---
-        -DRTOS_MAIN_PATH:PATH=${RTOS_MAIN_PATH}
-        -DRTOS_PORT_PATH:PATH=${RTOS_PORT_PATH}
+        #-DRTOS_MAIN_PATH:PATH=${RTOS_MAIN_PATH}
+        #-DRTOS_PORT_PATH:PATH=${RTOS_PORT_PATH}
         -DRTOS_CONF_FILE:FILEPATH=${RTOS_CONF_FILE}
         # --- Modules ---
         -DIS_LOGGER_ENABLE:BOOL=${IS_LOGGER_ENABLE}
@@ -99,10 +102,10 @@ function(setup_external)
         # --- ---
         -DTOP_DIR:PATH=${TOP_DIR} 
         # --- ---
-        -DBUILD_TEST:PATH=${BUILD_TEST}
+        -DBUILD_TEST:BOOL=${BUILD_TEST}
         
-        -DNATIVE_PATH_LIST:PATHS=${NATIVE_PATH_LIST}
-        -DNATIVE_TARGET_LIST:PATHS=${NATIVE_TARGET_LIST}
+        -DNATIVE_PATH_LIST:STRING=${NATIVE_PATH_LIST}
+        -DNATIVE_TARGET_LIST:STRING=${NATIVE_TARGET_LIST}
         
         )
 
@@ -110,11 +113,13 @@ function(setup_external)
         -DIS_BUILD_MODULE:BOOL=${SETUP_EXTERNAL_BUILD} 
         -DIS_EXTERNAL_PRJ:BOOL=TRUE
         # --- Build support ---
-        -DCMAKE_MODULE_PATH:PATHS=${CMAKE_MODULE_PATH}
-        -DCMAKE_PREFIX_PATH:PATHS=${CMAKE_PREFIX_PATH}
+        -DCMAKE_MODULE_PATH:STRING=${CMAKE_MODULE_PATH}
+        -DCMAKE_PREFIX_PATH:STRING=${CMAKE_PREFIX_PATH}
         # --- Compile options and definitions ---
-        -DCOMPILE_OPTIONS:STRINGS=${cmp_option}
-        -DCOMPILE_DEFINITIONS:STRINGS=${cmp_def}
+        -DCOMPILE_OPTIONS:STRING=${cmp_option}
+        -DCOMPILE_DEFINITIONS:STRING=${cmp_def}
+        # --- Link options ---
+        -DLINK_OPTIONS:STRING=${lnk_option}
         )
 
     if(NOT SETUP_EXTERNAL_NATIVE)

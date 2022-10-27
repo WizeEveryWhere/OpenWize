@@ -7,6 +7,7 @@ if(IS_EXTERNAL_PRJ)
     # Propagate compile otions and definitions
     add_compile_options("${COMPILE_OPTIONS}")
     add_compile_definitions("${COMPILE_DEFINITIONS}")
+    add_link_options("${LINK_OPTIONS}")
     
     # Add some includes
     include_directories(AFTER ${CMAKE_BINARY_DIR}/../..)

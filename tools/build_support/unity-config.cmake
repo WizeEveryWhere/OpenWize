@@ -13,7 +13,8 @@ function(_add_mocks)
     set(oneValueArgs CONFIG NAME)
     set(multiValueArgs MOCKLIST)
     cmake_parse_arguments(ADD_MOCKS 
-        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}
+    )
 
     if(NOT ADD_MOCKS_MOCKLIST )# STREQUAL "")
         message("   -> mock list is empty...return.")
@@ -42,12 +43,12 @@ function(_add_mocks)
             COMMAND ruby ${CMOCK_CMD}
             -o${ADD_MOCKS_CONFIG} ${MOCK}
             WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-            )
+        )
         target_sources(
             ${TEST_NAME_MOCK} 
             PUBLIC 
                 ${CMAKE_CURRENT_BINARY_DIR}/mocks/mock_${MOCK_FILE}.c
-            )
+        )
         target_include_directories(
             ${TEST_NAME_MOCK} 
             PRIVATE 
@@ -55,7 +56,7 @@ function(_add_mocks)
             PUBLIC 
                 ${MOCK_DIR}
                 ${CMAKE_CURRENT_BINARY_DIR}/mocks
-            )
+        )
     endforeach()
     # add unity include
     get_target_property(UNITY_INCLUDES unity INCLUDE_DIRECTORIES)
@@ -79,7 +80,8 @@ function(add_unittest)
     set(oneValueArgs NAME DUT CONFIG)
     set(multiValueArgs SOURCES MOCKLIST)
     cmake_parse_arguments(ADD_UNITTEST 
-        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}
+    )
 
     if(NOT ADD_UNITTEST_DUT )
         message(FATAL_ERROR "   -> a device under test (DUT) is required")
@@ -102,7 +104,7 @@ function(add_unittest)
             NAME ${ADD_UNITTEST_NAME}_mock
             CONFIG ${ADD_UNITTEST_CONFIG} 
             MOCKLIST ${ADD_UNITTEST_MOCKLIST}
-            )
+        )
     endif()
 
     add_library(${ADD_UNITTEST_NAME} STATIC ${ADD_UNITTEST_SOURCES} )
@@ -144,7 +146,7 @@ function(add_unittest)
         ${ADD_UNITTEST_NAME} PUBLIC
         ${DUT_INCLUDES} 
         ${UNITY_INCLUDES}
-        )
+    )
     
 endfunction(add_unittest)
 
@@ -160,7 +162,8 @@ function(_generate_run_all)
     set(oneValueArgs DESTINATION)
     set(multiValueArgs GRP_RUNNER_LIST)
     cmake_parse_arguments(GEN_RUNALL 
-        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}
+    )
     
     if(NOT GEN_RUNALL_GRP_RUNNER_LIST)
         message("   -> group runner list is empty...return.")
@@ -177,7 +180,7 @@ function(_generate_run_all)
 "${RUN_TEST_GROUP_LIST}\n\
     RUN_TEST_GROUP(${GRP});\
 "
-            )
+        )
     endforeach(GRP ${GEN_RUNALL_GRP_RUNNER_LIST})
     
     set(RUN_ALL_IN 
@@ -207,7 +210,8 @@ function(add_utest_exec )
     set(oneValueArgs NAME DUT)
     set(multiValueArgs GRP_RUNNER_LIST LINK_DEPENDS)
     cmake_parse_arguments(ADD_UTEST_EXEC 
-        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+        "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN}
+    )
 
     if(CMAKE_CROSSCOMPILING OR NOT ADD_UTEST_EXEC_NATIVE_ONLY)
         return()
@@ -239,7 +243,7 @@ function(add_utest_exec )
         target_include_directories(
             ${ADD_UTEST_EXEC_NAME} PUBLIC 
             ${UNITY_INCLUDES} 
-            )
+        )
         
         # link with unity
         target_link_libraries(${ADD_UTEST_EXEC_NAME} unity)
@@ -255,12 +259,12 @@ function(add_utest_exec )
             #COMMAND ${CMAKE_BINARY_DIR}/bin/${ADD_UTEST_EXEC_NAME}
             COMMAND ${ADD_UTEST_EXEC_NAME} -v
             #WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/result 
-            )
+        )
         # install executable
         install(TARGETS ${ADD_UTEST_EXEC_NAME} 
-                CONFIGURATIONS Debug 
-                COMPONENT deb 
-                RUNTIME DESTINATION  ${SETUP_INSTALL_PREFIX}bin 
-            )
+            CONFIGURATIONS Debug 
+            COMPONENT deb 
+            RUNTIME DESTINATION  ${SETUP_INSTALL_PREFIX}bin 
+        )
     endif()
 endfunction(add_utest_exec)
