@@ -99,7 +99,9 @@ uint8_t TimeEvt_TimerInit(time_evt_t *pTimeEvt, void (*pvTaskHandle)(uint32_t ev
 	{
 		if (pTimeEvt->pNext)
 		{
+			sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
 			_remove(&sTimeEvtCtx, pTimeEvt);
+			sys_mutex_release(sTimeEvtCtx.pLock);
 		}
 		pTimeEvt->eCfg = eCfg;
 		pTimeEvt->u64InitVal = 0;
@@ -133,19 +135,24 @@ uint8_t TimeEvt_TimerStart(time_evt_t *pTimeEvt, uint32_t u32Value, int16_t i16D
 	// must be greater than 0 and lesser than 86399 second (1 day minus 1 second)
 
 	u64temp = ((uint64_t)u32Value) *1000;
-	if (u64temp == 0 && (i16DeltaMs < 0) )
+
+	if ( i16DeltaMs < 0 && (u64temp <= (-i16DeltaMs) ) )
 	{
-		ret = 1;
+		p = NULL;
+	}
+	u64temp += (int64_t)i16DeltaMs;
+
+	if (u64temp == 0)
+	{
 		p = NULL;
 	}
 
-	u64temp += (int64_t)i16DeltaMs;
 	if ( p && (p->pNext == NULL) )
 	{
 		p->u32Event = u32Event;
 		p->u64InitVal = u64temp;
 		p->u64Value = u64temp;
-		sys_mutex_acquire(sTimeEvtCtx.pLock, 0xFFFFFFFF);
+		sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
 		// Stop Alarm
 		_timer_stop(TIME_EVT_ALARM_ID);
 		_get_current_time_ms(&u64temp);
@@ -173,6 +180,10 @@ uint8_t TimeEvt_TimerStart(time_evt_t *pTimeEvt, uint32_t u32Value, int16_t i16D
 		}
 		sys_mutex_release(sTimeEvtCtx.pLock);
 	}
+	else
+	{
+		ret = 1;
+	}
 	return ret;
 }
 
@@ -187,7 +198,7 @@ void TimeEvt_TimerStop(time_evt_t *pTimeEvt)
 	uint64_t u64Now;
 	if (pTimeEvt)
 	{
-		sys_mutex_acquire(sTimeEvtCtx.pLock, 0xFFFFFFFF);
+		sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
 		if ( sTimeEvtCtx.pCurrent == pTimeEvt)
 		{
 			_timer_stop(TIME_EVT_ALARM_ID);
@@ -250,7 +261,7 @@ void TimeEvt_UpdateTime(time_t t)
 	uint64_t u64TimeMs;
 	struct time_evt_s *p;
 
-	sys_mutex_acquire(sTimeEvtCtx.pLock, 0xFFFFFFFF);
+	sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
 	//sys_mutex_acquire_isr(sTimeEvtCtx.pLock);
 	p = sTimeEvtCtx.pCurrent;
 	if (p != NULL)

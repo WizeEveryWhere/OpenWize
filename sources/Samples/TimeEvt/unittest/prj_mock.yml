@@ -18,8 +18,11 @@
     uint32:   UINT32
     int8:     INT8
     bool:     UINT8
-  :treat_externs: :exclude  # Now the extern-ed functions will be mocked.
   :weak: __attribute__((weak))
   :verbosity: 3
   :treat_externs: :include
-  
+  :includes:
+    - FreeRTOS.h
+  :strippables:
+    - PRIVILEGED_FUNCTION 
+    - portDONT_DISCARD

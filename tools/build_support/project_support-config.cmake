@@ -101,15 +101,16 @@ if(ENABLE_NATIVE_UNITTEST)
     init_to_native()
     
     if(BUILD_UNITY)
-        add_to_native(TARGET unity PATH third-party/testing/Unity)
+        add_to_native(TARGET unity PATH "third-party/testing/Unity")
     endif()
 
     if(BUILD_FREERTOS)
-        add_to_native(TARGET freertos PATH third-party/rtos/FreeRTOS)
+        add_link_options(-pthread)
+        add_to_native(TARGET freertos PATH "third-party/rtos/FreeRTOS")
     endif()
 
     if(BUILD_TINYCRYPT)
-        add_to_native(TARGET unity PATH third-party/libraries/Tinycrypt)
+        add_to_native(TARGET unity PATH "third-party/libraries/Tinycrypt")
     endif()
     
     if(BUILD_LZMA)
@@ -117,7 +118,7 @@ if(ENABLE_NATIVE_UNITTEST)
     endif()
     
     if(BUILD_OPENWIZE)
-        add_to_native(TARGET openwize PATH sources)
+        add_to_native(TARGET openwize PATH "sources")
     endif(BUILD_OPENWIZE)
 
     setup_to_native()

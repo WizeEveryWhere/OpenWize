@@ -42,6 +42,15 @@ extern "C" {
 #include <stdint.h>
 #include <string.h>
 #include <time.h>
+
+/*!
+ * @def TIME_EVT_LOCK_TMO
+ * @brief This macro define the timeout on OS lock acquire
+ */
+#ifndef TIME_EVT_LOCK_TMO
+	#define TIME_EVT_LOCK_TMO 0xFFFFFFFF
+#endif
+
 /*!
  * @def TIME_EVT_ALARM_ID
  * @brief This macro define the used alarm id

@@ -32,13 +32,14 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/FreeRTOS_option.cmake)
 set(RTOS_MAIN_PATH "FreeRTOS-Kernel")
 
 if(NOT CMAKE_CROSSCOMPILING)
-    message("CMAKE_CROSSCOMPILING : ${CMAKE_CROSSCOMPILING}")
-    set( configUSE_NEWLIB_REENTRANT 0U)
-    set( configENABLE_BACKWARD_COMPATIBILITY 1U)
+    message("   -> CMAKE_CROSSCOMPILING : ${CMAKE_CROSSCOMPILING}")
+    set( configUSE_NEWLIB_REENTRANT 0)
+    set( configENABLE_BACKWARD_COMPATIBILITY 1)
+    set( configUSE_PORT_OPTIMISED_TASK_SELECTION 0)
     set(RTOS_PORT_NAME "Posix")
     set(RTOS_PORT_PATH "ThirdParty/GCC/${RTOS_PORT_NAME}" )
     #message("set RTOS_MAIN_PATH to : ${RTOS_MAIN_PATH}")
-    #message("set RTOS_PORT_PATH to : ${RTOS_PORT_PATH}")
+    #message("set RTOS_PORT_PATH to : ${RTOS_PORT_PATH}")  
 endif(NOT CMAKE_CROSSCOMPILING)
 
 # Check FreeRTOS port name and port path
@@ -52,6 +53,7 @@ if(RTOS_PORT_PATH)
     set(tmp "${CMAKE_CURRENT_SOURCE_DIR}/${RTOS_MAIN_PATH}/portable/${RTOS_PORT_PATH}/portmacro.h")
     if(EXISTS ${tmp})
         message("   -> Use Port Path : ${RTOS_PORT_PATH}")
+        #message("      -> Absolute Path : ${tmp}")
     else()
         message(FATAL_ERROR "FreeRTOS Port Path not found : ${tmp}")
     endif()
@@ -84,10 +86,16 @@ target_sources(${MODULE_NAME}
 
 # Add extra if native/simulator 
 if(NOT CMAKE_CROSSCOMPILING)
+	#message("   ->  : ${RTOS_MAIN_PATH}/portable/${RTOS_PORT_PATH}/utils")
     target_sources(${MODULE_NAME}
         PRIVATE
             ${RTOS_MAIN_PATH}/portable/${RTOS_PORT_PATH}/utils/wait_for_event.c
-        )
+    )
+    
+	target_include_directories(${MODULE_NAME} 
+    	PUBLIC
+        	${RTOS_MAIN_PATH}/portable/${RTOS_PORT_PATH}/utils
+    )
 endif(NOT CMAKE_CROSSCOMPILING)
 
 # Add memory management support, if required
@@ -104,8 +112,10 @@ if(configSUPPORT_DYNAMIC_ALLOCATION EQUAL 1)
         set(configUSE_FreeRTOS_HEAP 2)
         message(WARNING "   -> configUSE_FreeRTOS_HEAP undefined, set to ${configUSE_FreeRTOS_HEAP}")
     endif(configUSE_FreeRTOS_HEAP)
+    #message("   ->  : ${CMAKE_CURRENT_SOURCE_DIR}/${RTOS_MAIN_PATH}/portable/MemMang/heap_${configUSE_FreeRTOS_HEAP}.c")
     target_sources(${MODULE_NAME} 
-        PUBLIC 
+        #PUBLIC
+        PRIVATE 
             ${RTOS_MAIN_PATH}/portable/MemMang/heap_${configUSE_FreeRTOS_HEAP}.c
         )
 endif(configSUPPORT_DYNAMIC_ALLOCATION EQUAL 1)
@@ -114,7 +124,8 @@ endif(configSUPPORT_DYNAMIC_ALLOCATION EQUAL 1)
 if(configENABLE_MPU EQUAL 1)
     message(STATUS "   -> configENABLE_MPU is ON")
     target_sources(${MODULE_NAME} 
-        PUBLIC 
+        #PUBLIC 
+        PRIVATE 
             ${RTOS_MAIN_PATH}/portable/Common/mpu_wrappers.c
         )
 endif(configENABLE_MPU EQUAL 1)
@@ -127,7 +138,6 @@ target_include_directories(
     PUBLIC
         ${RTOS_MAIN_PATH}/include
         ${RTOS_MAIN_PATH}/portable/${RTOS_PORT_PATH}
-        ${RTOS_MAIN_PATH}/portable/${RTOS_PORT_PATH}/utils
         ${CMAKE_CURRENT_BINARY_DIR}
     )
 
