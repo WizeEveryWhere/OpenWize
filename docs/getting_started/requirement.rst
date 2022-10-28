@@ -4,8 +4,8 @@ Requirement
 
 The OpenWize stack is basically developed to target STMicroelectronic MCU, based
 on ARM-M cpu core. For convenience reasons, we use the STM32CubeIDE as an IDE. 
-It come with all necessary to compile, load and debug firmware on that ST MCU. 
-This IDE can be download from STMicroelectronics web-site (`STM32CubeIDE`_).
+It comes with all necessary to compile, load and debug firmware on that ST MCU. 
+This IDE can be downloaded from STMicroelectronics website (`STM32CubeIDE`_).
 
 The build system is based on *cmake* and *make* tools which rely on the 
 cross-toolchain provided by the STM32CubeIDE. We provide a little bash script 
@@ -46,7 +46,7 @@ the OpenWize stack.
      - This is the versions packaged with the cross-toolchain. 
 
 Note that `Git`_, `Cmake`_ and `Make`_ are usually already installed on basic Linux 
-distribution, so there is nothing more to do.
+Distribution, so there is nothing more to do.
 
 .. *****************************************************************************
 .. references

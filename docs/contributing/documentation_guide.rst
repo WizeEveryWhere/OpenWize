@@ -50,13 +50,13 @@ Revision history is formatted as follow :
    * @par MAJ.MIN.REV : DATE [AUTHOR]
    * Describe the revisions changes 
 
-Where, "MAJ.MIN.REV" is respectively major, nimor and revision version number. 
-This must be followed by the date and author. Then on next line, describe the revision changes.
+Where, "MAJ.MIN.REV" is respectively major, minor and revision version number. 
+This must be followed by the date and author. Then on the next line, describe the revision changes.
 
 Functions
 ---------
 
-All function must begin with its documentation block :
+All functions must begin with its documentation block :
 
 .. code-block:: 
 
@@ -82,7 +82,7 @@ If the function is private add *@static* at the begining, just before *@brief*.
      * @brief ...
      *
 
-If required, hie some documentation part under *@cond* block. 
+If required, place some documentation part under *@cond* block. 
 
 .. code-block:: 
 

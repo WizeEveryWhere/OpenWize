@@ -6,7 +6,7 @@ Code Organization
 Repository structure
 --------------------
 
-The repository structure is the following
+The repository structure is as follows :
 
 ::
 
