@@ -38,6 +38,7 @@ Its modular architecture under FreeRTOS allows however to consider a quick port 
 OpenWize is available for download, but can also be integrated into an open source hardware module Wize'Up developed by the company Alciom (www.alciom.com). In this last configuration, a company that discovers the Wize technology, has all the elements to accelerate its IOT project.
 
 OpenWize consists of an ecosystem based on three repositories:
+
  * the `OpenWize`_ repository which contains the stack itself and a quick implementation example.
  * the `OpenWize'Up`_ repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM.
  * the `banc_lib`_ repository which contains a test tool for Wize protocol with SmartBrick device
