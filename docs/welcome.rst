@@ -38,9 +38,9 @@ Its modular architecture under FreeRTOS allows however to consider a quick port 
 OpenWize is available for download, but can also be integrated into an open source hardware module Wize'Up developed by the company Alciom (www.alciom.com). In this last configuration, a company that discovers the Wize technology, has all the elements to accelerate its IOT project.
 
 OpenWize consists of an ecosystem based on three repositories:
- * the OpenWize (lien XXXX) repository which contains the stack itself and a quick implementation example.
- * the OpenWize'Up (lien YYYY) repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM.
- * the banc_lib repository which contains a test tool for Wize protocol with SmartBrick device
+ * the `OpenWize`_ repository which contains the stack itself and a quick implementation example.
+ * the `OpenWize'Up`_ repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM.
+ * the `banc_lib`_ repository which contains a test tool for Wize protocol with SmartBrick device
 
 
 
@@ -67,7 +67,7 @@ Wize'Up is the result of a call for projects from the wize alliance, in which Al
 For more information on the implementation of the OpenWize stack on the Wize'Up map : (rajouter lien car l'index du readTheDocs de OpenWize'Up)
 
 
-You will also find in the **add_link** paragraph a simple example of using OpenWize on a Nucléo L476RG STM demonstration board that does not have an RF transceiver (the frame is output on a UART on the board).
+You will also find in the :ref:`Demo application` paragraph a simple example of using OpenWize on a Nucléo L476RG STM demonstration board that does not have an RF transceiver (the frame is output on a UART on the board).
 
 
 Which 169 MHz networks to use with Wize technology ?
@@ -116,4 +116,6 @@ Prerequisites to contribute: (:ref:`Contribuer<Contributing>`)
 .. _`STM32CubeIDE`: https://www.st.com/en/development-tools/stm32cubeide.html#get-software
 .. _`Alciom` : https://www.alciom.com/en/home
 .. _`Wize’Up`: https://www.alciom.com/en/our-trades/products/wizeup
-
+.. _`OpenWize`: https://github.com/WizeEveryWhere/OpenWize
+.. _`OpenWize'Up`: https://github.com/WizeEveryWhere/OpenWize-Up
+.. _`banc_lib`: https://github.com/WizeEveryWhere/banc_lib
