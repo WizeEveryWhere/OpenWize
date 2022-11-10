@@ -1,0 +1,468 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 - 2022, GRDF
+# This file is distributed under the same license as the OpenWize package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWize 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-08 13:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../api_doc/code_organization.rst:4
+msgid "Code Organization"
+msgstr "Organisation du code"
+
+#: ../../api_doc/code_organization.rst:7
+msgid "Repository structure"
+msgstr "Stucture du dépôt"
+
+#: ../../api_doc/code_organization.rst:9
+msgid "The repository structure is as follows :"
+msgstr "La structure du dépôt est la suivante :"
+
+#: ../../api_doc/code_organization.rst:42
+msgid "Sources directory"
+msgstr "Répertoire des sources"
+
+#: ../../api_doc/code_organization.rst:45
+msgid "The *sources* directory is organized as follow :"
+msgstr "Le répertoire *sources* est organisé comme suit :"
+
+#: ../../api_doc/code_organization.rst:46
+msgid ""
+"There are mainly two sub-directories \"Samples\" and \"WizeCore\". "
+"\"WizeCore\" is the stack implementation, while \"Samples\" contains some"
+" required libraries by the Wize stack. The WizeCore is split in four "
+"folders, each one corresponding more or less to an abstraction layer."
+msgstr "Il existe principalement deux sous-répertoires : \"Samples\" et \"WizeCore\". \"WizeCore\" est l'implémentation de la stack, tandis que \"Samples\" contient certaines bibliothèques requises par la stack Wize. Le WizeCore est divisé en quatre dossiers, chacun correspondant plus ou moins à une couche d'abstraction."
+
+#: ../../api_doc/samples_subdir.rst:4
+msgid "*Samples* sub directory"
+msgstr "Sous-répertoire *Samples"
+
+#: ../../api_doc/samples_subdir.rst:8
+msgid "``CRC_sw``"
+msgstr ""
+
+#: ../../api_doc/samples_subdir.rst:7
+msgid ""
+"*CRC_sw* library provides functions to compute and check the CRC16 "
+"(*Cyclic Redundancy Check*) as specified by `Wize Lan Protocol "
+"Specifications`_ v1.2."
+msgstr "La bibliothèque *CRC_sw* fournit des fonctions pour calculer et vérifier le CRC16 (*Cyclic Redundancy Check*) comme spécifié par `Wize Lan Protocol Specifications`_ v1.2."
+
+#: ../../api_doc/samples_subdir.rst:13
+msgid "``Crypto``"
+msgstr ""
+
+#: ../../api_doc/samples_subdir.rst:11
+msgid ""
+"*Crypto* library provides interface functions to cipher, uncipher, "
+"compute AES-CMAC and SHA256. This module relies on *tinycrypt* library "
+"located in \"third-party/libraries/Tinycrypt\" directory "
+"(https://github.com/intel/tinycrypt.git)."
+msgstr "La bibliothèque *Crypto* fournit des fonctions d'interface pour chiffrer, déchiffrer, calculer AES-CMAC et SHA256. Ce module repose sur la bibliothèque *tinycrypt* située dans le répertoire \"third-party/libraries/Tinycrypt\" (https://github.com/intel/tinycrypt.git)."
+
+#: ../../api_doc/samples_subdir.rst:17
+msgid "``ReedSolomon``"
+msgstr ""
+
+#: ../../api_doc/samples_subdir.rst:16
+msgid ""
+"*ReedSolomon* library implement Reed-Solomon code correction algorithm "
+"RS(255,223). This module is a port of the http://www.eccpage.com/rs.c"
+msgstr "La bibliothèque *ReedSolomon* implémente l'algorithme de correction du code Reed-Solomon RS(255,223). Ce module est un port de la bibliothèque http://www.eccpage.com/rs.c"
+
+#: ../../api_doc/samples_subdir.rst:21
+msgid "``ImgStorage``"
+msgstr ""
+
+#: ../../api_doc/samples_subdir.rst:20
+msgid ""
+"*ImgStorage* library provides an interface for storing downloaded "
+"firmware block on physical memory."
+msgstr "La bibliothèque *ImgStorage* fournit une interface pour stocker le bloc de firmware téléchargé sur la mémoire physique."
+
+#: ../../api_doc/samples_subdir.rst:24
+msgid "``Parameters``"
+msgstr ""
+
+#: ../../api_doc/samples_subdir.rst:24
+msgid "*Parameters* library provides interfaces to set and get parameters."
+msgstr "La bibliothèque *Parameters* fournit des interfaces pour définir et obtenir des paramètres."
+
+#: ../../api_doc/samples_subdir.rst:27
+msgid "``TimeEvt``"
+msgstr ""
+
+#: ../../api_doc/samples_subdir.rst:27
+msgid "*TimeEvt* module provides event to the task at the required time."
+msgstr "Le module *TimeEvt* fournit un événement à la tâche au moment voulu."
+
+#: ../../api_doc/samples_subdir.rst:31
+msgid "``Logger``"
+msgstr ""
+
+#: ../../api_doc/samples_subdir.rst:30
+msgid ""
+"*Logger* module provides a way to log out messages (info, warning, error,"
+" debug)."
+msgstr "Le module *Logger* permet d'enregistrer les messages (info, warning, error, debug)."
+
+#: ../../api_doc/wizecore_subdir.rst:4
+msgid "*WizeCore* sub directory"
+msgstr "Sous-répertoire *WizeCore*"
+
+#: ../../api_doc/wizecore_subdir.rst:18
+msgid "``proto``"
+msgstr ""
+
+#: ../../api_doc/wizecore_subdir.rst:7
+msgid ""
+"*proto* implement all necessary to treat the link and presentation layer "
+"from the Wize protocol, that is :"
+msgstr "*proto* met en œuvre tout ce qui est nécessaire pour traiter la liaison et la couche de présentation du protocole Wize, c'est-à-dire :"
+
+#: ../../api_doc/wizecore_subdir.rst:10
+msgid "build/extract the Link and Presentation Layers information"
+msgstr "Construire/extraire les informations des couches de liaison et de présentation"
+
+#: ../../api_doc/wizecore_subdir.rst:11
+msgid "cipher/un-cipher the application message"
+msgstr "chiffrer/déchiffrer le message de l'application"
+
+#: ../../api_doc/wizecore_subdir.rst:12
+msgid "compute and check the authentication hash"
+msgstr "calculer et vérifier le hach d'authentification"
+
+#: ../../api_doc/wizecore_subdir.rst:13
+msgid "compute and check the confidentiality hash"
+msgstr "calculer et vérifier le hach de confidentialité"
+
+#: ../../api_doc/wizecore_subdir.rst:14
+msgid "compute and check the CRC"
+msgstr "calculer et vérifier le CRC"
+
+#: ../../api_doc/wizecore_subdir.rst:15
+msgid ""
+"compute and check the Reed-Solomon code and correct the frame when "
+"possible (Download layer only)"
+msgstr "calculer et vérifier le code Reed-Solomon et corriger la trame si possible (couche de téléchargement uniquement)"
+
+#: ../../api_doc/wizecore_subdir.rst:17
+msgid ""
+"*proto* depends on the \"CRC_sw\", \"Crypto\" and \"ReedSolomon\" "
+"libraries."
+msgstr "*proto* dépend des bibliothèques \"CRC_sw\", \"Crypto\" et \"ReedSolomon\"."
+
+#: ../../api_doc/wizecore_subdir.rst:27
+msgid "``net``"
+msgstr ""
+
+#: ../../api_doc/wizecore_subdir.rst:21
+msgid "*net* implements a kind of low-level driver to :"
+msgstr "*net* implémente une sorte de pilote de bas niveau pour :"
+
+#: ../../api_doc/wizecore_subdir.rst:23
+msgid "drive the protocol in *proto*"
+msgstr "piloter le protocole dans *proto*"
+
+#: ../../api_doc/wizecore_subdir.rst:24
+msgid ""
+"provide an abstract layer to higher level, with function like "
+"\"send(...)\" or \"recev(...)\"."
+msgstr "fournir une couche abstraite au niveau supérieur, avec des fonctions comme \"send(...)\" ou \"recev(...)\"."
+
+#: ../../api_doc/wizecore_subdir.rst:25
+msgid "provide an interface to the phy driver implementation"
+msgstr "fournir une interface à l'implémentation du pilote phy"
+
+#: ../../api_doc/wizecore_subdir.rst:27
+msgid "*net* depends on *proto*"
+msgstr "*net* dépend de *proto*"
+
+#: ../../api_doc/wizecore_subdir.rst:36
+msgid "``mgr``"
+msgstr ""
+
+#: ../../api_doc/wizecore_subdir.rst:30
+msgid "*mgr* implements four managers :"
+msgstr "*mgr* implémente quatre gestionnaires :"
+
+#: ../../api_doc/wizecore_subdir.rst:32
+msgid ""
+"*adm_mgr*, *inst_mgr* and *dwn_mgr* manage respectively the "
+"administration, installation and download sessions. Their role is mainly "
+"to ensure the session timing correctness."
+msgstr "*adm_mgr*, *inst_mgr* et *dwn_mgr* gèrent respectivement les sessions d'administration, d'installation et de téléchargement. Leur rôle est principalement d'assurer le bon déroulement des sessions."
+
+#: ../../api_doc/wizecore_subdir.rst:34
+msgid ""
+"*net_mgr* is a kind of high level driver for the *net* module. In "
+"particular, it manages the net+phy resources in thread-safe manner and "
+"ensure the timing correctness in the \"send\" and \"listen\" windows."
+msgstr "*net_mgr* est une sorte de pilote de haut niveau pour le module *net*. En particulier, il gère les ressources du réseau d'une manière sûre pour les threads et assure l'exactitude du timing dans les fenêtres \"send\" et \"listen\"."
+
+#: ../../api_doc/wizecore_subdir.rst:36
+msgid "*mgr* depends on *net*, *TimeEvt*, *Logger* and *FreeRTOS*."
+msgstr "*mgr* dépend de *net*, *TimeEvt*, *Logger* et *FreeRTOS*."
+
+#: ../../api_doc/wizecore_subdir.rst:47
+msgid "``app``"
+msgstr ""
+
+#: ../../api_doc/wizecore_subdir.rst:39
+msgid ""
+"*app* implements application layer of the Wize protocol and provide an "
+"API to the rest of application firmware."
+msgstr "*app* met en œuvre la couche application du protocole Wize et fournit une API au reste du firmware de l'application."
+
+#: ../../api_doc/wizecore_subdir.rst:41
+msgid ""
+"provide API to send DATA message and execute an installation (PING/PONG) "
+"session"
+msgstr "fournir une API pour envoyer un message DATA et exécuter une session d'installation (PING/PONG)"
+
+#: ../../api_doc/wizecore_subdir.rst:42
+msgid "open/close administration, installation and download sessions."
+msgstr "ouvrir/fermer les sessions d'administration, d'installation et de téléchargement."
+
+#: ../../api_doc/wizecore_subdir.rst:43
+msgid "build/extract generic administration layer (aka DATA, COMMAND, RESPONSE)"
+msgstr "construire/extraire la couche d'administration générique (aka DATA, COMMAND, RESPONSE)"
+
+#: ../../api_doc/wizecore_subdir.rst:44
+msgid "build/extract installation layer (aka PING/PONG)"
+msgstr "construire/extraire la couche d'installation (aka PING/PONG)"
+
+#: ../../api_doc/wizecore_subdir.rst:45
+msgid "deal with downloaded firmware image (store, validate)"
+msgstr "traiter l'image du firmware téléchargé (stocker, valider)"
+
+#: ../../api_doc/wizecore_subdir.rst:47
+msgid ""
+"*app* depends on *mgr*, *TimeEvt*, *ImgStorage*, *Parameters*, *Logger* "
+"and *FreeRTOS*."
+msgstr "*app* dépend de *mgr*, *TimeEvt*, *ImgStorage*, *Parameters*, *Logger* et *FreeRTOS*."
+
+#: ../../api_doc/code_organization.rst:76
+msgid "Demo directory"
+msgstr "Répertoire Demo"
+
+#: ../../api_doc/demo_subdir.rst:3
+msgid "TBD"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:4
+msgid "Demo (Nucleo L476RG)"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:7
+msgid "Application"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:13
+msgid "System"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:20
+msgid "Board Support Package"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:23
+msgid "Common"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:29
+msgid "Platform"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:35
+msgid "Boot"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:41
+msgid "Flash"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:47
+msgid "Gpio interrupt"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:53
+msgid "Gpio"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:59
+msgid "Low Power"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:65
+msgid "RTC"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:71
+msgid "UART"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:78
+msgid "Board"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:84
+msgid "Devices"
+msgstr ""
+
+#: ../../api_doc/demo_L476.rst:87
+msgid "PhyFake"
+msgstr ""
+
+#: ../../api_doc/index.rst:5
+msgid "API Reference"
+msgstr ""
+
+#: ../../api_doc/samples.rst:4
+msgid "Samples"
+msgstr ""
+
+#: ../../api_doc/samples.rst:7
+msgid "CRC sw"
+msgstr ""
+
+#: ../../api_doc/samples.rst:13
+msgid "Crypto"
+msgstr ""
+
+#: ../../api_doc/samples.rst:19
+msgid "Reed-Solomon"
+msgstr ""
+
+#: ../../api_doc/samples.rst:25
+msgid "Parameters"
+msgstr ""
+
+#: ../../api_doc/samples.rst:31
+msgid "Event"
+msgstr ""
+
+#: ../../api_doc/samples.rst:37
+msgid "Image Storage"
+msgstr ""
+
+#: ../../api_doc/samples.rst:43
+msgid "Logger"
+msgstr ""
+
+#: ../../api_doc/wize_core.rst:4
+msgid "WizeCore"
+msgstr ""
+
+#: ../../api_doc/wize_core.rst:7
+msgid "Wize API"
+msgstr ""
+
+#: ../../api_doc/wize_core.rst:16
+msgid "Application Layer"
+msgstr "Couche application"
+
+#: ../../api_doc/wize_core.rst:22
+msgid "Common Application Layer"
+msgstr "Couche application commune"
+
+#: ../../api_doc/wize_core.rst:28
+msgid "Installation Layer"
+msgstr "Couche installation"
+
+#: ../../api_doc/wize_core.rst:33
+msgid "Administration Layer"
+msgstr "Couche administration"
+
+#: ../../api_doc/wize_core.rst:38
+msgid "Download Layer"
+msgstr "Couche téléchargement"
+
+#: ../../api_doc/wize_core.rst:44
+msgid "Time management"
+msgstr "Gestion du temps"
+
+#: ../../api_doc/wize_core.rst:50
+msgid "Sessions Management"
+msgstr "Gestion des sessions"
+
+#: ../../api_doc/wize_core.rst:56
+msgid "Administration Session"
+msgstr "Session administration"
+
+#: ../../api_doc/wize_core.rst:60
+msgid "Installation Session"
+msgstr "Session installation"
+
+#: ../../api_doc/wize_core.rst:66
+msgid "Download Session"
+msgstr "Session téléchargement"
+
+#: ../../api_doc/wize_core.rst:72
+msgid "Network Device Management"
+msgstr "Gestion des périphériques réseau"
+
+#: ../../api_doc/wize_core.rst:78
+msgid "Network Device Manager"
+msgstr "Gestionnaire de périphériques réseau"
+
+#: ../../api_doc/wize_core.rst:83
+msgid "Network API"
+msgstr "Réseau API"
+
+#: ../../api_doc/wize_core.rst:89
+msgid "Phy Interface"
+msgstr "Interface Phy"
+
+#: ../../api_doc/wize_core.rst:94
+msgid "Protocol"
+msgstr "Protocole"
+
+#: ../../api_doc/x86_simulation.rst:3
+msgid "Simulation application"
+msgstr "Application de simulation"
+
+#: ../../api_doc/x86_simulation.rst:5
+msgid ""
+"This application is provide as a simple demonstrator of OpenWize stack "
+"targeting"
+msgstr "Cette application est fournie comme un simple démonstrateur du ciblage de la stack OpenWize."
+
+#: ../../api_doc/x86_simulation.rst:10
+msgid "Requirement"
+msgstr "Exigence"
+
+#: ../../api_doc/x86_simulation.rst:12
+msgid "Linux RT"
+msgstr ""
+
+#: ../../api_doc/x86_simulation.rst:23
+msgid ""
+"UART4 (due to wake-up pin availability on PA0, UART4 RX/TX pins are "
+"swapped)"
+msgstr "UART4 (en raison de la disponibilité de la broche de réveil sur PA0, les broches RX/TX de l'UART4 sont permutées)"
+
+#: ../../api_doc/x86_simulation.rst:23
+msgid "This UART is mapped onto :"
+msgstr "Ce UART est mappé sur :"
+
+#: ../../api_doc/x86_simulation.rst:19
+msgid "RX : PA0 (CN7-28)"
+msgstr ""
+
+#: ../../api_doc/x86_simulation.rst:20
+msgid "TX : PA1 (CN7-30)."
+msgstr ""
+
