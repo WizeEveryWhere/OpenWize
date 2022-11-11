@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdint.h>
 
-TEST_GROUP(WizeCore_netmgr);
+TEST_GROUP(WizeCoreMgr_net);
 #include "net_mgr.h"
 /*
 #include "mock_.h"
@@ -48,18 +48,18 @@ time_evt
 
 /******************************************************************************/
 
-TEST_SETUP(WizeCore_netmgr)
+TEST_SETUP(WizeCoreMgr_net)
 {
 
 }
-TEST_TEAR_DOWN(WizeCore_netmgr)
+TEST_TEAR_DOWN(WizeCoreMgr_net)
 {
 
 }
 
 /******************************************************************************/
 
-TEST(WizeCore_netmgr, test_NetMgr_xxx)
+TEST(WizeCoreMgr_net, test_NetMgr_xxx)
 {
 
 }

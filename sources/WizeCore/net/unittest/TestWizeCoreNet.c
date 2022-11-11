@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdint.h>
 
-TEST_GROUP(WizeCore_net);
+TEST_GROUP(WizeCoreNet);
 #include "net_api_private.h"
 
 #include "mock_proto_api.h"
@@ -138,7 +138,7 @@ static void pfcbEvent(uint32_t evt)
 
 /******************************************************************************/
 /******************************************************************************/
-TEST_SETUP(WizeCore_net)
+TEST_SETUP(WizeCoreNet)
 {
 	int32_t i32Ret;
 	i32PhyRetCode = PHY_STATUS_OK;
@@ -191,7 +191,7 @@ TEST_SETUP(WizeCore_net)
 	*/
 }
 
-TEST_TEAR_DOWN(WizeCore_net)
+TEST_TEAR_DOWN(WizeCoreNet)
 {
 	int32_t i32Ret;
 	if (_already_check_ & (UNINIT_CHECKED))
@@ -225,7 +225,7 @@ static void _clean_state_(void)
 }
 /******************************************************************************/
 
-TEST(WizeCore_net, test_NetApi_Setup)
+TEST(WizeCoreNet, test_NetApi_Setup)
 {
 	int32_t i32Ret;
 
@@ -243,7 +243,7 @@ TEST(WizeCore_net, test_NetApi_Setup)
 	_already_check_ |= SETUP_CHECKED;
 }
 
-TEST(WizeCore_net, test_NetApi_Init)
+TEST(WizeCoreNet, test_NetApi_Init)
 {
 	int32_t i32Ret;
 	i32Ret = WizeNet_Setup(&sNetDev, &sWizeCtx, &sPhydev);
@@ -266,7 +266,7 @@ TEST(WizeCore_net, test_NetApi_Init)
 	_already_check_ |= INIT_CHECKED;
 }
 
-TEST(WizeCore_net, test_NetApi_Uinit)
+TEST(WizeCoreNet, test_NetApi_Uinit)
 {
 	int32_t i32Ret;
 	i32Ret = WizeNet_Setup(&sNetDev, &sWizeCtx, &sPhydev);
@@ -293,7 +293,7 @@ TEST(WizeCore_net, test_NetApi_Uinit)
 	_already_check_ |= UNINIT_CHECKED;
 }
 
-TEST(WizeCore_net, test_NetApi_Ioctl)
+TEST(WizeCoreNet, test_NetApi_Ioctl)
 {
 	int32_t i32Ret;
 	uint32_t eCtl;
@@ -371,7 +371,7 @@ TEST(WizeCore_net, test_NetApi_Ioctl)
 	_clean_state_();
 }
 
-TEST(WizeCore_net, test_NetApi_Send)
+TEST(WizeCoreNet, test_NetApi_Send)
 {
 	int32_t i32Ret;
 	sNetMsg.u8Type = APP_DATA;
@@ -410,7 +410,7 @@ TEST(WizeCore_net, test_NetApi_Send)
 	_clean_state_();
 }
 
-TEST(WizeCore_net, test_NetApi_Recv)
+TEST(WizeCoreNet, test_NetApi_Recv)
 {
 	int32_t i32Ret;
 	sNetMsg.pData = &aData;
@@ -442,7 +442,7 @@ TEST(WizeCore_net, test_NetApi_Recv)
 	_clean_state_();
 }
 
-TEST(WizeCore_net, test_NetApi_Listen)
+TEST(WizeCoreNet, test_NetApi_Listen)
 {
 	int32_t i32Ret;
 	i32Ret = WizeNet_Listen(&sNetDev);
@@ -463,7 +463,7 @@ TEST(WizeCore_net, test_NetApi_Listen)
 	_clean_state_();
 }
 
-TEST(WizeCore_net, test_NetApi_CallBack)
+TEST(WizeCoreNet, test_NetApi_CallBack)
 {
 	int32_t i32Ret;
 	sNetMsg.u8Type = APP_DATA;

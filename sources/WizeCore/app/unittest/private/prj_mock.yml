@@ -22,5 +22,4 @@
   :weak: __attribute__((weak))
   :verbosity: 3
   :treat_externs: :include
-  :includes:
-    #- FreeRTOS.h
+

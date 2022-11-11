@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdint.h>
 
-TEST_GROUP(WizeCore_proto);
+TEST_GROUP(WizeCoreProto);
 
 #include "proto_api.h"
 #include "proto_private.h"
@@ -289,7 +289,7 @@ uint8_t _rs_decode_cb_(uint8_t* p_Data, int cmock_num_calls)
 
 /******************************************************************************/
 
-TEST_SETUP(WizeCore_proto)
+TEST_SETUP(WizeCoreProto)
 {
 	sCtx.u8Size = 0;
 	sCtx.pBuffer = aBuff;
@@ -332,13 +332,13 @@ TEST_SETUP(WizeCore_proto)
 	eTestHMACStatus[1] = TEST_AES_HMAC_STATUS_Match;
 }
 
-TEST_TEAR_DOWN(WizeCore_proto)
+TEST_TEAR_DOWN(WizeCoreProto)
 {
 
 }
 
 //==============================================================================
-TEST(WizeCore_proto, test_Proto_Build_NullPtr)
+TEST(WizeCoreProto, test_Proto_Build_NullPtr)
 {
 	uint8_t eRet;
 
@@ -357,7 +357,7 @@ TEST(WizeCore_proto, test_Proto_Build_NullPtr)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_NULL_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_BadSize)
+TEST(WizeCoreProto, test_Proto_Build_BadSize)
 {
 	uint8_t eRet;
 	sNetMsg.u8Size = 0;
@@ -370,7 +370,7 @@ TEST(WizeCore_proto, test_Proto_Build_BadSize)
 	TEST_ASSERT_EQUAL(PROTO_APP_MSG_SZ_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_AppTypeMismatch)
+TEST(WizeCoreProto, test_Proto_Build_AppTypeMismatch)
 {
 	uint8_t eRet;
 	// Check bad frame type
@@ -379,7 +379,7 @@ TEST(WizeCore_proto, test_Proto_Build_AppTypeMismatch)
 	TEST_ASSERT_EQUAL(PROTO_STACK_MISMATCH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_CryptoFailed)
+TEST(WizeCoreProto, test_Proto_Build_CryptoFailed)
 {
 	uint8_t eRet;
 	// Check encryption return error
@@ -388,7 +388,7 @@ TEST(WizeCore_proto, test_Proto_Build_CryptoFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_CIPH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_HKencFailed)
+TEST(WizeCoreProto, test_Proto_Build_HKencFailed)
 {
 	uint8_t eRet;
 	sNetMsg.u8KeyId = 0;
@@ -406,7 +406,7 @@ TEST(WizeCore_proto, test_Proto_Build_HKencFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_HASH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_HKmacFailed)
+TEST(WizeCoreProto, test_Proto_Build_HKmacFailed)
 {
 	uint8_t eRet;
 	Crypto_Encrypt_ExpectAnyArgsAndReturn(CRYPTO_OK);
@@ -417,7 +417,7 @@ TEST(WizeCore_proto, test_Proto_Build_HKmacFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_HASH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_CrcFailed)
+TEST(WizeCoreProto, test_Proto_Build_CrcFailed)
 {
 	uint8_t eRet;
 	Crypto_Encrypt_ExpectAnyArgsAndReturn(CRYPTO_OK);
@@ -429,7 +429,7 @@ TEST(WizeCore_proto, test_Proto_Build_CrcFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_CRC_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_L6AppGiven)
+TEST(WizeCoreProto, test_Proto_Build_L6AppGiven)
 {
 	uint8_t eRet;
 	Crypto_Encrypt_ExpectAnyArgsAndReturn(CRYPTO_OK);
@@ -450,7 +450,7 @@ TEST(WizeCore_proto, test_Proto_Build_L6AppGiven)
 	TEST_ASSERT_EQUAL( l6app, pL6h->L6App);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_L6AppDefault)
+TEST(WizeCoreProto, test_Proto_Build_L6AppDefault)
 {
 	uint8_t eRet;
 	Crypto_Encrypt_ExpectAnyArgsAndReturn(CRYPTO_OK);
@@ -465,7 +465,7 @@ TEST(WizeCore_proto, test_Proto_Build_L6AppDefault)
 	TEST_ASSERT_EQUAL( sCtx.sProtoConfig.AppData, pL6h->L6App);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_L6Cpt)
+TEST(WizeCoreProto, test_Proto_Build_L6Cpt)
 {
 	uint8_t eRet;
 	uint16_t u16Tmp;
@@ -482,7 +482,7 @@ TEST(WizeCore_proto, test_Proto_Build_L6Cpt)
 	TEST_ASSERT_EQUAL_MEMORY( (uint8_t*)(&u16Tmp), pL6h->L6Cpt, L6_CPT_SZ);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_Cfield)
+TEST(WizeCoreProto, test_Proto_Build_Cfield)
 {
 	uint8_t eRet;
 	// in the next, all the 3 following return success
@@ -519,7 +519,7 @@ TEST(WizeCore_proto, test_Proto_Build_Cfield)
 	TEST_ASSERT_EQUAL( INSTPING, pL2h->Cfield);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_CheckLField)
+TEST(WizeCoreProto, test_Proto_Build_CheckLField)
 {
 	uint8_t eRet;
 	uint8_t u8Tmp;
@@ -551,7 +551,7 @@ TEST(WizeCore_proto, test_Proto_Build_CheckLField)
 	TEST_ASSERT_EQUAL( u8Tmp, aBuff[0]);
 }
 
-TEST(WizeCore_proto, test_Proto_Build_CheckOtherContent)
+TEST(WizeCoreProto, test_Proto_Build_CheckOtherContent)
 {
 	uint8_t eRet;
 
@@ -568,7 +568,7 @@ TEST(WizeCore_proto, test_Proto_Build_CheckOtherContent)
 }
 
 /******************************************************************************/
-TEST(WizeCore_proto, test_Proto_Extract_NullPtr)
+TEST(WizeCoreProto, test_Proto_Extract_NullPtr)
 {
 	uint8_t eRet;
 
@@ -588,7 +588,7 @@ TEST(WizeCore_proto, test_Proto_Extract_NullPtr)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_NULL_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_Extract_BadSize)
+TEST(WizeCoreProto, test_Proto_Extract_BadSize)
 {
 	uint8_t eRet;
 	eRet = Wize_ProtoExtract(&sCtx, &sNetMsg);
@@ -604,7 +604,7 @@ TEST(WizeCore_proto, test_Proto_Extract_BadSize)
 }
 
 /******************************************************************************/
-TEST(WizeCore_proto, test_Proto_ExtractDwn_RSDecodeFailed)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_RSDecodeFailed)
 {
 	uint8_t eRet;
 	sCtx.u8Size = 255;
@@ -615,7 +615,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_RSDecodeFailed)
 	TEST_ASSERT_EQUAL(PROTO_FRAME_RS_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_CRCComputeFailed)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_CRCComputeFailed)
 {
 	uint8_t eRet;
 	sCtx.u8Size = 255;
@@ -627,7 +627,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_CRCComputeFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_CRC_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_CRCCheckErr)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_CRCCheckErr)
 {
 	uint8_t eRet;
 	sCtx.u8Size = 255;
@@ -640,7 +640,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_CRCCheckErr)
 	TEST_ASSERT_EQUAL(PROTO_FRAME_CRC_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_BadL2DownID)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_BadL2DownID)
 {
 	uint8_t eRet;
 	// ---
@@ -656,7 +656,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_BadL2DownID)
 	TEST_ASSERT_EQUAL(PROTO_FRAME_PASS_INF, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_BadL6DownVer)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_BadL6DownVer)
 {
 	uint8_t eRet;
 	// ---
@@ -672,7 +672,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_BadL6DownVer)
 	TEST_ASSERT_EQUAL(PROTO_DOWNLOAD_VER_WRN, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_HklogError)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_HklogError)
 {
 	uint8_t eRet;
 	// ---
@@ -688,7 +688,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_HklogError)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_HASH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_HklogMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_HklogMismatch)
 {
 	uint8_t eRet;
 	// ---
@@ -704,7 +704,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_HklogMismatch)
 	TEST_ASSERT_EQUAL(PROTO_HEAD_END_AUTH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_UncipherError)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_UncipherError)
 {
 	uint8_t eRet;
 	// ---
@@ -721,7 +721,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_UncipherError)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_CIPH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractDwn_CheckOtherContent)
+TEST(WizeCoreProto, test_Proto_ExtractDwn_CheckOtherContent)
 {
 	uint8_t eRet;
 	uint16_t u16Tmp;
@@ -752,7 +752,7 @@ TEST(WizeCore_proto, test_Proto_ExtractDwn_CheckOtherContent)
 }
 
 /******************************************************************************/
-TEST(WizeCore_proto, test_Proto_ExtractExch_AFieldMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_AFieldMismatch)
 {
 	uint8_t eRet;
 	_fill_exch_buffer_ptrs_(0x20);
@@ -763,7 +763,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_AFieldMismatch)
 	TEST_ASSERT_EQUAL(PROTO_FRAME_PASS_INF, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_MFieldMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_MFieldMismatch)
 {
 	uint8_t eRet;
 
@@ -775,7 +775,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_MFieldMismatch)
 	TEST_ASSERT_EQUAL(PROTO_FRAME_PASS_INF, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_CRCComputeFailed)
+TEST(WizeCoreProto, test_Proto_ExtractExch_CRCComputeFailed)
 {
 	uint8_t eRet;
 
@@ -786,7 +786,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_CRCComputeFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_CRC_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_CRCCheckError)
+TEST(WizeCoreProto, test_Proto_ExtractExch_CRCCheckError)
 {
 	uint8_t eRet;
 
@@ -798,7 +798,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_CRCCheckError)
 	TEST_ASSERT_EQUAL(PROTO_FRAME_CRC_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_CiFieldMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_CiFieldMismatch)
 {
 	uint8_t eRet;
 
@@ -811,7 +811,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_CiFieldMismatch)
 	TEST_ASSERT_EQUAL(PROTO_PROTO_UNK_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_L6VersMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_L6VersMismatch)
 {
 	uint8_t eRet;
 
@@ -824,7 +824,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_L6VersMismatch)
 	TEST_ASSERT_EQUAL(PROTO_PROTO_UNK_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_L6NetwIdMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_L6NetwIdMismatch)
 {
 	uint8_t eRet;
 
@@ -837,7 +837,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_L6NetwIdMismatch)
 	TEST_ASSERT_EQUAL(PROTO_NETWID_UNK_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_CFieldMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_CFieldMismatch)
 {
 	uint8_t eRet;
 
@@ -862,7 +862,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_CFieldMismatch)
 	TEST_ASSERT_EQUAL(PROTO_FRAME_UNK_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_HKencFailed)
+TEST(WizeCoreProto, test_Proto_ExtractExch_HKencFailed)
 {
 	uint8_t eRet;
 
@@ -875,7 +875,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_HKencFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_HASH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_HKencMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_HKencMismatch)
 {
 	uint8_t eRet;
 
@@ -888,7 +888,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_HKencMismatch)
 	TEST_ASSERT_EQUAL(PROTO_HEAD_END_AUTH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_HKmacFailed)
+TEST(WizeCoreProto, test_Proto_ExtractExch_HKmacFailed)
 {
 	uint8_t eRet;
 
@@ -905,7 +905,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_HKmacFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_HASH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_HKmacMismatch)
+TEST(WizeCoreProto, test_Proto_ExtractExch_HKmacMismatch)
 {
 	uint8_t eRet;
 
@@ -920,7 +920,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_HKmacMismatch)
 	TEST_ASSERT_EQUAL(PROTO_GATEWAY_AUTH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_UnciphFailed)
+TEST(WizeCoreProto, test_Proto_ExtractExch_UnciphFailed)
 {
 	uint8_t eRet;
 
@@ -935,7 +935,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_UnciphFailed)
 	TEST_ASSERT_EQUAL(PROTO_INTERNAL_CIPH_ERR, eRet);
 }
 
-TEST(WizeCore_proto, test_Proto_ExtractExch_UnknownKid)
+TEST(WizeCoreProto, test_Proto_ExtractExch_UnknownKid)
 {
 	uint8_t eRet;
 
@@ -953,7 +953,7 @@ TEST(WizeCore_proto, test_Proto_ExtractExch_UnknownKid)
 }
 
 /******************************************************************************/
-TEST(WizeCore_proto, test_Proto_StatRxUpdate_Success)
+TEST(WizeCoreProto, test_Proto_StatRxUpdate_Success)
 {
 	sCtx.u8Size = 10;
 	sCtx.sProtoStats.u32RxNbBytes = 5;
@@ -961,7 +961,7 @@ TEST(WizeCore_proto, test_Proto_StatRxUpdate_Success)
 	TEST_ASSERT_EQUAL(15, sCtx.sProtoStats.u32RxNbBytes);
 }
 
-TEST(WizeCore_proto, test_Proto_StatsTxUpdate_Success)
+TEST(WizeCoreProto, test_Proto_StatsTxUpdate_Success)
 {
 	sCtx.u8Size = 10;
 	sCtx.sProtoStats.u32TxNbBytes = 5;
@@ -969,7 +969,7 @@ TEST(WizeCore_proto, test_Proto_StatsTxUpdate_Success)
 	TEST_ASSERT_EQUAL(15, sCtx.sProtoStats.u32TxNbBytes);
 }
 
-TEST(WizeCore_proto, test_Proto_StatsRxClear_Success)
+TEST(WizeCoreProto, test_Proto_StatsRxClear_Success)
 {
 	uint8_t *p = (uint8_t*)( &(sCtx.sProtoStats) );
 	memset(p, 0, sizeof(struct proto_stats_s));
@@ -985,7 +985,7 @@ TEST(WizeCore_proto, test_Proto_StatsRxClear_Success)
 	}
 }
 
-TEST(WizeCore_proto, test_Proto_StatsTxClear_Success)
+TEST(WizeCoreProto, test_Proto_StatsTxClear_Success)
 {
 	uint8_t *p = (uint8_t*)( &(sCtx.sProtoStats) );
 	memset(p, 0, sizeof(struct proto_stats_s));

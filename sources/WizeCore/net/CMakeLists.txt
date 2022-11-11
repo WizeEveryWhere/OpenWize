@@ -33,12 +33,16 @@ add_library(WizeCore::${MODULE_NAME} ALIAS ${MODULE_NAME})
 
 # Add unit-test(s), if any
 if(BUILD_TEST)
+
+	get_target_property(WIZECORE_PROTO_SRC_PATH WizeCore::proto SOURCE_DIR)
+	
     # Set unittest headers to mock 
     set(MOCK_LIST 
-        ${CMAKE_SOURCE_DIR}/sources/WizeCore/proto/include/proto_api.h
-        )
+        ${WIZECORE_PROTO_SRC_PATH}/include/proto_api.h
+    )
+
     # Set unittest group runner list
-    set(GRP_RUNNER_LIST WizeCore_net)
+    set(GRP_RUNNER_LIST WizeCoreNet)
     # set the DUT module
     set(DUT_MODULE ${MODULE_NAME})
     add_subdirectory(unittest)

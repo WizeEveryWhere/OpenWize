@@ -4,12 +4,13 @@
   :when_no_prototypes: :warn
   :enforce_strict_ordering: FALSE
   :plugins:
-    - :ignore
-    - :ignore_arg
-    - :expect_any_args
-    - :array
+    #- :ignore
+    - :ignore_stateless #-- cmock version required > 2.5.2
+    #- :ignore_arg
+    #- :expect_any_args
+    #- :array
     - :callback
-    - :return_thru_ptr
+    #- :return_thru_ptr
   :callback_include_count: true # include a count arg when calling the callback
   :callback_after_arg_check: false # check arguments before calling the callback
   :treat_as:
@@ -18,8 +19,11 @@
     uint32:   UINT32
     int8:     INT8
     bool:     UINT8
-  :treat_externs: :exclude  # Now the extern-ed functions will be mocked.
   :weak: __attribute__((weak))
   :verbosity: 3
   :treat_externs: :include
-  
+  :includes:
+    - FreeRTOS.h
+  :strippables:
+    - PRIVILEGED_FUNCTION 
+    - portDONT_DISCARD

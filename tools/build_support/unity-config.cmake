@@ -126,6 +126,7 @@ function(add_unittest)
     #message("xxx ${ADD_UNITTEST_NAME} : ")
     #message("     --- DUT_LINKS : ${DUT_LINKS}")
     #message("     --- DUT_INCLUDES : ${DUT_INCLUDES}")
+
     if(DUT_LINKS)
         list(LENGTH DUT_LINKS DUT_LINKS_LEN)
         #message("xxx DUT_LINKS LEN : ${DUT_LINKS_LEN}")
@@ -266,5 +267,10 @@ function(add_utest_exec )
             COMPONENT deb 
             RUNTIME DESTINATION  ${SETUP_INSTALL_PREFIX}bin 
         )
+        #get_target_property(DUT_EXE_LINKS ${ADD_UTEST_EXEC_NAME} LINK_LIBRARIES)
+        #message("xxx ADD_UTEST_EXEC_DUT             : ${ADD_UTEST_EXEC_DUT}")
+    	#message("xxx ADD_UTEST_EXEC_NAME            : ${ADD_UTEST_EXEC_NAME}")
+    	#message("xxx ADD_UTEST_EXEC_GRP_RUNNER_LIST : ${ADD_UTEST_EXEC_GRP_RUNNER_LIST}")
+        #message("xxx DUT_EXE_LINKS                  : ${DUT_EXE_LINKS}")
     endif()
 endfunction(add_utest_exec)
