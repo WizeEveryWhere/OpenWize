@@ -182,8 +182,8 @@ typedef enum {
 	ANN_INCORRECT_BCAST_START_DAY = 0x06, /**< The programmed first day for download is incorrect */
 	ANN_UPD_IN_PROGRESS           = 0x07, /**< An update is already in progress */
 	ANN_TGT_SW_VER                = 0x08, /**< The target SW version is incorrect */
-	ANN_TGT_VER_DWL               = 0x09, /**<  */
-	ANN_DIFF_TIME_OUT_OF_WINDOWS  = 0x0A, /**<  */
+	ANN_TGT_VER_DWL               = 0x09, /**< The target is already download */
+	ANN_DIFF_TIME_OUT_OF_WINDOWS  = 0x0A, /**< The diffusion time is out of windows */
 } admin_ann_err_code_e;
 
 /*!
@@ -245,7 +245,6 @@ typedef struct {
 	uint8_t L7ConcentId[6];   /**<  */
 	uint8_t L7ModemId;        /**<  */
 	uint8_t L7RssiUpstream;   /**<  */
-	uint8_t L7RssiDownstream; /**<  */
 } inst_pong_t;
 
 /******************************************************************************/
@@ -258,6 +257,19 @@ typedef enum
 	RSP_READY,        /**< Response is ready  */
 	RSP_ALREADY_DONE, /**< Response is ready, action has already be done */
 } admin_rsp_status_e;
+
+/*!
+ * @brief This struct define the FW info given by admin ann_download
+ */
+typedef struct
+{
+	uint16_t u16SwVerIni; /**< The expected initial SW version  */
+	uint16_t u16SwVerTgt; /**< The target SW version */
+	uint16_t u16DcHwId;   /**< The expected HW version */
+	uint16_t u16BlkCnt;   /**< The number of block to download */
+	uint32_t u32HashSW;   /**< The Hash computed on the entire downloaded SW */
+} admin_ann_fw_info_t;
+
 
 /*!
  * @brief This enumeration define

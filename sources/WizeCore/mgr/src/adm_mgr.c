@@ -34,31 +34,29 @@ extern "C" {
 
 #include "adm_mgr.h"
 
-#include "rtos_macro.h"
-
-/*!
- * @cond INTERNAL
- * @{
- */
-SYS_MUTEX_CREATE_DEF(admmgr);
-
-static void _adm_mgr_ini_(struct ses_ctx_s *pCtx);
-static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
-
-/******************************************************************************/
-#define SES_NAME "ADM"
-#define ADM_MGR_EXP_TIMEOUT_MSK 0x10
-/*!
- * @}
- * @endcond
- */
-
 /*!
  * @addtogroup wize_admin_mgr
  * @{
  *
  */
 
+/******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+#define SES_NAME "ADM"
+
+static void _adm_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl);
+static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
+
+/*!
+ * @}
+ * @endcond
+ */
+
+/******************************************************************************/
 /*!
  * @brief This function initialize the session context
  * @param [in] pCtx    Pointer in the current context
@@ -67,34 +65,42 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
  */
 void AdmMgr_Setup(struct ses_ctx_s *pCtx)
 {
+	struct adm_mgr_ctx_s *pPrvCtx;
 	assert(pCtx);
-	pCtx->hMutex = SYS_MUTEX_CREATE_CALL(admmgr);
-	assert(pCtx->hMutex);
+	pPrvCtx = (struct adm_mgr_ctx_s*)pCtx->pPrivate;
+	assert(pPrvCtx);
+	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
+
 	pCtx->ini = _adm_mgr_ini_;
 	pCtx->fsm = _adm_mgr_fsm_;
 	pCtx->eState = SES_STATE_DISABLE;
 	pCtx->eType = SES_ADM;
-	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
+
+	pPrvCtx->sRspMsg.pData = pPrvCtx->aSendBuff;
+	pPrvCtx->sCmdMsg.pData = pPrvCtx->aRecvBuff;
+	pPrvCtx->sDataMsg.pData = pPrvCtx->aDataBuff;
 }
 
+/******************************************************************************/
 /*!
  * @static
  * @brief Initialize the fsm internal private context
  *
  * @param [in] pCtx    Pointer in the current context
+ * @param [in] bCtrl   Enable / Disable the Session
  *
  * @return      None
  */
-static void _adm_mgr_ini_(struct ses_ctx_s *pCtx)
+static void _adm_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl)
 {
 	struct adm_mgr_ctx_s *pPrvCtx;
 	assert(pCtx);
 	pPrvCtx = (struct adm_mgr_ctx_s*)pCtx->pPrivate;
 	assert(pPrvCtx);
-	pPrvCtx->sRspMsg.pData = pPrvCtx->aSendBuff;
-	pPrvCtx->sCmdMsg.pData = pPrvCtx->aRecvBuff;
-	pPrvCtx->u8Pending = 0;
-	pCtx->eState = SES_STATE_IDLE;
+
+	pPrvCtx->u8ByPassCmd = 0;
+	pPrvCtx->u8Pending = ADM_RSP_NONE;
+	pCtx->eState = (bCtrl)?(SES_STATE_IDLE):(SES_STATE_DISABLE);
 }
 
 /*!
@@ -105,13 +111,13 @@ static void _adm_mgr_ini_(struct ses_ctx_s *pCtx)
  * @param [in] u32Evt Input event from outside (see ses_evt_e)
  *
  * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
- * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
- * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
- * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
+ * @retval SES_FLG_ADM_ERROR (see @link ses_flag_e::SES_FLG_ADM_ERROR @endlink)
+ * @retval SES_FLG_ADM_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
+ * @retval SES_FLG_ADM_TIMEOUT (see @link ses_flag_e::SES_FLG_ADM_TIMEOUT @endlink)
  * @retval SES_FLG_DATA_SENT (see @link ses_flag_e::SES_FLG_DATA_SENT @endlink)
  * @retval SES_FLG_RSP_SENT (see @link ses_flag_e::SES_FLG_RSP_SENT @endlink)
  * @retval SES_FLG_CMD_RECV (see @link ses_flag_e::SES_FLG_CMD_RECV @endlink)
- * @retval SES_FLG_OUT_DATE (see @link ses_flag_e::SES_FLG_OUT_DATE @endlink)
+ * @retval SES_FLG_ADM_OUT_DATE (see @link ses_flag_e::SES_FLG_ADM_OUT_DATE @endlink)
  *
  */
 static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
@@ -122,11 +128,12 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 
 	ePrevState = pCtx->eState;
 
-	if (u32Evt & SES_EVT_CLOSE)
+	if (u32Evt & SES_EVT_ADM_CANCEL)
 	{
 		TimeEvt_TimerStop(&pCtx->sTimeEvt);
 		pCtx->eState = SES_STATE_IDLE;
-		u32BackEvt = SES_FLG_COMPLETE;
+		pPrvCtx->u8ByPassCmd = 0;
+		u32BackEvt = SES_FLG_ADM_COMPLETE;
 	}
 
 	if (u32Evt & SES_EVT_ADM_READY)
@@ -137,24 +144,24 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 	switch(pCtx->eState)
 	{
 		case SES_STATE_DISABLE:
+			pPrvCtx->u8ByPassCmd = 0;
 			break;
-		case SES_STATE_IDLE: // From SES_STATE_IDLE : SES_FLG_ERROR, SES_FLG_NONE
-			if (u32Evt & SES_EVT_OPEN)
+		case SES_STATE_IDLE: // From SES_STATE_IDLE : SES_FLG_ADM_ERROR
+			if (u32Evt & SES_EVT_ADM_OPEN)
 			{
-				pPrvCtx->u8ByPassCmd = 0;
 				pPrvCtx->u8Pending = ADM_RSP_NONE;
 				// send DATA
 				if ( NetMgr_Send( &(pPrvCtx->sDataMsg), 1000 ) )
 				{
 					// failed, go back into IDLE
 					pCtx->eState = SES_STATE_IDLE;
-					u32BackEvt = SES_FLG_ERROR;
+					u32BackEvt = SES_FLG_ADM_ERROR;
 					break;
 				}
 				pCtx->eState = SES_STATE_SENDING;
 			}
 			break;
-		case SES_STATE_WAITING_RX_DELAY: // From SES_STATE_WAITING_RX_DELAY : SES_FLG_ERROR, SES_FLG_SUCCESS
+		case SES_STATE_WAITING_RX_DELAY: // From SES_STATE_WAITING_RX_DELAY : SES_FLG_ADM_ERROR, SES_FLG_NONE
 			if (u32Evt & SES_EVT_ADM_DELAY_EXPIRED)
 			{
 				if (!pPrvCtx->u8ByPassCmd)
@@ -163,7 +170,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					if ( NetMgr_Listen(&(pPrvCtx->sCmdMsg), 5*pPrvCtx->u8ExchRxLength, NET_LISTEN_TYPE_DETECT) )
 					{
 						pCtx->eState = SES_STATE_IDLE;
-						u32BackEvt = SES_FLG_ERROR;
+						u32BackEvt = SES_FLG_ADM_ERROR;
 						break;
 					}
 					pCtx->eState = SES_STATE_LISTENING;
@@ -174,7 +181,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				}
 			}
 			break;
-		case SES_STATE_LISTENING: // From SES_STATE_LISTENING : SES_FLG_ERROR, SES_FLG_NONE, SES_FLG_TIMEOUT
+		case SES_STATE_LISTENING: // From SES_STATE_LISTENING : SES_FLG_ADM_ERROR, SES_FLG_NONE, SES_FLG_ADM_TIMEOUT
 			if(u32Evt & SES_EVT_RECV_DONE)
 			{
 				u32BackEvt |= SES_FLG_CMD_RECV;
@@ -192,7 +199,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 							))
 					{
 						pCtx->eState = SES_STATE_IDLE;
-						u32BackEvt = SES_FLG_ERROR;
+						u32BackEvt = SES_FLG_ADM_ERROR;
 						break;
 					}
 				}
@@ -207,7 +214,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 							))
 					{
 						pCtx->eState = SES_STATE_IDLE;
-						u32BackEvt = SES_FLG_ERROR;
+						u32BackEvt = SES_FLG_ADM_ERROR;
 						break;
 					}
 				}
@@ -217,10 +224,10 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 			if (u32Evt & SES_EVT_TIMEOUT)
 			{
 				pCtx->eState = SES_STATE_IDLE;
-				u32BackEvt |= SES_FLG_TIMEOUT;
+				u32BackEvt |= SES_FLG_ADM_TIMEOUT;
 			}
 			break;
-		case SES_STATE_WAITING_TX_DELAY: // From SES_STATE_WAITING_TX_DELAY : SES_FLG_ERROR, SES_FLG_OUT_DATE
+		case SES_STATE_WAITING_TX_DELAY: // From SES_STATE_WAITING_TX_DELAY : SES_FLG_ADM_ERROR, SES_FLG_ADM_OUT_DATE
 			if (u32Evt & SES_EVT_ADM_DELAY_EXPIRED)
 			{
 				// Check if response is ready to be send
@@ -231,7 +238,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					{
 						// fail to send
 						pCtx->eState = SES_STATE_IDLE;
-						u32BackEvt = SES_FLG_ERROR;
+						u32BackEvt = SES_FLG_ADM_ERROR;
 						break;
 					}
 					pCtx->eState = SES_STATE_SENDING;
@@ -242,11 +249,11 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				{
 					pCtx->eState = SES_STATE_IDLE;
 					LOG_INF("RSP out of date\n");
-					u32BackEvt |= SES_FLG_OUT_DATE;
+					u32BackEvt |= SES_FLG_ADM_OUT_DATE;
 				}
 			}
 			break;
-		case SES_STATE_SENDING: // From SES_STATE_SENDING : SES_FLG_ERROR, SES_FLG_NONE, SES_FLG_RSP_SENT, SES_FLG_DATA_SENT, SES_FLG_TIMEOUT
+		case SES_STATE_SENDING: // From SES_STATE_SENDING : SES_FLG_ADM_ERROR, SES_FLG_NONE, SES_FLG_RSP_SENT, SES_FLG_DATA_SENT, SES_FLG_ADM_TIMEOUT
 			if (u32Evt & SES_EVT_SEND_DONE)
 			{
 				// if pending response
@@ -270,7 +277,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 								))
 						{
 							pCtx->eState = SES_STATE_IDLE;
-							u32BackEvt = SES_FLG_ERROR;
+							u32BackEvt = SES_FLG_ADM_ERROR;
 						}
 						else
 						{
@@ -289,7 +296,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 			if (u32Evt & SES_EVT_TIMEOUT)
 			{
 				pCtx->eState = SES_STATE_IDLE;
-				u32BackEvt |= SES_FLG_TIMEOUT;
+				u32BackEvt |= SES_FLG_ADM_TIMEOUT | SES_FLG_ADM_ERROR;
 				LOG_WRN("Send Timeout\n");
 			}
 			break;
@@ -302,7 +309,8 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 		LOG_DBG(SES_NAME" : %s\n", _ses_state_str_[pCtx->eState]);
 		if (pCtx->eState == SES_STATE_IDLE)
 		{
-			u32BackEvt |= SES_FLG_COMPLETE;
+			pPrvCtx->u8ByPassCmd = 0;
+			u32BackEvt |= SES_FLG_ADM_COMPLETE;
 		}
 	}
 	return u32BackEvt;

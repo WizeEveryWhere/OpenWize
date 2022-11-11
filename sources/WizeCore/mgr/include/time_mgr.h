@@ -27,11 +27,6 @@
   *
   */
 
-/*!
- * @addtogroup wize_time_mgr
- * @{
- *
- */
 #ifndef _TIME_MGR_H_
 #define _TIME_MGR_H_
 #ifdef __cplusplus
@@ -40,11 +35,30 @@ extern "C" {
 
 #include <stddef.h>
 #include <stdint.h>
-#include <string.h>
-#include <limits.h>
 
-#include "time_evt.h"
 /******************************************************************************/
+/*!
+ * @addtogroup wize_time_mgr
+ * @{
+ *
+ */
+
+/******************************************************************************/
+/*!
+ * @brief This enum define the time manager return flags
+ */
+typedef enum
+{
+	TIME_FLG_NONE          = 0x00, /*!< Nothing */
+	// ---
+	TIME_FLG_CLOCK_ADJ     = 0x01, /*!< The current clock has been set */
+	TIME_FLG_OFFSET_ADJ    = 0x02, /*!< The current clock has been adjusted with offset */
+	TIME_FLG_DRIFT_ADJ     = 0x03, /*!< The current clock has been adjusted with drift */
+	// ---
+	TIME_FLG_CLOCK_CHANGE  = 0x10, /*!< The CLOCK parameter change has been took into account */
+	TIME_FLG_OFFSET_CHANGE = 0x20, /*!< The OFFSET parameter change has been took into account */
+	TIME_FLG_DRIFT_CHANGE  = 0x40, /*!< The DRIFT parameter change has been took into account */
+} time_flg_e;
 
 /*!
  * @brief This struct define the time update context
@@ -72,16 +86,22 @@ struct time_upd_s
 	}state_;
 } ;
 
-extern void _time_wakeup_enable(void);
-extern void _time_wakeup_reload(void);
-extern void _time_wakeup_force(void);
-extern void _time_update_set_handler(pfTimeEvt_HandlerCB_t const pfCb);
+typedef struct
+{
+	uint32_t u32Epoch;
+	uint32_t u32OffsetToUnix;
+	uint32_t *pCurEpoch;
+	uint16_t *pCurOffset;
+	uint16_t *pCurDrift;
+	struct time_upd_s *pTimeUpd;
+} time_upd_ctx_t;
 
-void TimeMgr_Setup(struct time_upd_s *pTimeUpdCtx);
+uint32_t TimeMgr_Main(time_upd_ctx_t *pCtx, uint8_t bNewDay);
+
+
+/*! @} */
 
 #ifdef __cplusplus
 }
 #endif
 #endif /* _TIME_MGR_H_ */
-
-/*! @} */

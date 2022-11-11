@@ -71,12 +71,22 @@ struct ping_reply_config_s{
 	uint8_t AutoAdj_Rssi;   /*!< Clock and Frequency Offset Auto-Adjustment received frame RSSI min.*/
 };
 
+
+/*!
+ * @brief This struct defines the ping_reply element
+ */
+typedef struct {
+	uint8_t GatewayId[6];   /**< The gateway Id (big endian) */
+	uint8_t ModemId;        /**< The modem Id */
+	uint8_t RssiUpstream;   /**< The upstream RSSI */
+	uint8_t RssiDownstream; /**< The downstream RSSI (of the received frame) */
+} ping_reply_t;
 /*!
  * @brief This struct defines the ping_reply element list.
  */
 typedef struct ping_reply_list_s{
 	struct ping_reply_list_s *pNext; /*!< Pointer on the next element */
-	inst_pong_t xPingReply;          /*!< Content values of the received pong */
+	ping_reply_t xPingReply;         /*!< Content values of the received pong */
 	uint32_t u32RecvEpoch;           /*!< Pong Reception Epoch */
 	uint32_t u32PongEpoch;           /*!< Pong Send Epoch */
 	int16_t i16PongFreqOff;          /*!< Pong Frequency offset */
@@ -95,7 +105,7 @@ struct ping_reply_ctx_s
 	struct ping_reply_config_s sPingReplyConfig;      /*!< ping_reply configuration */
 };
 
-void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg);
+inst_ping_t InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx);
 uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx);
 void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pxNetMsg);
 

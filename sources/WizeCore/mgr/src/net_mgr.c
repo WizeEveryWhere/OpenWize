@@ -465,8 +465,10 @@ int32_t NetMgr_ListenReady(void)
 	eStatus = NET_STATUS_BUSY;
 
 #ifdef NET_MGR_OWNER_IS_CALLER
-	// check if caller own the NetMgr mutex
+		// check if caller own the NetMgr mutex
 	if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+#else
+	if( sWizeCtx.hCaller == xTaskGetCurrentTaskHandle( ) )
 #endif
 	{
 		xTaskNotify(sWizeCtx.hTask, _NET_MGR_REARM_LISTEN_, eSetBits);

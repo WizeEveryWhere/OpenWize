@@ -45,6 +45,8 @@ extern "C" {
 #include <stddef.h>
 #include <string.h>
 #include <time.h>
+#include <machine/endian.h>
+
 /*
  * Note : The ping_reply_list_t is a linked list organization as follow :
  *
@@ -83,14 +85,13 @@ extern "C" {
   * @brief This function initialize the ping_reply context
   *
   * @param [in,out] ping_reply_ctx Pointer on the current context
-  * @param [in,out] pNetMsg        Pointer on ping message to send
   *
-  * @return  None
+  * @return  The inst_ping message to send
   */
-void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
+inst_ping_t InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx)
 {
 	uint8_t idx;
-	inst_ping_t *pInstPing = (inst_ping_t*)pNetMsg->pData;
+	inst_ping_t sInstPing;
 	ping_reply_ctx->u8NbPong = 0;
 
 	// set the first in table as the "best" one (arbitrary)
@@ -106,8 +107,8 @@ void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 		// clear content values
 		memset(&(ping_reply_ctx->aPingReplyList[idx].xPingReply), 0, 7);
 		// set all to the "worst" value (0 represent the worst rssi -147.5 dBm )
-		ping_reply_ctx->aPingReplyList[idx].xPingReply.L7RssiUpstream = 0;
-		ping_reply_ctx->aPingReplyList[idx].xPingReply.L7RssiDownstream = 0;
+		ping_reply_ctx->aPingReplyList[idx].xPingReply.RssiUpstream = 0;
+		ping_reply_ctx->aPingReplyList[idx].xPingReply.RssiDownstream = 0;
 		ping_reply_ctx->aPingReplyList[idx].u32RecvEpoch = 0;
 		ping_reply_ctx->aPingReplyList[idx].u32PongEpoch = 0;
 		ping_reply_ctx->aPingReplyList[idx].i16PongFreqOff = 0;
@@ -118,20 +119,15 @@ void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 		}
 	}
 	// prepare the ping message
-	//Param_Access(RF_UPLINK_CHANNEL, (uint8_t*)&(pInstPing->L7DownChannel), 0);
-	//Param_Access(RF_UPLINK_MOD, (uint8_t*)&(pInstPing->L7DownMod), 0);
-	Param_Access(RF_DOWNLINK_CHANNEL, (uint8_t*)&(pInstPing->L7DownChannel), 0);
-	Param_Access(RF_DOWNLINK_MOD, (uint8_t*)&(pInstPing->L7DownMod), 0);
-	Param_Access(PING_RX_DELAY, (uint8_t*)&(pInstPing->L7PingRxDelay), 0);
-	Param_Access(PING_RX_LENGTH, (uint8_t*)&(pInstPing->L7PingRxLength), 0);
-	pNetMsg->u8Size = 4;
-	pNetMsg->u16Id++;
-	pNetMsg->u8KeyId = 0;
-	pNetMsg->u8Type = APP_INSTALL;
+	Param_Access(RF_DOWNLINK_CHANNEL, (uint8_t*)&(sInstPing.L7DownChannel), 0);
+	Param_Access(RF_DOWNLINK_MOD, (uint8_t*)&(sInstPing.L7DownMod), 0);
+	Param_Access(PING_RX_DELAY, (uint8_t*)&(sInstPing.L7PingRxDelay), 0);
+	Param_Access(PING_RX_LENGTH, (uint8_t*)&(sInstPing.L7PingRxLength), 0);
 
 	time_t t;
 	time(&t);
 	ping_reply_ctx->u32PingEpoch = t - EPOCH_UNIX_TO_OURS;// TODO : time take stack but doesn't release it
+	return sInstPing;
 }
 
 /*!
@@ -144,7 +140,7 @@ void InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
   */
 void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 {
-	// warning RSSI => 0 : best; 255 : worst
+	// warning RSSI => 255 : best; 0 : worst
 	uint8_t idx;
 	time_t t;
 	ping_reply_list_t *pCurrent;
@@ -161,7 +157,7 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 		if ( memcmp( (void*)&(ping_reply_ctx->aPingReplyList[idx].xPingReply), (void*)(pNetMsg->pData), 7) == 0 )
 		{
 			// The couple Concentrator,MLAN is already in the list
-			// ...should never happened : 1 pong per K-MLAN
+			// ...should never happened : 1 pong per Gateway-MLAN
 			return;
 		}
 	}
@@ -170,7 +166,7 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 	pCurrent = ping_reply_ctx->pWorst;
 
 	// check if we must drop the new entry
-	if (pNetMsg->u8Rssi < pCurrent->xPingReply.L7RssiDownstream)
+	if (pNetMsg->u8Rssi < pCurrent->xPingReply.RssiDownstream)
 	{
 		// the new entry RSSI is worst than worst, so drop it
 		return;
@@ -179,12 +175,12 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 	// find the right "place/position" to insert the new entry
 	while (pCurrent != ping_reply_ctx->pBest)
 	{
-		if (pNetMsg->u8Rssi >= pCurrent->pNext->xPingReply.L7RssiDownstream)
+		if (pNetMsg->u8Rssi >= pCurrent->pNext->xPingReply.RssiDownstream)
 		{
 			// go to the next
 			pCurrent = pCurrent->pNext;
 		}
-		else // pNetMsg->u8Rssi > pCurrent->pNext->xPingReply.L7RssiDownstream
+		else // pNetMsg->u8Rssi > pCurrent->pNext->xPingReply.RssiDownstream
 		{
 			break;
 		}
@@ -197,7 +193,7 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 
 	// fill the new one
 	memcpy(&(pNew->xPingReply), pNetMsg->pData, 8);
-	pNew->xPingReply.L7RssiDownstream = pNetMsg->u8Rssi;
+	pNew->xPingReply.RssiDownstream = pNetMsg->u8Rssi;
     time(&t);
 	pNew->u32RecvEpoch = t - EPOCH_UNIX_TO_OURS;
 	pNew->u32PongEpoch = pNetMsg->u32Epoch;
@@ -219,8 +215,7 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
   *
   * @param [in,out] ping_reply_ctx Pointer on the current context
   *
-  * @retval  0 : no pong received
-  * @retval  1 : at least one pong has been received
+  * @return  The number of received pong
   */
 uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx)
 {
@@ -230,7 +225,7 @@ uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx)
 	{
 		uint32_t tmp;
 		uint32_t diff_time;
-		if(ping_reply_ctx->pBest->xPingReply.L7RssiDownstream > ping_reply_ctx->sPingReplyConfig.AutoAdj_Rssi)
+		if(ping_reply_ctx->pBest->xPingReply.RssiDownstream > ping_reply_ctx->sPingReplyConfig.AutoAdj_Rssi)
 		{
 			if (ping_reply_ctx->sPingReplyConfig.AutoClk)
 			{
@@ -257,12 +252,9 @@ uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx)
 		tmp = __htonl(ping_reply_ctx->u32PingEpoch);
 		Param_Access(PING_LAST_EPOCH, (uint8_t*)&(tmp), 1);
 		Param_Access(PING_NBFOUND, (uint8_t*)&(ping_reply_ctx->u8NbPong), 1);
-		return 0;
+
 	}
-	else
-	{
-		return 1;
-	}
+	return ping_reply_ctx->u8NbPong;
 }
 
 #ifdef __cplusplus

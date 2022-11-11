@@ -33,31 +33,31 @@ extern "C" {
 
 #include "dwn_mgr.h"
 
-#include "rtos_macro.h"
-
-/*!
- * @cond INTERNAL
- * @{
- */
-SYS_MUTEX_CREATE_DEF(dwnmgr);
-
-static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx);
-static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
-
-static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx);
-/******************************************************************************/
-#define SES_NAME "DWN"
-/*!
- * @}
- * @endcond
- */
-
 /*!
  * @addtogroup wize_dwn_mgr
  * @{
  *
  */
 
+/******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+#define SES_NAME "DWN"
+
+static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl);
+static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
+
+static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx);
+
+/*!
+ * @}
+ * @endcond
+ */
+
+/******************************************************************************/
 /*!
  * @brief This function initialize the session context
  * @param [in] pCtx    Pointer in the current context
@@ -66,30 +66,33 @@ static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx);
  */
 void DwnMgr_Setup(struct ses_ctx_s *pCtx)
 {
+	struct dwn_mgr_ctx_s *pPrvCtx;
 	assert(pCtx);
-	pCtx->hMutex = SYS_MUTEX_CREATE_CALL(dwnmgr);
-	assert(pCtx->hMutex);
+	pPrvCtx = (struct dwn_mgr_ctx_s*)pCtx->pPrivate;
+	assert(pPrvCtx);
+
 	pCtx->ini = _dwn_mgr_ini_;
 	pCtx->fsm = _dwn_mgr_fsm_;
 	pCtx->eState = SES_STATE_DISABLE;
 	pCtx->eType = SES_DWN;
+
+	pPrvCtx->sRecvMsg.pData = pPrvCtx->aRecvBuff;
 }
 
+/******************************************************************************/
 /*!
  * @static
  * @brief Initialize the fsm internal private context
  *
  * @param [in] pCtx    Pointer in the current context
+ * @param [in] bCtrl   Enable / Disable the Session
  *
  * @return      None
  */
-static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx)
+static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl)
 {
-	struct dwn_mgr_ctx_s *pPrvCtx;
 	assert(pCtx);
-	pPrvCtx = (struct dwn_mgr_ctx_s*)pCtx->pPrivate;
-	pPrvCtx->sRecvMsg.pData = pPrvCtx->aRecvBuff;
-	pCtx->eState = SES_STATE_IDLE;
+	pCtx->eState = (bCtrl)?(SES_STATE_IDLE):(SES_STATE_DISABLE);
 }
 
 /*!
@@ -100,10 +103,11 @@ static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx)
  * @param [in] u32Evt  Input event from outside (see ses_evt_e)
  *
  * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
- * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
- * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
- * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
+ * @retval SES_FLG_DWN_ERROR (see @link ses_flag_e::SES_FLG_DWN_ERROR @endlink)
+ * @retval SES_FLG_DWN_COMPLETE (see @link ses_flag_e::SES_FLG_DWN_COMPLETE @endlink)
+ * @retval SES_FLG_DWN_TIMEOUT (see @link ses_flag_e::SES_FLG_DWN_TIMEOUT @endlink)
  * @retval SES_FLG_BLK_RECV (see @link ses_flag_e::SES_FLG_BLK_RECV @endlink)
+ * @retval SES_FLG_DWN_OUT_DATE (see @link ses_flag_e::SES_FLG_DWN_OUT_DATE @endlink)
  */
 static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 {
@@ -113,11 +117,11 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 
 	ePrevState = pCtx->eState;
 
-	if (u32Evt & SES_EVT_CLOSE)
+	if (u32Evt & SES_EVT_DWN_CANCEL)
 	{
 		TimeEvt_TimerStop(&pCtx->sTimeEvt);
 		pCtx->eState = SES_STATE_IDLE;
-		u32BackEvt = SES_FLG_COMPLETE;
+		u32BackEvt = SES_FLG_DWN_COMPLETE;
 	}
 
 	if (u32Evt & SES_EVT_DWN_READY)
@@ -129,14 +133,14 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 	{
 		case SES_STATE_DISABLE:
 			break;
-		case SES_STATE_IDLE:  // From SES_STATE_IDLE : SES_FLG_ERROR, SES_FLG_NONE
-			if (u32Evt & SES_EVT_OPEN)
+		case SES_STATE_IDLE:  // From SES_STATE_IDLE : SES_FLG_DWN_ERROR, SES_FLG_NONE
+			if (u32Evt & SES_EVT_DWN_OPEN)
 			{
 				int32_t i32NextBlkOffset = _dwn_mgr_adjustInit_(pPrvCtx);
 				if ( i32NextBlkOffset < 0 )
 				{
 					// no more block in this day and/or no more day available
-					u32BackEvt = SES_FLG_COMPLETE;
+					u32BackEvt = SES_FLG_DWN_COMPLETE;
 					break;
 				}
 
@@ -152,13 +156,13 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					)
 				{
 					// failed
-					u32BackEvt = SES_FLG_COMPLETE | SES_FLG_ERROR;
+					u32BackEvt = SES_FLG_DWN_COMPLETE | SES_FLG_DWN_ERROR;
 					break;
 				}
 				pCtx->eState = SES_STATE_WAITING;
 			}
 			break;
-		case SES_STATE_WAITING:  // From SES_STATE_WAITING : SES_FLG_ERROR, SES_FLG_NONE
+		case SES_STATE_WAITING:  // From SES_STATE_WAITING : SES_FLG_DWN_ERROR, SES_FLG_NONE
 			// Start New day
 			if (u32Evt & SES_EVT_DWN_DELAY_EXPIRED)
 			{
@@ -171,13 +175,13 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 						))
 				{
 					pCtx->eState = SES_STATE_IDLE;
-					u32BackEvt = SES_FLG_ERROR;
+					u32BackEvt = SES_FLG_DWN_ERROR;
 					break;
 				}
 				pCtx->eState = SES_STATE_WAITING_RX_DELAY;
 			}
-			//break;
-		case SES_STATE_WAITING_RX_DELAY:  // From SES_STATE_WAITING_RX_DELAY : SES_FLG_ERROR, SES_FLG_SUCCESS
+			break;
+		case SES_STATE_WAITING_RX_DELAY:  // From SES_STATE_WAITING_RX_DELAY : SES_FLG_DWN_ERROR
 			if (u32Evt & SES_EVT_DWN_DELAY_EXPIRED)
 			{
 				// check if there are remaining block in this day
@@ -188,15 +192,16 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					if ( NetMgr_SetDwlink(pPrvCtx->u8ChannelId, pPrvCtx->u8ModulationId))
 					{
 						// failed
-						u32BackEvt = SES_FLG_ERROR;
+						u32BackEvt = SES_FLG_DWN_ERROR;
 					}
 					else
 					{
 						// Listen					
 						if ( NetMgr_Listen(&(pPrvCtx->sRecvMsg), 1000*pPrvCtx->u8DownRxLength, NET_LISTEN_TYPE_ONE) )
 						{
-							pCtx->eState = SES_STATE_IDLE;
-							u32BackEvt = SES_FLG_ERROR;
+							// failed : keep it under WAITIN_RX_DELAY to try for the next block
+							//pCtx->eState = SES_STATE_IDLE;
+							u32BackEvt = SES_FLG_DWN_ERROR;
 							break;
 						}
 						pCtx->eState = SES_STATE_LISTENING;
@@ -222,7 +227,7 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 								))
 						{
 							pCtx->eState = SES_STATE_IDLE;
-							u32BackEvt = SES_FLG_ERROR;
+							u32BackEvt = SES_FLG_DWN_ERROR;
 							break;
 						}
 						pCtx->eState = SES_STATE_WAITING;
@@ -231,12 +236,11 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					{
 						// Session is done
 						pCtx->eState = SES_STATE_IDLE;
-						u32BackEvt |= SES_FLG_SUCCESS;
 					}
 				}
 			}
 			break;
-		case SES_STATE_LISTENING:  // From SES_STATE_LISTENING : SES_FLG_BLK_RECV, SES_FLG_NONE, SES_FLG_TIMEOUT
+		case SES_STATE_LISTENING:  // From SES_STATE_LISTENING : SES_FLG_BLK_RECV, SES_FLG_NONE, SES_FLG_DWN_OUT_DATE, SES_FLG_DWN_TIMEOUT
 			// A block is received
 			if (u32Evt & SES_EVT_RECV_DONE)
 			{
@@ -247,6 +251,10 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					pPrvCtx->u8Pending = 1;
 					LOG_DBG("DWN BLOCK %x received\n", pPrvCtx->sRecvMsg.u16Id);
 				}
+				else
+				{
+					u32BackEvt |= SES_FLG_DWN_OUT_DATE;
+				}
 				pCtx->eState = SES_STATE_WAITING_RX_DELAY;
 			}
 
@@ -255,12 +263,8 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 			{
 				// Normally, timer for "days" or "delta sec" is still running
 				pCtx->eState = SES_STATE_WAITING_RX_DELAY;
-				u32BackEvt |= SES_FLG_TIMEOUT;
+				u32BackEvt |= SES_FLG_DWN_TIMEOUT;
 			}
-			// case last block and last day
-			//pCtx->eState = SES_STATE_IDLE;
-			//u32BackEvt = SES_FLG_COMPLETE;
-
 			break;
 		default:
 			break;
@@ -271,12 +275,13 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 		LOG_DBG(SES_NAME" : %s\n", _ses_state_str_[pCtx->eState]);
 		if (pCtx->eState == SES_STATE_IDLE)
 		{
-			u32BackEvt |= SES_FLG_COMPLETE;
+			u32BackEvt |= SES_FLG_DWN_COMPLETE;
 		}
 	}
 	return u32BackEvt;
 }
 
+/******************************************************************************/
 /*!
  * @static
  * @brief This function adjust context parameters in case download windows has
@@ -296,7 +301,7 @@ static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx)
 
 	time(&currentEpoch);
 
-	pCtx->_u8DayCount = pCtx->u8DayRepeat;
+	pCtx->_u8DayCount = pCtx->u8DayRepeat -1;
 	pCtx->_u32DayNext = pCtx->u32DaysProg;
 	pCtx->_u16BlocksCount = pCtx->u16BlocksCount;
 

@@ -72,7 +72,7 @@ struct inst_mgr_ctx_s
     uint8_t aRecvBuff[RECV_BUFFER_SZ]; /**< Buffer that hold the received frame */
     uint8_t aSendBuff[SEND_BUFFER_SZ]; /**< Buffer that hold the frame to send*/
 
-	uint8_t u8InstRxLength;            /**< Install reception window length ([1s; 255s]) */
+    uint8_t u8InstRxLength;            /**< Install reception window length ([1s; 255s]) */
 	uint8_t u8InstRxDelay;             /**< Opening reception window delay ([1s; 255s]) */
 
 	uint8_t u8Pending;                 /**< Received message is pending  */

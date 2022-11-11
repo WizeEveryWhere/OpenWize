@@ -1,6 +1,6 @@
 /**
-  * @file dwn_mgr.h
-  * @brief This file declare functions to use the Download session Manager
+  * @file: ses_dispatcher.h
+  * @brief This file define the session dispatcher structures
   * 
   * @details
   *
@@ -21,88 +21,62 @@
   *
   * @par Revision history
   *
-  * @par 1.0.0 : 2020/09/04[GBI]
+  * @par 1.0.0 : 2020/11/22[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @addtogroup wize_dwn_mgr
+ * @addtogroup wize_app
  * @{
  *
  */
-
-#ifndef _DWN_MGR_H_
-#define _DWN_MGR_H_
-
+#ifndef _SES_DISPATCHER_H_
+#define _SES_DISPATCHER_H_
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <stddef.h>
-#include <stdint.h>
-
 #include "ses_common.h"
 
 /******************************************************************************/
-
 /*!
- * @cond INTERNAL
- * @{
+ * @brief This enumeration define
  */
-#undef RECV_BUFFER_SZ
-#define RECV_BUFFER_SZ 210 // L7: 210; L6: 8 ; L2: 38
-/*!
- * @}
- * @endcond
- */
-
-/*!
- * @brief This struct defines the download manager internal context.
- */
-struct dwn_mgr_ctx_s
+typedef enum
 {
-	net_msg_t sRecvMsg;
+	SES_DISP_STATE_DISABLE,
+	SES_DISP_STATE_ENABLE,
+} ses_disp_state_e;
 
-    uint8_t aRecvBuff[RECV_BUFFER_SZ]  __attribute__ ((aligned (8)));
+/*!
+ * @brief This struct defines the session dispatcher context.
+ */
+struct ses_disp_ctx_s
+{
+	void *hTask;
+	struct ses_ctx_s sSesCtx[SES_NB];
+	struct ses_ctx_s *pActive;
 
+	ses_disp_state_e eState;
 
-    uint32_t u32DaysProg;
-	uint8_t  u8DayRepeat;
-	uint8_t  u8DeltaSec; // [ 5s @WM4800, 10s @WM2400; 255s]
-	uint16_t u16BlocksCount;
+	uint32_t u32InstDurationMs;
+	uint32_t u32DataDurationMs;
+	uint32_t u32CmdDurationMs;
+	uint32_t u32RspDurationMs;
 
-
-    uint8_t u8ChannelId;
-	uint8_t u8ModulationId;
-
-
-    uint8_t u8DownRxLength;     // [0.5s/1s; 255s]
-
-
-	uint8_t u8Pending;
-
-
-	uint32_t u32InitDelayMin;
-
-	uint32_t _u32DayNext;
-	uint16_t _u16BlocksCount;
-	uint8_t  _u8DayCount;
-
-
-	uint32_t _u32NextBlkDelay;
-
-	uint32_t _u32RemainInDay;
-	uint32_t _u32RemainInBlock;
-
+	uint32_t forbidden_msk;
+	uint8_t u8ActiveSes;
 };
 
-void DwnMgr_Setup(struct ses_ctx_s *pCtx);
+void SesDisp_Setup(struct ses_disp_ctx_s *pCtx);
+void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bEnable);
+uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event);
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* _DWN_MGR_H_ */
+#endif /* _SES_DISPATCHER_H_ */
 
 /*! @} */

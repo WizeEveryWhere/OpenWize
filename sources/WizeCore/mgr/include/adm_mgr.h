@@ -53,10 +53,10 @@ extern "C" {
  */
 
 #undef RECV_BUFFER_SZ
-#define RECV_BUFFER_SZ 229 // L7: 229; L6: 13 ; L2: 12
+#define RECV_BUFFER_SZ 229 // L7: 229; L6: 13 ; L2: 13
 
 #undef SEND_BUFFER_SZ
-#define SEND_BUFFER_SZ 229 // L7: 229; L6: 13 ; L2: 12
+#define SEND_BUFFER_SZ 229 // L7: 229; L6: 13 ; L2: 13
 
 typedef enum
 {

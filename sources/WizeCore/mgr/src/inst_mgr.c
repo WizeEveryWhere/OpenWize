@@ -33,31 +33,29 @@ extern "C" {
 
 #include "inst_mgr.h"
 
-#include "rtos_macro.h"
-
-/*!
- * @cond INTERNAL
- * @{
- */
-SYS_MUTEX_CREATE_DEF(instmgr);
-
-static void _inst_mgr_ini_(struct ses_ctx_s *pCtx);
-static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
-
-/******************************************************************************/
-
-#define SES_NAME "INST"
-/*!
- * @}
- * @endcond
- */
-
 /*!
  * @addtogroup wize_inst_mgr
  * @{
  *
  */
 
+/******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+#define SES_NAME "INST"
+
+static void _inst_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl);
+static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
+
+/*!
+ * @}
+ * @endcond
+ */
+
+/******************************************************************************/
 /*!
  * @brief This function initialize the session context
  * @param [in] pCtx    Pointer in the current context
@@ -66,33 +64,35 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
  */
 void InstMgr_Setup(struct ses_ctx_s *pCtx)
 {
+	struct inst_mgr_ctx_s *pPrvCtx;
 	assert(pCtx);
-	pCtx->hMutex = SYS_MUTEX_CREATE_CALL(instmgr);
-	assert(pCtx->hMutex);
+	pPrvCtx = (struct inst_mgr_ctx_s*)pCtx->pPrivate;
+	assert(pPrvCtx);
+	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
+
 	pCtx->ini = _inst_mgr_ini_;
 	pCtx->fsm = _inst_mgr_fsm_;
 	pCtx->eState = SES_STATE_DISABLE;
 	pCtx->eType = SES_INST;
-	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
+
+	pPrvCtx->sRspMsg.pData = pPrvCtx->aRecvBuff;
+	pPrvCtx->sCmdMsg.pData = pPrvCtx->aSendBuff;
 }
 
+/******************************************************************************/
 /*!
  * @static
  * @brief Initialize the fsm internal private context
  *
  * @param [in] pCtx    Pointer in the current context
+ * @param [in] bCtrl   Enable / Disable the Session
  *
  * @return      None
  */
-static void _inst_mgr_ini_(struct ses_ctx_s *pCtx)
+static void _inst_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl)
 {
-	struct inst_mgr_ctx_s *pPrvCtx;
 	assert(pCtx);
-	pPrvCtx = (struct inst_mgr_ctx_s*)pCtx->pPrivate;
-	assert(pPrvCtx);
-	pPrvCtx->sRspMsg.pData = pPrvCtx->aRecvBuff;
-	pPrvCtx->sCmdMsg.pData = pPrvCtx->aSendBuff;
-	pCtx->eState = SES_STATE_IDLE;
+	pCtx->eState = (bCtrl)?(SES_STATE_IDLE):(SES_STATE_DISABLE);
 }
 
 /*!
@@ -103,11 +103,12 @@ static void _inst_mgr_ini_(struct ses_ctx_s *pCtx)
  * @param [in] u32Evt Input event from outside (see ses_evt_e)
  *
  * @retval SES_FLG_NONE (see @link ses_flag_e::SES_FLG_NONE @endlink)
- * @retval SES_FLG_ERROR (see @link ses_flag_e::SES_FLG_ERROR @endlink)
- * @retval SES_FLG_COMPLETE (see @link ses_flag_e::SES_FLG_COMPLETE @endlink)
- * @retval SES_FLG_TIMEOUT (see @link ses_flag_e::SES_FLG_TIMEOUT @endlink)
+ * @retval SES_FLG_INST_ERROR (see @link ses_flag_e::SES_FLG_INST_ERROR @endlink)
+ * @retval SES_FLG_INST_COMPLETE (see @link ses_flag_e::SES_FLG_INST_COMPLETE @endlink)
+ * @retval SES_FLG_INST_TIMEOUT (see @link ses_flag_e::SES_FLG_INST_TIMEOUT @endlink)
  * @retval SES_FLG_PING_SENT (see @link ses_flag_e::SES_FLG_PING_SENT @endlink)
  * @retval SES_FLG_PONG_RECV (see @link ses_flag_e::SES_FLG_PONG_RECV @endlink)
+ * @retval SES_FLG_INST_OUT_DATE (see @link ses_flag_e::SES_FLG_INST_OUT_DATE @endlink)
  */
 static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 {
@@ -117,11 +118,11 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 
 	ePrevState = pCtx->eState;
 
-	if (u32Evt & SES_EVT_CLOSE)
+	if (u32Evt & SES_EVT_INST_CANCEL)
 	{
 		TimeEvt_TimerStop(&pCtx->sTimeEvt);
 		pCtx->eState = SES_STATE_IDLE;
-		u32BackEvt = SES_FLG_COMPLETE;
+		u32BackEvt = SES_FLG_INST_COMPLETE;
 	}
 
 	if (u32Evt & SES_EVT_INST_READY)
@@ -133,7 +134,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 			{
 				// failed, go back into IDLE
 				pCtx->eState = SES_STATE_IDLE;
-				u32BackEvt = SES_FLG_ERROR;
+				u32BackEvt = SES_FLG_INST_ERROR;
 			}
 		}
 	}
@@ -142,8 +143,8 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 	{
 		case SES_STATE_DISABLE:
 			break;
-		case SES_STATE_IDLE: // From SES_STATE_IDLE : SES_FLG_ERROR, SES_FLG_NONE
-			if (u32Evt & SES_EVT_OPEN)
+		case SES_STATE_IDLE: // From SES_STATE_IDLE : SES_FLG_INST_ERROR, SES_FLG_NONE
+			if (u32Evt & SES_EVT_INST_OPEN)
 			{
 				pPrvCtx->u8Pending = 0;
 				// send INST PING request
@@ -151,13 +152,13 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				{
 					// failed, go back into IDLE
 					pCtx->eState = SES_STATE_IDLE;
-					u32BackEvt = SES_FLG_ERROR;
+					u32BackEvt = SES_FLG_INST_ERROR;
 					break;
 				}
 				pCtx->eState = SES_STATE_SENDING;
 			}
 			break;
-		case SES_STATE_SENDING: // From SES_STATE_SENDING : SES_FLG_NONE, SES_FLG_ERROR, SES_FLG_PING_SENT, SES_FLG_TIMEOUT
+		case SES_STATE_SENDING: // From SES_STATE_SENDING : SES_FLG_NONE, SES_FLG_INST_ERROR, SES_FLG_PING_SENT, SES_FLG_INST_TIMEOUT
 			if (u32Evt & SES_EVT_SEND_DONE)
 			{
 				// Program an event to wait before listen INST PONG
@@ -168,7 +169,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 						))
 				{
 					pCtx->eState = SES_STATE_IDLE;
-					u32BackEvt = SES_FLG_ERROR;
+					u32BackEvt = SES_FLG_INST_ERROR;
 				}
 				else
 				{
@@ -187,11 +188,11 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 			if (u32Evt & SES_EVT_TIMEOUT)
 			{
 				pCtx->eState = SES_STATE_IDLE;
-				u32BackEvt |= SES_FLG_TIMEOUT;
+				u32BackEvt |= SES_FLG_INST_TIMEOUT | SES_FLG_INST_ERROR;
 				LOG_WRN("Send Timeout\n");
 			}
 			break;
-		case SES_STATE_WAITING_RX_DELAY: // From SES_STATE_WAITING_RX_DELAY : SES_FLG_NONE, SES_FLG_ERROR
+		case SES_STATE_WAITING_RX_DELAY: // From SES_STATE_WAITING_RX_DELAY : SES_FLG_NONE, SES_FLG_INST_ERROR
 			if (u32Evt & SES_EVT_INST_DELAY_EXPIRED)
 			{
 				pPrvCtx->sRspMsg.u8Type = APP_INSTALL;
@@ -199,44 +200,33 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				{
 					// failed, go back into IDLE
 					pCtx->eState = SES_STATE_IDLE;
-					u32BackEvt = SES_FLG_ERROR;
+					u32BackEvt = SES_FLG_INST_ERROR;
 					break;
 				}
 				// set next state
 				pCtx->eState = SES_STATE_LISTENING;
 			}
 			break;
-		case SES_STATE_LISTENING: // From SES_STATE_LISTENING : SES_FLG_NONE, SES_FLG_PONG_RECV, SES_FLG_TIMEOUT
+		case SES_STATE_LISTENING: // From SES_STATE_LISTENING : SES_FLG_NONE, SES_FLG_PONG_RECV, SES_FLG_INST_OUT_DATE, SES_FLG_INST_TIMEOUT
 			if (u32Evt & SES_EVT_RECV_DONE)
 			{
 				if ( ! pPrvCtx->u8Pending)
 				{
 					LOG_INF("PONG Received\n");
-					LOG_DBG(
-						"\t<- K: %02x %02x %02x %02x %02x %02x; MLAN: %02x; RSSI down: %02x; up: %02x\n"
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7ConcentId[0]
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7ConcentId[1]
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7ConcentId[2]
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7ConcentId[3]
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7ConcentId[4]
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7ConcentId[5]
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7ModemId
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7RssiDownstream
-						, ((inst_pong_t*)pPrvCtx->sRspMsg.pData)->L7RssiUpstream
-						);
 					pPrvCtx->u8Pending = 1;
 					u32BackEvt |= SES_FLG_PONG_RECV;
 				}
 				else
 				{
 					LOG_DBG("INST-> FRM lost\n");
+					u32BackEvt |= SES_FLG_INST_OUT_DATE;
 				}			
 			}
 			if (u32Evt & SES_EVT_TIMEOUT)
 			{
 				// duration is passed
 				pCtx->eState = SES_STATE_IDLE;
-				u32BackEvt |= SES_FLG_TIMEOUT;
+				u32BackEvt |= SES_FLG_INST_TIMEOUT;
 				break;
 			}
 			break;
@@ -249,7 +239,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 		LOG_DBG(SES_NAME" : %s\n", _ses_state_str_[pCtx->eState]);
 		if (pCtx->eState == SES_STATE_IDLE)
 		{
-			u32BackEvt |= SES_FLG_COMPLETE;
+			u32BackEvt |= SES_FLG_INST_COMPLETE;
 		}
 	}
 	return u32BackEvt;
