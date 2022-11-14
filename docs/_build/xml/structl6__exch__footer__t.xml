@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structl6__exch__footer__t" kind="struct" language="C++" prot="public">
+    <compoundname>l6_exch_footer_t</compoundname>
+    <includes refid="proto__private_8h" local="no">proto_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structl6__exch__footer__t_1a96635abef47c22b8f3f078299b3f2aa8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_footer_t::L6HashKenc[L6_HASH_KENC_SZ]</definition>
+        <argsstring>[L6_HASH_KENC_SZ]</argsstring>
+        <name>L6HashKenc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Authentication signature of the transmitter of the message between the Head-End system and the device. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="300" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__footer__t_1a91fe70530e9733ca026e5cfaa592a9ae" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_footer_t::Epoch[L6_EPOCH_SZ]</definition>
+        <argsstring>[L6_EPOCH_SZ]</argsstring>
+        <name>Epoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="306" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__footer__t_1a16eab1a337f9b7362fb98326877b2d3b" prot="public" static="no" mutable="no">
+        <type>union l6_exch_footer_t::@42</type>
+        <definition>union l6_exch_footer_t::@42 l6_exch_footer_t::@43</definition>
+        <argsstring></argsstring>
+        <name>@43</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="307" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__footer__t_1a05458e7d9f779cb68e0cbc20721456cc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_footer_t::L6TStamp[L6_TSTAMP_SZ]</definition>
+        <argsstring>[L6_TSTAMP_SZ]</argsstring>
+        <name>L6TStamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time stamp of the transmission time of the message by the device or the gateway. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="309" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__footer__t_1a68b74d85aa77d0fd34a3aca8e021c4db" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_footer_t::TxFreqOffset[L6_TX_FREQ_OFFSET_SZ]</definition>
+        <argsstring>[L6_TX_FREQ_OFFSET_SZ]</argsstring>
+        <name>TxFreqOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="313" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__footer__t_1a20372a9873a55a9a920a9674b601d710" prot="public" static="no" mutable="no">
+        <type>union l6_exch_footer_t::@44</type>
+        <definition>union l6_exch_footer_t::@44 l6_exch_footer_t::@45</definition>
+        <argsstring></argsstring>
+        <name>@45</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="314" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__footer__t_1a2e4f36dc000e5a243575a840e7892d63" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_footer_t::L6HKmac[L6_HASH_KMAC_SZ]</definition>
+        <argsstring>[L6_HASH_KMAC_SZ]</argsstring>
+        <name>L6HKmac</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Authentication signature of the transmitter of the message between the gateway and the device. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="315" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure defines the presentation layer exchange footer. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>l6_exch_footer_t</label>
+        <link refid="structl6__exch__footer__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="298" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="298" bodyend="320"/>
+    <listofallmembers>
+      <member refid="structl6__exch__footer__t_1a91fe70530e9733ca026e5cfaa592a9ae" prot="public" virt="non-virtual"><scope>l6_exch_footer_t</scope><name>Epoch</name></member>
+      <member refid="structl6__exch__footer__t_1a96635abef47c22b8f3f078299b3f2aa8" prot="public" virt="non-virtual"><scope>l6_exch_footer_t</scope><name>L6HashKenc</name></member>
+      <member refid="structl6__exch__footer__t_1a2e4f36dc000e5a243575a840e7892d63" prot="public" virt="non-virtual"><scope>l6_exch_footer_t</scope><name>L6HKmac</name></member>
+      <member refid="structl6__exch__footer__t_1a05458e7d9f779cb68e0cbc20721456cc" prot="public" virt="non-virtual"><scope>l6_exch_footer_t</scope><name>L6TStamp</name></member>
+      <member refid="structl6__exch__footer__t_1a68b74d85aa77d0fd34a3aca8e021c4db" prot="public" virt="non-virtual"><scope>l6_exch_footer_t</scope><name>TxFreqOffset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide du style de codage &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_documentation/index.html">Documentation avancée</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Guide du style de codage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/contributing/code_style_guide.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="coding-style-guide">
+<span id="id1"></span><h1>Guide du style de codage<a class="headerlink" href="#coding-style-guide" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="conventions">
+<h2>Conventions<a class="headerlink" href="#conventions" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Convention <strong>PascalCase</strong> : un mot composé qui utilise des lettres majuscules pour délimiter les mots. Comprend la première lettre.</p>
+<ul class="simple">
+<li><p>exemple : NomQuelconque</p></li>
+</ul>
+<p>Convention <strong>snake_case</strong> : lorsque tous les mots d’un mot composé sont en minuscules mais délimités par un trait de soulignement.</p>
+<ul class="simple">
+<li><p>exemple : nom_quelconque</p></li>
+</ul>
+</section>
+<section id="directories-names">
+<h2>Noms des répertoires<a class="headerlink" href="#directories-names" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Si le répertoire est un répertoire de module, utilisez la convention “pascal case”.</p></li>
+<li><p>Si le répertoire n’est pas un répertoire de module, utilisez la convention “snake case”.</p></li>
+</ul>
+</section>
+<section id="files-names">
+<h2>Noms des fichiers<a class="headerlink" href="#files-names" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Le nom des fichiers doit utiliser la convention <em>snake_case</em>. Le premier caractère du nom doit être une lettre et tous les autres doivent être des lettres et/ou des chiffres.</p></li>
+<li><p>Les noms des fichiers sources C doivent se terminer par .c</p></li>
+<li><p>Les noms des fichiers d’en-tête C doivent se terminer par .h</p></li>
+<li><p>Les noms des fichiers source de l’assembleur doivent se terminer par .s</p></li>
+</ul>
+</section>
+<section id="include-files">
+<h2>Fichiers inclus<a class="headerlink" href="#include-files" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Utilisez la construction &lt;name&gt; pour les obtenir à partir d’un endroit standard, et utilisez «  » pour les bibliothèques personnalisées ou définissez-les relativement au répertoire courant.</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;my_module_header.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+<p>Préférez l’option « include-path » du compilateur C pour gérer les bibliothèques privées étendues de fichiers d’en-tête. N’utilisez jamais de noms de chemin absolus pour les fichiers d’en-tête.</p>
+</section>
+<section id="header-file">
+<h2>Fichier d’en-tête<a class="headerlink" href="#header-file" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Les fichiers d’en-tête doivent avoir des gardes de préprocesseur.</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef _FILE_NAME_H_</span>
+<span class="cp">#define _FILE_NAME_H_</span>
+<span class="p">...</span><span class="w"></span>
+<span class="cp">#endif </span><span class="c1">// _FILE_NAME_H_</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Toujours inclure la vérification pour C++ avec le mot-clé <strong>extern</strong> dans le fichier d’en-tête.</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* declarations go here */</span><span class="w"></span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span><span class="w"></span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Notez que l’ordre suivant doit être utilisé :</dt><dd><ul class="simple">
+<li><p>Gardes de préprocesseur.</p></li>
+<li><p>puis toute déclaration #include</p></li>
+<li><p>puis externe « C » gardes :</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="source-file">
+<h2>Fichier source<a class="headerlink" href="#source-file" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Toujours inclure la vérification pour C++ avec le mot-clé <strong>extern</strong> dans le fichier d’en-tête.</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">#endif</span>
+
+<span class="cm">/* declarations go here */</span><span class="w"></span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span><span class="w"></span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+<section id="module-organization">
+<h2>Organisation du module<a class="headerlink" href="#module-organization" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Les modules logiciels sont organisés avec les répertoires src/ et include/, qui contiennent respectivement les fichiers sources et les fichiers d’en-tête. Dans le dossier racine du module, un fichier « CMakeList.txt » définit une ou plusieurs cibles de construction afin de pouvoir construire ce module. En outre, lorsque cela est nécessaire et que le module est unitaire « testable », un répertoire « unittest » contenant le code source du test unitaire et son fichier CMakeList.txt est présent.</p>
+<blockquote>
+<div><p class="rubric">Un module typique ressemble à ceci :</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Module
+├── CMakeLists.txt
+├── include
+│   ├── module_private.h
+│   └── module.h
+├── src
+│   └── module.c
+└── unittest
+   ├── CMakeLists.txt
+   ├── module_mock.yml
+   ├── TestGrpRunModule.c
+   └── TestModule.c
+</pre></div>
+</div>
+</section>
+<section id="naming-convention">
+<h2>Convention d’appellation<a class="headerlink" href="#naming-convention" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Pour les types simples, nous utilisons la convention (u)intN_t de « stdint.h ». C’est-à-dire que les types de base sont (u)int8_t, (u)int16_t, (u)int32_t, (u)int64_t, float, double.</p>
+<section id="variables-names">
+<h3>Noms des variables<a class="headerlink" href="#variables-names" title="Lien permanent vers cette rubrique"></a></h3>
+<p>La règle générale est que les variables suivent la convention PascalCase. De plus, les variables sont préfixées avec leur type.</p>
+<p>Pour les types simples, les variables sont préfixées avec leur type dans leur version « courte » :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">u8MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int8_t</span><span class="w"> </span><span class="n">i8MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">uint16_t</span><span class="w"> </span><span class="n">u16MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int16_t</span><span class="w"> </span><span class="n">i16MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">uint32_t</span><span class="w"> </span><span class="n">u32MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int32_t</span><span class="w"> </span><span class="n">i32MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">uint64_t</span><span class="w"> </span><span class="n">u64MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int64_t</span><span class="w"> </span><span class="n">i64MyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">float</span><span class="w"> </span><span class="n">fMyVar</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">dMyVar</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>La même règle s’applique aux types structure, enum, pointeur et tableau.</p>
+<p>Exemple avec structure et enum :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">my_struct_t</span><span class="w"> </span><span class="n">sMyVar</span><span class="p">;</span><span class="w"> </span><span class="cm">/* this a structure */</span><span class="w"></span>
+<span class="n">my_enum_e</span><span class="w">   </span><span class="n">eMyVar</span><span class="p">;</span><span class="w"> </span><span class="cm">/* this an enum */</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Exemple avec un pointeur et un tableau :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pMyVar</span><span class="p">;</span><span class="w">    </span><span class="cm">/* this a pointer */</span><span class="w"></span>
+<span class="kt">uint8_t</span><span class="w"> </span><span class="n">aMyVar</span><span class="p">[</span><span class="n">nb</span><span class="w"> </span><span class="n">element</span><span class="p">]</span><span class="cm">/* this an array */</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le pointeur est différent du tableau ou de la table dans le sens où le tableau est alloué, le pointeur ne l’est pas.</p>
+</div>
+<p>Les variables statiques suivent la convention snake_case avec <em>_</em> (underscore comme préfixe et suffixe :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">_u8_my_static_var_</span><span class="p">;</span><span class="w"> </span><span class="cm">/* this is my static variable */</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="structures-names">
+<h3>Noms des structures<a class="headerlink" href="#structures-names" title="Lien permanent vers cette rubrique"></a></h3>
+<p>La déclaration de la structure suit la convention snake_case suffixée par <em>_s</em> ou <em>_t</em> si c’est un type :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">my_struct_s</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">my_struct_type_t</span><span class="w"></span>
+</pre></div>
+</div>
+<p>L’instanciation des structures suit la convention PascalCase préfixée par <em>s</em> :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">my_struct_s</span><span class="w"> </span><span class="n">sMyStruct</span><span class="p">;</span><span class="w"></span>
+<span class="n">my_struct_type_t</span><span class="w"> </span><span class="n">sMyStructType</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="enumerate-names">
+<h3>Noms des énumérations<a class="headerlink" href="#enumerate-names" title="Lien permanent vers cette rubrique"></a></h3>
+<p>La déclaration des énumérations suit la convention snake_case suffixée par <em>_e</em> :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">my_enum_e</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">my_enum_type_e</span><span class="w"></span>
+</pre></div>
+</div>
+<p>L’instanciation des énumérations suit la convention PascalCase préfixée par <em>e</em> :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">my_enum_type_e</span><span class="w"> </span><span class="n">eMyEnumType</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="functions-names">
+<h4>Noms des fonctions<a class="headerlink" href="#functions-names" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour les fonctions publiques ou API, son nom est préfixé par le nom du module :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">MyModuleName_MyFunctionName</span><span class="p">(...)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Le préfixe du nom du module et le nom de la fonction utilisent la convention PascalCase.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parfois, il est nécessaire ou préférable de pouvoir identifier une fonctionnalité structurelle. Dans ces cas, utilisez un nom structurel comme identifiant :</p>
+<p>Par exemple, dans le cas d’un Board Support Package (BSP). Le BSP n’est pas vraiment un module unique, mais plutôt un module de collection. Tous les fichiers BSP sont regroupés, disons, dans le répertoire « bsp ». Certains d’entre eux traitent de la mémoire flash tandis que d’autres traitent du SPI.</p>
+<p>Exemple</p>
+<p>bsp_flash :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">BSP_Flash_Erase</span><span class="p">(...)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>bsp_spi :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">BSP_Spi_Read</span><span class="p">(...)</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>Pour les fonctions privées ou statiques, “_” (trait de soulignement) est ajouté comme préfixe et suffixe.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">_my_function_name_</span><span class="p">(...)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>La variable passée dans la déclaration/implémentation de la fonction doit utiliser la convention PascalCase.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">MyModuleName_MyFunctionName</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">u8MyVarName</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">MyModuleName_MyFunctionName</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">u8MyVarName</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">_my_function_name</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">u8MyVarName</span><span class="p">);</span><span class="w"></span>
+
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">_my_function_name</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">u8MyVarName</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="other-general-rules">
+<h2>Autres règles générales<a class="headerlink" href="#other-general-rules" title="Lien permanent vers cette rubrique"></a></h2>
+<ul>
+<li><p>Utilisez <em>C99</em></p></li>
+<li><p>N’utilisez pas de tabulations, mais plutôt 4 espaces.</p></li>
+<li><p>Utilisez un espace entre les mots clés tels que <em>if</em>, <em>do</em>, <em>while</em>, <em>switch</em> et la parenthèse ouvrante.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Utilisez un espace simple avant et après les opérateurs de comparaison et d’affectation.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Ne pas utiliser d’espace entre le nom de la fonction et la parenthèse ouvrante.</p></li>
+<li><p>Utilisez un espace après chaque virgule</p></li>
+<li><p>Ne pas initialiser les variables <strong>statiques</strong> et <strong>globales</strong> à 0 (ou <em>NULL</em>), laisser le compilateur le faire pour vous</p></li>
+<li><p>Éviter l’affectation de variables avec l’appel de fonction dans la déclaration</p></li>
+<li><p>Toujours utiliser des parenthèses avec l’opérateur <strong>sizeof</strong>.</p></li>
+<li><p>Utiliser <strong>const</strong> pour <em>pointeur</em> si la fonction ne doit pas modifier la mémoire pointée par <em>pointeur</em>.</p></li>
+<li><p>Utilisez <strong>const</strong> pour un paramètre de fonction ou une variable, s’il ne doit pas être modifié.</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* When pData could be modified, data pointed to by pData could not be modified */</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">my_func</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/* When pData should not be modified inside function, only data pointed to by pData</span>
+<span class="cm"> * could be modified</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">my_func</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/* When pData and data pointed to by pData both could not be modified */</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">my_func</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<ul>
+<li><p>Les macros du préprocesseur utilisent toujours les majuscules et, si nécessaire, le trait de soulignement.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MY_DEFINE</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Utilisez le bloc <code class="docutils literal notranslate"><span class="pre">//</span></code> ou <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*</span> <span class="pre">/</span></code> pour les commentaires d’une seule ligne.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// My one line comment</span>
+<span class="cm">/* My other one line comment */</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Utilisez le bloc <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code> pour les commentaires de plusieurs lignes.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * My multi line comment</span>
+<span class="cm"> */</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Essayez d’éviter les variables globales.</p></li>
+<li><p>Toujours respecter le style de code déjà utilisé dans le projet ou la bibliothèque (même si le style n’est pas clair ou pas évident)</p></li>
+<li><p>Chaque fonction doit inclure un commentaire compatible avec doxygen, même si la fonction est <strong>statique</strong>.</p></li>
+<li><p>Utilisez des noms/textes anglais pour les fonctions, les variables et les commentaires.</p></li>
+<li><p>Les commits ne doivent contenir que des fichiers avec des terminaisons LF (style Unix).</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

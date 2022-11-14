@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_7639e22b429807cc8ddf9922cebe3b35" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476/board/src</compoundname>
+    <innerfile refid="main_8c">main.c</innerfile>
+    <innerfile refid="stm32l4xx__hal__msp_8c">stm32l4xx_hal_msp.c</innerfile>
+    <innerfile refid="stm32l4xx__hal__timebase__tim_8c">stm32l4xx_hal_timebase_tim.c</innerfile>
+    <innerfile refid="stm32l4xx__it_8c">stm32l4xx_it.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/"/>
+  </compounddef>
+</doxygen>

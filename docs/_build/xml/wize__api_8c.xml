@@ -1,0 +1,1166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="wize__api_8c" kind="file" language="C++">
+    <compoundname>wize_api.c</compoundname>
+    <includes local="no">assert.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="wize__api_8h" local="yes">wize_api.h</includes>
+    <includes local="yes">rtos_macro.h</includes>
+    <includes refid="parameters_8h" local="yes">parameters.h</includes>
+    <includes refid="parameters__lan__ids_8h" local="yes">parameters_lan_ids.h</includes>
+    <includes refid="time__mgr_8h" local="yes">time_mgr.h</includes>
+    <includes refid="net__api__private_8h" local="yes">net_api_private.h</includes>
+    <includes refid="net__mgr_8h" local="yes">net_mgr.h</includes>
+    <includes refid="ses__dispatcher_8h" local="yes">ses_dispatcher.h</includes>
+    <incdepgraph>
+      <node id="13">
+        <label>stdarg.h</label>
+      </node>
+      <node id="25">
+        <label>net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>assert.h</label>
+      </node>
+      <node id="34">
+        <label>inst_internal.h</label>
+        <link refid="inst__internal_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>adm_internal.h</label>
+        <link refid="adm__internal_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="17">
+        <label>parameters.h</label>
+        <link refid="parameters_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>stddef.h</label>
+      </node>
+      <node id="31">
+        <label>inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wize_api.h</label>
+        <link refid="wize__api_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>OpenWize_config.h</label>
+      </node>
+      <node id="9">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>limits.h</label>
+      </node>
+      <node id="32">
+        <label>adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="27">
+        <label>proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>rtos_macro.h</label>
+      </node>
+      <node id="28">
+        <label>net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>time.h</label>
+      </node>
+      <node id="19">
+        <label>parameters_lan_ids.h</label>
+        <link refid="parameters__lan__ids_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>app_layer.h</label>
+        <link refid="app__layer_8h"/>
+      </node>
+      <node id="26">
+        <label>proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wize_banner.h</label>
+        <link refid="wize__banner_8h"/>
+      </node>
+      <node id="10">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>net_api.h</label>
+        <link refid="net__api_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="20">
+        <label>time_mgr.h</label>
+        <link refid="time__mgr_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__wize__api_1ga9824606579124a6bea20cc65038b3683" prot="public" static="no">
+        <name>SES_MGR_INST_REQ_TMO_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="92" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1gaa09617a30cdf244205d27db0807ef38e" prot="public" static="no">
+        <name>SES_MGR_INST_FLG_TMO_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="93" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1ga6ffe63d0a427c320d6a49ecbe077d51e" prot="public" static="no">
+        <name>SES_MGR_INST_FLG_ALL_MSK</name>
+        <initializer>0x0000FFFFU | (SES_INST &lt;&lt; SES_MGR_FLG_POS)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="94" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1gad39908abeef2311068b00d8eea1b49ec" prot="public" static="no">
+        <name>SES_MGR_ADM_REQ_TIMEOUT_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="130" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1ga374a1a6acffc10832d81c6b03e085927" prot="public" static="no">
+        <name>SES_MGR_ADM_FLG_TIMEOUT_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="131" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1ga00f659348b17af026c59a143cba67c5e" prot="public" static="no">
+        <name>SES_MGR_ADM_FLG_ALL_MSK</name>
+        <initializer>0x0000FFFFU | (SES_ADM &lt;&lt; SES_MGR_FLG_POS)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="132" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__wize__api_1ga3aedcf16d8cb33fb30486f02462ed181" prot="public" static="yes" mutable="no">
+        <type><ref refid="group__wize__net__api_1ga3a430a72aef99fbe3d4d227aaec8099b" kindref="member">wize_net_t</ref></type>
+        <definition>wize_net_t sNetCtx</definition>
+        <argsstring></argsstring>
+        <name>sNetCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="54" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__api_1gaf90194f8a5507e7d394632969f0ccd65" prot="public" static="yes" mutable="no">
+        <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref></type>
+        <definition>struct ses_disp_ctx_s sSesDispCtx</definition>
+        <argsstring></argsstring>
+        <name>sSesDispCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="54" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__api_1gabd93daf993bc59595a47f46b60307342" prot="public" static="yes" mutable="no">
+        <type>struct <ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref></type>
+        <definition>struct time_upd_s sTimeUpdCtx</definition>
+        <argsstring></argsstring>
+        <name>sTimeUpdCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="54" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_SetDeviceId</definition>
+        <argsstring>(device_id_t *pDevId)</argsstring>
+        <name>WizeApi_SetDeviceId</name>
+        <param>
+          <type><ref refid="uniondevice__id__t" kindref="compound">device_id_t</ref> *</type>
+          <declname>pDevId</declname>
+        </param>
+        <briefdescription>
+<para>This function set the device identification. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sDevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device identification to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="66" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="66" bodyend="73" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="75" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1gafb37408259ac2060c74e03ac959d5d65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_GetDeviceId</definition>
+        <argsstring>(device_id_t *pDevId)</argsstring>
+        <name>WizeApi_GetDeviceId</name>
+        <param>
+          <type><ref refid="uniondevice__id__t" kindref="compound">device_id_t</ref> *</type>
+          <declname>pDevId</declname>
+        </param>
+        <briefdescription>
+<para>This function get the device identification. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pDevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the device identification holder</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="82" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="82" bodyend="89" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="76" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga3bfa01bc6f5f5a75a23e41ff4aa62ea9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_ExecPing</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_ExecPing</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function start a INST (PING/PONG) session. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_FAILED (1) if INST session failed return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="104" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="104" bodyend="126" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="78" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga2c536934392dc23221bce927ba9c99e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_GetAdmCmd</definition>
+        <argsstring>(net_msg_t *pMsg)</argsstring>
+        <name>WizeApi_GetAdmCmd</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pAdmMsg</declname>
+          <defname>pMsg</defname>
+        </param>
+        <briefdescription>
+<para>This function get the last received ADM command message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on message buffer</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="143" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="143" bodyend="168" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="72" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga013b4b3b0aeeacc6afc6bde192926c79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_GetAdmRsp</definition>
+        <argsstring>(net_msg_t *pMsg)</argsstring>
+        <name>WizeApi_GetAdmRsp</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pAdmMsg</declname>
+          <defname>pMsg</defname>
+        </param>
+        <briefdescription>
+<para>This function get the last sent ADM response message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on message buffer</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="179" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="179" bodyend="204" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="73" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga5b04e3cf3c15bda5140d9d2f9ed1e00e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_SendEx</definition>
+        <argsstring>(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)</argsstring>
+        <name>WizeApi_SendEx</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Size</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Type</declname>
+        </param>
+        <briefdescription>
+<para>This function send a DATA message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on raw data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of byte to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of frame DATA or DATA_PRIO</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_FAILED (1) if ADN session failed return wize_api_ret_e::WIZE_API_ADM_SUCCESS (2) if ADM CMD has been received return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="219" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="219" bodyend="276" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="80" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1gad18308449f50944835c464090b9deec4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_Send</definition>
+        <argsstring>(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)</argsstring>
+        <name>WizeApi_Send</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Size</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Type</declname>
+        </param>
+        <briefdescription>
+<para>This function send a DATA message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on raw data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of byte to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of frame DATA or DATA_PRIO</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_FAILED (1) if ADN session failed return wize_api_ret_e::WIZE_API_ADM_SUCCESS (2) if ADM CMD has been received return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="291" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="291" bodyend="345" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="79" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1gad5caf07c1e9d49946395590839c393a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_CtxClear</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_CtxClear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function Clear the Time Update state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="354" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="354" bodyend="359" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="85" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga027a29f62b83877f6c0e69987ccf604c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_CtxRestore</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_CtxRestore</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function Restore the Time Update state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="366" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="366" bodyend="370" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="87" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga7320c3c14db98cd6e9afd3808a8f35d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_CtxSave</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_CtxSave</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function Save the Time Update state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="377" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="377" bodyend="381" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="86" declcolumn="6"/>
+        <references refid="group__rtc_1ga6823644967f78ea14d790e3ce73f2070" compoundref="bsp__rtc_8c" startline="127" endline="130">BSP_Rtc_Backup_Write</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga1721feb2c03d8b38cc2ae69a389ba463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_Setup</definition>
+        <argsstring>(phydev_t *pPhyDev)</argsstring>
+        <name>WizeApi_Setup</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhyDev</declname>
+        </param>
+        <briefdescription>
+<para>This function setup the wize stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="389" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="389" bodyend="397" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="82" declcolumn="6"/>
+        <references refid="group__wize__time__mgr_1gaadf7600a3bccc68b4b49fc9583ec95c2" compoundref="time__mgr_8c" startline="101" endline="108">TimeMgr_Setup</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga726e794d96fa3658a13eff9ccc3cafc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initialize the wize stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhyDev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the phy device</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="407" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="407" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga84eb78c1a37bd62c731da353ef6e8464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_Enable</definition>
+        <argsstring>(uint8_t bFlag)</argsstring>
+        <name>WizeApi_Enable</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>bFlag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="411" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="411" bodyend="414" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="83" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file expose API to the external. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/14[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="wize__api_8h" kindref="compound">wize_api.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rtos_macro.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters_8h" kindref="compound">parameters.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters__lan__ids_8h" kindref="compound">parameters_lan_ids.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="time__mgr_8h" kindref="compound">time_mgr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="net__api__private_8h" kindref="compound">net_api_private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="net__mgr_8h" kindref="compound">net_mgr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ses__dispatcher_8h" kindref="compound">ses_dispatcher.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structwize__net__s" kindref="compound">wize_net_t</ref><sp/>sNetCtx;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref><sp/>sSesDispCtx;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref><sp/>sTimeUpdCtx;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" refkind="member"><highlight class="normal"><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref><sp/><ref refid="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" kindref="member">WizeApi_SetDeviceId</ref>(<ref refid="uniondevice__id__t" kindref="compound">device_id_t</ref><sp/>*pDevId)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pProtoCtx<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>pProtoCtx<sp/>=<sp/>&amp;(sNetCtx.<ref refid="structwize__net__s_1a8430211f996a3070c3be6565f215624d" kindref="member">sProtoCtx</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(pProtoCtx-&gt;<ref refid="structproto__ctx__s_1a2d2778fe4551cc5080349d853b8f8910" kindref="member">aDeviceManufID</ref>,<sp/>pDevId-&gt;<ref refid="uniondevice__id__t_1aca706b6e575096f028628fe5f1375c62" kindref="member">aDevInfo</ref>,<sp/>MFIELD_SZ);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(pProtoCtx-&gt;<ref refid="structproto__ctx__s_1a4d94c092c1b93513528b0858ffc53eb6" kindref="member">aDeviceAddr</ref>,<sp/>pDevId-&gt;<ref refid="uniondevice__id__t_1afd266366a400c434c95f74f521e650d2" kindref="member">aAddr</ref>,<sp/>AFIELD_SZ);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="group__wize__api_1gafb37408259ac2060c74e03ac959d5d65" refkind="member"><highlight class="normal"><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref><sp/><ref refid="group__wize__api_1gafb37408259ac2060c74e03ac959d5d65" kindref="member">WizeApi_GetDeviceId</ref>(<ref refid="uniondevice__id__t" kindref="compound">device_id_t</ref><sp/>*pDevId)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pProtoCtx<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>pProtoCtx<sp/>=<sp/>&amp;(sNetCtx.<ref refid="structwize__net__s_1a8430211f996a3070c3be6565f215624d" kindref="member">sProtoCtx</ref>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(pDevId-&gt;<ref refid="uniondevice__id__t_1a0df42a84ec5775a10104ef89549d4b81" kindref="member">aManuf</ref>,<sp/>pProtoCtx-&gt;<ref refid="structproto__ctx__s_1a2d2778fe4551cc5080349d853b8f8910" kindref="member">aDeviceManufID</ref>,<sp/>MFIELD_SZ);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(pDevId-&gt;<ref refid="uniondevice__id__t_1afd266366a400c434c95f74f521e650d2" kindref="member">aAddr</ref>,<sp/>pProtoCtx-&gt;<ref refid="structproto__ctx__s_1a4d94c092c1b93513528b0858ffc53eb6" kindref="member">aDeviceAddr</ref>,<sp/>AFIELD_SZ);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SES_MGR_INST_REQ_TMO_MSK<sp/>0xFFFFFFFFU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SES_MGR_INST_FLG_TMO_MSK<sp/>0xFFFFFFFFU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SES_MGR_INST_FLG_ALL_MSK<sp/>0x0000FFFFU<sp/>|<sp/>(SES_INST<sp/>&lt;&lt;<sp/>SES_MGR_FLG_POS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="group__wize__api_1ga3bfa01bc6f5f5a75a23e41ff4aa62ea9" refkind="member"><highlight class="normal"><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref><sp/><ref refid="group__wize__api_1ga3bfa01bc6f5f5a75a23e41ff4aa62ea9" kindref="member">WizeApi_ExecPing</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s<sp/>*pCtx<sp/>=<sp/>&amp;(sSesDispCtx.sSesCtx[SES_INST]);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32Ret;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>xSemaphoreTake(<sp/>pCtx-&gt;hMutex,<sp/>SES_MGR_INST_REQ_TMO_MSK<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Request<sp/>for<sp/>INSTALL<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xTaskNotify(sSesDispCtx.hTask,<sp/>SES_MGR_INST_EVT_OPEN,<sp/>eSetValueWithOverwrite);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>xEventGroupWaitBits(sSesDispCtx.hEvents,<sp/>SES_MGR_INST_FLG_ALL_MSK,<sp/>pdTRUE,<sp/>pdFALSE,<sp/>SES_MGR_INST_FLG_TMO_MSK);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xSemaphoreGive(pCtx-&gt;hMutex);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32Ret<sp/>==<sp/>SES_MGR_INST_FLG_FAILED)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_FAILED;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_ACCESS_TIMEOUT;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SES_MGR_ADM_REQ_TIMEOUT_MSK<sp/>0xFFFFFFFFU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SES_MGR_ADM_FLG_TIMEOUT_MSK<sp/>0xFFFFFFFFU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SES_MGR_ADM_FLG_ALL_MSK<sp/>0x0000FFFFU<sp/>|<sp/>(SES_ADM<sp/>&lt;&lt;<sp/>SES_MGR_FLG_POS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="group__wize__api_1ga2c536934392dc23221bce927ba9c99e8" refkind="member"><highlight class="normal"><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref><sp/><ref refid="group__wize__api_1ga2c536934392dc23221bce927ba9c99e8" kindref="member">WizeApi_GetAdmCmd</ref>(<ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pMsg)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s<sp/>*pCtx<sp/>=<sp/>&amp;(sSesDispCtx.sSesCtx[SES_ADM]);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref><sp/>*pPrvCtx;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*pKeep<sp/>=<sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pMsg<sp/>&amp;&amp;<sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>xSemaphoreTake(<sp/>pCtx-&gt;hMutex,<sp/>SES_MGR_ADM_REQ_TIMEOUT_MSK<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPrvCtx<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref><sp/>*)pCtx-&gt;pPrivate;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(pMsg,<sp/>&amp;(pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" kindref="member">sCmdMsg</ref>),<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref>));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref><sp/>=<sp/>pKeep;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" kindref="member">sCmdMsg</ref>.<ref refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" kindref="member">u8Size</ref><sp/>&lt;=<sp/>RECV_BUFFER_SZ)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>,<sp/>pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" kindref="member">sCmdMsg</ref>.<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>,<sp/>pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" kindref="member">sCmdMsg</ref>.<ref refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" kindref="member">u8Size</ref>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xSemaphoreGive(pCtx-&gt;hMutex);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_ACCESS_TIMEOUT;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="group__wize__api_1ga013b4b3b0aeeacc6afc6bde192926c79" refkind="member"><highlight class="normal"><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref><sp/><ref refid="group__wize__api_1ga013b4b3b0aeeacc6afc6bde192926c79" kindref="member">WizeApi_GetAdmRsp</ref>(<ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pMsg)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s<sp/>*pCtx<sp/>=<sp/>&amp;(sSesDispCtx.sSesCtx[SES_ADM]);;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref><sp/>*pPrvCtx;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*pKeep<sp/>=<sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pMsg<sp/>&amp;&amp;<sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>xSemaphoreTake(<sp/><sp/>pCtx-&gt;hMutex,<sp/>SES_MGR_ADM_REQ_TIMEOUT_MSK<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPrvCtx<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref><sp/>*)pCtx-&gt;pPrivate;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(pMsg,<sp/>&amp;(<sp/>pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1adec3f707432f31fb0a358c8a7d775456" kindref="member">sRspMsg</ref>),<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref>));</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref><sp/>=<sp/>pKeep;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" kindref="member">sCmdMsg</ref>.<ref refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" kindref="member">u8Size</ref><sp/>&lt;=<sp/>SEND_BUFFER_SZ)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>,<sp/><sp/>pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1adec3f707432f31fb0a358c8a7d775456" kindref="member">sRspMsg</ref>.<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>,<sp/><sp/>pPrvCtx-&gt;<ref refid="structadm__mgr__ctx__s_1adec3f707432f31fb0a358c8a7d775456" kindref="member">sRspMsg</ref>.<ref refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" kindref="member">u8Size</ref>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xSemaphoreGive(pCtx-&gt;hMutex);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_ACCESS_TIMEOUT;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="group__wize__api_1ga5b04e3cf3c15bda5140d9d2f9ed1e00e" refkind="member"><highlight class="normal"><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref><sp/><ref refid="group__wize__api_1ga5b04e3cf3c15bda5140d9d2f9ed1e00e" kindref="member">WizeApi_SendEx</ref>(uint8_t<sp/>*pData,<sp/>uint8_t<sp/>u8Size,<sp/>uint8_t<sp/>u8Type)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//struct<sp/>dat_mgr_ctx_s<sp/>*pCtx<sp/>=<sp/>sSesDispCtx.pDatMgrCtx;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s<sp/>*pCtx<sp/>=<sp/>&amp;(sSesDispCtx.sSesCtx[SES_ADM]);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32Ret;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8L7MaxLen;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pData<sp/>)</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a59ce36970074aaf467567461b85a36af" kindref="member">L7TRANSMIT_LENGTH_MAX</ref>,<sp/>(uint8_t*)&amp;u8L7MaxLen,<sp/>0);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>u8Size<sp/>&gt;<sp/>u8L7MaxLen)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(u8Type<sp/>!=<sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a5d7a97ac79a5fe6a6bfd13c2d89c0071" kindref="member">APP_DATA</ref>)<sp/>&amp;&amp;<sp/>(u8Type<sp/>!=<sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723ade1c938c9980490f9dab5eb69ec6b02d" kindref="member">APP_DATA_PRIO</ref>))</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>that<sp/>only<sp/>one<sp/>request<sp/>at<sp/>the<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>xSemaphoreTake(<sp/>pCtx-&gt;hMutex,<sp/>SES_MGR_ADM_REQ_TIMEOUT_MSK<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Request<sp/>for<sp/>DATA,<sp/>ADMIN<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pMsg<sp/>=<sp/>&amp;((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref>*)(pCtx-&gt;pPrivate))-&gt;<ref refid="structadm__mgr__ctx__s_1a8124254f4130a78b046f82bb70f0a8ea" kindref="member">sDataMsg</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref><sp/>=<sp/>pData;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;Option_b.App<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" kindref="member">u8Size</ref><sp/>=<sp/>u8Size;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" kindref="member">u8Type</ref><sp/>=<sp/>u8Type;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" kindref="member">u16Id</ref>++;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xTaskNotify(sSesDispCtx.hTask,<sp/>SES_MGR_ADM_EVT_OPEN,<sp/>eSetValueWithOverwrite);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>xEventGroupWaitBits(sSesDispCtx.hEvents,<sp/>SES_MGR_ADM_FLG_ALL_MSK,<sp/>pdTRUE,<sp/>pdFALSE,<sp/>SES_MGR_ADM_FLG_TIMEOUT_MSK);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32Ret<sp/>==<sp/>SES_MGR_ADM_FLG_REQUEST)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref>*)(pCtx-&gt;pPrivate))-&gt;sCmdMsg.pData[0]<sp/>==<sp/><ref refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7abe4d9d12bbfa4f3de6a5bcba23dcdab3" kindref="member">ADM_WRITE_PARAM</ref>)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_ADM_SUCCESS;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32Ret<sp/>==<sp/>SES_MGR_ADM_FLG_SUCCES)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_FAILED;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xSemaphoreGive(pCtx-&gt;hMutex);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u32Ret;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_ACCESS_TIMEOUT;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291" refid="group__wize__api_1gad18308449f50944835c464090b9deec4" refkind="member"><highlight class="normal"><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref><sp/><ref refid="group__wize__api_1gad18308449f50944835c464090b9deec4" kindref="member">WizeApi_Send</ref>(uint8_t<sp/>*pData,<sp/>uint8_t<sp/>u8Size,<sp/>uint8_t<sp/>u8Type)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//struct<sp/>dat_mgr_ctx_s<sp/>*pCtx<sp/>=<sp/>sSesDispCtx.pDatMgrCtx;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s<sp/>*pCtx<sp/>=<sp/>&amp;(sSesDispCtx.sSesCtx[SES_ADM]);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32Ret;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8L7MaxLen;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pData<sp/>)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a59ce36970074aaf467567461b85a36af" kindref="member">L7TRANSMIT_LENGTH_MAX</ref>,<sp/>(uint8_t*)&amp;u8L7MaxLen,<sp/>0);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>u8Size<sp/>&gt;<sp/>u8L7MaxLen)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(u8Type<sp/>!=<sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a5d7a97ac79a5fe6a6bfd13c2d89c0071" kindref="member">APP_DATA</ref>)<sp/>&amp;&amp;<sp/>(u8Type<sp/>!=<sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723ade1c938c9980490f9dab5eb69ec6b02d" kindref="member">APP_DATA_PRIO</ref>))</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>xSemaphoreTake(<sp/>pCtx-&gt;hMutex,<sp/>SES_MGR_ADM_REQ_TIMEOUT_MSK<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Request<sp/>for<sp/>DATA,<sp/>ADMIN<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pMsg<sp/>=<sp/>&amp;((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref>*)(pCtx-&gt;pPrivate))-&gt;<ref refid="structadm__mgr__ctx__s_1a8124254f4130a78b046f82bb70f0a8ea" kindref="member">sDataMsg</ref>;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref><sp/>=<sp/>pData;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" kindref="member">u8Size</ref><sp/>=<sp/>u8Size;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" kindref="member">u8Type</ref><sp/>=<sp/>u8Type;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pMsg-&gt;<ref refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" kindref="member">u16Id</ref>++;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xTaskNotify(sSesDispCtx.hTask,<sp/>SES_MGR_ADM_EVT_OPEN,<sp/>eSetValueWithOverwrite);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>xEventGroupWaitBits(sSesDispCtx.hEvents,<sp/>SES_MGR_ADM_FLG_ALL_MSK,<sp/>pdTRUE,<sp/>pdFALSE,<sp/>SES_MGR_ADM_FLG_TIMEOUT_MSK);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32Ret<sp/>&amp;<sp/>SES_MGR_FLG_REQUEST)</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref>*)(pCtx-&gt;pPrivate))-&gt;sCmdMsg.pData[0]<sp/>==<sp/><ref refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7abe4d9d12bbfa4f3de6a5bcba23dcdab3" kindref="member">ADM_WRITE_PARAM</ref>)</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_ADM_SUCCESS;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32Ret<sp/>&amp;<sp/>SES_MGR_FLG_SUCCESS)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_SUCCESS;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Ret<sp/>=<sp/>WIZE_API_FAILED;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xSemaphoreGive(pCtx-&gt;hMutex);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u32Ret;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_ACCESS_TIMEOUT;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>WIZE_API_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354" refid="group__wize__api_1gad5caf07c1e9d49946395590839c393a9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__api_1gad5caf07c1e9d49946395590839c393a9" kindref="member">WizeApi_CtxClear</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>memset((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)(&amp;sNetCtx),<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(sNetCtx));</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga6823644967f78ea14d790e3ce73f2070" kindref="member">BSP_Rtc_Backup_Write</ref>(0,<sp/>(uint32_t)0);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga6823644967f78ea14d790e3ce73f2070" kindref="member">BSP_Rtc_Backup_Write</ref>(1,<sp/>(uint32_t)0);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366" refid="group__wize__api_1ga027a29f62b83877f6c0e69987ccf604c" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__api_1ga027a29f62b83877f6c0e69987ccf604c" kindref="member">WizeApi_CtxRestore</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="367"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>((uint32_t*)&amp;sTimeUpdCtx)[0]<sp/>=<sp/><ref refid="group__rtc_1gaee49ea5a4d64ef1a312a3ad61c2e5c10" kindref="member">BSP_Rtc_Backup_Read</ref>(0);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>((uint32_t*)&amp;sTimeUpdCtx)[1]<sp/>=<sp/><ref refid="group__rtc_1gaee49ea5a4d64ef1a312a3ad61c2e5c10" kindref="member">BSP_Rtc_Backup_Read</ref>(1);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377" refid="group__wize__api_1ga7320c3c14db98cd6e9afd3808a8f35d3" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__api_1ga7320c3c14db98cd6e9afd3808a8f35d3" kindref="member">WizeApi_CtxSave</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="378"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga6823644967f78ea14d790e3ce73f2070" kindref="member">BSP_Rtc_Backup_Write</ref>(0,<sp/>((uint32_t*)&amp;sTimeUpdCtx)[0]);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga6823644967f78ea14d790e3ce73f2070" kindref="member">BSP_Rtc_Backup_Write</ref>(1,<sp/>((uint32_t*)&amp;sTimeUpdCtx)[1]);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389" refid="group__wize__api_1ga1721feb2c03d8b38cc2ae69a389ba463" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__api_1ga1721feb2c03d8b38cc2ae69a389ba463" kindref="member">WizeApi_Setup</ref>(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhyDev)</highlight></codeline>
+<codeline lineno="390"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>the<sp/>Time<sp/>Manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__time__mgr_1gaadf7600a3bccc68b4b49fc9583ec95c2" kindref="member">TimeMgr_Setup</ref>(&amp;sTimeUpdCtx);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>Network<sp/>Manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1ga2b3d6e33db0904e597e5f8e59ba17839" kindref="member">NetMgr_Setup</ref>(pPhyDev,<sp/>&amp;sNetCtx);</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>the<sp/>session<sp/>dispacher</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__app_1gadcdd5b8d27b93e9a90df7c0ab4191d05" kindref="member">SesDisp_Setup</ref>(&amp;sSesDispCtx);</highlight></codeline>
+<codeline lineno="397"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407" refid="group__wize__api_1ga726e794d96fa3658a13eff9ccc3cafc1" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__api_1ga726e794d96fa3658a13eff9ccc3cafc1" kindref="member">WizeApi_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="408"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="409"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>WizeApi_Enable(uint8_t<sp/>bFlag)</highlight></codeline>
+<codeline lineno="412"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SesDisp_Init(&amp;sSesDispCtx,<sp/>bFlag);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structsw__pend__buff__s" kind="struct" language="C++" prot="public">
+    <compoundname>sw_pend_buff_s</compoundname>
+    <includes refid="img__storage__private_8h" local="no">img_storage_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t sw_pend_buff_s::aPend[PENDING_LINE_PEND_BYTES]</definition>
+        <argsstring>[PENDING_LINE_PEND_BYTES]</argsstring>
+        <name>aPend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pending bytes <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="162" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure hold a pending entry. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>sw_pend_buff_s</label>
+        <link refid="structsw__pend__buff__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="161" column="21" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="161" bodyend="163"/>
+    <listofallmembers>
+      <member refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" prot="public" virt="non-virtual"><scope>sw_pend_buff_s</scope><name>aPend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

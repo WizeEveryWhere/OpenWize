@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structl2__exch__header__t" kind="struct" language="C++" prot="public">
+    <compoundname>l2_exch_header_t</compoundname>
+    <includes refid="proto__private_8h" local="no">proto_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structl2__exch__header__t_1a868604ad2004481eb2040341e16d023c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l2_exch_header_t::Cfield</definition>
+        <argsstring></argsstring>
+        <name>Cfield</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frame type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="235" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl2__exch__header__t_1a19ce08b1cc4e9864c2590222f0ce055e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l2_exch_header_t::Mfield[MFIELD_SZ]</definition>
+        <argsstring>[MFIELD_SZ]</argsstring>
+        <name>Mfield</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Indication of the device MANUFACTURER </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="236" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl2__exch__header__t_1a03b3bcefab723a4dea1e94f54e6db52b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l2_exch_header_t::Afield[AFIELD_SZ]</definition>
+        <argsstring>[AFIELD_SZ]</argsstring>
+        <name>Afield</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique ID of the device </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="237" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl2__exch__header__t_1a6f4fc3f1abc6604c5603bbb31a0f07ad" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l2_exch_header_t::Cifield</definition>
+        <argsstring></argsstring>
+        <name>Cifield</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wize Protocol Id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="238" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure defines the link layer exchange header. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>l2_exch_header_t</label>
+        <link refid="structl2__exch__header__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="234" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="234" bodyend="239"/>
+    <listofallmembers>
+      <member refid="structl2__exch__header__t_1a03b3bcefab723a4dea1e94f54e6db52b" prot="public" virt="non-virtual"><scope>l2_exch_header_t</scope><name>Afield</name></member>
+      <member refid="structl2__exch__header__t_1a868604ad2004481eb2040341e16d023c" prot="public" virt="non-virtual"><scope>l2_exch_header_t</scope><name>Cfield</name></member>
+      <member refid="structl2__exch__header__t_1a6f4fc3f1abc6604c5603bbb31a0f07ad" prot="public" virt="non-virtual"><scope>l2_exch_header_t</scope><name>Cifield</name></member>
+      <member refid="structl2__exch__header__t_1a19ce08b1cc4e9864c2590222f0ce055e" prot="public" virt="non-virtual"><scope>l2_exch_header_t</scope><name>Mfield</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

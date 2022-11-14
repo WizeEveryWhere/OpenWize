@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sous-répertoire WizeCore &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_documentation/index.html">Advanced documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Sous-répertoire <em>WizeCore</em></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_doc/wizecore_subdir.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wizecore-sub-directory">
+<h1>Sous-répertoire <em>WizeCore</em><a class="headerlink" href="#wizecore-sub-directory" title="Lien permanent vers cette rubrique"></a></h1>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">proto</span></code></dt><dd><p><em>proto</em> met en œuvre tout ce qui est nécessaire pour traiter la liaison et la couche de présentation du protocole Wize, c’est-à-dire :</p>
+<ul class="simple">
+<li><p>Construire/extraire les informations des couches de liaison et de présentation</p></li>
+<li><p>chiffrer/déchiffrer le message de l’application</p></li>
+<li><p>calculer et vérifier le hach d’authentification</p></li>
+<li><p>calculer et vérifier le hach de confidentialité</p></li>
+<li><p>calculer et vérifier le CRC</p></li>
+<li><p>calculer et vérifier le code Reed-Solomon et corriger la trame si possible (couche de téléchargement uniquement)</p></li>
+</ul>
+<p><em>proto</em> dépend des bibliothèques « CRC_sw », « Crypto » et « ReedSolomon ».</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">net</span></code></dt><dd><p><em>net</em> implémente une sorte de pilote de bas niveau pour :</p>
+<ul class="simple">
+<li><p>piloter le protocole dans <em>proto</em></p></li>
+<li><p>fournir une couche abstraite au niveau supérieur, avec des fonctions comme « send(…) » ou « recev(…) ».</p></li>
+<li><p>fournir une interface à l’implémentation du pilote phy</p></li>
+</ul>
+<p><em>net</em> dépend de <em>proto</em></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mgr</span></code></dt><dd><p><em>mgr</em> implémente quatre gestionnaires :</p>
+<ul class="simple">
+<li><p><em>adm_mgr</em>, <em>inst_mgr</em> et <em>dwn_mgr</em> gèrent respectivement les sessions d’administration, d’installation et de téléchargement. Leur rôle est principalement d’assurer le bon déroulement des sessions.</p></li>
+<li><p><em>net_mgr</em> est une sorte de pilote de haut niveau pour le module <em>net</em>. En particulier, il gère les ressources du réseau d’une manière sûre pour les threads et assure l’exactitude du timing dans les fenêtres « send » et « listen ».</p></li>
+</ul>
+<p><em>mgr</em> dépend de <em>net</em>, <em>TimeEvt</em>, <em>Logger</em> et <em>FreeRTOS</em>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">app</span></code></dt><dd><p><em>app</em> met en œuvre la couche application du protocole Wize et fournit une API au reste du firmware de l’application.</p>
+<ul class="simple">
+<li><p>fournir une API pour envoyer un message DATA et exécuter une session d’installation (PING/PONG)</p></li>
+<li><p>ouvrir/fermer les sessions d’administration, d’installation et de téléchargement.</p></li>
+<li><p>construire/extraire la couche d’administration générique (aka DATA, COMMAND, RESPONSE)</p></li>
+<li><p>construire/extraire la couche d’installation (aka PING/PONG)</p></li>
+<li><p>traiter l’image du firmware téléchargé (stocker, valider)</p></li>
+</ul>
+<p><em>app</em> dépend de <em>mgr</em>, <em>TimeEvt</em>, <em>ImgStorage</em>, <em>Parameters</em>, <em>Logger</em> et <em>FreeRTOS</em>.</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

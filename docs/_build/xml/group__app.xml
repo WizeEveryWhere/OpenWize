@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__app" kind="group">
+    <compoundname>app</compoundname>
+    <title>App</title>
+    <innergroup refid="group__sys">Sys</innergroup>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_ParamDefault[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamDefault</name>
+        <briefdescription>
+<para>This array define the parameter default value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="65" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="35" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" declline="65" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga84f49efe2202fbe3028f42d5fb3553be" prot="public" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t u16_ParamValueSz</definition>
+        <argsstring></argsstring>
+        <name>u16_ParamValueSz</name>
+        <initializer>= PARAM_DEFAULT_SZ</initializer>
+        <briefdescription>
+<para>The parameters values table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters table value size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="70" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga967743ed3bc6da990464bb439c2aa818" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamAccessCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamAccessCfgSz</name>
+        <initializer>= PARAM_ACCESS_CFG_SZ</initializer>
+        <briefdescription>
+<para>The parameters access table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters access table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="75" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga391accc1c1e9dac0d3468a8310475d01" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamRestrCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamRestrCfgSz</name>
+        <initializer>= PARAM_RESTR_CFG_SZ</initializer>
+        <briefdescription>
+<para>The restriction table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters restriction table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="80" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga8efcaca0e25b0a89c34cce4339320449" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structkey__s" kindref="compound">key_s</ref></type>
+        <definition>const key_s sDefaultKey[KEY_MAX_NB]</definition>
+        <argsstring>[KEY_MAX_NB]</argsstring>
+        <name>sDefaultKey</name>
+        <initializer>=
+{
+	[0] = {
+	.key = {
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+	}},
+	[<ref refid="group__crypto_1ga34a3087269df4035dbaaf854ef20d9a2" kindref="member">KEY_ENC_MIN</ref>+1] = {
+	.key = {
+		0x55, 0x22, 0x19, 0xe2, 0x65, 0xeb, 0xb4, 0x8c,
+		0x8a, 0xdf, 0x58, 0x71, 0x79, 0xd9, 0xc6, 0xb0,
+		0x63, 0xd5, 0x7c, 0xa8, 0xd3, 0x7e, 0xd6, 0xcb,
+		0x11, 0x51, 0xa7, 0x59, 0xcc, 0xad, 0xba, 0x40
+	}},
+	[<ref refid="group__crypto_1gab76bbd9bd618178561644c64376be30b" kindref="member">KEY_MAC_ID</ref>] = {
+	.key = {
+		0x88, 0xe3, 0x35, 0x63, 0x8f, 0x52, 0x19, 0x46,
+		0xc3, 0x8e, 0x32, 0xee, 0xba, 0xa3, 0xc9, 0x9f,
+		0x4a, 0xe7, 0x0b, 0xfb, 0x2b, 0xb2, 0x53, 0x40,
+		0x25, 0x04, 0x85, 0x76, 0xe3, 0x81, 0xfe, 0xad
+	}}
+}</initializer>
+        <briefdescription>
+<para>This define some hard-coded default keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="139" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__app_1ga418c32aac3818e0fc031cc7219e83d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Storage_Init</definition>
+        <argsstring>(uint8_t bForce)</argsstring>
+        <name>Storage_Init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>bForce</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h" line="42" column="6" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h" declline="42" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1gae8170e1e320af9706766d7fdb1cfe1e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Storage_SetDefault</definition>
+        <argsstring>(void)</argsstring>
+        <name>Storage_SetDefault</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set to defaults device id, all parameters and all keys. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="204" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="204" bodyend="210" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h" declline="43" declcolumn="6"/>
+        <references refid="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" compoundref="wize__api_8c" startline="66" endline="73">WizeApi_SetDeviceId</references>
+        <references refid="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" compoundref="parameters_8c" startline="265" endline="268">Param_Init</references>
+        <references refid="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" compoundref="parameters__default_8c" startline="35">a_ParamDefault</references>
+        <references refid="group__crypto_1ga21956ce69b049977e54c004831c9bdcb">_a_Key_</references>
+        <references refid="group__app_1ga8efcaca0e25b0a89c34cce4339320449" compoundref="storage_8c" startline="139">sDefaultKey</references>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1gadfdb874494a7e96ac1256869f1a7e9d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initialize the &quot;system part&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" line="41" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" bodystart="74" bodyend="112" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" declline="41" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1ga0ed5f5a12d83826e8ff2261e158b599a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_Start</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_Start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" line="42" column="13" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" declline="42" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1ga88b5c748c6eb7ba3c5af94716f14bb45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void App_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>App_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Called to initialize application before starting the scheduler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" line="80" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" bodystart="80" bodyend="83" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" declline="44" declcolumn="6"/>
+        <references refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="77" endline="148">main</references>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1gacce9c970b367ddeb57c853b26cff3d84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void app_entry</definition>
+        <argsstring>(void)</argsstring>
+        <name>app_entry</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The application entry point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" line="50" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" bodystart="50" bodyend="55"/>
+        <references refid="group__app_1gadfdb874494a7e96ac1256869f1a7e9d4" compoundref="sys__init_8c" startline="74" endline="112">Sys_Init</references>
+        <references refid="group__app_1ga88b5c748c6eb7ba3c5af94716f14bb45" compoundref="app__entry_8c" startline="80" endline="83">App_Init</references>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1ga80917c2758ae6a0e30ced741e529df8c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Main_Task</definition>
+        <argsstring>(void const *argument)</argsstring>
+        <name>Main_Task</name>
+        <param>
+          <type>void const *</type>
+          <declname>argument</declname>
+        </param>
+        <briefdescription>
+<para>This is the demo application task. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" line="89" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c" bodystart="89" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1ga4dd337842bc6ba433c2808c8ec30c068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PERM_SECTION</definition>
+        <argsstring>(&quot;.param&quot;)</argsstring>
+        <name>PERM_SECTION</name>
+        <param>
+          <type>&quot;.param&quot;</type>
+        </param>
+        <briefdescription>
+<para>Table of parameters values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This define hard-coded default device id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="86" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="86" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1gae0f99880290b115dc6ef20b3157f17b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KEY_SECTION</definition>
+        <argsstring>(&quot;.data.keys&quot;)</argsstring>
+        <name>KEY_SECTION</name>
+        <param>
+          <type>&quot;.data.keys&quot;</type>
+        </param>
+        <briefdescription>
+<para>Table of keys. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This initialize the storage area</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">bForce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Force to defaults.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="167" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="167" bodyend="196"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

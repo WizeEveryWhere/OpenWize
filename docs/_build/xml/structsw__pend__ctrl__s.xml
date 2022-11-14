@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structsw__pend__ctrl__s" kind="struct" language="C++" prot="public">
+    <compoundname>sw_pend_ctrl_s</compoundname>
+    <includes refid="img__storage__private_8h" local="no">img_storage_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsw__pend__ctrl__s_1adf95893d72e852ce10988193c68a09e2" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t sw_pend_ctrl_s::u16Id</definition>
+        <argsstring></argsstring>
+        <name>u16Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="170" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t sw_pend_ctrl_s::ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <bitfield>15</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Id of the first pending block </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="173" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t sw_pend_ctrl_s::EMPTY</definition>
+        <argsstring></argsstring>
+        <name>EMPTY</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Line is empty <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="174" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsw__pend__ctrl__s_1a7b2893649378a2b0664e88aeb601e1a9" prot="public" static="no" mutable="no">
+        <type>union sw_pend_ctrl_s::@52</type>
+        <definition>union sw_pend_ctrl_s::@52 sw_pend_ctrl_s::@53</definition>
+        <argsstring></argsstring>
+        <name>@53</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="176" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure hold a pending entry control. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>sw_pend_ctrl_s</label>
+        <link refid="structsw__pend__ctrl__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="168" column="21" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="168" bodyend="177"/>
+    <listofallmembers>
+      <member refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" prot="public" virt="non-virtual"><scope>sw_pend_ctrl_s</scope><name>EMPTY</name></member>
+      <member refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" prot="public" virt="non-virtual"><scope>sw_pend_ctrl_s</scope><name>ID</name></member>
+      <member refid="structsw__pend__ctrl__s_1adf95893d72e852ce10988193c68a09e2" prot="public" virt="non-virtual"><scope>sw_pend_ctrl_s</scope><name>u16Id</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_5904990b769deaeec7a96db8e5a1ea4e" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/ImgStorage</compoundname>
+    <innerdir refid="dir_eec33c87074b55dd0b544c39fdd1d93e">/home/nono/OpenWize/sources/Samples/ImgStorage/include</innerdir>
+    <innerdir refid="dir_dc3aca0bc997f7080e3e4bbbc71e48d7">/home/nono/OpenWize/sources/Samples/ImgStorage/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/"/>
+  </compounddef>
+</doxygen>

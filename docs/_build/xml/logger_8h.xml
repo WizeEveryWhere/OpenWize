@@ -1,0 +1,648 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="logger_8h" kind="file" language="C++">
+    <compoundname>logger.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="yes">OpenWize_config.h</includes>
+    <includedby refid="wize__api_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h</includedby>
+    <includedby refid="time__mgr_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</includedby>
+    <includedby refid="ses__common_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</includedby>
+    <includedby refid="net__mgr_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</includedby>
+    <includedby refid="color_8c" local="yes">/home/nono/OpenWize/sources/Samples/Logger/src/color.c</includedby>
+    <includedby refid="logger_8c" local="yes">/home/nono/OpenWize/sources/Samples/Logger/src/logger.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdarg.h</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>OpenWize_config.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Logger/include/logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="18">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</label>
+        <link refid="net__mgr_8c"/>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</label>
+        <link refid="time__mgr_8c"/>
+      </node>
+      <node id="17">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h</label>
+        <link refid="wize__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>/home/nono/OpenWize/sources/Samples/Logger/src/color.c</label>
+        <link refid="color_8c"/>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="13">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="20">
+        <label>/home/nono/OpenWize/sources/Samples/Logger/src/logger.c</label>
+        <link refid="logger_8c"/>
+      </node>
+      <node id="14">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Logger/include/logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__logger_1ga9ecba5d25f0735cf7698e710542f52ee" prot="public" static="no">
+        <name>Logger_Setup</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="159" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga93cd9631daccce15212f0a12bd88261e" prot="public" static="no">
+        <name>Logger_SetLevel</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="162" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gac0dce8d747d46bf29e1597a5d27968ac" prot="public" static="no">
+        <name>Logger_Put</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="165" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga1f7851b604382e5ce26651114c257de2" prot="public" static="no">
+        <name>Logger_Post</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="168" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga1210f924abdda0aa4188883fc48badd9" prot="public" static="no">
+        <name>Logger_Frame</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="171" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga4b6ec581ed55f3c727e34baf62db69bc" prot="public" static="no">
+        <name>LOG_MSG</name>
+        <param><defname>level</defname></param>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="175" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga4e29be383f695d81955a861020a733e0" prot="public" static="no">
+        <name>LOG_ERR</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="178" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gaf46bd1afc119b045c6e00e3b7be589c8" prot="public" static="no">
+        <name>LOG_WRN</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="181" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gadf9abf2dedfe1bf87b59a295cb172e8c" prot="public" static="no">
+        <name>LOG_INF</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="184" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga3ec2b78f24416adbd63f2962e774d6de" prot="public" static="no">
+        <name>LOG_DBG</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="187" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gacd3cfdd0bbafe8587ebaae722e46c3b2" prot="public" static="no">
+        <name>LOG_FRM_OUT</name>
+        <param><defname>pFrm</defname></param>
+        <param><defname>nb_data</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="190" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga5eb49da169026a9eb4736a95e18ed345" prot="public" static="no">
+        <name>LOG_FRM_IN</name>
+        <param><defname>pFrm</defname></param>
+        <param><defname>nb_data</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="193" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__logger_1gae40b7eba4eb868178775f3f693cfcbaa" prot="public" static="no" strong="no">
+        <type></type>
+        <name>logger_level_e</name>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaabe38cbf8a26ef5eb220fbef3a0ab8ec3" prot="public">
+          <name>LOG_LV_QUIET</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+<para>Quite, no log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaaab909f78d760abf2c1095e3079c9982" prot="public">
+          <name>LOG_LV_ERR</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Error log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa191696cb204024002796ca7805d63a1e" prot="public">
+          <name>LOG_LV_WRN</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+<para>Warning log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaacc5d73d16b8fbabbace87facfcd24b69" prot="public">
+          <name>LOG_LV_INF</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+<para>Info log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaf75ff806d585dac4fc848b03fccdff5d" prot="public">
+          <name>LOG_LV_DBG</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+<para>Debug log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6a5b8f16bbcbcc1999e9c568d7e32f5d" prot="public">
+          <name>LOG_LV_FRM_IN</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+<para>Frame in log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6b3cc04fe25542a417afe723bc65f6a5" prot="public">
+          <name>LOG_LV_FRM_OUT</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+<para>Frame out log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum define the logger output level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="52" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="51" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__logger_1gae2763cc91ce90f527fc440c000a9886f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>logger_tstamp_e</name>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa0cb33b20f1c978238c5ee32c29e03e29" prot="public">
+          <name>LOG_TSTAMP_NONE</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+<para>No Timestamp. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa00429026700023df1278e54081c1c829" prot="public">
+          <name>LOG_TSTAMP_NORM</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+<para>Add Timestamp (epoch) to the log output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa1e54c30dcd1626834b732a3c740fff31" prot="public">
+          <name>LOG_TSTAMP_HIRES</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+<para>Add Timestamp (epoch) plus millisecond to the log output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fad2bc5e478101fc7ac26d9d017bfbe021" prot="public">
+          <name>LOG_TSTAMP_TRUNC</name>
+          <initializer>= 0x4</initializer>
+          <briefdescription>
+<para>Truncate Timestamp on 5 digits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum define the Timestamp added to the log output </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="84" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="83" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__logger_1ga3179c5c764a2a8fec1469ba3ef52b99e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t gLoggerLevel</definition>
+        <argsstring></argsstring>
+        <name>gLoggerLevel</name>
+        <briefdescription>
+<para>This global variable define the output logger level. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="92" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="55" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" declline="92" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file declare available Logger functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/11/15[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_LOGGER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_LOGGER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;OpenWize_config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="group__logger_1gae40b7eba4eb868178775f3f693cfcbaa" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53" refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaabe38cbf8a26ef5eb220fbef3a0ab8ec3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaabe38cbf8a26ef5eb220fbef3a0ab8ec3" kindref="member">LOG_LV_QUIET</ref><sp/><sp/><sp/>=<sp/>0x00,<sp/></highlight></codeline>
+<codeline lineno="54" refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaaab909f78d760abf2c1095e3079c9982" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaaab909f78d760abf2c1095e3079c9982" kindref="member">LOG_LV_ERR</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="55" refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa191696cb204024002796ca7805d63a1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa191696cb204024002796ca7805d63a1e" kindref="member">LOG_LV_WRN</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="56" refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaacc5d73d16b8fbabbace87facfcd24b69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaacc5d73d16b8fbabbace87facfcd24b69" kindref="member">LOG_LV_INF</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x04,<sp/></highlight></codeline>
+<codeline lineno="57" refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaf75ff806d585dac4fc848b03fccdff5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaf75ff806d585dac4fc848b03fccdff5d" kindref="member">LOG_LV_DBG</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x08,<sp/></highlight></codeline>
+<codeline lineno="58" refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6a5b8f16bbcbcc1999e9c568d7e32f5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6a5b8f16bbcbcc1999e9c568d7e32f5d" kindref="member">LOG_LV_FRM_IN</ref><sp/><sp/>=<sp/>0x40,<sp/></highlight></codeline>
+<codeline lineno="59" refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6b3cc04fe25542a417afe723bc65f6a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6b3cc04fe25542a417afe723bc65f6a5" kindref="member">LOG_LV_FRM_OUT</ref><sp/>=<sp/>0x80<sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}<sp/><ref refid="group__logger_1gae40b7eba4eb868178775f3f693cfcbaa" kindref="member">logger_level_e</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>LOGGER_HAS_COLOR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_QUIET<sp/><sp/><sp/>=<sp/>0x00,<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_ERR<sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_WRN<sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_INF<sp/><sp/><sp/><sp/><sp/>=<sp/>0x03,<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_DBG<sp/><sp/><sp/><sp/><sp/>=<sp/>0x04,<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_FRM_IN<sp/><sp/>=<sp/>0x05,<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_FRM_OUT<sp/>=<sp/>0x06,<sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_LV_ID_MAX</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}<sp/>logger_level_id_e;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="group__logger_1gae2763cc91ce90f527fc440c000a9886f" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85" refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa0cb33b20f1c978238c5ee32c29e03e29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa0cb33b20f1c978238c5ee32c29e03e29" kindref="member">LOG_TSTAMP_NONE</ref><sp/><sp/>=<sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="86" refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa00429026700023df1278e54081c1c829" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa00429026700023df1278e54081c1c829" kindref="member">LOG_TSTAMP_NORM</ref><sp/><sp/>=<sp/>0x1,<sp/></highlight></codeline>
+<codeline lineno="87" refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa1e54c30dcd1626834b732a3c740fff31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa1e54c30dcd1626834b732a3c740fff31" kindref="member">LOG_TSTAMP_HIRES</ref><sp/>=<sp/>0x2,<sp/></highlight></codeline>
+<codeline lineno="88" refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fad2bc5e478101fc7ac26d9d017bfbe021" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fad2bc5e478101fc7ac26d9d017bfbe021" kindref="member">LOG_TSTAMP_TRUNC</ref><sp/>=<sp/>0x4,<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/><ref refid="group__logger_1gae2763cc91ce90f527fc440c000a9886f" kindref="member">logger_tstamp_e</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__logger_1ga3179c5c764a2a8fec1469ba3ef52b99e" kindref="member">gLoggerLevel</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>IS_LOGGER_ENABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>LOGGER_USE_FWRITE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__logger_1ga8e80afd675f5db779c0ea8d931cdf8f2" kindref="member">Logger_Setup</ref>(int32_t<sp/>(*pfOut)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/>FILE*),<sp/>FILE*<sp/>pFile);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/>//<sp/>USE_FPUTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__logger_1ga8e80afd675f5db779c0ea8d931cdf8f2" kindref="member">Logger_Setup</ref>(int32_t<sp/>(*pfOut)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/>FILE*),<sp/>FILE*<sp/>pFile);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__logger_1ga18173d9fcf28abea14613b278a841abc" kindref="member">Logger_SetLevel</ref>(uint8_t<sp/>u8LogLevel,<sp/>uint8_t<sp/>u8Tstmp);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__logger_1ga2e5ef9146b1aa57685a90f2cd32de42b" kindref="member">Logger_Put</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str,<sp/>uint32_t<sp/>u32Nb);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__logger_1ga76ba42a144f4ec3694e45844c0df36a6" kindref="member">Logger_Post</ref>(uint8_t<sp/>level,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*format,<sp/>...);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__logger_1ga31ba4be6f76408d89c195c136f8a69eb" kindref="member">Logger_Frame</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pStr,<sp/>uint8_t<sp/>*pData,<sp/>uint8_t<sp/>u8NbData);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_MSG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@def<sp/><sp/>LOG_MSG<sp/>Macro<sp/>use<sp/>to<sp/>log<sp/>generic<sp/>message<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_MSG(level,<sp/>fmt,<sp/>...)<sp/>\</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor">{<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>Logger_Post(level,<sp/>fmt,<sp/>##__VA_ARGS__);<sp/>\</highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_ERR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@def<sp/><sp/>LOG_ERR<sp/>Macro<sp/>use<sp/>to<sp/>log<sp/>error<sp/><sp/>message<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_ERR(fmt,...)<sp/>do<sp/>{<sp/>if<sp/>(gLoggerLevel<sp/>&amp;<sp/>LOG_LV_ERR)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>LOG_MSG(LOG_LV_ID_ERR,<sp/>&quot;ERR:<sp/>&quot;fmt,<sp/>##__VA_ARGS__);<sp/>\</highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor">}<sp/>}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_WRN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@def<sp/><sp/>LOG_MSG<sp/>Macro<sp/>use<sp/>to<sp/>log<sp/>warning<sp/>message<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_WRN(fmt,...)<sp/>do<sp/>{<sp/>if<sp/>(gLoggerLevel<sp/>&amp;<sp/>LOG_LV_WRN)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="125"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>LOG_MSG(LOG_LV_ID_WRN,<sp/>&quot;WRN:<sp/>&quot;fmt,<sp/>##__VA_ARGS__);<sp/>\</highlight></codeline>
+<codeline lineno="126"><highlight class="preprocessor">}<sp/>}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_INF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@def<sp/><sp/>LOG_MSG<sp/>Macro<sp/>use<sp/>to<sp/>log<sp/>info<sp/>message<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_INF(fmt,...)<sp/>do<sp/>{<sp/>if<sp/>(gLoggerLevel<sp/>&amp;<sp/>LOG_LV_INF)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="132"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>LOG_MSG(LOG_LV_ID_INF,<sp/>&quot;INF:<sp/>&quot;fmt,<sp/>##__VA_ARGS__);<sp/>\</highlight></codeline>
+<codeline lineno="133"><highlight class="preprocessor">}<sp/>}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_DBG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@def<sp/><sp/>LOG_MSG<sp/>Macro<sp/>use<sp/>to<sp/>log<sp/>debug<sp/>message<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_DBG(fmt,...)<sp/>do<sp/>{<sp/>if<sp/>(gLoggerLevel<sp/>&amp;<sp/>LOG_LV_DBG)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="139"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>LOG_MSG(LOG_LV_ID_DBG,<sp/>&quot;DBG:<sp/>&quot;fmt,<sp/>##__VA_ARGS__);<sp/>\</highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor">}<sp/>}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_FRM_OUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@def<sp/><sp/>LOG_MSG<sp/>Macro<sp/>use<sp/>to<sp/>log<sp/>out<sp/>frame<sp/>as<sp/>bytes<sp/>array*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_FRM_OUT(pFrm,<sp/>nb_data)<sp/>do<sp/>{<sp/>if<sp/>(gLoggerLevel<sp/>&amp;<sp/>LOG_LV_FRM_OUT)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="146"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>Logger_Frame(&quot;--&gt;:<sp/>&quot;,<sp/>pFrm,<sp/>nb_data);<sp/>\</highlight></codeline>
+<codeline lineno="147"><highlight class="preprocessor">}<sp/>}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_FRM_IN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@def<sp/><sp/>LOG_MSG<sp/>Macro<sp/>use<sp/>to<sp/>log<sp/>in<sp/>frame<sp/>as<sp/>bytes<sp/>array<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_FRM_IN(pFrm,<sp/>nb_data)<sp/>do<sp/>{<sp/>if<sp/>(gLoggerLevel<sp/>&amp;<sp/>LOG_LV_FRM_IN)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>Logger_Frame(&quot;&lt;--:<sp/>&quot;,<sp/>pFrm,<sp/>nb_data);<sp/>\</highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor">}<sp/>}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Logger_Setup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Logger_Setup(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Logger_SetLevel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Logger_SetLevel(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Logger_Put</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Logger_Put(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Logger_Post</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Logger_Post(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Logger_Frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Logger_Frame(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_MSG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_MSG(level,<sp/>fmt,<sp/>...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_ERR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_ERR(fmt,...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_WRN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_WRN(fmt,...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_INF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_INF(fmt,...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_DBG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_DBG(fmt,...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_FRM_OUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_FRM_OUT(pFrm,<sp/>nb_data)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LOG_FRM_IN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_FRM_IN(pFrm,<sp/>nb_data)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_LOGGER_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h"/>
+  </compounddef>
+</doxygen>

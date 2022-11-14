@@ -1,0 +1,1021 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="img__storage_8c" kind="file" language="C++">
+    <compoundname>img_storage.c</compoundname>
+    <includes refid="img__storage__private_8h" local="yes">img_storage_private.h</includes>
+    <includes refid="crypto_8h" local="yes">crypto.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>assert.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+      <node id="3">
+        <label>img_storage.h</label>
+        <link refid="img__storage_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c</label>
+        <link refid="img__storage_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>img_storage_private.h</label>
+        <link refid="img__storage__private_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>crypto.h</label>
+        <link refid="crypto_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__ing__storage_1gac2442b5652047cd8fec47df158d7f23b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref></type>
+        <definition>struct img_mgr_ctx_s sImgMgrCtx</definition>
+        <argsstring></argsstring>
+        <name>sImgMgrCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="64" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t _get_bitmap_line</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id)</argsstring>
+        <name>_get_bitmap_line</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the line value (from bitmap) of the given block Id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the block.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the line value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="410" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="410" bodyend="413" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="60" declcolumn="9"/>
+        <references refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" compoundref="img__storage__private_8h" startline="186">img_mgr_ctx_s::aBitMap</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t _get_bitmap_bit</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id)</argsstring>
+        <name>_get_bitmap_bit</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the bit value (from bitmap) of the given block Id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the block.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>this block is not yet present. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>this block is already present. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="425" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="425" bodyend="432" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="61" declcolumn="9"/>
+        <references refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" compoundref="img__storage_8c" startline="410" endline="413">_get_bitmap_line</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga8c8dc9b5a5c837e569609c7bd3a4c72f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _set_bitmap</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id)</argsstring>
+        <name>_set_bitmap</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Set &quot;on&quot; the bit corresponding to the given block Id into the bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of block to set &quot;on&quot;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="441" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="441" bodyend="448" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="62" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" compoundref="img__storage__private_8h" startline="186">img_mgr_ctx_s::aBitMap</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga80ac351f69f8bcbfd91fd235a3e854c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _clr_bitmap</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx)</argsstring>
+        <name>_clr_bitmap</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>Clear the entire bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="456" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="456" bodyend="462" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="63" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" compoundref="img__storage__private_8h" startline="186">img_mgr_ctx_s::aBitMap</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga923a7091b879d0d2d766dc7c7f55e387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _clr_pending</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx)</argsstring>
+        <name>_clr_pending</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>Clear the pending table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="470" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="470" bodyend="479" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="64" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" compoundref="img__storage__private_8h" startline="184">img_mgr_ctx_s::sPendCtrl</references>
+        <references refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" compoundref="img__storage__private_8h" startline="174">sw_pend_ctrl_s::EMPTY</references>
+        <references refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" compoundref="img__storage__private_8h" startline="173">sw_pend_ctrl_s::ID</references>
+        <references refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" compoundref="img__storage__private_8h" startline="183">img_mgr_ctx_s::sPendBuff</references>
+        <references refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" compoundref="img__storage__private_8h" startline="162">sw_pend_buff_s::aPend</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga144e1e6dcc412c77efbf7d010f88475f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ImgStore_StoreBlock</definition>
+        <argsstring>(uint16_t u16_BlkId, uint8_t *p_Blk)</argsstring>
+        <name>ImgStore_StoreBlock</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_BlkId</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Blk</declname>
+        </param>
+        <briefdescription>
+<para>Save the given software block and set its corresponding bit &quot;on&quot; into the bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_BlkId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the given block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Blk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the software block. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="77" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="77" bodyend="253" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="57" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" compoundref="img__storage__private_8h" startline="193">img_mgr_ctx_s::u32Size</references>
+        <references refid="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" compoundref="img__storage_8c" startline="425" endline="432">_get_bitmap_bit</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gaefbe2245b4976f5040f48a3c3ef84289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ImgStore_IsComplete</definition>
+        <argsstring>(void)</argsstring>
+        <name>ImgStore_IsComplete</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if the given software image is complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not complete </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Complete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="261" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="261" bodyend="264" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="58" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga338ec5b155cfe028d5bc961be39d27b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ImgStore_Verify</definition>
+        <argsstring>(uint8_t *pImgHash, uint8_t u8DigestSz)</argsstring>
+        <name>ImgStore_Verify</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pImgHash</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8DigestSz</declname>
+        </param>
+        <briefdescription>
+<para>Verify the sw image integrity (sha256). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pImgHash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on expected image sha256 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8DigestSz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of expected image sha256</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="275" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="275" bodyend="288" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="59" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga664014c354a334ba246eae430c1a4bc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ImgStore_GetBitmapLine</definition>
+        <argsstring>(uint16_t u16_Id)</argsstring>
+        <name>ImgStore_GetBitmapLine</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the line value (from bitmap) of the given block Id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the block. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>8 bits bitmap line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="296" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="296" bodyend="299" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="60" declcolumn="9"/>
+        <references refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" compoundref="img__storage_8c" startline="410" endline="413">_get_bitmap_line</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gacf9ff477ebe1648d6836257fd7b79068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t ImgStore_GetMaxBlockNb</definition>
+        <argsstring>(void)</argsstring>
+        <name>ImgStore_GetMaxBlockNb</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the maximum admissible block number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum block number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="306" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="306" bodyend="309" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="61" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga80bd20490da8b18fcd16ff20c7c52e5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref></type>
+        <definition>img_pend_e ImgStore_GetPending</definition>
+        <argsstring>(void)</argsstring>
+        <name>ImgStore_GetPending</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the pending flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>img_pend_e::PENDING_SETUP return img_pend_e::PENDING_NONE return img_pend_e::PENDING_LOCAL return img_pend_e::PENDING_REMOTE </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="318" column="19" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="318" bodyend="321" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="62" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga94c00390e210d422d7cfd7a9fc8326c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ImgStore_SetPending</definition>
+        <argsstring>(img_pend_e ePend)</argsstring>
+        <name>ImgStore_SetPending</name>
+        <param>
+          <type><ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref></type>
+          <declname>ePend</declname>
+        </param>
+        <briefdescription>
+<para>Set the pending flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ePend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pending flag to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="330" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="330" bodyend="333" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="63" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gaee930c8f4195669e1675ab9ab4c4f2dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t ImgStore_Init</definition>
+        <argsstring>(uint16_t u16NbExpectedBlk)</argsstring>
+        <name>ImgStore_Init</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16NbExpectedBlk</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the image manager context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16NbExpectedBlk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number block for expected new sw image</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed (at least one of given parameters is out of range) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>-1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fatal (unable to erase the flash memory area) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="344" column="8" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="344" bodyend="367" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="64" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gab6c617026df784eca3da265773c5f12c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t ImgStore_Setup</definition>
+        <argsstring>(uint32_t u32ImgAdd, pfWriteFlash_t pfWrite, pfEraseFlash_t pfErase)</argsstring>
+        <name>ImgStore_Setup</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32ImgAdd</declname>
+        </param>
+        <param>
+          <type>pfWriteFlash_t</type>
+          <declname>pfWrite</declname>
+        </param>
+        <param>
+          <type>pfEraseFlash_t</type>
+          <declname>pfErase</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the image manager context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32ImgAdd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Software Image address (64 bits aligned) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfWrite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer on write sub function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfErase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer on erase sub function</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed (at least one of given parameters is out of range) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="379" column="8" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="379" bodyend="397" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="65" declcolumn="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file implement functions to deal with Software image storage. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/11[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="img__storage__private_8h" kindref="compound">img_storage_private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="crypto_8h" kindref="compound">crypto.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">#define<sp/>PENDING_LINE_EMPTY_MSK<sp/>0x4000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PENDING_LINE_FULL_MSK<sp/>0x8000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">uint8_t<sp/><ref refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" kindref="member">_get_bitmap_line</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx,<sp/>uint16_t<sp/>u16_Id);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">uint8_t<sp/><ref refid="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" kindref="member">_get_bitmap_bit</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx,<sp/>uint16_t<sp/>u16_Id);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga8c8dc9b5a5c837e569609c7bd3a4c72f" kindref="member">_set_bitmap</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx,<sp/>uint16_t<sp/>u16_Id);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga80ac351f69f8bcbfd91fd235a3e854c4" kindref="member">_clr_bitmap</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga923a7091b879d0d2d766dc7c7f55e387" kindref="member">_clr_pending</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>sImgMgrCtx;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="77" refid="group__ing__storage_1ga144e1e6dcc412c77efbf7d010f88475f" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga144e1e6dcc412c77efbf7d010f88475f" kindref="member">ImgStore_StoreBlock</ref>(uint16_t<sp/>u16_BlkId,<sp/>uint8_t<sp/>*p_Blk)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>i;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32Address;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>*pData;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*pPend;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>u16Idx;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>u16PendBlkId;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8NbPendAtStart;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8NbPendAtEnd;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>line;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(p_Blk<sp/>==<sp/>NULL)<sp/>||<sp/>(u16_BlkId<sp/>&gt;<sp/>BLOCK_NB)<sp/>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>out<sp/>of<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>block<sp/>is<sp/>already<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" kindref="member">_get_bitmap_bit</ref>(&amp;sImgMgrCtx,<sp/>u16_BlkId))</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>block<sp/>is<sp/>already<sp/>download,<sp/>so<sp/>pass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>block<sp/>is<sp/>not<sp/>yet<sp/>download</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>pending<sp/>line<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u16Idx<sp/>=<sp/>(u16_BlkId<sp/>&gt;&gt;<sp/>2)%(PENDING_LINE_NB<sp/>-1);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>the<sp/>pending<sp/>line<sp/>is<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[u16Idx].<ref refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" kindref="member">EMPTY</ref><sp/>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>line<sp/>is<sp/>no<sp/>more<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[u16Idx].<ref refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" kindref="member">EMPTY</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>pending<sp/>block<sp/>id<sp/>(the<sp/>first<sp/>id<sp/>in<sp/>the<sp/>pend<sp/>line)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[u16Idx].<ref refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" kindref="member">ID</ref><sp/>=<sp/>u16_BlkId<sp/>-<sp/>u16_BlkId%4;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>required<sp/>pending<sp/>line<sp/>is<sp/>already<sp/>use<sp/>by<sp/>this<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[u16Idx].<ref refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" kindref="member">ID</ref><sp/>==<sp/>(<sp/>u16_BlkId<sp/>-<sp/>u16_BlkId%4))<sp/>)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>current<sp/>block<sp/>destination<sp/>base<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//u32Address<sp/>=<sp/>sImgMgrCtx.u32Addr<sp/>+<sp/>(<sp/>(<sp/>(u16_BlkId<sp/>*<sp/>BLOCK_SZ)<sp/>&gt;&gt;<sp/>3)<sp/>&lt;&lt;<sp/>3<sp/>)<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32Address<sp/>=<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref><sp/>+<sp/>(u16_BlkId<sp/>*<sp/>BLOCK_SZ);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/******************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>deal<sp/>with<sp/>unaligned<sp/>part(s)<sp/>of<sp/>the<sp/>current<sp/>block<sp/>(pending<sp/>bytes)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>pending<sp/>line<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u16PendBlkId<sp/>=<sp/>u16_BlkId%4;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>number<sp/>of<sp/>pending<sp/>byte<sp/>at<sp/>Start<sp/>end<sp/>at<sp/>End<sp/>of<sp/>the<sp/>current<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u16PendBlkId<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtStart<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtEnd<sp/><sp/><sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u16PendBlkId<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtStart<sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtEnd<sp/><sp/><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u16PendBlkId<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtStart<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtEnd<sp/><sp/><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u16PendBlkId<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtStart<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtEnd<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="comment">//<sp/>this<sp/>should<sp/>never<sp/>happened</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtStart<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8NbPendAtEnd<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Store<sp/>unaligned<sp/>part(s)<sp/>of<sp/>the<sp/>current<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend<sp/>=<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" kindref="member">sPendBuff</ref>[u16Idx].<ref refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" kindref="member">aPend</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend<sp/>+=<sp/>u16PendBlkId<sp/>&lt;&lt;<sp/>3;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i<sp/>&lt;<sp/>u8NbPendAtEnd;<sp/>i++)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend[i]<sp/>=<sp/>p_Blk[<sp/>BLOCK_SZ<sp/>-<sp/>u8NbPendAtEnd<sp/>+i];</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend<sp/>-=<sp/>u8NbPendAtStart;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i<sp/>&lt;<sp/>u8NbPendAtStart;<sp/>i++)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend[i]<sp/>=<sp/>p_Blk[i];</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend<sp/>=<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" kindref="member">sPendBuff</ref>[u16Idx].<ref refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" kindref="member">aPend</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/******************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>deal<sp/>with<sp/>bytes<sp/>already<sp/>aligned<sp/>on<sp/>double-word</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sImgMgrCtx.write)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>start<sp/>of<sp/>pBlock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pData<sp/>=<sp/>(uint64_t*)&amp;(p_Blk[u8NbPendAtStart]);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>nb<sp/>double-word<sp/>aligned<sp/>to<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref><sp/>=<sp/>(BLOCK_SZ<sp/>-<sp/>u8NbPendAtStart<sp/>-<sp/>u8NbPendAtEnd)<sp/>&gt;&gt;<sp/>3;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>offset<sp/>to<sp/>start<sp/>address<sp/>and<sp/>write<sp/>to<sp/>flash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.write(u32Address<sp/>+<sp/>u8NbPendAtStart,<sp/>pData,<sp/><ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>in<sp/>bitmap<sp/>the<sp/>block<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__ing__storage_1ga8c8dc9b5a5c837e569609c7bd3a4c72f" kindref="member">_set_bitmap</ref>(&amp;sImgMgrCtx,<sp/>u16_BlkId);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/**************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>deal<sp/>with<sp/>pending<sp/>double-word</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/><ref refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" kindref="member">_get_bitmap_line</ref>(&amp;sImgMgrCtx,<sp/>u16_BlkId);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/>(<sp/>(u16_BlkId%8)<sp/>&gt;&gt;<sp/>2<sp/>)?(line):(line<sp/>&gt;&gt;<sp/>4);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>&amp;=<sp/>0x0F;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<sp/>(<sp/>line<sp/>&lt;&lt;<sp/>u16PendBlkId<sp/>)<sp/>&amp;<sp/>0b1100<sp/>)<sp/>==<sp/>0b1100<sp/><sp/>)<sp/></highlight><highlight class="comment">//<sp/>block<sp/>after</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pData<sp/>=<sp/>&amp;(<sp/>((uint64_t*)pPend)[u16PendBlkId]<sp/>);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sImgMgrCtx.write<sp/>)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>offset<sp/>to<sp/>start<sp/>address<sp/>and<sp/>write<sp/>to<sp/>flash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.write(u32Address<sp/>+<sp/>BLOCK_SZ<sp/>-<sp/>u8NbPendAtEnd,<sp/>pData,<sp/>1);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" kindref="member">u32NbBlk</ref>++;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<sp/>(<sp/>line<sp/>&gt;&gt;<sp/>(3<sp/>-<sp/>u16PendBlkId)<sp/>)<sp/>&amp;<sp/>0b0011<sp/>)<sp/>==<sp/>0b0011<sp/>)<sp/></highlight><highlight class="comment">//<sp/>block<sp/>before</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pData<sp/>=<sp/>&amp;(<sp/>((uint64_t*)pPend)[u16PendBlkId<sp/>-<sp/>1]<sp/>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sImgMgrCtx.write<sp/>)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>offset<sp/>to<sp/>start<sp/>address<sp/>and<sp/>write<sp/>to<sp/>flash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.write(u32Address<sp/>-<sp/>8<sp/>+<sp/>u8NbPendAtStart,<sp/>pData,<sp/>1);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" kindref="member">u32NbBlk</ref>++;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Special<sp/>case<sp/>for<sp/>the<sp/>last<sp/>block<sp/>that<sp/>is<sp/>not<sp/>&quot;multiple<sp/>of<sp/>4&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" kindref="member">u32NbExpectedBlk</ref><sp/>%4)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>u16_BlkId<sp/>==<sp/>(sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" kindref="member">u32NbExpectedBlk</ref><sp/>-1)<sp/>)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>at<sp/>this<sp/>point<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>Double-word<sp/>align<sp/>data<sp/>have<sp/>already<sp/>been<sp/>written</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>If<sp/>exist,<sp/>inter-block<sp/>unaligned<sp/>data<sp/>have<sp/>already<sp/>been<sp/>written</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>So,<sp/>the<sp/>only<sp/>unaligned<sp/>remaining<sp/>part<sp/>is<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend<sp/>+=<sp/>u16PendBlkId<sp/>&lt;&lt;<sp/>3;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>padding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>u8NbPendAtEnd;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPend[i]<sp/>=<sp/>0xFF;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pData<sp/>=<sp/>(uint64_t*)pPend;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sImgMgrCtx.write<sp/>)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>offset<sp/>to<sp/>start<sp/>address<sp/>and<sp/>write<sp/>to<sp/>flash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.write(u32Address<sp/>+<sp/>BLOCK_SZ<sp/>-<sp/>u8NbPendAtEnd,<sp/>pData,<sp/>1);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" kindref="member">u32NbBlk</ref>++;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/**************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>line<sp/>is<sp/>full,<sp/>so<sp/>release<sp/>the<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<sp/>line<sp/><sp/>&amp;<sp/>0x0F<sp/>)<sp/>==<sp/>0x0F<sp/>)</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[u16Idx].<ref refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" kindref="member">ID</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[u16Idx].<ref refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" kindref="member">EMPTY</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Last<sp/>block<sp/>in<sp/>pending<sp/>line<sp/>must<sp/>be<sp/>taken<sp/>into<sp/>account</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" kindref="member">u32NbBlk</ref>++;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/**************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>else,<sp/>no<sp/>space<sp/>left,<sp/>drop<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="group__ing__storage_1gaefbe2245b4976f5040f48a3c3ef84289" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__ing__storage_1gaefbe2245b4976f5040f48a3c3ef84289" kindref="member">ImgStore_IsComplete</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" kindref="member">u32NbBlk</ref><sp/>==<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" kindref="member">u32NbExpectedBlk</ref>);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="group__ing__storage_1ga338ec5b155cfe028d5bc961be39d27b8" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__ing__storage_1ga338ec5b155cfe028d5bc961be39d27b8" kindref="member">ImgStore_Verify</ref>(uint8_t<sp/>*pImgHash,<sp/>uint8_t<sp/>u8DigestSz)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pSha256[SHA256_SIZE];</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32_Sz<sp/>=<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" kindref="member">u32NbExpectedBlk</ref>*BLOCK_SZ;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="group__crypto_1ga14ac8fca562dab920a6f403d248021c8" kindref="member">Crypto_SHA256</ref>(pSha256,<sp/>(uint8_t*)(sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref>),<sp/>u32_Sz)<sp/>==<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a60a843bc26ee85510e68d53b85e52683" kindref="member">CRYPTO_OK</ref><sp/>)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pImgHash<sp/>&amp;&amp;<sp/>(memcmp(<sp/>pImgHash,<sp/>pSha256,<sp/>u8DigestSz)<sp/>==<sp/>0)<sp/>)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="group__ing__storage_1ga664014c354a334ba246eae430c1a4bc5" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__ing__storage_1ga664014c354a334ba246eae430c1a4bc5" kindref="member">ImgStore_GetBitmapLine</ref>(uint16_t<sp/>u16_Id)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" kindref="member">_get_bitmap_line</ref>(&amp;sImgMgrCtx,<sp/>(u16_Id+1)<sp/>);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306" refid="group__ing__storage_1gacf9ff477ebe1648d6836257fd7b79068" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="group__ing__storage_1gacf9ff477ebe1648d6836257fd7b79068" kindref="member">ImgStore_GetMaxBlockNb</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(uint16_t)sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref>;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="318" refid="group__ing__storage_1ga80bd20490da8b18fcd16ff20c7c52e5f" refkind="member"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref><sp/><ref refid="group__ing__storage_1ga80bd20490da8b18fcd16ff20c7c52e5f" kindref="member">ImgStore_GetPending</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" kindref="member">eImgPend</ref>;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330" refid="group__ing__storage_1ga94c00390e210d422d7cfd7a9fc8326c0" refkind="member"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga94c00390e210d422d7cfd7a9fc8326c0" kindref="member">ImgStore_SetPending</ref>(<ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref><sp/>ePend)</highlight></codeline>
+<codeline lineno="331"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" kindref="member">eImgPend</ref><sp/>=<sp/>ePend;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344" refid="group__ing__storage_1gaee930c8f4195669e1675ab9ab4c4f2dc" refkind="member"><highlight class="normal">int8_t<sp/><ref refid="group__ing__storage_1gaee930c8f4195669e1675ab9ab4c4f2dc" kindref="member">ImgStore_Init</ref>(uint16_t<sp/>u16NbExpectedBlk)</highlight></codeline>
+<codeline lineno="345"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u16NbExpectedBlk<sp/>&gt;<sp/>BLOCK_NB<sp/>||<sp/>(<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" kindref="member">eImgPend</ref><sp/>!=<sp/>PENDING_NONE)<sp/>)</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>given<sp/>expected<sp/>number<sp/>of<sp/>block<sp/>exceed<sp/>the<sp/>reserved<sp/>area</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>erase<sp/>the<sp/>memory<sp/>area</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sImgMgrCtx.erase<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sImgMgrCtx.erase(sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref>,<sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref>)<sp/>)</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unexpected<sp/>error<sp/>while<sp/>erasing<sp/>the<sp/>memory<sp/>area</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>all<sp/>structure<sp/>(bitmap,<sp/>...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" kindref="member">u32NbBlk</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>erase<sp/>the<sp/>bitmap</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ing__storage_1ga80ac351f69f8bcbfd91fd235a3e854c4" kindref="member">_clr_bitmap</ref>(&amp;sImgMgrCtx);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>erase<sp/>the<sp/>pending</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ing__storage_1ga923a7091b879d0d2d766dc7c7f55e387" kindref="member">_clr_pending</ref>(&amp;sImgMgrCtx);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" kindref="member">u32NbExpectedBlk</ref><sp/>=<sp/>(uint32_t)u16NbExpectedBlk;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379" refid="group__ing__storage_1gab6c617026df784eca3da265773c5f12c" refkind="member"><highlight class="normal">int8_t<sp/><ref refid="group__ing__storage_1gab6c617026df784eca3da265773c5f12c" kindref="member">ImgStore_Setup</ref>(uint32_t<sp/>u32ImgAdd,<sp/>pfWriteFlash_t<sp/>pfWrite,<sp/>pfEraseFlash_t<sp/>pfErase)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32ImgAdd<sp/>&amp;<sp/>0x7<sp/>||<sp/>pfErase<sp/>==<sp/>NULL<sp/>||<sp/>pfWrite<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>given<sp/>image<sp/>address<sp/>is<sp/>not<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref><sp/>=<sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" kindref="member">eImgPend</ref><sp/>=<sp/>PENDING_SETUP;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.erase<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sImgMgrCtx.write<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref><sp/>=<sp/>u32ImgAdd;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref><sp/>=<sp/>IMG_MAX_SZ;<sp/></highlight><highlight class="comment">//IMG_NB_PAGES;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.<ref refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" kindref="member">eImgPend</ref><sp/>=<sp/>PENDING_NONE;</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.erase<sp/>=<sp/>pfErase;<sp/></highlight><highlight class="comment">//&amp;BSP_Flash_EraseArea;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>sImgMgrCtx.write<sp/>=<sp/>pfWrite;<sp/></highlight><highlight class="comment">//&amp;BSP_Flash_Write;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410" refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" kindref="member">_get_bitmap_line</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx,<sp/>uint16_t<sp/>u16_Id)</highlight></codeline>
+<codeline lineno="411"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(pCtx-&gt;<ref refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" kindref="member">aBitMap</ref>[u16_Id/8]);</highlight></codeline>
+<codeline lineno="413"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="425" refid="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" kindref="member">_get_bitmap_bit</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx,<sp/>uint16_t<sp/>u16_Id)</highlight></codeline>
+<codeline lineno="426"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_BitMask;</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_BitMask<sp/>=<sp/>0b10000000<sp/>&gt;&gt;<sp/>(u16_Id<sp/>%8);</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>0<sp/>:<sp/>we<sp/>don&apos;t<sp/>have<sp/>yet<sp/>get<sp/>this<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>1<sp/>:<sp/>we<sp/>have<sp/>already<sp/>download<sp/>this<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(u8_BitMask<sp/>&amp;<sp/><ref refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" kindref="member">_get_bitmap_line</ref>(pCtx,<sp/>u16_Id));</highlight></codeline>
+<codeline lineno="432"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight></codeline>
+<codeline lineno="441" refid="group__ing__storage_1ga8c8dc9b5a5c837e569609c7bd3a4c72f" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga8c8dc9b5a5c837e569609c7bd3a4c72f" kindref="member">_set_bitmap</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx,<sp/>uint16_t<sp/>u16_Id)</highlight></codeline>
+<codeline lineno="442"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ByteIdx,<sp/>u8_BitIdx,<sp/>u8_BitMask;</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ByteIdx<sp/>=<sp/>u16_Id/8;<sp/></highlight><highlight class="comment">//<sp/>max<sp/>8192</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_BitIdx<sp/>=<sp/>u16_Id<sp/>%8;<sp/></highlight><highlight class="comment">//<sp/>from<sp/>0<sp/>to<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_BitMask<sp/>=<sp/>0b10000000<sp/>&gt;&gt;<sp/>u8_BitIdx;</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/>pCtx-&gt;<ref refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" kindref="member">aBitMap</ref>[u8_ByteIdx]<sp/>|=<sp/>u8_BitMask;</highlight></codeline>
+<codeline lineno="448"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight></codeline>
+<codeline lineno="456" refid="group__ing__storage_1ga80ac351f69f8bcbfd91fd235a3e854c4" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga80ac351f69f8bcbfd91fd235a3e854c4" kindref="member">_clr_bitmap</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx)</highlight></codeline>
+<codeline lineno="457"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>i;</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i<sp/>&lt;<sp/>BITMAP_BLOCK_NB;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pCtx-&gt;<ref refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" kindref="member">aBitMap</ref>[i]<sp/>=<sp/>0x0;</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="462"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470" refid="group__ing__storage_1ga923a7091b879d0d2d766dc7c7f55e387" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__ing__storage_1ga923a7091b879d0d2d766dc7c7f55e387" kindref="member">_clr_pending</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>*pCtx)</highlight></codeline>
+<codeline lineno="471"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>i;</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i<sp/>&lt;<sp/>PENDING_LINE_NB;<sp/>i++)</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pCtx-&gt;<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[i].<ref refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" kindref="member">EMPTY</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pCtx-&gt;<ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[i].<ref refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" kindref="member">ID</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(pCtx-&gt;<ref refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" kindref="member">sPendBuff</ref>[i].<ref refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" kindref="member">aPend</ref>,0x00,<sp/>PENDING_LINE_PEND_BYTES);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="479"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c"/>
+  </compounddef>
+</doxygen>

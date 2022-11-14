@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_9d15c3df6a1a917d6e437c63df430835" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/ImgStorage/include/private</compoundname>
+    <innerfile refid="img__storage__private_8h">img_storage_private.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/"/>
+  </compounddef>
+</doxygen>

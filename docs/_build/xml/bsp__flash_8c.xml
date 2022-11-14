@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bsp__flash_8c" kind="file" language="C++">
+    <compoundname>bsp_flash.c</compoundname>
+    <includes refid="bsp__flash_8h" local="yes">bsp_flash.h</includes>
+    <includes refid="platform_8h" local="yes">platform.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stm32l4xx_hal.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="8">
+        <label>assert.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>stm32l4xx_hal.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="2">
+        <label>bsp_flash.h</label>
+        <link refid="bsp__flash_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c</label>
+        <link refid="bsp__flash_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>string.h</label>
+      </node>
+      <node id="9">
+        <label>time.h</label>
+      </node>
+      <node id="11">
+        <label>platform.h</label>
+        <link refid="platform_8h"/>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="10">
+        <label>machine/endian.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__flash_1ga59e92cf524adf0412037f59b98dc216c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref></type>
+        <definition>dev_res_e BSP_Flash_Erase</definition>
+        <argsstring>(uint32_t u32PageId)</argsstring>
+        <name>BSP_Flash_Erase</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Page</declname>
+          <defname>u32PageId</defname>
+        </param>
+        <briefdescription>
+<para>Erase the given flash page area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32PageId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Page Id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="52" column="11" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="52" bodyend="73" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="43" declcolumn="11"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga989fada78a67b4d9633fd6548de07bb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref></type>
+        <definition>dev_res_e BSP_Flash_EraseArea</definition>
+        <argsstring>(uint32_t u32Address, uint32_t u32NbBytes)</argsstring>
+        <name>BSP_Flash_EraseArea</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Address</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32NbBytes</declname>
+        </param>
+        <briefdescription>
+<para>Erase the related flash memory area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start address of area to erase </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32NbBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Area size to erase</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="84" column="11" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="84" bodyend="120" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="44" declcolumn="11"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" compoundref="bsp__flash_8c" startline="212" endline="215">BSP_Flash_GetPage</references>
+        <references refid="group__flash_1ga59e92cf524adf0412037f59b98dc216c" compoundref="bsp__flash_8c" startline="52" endline="73">BSP_Flash_Erase</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref></type>
+        <definition>dev_res_e BSP_Flash_Write</definition>
+        <argsstring>(uint32_t u32Address, uint64_t *pData, uint32_t u32NbDword)</argsstring>
+        <name>BSP_Flash_Write</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Address</declname>
+        </param>
+        <param>
+          <type>uint64_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32NbDword</declname>
+        </param>
+        <briefdescription>
+<para>Write double-word aligned data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on data sto store </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>u32NbDword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of double-word of data to store</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="131" column="11" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="131" bodyend="158" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="45" declcolumn="11"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga7f97c99954aac59cb1ae954ad4d83d6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t BSP_Flash_Store</definition>
+        <argsstring>(uint32_t u32Address, void *pData, uint32_t u32NbBytes)</argsstring>
+        <name>BSP_Flash_Store</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32DestAddr</declname>
+          <defname>u32Address</defname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32NbBytes</declname>
+        </param>
+        <briefdescription>
+<para>Store the given data into Flash memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>: If the number of byte to write is not double-word aligned, the rest is filled with padding (0xFF). </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on data to store </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>u32NbBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of byte of data to store</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>next 64 bits aligned flash address if everything is fine. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>0xFFFFFFFF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="171" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="171" bodyend="205" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="46" declcolumn="10"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+        <references refid="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" compoundref="bsp__flash_8c" startline="131" endline="158">BSP_Flash_Write</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t BSP_Flash_GetPage</definition>
+        <argsstring>(uint32_t u32Address)</argsstring>
+        <name>BSP_Flash_GetPage</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Addr</declname>
+          <defname>u32Address</defname>
+        </param>
+        <briefdescription>
+<para>Obtains the page id from the given address. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash page id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="212" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="212" bodyend="215" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="47" declcolumn="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file implement bsp functions to access the internal flash device. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/02/19 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bsp__flash_8h" kindref="compound">bsp_flash.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="platform_8h" kindref="compound">platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stm32l4xx_hal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="group__flash_1ga59e92cf524adf0412037f59b98dc216c" refkind="member"><highlight class="normal"><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/><ref refid="group__flash_1ga59e92cf524adf0412037f59b98dc216c" kindref="member">BSP_Flash_Erase</ref>(uint32_t<sp/>u32PageId)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/>eRet<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">DEV_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>FLASH_EraseInitTypeDef<sp/>pEraseInit;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32ErrCode;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>enter<sp/>critical<sp/>section</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_FLASH_Unlock()<sp/>==<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEraseInit.Banks<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEraseInit.NbPages<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEraseInit.TypeErase<sp/>=<sp/>FLASH_TYPEERASE_PAGES;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pEraseInit.Page<sp/>=<sp/>u32PageId;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_FLASHEx_Erase(&amp;pEraseInit,<sp/>&amp;u32ErrCode)<sp/>==<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eRet<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_FLASH_Lock();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:<sp/>exit<sp/>critical<sp/>section</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>eRet;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="group__flash_1ga989fada78a67b4d9633fd6548de07bb0" refkind="member"><highlight class="normal"><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/><ref refid="group__flash_1ga989fada78a67b4d9633fd6548de07bb0" kindref="member">BSP_Flash_EraseArea</ref>(uint32_t<sp/>u32Address,<sp/>uint32_t<sp/>u32NbBytes)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/>eRet<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>page_id;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>last_page;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(u32Address<sp/>+<sp/>u32NbBytes)<sp/>%<sp/>FLASH_PAGE_SIZE<sp/>)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>out<sp/>of<sp/>page<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eRet<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">DEV_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>last_page<sp/>=<sp/><ref refid="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" kindref="member">BSP_Flash_GetPage</ref>(u32Address<sp/>+<sp/>u32NbBytes);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>page_id<sp/>=<sp/><ref refid="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" kindref="member">BSP_Flash_GetPage</ref>(u32Address);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>retry<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eRet<sp/>=<sp/><ref refid="group__flash_1ga59e92cf524adf0412037f59b98dc216c" kindref="member">BSP_Flash_Erase</ref>(page_id);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>eRet<sp/>==<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref><sp/>)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retry<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retry--;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(retry);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eRet<sp/>!=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>page_id++;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(page_id<sp/>&lt;<sp/>last_page);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>eRet;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" refkind="member"><highlight class="normal"><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/><ref refid="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" kindref="member">BSP_Flash_Write</ref>(uint32_t<sp/>u32Address,<sp/>uint64_t<sp/>*pData,<sp/>uint32_t<sp/>u32NbDword)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//uint32_t<sp/>err_code;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>i;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>u32TgtAdd;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/>eRet<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">DEV_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>enter<sp/>critical<sp/>section</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_FLASH_Unlock()<sp/>==<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eRet<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32TgtAdd<sp/>=<sp/>u32Address;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;u32NbDword;<sp/>i++)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD,<sp/>u32TgtAdd,<sp/>pData[i])<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eRet<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">DEV_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//err_code<sp/>=<sp/>HAL_FLASH_GetError();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32TgtAdd<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_FLASH_Lock();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:<sp/>exit<sp/>critical<sp/>section</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>eRet;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="group__flash_1ga7f97c99954aac59cb1ae954ad4d83d6d" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="group__flash_1ga7f97c99954aac59cb1ae954ad4d83d6d" kindref="member">BSP_Flash_Store</ref>(uint32_t<sp/>u32Address,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>pData,<sp/>uint32_t<sp/>u32NbBytes)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*p;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>last;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>next_dest_addr;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>nb_dbl_word;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>nb_bytes_aligned;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>remains_bytes;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>(uint8_t*)pData;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>next_dest_addr<sp/>=<sp/>u32Address;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>nb_dbl_word<sp/>=<sp/>(u32NbBytes/</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t));</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>nb_bytes_aligned<sp/>=<sp/>nb_dbl_word*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>remains_bytes<sp/>=<sp/>(<sp/>u32NbBytes%</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t)<sp/>);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>treat<sp/>double-word<sp/>aligned<sp/>part</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref><sp/>!=<sp/><ref refid="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" kindref="member">BSP_Flash_Write</ref>(next_dest_addr,<sp/>(uint64_t*)p,<sp/>nb_dbl_word))</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>next_dest_addr<sp/>+=<sp/>nb_bytes_aligned;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>treat<sp/>remains<sp/>bytes<sp/>and<sp/>add<sp/>padding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(remains_bytes)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>+=<sp/>nb_bytes_aligned;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>last<sp/>=<sp/>0xFFFFFFFFFFFFFFFF;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)(&amp;last),<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)p,<sp/>remains_bytes);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nb_dbl_word<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref><sp/>!=<sp/><ref refid="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" kindref="member">BSP_Flash_Write</ref>(next_dest_addr,<sp/>&amp;last,<sp/>nb_dbl_word))</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0xFFFFFFFF;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next_dest_addr<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>next_dest_addr;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" kindref="member">BSP_Flash_GetPage</ref>(uint32_t<sp/>u32Address)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(u32Address<sp/>-<sp/>FLASH_BASE)<sp/>/<sp/>FLASH_PAGE_SIZE;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structproto__stats__s" kind="struct" language="C++" prot="public">
+    <compoundname>proto_stats_s</compoundname>
+    <includes refid="proto_8h" local="no">proto.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structproto__stats__s_1a0ea952678418f46d863c63042044814c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t proto_stats_s::u32TxNbBytes</definition>
+        <argsstring></argsstring>
+        <name>u32TxNbBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total transmitted bytes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="142" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a1bd385d86c2899f49a64cffdb9947cf0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t proto_stats_s::u32TxNbFrames</definition>
+        <argsstring></argsstring>
+        <name>u32TxNbFrames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total transmitted frames </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="143" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1abbaba274c5ff6410b3cd971f15c2b525" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t proto_stats_s::u32RxNbBytes</definition>
+        <argsstring></argsstring>
+        <name>u32RxNbBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total received bytes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="145" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a9136d6f08800149fd708ecf392ae8afe" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t proto_stats_s::u32RxNbFrmOK</definition>
+        <argsstring></argsstring>
+        <name>u32RxNbFrmOK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total received frames without error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="146" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a42d46f71bdb135984b35159eca32d3ea" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t proto_stats_s::u32RxNbFrmErr</definition>
+        <argsstring></argsstring>
+        <name>u32RxNbFrmErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total received frames with error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="147" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a80ed43333feb24bc40ff6616c34625ee" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__proto_1ga11c9fb67de3883a6ab55c57b32afcf72" kindref="member">frm_err_stats_t</ref></type>
+        <definition>frm_err_stats_t proto_stats_s::sFrmErrStats</definition>
+        <argsstring></argsstring>
+        <name>sFrmErrStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frames statistics </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="148" column="17" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a93b93a4050ab4d28c563769ba30d0dc0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8TxNoiseMax</definition>
+        <argsstring></argsstring>
+        <name>u8TxNoiseMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum Noise </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="151" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1add0b9865ac944ef248d13a8b5bffd158" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8TxNoiseAvg</definition>
+        <argsstring></argsstring>
+        <name>u8TxNoiseAvg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Average Noise </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="152" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a877cde5fdc92cf1b5eec86cf5aa3d730" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8TxNoiseMin</definition>
+        <argsstring></argsstring>
+        <name>u8TxNoiseMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum Noise </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="153" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a3a1a9d01cb0384940103c1b16369f0c2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8TxReserved</definition>
+        <argsstring></argsstring>
+        <name>u8TxReserved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reserved </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="154" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a1becdabd2cab115a6b28fcc0923732e3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8RxRssiMax</definition>
+        <argsstring></argsstring>
+        <name>u8RxRssiMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum RSSI </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="156" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a016a63d6f5db13a457aaaf23503a889b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8RxRssiAvg</definition>
+        <argsstring></argsstring>
+        <name>u8RxRssiAvg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Average RSSI </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="157" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1a6669a012bd1e518238a7e32838f5024f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8RxRssiMin</definition>
+        <argsstring></argsstring>
+        <name>u8RxRssiMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum RSSI </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="158" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structproto__stats__s_1ab4108e1645a2d90ce9fe38163927a346" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t proto_stats_s::u8RxReserved</definition>
+        <argsstring></argsstring>
+        <name>u8RxReserved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reserved </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="159" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure hold the net device statistics. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>proto_stats_s</label>
+        <link refid="structproto__stats__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sFrmErrStats</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>frm_err_stats_s</label>
+        <link refid="structfrm__err__stats__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="139" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="138" bodyend="160"/>
+    <listofallmembers>
+      <member refid="structproto__stats__s_1a80ed43333feb24bc40ff6616c34625ee" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>sFrmErrStats</name></member>
+      <member refid="structproto__stats__s_1abbaba274c5ff6410b3cd971f15c2b525" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u32RxNbBytes</name></member>
+      <member refid="structproto__stats__s_1a42d46f71bdb135984b35159eca32d3ea" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u32RxNbFrmErr</name></member>
+      <member refid="structproto__stats__s_1a9136d6f08800149fd708ecf392ae8afe" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u32RxNbFrmOK</name></member>
+      <member refid="structproto__stats__s_1a0ea952678418f46d863c63042044814c" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u32TxNbBytes</name></member>
+      <member refid="structproto__stats__s_1a1bd385d86c2899f49a64cffdb9947cf0" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u32TxNbFrames</name></member>
+      <member refid="structproto__stats__s_1ab4108e1645a2d90ce9fe38163927a346" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8RxReserved</name></member>
+      <member refid="structproto__stats__s_1a016a63d6f5db13a457aaaf23503a889b" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8RxRssiAvg</name></member>
+      <member refid="structproto__stats__s_1a1becdabd2cab115a6b28fcc0923732e3" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8RxRssiMax</name></member>
+      <member refid="structproto__stats__s_1a6669a012bd1e518238a7e32838f5024f" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8RxRssiMin</name></member>
+      <member refid="structproto__stats__s_1add0b9865ac944ef248d13a8b5bffd158" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8TxNoiseAvg</name></member>
+      <member refid="structproto__stats__s_1a93b93a4050ab4d28c563769ba30d0dc0" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8TxNoiseMax</name></member>
+      <member refid="structproto__stats__s_1a877cde5fdc92cf1b5eec86cf5aa3d730" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8TxNoiseMin</name></member>
+      <member refid="structproto__stats__s_1a3a1a9d01cb0384940103c1b16369f0c2" prot="public" virt="non-virtual"><scope>proto_stats_s</scope><name>u8TxReserved</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

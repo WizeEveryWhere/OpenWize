@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 - 2022, GRDF
+# This file is distributed under the same license as the OpenWize package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWize 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-08 13:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../welcome.rst:5
+msgid "Welcome to OpenWize !"
+msgstr "Bienvenue sur OpenWize !"
+
+#: ../../welcome.rst:8
+msgid "What is Wize ?"
+msgstr "Qu'est-ce que Wize ?"
+
+#: ../../welcome.rst:10
+msgid "Launched in March 2017 by GRDF, Suez and Sagemcom, Wize is an open protocol whose principle is based on low-power, low-bitrate (between 1200 and 6400 bits/s) and long-range remote communication."
+msgstr "Lancé en mars 2017 par GRDF, Suez et Sagemcom, Wize est un protocole ouvert dont le principe repose sur une communication à distance à faible puissance, faible débit (entre 1200 et 6400 bits/s) et longue portée."
+
+#: ../../welcome.rst:12
+msgid "The Wize protocol specifications are maintained within the Wize Alliance, which is a non-profit association that promotes the adoption of this protocol within IOT networks in the world of industry and urban utilities. In 2021, the Wize Alliance will have about 40 members."
+msgstr "Les spécifications du protocole Wize sont maintenues au sein de la Wize Alliance, qui est une association à but non lucratif qui promeut l'adoption de ce protocole au sein des réseaux IOT dans le monde de l'industrie et des services publics urbains. En 2021, la Wize Alliance comptera environ 40 membres."
+
+#: ../../welcome.rst:14
+msgid "Wize uses radio waves on an open and royalty-free 169 MHz frequency in Europe to ensure the best possible penetration for collecting telemetry data in the Internet of Things domain."
+msgstr "Wize utilise des ondes radio sur une fréquence ouverte et libre de droits de 169 MHz en Europe afin d'assurer la meilleure pénétration possible pour la collecte de données de télémétrie dans le domaine de l'Internet des objets."
+
+#: ../../welcome.rst:16
+msgid "All the documentation of the protocol is freely available on the `Wize Alliance website <https:\\\\www.wize-alliance.com>`_, as well as all the information needed to become a member in a few clicks."
+msgstr "Toute la documentation du protocole est disponible gratuitement sur le site de `Wize Alliance <https:\\\\www.wize-alliance.com>`_, ainsi que toutes les informations nécessaires pour devenir membre en quelques clics."
+
+#: ../../welcome.rst:19
+msgid "Why a 169 MHz stack in open source ?"
+msgstr "Pourquoi une stack 169 MHz en open source ?"
+
+#: ../../welcome.rst:21
+msgid "GRDF started its work on the 169 MHZ frequency in 2010 as part of its remote reading of gas smart meters project. The challenge for GRDF was to set up a radio infrastructure on an open and free frequency band in Europe, in order to enable the remote reading of gas smart meters for its 11 million customers, based on :"
+msgstr "GRDF a commencé à travailler sur la fréquence 169 MHZ en 2010 dans le cadre de son projet de télérelève des compteurs intelligents de gaz. L'enjeu pour GRDF était de mettre en place une infrastructure radio sur une bande de fréquence ouverte et libre en Europe, afin de permettre la télérelève des compteurs intelligents de gaz pour ses 11 millions de clients, sur la base de :"
+
+#: ../../welcome.rst:23
+msgid "Reliable technology allowing it to guarantee a daily reading rate of at least 95%,"
+msgstr "Une technologie fiable lui permettant de garantir un taux de lecture quotidien d'au moins 95%,"
+
+#: ../../welcome.rst:24
+msgid "A 20-year life span for battery-operated equipment,"
+msgstr "Une durée de vie de 20 ans pour les équipements fonctionnant sur batterie,"
+
+#: ../../welcome.rst:25
+msgid "A bidirectional communication allowing the sending of orders and the remote downloading of firmware inside its sensors,"
+msgstr "Une communication bidirectionnelle permettant l'envoi de commandes et le téléchargement à distance de firmware à l'intérieur de ses capteurs"
+
+#: ../../welcome.rst:26
+msgid "Safe and secure end-to-end radio communication."
+msgstr "Communication radio sûre et sécurisée de bout en bout."
+
+#: ../../welcome.rst:28
+msgid "As no LPWAN at that time (and it is still the case in 2022) could meet all these constraints, GRDF decided to develop its own radio communication protocol, based on the W-MBUS mode N2 standard of the European technical committee 294, by integrating the functionalities that were missing at that time, i.e. bidirectionality and communication security mechanisms."
+msgstr "Comme aucun LPWAN à l'époque (et c'est toujours le cas en 2022) ne pouvait répondre à toutes ces contraintes, GRDF a décidé de développer son propre protocole de communication radio, basé sur la norme W-MBUS mode N2 du comité technique européen 294, en intégrant les fonctionnalités qui manquaient à l'époque, à savoir la bidirectionnalité et les mécanismes de sécurité de la communication."
+
+#: ../../welcome.rst:30
+msgid "With more than 10 million meters deployed by end-2022 and in view of the excellent performance obtained with the technology implemented, GRDF has decided to participate in the promotion of the wize alliance by designing and developing a Wize protocol stack that is 100% compatible with the alliance's 1.2 specifications and to publish this development in open source mode under the MIT license."
+msgstr "Avec plus de 10 millions de compteurs déployés d'ici fin 2022 et compte tenu des excellentes performances obtenues avec la technologie mise en œuvre, GRDF a décidé de participer à la promotion de l'alliance wize en concevant et développant une stack protocolaire Wize 100% compatible avec les spécifications 1.2 de l'alliance et de publier ce développement en mode open source sous licence MIT."
+
+#: ../../welcome.rst:32
+msgid "With this publication, GRDF aims to accelerate the adoption of this technology by as many people as possible and to facilitate the design and marketing of the richest and widest possible ecosystem of Wize-compatible IOT sensors to meet its own needs, as well as those of other industrial operators and public urban service managers."
+msgstr "Avec cette publication, GRDF souhaite accélérer l'adoption de cette technologie par le plus grand nombre et faciliter la conception et la commercialisation de l'écosystème le plus riche et le plus large possible de capteurs IOT compatibles avec Wize pour répondre à ses propres besoins, ainsi qu'à ceux d'autres opérateurs industriels et gestionnaires de services publics urbains."
+
+#: ../../welcome.rst:34
+msgid "OpenWize, the name given to this protocol layer, was developed to be as hardware agnostic as possible."
+msgstr "OpenWize, le nom donné à cette couche de protocole, a été développé pour être aussi agnostique que possible vis-à-vis du matériel."
+
+#: ../../welcome.rst:36
+msgid "Its modular architecture under FreeRTOS allows however to consider a quick port to a hardware target of one's choice. By adopting an open source approach, Wize aims to enrich the ecosystem of members of the Wize alliance and will support all contributors who wish to invest in functional improvements or porting of OpenWize."
+msgstr "Son architecture modulaire sous FreeRTOS permet toutefois d'envisager un portage rapide sur une cible matérielle de son choix. En adoptant une approche open source, Wize vise à enrichir l'écosystème des membres de l'alliance Wize et soutiendra tous les contributeurs qui souhaitent s'investir dans des améliorations fonctionnelles ou le portage d'OpenWize."
+
+#: ../../welcome.rst:38
+msgid "OpenWize is available for download, but can also be integrated into an open source hardware module Wize'Up developed by the company Alciom (www.alciom.com). In this last configuration, a company that discovers the Wize technology, has all the elements to accelerate its IOT project."
+msgstr "OpenWize est disponible en téléchargement, mais peut également être intégré dans un module matériel open source Wize'Up développé par la société Alciom (www.alciom.com). Dans cette dernière configuration, une entreprise qui découvre la technologie Wize, dispose de tous les éléments pour accélérer son projet IOT."
+
+#: ../../welcome.rst:40
+msgid "OpenWize consists of an ecosystem based on three repositories:"
+msgstr "OpenWize se compose d'un écosystème basé sur trois dépots :"
+
+#: ../../welcome.rst:42
+msgid "the `OpenWize`_ repository which contains the stack itself and a quick implementation example."
+msgstr "le dépôt `OpenWize`_ qui contient la stack elle-même et un exemple d'implémentation rapide."
+
+#: ../../welcome.rst:43
+msgid "the `OpenWize'Up`_ repository which contains the instantiation of the OpenWize stack on the Wize'Up card developed by a member of the Wize Alliance, the company ALCIOM."
+msgstr "le dépôt `OpenWize'Up`_ qui contient l'instanciation de la stack OpenWize sur la carte Wize'Up développée par un membre de la Wize Alliance, la société ALCIOM."
+
+#: ../../welcome.rst:44
+msgid "the `banc_lib`_ repository which contains a test tool for Wize protocol with SmartBrick device."
+msgstr "le dépôt `banc_lib`_ qui contient un outil de test pour le protocole Wize avec le dispositif SmartBrick."
+
+#: ../../welcome.rst:49
+msgid "The development cards available for using OpenWize"
+msgstr "Les cartes de développement disponibles pour l'utilisation d'OpenWize"
+
+#: ../../welcome.rst:51
+msgid "Wize'up: a high performance and open Wize module, the ideal solution to simply develop a product compatible with Wize LPWANs."
+msgstr "Wize'up : un module Wize performant et ouvert, la solution idéale pour développer simplement un produit compatible avec les LPWAN Wize."
+
+#: ../../welcome.rst:62
+msgid "The Wize'Up card mounted on its base card"
+msgstr "La carte Wize'Up montée sur sa carte de base"
+
+#: ../../welcome.rst:65
+msgid "Wize'Up is the result of a call for projects from the wize alliance, in which Alciom and GRDF have combined their skills and expertise to offer a turnkey solution for accelerating IOT projects. The concept is to provide a communication module equipped with OpenWize, easily integrated into a new hardware design. This module interfaces easily via a UART link through a set of AT commands. For more information on `Wize’Up <https://www.alciom.com/nos-métiers/produits/wizeup/>`_"
+msgstr "Wize'Up est le résultat d'un appel à projet de l'alliance wize, dans lequel Alciom et GRDF ont associé leurs compétences et leur expertise pour proposer une solution clé en main pour accélérer les projets IOT. Le concept est de fournir un module de communication équipé d'OpenWize, facilement intégrable dans un nouveau design matériel. Ce module s'interface facilement via une liaison UART grâce à un ensemble de commandes AT. Pour plus d'informations sur `Wize'Up <https://www.alciom.com/nos-métiers/produits/wizeup/>`_"
+
+#: ../../welcome.rst:68
+msgid "For more information on the implementation of the OpenWize stack on the Wize'Up map : [OpenWize'Up](https://wizeeverywhere-openwize-up.readthedocs.io/en/latest)"
+msgstr "Pour plus d'informations sur la mise en œuvre de la pile OpenWize sur la carte Wize'Up : [OpenWize'Up](https://wizeeverywhere-openwize-up.readthedocs.io/en/latest)"
+
+#: ../../welcome.rst:71
+msgid "You will also find in the :ref:`Demo application<Demo application>` paragraph a simple example of using OpenWize on a Nucléo L476RG STM demonstration board that does not have an RF transceiver (the frame is output on a UART on the board)."
+msgstr "Vous trouverez également dans le paragraphe :ref:`Demo application<Demo application>` un exemple simple d'utilisation d'OpenWize sur une carte de démonstration STM Nucléo L476RG qui ne possède pas d'émetteur-récepteur RF (la trame est sortie sur un UART de la carte)."
+
+#: ../../welcome.rst:75
+msgid "Which 169 MHz networks to use with Wize technology ?"
+msgstr "Quels réseaux 169 MHz utiliser avec la technologie Wize ?"
+
+#: ../../welcome.rst:77
+msgid "Wize is a technology that can be used in both \"dedicated\" and \"operated\" modes."
+msgstr "Wize est une technologie qui peut être utilisée à la fois en mode \"dédié\" et \"opéré\"."
+
+#: ../../welcome.rst:79
+msgid "In \"dedicated\" mode, a customer decides to install its own infrastructure of Wize hubs and registers as an operator with the wize alliance. If you develop a product for such a customer, your customer will provide you with all the necessary information to register your product on their network."
+msgstr "En mode \"dédié\", un client décide d'installer sa propre infrastructure de hubs Wize et s'inscrit comme opérateur auprès de l'alliance wize. Si vous développez un produit pour un tel client, celui-ci vous fournira toutes les informations nécessaires pour enregistrer votre produit sur son réseau."
+
+#: ../../welcome.rst:81
+msgid "In \"operated\" mode, a customer decides to use the network of an existing operator to send data from its sensors to its information system. If you develop a product for a customer of this type, your customer must put you in touch with the wize operator he has selected so that you can register your product on his network. The list of wize operators as well as the associated contact points are available on the alliance's website."
+msgstr "En mode \"opéré\", un client décide d'utiliser le réseau d'un opérateur existant pour envoyer les données de ses capteurs vers son système d'information. Si vous développez un produit pour un client de ce type, votre client doit vous mettre en relation avec l'opérateur wize qu'il a sélectionné afin que vous puissiez enregistrer votre produit sur son réseau. La liste des opérateurs wize ainsi que les points de contact associés sont disponibles sur le site de l'alliance."
+
+#: ../../welcome.rst:83
+msgid "Note that from version 1.2, to facilitate the development of wize products, the wize alliance has introduced the Wiz'One concept which allows data to be transmitted on all 1.2 compatible wize networks for unit testing or integration purposes. Wiz'One support is operator dependent and may be associated with certain restrictions in terms of functionality."
+msgstr "Notez qu'à partir de la version 1.2, pour faciliter le développement des produits wize, l'alliance wize a introduit le concept Wiz'One qui permet de transmettre des données sur tous les réseaux wize compatibles 1.2 à des fins de tests unitaires ou d'intégration. Le support Wiz'One dépend de l'opérateur et peut être associé à certaines restrictions en termes de fonctionnalités."
+
+#: ../../welcome.rst:87
+msgid "To go further in your development"
+msgstr "Pour aller plus loin dans votre développement"
+
+#: ../../welcome.rst:90
+msgid "Need to help? You can contact Marvin JEANNOT"
+msgstr "Besoin d'aide ? Vous pouvez contacter Marvin JEANNOT"
+
+#: ../../welcome.rst:95
+msgid "Guide to contributing to OpenWize."
+msgstr "Guide pour contribuer à OpenWize."
+
+#: ../../welcome.rst:97
+msgid "Contributions to OpenWize - bug fixes, adding new features, adding documentation, adding examples - are welcome. These contributions should be made in the form of a Github Pull Request."
+msgstr "Les contributions à OpenWize - corrections de bugs, ajout de nouvelles fonctionnalités, ajout de documentation, ajout d'exemples - sont les bienvenues. Ces contributions doivent être faites sous la forme d'une Pull Request Github."
+
+#: ../../welcome.rst:106
+msgid "Prerequisites to contribute: (:ref:`Contribuer<Contributing>`)"
+msgstr " Pre-requis pour contribuer: (:ref:`Contribuer<Contributing>`)"
+
+#: ../../welcome.rst:100
+msgid "Contributed under the same license as OpenWize."
+msgstr "Contribué sous la même licence que OpenWize."
+
+#: ../../welcome.rst:101
+msgid "Your code must conform to the OpenWize development style (:ref:`Guide de l'écriture du code<Coding Style Guide>`)"
+msgstr "Votre code doit être conforme au style de développement d'OpenWize (:ref:`Guide de l'écriture du code<Coding Style Guide>`)"
+
+#: ../../welcome.rst:102
+msgid "Your code must conform to the OpenWize documentation style (:ref:`Documentation Guide<Documentation Guide>`)"
+msgstr "Votre code doit être conforme au style de document d'OpenWize (:ref:`Documentation Guide<Documentation Guide>`)"
+
+#: ../../welcome.rst:103
+msgid "Your code must be sufficiently documented so that its structure is easily understood."
+msgstr "Votre code doit être suffisamment documenté pour que sa structure soit facilement compréhensible."
+
+#: ../../welcome.rst:104
+msgid "Is your code accompanied by documentation or examples that make it easy to understand its use?"
+msgstr "Votre code est-il accompagné d'une documentation ou d'exemples qui permettent de comprendre facilement son utilisation ?"
+
+#: ../../welcome.rst:105
+msgid "Are your code comments and documentation written in English ?"
+msgstr "Les commentaires de votre code et votre documentation sont-ils rédigés en anglais ?"

@@ -1,0 +1,1044 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="net__mgr_8h" kind="file" language="C++">
+    <compoundname>net_mgr.h</compoundname>
+    <includes local="no">limits.h</includes>
+    <includes refid="net__api__private_8h" local="yes">net_api_private.h</includes>
+    <includes refid="proto__api_8h" local="yes">proto_api.h</includes>
+    <includes refid="time__evt_8h" local="yes">time_evt.h</includes>
+    <includedby refid="ses__dispatcher_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</includedby>
+    <includedby refid="wize__api_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</includedby>
+    <includedby refid="ses__common_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</includedby>
+    <includedby refid="net__mgr_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>assert.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>stddef.h</label>
+      </node>
+      <node id="7">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>limits.h</label>
+      </node>
+      <node id="9">
+        <label>string.h</label>
+      </node>
+      <node id="11">
+        <label>proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>time.h</label>
+      </node>
+      <node id="10">
+        <label>proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>net_api.h</label>
+        <link refid="net__api_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</label>
+        <link refid="net__mgr_8c"/>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structwize__ctx__s" prot="public">wize_ctx_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__net__mgr_1ga44c192bd9e39528b5318159b2d0085dc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>net_event_e</name>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca09a5b4f3a1a9fa094dab145cc099b668" prot="public">
+          <name>NET_EVENT_NONE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Empty event </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcaf0bb6dd6190aa921c24056840ad641e9" prot="public">
+          <name>NET_EVENT_SUCCESS</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Successful event </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca56c747fdb5c98d06c1346f086b40592d" prot="public">
+          <name>NET_EVENT_ERROR</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error event </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcade9515453f338241db2c064bd81b8447" prot="public">
+          <name>NET_EVENT_SEND_DONE</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Message has been sent </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcad83b8693c3c03bcd44afd72b672d7c15" prot="public">
+          <name>NET_EVENT_RECV_DONE</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Message has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca7fa77f9df6fe915d41ad1057f1b78611" prot="public">
+          <name>NET_EVENT_TIMEOUT</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Timeout event occurs </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcaaa78e26bd359597ec2db36257a4be3fb" prot="public">
+          <name>NET_EVENT_FRM_PASSED</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame received and passed </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca5905f9d957a2d82afd0df26880ddc139" prot="public">
+          <name>NET_EVENT_MSK</name>
+          <initializer>= 0xFF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define the net device events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="52" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="52" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__net__mgr_1ga4264e9a8e2c8a6cad21139de3ab881f6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>net_status_e</name>
+        <enumvalue id="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" prot="public">
+          <name>NET_STATUS_OK</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Network return status OK </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" prot="public">
+          <name>NET_STATUS_ERROR</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Network return status ERROR </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" prot="public">
+          <name>NET_STATUS_BUSY</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Network return status BUSY </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the network return status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="69" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="69" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__net__mgr_1gaa14214208285671836bdb8eccf56719b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>net_listen_type_e</name>
+        <enumvalue id="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719baad493c3bdc26a0c436c97e8eaf6b8667" prot="public">
+          <name>NET_LISTEN_TYPE_ONE</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>One matching message until timeout </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719ba5a63232b6e47918406c64df95b1b9b23" prot="public">
+          <name>NET_LISTEN_TYPE_DETECT</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>One matching message, extend timeout if detect occurs </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719ba7ded9a3703da291fdd3d5ee82b797ee0" prot="public">
+          <name>NET_LISTEN_TYPE_MANY</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Many matching messages until timeout </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define the listen type before timeout. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="79" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="78" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__net__mgr_1ga2b3d6e33db0904e597e5f8e59ba17839" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NetMgr_Setup</definition>
+        <argsstring>(phydev_t *pPhyDev, wize_net_t *pWizeNet)</argsstring>
+        <name>NetMgr_Setup</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhyDev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__net__api_1ga3a430a72aef99fbe3d4d227aaec8099b" kindref="member">wize_net_t</ref> *</type>
+          <declname>pWizeNet</declname>
+        </param>
+        <briefdescription>
+<para>This function setup the NetMgr module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhyDev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device structure </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pWizeNet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Wize network context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="111" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="111" bodyend="136" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="107" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1ga93fdfbb50319f7587f3822fa309c4c47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>NetMgr_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initialize the NetMgr module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">net_status_e::NET_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="145" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="145" bodyend="157" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="108" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" compoundref="net__mgr_8h" startline="71">NET_STATUS_ERROR</references>
+        <references refid="group__time__evt_1ga7c59534f9e854577f5c3527ee579812a" compoundref="time__evt_8c" startline="95" endline="116">TimeEvt_TimerInit</references>
+        <references refid="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908eaddac08a780f49730bf18fbc72cb7de46" compoundref="time__evt_8h" startline="58">TIMEEVT_CFG_ONESHOT</references>
+        <references refid="group__wize__net__api_1gadba355920bf6ac45fb3939cfbb713e3a" compoundref="net__api_8c" startline="85" endline="107">WizeNet_Init</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1ga3f89ec63616af2f1315b9e234ddf2c5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_Open</definition>
+        <argsstring>(void *hTaskToNotify)</argsstring>
+        <name>NetMgr_Open</name>
+        <param>
+          <type>void *</type>
+          <declname>hTaskToNotify</declname>
+        </param>
+        <briefdescription>
+<para>This function open (acquire) the device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">hTaskToNotify</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Task handle which will get events back from NetMgr. If NULL, then the caller task will be notified.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">net_status_e::NET_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="188" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="188" bodyend="211" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="110" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" compoundref="net__mgr_8h" startline="72">NET_STATUS_BUSY</references>
+        <references refid="group__wize__net__mgr_1ga93fdfbb50319f7587f3822fa309c4c47" compoundref="net__mgr_8c" startline="145" endline="157">NetMgr_Init</references>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" compoundref="net__mgr_8h" startline="70">NET_STATUS_OK</references>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" compoundref="net__mgr_8h" startline="71">NET_STATUS_ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1ga9fcf4c3978cbc4f9a3765fc818f14e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_Close</definition>
+        <argsstring>(void)</argsstring>
+        <name>NetMgr_Close</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function release the device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="219" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="219" bodyend="230" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="111" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1ga7cb7be2b8675c73ac3092634358d534b" compoundref="net__mgr_8c" startline="166" endline="175">NetMgr_Uninit</references>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" compoundref="net__mgr_8h" startline="70">NET_STATUS_OK</references>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" compoundref="net__mgr_8h" startline="72">NET_STATUS_BUSY</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1gacf1a1d58d91c09e6505d6c09a32a35b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_SetUplink</definition>
+        <argsstring>(phy_chan_e eChannel, phy_mod_e eMod)</argsstring>
+        <name>NetMgr_SetUplink</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eMod</declname>
+        </param>
+        <briefdescription>
+<para>This function set the uplink channel and modulation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eMod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">net_status_e::NET_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="242" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="242" bodyend="260" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="113" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" compoundref="net__mgr_8h" startline="72">NET_STATUS_BUSY</references>
+        <references refid="group__wize__net__api_1ga279ae9aabdf8eb53fc0fb880218bc92e" compoundref="net__api_8c" startline="311" endline="546">WizeNet_Ioctl</references>
+        <references refid="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a76e38932444df5acef512e30ea570a10" compoundref="net__api__private_8h" startline="68">NETDEV_CTL_SET_UPLINK_CH</references>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" compoundref="net__api__private_8h" startline="119">NETDEV_STATUS_OK</references>
+        <references refid="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a0694afdbbb1fdcb02002becc512bc37b" compoundref="net__api__private_8h" startline="69">NETDEV_CTL_SET_UPLINK_MOD</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1ga8a68d7f5083d83191fefef6df42006c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_SetDwlink</definition>
+        <argsstring>(phy_chan_e eChannel, phy_mod_e eMod)</argsstring>
+        <name>NetMgr_SetDwlink</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eMod</declname>
+        </param>
+        <briefdescription>
+<para>This function set the downlink channel and modulation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eMod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">net_status_e::NET_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="272" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="272" bodyend="290" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="114" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" compoundref="net__mgr_8h" startline="72">NET_STATUS_BUSY</references>
+        <references refid="group__wize__net__api_1ga279ae9aabdf8eb53fc0fb880218bc92e" compoundref="net__api_8c" startline="311" endline="546">WizeNet_Ioctl</references>
+        <references refid="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a83701ee21336ef6256368be0b7fef2e3" compoundref="net__api__private_8h" startline="70">NETDEV_CTL_SET_DWLINK_CH</references>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" compoundref="net__api__private_8h" startline="119">NETDEV_STATUS_OK</references>
+        <references refid="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672ac28da7956b6f7964b75e6f9b7f072272" compoundref="net__api__private_8h" startline="71">NETDEV_CTL_SET_DWLINK_MOD</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1ga170822ccc281fab3fa79b97bbab5c02b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_Ioctl</definition>
+        <argsstring>(uint32_t eCtl, uint32_t args)</argsstring>
+        <name>NetMgr_Ioctl</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>eCtl</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>This function set/get the network device ctl. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">eCtl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CTL to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>extra argument</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">net_status_e::NET_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="302" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="302" bodyend="316" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="115" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" compoundref="net__mgr_8h" startline="72">NET_STATUS_BUSY</references>
+        <references refid="group__wize__net__api_1ga279ae9aabdf8eb53fc0fb880218bc92e" compoundref="net__api_8c" startline="311" endline="546">WizeNet_Ioctl</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1ga3612af35635579e2cfe4ea7850366941" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_Send</definition>
+        <argsstring>(net_msg_t *pxNetMsg, uint32_t u32TimeOut)</argsstring>
+        <name>NetMgr_Send</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pxNetMsg</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32TimeOut</declname>
+        </param>
+        <briefdescription>
+<para>This function send the given message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pxNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the message to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32TimeOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeout in millisecond</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">net_status_e::NET_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="328" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="328" bodyend="371" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="116" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" compoundref="net__mgr_8h" startline="71">NET_STATUS_ERROR</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" compoundref="proto_8h" startline="171">net_msg_s::u8Type</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1gacff959e8b27662070573a8aef4bb6fe8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_Listen</definition>
+        <argsstring>(net_msg_t *pxNetMsg, uint32_t u32TimeOut, net_listen_type_e eListenType)</argsstring>
+        <name>NetMgr_Listen</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pxNetMsg</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32TimeOut</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__net__mgr_1gaa14214208285671836bdb8eccf56719b" kindref="member">net_listen_type_e</ref></type>
+          <declname>eListenType</declname>
+        </param>
+        <briefdescription>
+<para>This function listen for the given message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pxNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the message to listen. The <ref refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" kindref="member">net_msg_t::u8Type</ref> field select the filtered message). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32TimeOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeout in millisecond </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eListenType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Listen type define the relationship between the timeout and the received message.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">net_status_e::NET_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="386" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="386" bodyend="429" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="117" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" compoundref="net__mgr_8h" startline="71">NET_STATUS_ERROR</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" compoundref="proto_8h" startline="171">net_msg_s::u8Type</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__mgr_1ga18cdd7a4d256559f62e5b8882cd36740" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t NetMgr_ListenReady</definition>
+        <argsstring>(void)</argsstring>
+        <name>NetMgr_ListenReady</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function notify that previous listened net_msg_t buffer is no more pending. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">net_status_e::NET_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NET_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">net_status_e::NET_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" line="437" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c" bodystart="437" bodyend="451" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" declline="118" declcolumn="9"/>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" compoundref="net__mgr_8h" startline="70">NET_STATUS_OK</references>
+        <references refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" compoundref="net__mgr_8h" startline="72">NET_STATUS_BUSY</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file declare functions to use to deal with network device. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/11[GBI]</title><para>Initial version </para>
+</simplesect>
+<simplesect kind="par"><title>2.0.0 : 2021/10/19[GBI]</title><para>Integrate a more complete management for sending and listening. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_NET_MGR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_NET_MGR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="net__api__private_8h" kindref="compound">net_api_private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="proto__api_8h" kindref="compound">proto_api.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="time__evt_8h" kindref="compound">time_evt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="group__wize__net__mgr_1ga44c192bd9e39528b5318159b2d0085dc" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="53" refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca09a5b4f3a1a9fa094dab145cc099b668" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca09a5b4f3a1a9fa094dab145cc099b668" kindref="member">NET_EVENT_NONE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,<sp/></highlight></codeline>
+<codeline lineno="54" refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcaf0bb6dd6190aa921c24056840ad641e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcaf0bb6dd6190aa921c24056840ad641e9" kindref="member">NET_EVENT_SUCCESS</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="55" refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca56c747fdb5c98d06c1346f086b40592d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca56c747fdb5c98d06c1346f086b40592d" kindref="member">NET_EVENT_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcade9515453f338241db2c064bd81b8447" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcade9515453f338241db2c064bd81b8447" kindref="member">NET_EVENT_SEND_DONE</ref><sp/><sp/><sp/>=<sp/>0x04,<sp/></highlight></codeline>
+<codeline lineno="58" refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcad83b8693c3c03bcd44afd72b672d7c15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcad83b8693c3c03bcd44afd72b672d7c15" kindref="member">NET_EVENT_RECV_DONE</ref><sp/><sp/><sp/>=<sp/>0x08,<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca7fa77f9df6fe915d41ad1057f1b78611" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca7fa77f9df6fe915d41ad1057f1b78611" kindref="member">NET_EVENT_TIMEOUT</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x10,<sp/></highlight></codeline>
+<codeline lineno="61" refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcaaa78e26bd359597ec2db36257a4be3fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcaaa78e26bd359597ec2db36257a4be3fb" kindref="member">NET_EVENT_FRM_PASSED</ref><sp/><sp/>=<sp/>0x20,<sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>NET_EVENT_MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0xFF</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<sp/><ref refid="group__wize__net__mgr_1ga44c192bd9e39528b5318159b2d0085dc" kindref="member">net_event_e</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="group__wize__net__mgr_1ga4264e9a8e2c8a6cad21139de3ab881f6" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="70" refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a014c7bd16060670c871f91bb4e546bc3" kindref="member">NET_STATUS_OK</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="71" refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6aaa0733bed07e3d61726faaf2b825df55" kindref="member">NET_STATUS_ERROR</ref><sp/><sp/>=<sp/>0x1,<sp/></highlight></codeline>
+<codeline lineno="72" refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gga4264e9a8e2c8a6cad21139de3ab881f6a3f93cd147e9fdd3e0a769b4122a7e524" kindref="member">NET_STATUS_BUSY</ref><sp/><sp/><sp/>=<sp/>0x2,<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}<sp/><ref refid="group__wize__net__mgr_1ga4264e9a8e2c8a6cad21139de3ab881f6" kindref="member">net_status_e</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="group__wize__net__mgr_1gaa14214208285671836bdb8eccf56719b" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80" refid="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719baad493c3bdc26a0c436c97e8eaf6b8667" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719baad493c3bdc26a0c436c97e8eaf6b8667" kindref="member">NET_LISTEN_TYPE_ONE</ref><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="81" refid="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719ba5a63232b6e47918406c64df95b1b9b23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719ba5a63232b6e47918406c64df95b1b9b23" kindref="member">NET_LISTEN_TYPE_DETECT</ref><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="82" refid="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719ba7ded9a3703da291fdd3d5ee82b797ee0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1ggaa14214208285671836bdb8eccf56719ba7ded9a3703da291fdd3d5ee82b797ee0" kindref="member">NET_LISTEN_TYPE_MANY</ref><sp/><sp/><sp/>=<sp/>0x03,<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}<sp/><ref refid="group__wize__net__mgr_1gaa14214208285671836bdb8eccf56719b" kindref="member">net_listen_type_e</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="structwize__ctx__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwize__ctx__s" kindref="compound">wize_ctx_s</ref></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90" refid="structwize__ctx__s_1abc4f16d65cf8cd70c5637076b5fdbd84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structwize__ctx__s_1abc4f16d65cf8cd70c5637076b5fdbd84" kindref="member">hCaller</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91" refid="structwize__ctx__s_1a6fa0de6b85cd8973fcddb37213b9f0ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structwize__ctx__s_1a6fa0de6b85cd8973fcddb37213b9f0ec" kindref="member">hTask</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92" refid="structwize__ctx__s_1adb6b030515232cb8fd0986e13c41a291" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structwize__ctx__s_1adb6b030515232cb8fd0986e13c41a291" kindref="member">hMutex</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94" refid="structwize__ctx__s_1a7adf6f1893fa5b269a0a93c382ac507c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structwize__ctx__s_1a7adf6f1893fa5b269a0a93c382ac507c" kindref="member">pBuffDesc</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95" refid="structwize__ctx__s_1a765c88d7afe2363843ef0f4b75c0754d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structwize__ctx__s_1a765c88d7afe2363843ef0f4b75c0754d" kindref="member">u8TransRetries</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97" refid="structwize__ctx__s_1aaeb546ac50a59a19859465dee5c78ccc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structwize__ctx__s_1aaeb546ac50a59a19859465dee5c78ccc" kindref="member">u8RecvRetries</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99" refid="structwize__ctx__s_1ad3e5e64af164f1fba18e8ae4852de8ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><ref refid="structwize__ctx__s_1ad3e5e64af164f1fba18e8ae4852de8ed" kindref="member">i16ExpandTmo</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100" refid="structwize__ctx__s_1a3b70e7b55fa73c7f7fa0193cafae9aed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structwize__ctx__s_1a3b70e7b55fa73c7f7fa0193cafae9aed" kindref="member">u8Detected</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101" refid="structwize__ctx__s_1af1bcb4074135bf2fc29372d159b86828" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structwize__ctx__s_1af1bcb4074135bf2fc29372d159b86828" kindref="member">bListenPend</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102" refid="structwize__ctx__s_1a88c6b08c5da78dc76446f28901f441b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structwize__ctx__s_1a88c6b08c5da78dc76446f28901f441b2" kindref="member">u8Type</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="structwize__ctx__s_1ac2e53f8067256aa4da0f5b55aa10a040" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__net__mgr_1gaa14214208285671836bdb8eccf56719b" kindref="member">net_listen_type_e</ref><sp/><ref refid="structwize__ctx__s_1ac2e53f8067256aa4da0f5b55aa10a040" kindref="member">eListenType</ref>;<sp/></highlight></codeline>
+<codeline lineno="104" refid="structwize__ctx__s_1a884efc8b78707d27e27f02c7e0b1b1ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtime__evt__s" kindref="compound">time_evt_t</ref><sp/><ref refid="structwize__ctx__s_1a884efc8b78707d27e27f02c7e0b1b1ff" kindref="member">sTimeOut</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__net__mgr_1ga2b3d6e33db0904e597e5f8e59ba17839" kindref="member">NetMgr_Setup</ref>(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhyDev,<sp/><ref refid="structwize__net__s" kindref="compound">wize_net_t</ref><sp/>*pWizeNet);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1ga93fdfbb50319f7587f3822fa309c4c47" kindref="member">NetMgr_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1ga3f89ec63616af2f1315b9e234ddf2c5e" kindref="member">NetMgr_Open</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*hTaskToNotify);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1ga9fcf4c3978cbc4f9a3765fc818f14e4a" kindref="member">NetMgr_Close</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1gacf1a1d58d91c09e6505d6c09a32a35b0" kindref="member">NetMgr_SetUplink</ref>(<ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eMod);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1ga8a68d7f5083d83191fefef6df42006c6" kindref="member">NetMgr_SetDwlink</ref>(<ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eMod);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1ga170822ccc281fab3fa79b97bbab5c02b" kindref="member">NetMgr_Ioctl</ref>(uint32_t<sp/>eCtl,<sp/>uint32_t<sp/>args);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1ga3612af35635579e2cfe4ea7850366941" kindref="member">NetMgr_Send</ref>(<ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pxNetMsg,<sp/>uint32_t<sp/>u32TimeOut);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1gacff959e8b27662070573a8aef4bb6fe8" kindref="member">NetMgr_Listen</ref>(<ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pxNetMsg,<sp/>uint32_t<sp/>u32TimeOut,<sp/><ref refid="group__wize__net__mgr_1gaa14214208285671836bdb8eccf56719b" kindref="member">net_listen_type_e</ref><sp/>eListenType);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">int32_t<sp/><ref refid="group__wize__net__mgr_1ga18cdd7a4d256559f62e5b8882cd36740" kindref="member">NetMgr_ListenReady</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_NET_MGR_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,687 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="parameters__cfg_8h" kind="file" language="C++">
+    <compoundname>parameters_cfg.h</compoundname>
+    <includes refid="parameters__def_8h" local="yes">parameters_def.h</includes>
+    <includedby refid="parameters__cfg_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c</includedby>
+    <includedby refid="app__entry_8h" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</includedby>
+    <includedby refid="storage_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</includedby>
+    <includedby refid="sys__init_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h</label>
+        <link refid="parameters__cfg_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c</label>
+        <link refid="parameters__cfg_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h</label>
+        <link refid="parameters__cfg_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="parameters__cfg_8h_1a8019df1c350f41b66407c9043781052f" prot="public" static="no">
+        <name>PARAM_ACCESS_CFG_SZ</name>
+        <initializer>(0xFF)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="38" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="parameters__cfg_8h_1a211d516ba37eadf881cafba9d48cf308" prot="public" static="no">
+        <name>PARAM_DEFAULT_SZ</name>
+        <initializer>(0x77)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="39" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="parameters__cfg_8h_1a56874acc7986c966eca7cacb6be37b6e" prot="public" static="no">
+        <name>PARAM_RESTR_CFG_SZ</name>
+        <initializer>(0x6)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="92" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efb" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_ids_e</name>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab3f6e26718312d495ab5ef20847d2b0b" prot="public">
+          <name>VERS_HW_TRX</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Hardware version number of the device (or transceiver for a remote module) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba986651d04c3488b4c64e0709127377d8" prot="public">
+          <name>VERS_FW_TRX</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+<para>Software version number run by the device (or transceiver for a remote module) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba270afd63769ac0e4a3328bf82369e993" prot="public">
+          <name>DATEHOUR_LAST_UPDATE</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+<para>Date/time of the last successful firmware download. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba43c2a2d50c3d593d662dc92422d67c7c" prot="public">
+          <name>L6App</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+<para>Version of the application layer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba47004e2a9df426d8fc094abb6c021ee2" prot="public">
+          <name>RF_UPLINK_CHANNEL</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+<para>Frequency channel to be used for all uplink message transmissions. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba92d7ed82d7e079cbeddb40a901a17c67" prot="public">
+          <name>RF_DOWNLINK_CHANNEL</name>
+          <initializer>= 0x09</initializer>
+          <briefdescription>
+<para>Frequency channel to be used for all message receptions (except firmware download) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba9933cd4504128fd118c0c6e24c88780f" prot="public">
+          <name>RF_UPLINK_MOD</name>
+          <initializer>= 0x0A</initializer>
+          <briefdescription>
+<para>Modulation to be used for all uplink message transmissions. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0356d0b6740da1e87357fa61c9642206" prot="public">
+          <name>RF_DOWNLINK_MOD</name>
+          <initializer>= 0x0B</initializer>
+          <briefdescription>
+<para>Modulation to be used for all message receptions (except firmware download) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaef09c8b9fce1847ca51a17c3ed0af6cd" prot="public">
+          <name>TX_POWER</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+<para>Transceiver nominal transmission power. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba660b54d9d87e37e266fb5209cf747970" prot="public">
+          <name>TX_DELAY_FULLPOWER</name>
+          <initializer>= 0x11</initializer>
+          <briefdescription>
+<para>Maximum time between two COMMAND messages before the device automatically returns to maximum transmission power. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac544786fa1711bf15c7807f9fc6425a6" prot="public">
+          <name>TX_FREQ_OFFSET</name>
+          <initializer>= 0x12</initializer>
+          <briefdescription>
+<para>Absolute transmission correction frequency offset. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae8d116e359c208b13a05d25b95664050" prot="public">
+          <name>EXCH_RX_DELAY</name>
+          <initializer>= 0x18</initializer>
+          <briefdescription>
+<para>Fixed wait time after transmission of a DATA message by the device and before opening the COMMAND message listening window. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad9d88e1d97915cba9035211569a65c3e" prot="public">
+          <name>EXCH_RX_LENGTH</name>
+          <initializer>= 0x19</initializer>
+          <briefdescription>
+<para>Duration of the COMMAND message listening window by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac6ad1efb873b4df9f79046fbef17331b" prot="public">
+          <name>EXCH_RESPONSE_DELAY</name>
+          <initializer>= 0x1A</initializer>
+          <briefdescription>
+<para>Time between reception of a COMMAND message by the device and transmission of the corresponding RESPONSE message. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad1c0a996b12b172bb5f035dcc6b52c13" prot="public">
+          <name>EXCH_RESPONSE_DELAY_MIN</name>
+          <initializer>= 0x1B</initializer>
+          <briefdescription>
+<para>Minimum value accepted for the EXCH_RESPONSE_DELAY parameter (defined by the device MANUFACTURER) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba59ce36970074aaf467567461b85a36af" prot="public">
+          <name>L7TRANSMIT_LENGTH_MAX</name>
+          <initializer>= 0x1C</initializer>
+          <briefdescription>
+<para>Maximum length of application messages that can be sent by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad00327b06872c517829149c698e68e50" prot="public">
+          <name>L7RECEIVE_LENGTH_MAX</name>
+          <initializer>= 0x1D</initializer>
+          <briefdescription>
+<para>Maximum length of application messages that can be received by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaa16f6a91fd03bfe0af60b37f655eaff8" prot="public">
+          <name>CLOCK_CURRENT_EPOC</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+<para>Current time of device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba7196c899428ba7d1ebe953c23438b59b" prot="public">
+          <name>CLOCK_OFFSET_CORRECTION</name>
+          <initializer>= 0x21</initializer>
+          <briefdescription>
+<para>Relative correction (time delta) to be applied to the device clock once only to correct its absolute drift. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0ed0c51391ba9cd6c0a40a2837b8d7e5" prot="public">
+          <name>CLOCK_DRIFT_CORRECTION</name>
+          <initializer>= 0x22</initializer>
+          <briefdescription>
+<para>Correction of device clock frequency. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6499e193ae1415baa9a1bf495503b066" prot="public">
+          <name>CIPH_CURRENT_KEY</name>
+          <initializer>= 0x28</initializer>
+          <briefdescription>
+<para>Current key number. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbacbbfbf0abfff42ca16071817dd4a0fd9" prot="public">
+          <name>CIPH_KEY_COUNT</name>
+          <initializer>= 0x29</initializer>
+          <briefdescription>
+<para>Number of encryption keys available in the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae1424bf2530724400f2bf2033d7832d4" prot="public">
+          <name>L6NetwIdSelect</name>
+          <initializer>= 0x2A</initializer>
+          <briefdescription>
+<para>Kmac key index. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab182a57062f656fbe03d7f87e18ff186" prot="public">
+          <name>PING_RX_DELAY</name>
+          <initializer>= 0x30</initializer>
+          <briefdescription>
+<para>Fixed waiting time after transmission of an INSTPING message by the device and before opening the INSTPONG message listening window. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba3ce5f49938b37554e99a28ffc72c33ef" prot="public">
+          <name>PING_RX_LENGTH</name>
+          <initializer>= 0x31</initializer>
+          <briefdescription>
+<para>Duration of the INSTPONG message listening window by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae3c5de5c34b60cd5b43e07902b0a3f01" prot="public">
+          <name>PING_RX_DELAY_MIN</name>
+          <initializer>= 0x32</initializer>
+          <briefdescription>
+<para>Minimum value of the PING_RX_DELAY parameter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba38d0bbd3199ea210fe22dcdb36b78235" prot="public">
+          <name>PING_RX_LENGTH_MAX</name>
+          <initializer>= 0x33</initializer>
+          <briefdescription>
+<para>Maximum value of the PING_RX_LENGTH parameter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac47f4a3a34b8f5d6a73dc65d33ac4518" prot="public">
+          <name>PING_LAST_EPOCH</name>
+          <initializer>= 0x34</initializer>
+          <briefdescription>
+<para>Execution time of the last connectivity test (INSTPING/INSTPONG) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6e77bb526054adb3227167be3c6b4151" prot="public">
+          <name>PING_NBFOUND</name>
+          <initializer>= 0x35</initializer>
+          <briefdescription>
+<para>Number of different INSTPONG messages received in response to the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbabb1365e19169300db76145b834ce945a" prot="public">
+          <name>PING_REPLY1</name>
+          <initializer>= 0x36</initializer>
+          <briefdescription>
+<para>Response 1 received for the last connectivity test (Bigest L7RssiDown) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba624c83eb45f20517a5b5c6bcd826b577" prot="public">
+          <name>PING_REPLY2</name>
+          <initializer>= 0x37</initializer>
+          <briefdescription>
+<para>Response 2 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba82aa9ea24baa57ed1c9f5c2c73eef867" prot="public">
+          <name>PING_REPLY3</name>
+          <initializer>= 0x38</initializer>
+          <briefdescription>
+<para>Response 3 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad456122dd189cf96f490aebeba9e3874" prot="public">
+          <name>PING_REPLY4</name>
+          <initializer>= 0x39</initializer>
+          <briefdescription>
+<para>Response 4 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0a9ab98f326de7328d66a5ffead3f51d" prot="public">
+          <name>PING_REPLY5</name>
+          <initializer>= 0x3A</initializer>
+          <briefdescription>
+<para>Response 5 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba3204f8b2794410445956712b64dfec8e" prot="public">
+          <name>PING_REPLY6</name>
+          <initializer>= 0x3B</initializer>
+          <briefdescription>
+<para>Response 6 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaee9ee318bbd72e29120af915b90c564d" prot="public">
+          <name>PING_REPLY7</name>
+          <initializer>= 0x3C</initializer>
+          <briefdescription>
+<para>Response 7 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6f651cdaed18f7ad0405212208085742" prot="public">
+          <name>PING_REPLY8</name>
+          <initializer>= 0x3D</initializer>
+          <briefdescription>
+<para>Response 8 received for the last connectivity test (Lowest L7RssiDown) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab07a90adf38fc81a1a69fd7e6f25f62b" prot="public">
+          <name>EXECPING_PERIODE</name>
+          <initializer>= 0x3E</initializer>
+          <briefdescription>
+<para>Periodic time of execping sending by the device, in months. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba2c6bebf9ee0e6f524c215660ef14f7b1" prot="public">
+          <name>LOGGER_LEVEL</name>
+          <initializer>= 0xFD</initializer>
+          <briefdescription>
+<para>Get or Set the Logger level. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaf150afd6a324bec7dfe73cd3277bdb68" prot="public">
+          <name>LOGGER_TIME_OPT</name>
+          <initializer>= 0xFE</initializer>
+          <briefdescription>
+<para>Get or Set the Logger time option. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba29b7dcc5f3de57d1b95eadb0702a0036" prot="public">
+          <name>LAST_ID</name>
+          <initializer>= 0xFE</initializer>
+          <briefdescription>
+<para>Don&apos;t remove, it marks the end of table. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the parameter id. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="47" column="14" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" bodystart="47" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" prot="public" static="no" mutable="no">
+        <type>const param_s</type>
+        <definition>const param_s a_ParamAccess[PARAM_ACCESS_CFG_SZ]</definition>
+        <argsstring>[PARAM_ACCESS_CFG_SZ]</argsstring>
+        <name>a_ParamAccess</name>
+        <briefdescription>
+<para>This external variable hold parameters access table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="41" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c" bodystart="33" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="41" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__cfg_8h_1a922cd2e255d9152f2f9fedbca913d4c0" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_ParamDefault[PARAM_DEFAULT_SZ]</definition>
+        <argsstring>[PARAM_DEFAULT_SZ]</argsstring>
+        <name>a_ParamDefault</name>
+        <briefdescription>
+<para>This array define the parameter default value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="42" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="35" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="42" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrestr__s" kindref="compound">restr_s</ref></type>
+        <definition>const restr_s a_ParamRestr[PARAM_RESTR_CFG_SZ]</definition>
+        <argsstring>[PARAM_RESTR_CFG_SZ]</argsstring>
+        <name>a_ParamRestr</name>
+        <briefdescription>
+<para>This external variable hold the parameters restriction table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="94" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c" bodystart="292" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="94" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__cfg_8h_1a5147f70b89800d7a0c4789e01478e109" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_ENUM_01[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>a_ENUM_01</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="96" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="79" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="96" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__cfg_8h_1a9bf923b571ee637ae0a273553268ed0c" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_02[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_02</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="97" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="80" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="97" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__cfg_8h_1a548717f8e0c1c0067d0d6a5182ad7570" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_03[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_03</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="98" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="81" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="98" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__cfg_8h_1a150b04196175d23d60409fd7fdc7bd1a" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_04[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_04</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="99" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="82" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="99" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__cfg_8h_1ae27624b3eaef1b36185bb1030103e9b7" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_05[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_05</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" line="100" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="83" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h" declline="100" declcolumn="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file was generated from demo/Nucleo-L476/app/cfg/MergedParam.xml(Modif.<nonbreakablespace/>: 2022-03-14 06:36:30.109935700 +0100). </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Generation Date</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>x.x.x : 14/03/2022 06:36 [neo]</title><para></para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="29"><highlight class="preprocessor">#ifndef<sp/>_PARAMETERS_ID_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PARAMETERS_ID_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>C<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters__def_8h" kindref="compound">parameters_def.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_ACCESS_CFG_SZ<sp/>(0xFF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_DEFAULT_SZ<sp/>(0x77)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>param_s<sp/><ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[PARAM_ACCESS_CFG_SZ];</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="parameters__cfg_8h_1a922cd2e255d9152f2f9fedbca913d4c0" kindref="member">a_ParamDefault</ref>[PARAM_DEFAULT_SZ];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efb" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab3f6e26718312d495ab5ef20847d2b0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab3f6e26718312d495ab5ef20847d2b0b" kindref="member">VERS_HW_TRX</ref><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="49" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba986651d04c3488b4c64e0709127377d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba986651d04c3488b4c64e0709127377d8" kindref="member">VERS_FW_TRX</ref><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="50" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba270afd63769ac0e4a3328bf82369e993" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba270afd63769ac0e4a3328bf82369e993" kindref="member">DATEHOUR_LAST_UPDATE</ref><sp/>=<sp/>0x03,<sp/></highlight></codeline>
+<codeline lineno="51" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba43c2a2d50c3d593d662dc92422d67c7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba43c2a2d50c3d593d662dc92422d67c7c" kindref="member">L6App</ref><sp/>=<sp/>0x04,<sp/></highlight></codeline>
+<codeline lineno="52" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba47004e2a9df426d8fc094abb6c021ee2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba47004e2a9df426d8fc094abb6c021ee2" kindref="member">RF_UPLINK_CHANNEL</ref><sp/>=<sp/>0x08,<sp/></highlight></codeline>
+<codeline lineno="53" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba92d7ed82d7e079cbeddb40a901a17c67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba92d7ed82d7e079cbeddb40a901a17c67" kindref="member">RF_DOWNLINK_CHANNEL</ref><sp/>=<sp/>0x09,<sp/></highlight></codeline>
+<codeline lineno="54" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba9933cd4504128fd118c0c6e24c88780f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba9933cd4504128fd118c0c6e24c88780f" kindref="member">RF_UPLINK_MOD</ref><sp/>=<sp/>0x0A,<sp/></highlight></codeline>
+<codeline lineno="55" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0356d0b6740da1e87357fa61c9642206" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0356d0b6740da1e87357fa61c9642206" kindref="member">RF_DOWNLINK_MOD</ref><sp/>=<sp/>0x0B,<sp/></highlight></codeline>
+<codeline lineno="56" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaef09c8b9fce1847ca51a17c3ed0af6cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaef09c8b9fce1847ca51a17c3ed0af6cd" kindref="member">TX_POWER</ref><sp/>=<sp/>0x10,<sp/></highlight></codeline>
+<codeline lineno="57" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba660b54d9d87e37e266fb5209cf747970" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba660b54d9d87e37e266fb5209cf747970" kindref="member">TX_DELAY_FULLPOWER</ref><sp/>=<sp/>0x11,<sp/></highlight></codeline>
+<codeline lineno="58" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac544786fa1711bf15c7807f9fc6425a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac544786fa1711bf15c7807f9fc6425a6" kindref="member">TX_FREQ_OFFSET</ref><sp/>=<sp/>0x12,<sp/></highlight></codeline>
+<codeline lineno="59" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae8d116e359c208b13a05d25b95664050" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae8d116e359c208b13a05d25b95664050" kindref="member">EXCH_RX_DELAY</ref><sp/>=<sp/>0x18,<sp/></highlight></codeline>
+<codeline lineno="60" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad9d88e1d97915cba9035211569a65c3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad9d88e1d97915cba9035211569a65c3e" kindref="member">EXCH_RX_LENGTH</ref><sp/>=<sp/>0x19,<sp/></highlight></codeline>
+<codeline lineno="61" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac6ad1efb873b4df9f79046fbef17331b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac6ad1efb873b4df9f79046fbef17331b" kindref="member">EXCH_RESPONSE_DELAY</ref><sp/>=<sp/>0x1A,<sp/></highlight></codeline>
+<codeline lineno="62" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad1c0a996b12b172bb5f035dcc6b52c13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad1c0a996b12b172bb5f035dcc6b52c13" kindref="member">EXCH_RESPONSE_DELAY_MIN</ref><sp/>=<sp/>0x1B,<sp/></highlight></codeline>
+<codeline lineno="63" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba59ce36970074aaf467567461b85a36af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba59ce36970074aaf467567461b85a36af" kindref="member">L7TRANSMIT_LENGTH_MAX</ref><sp/>=<sp/>0x1C,<sp/></highlight></codeline>
+<codeline lineno="64" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad00327b06872c517829149c698e68e50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad00327b06872c517829149c698e68e50" kindref="member">L7RECEIVE_LENGTH_MAX</ref><sp/>=<sp/>0x1D,<sp/></highlight></codeline>
+<codeline lineno="65" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaa16f6a91fd03bfe0af60b37f655eaff8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaa16f6a91fd03bfe0af60b37f655eaff8" kindref="member">CLOCK_CURRENT_EPOC</ref><sp/>=<sp/>0x20,<sp/></highlight></codeline>
+<codeline lineno="66" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba7196c899428ba7d1ebe953c23438b59b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba7196c899428ba7d1ebe953c23438b59b" kindref="member">CLOCK_OFFSET_CORRECTION</ref><sp/>=<sp/>0x21,<sp/></highlight></codeline>
+<codeline lineno="67" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0ed0c51391ba9cd6c0a40a2837b8d7e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0ed0c51391ba9cd6c0a40a2837b8d7e5" kindref="member">CLOCK_DRIFT_CORRECTION</ref><sp/>=<sp/>0x22,<sp/></highlight></codeline>
+<codeline lineno="68" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6499e193ae1415baa9a1bf495503b066" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6499e193ae1415baa9a1bf495503b066" kindref="member">CIPH_CURRENT_KEY</ref><sp/>=<sp/>0x28,<sp/></highlight></codeline>
+<codeline lineno="69" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbacbbfbf0abfff42ca16071817dd4a0fd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbacbbfbf0abfff42ca16071817dd4a0fd9" kindref="member">CIPH_KEY_COUNT</ref><sp/>=<sp/>0x29,<sp/></highlight></codeline>
+<codeline lineno="70" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae1424bf2530724400f2bf2033d7832d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae1424bf2530724400f2bf2033d7832d4" kindref="member">L6NetwIdSelect</ref><sp/>=<sp/>0x2A,<sp/></highlight></codeline>
+<codeline lineno="71" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab182a57062f656fbe03d7f87e18ff186" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab182a57062f656fbe03d7f87e18ff186" kindref="member">PING_RX_DELAY</ref><sp/>=<sp/>0x30,<sp/></highlight></codeline>
+<codeline lineno="72" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba3ce5f49938b37554e99a28ffc72c33ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba3ce5f49938b37554e99a28ffc72c33ef" kindref="member">PING_RX_LENGTH</ref><sp/>=<sp/>0x31,<sp/></highlight></codeline>
+<codeline lineno="73" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae3c5de5c34b60cd5b43e07902b0a3f01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbae3c5de5c34b60cd5b43e07902b0a3f01" kindref="member">PING_RX_DELAY_MIN</ref><sp/>=<sp/>0x32,<sp/></highlight></codeline>
+<codeline lineno="74" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba38d0bbd3199ea210fe22dcdb36b78235" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba38d0bbd3199ea210fe22dcdb36b78235" kindref="member">PING_RX_LENGTH_MAX</ref><sp/>=<sp/>0x33,<sp/></highlight></codeline>
+<codeline lineno="75" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac47f4a3a34b8f5d6a73dc65d33ac4518" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbac47f4a3a34b8f5d6a73dc65d33ac4518" kindref="member">PING_LAST_EPOCH</ref><sp/>=<sp/>0x34,<sp/></highlight></codeline>
+<codeline lineno="76" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6e77bb526054adb3227167be3c6b4151" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6e77bb526054adb3227167be3c6b4151" kindref="member">PING_NBFOUND</ref><sp/>=<sp/>0x35,<sp/></highlight></codeline>
+<codeline lineno="77" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbabb1365e19169300db76145b834ce945a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbabb1365e19169300db76145b834ce945a" kindref="member">PING_REPLY1</ref><sp/>=<sp/>0x36,<sp/></highlight></codeline>
+<codeline lineno="78" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba624c83eb45f20517a5b5c6bcd826b577" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba624c83eb45f20517a5b5c6bcd826b577" kindref="member">PING_REPLY2</ref><sp/>=<sp/>0x37,<sp/></highlight></codeline>
+<codeline lineno="79" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba82aa9ea24baa57ed1c9f5c2c73eef867" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba82aa9ea24baa57ed1c9f5c2c73eef867" kindref="member">PING_REPLY3</ref><sp/>=<sp/>0x38,<sp/></highlight></codeline>
+<codeline lineno="80" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad456122dd189cf96f490aebeba9e3874" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbad456122dd189cf96f490aebeba9e3874" kindref="member">PING_REPLY4</ref><sp/>=<sp/>0x39,<sp/></highlight></codeline>
+<codeline lineno="81" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0a9ab98f326de7328d66a5ffead3f51d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba0a9ab98f326de7328d66a5ffead3f51d" kindref="member">PING_REPLY5</ref><sp/>=<sp/>0x3A,<sp/></highlight></codeline>
+<codeline lineno="82" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba3204f8b2794410445956712b64dfec8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba3204f8b2794410445956712b64dfec8e" kindref="member">PING_REPLY6</ref><sp/>=<sp/>0x3B,<sp/></highlight></codeline>
+<codeline lineno="83" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaee9ee318bbd72e29120af915b90c564d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaee9ee318bbd72e29120af915b90c564d" kindref="member">PING_REPLY7</ref><sp/>=<sp/>0x3C,<sp/></highlight></codeline>
+<codeline lineno="84" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6f651cdaed18f7ad0405212208085742" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba6f651cdaed18f7ad0405212208085742" kindref="member">PING_REPLY8</ref><sp/>=<sp/>0x3D,<sp/></highlight></codeline>
+<codeline lineno="85" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab07a90adf38fc81a1a69fd7e6f25f62b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbab07a90adf38fc81a1a69fd7e6f25f62b" kindref="member">EXECPING_PERIODE</ref><sp/>=<sp/>0x3E,<sp/></highlight></codeline>
+<codeline lineno="86" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba2c6bebf9ee0e6f524c215660ef14f7b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba2c6bebf9ee0e6f524c215660ef14f7b1" kindref="member">LOGGER_LEVEL</ref><sp/>=<sp/>0xFD,<sp/></highlight></codeline>
+<codeline lineno="87" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaf150afd6a324bec7dfe73cd3277bdb68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efbaf150afd6a324bec7dfe73cd3277bdb68" kindref="member">LOGGER_TIME_OPT</ref><sp/>=<sp/>0xFE,<sp/></highlight></codeline>
+<codeline lineno="88" refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba29b7dcc5f3de57d1b95eadb0702a0036" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efba29b7dcc5f3de57d1b95eadb0702a0036" kindref="member">LAST_ID</ref><sp/>=<sp/>0xFE,<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<ref refid="parameters__cfg_8h_1a4c224c2a82b26cabcb7e2be41cbd2efb" kindref="member">param_ids_e</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_RESTR_CFG_SZ<sp/>(0x6)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/><ref refid="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" kindref="member">a_ParamRestr</ref>[PARAM_RESTR_CFG_SZ];</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_ENUM_01[6];</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_02[2];</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_03[2];</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_04[2];</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_05[2];</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PARAMETERS_ID_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h"/>
+  </compounddef>
+</doxygen>

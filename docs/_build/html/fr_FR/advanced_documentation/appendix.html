@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annexe &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation avancée</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Annexe</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/advanced_documentation/appendix.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="appendix">
+<h1>Annexe<a class="headerlink" href="#appendix" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="modifying-the-default-parameters">
+<h2>Modifier les paramètres par défaut<a class="headerlink" href="#modifying-the-default-parameters" title="Lien permanent vers cette rubrique"></a></h2>
+<p>(Voir « HowTo.md » dans « tools/scripts/gen_param directory »).</p>
+<p>Dans « demo/Nucleo-L476/app/cfg, ouvrez et modifiez selon vos besoins le fichier « DefaultParams.xml ». Ensuite, régénérez les tables par défaut comme expliqué dans ce qui suit.</p>
+<p>Conditions préalables : L’outil « xmlstarlet » doit être installé. (sudo apt-get install xmlstarlet) L’outil « xmlmerge » doit être installé. (sudo apt-get install gwenhywfar-tools)</p>
+<p>Définissez le chemin du script « gen_table.sh » dans la variable PATH de l’environnement :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> OpenWize
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tools/scripts/gen_param
+<span class="nb">cd</span> demo/Nucleo-L476/app
+</pre></div>
+</div>
+<p>Fusionner les deux fichiers xml :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xmlmerge ./cfg/DefaultParams.xml ./cfg/DefaultRestr.xml -o ./cfg/MergedParam.xml
+</pre></div>
+</div>
+<p>Ensuite, appelez « gen_table.sh » :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gen_table.sh --in ./cfg/MergedParam.xml --out .
+</pre></div>
+</div>
+<p class="rubric">Il va générer 3 fichiers dans le répertoire « gen » :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gen
+├──parameters_cfg.h     : access and restriction table declaration
+├──parameters_cfg.c     : access and restriction table definition
+└──parameters_default.c : define the tables default content
+</pre></div>
+</div>
+<p>Dans ces fichiers :</p>
+<ul class="simple">
+<li><p><em>a_ParamAccess[]</em> : donne le droit d’accès aux paramètres.</p></li>
+</ul>
+<p>Cette table décrit pour chaque paramètre, son id, les droits d’accès locaux, les droits d’accès distants, le temps de mise à jour, la référence, la taille, l’offset et l’id de restriction (voir la documentation du logiciel pour plus de détails).</p>
+<ul class="simple">
+<li><p><em>a_ParamRestr[]</em> : donne les restrictions sur les valeurs des paramètres (s’il y en a).</p></li>
+</ul>
+<p>Cette table décrit pour chaque restriction, son id, son type (modulo, range, enum), la taille de l’élément (8, 16, 32, 64 bits), le nombre d’éléments de restriction (modulo : 1 ; range : 2 ; enum : n éléments), l’adresse de la table des éléments (voir la documentation du logiciel pour plus de détails).</p>
+<ul class="simple">
+<li><p><em>a_ParamDefault[]</em> : donne les valeurs des paramètres par défaut</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

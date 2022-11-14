@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="inst__internal_8h" kind="file" language="C++">
+    <compoundname>inst_internal.h</compoundname>
+    <includes refid="proto_8h" local="yes">proto.h</includes>
+    <includes refid="app__layer_8h" local="yes">app_layer.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="ses__dispatcher_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</includedby>
+    <includedby refid="inst__internal_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h</label>
+        <link refid="inst__internal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>app_layer.h</label>
+        <link refid="app__layer_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c</label>
+        <link refid="inst__internal_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h</label>
+        <link refid="inst__internal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structping__reply__config__s" prot="public">ping_reply_config_s</innerclass>
+    <innerclass refid="structping__reply__list__s" prot="public">ping_reply_list_s</innerclass>
+    <innerclass refid="structping__reply__ctx__s" prot="public">ping_reply_ctx_s</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__wize__inst__layer_1gadf514d3c5aeeae7c804d75a2906c70e6" prot="public" static="no">
+        <type>struct <ref refid="structping__reply__list__s" kindref="compound">ping_reply_list_s</ref></type>
+        <definition>typedef struct ping_reply_list_s ping_reply_list_t</definition>
+        <argsstring></argsstring>
+        <name>ping_reply_list_t</name>
+        <briefdescription>
+<para>This struct defines the ping_reply element list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="83" column="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__inst__layer_1ga893acfa844d4a7ba1f43c27adbe219e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstInt_Init</definition>
+        <argsstring>(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)</argsstring>
+        <name>InstInt_Init</name>
+        <param>
+          <type>struct <ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref> *</type>
+          <declname>ping_reply_ctx</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pNetMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the ping_reply context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">ping_reply_ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on ping message to send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c" line="90" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c" bodystart="90" bodyend="135" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" declline="98" declcolumn="6"/>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="structping__reply__ctx__s_1ac422924292ca1e4dd9292a2b75c30f9d" compoundref="inst__internal_8h" startline="94">ping_reply_ctx_s::u8NbPong</references>
+        <references refid="structping__reply__ctx__s_1acedd4eeb9c07cbe67855f15231b0e945" compoundref="inst__internal_8h" startline="92">ping_reply_ctx_s::pBest</references>
+        <references refid="structping__reply__ctx__s_1a506cd34a650b3606aed79ca9c388e7bb" compoundref="inst__internal_8h" startline="90">ping_reply_ctx_s::aPingReplyList</references>
+        <references refid="structping__reply__ctx__s_1aca4cb6275c9b7a7a7fcd0d6b26ace36d" compoundref="inst__internal_8h" startline="91">ping_reply_ctx_s::pWorst</references>
+        <references refid="structping__reply__list__s_1a7f4e0e7af80aa33c61cd19e7cc4285e3" compoundref="inst__internal_8h" startline="78">ping_reply_list_s::pNext</references>
+        <references refid="structping__reply__list__s_1a7d460bf74d062bca5f3aa0d458f5acc8" compoundref="inst__internal_8h" startline="79">ping_reply_list_s::xPingReply</references>
+        <references refid="structping__reply__list__s_1a197ec56434ab16d8eceee0be76bf32d9" compoundref="inst__internal_8h" startline="80">ping_reply_list_s::u32RecvEpoch</references>
+        <references refid="structping__reply__list__s_1a070b16f4b7baa9e4f18c52e96546206e" compoundref="inst__internal_8h" startline="81">ping_reply_list_s::u32PongEpoch</references>
+        <references refid="structping__reply__list__s_1abc7cb73f341cdfebd8c510f35245de4e" compoundref="inst__internal_8h" startline="82">ping_reply_list_s::i16PongFreqOff</references>
+        <references refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" compoundref="parameters_8c" startline="411" endline="425">Param_Access</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a92d7ed82d7e079cbeddb40a901a17c67" compoundref="parameters__lan__ids_8h" startline="54">RF_DOWNLINK_CHANNEL</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a0356d0b6740da1e87357fa61c9642206" compoundref="parameters__lan__ids_8h" startline="56">RF_DOWNLINK_MOD</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ab182a57062f656fbe03d7f87e18ff186" compoundref="parameters__lan__ids_8h" startline="72">PING_RX_DELAY</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a3ce5f49938b37554e99a28ffc72c33ef" compoundref="parameters__lan__ids_8h" startline="73">PING_RX_LENGTH</references>
+        <references refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" compoundref="proto_8h" startline="170">net_msg_s::u8Size</references>
+        <references refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" compoundref="proto_8h" startline="169">net_msg_s::u16Id</references>
+        <references refid="structnet__msg__s_1abe67e8bc4bda4a76780b7fc53873c150" compoundref="proto_8h" startline="173">net_msg_s::u8KeyId</references>
+        <references refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" compoundref="proto_8h" startline="171">net_msg_s::u8Type</references>
+        <references refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a9377b7d549cf79015cf1007fa5939962" compoundref="proto_8h" startline="72">APP_INSTALL</references>
+        <references refid="structping__reply__ctx__s_1ad3bf343c5d587431b2f235a5049564f7" compoundref="inst__internal_8h" startline="93">ping_reply_ctx_s::u32PingEpoch</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__inst__layer_1ga15d215ac56ac9e3c42bf73946e22eb04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t InstInt_End</definition>
+        <argsstring>(struct ping_reply_ctx_s *ping_reply_ctx)</argsstring>
+        <name>InstInt_End</name>
+        <param>
+          <type>struct <ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref> *</type>
+          <declname>ping_reply_ctx</declname>
+        </param>
+        <briefdescription>
+<para>This function terminate the ping_reply (aka. write ping_reply values into the parameters table). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">ping_reply_ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: no pong received </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: at least one pong has been received </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c" line="225" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c" bodystart="225" bodyend="266" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" declline="99" declcolumn="9"/>
+        <references refid="structping__reply__ctx__s_1aca4cb6275c9b7a7a7fcd0d6b26ace36d" compoundref="inst__internal_8h" startline="91">ping_reply_ctx_s::pWorst</references>
+        <references refid="structping__reply__ctx__s_1ac422924292ca1e4dd9292a2b75c30f9d" compoundref="inst__internal_8h" startline="94">ping_reply_ctx_s::u8NbPong</references>
+        <references refid="structping__reply__ctx__s_1acedd4eeb9c07cbe67855f15231b0e945" compoundref="inst__internal_8h" startline="92">ping_reply_ctx_s::pBest</references>
+        <references refid="structping__reply__list__s_1a7d460bf74d062bca5f3aa0d458f5acc8" compoundref="inst__internal_8h" startline="79">ping_reply_list_s::xPingReply</references>
+        <references refid="structping__reply__ctx__s_1a1339db20594a821eaac614b594a58ee5" compoundref="inst__internal_8h" startline="95">ping_reply_ctx_s::sPingReplyConfig</references>
+        <references refid="structping__reply__config__s_1abc0bfc62af4eda7d9bc8463a8ca1e4cc" compoundref="inst__internal_8h" startline="71">ping_reply_config_s::AutoAdj_Rssi</references>
+        <references refid="structping__reply__config__s_1aa2e9027f392ccf8095fb54af84d43e6a" compoundref="inst__internal_8h" startline="67">ping_reply_config_s::AutoClk</references>
+        <references refid="structping__reply__list__s_1a197ec56434ab16d8eceee0be76bf32d9" compoundref="inst__internal_8h" startline="80">ping_reply_list_s::u32RecvEpoch</references>
+        <references refid="structping__reply__ctx__s_1ad3bf343c5d587431b2f235a5049564f7" compoundref="inst__internal_8h" startline="93">ping_reply_ctx_s::u32PingEpoch</references>
+        <references refid="structping__reply__list__s_1a070b16f4b7baa9e4f18c52e96546206e" compoundref="inst__internal_8h" startline="81">ping_reply_list_s::u32PongEpoch</references>
+        <references refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" compoundref="parameters_8c" startline="411" endline="425">Param_Access</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0aa16f6a91fd03bfe0af60b37f655eaff8" compoundref="parameters__lan__ids_8h" startline="66">CLOCK_CURRENT_EPOC</references>
+        <references refid="structping__reply__config__s_1a3a4d77ba7cdd097f48780f2a1c731b62" compoundref="inst__internal_8h" startline="68">ping_reply_config_s::AutoFreq</references>
+        <references refid="structping__reply__list__s_1abc7cb73f341cdfebd8c510f35245de4e" compoundref="inst__internal_8h" startline="82">ping_reply_list_s::i16PongFreqOff</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ac544786fa1711bf15c7807f9fc6425a6" compoundref="parameters__lan__ids_8h" startline="59">TX_FREQ_OFFSET</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0abb1365e19169300db76145b834ce945a" compoundref="parameters__lan__ids_8h" startline="78">PING_REPLY1</references>
+        <references refid="structping__reply__list__s_1a7f4e0e7af80aa33c61cd19e7cc4285e3" compoundref="inst__internal_8h" startline="78">ping_reply_list_s::pNext</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ac47f4a3a34b8f5d6a73dc65d33ac4518" compoundref="parameters__lan__ids_8h" startline="76">PING_LAST_EPOCH</references>
+        <references refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a6e77bb526054adb3227167be3c6b4151" compoundref="parameters__lan__ids_8h" startline="77">PING_NBFOUND</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__inst__layer_1ga1e06e51e59c219852463fd29876e45bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstInt_Add</definition>
+        <argsstring>(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)</argsstring>
+        <name>InstInt_Add</name>
+        <param>
+          <type>struct <ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref> *</type>
+          <declname>ping_reply_ctx</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pxNetMsg</declname>
+          <defname>pNetMsg</defname>
+        </param>
+        <briefdescription>
+<para>This function add a pong to the &quot;ping_reply&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">ping_reply_ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on received pong message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c" line="145" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c" bodystart="145" bodyend="214" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" declline="100" declcolumn="6"/>
+        <references refid="structping__reply__ctx__s_1ac422924292ca1e4dd9292a2b75c30f9d" compoundref="inst__internal_8h" startline="94">ping_reply_ctx_s::u8NbPong</references>
+        <references refid="structping__reply__ctx__s_1a506cd34a650b3606aed79ca9c388e7bb" compoundref="inst__internal_8h" startline="90">ping_reply_ctx_s::aPingReplyList</references>
+        <references refid="structping__reply__list__s_1a7d460bf74d062bca5f3aa0d458f5acc8" compoundref="inst__internal_8h" startline="79">ping_reply_list_s::xPingReply</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="structping__reply__ctx__s_1aca4cb6275c9b7a7a7fcd0d6b26ace36d" compoundref="inst__internal_8h" startline="91">ping_reply_ctx_s::pWorst</references>
+        <references refid="structnet__msg__s_1a5ac6b192df372f84048b86d166a4424a" compoundref="proto_8h" startline="172">net_msg_s::u8Rssi</references>
+        <references refid="structping__reply__ctx__s_1acedd4eeb9c07cbe67855f15231b0e945" compoundref="inst__internal_8h" startline="92">ping_reply_ctx_s::pBest</references>
+        <references refid="structping__reply__list__s_1a7f4e0e7af80aa33c61cd19e7cc4285e3" compoundref="inst__internal_8h" startline="78">ping_reply_list_s::pNext</references>
+        <references refid="structping__reply__list__s_1a197ec56434ab16d8eceee0be76bf32d9" compoundref="inst__internal_8h" startline="80">ping_reply_list_s::u32RecvEpoch</references>
+        <references refid="structping__reply__list__s_1a070b16f4b7baa9e4f18c52e96546206e" compoundref="inst__internal_8h" startline="81">ping_reply_list_s::u32PongEpoch</references>
+        <references refid="structnet__msg__s_1a043145383f69aba81e45ac8582d5e5de" compoundref="proto_8h" startline="168">net_msg_s::u32Epoch</references>
+        <references refid="structping__reply__list__s_1abc7cb73f341cdfebd8c510f35245de4e" compoundref="inst__internal_8h" startline="82">ping_reply_list_s::i16PongFreqOff</references>
+        <references refid="structnet__msg__s_1a176f722127cf553cef8e45411e862562" compoundref="proto_8h" startline="176">net_msg_s::i16TxFreqOffset</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define the functions and structures to treat the install L7. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/11[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_INST_INTERNAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_INST_INTERNAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="proto_8h" kindref="compound">proto.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="app__layer_8h" kindref="compound">app_layer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">#define<sp/>NB_PING_REPLPY<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="structping__reply__config__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structping__reply__config__s" kindref="compound">ping_reply_config_s</ref>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64" refid="structping__reply__config__s_1aefec46bb904883853a4ace493ac6fcc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structping__reply__config__s_1aefec46bb904883853a4ace493ac6fcc2" kindref="member">AutoAdj_ClkFreq</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67" refid="structping__reply__config__s_1aa2e9027f392ccf8095fb54af84d43e6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structping__reply__config__s_1aa2e9027f392ccf8095fb54af84d43e6a" kindref="member">AutoClk</ref>:1;<sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="structping__reply__config__s_1a3a4d77ba7cdd097f48780f2a1c731b62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structping__reply__config__s_1a3a4d77ba7cdd097f48780f2a1c731b62" kindref="member">AutoFreq</ref>:1;<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="71" refid="structping__reply__config__s_1abc0bfc62af4eda7d9bc8463a8ca1e4cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structping__reply__config__s_1abc0bfc62af4eda7d9bc8463a8ca1e4cc" kindref="member">AutoAdj_Rssi</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="structping__reply__list__s" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structping__reply__list__s" kindref="compound">ping_reply_list_s</ref>{</highlight></codeline>
+<codeline lineno="78" refid="structping__reply__list__s_1a7f4e0e7af80aa33c61cd19e7cc4285e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structping__reply__list__s" kindref="compound">ping_reply_list_s</ref><sp/>*<ref refid="structping__reply__list__s_1a7f4e0e7af80aa33c61cd19e7cc4285e3" kindref="member">pNext</ref>;<sp/></highlight></codeline>
+<codeline lineno="79" refid="structping__reply__list__s_1a7d460bf74d062bca5f3aa0d458f5acc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structinst__pong__t" kindref="compound">inst_pong_t</ref><sp/><ref refid="structping__reply__list__s_1a7d460bf74d062bca5f3aa0d458f5acc8" kindref="member">xPingReply</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80" refid="structping__reply__list__s_1a197ec56434ab16d8eceee0be76bf32d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structping__reply__list__s_1a197ec56434ab16d8eceee0be76bf32d9" kindref="member">u32RecvEpoch</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81" refid="structping__reply__list__s_1a070b16f4b7baa9e4f18c52e96546206e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structping__reply__list__s_1a070b16f4b7baa9e4f18c52e96546206e" kindref="member">u32PongEpoch</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82" refid="structping__reply__list__s_1abc7cb73f341cdfebd8c510f35245de4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><ref refid="structping__reply__list__s_1abc7cb73f341cdfebd8c510f35245de4e" kindref="member">i16PongFreqOff</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}<sp/><ref refid="group__wize__inst__layer_1gadf514d3c5aeeae7c804d75a2906c70e6" kindref="member">ping_reply_list_t</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="structping__reply__ctx__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90" refid="structping__reply__ctx__s_1a506cd34a650b3606aed79ca9c388e7bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structping__reply__list__s" kindref="compound">ping_reply_list_t</ref><sp/><ref refid="structping__reply__ctx__s_1a506cd34a650b3606aed79ca9c388e7bb" kindref="member">aPingReplyList</ref>[NB_PING_REPLPY];<sp/></highlight></codeline>
+<codeline lineno="91" refid="structping__reply__ctx__s_1aca4cb6275c9b7a7a7fcd0d6b26ace36d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structping__reply__list__s" kindref="compound">ping_reply_list_t</ref><sp/>*<ref refid="structping__reply__ctx__s_1aca4cb6275c9b7a7a7fcd0d6b26ace36d" kindref="member">pWorst</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92" refid="structping__reply__ctx__s_1acedd4eeb9c07cbe67855f15231b0e945" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structping__reply__list__s" kindref="compound">ping_reply_list_t</ref><sp/>*<ref refid="structping__reply__ctx__s_1acedd4eeb9c07cbe67855f15231b0e945" kindref="member">pBest</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93" refid="structping__reply__ctx__s_1ad3bf343c5d587431b2f235a5049564f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structping__reply__ctx__s_1ad3bf343c5d587431b2f235a5049564f7" kindref="member">u32PingEpoch</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94" refid="structping__reply__ctx__s_1ac422924292ca1e4dd9292a2b75c30f9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structping__reply__ctx__s_1ac422924292ca1e4dd9292a2b75c30f9d" kindref="member">u8NbPong</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95" refid="structping__reply__ctx__s_1a1339db20594a821eaac614b594a58ee5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structping__reply__config__s" kindref="compound">ping_reply_config_s</ref><sp/><ref refid="structping__reply__ctx__s_1a1339db20594a821eaac614b594a58ee5" kindref="member">sPingReplyConfig</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__inst__layer_1ga893acfa844d4a7ba1f43c27adbe219e7" kindref="member">InstInt_Init</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref><sp/>*ping_reply_ctx,<sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pNetMsg);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">uint8_t<sp/><ref refid="group__wize__inst__layer_1ga15d215ac56ac9e3c42bf73946e22eb04" kindref="member">InstInt_End</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref><sp/>*ping_reply_ctx);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__inst__layer_1ga1e06e51e59c219852463fd29876e45bb" kindref="member">InstInt_Add</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref><sp/>*ping_reply_ctx,<sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pxNetMsg);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_INST_INTERNAL_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h"/>
+  </compounddef>
+</doxygen>

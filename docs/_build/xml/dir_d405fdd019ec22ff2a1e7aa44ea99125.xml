@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_d405fdd019ec22ff2a1e7aa44ea99125" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src</compoundname>
+    <innerfile refid="bsp_8c">bsp.c</innerfile>
+    <innerfile refid="bsp__boot_8c">bsp_boot.c</innerfile>
+    <innerfile refid="bsp__flash_8c">bsp_flash.c</innerfile>
+    <innerfile refid="bsp__gpio_8c">bsp_gpio.c</innerfile>
+    <innerfile refid="bsp__gpio__it_8c">bsp_gpio_it.c</innerfile>
+    <innerfile refid="bsp__lp_8c">bsp_lp.c</innerfile>
+    <innerfile refid="bsp__rtc_8c">bsp_rtc.c</innerfile>
+    <innerfile refid="bsp__uart_8c">bsp_uart.c</innerfile>
+    <innerfile refid="fault__handler_8c">fault_handler.c</innerfile>
+    <innerfile refid="platform_8c">platform.c</innerfile>
+    <innerfile refid="sys__handler_8c">sys_handler.c</innerfile>
+    <innerfile refid="syscalls_8c">syscalls.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/"/>
+  </compounddef>
+</doxygen>

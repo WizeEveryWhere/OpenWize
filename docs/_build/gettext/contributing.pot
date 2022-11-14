@@ -1,0 +1,518 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 - 2022, GRDF
+# This file is distributed under the same license as the OpenWize package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWize 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-08 13:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contributing/code_style_guide.rst:5
+#: ../../contributing/code_style_guide.rst:5
+msgid "Coding Style Guide"
+msgstr "Guide du style de codage"
+
+#: ../../contributing/code_style_guide.rst:8
+#: ../../contributing/code_style_guide.rst:8
+msgid "Conventions"
+msgstr "Conventions"
+
+#: ../../contributing/code_style_guide.rst:10
+#: ../../contributing/code_style_guide.rst:10
+msgid "**PascalCase** convention : a compound word that uses capital letters to delineate words. Includes the first letter."
+msgstr "Convention **PascalCase** : un mot composé qui utilise des lettres majuscules pour délimiter les mots. Comprend la première lettre."
+
+#: ../../contributing/code_style_guide.rst:12
+#: ../../contributing/code_style_guide.rst:12
+msgid "example : SomeName"
+msgstr "exemple : NomQuelconque"
+
+#: ../../contributing/code_style_guide.rst:14
+#: ../../contributing/code_style_guide.rst:14
+msgid "**snake_case** convention : when all the words in a compound word are lower case but delimited by an underscore."
+msgstr "Convention **snake_case** : lorsque tous les mots d'un mot composé sont en minuscules mais délimités par un trait de soulignement."
+
+#: ../../contributing/code_style_guide.rst:16
+#: ../../contributing/code_style_guide.rst:16
+msgid "example : some_name"
+msgstr "exemple : nom_quelconque"
+
+#: ../../contributing/code_style_guide.rst:20
+#: ../../contributing/code_style_guide.rst:20
+msgid "Directories Names"
+msgstr "Noms des répertoires"
+
+#: ../../contributing/code_style_guide.rst:22
+#: ../../contributing/code_style_guide.rst:22
+msgid "If the directory is a module directory, use 'pascal case' convention."
+msgstr "Si le répertoire est un répertoire de module, utilisez la convention 'pascal case'."
+
+#: ../../contributing/code_style_guide.rst:23
+#: ../../contributing/code_style_guide.rst:23
+msgid "If the directory is not a module directory, use 'snake case' convention."
+msgstr "Si le répertoire n'est pas un répertoire de module, utilisez la convention 'snake case'."
+
+#: ../../contributing/code_style_guide.rst:27
+#: ../../contributing/code_style_guide.rst:27
+msgid "Files Names"
+msgstr "Noms des fichiers"
+
+#: ../../contributing/code_style_guide.rst:29
+#: ../../contributing/code_style_guide.rst:29
+msgid "Files name should use the *snake_case* convention. The first character of the name should be a letter and all others should be letters and/or numbers."
+msgstr "Le nom des fichiers doit utiliser la convention *snake_case*. Le premier caractère du nom doit être une lettre et tous les autres doivent être des lettres et/ou des chiffres."
+
+#: ../../contributing/code_style_guide.rst:30
+#: ../../contributing/code_style_guide.rst:30
+msgid "C source file names must end in .c"
+msgstr "Les noms des fichiers sources C doivent se terminer par .c"
+
+#: ../../contributing/code_style_guide.rst:31
+#: ../../contributing/code_style_guide.rst:31
+msgid "C header file names must end in .h"
+msgstr "Les noms des fichiers d'en-tête C doivent se terminer par .h"
+
+#: ../../contributing/code_style_guide.rst:32
+#: ../../contributing/code_style_guide.rst:32
+msgid "Assembler source file names must end in .s"
+msgstr "Les noms des fichiers source de l'assembleur doivent se terminer par .s"
+
+#: ../../contributing/code_style_guide.rst:36
+#: ../../contributing/code_style_guide.rst:36
+msgid "Include files"
+msgstr "Fichiers inclus"
+
+#: ../../contributing/code_style_guide.rst:38
+#: ../../contributing/code_style_guide.rst:38
+msgid "Use the <name> construction for getting them from a standard place, and use \"\" for custom libraries or define them relative to the current directory."
+msgstr "Utilisez la construction <name> pour les obtenir à partir d'un endroit standard, et utilisez \"\" pour les bibliothèques personnalisées ou définissez-les relativement au répertoire courant."
+
+#: ../../contributing/code_style_guide.rst:45
+#: ../../contributing/code_style_guide.rst:45
+msgid "Prefer the \"include-path\" option of the C compiler to handle extensive private libraries of header files. Never use absolute pathnames for header files."
+msgstr "Préférez l'option \"include-path\" du compilateur C pour gérer les bibliothèques privées étendues de fichiers d'en-tête. N'utilisez jamais de noms de chemin absolus pour les fichiers d'en-tête."
+
+#: ../../contributing/code_style_guide.rst:49
+#: ../../contributing/code_style_guide.rst:49
+msgid "Header file"
+msgstr "Fichier d'en-tête"
+
+#: ../../contributing/code_style_guide.rst:51
+#: ../../contributing/code_style_guide.rst:51
+msgid "Header files should have preprocessor guards."
+msgstr "Les fichiers d'en-tête doivent avoir des gardes de préprocesseur."
+
+#: ../../contributing/code_style_guide.rst:60
+#: ../../contributing/code_style_guide.rst:84
+#: ../../contributing/code_style_guide.rst:60
+#: ../../contributing/code_style_guide.rst:84
+msgid "Always include check for C++ with **extern** keyword in header file."
+msgstr "Toujours inclure la vérification pour C++ avec le mot-clé **extern** dans le fichier d'en-tête."
+
+#: ../../contributing/code_style_guide.rst:79
+#: ../../contributing/code_style_guide.rst:79
+msgid "Note that the following order should be used :"
+msgstr "Notez que l'ordre suivant doit être utilisé :"
+
+#: ../../contributing/code_style_guide.rst:76
+#: ../../contributing/code_style_guide.rst:76
+msgid "preprocessor guards"
+msgstr "Gardes de préprocesseur."
+
+#: ../../contributing/code_style_guide.rst:77
+#: ../../contributing/code_style_guide.rst:77
+msgid "then any #include statements"
+msgstr "puis toute déclaration #include"
+
+#: ../../contributing/code_style_guide.rst:78
+#: ../../contributing/code_style_guide.rst:78
+msgid "then extern \"C\" guards:"
+msgstr "puis externe \"C\" gardes :"
+
+#: ../../contributing/code_style_guide.rst:82
+#: ../../contributing/code_style_guide.rst:82
+msgid "Source file"
+msgstr "Fichier source"
+
+#: ../../contributing/code_style_guide.rst:100
+#: ../../contributing/code_style_guide.rst:100
+msgid "Module organization"
+msgstr "Organisation du module"
+
+#: ../../contributing/code_style_guide.rst:102
+#: ../../contributing/code_style_guide.rst:102
+msgid "Softwares modules are organized with src/ and include/ directories, that respectively hold source and header files. In module root folder a \"CMakeList.txt\" file defines one or more build target in order to be able to build that module. Furthermore, when is required and module is unitary \"testable\", a \"unittest\" directory containing unit test source code and its CMakeList.txt is present."
+msgstr "Les modules logiciels sont organisés avec les répertoires src/ et include/, qui contiennent respectivement les fichiers sources et les fichiers d'en-tête. Dans le dossier racine du module, un fichier \"CMakeList.txt\" définit une ou plusieurs cibles de construction afin de pouvoir construire ce module. En outre, lorsque cela est nécessaire et que le module est unitaire \"testable\", un répertoire \"unittest\" contenant le code source du test unitaire et son fichier CMakeList.txt est présent."
+
+#: ../../contributing/code_style_guide.rst:0
+#: ../../contributing/code_style_guide.rst:0
+msgid "Typical module look like this :"
+msgstr "Un module typique ressemble à ceci :"
+
+#: ../../contributing/code_style_guide.rst:126
+#: ../../contributing/code_style_guide.rst:126
+msgid "Naming convention"
+msgstr "Convention d'appellation"
+
+#: ../../contributing/code_style_guide.rst:128
+#: ../../contributing/code_style_guide.rst:128
+msgid "For simple type, we use the (u)intN_t convention from \"stdint.h\". That is to say, the basic type are (u)int8_t, (u)int16_t, (u)int32_t, (u)int64_t, float, double."
+msgstr "Pour les types simples, nous utilisons la convention (u)intN_t de \"stdint.h\". C'est-à-dire que les types de base sont (u)int8_t, (u)int16_t, (u)int32_t, (u)int64_t, float, double."
+
+#: ../../contributing/code_style_guide.rst:131
+#: ../../contributing/code_style_guide.rst:131
+msgid "Variables Names"
+msgstr "Noms des variables"
+
+#: ../../contributing/code_style_guide.rst:133
+#: ../../contributing/code_style_guide.rst:133
+msgid "The generic rule is that variables follow the PascalCase convention. Furthermore, variables are prefixed with their type."
+msgstr "La règle générale est que les variables suivent la convention PascalCase. De plus, les variables sont préfixées avec leur type."
+
+#: ../../contributing/code_style_guide.rst:135
+#: ../../contributing/code_style_guide.rst:135
+msgid "For simple types, the variables are prefixed with their type in their \"short\" version :"
+msgstr "Pour les types simples, les variables sont préfixées avec leur type dans leur version \"courte\" :"
+
+#: ../../contributing/code_style_guide.rst:151
+#: ../../contributing/code_style_guide.rst:151
+msgid "The same rule is applied for structure, enum, pointer and array type."
+msgstr "La même règle s'applique aux types structure, enum, pointeur et tableau."
+
+#: ../../contributing/code_style_guide.rst:153
+#: ../../contributing/code_style_guide.rst:153
+msgid "Example with structure and enum :"
+msgstr "Exemple avec structure et enum :"
+
+#: ../../contributing/code_style_guide.rst:161
+#: ../../contributing/code_style_guide.rst:161
+msgid "Example with pointer and array :"
+msgstr "Exemple avec un pointeur et un tableau :"
+
+#: ../../contributing/code_style_guide.rst:170
+#: ../../contributing/code_style_guide.rst:170
+msgid "Pointer is different from array or table in the sense that array is allocated, pointer is not."
+msgstr "Le pointeur est différent du tableau ou de la table dans le sens où le tableau est alloué, le pointeur ne l'est pas."
+
+#: ../../contributing/code_style_guide.rst:174
+#: ../../contributing/code_style_guide.rst:174
+msgid "Static variable follow the snake_case convention with *_* (underscore as prefix and suffix :"
+msgstr "Les variables statiques suivent la convention snake_case avec *_* (underscore comme préfixe et suffixe :"
+
+#: ../../contributing/code_style_guide.rst:183
+#: ../../contributing/code_style_guide.rst:183
+msgid "Structures Names"
+msgstr "Noms des structures"
+
+#: ../../contributing/code_style_guide.rst:185
+#: ../../contributing/code_style_guide.rst:185
+msgid "Structure declaration follows the snake_case convention suffixed with *_s* or *_t* if it is a type:"
+msgstr "La déclaration de la structure suit la convention snake_case suffixée par *_s* ou *_t* si c'est un type :"
+
+#: ../../contributing/code_style_guide.rst:200
+#: ../../contributing/code_style_guide.rst:200
+msgid "Structure instantiation follows the PascalCase convention prefixed with *s*:"
+msgstr "L'instanciation des structures suit la convention PascalCase préfixée par *s* :"
+
+#: ../../contributing/code_style_guide.rst:209
+#: ../../contributing/code_style_guide.rst:209
+msgid "Enumerate Names"
+msgstr "Noms des énumérations"
+
+#: ../../contributing/code_style_guide.rst:211
+#: ../../contributing/code_style_guide.rst:211
+msgid "Enumerate declaration follows the snake_case convention suffixed with *_e* :"
+msgstr "La déclaration des énumérations suit la convention snake_case suffixée par *_e* :"
+
+#: ../../contributing/code_style_guide.rst:227
+#: ../../contributing/code_style_guide.rst:227
+msgid "Enumerate instantiation follows the PascalCase convention prefixed with *e*:"
+msgstr "L'instanciation des énumérations suit la convention PascalCase préfixée par *e* :"
+
+#: ../../contributing/code_style_guide.rst:235
+#: ../../contributing/code_style_guide.rst:235
+msgid "Functions Names"
+msgstr "Noms des fonctions"
+
+#: ../../contributing/code_style_guide.rst:237
+#: ../../contributing/code_style_guide.rst:237
+msgid "For public or API functions, its name is prefixed by the module name :"
+msgstr "Pour les fonctions publiques ou API, son nom est préfixé par le nom du module :"
+
+#: ../../contributing/code_style_guide.rst:243
+#: ../../contributing/code_style_guide.rst:243
+msgid "The module name prefix and function name use the PascalCase convention."
+msgstr "Le préfixe du nom du module et le nom de la fonction utilisent la convention PascalCase."
+
+#: ../../contributing/code_style_guide.rst:247
+#: ../../contributing/code_style_guide.rst:247
+msgid "Sometimes, it is necessary or it could be better to be able to identify some structural functionality. In these cases, use a structural name as identifier :"
+msgstr "Parfois, il est nécessaire ou préférable de pouvoir identifier une fonctionnalité structurelle. Dans ces cas, utilisez un nom structurel comme identifiant :"
+
+#: ../../contributing/code_style_guide.rst:250
+#: ../../contributing/code_style_guide.rst:250
+msgid "For example, in case of a Board Support Package (BSP). The BSP is not really a single module, but more a collection module. All BSP files are grouped under, let say, \"bsp\" directory. Some of them will deal with flash memory while other ones will deal with SPI."
+msgstr "Par exemple, dans le cas d'un Board Support Package (BSP). Le BSP n'est pas vraiment un module unique, mais plutôt un module de collection. Tous les fichiers BSP sont regroupés, disons, dans le répertoire \"bsp\". Certains d'entre eux traitent de la mémoire flash tandis que d'autres traitent du SPI."
+
+#: ../../contributing/code_style_guide.rst:255
+#: ../../contributing/code_style_guide.rst:255
+msgid "Example :"
+msgstr "Exemple :"
+
+#: ../../contributing/code_style_guide.rst:257
+#: ../../contributing/code_style_guide.rst:257
+msgid "bsp_flash :"
+msgstr "bsp_flash :"
+
+#: ../../contributing/code_style_guide.rst:263
+#: ../../contributing/code_style_guide.rst:263
+msgid "bsp_spi :"
+msgstr "bsp_spi :"
+
+#: ../../contributing/code_style_guide.rst:269
+#: ../../contributing/code_style_guide.rst:269
+msgid "For private or static function, '_' (underscore) is added as prefix and suffix."
+msgstr "Pour les fonctions privées ou statiques, '_' (trait de soulignement) est ajouté comme préfixe et suffixe."
+
+#: ../../contributing/code_style_guide.rst:276
+#: ../../contributing/code_style_guide.rst:276
+msgid "Passed variable in function declaration/implementation must use the PascalCase convention."
+msgstr "La variable passée dans la déclaration/implémentation de la fonction doit utiliser la convention PascalCase."
+
+#: ../../contributing/code_style_guide.rst:296
+#: ../../contributing/code_style_guide.rst:296
+msgid "Other General rules"
+msgstr "Autres règles générales"
+
+#: ../../contributing/code_style_guide.rst:298
+#: ../../contributing/code_style_guide.rst:298
+msgid "Use *C99*"
+msgstr "Utilisez *C99*"
+
+#: ../../contributing/code_style_guide.rst:299
+#: ../../contributing/code_style_guide.rst:299
+msgid "Do not use tabs, use 4 spaces instead"
+msgstr "N'utilisez pas de tabulations, mais plutôt 4 espaces."
+
+#: ../../contributing/code_style_guide.rst:300
+#: ../../contributing/code_style_guide.rst:300
+msgid "Use 1 space between keywords like *if*, *do*, *while*, *switch* and opening bracket"
+msgstr "Utilisez un espace entre les mots clés tels que *if*, *do*, *while*, *switch* et la parenthèse ouvrante."
+
+#: ../../contributing/code_style_guide.rst:309
+#: ../../contributing/code_style_guide.rst:309
+msgid "Use single space before and after comparison and assignment operators"
+msgstr "Utilisez un espace simple avant et après les opérateurs de comparaison et d'affectation."
+
+#: ../../contributing/code_style_guide.rst:319
+#: ../../contributing/code_style_guide.rst:319
+msgid "Do not use space between function name and opening bracket"
+msgstr "Ne pas utiliser d'espace entre le nom de la fonction et la parenthèse ouvrante."
+
+#: ../../contributing/code_style_guide.rst:320
+#: ../../contributing/code_style_guide.rst:320
+msgid "Use single space after every comma"
+msgstr "Utilisez un espace après chaque virgule"
+
+#: ../../contributing/code_style_guide.rst:321
+#: ../../contributing/code_style_guide.rst:321
+msgid "Do not initialize **static** and **global** variables to 0 (or *NULL*), let compiler do it for you"
+msgstr "Ne pas initialiser les variables **statiques** et **globales** à 0 (ou *NULL*), laisser le compilateur le faire pour vous"
+
+#: ../../contributing/code_style_guide.rst:322
+#: ../../contributing/code_style_guide.rst:322
+msgid "Avoid variable assignment with function call in declaration"
+msgstr "Éviter l'affectation de variables avec l'appel de fonction dans la déclaration"
+
+#: ../../contributing/code_style_guide.rst:323
+#: ../../contributing/code_style_guide.rst:323
+msgid "Always use brackets with **sizeof** operator"
+msgstr "Toujours utiliser des parenthèses avec l'opérateur **sizeof**."
+
+#: ../../contributing/code_style_guide.rst:324
+#: ../../contributing/code_style_guide.rst:324
+msgid "Use **const** for *pointer* if function should not modify memory pointed to by *pointer*"
+msgstr "Utiliser **const** pour *pointeur* si la fonction ne doit pas modifier la mémoire pointée par *pointeur*."
+
+#: ../../contributing/code_style_guide.rst:325
+#: ../../contributing/code_style_guide.rst:325
+msgid "Use **const** for function parameter or variable, if it should not be modified"
+msgstr "Utilisez **const** pour un paramètre de fonction ou une variable, s'il ne doit pas être modifié."
+
+#: ../../contributing/code_style_guide.rst:346
+#: ../../contributing/code_style_guide.rst:346
+msgid "Preprocessor macro use always upper case and, if required, underscore."
+msgstr "Les macros du préprocesseur utilisent toujours les majuscules et, si nécessaire, le trait de soulignement."
+
+#: ../../contributing/code_style_guide.rst:352
+#: ../../contributing/code_style_guide.rst:352
+msgid "Use ``//`` or ``/* * /`` block for single line comments."
+msgstr "Utilisez le bloc ``//`` ou ``/* * /`` pour les commentaires d'une seule ligne."
+
+#: ../../contributing/code_style_guide.rst:360
+#: ../../contributing/code_style_guide.rst:360
+msgid "Use ``/* */`` block for multi-line comments."
+msgstr "Utilisez le bloc ``/* */`` pour les commentaires de plusieurs lignes."
+
+#: ../../contributing/code_style_guide.rst:369
+#: ../../contributing/code_style_guide.rst:369
+msgid "Try to avoid global variable."
+msgstr "Essayez d'éviter les variables globales."
+
+#: ../../contributing/code_style_guide.rst:370
+#: ../../contributing/code_style_guide.rst:370
+msgid "Always respect code style already used in project or library (even if style is not clear or not obvious)"
+msgstr "Toujours respecter le style de code déjà utilisé dans le projet ou la bibliothèque (même si le style n'est pas clair ou pas évident)"
+
+#: ../../contributing/code_style_guide.rst:371
+#: ../../contributing/code_style_guide.rst:371
+msgid "Every function must include doxygen-enabled comment, even if function is **static**"
+msgstr "Chaque fonction doit inclure un commentaire compatible avec doxygen, même si la fonction est **statique**."
+
+#: ../../contributing/code_style_guide.rst:372
+#: ../../contributing/code_style_guide.rst:372
+msgid "Use English names/text for functions, variables, comments"
+msgstr "Utilisez des noms/textes anglais pour les fonctions, les variables et les commentaires."
+
+#: ../../contributing/code_style_guide.rst:373
+#: ../../contributing/code_style_guide.rst:373
+msgid "Commits should only contain files with LF (Unix style) endings."
+msgstr "Les commits ne doivent contenir que des fichiers avec des terminaisons LF (style Unix)."
+
+#: ../../contributing/documentation_guide.rst:5
+#: ../../contributing/documentation_guide.rst:5
+msgid "Documentation Guide"
+msgstr "Guide de documentation"
+
+#: ../../contributing/documentation_guide.rst:8
+#: ../../contributing/documentation_guide.rst:8
+msgid "Files"
+msgstr "Fichiers"
+
+#: ../../contributing/documentation_guide.rst:10
+#: ../../contributing/documentation_guide.rst:10
+msgid "Each source and header file must begin with the following :"
+msgstr "Chaque fichier source et fichier d'en-tête doit commencer par :"
+
+#: ../../contributing/documentation_guide.rst:46
+#: ../../contributing/documentation_guide.rst:46
+msgid "Revision history is formatted as follow :"
+msgstr "L'historique des révisions est formaté comme suit :"
+
+#: ../../contributing/documentation_guide.rst:53
+#: ../../contributing/documentation_guide.rst:53
+msgid "Where, \"MAJ.MIN.REV\" is respectively major, minor and revision version number. This must be followed by the date and author. Then on the next line, describe the revision changes."
+msgstr "Où, \"MAJ.MIN.REV\" est respectivement le numéro de version majeure, mineure et de révision. Ce dernier doit être suivi de la date et de l'auteur. Ensuite, sur la ligne suivante, décrivez les changements de révision."
+
+#: ../../contributing/documentation_guide.rst:57
+#: ../../contributing/documentation_guide.rst:57
+msgid "Functions"
+msgstr "Fonctions"
+
+#: ../../contributing/documentation_guide.rst:59
+#: ../../contributing/documentation_guide.rst:59
+msgid "All functions must begin with its documentation block :"
+msgstr "Toutes les fonctions doivent commencer par leur bloc de documentation :"
+
+#: ../../contributing/documentation_guide.rst:76
+#: ../../contributing/documentation_guide.rst:76
+msgid "If the function is private add *@static* at the begining, just before *@brief*."
+msgstr "Si la fonction est privée, ajoutez *@static* au début, juste avant *@brief*."
+
+#: ../../contributing/documentation_guide.rst:85
+#: ../../contributing/documentation_guide.rst:85
+msgid "If required, place some documentation part under *@cond* block."
+msgstr "Si nécessaire, placez une partie de la documentation sous le bloc *@cond*."
+
+#: ../../contributing/documentation_guide.rst:101
+#: ../../contributing/documentation_guide.rst:101
+msgid "In order to organize the documentation, add a group to your module."
+msgstr "Afin d'organiser la documentation, ajoutez un groupe à votre module."
+
+#: ../../contributing/documentation_guide.rst:116
+#: ../../contributing/documentation_guide.rst:116
+msgid "Structures and enumeration"
+msgstr "Structures et énumération"
+
+#: ../../contributing/how_to_contribute.rst:3
+#: ../../contributing/how_to_contribute.rst:3
+msgid "How to contribute"
+msgstr "Comment contribuer"
+
+#: ../../contributing/how_to_contribute.rst:5
+#: ../../contributing/how_to_contribute.rst:5
+msgid "All contributions are welcome."
+msgstr "Toutes contributions sont la bienvenue"
+
+#: ../../contributing/how_to_contribute.rst:7
+#: ../../contributing/how_to_contribute.rst:7
+msgid "If you have seen a bug or error and you may know how to fix it"
+msgstr "Si vous avez constaté un bogue ou une erreur et que vous savez peut-être comment le corriger"
+
+#: ../../contributing/how_to_contribute.rst:8
+#: ../../contributing/how_to_contribute.rst:8
+msgid "If you have some suggestions, proposals to add a new feature or improvement"
+msgstr "Si vous avez des suggestions, des propositions pour ajouter une nouvelle fonctionnalité ou une amélioration"
+
+#: ../../contributing/how_to_contribute.rst:10
+#: ../../contributing/how_to_contribute.rst:10
+msgid "Then, you can contribute by :"
+msgstr "Ensuite, vous pouvez contribuer en :"
+
+#: ../../contributing/how_to_contribute.rst:12
+#: ../../contributing/how_to_contribute.rst:12
+msgid "open an issue"
+msgstr "Ouvrir un issue"
+
+#: ../../contributing/how_to_contribute.rst:13
+#: ../../contributing/how_to_contribute.rst:13
+msgid "open a new pull request"
+msgstr "Ouvrir un nouveau pull request"
+
+#: ../../contributing/how_to_contribute.rst:17
+#: ../../contributing/how_to_contribute.rst:17
+msgid "Requirement"
+msgstr "Exigence"
+
+#: ../../contributing/how_to_contribute.rst:19
+#: ../../contributing/how_to_contribute.rst:19
+msgid "The contributions :"
+msgstr "Les contributions :"
+
+#: ../../contributing/how_to_contribute.rst:21
+#: ../../contributing/how_to_contribute.rst:21
+msgid "Has to be entirely compatible with MIT License."
+msgstr "Doit être entièrement compatible avec la licence MIT."
+
+#: ../../contributing/how_to_contribute.rst:22
+#: ../../contributing/how_to_contribute.rst:22
+msgid "Has to conform to our *Coding Style Guide*"
+msgstr "Doit être conforme à notre *Guide de style de codage*."
+
+#: ../../contributing/how_to_contribute.rst:23
+#: ../../contributing/how_to_contribute.rst:23
+msgid "Has to follow the requirement from our *Documentation Guide*"
+msgstr "Doit suivre les exigences de notre *Guide de documentation*"
+
+#: ../../contributing/how_to_contribute.rst:24
+#: ../../contributing/how_to_contribute.rst:24
+msgid "Has to be sufficiently commented for people to understand its structure and how its works"
+msgstr "Doit être suffisamment commenté pour que les gens comprennent sa structure et son fonctionnement."
+
+#: ../../contributing/how_to_contribute.rst:25
+#: ../../contributing/how_to_contribute.rst:25
+msgid "In case of multiple commits, ensure they are grouped together into logical changes"
+msgstr "En cas de plusieurs commits, assurez-vous qu'elles sont regroupées en changements logiques."
+
+#: ../../contributing/index.rst:6
+msgid "Contributing"
+msgstr "Contribution"

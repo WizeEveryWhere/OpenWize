@@ -1,0 +1,818 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="proto_8h" kind="file" language="C++">
+    <compoundname>proto.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="adm__internal_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h</includedby>
+    <includedby refid="inst__internal_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h</includedby>
+    <includedby refid="net__api_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h</includedby>
+    <includedby refid="proto__private_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h</includedby>
+    <includedby refid="proto_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="14">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="25">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c</label>
+        <link refid="net__api_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="24">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</label>
+        <link refid="net__mgr_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c</label>
+        <link refid="inst__internal_8c"/>
+      </node>
+      <node id="15">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h</label>
+        <link refid="inst__internal_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h</label>
+        <link refid="adm__internal_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="17">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</label>
+        <link refid="proto_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h</label>
+        <link refid="wize__api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="27">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="20">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h</label>
+        <link refid="net__api_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c</label>
+        <link refid="adm__internal_8c"/>
+      </node>
+      <node id="13">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structfrm__err__stats__s" prot="public">frm_err_stats_s</innerclass>
+    <innerclass refid="structproto__stats__s" prot="public">proto_stats_s</innerclass>
+    <innerclass refid="structnet__msg__s" prot="public">net_msg_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__wize__proto_1ga4388bb327d7812515bbcadaab00aa1ac" prot="public" static="no">
+        <name>L6VER_WIZE_REV_0_0</name>
+        <initializer>(0x0)</initializer>
+        <briefdescription>
+<para>Wize Revision 0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="47" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__proto_1gae14e5be0db8f1dae755777e4bd82549d" prot="public" static="no">
+        <name>L6VER_WIZE_REV_1_0</name>
+        <initializer>(0x1)</initializer>
+        <briefdescription>
+<para>Wize Revision 1.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="48" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__proto_1ga5678cf6f9766f1b18de8ebef45ff98d6" prot="public" static="no">
+        <name>L6VER_WIZE_REV_1_1</name>
+        <initializer>(0x1)</initializer>
+        <briefdescription>
+<para>Wize Revision 1.1. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="49" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__proto_1gad88b74410111ac6d4797c000b18ca273" prot="public" static="no">
+        <name>L6VER_WIZE_REV_1_2</name>
+        <initializer>(0x1)</initializer>
+        <briefdescription>
+<para>This macro define the Wize revision number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Wize Revision 1.2. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="50" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__proto_1ga5f1893a11f7119d4bfdfb9bd619c550f" prot="public" static="no">
+        <name>L6VERS</name>
+        <initializer><ref refid="group__wize__proto_1gad88b74410111ac6d4797c000b18ca273" kindref="member">L6VER_WIZE_REV_1_2</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="53" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__proto_1ga7be27755f7682c1543535ab17c66795e" prot="public" static="no">
+        <name>L6APP_ADM</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="57" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__proto_1ga95130d0e216490d4413448695787670a" prot="public" static="no">
+        <name>L6APP_INST</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="61" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__proto_1ga790b42ad60fd4ed13797deb456010723" prot="public" static="no" strong="no">
+        <type></type>
+        <name>app_type_e</name>
+        <enumvalue id="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a9377b7d549cf79015cf1007fa5939962" prot="public">
+          <name>APP_INSTALL</name>
+          <briefdescription>
+<para>Application Install (used for PING and PONG). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a950a015184536a1ee84f249804fdc69d" prot="public">
+          <name>APP_ADMIN</name>
+          <briefdescription>
+<para>Application Administration (used for COMMAND and RESPONSE). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a3e0e78c198e33346f7c9489929921ecd" prot="public">
+          <name>APP_DOWNLOAD</name>
+          <briefdescription>
+<para>Application Download. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a5d7a97ac79a5fe6a6bfd13c2d89c0071" prot="public">
+          <name>APP_DATA</name>
+          <briefdescription>
+<para>Application Data (used by the specific L7). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723ade1c938c9980490f9dab5eb69ec6b02d" prot="public">
+          <name>APP_DATA_PRIO</name>
+          <briefdescription>
+<para>Application Priority Data (used by the specific L7). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a74b1cfde5679d4da10f14e82f3621fa1" prot="public">
+          <name>APP_UNKNOWN</name>
+          <briefdescription>
+<para>Application payload type is unknown. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723ae8383e8310b618639388689f34e68dd4" prot="public">
+          <name>APP_TYPE_NB</name>
+          <initializer>= APP_UNKNOWN</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the application layer payload type . </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="71" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="71" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__proto_1ga67f927d283d97b0f340f7f8c8500f274" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ret_code_e</name>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a459b60cb66be0d935cbfcea85ceb75d2" prot="public">
+          <name>PROTO_SUCCESS</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+<para>Success, everything is fine. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a216253afdcfd4cb2bfc7964cb19754f3" prot="public">
+          <name>PROTO_FAILED</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Failed, something wrong happened. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4c996b8ea707871c608e547f51c263dc" prot="public">
+          <name>PROTO_STACK_MISMATCH_ERR</name>
+          <briefdescription>
+<para>Incoherent call/parameters between layers. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad169350d22d4214dcc0382143a20e55f" prot="public">
+          <name>PROTO_INTERNAL_CRC_ERR</name>
+          <briefdescription>
+<para>Internal CRC error computation. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aee97546b75f25dc4f97a60d0003f9ff7" prot="public">
+          <name>PROTO_INTERNAL_HASH_ERR</name>
+          <briefdescription>
+<para>Internal hash error computation. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a66c367af1cb7488ab2c9725e8b8ae371" prot="public">
+          <name>PROTO_INTERNAL_CIPH_ERR</name>
+          <briefdescription>
+<para>Internal cipher or decipher error computation. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aebf9481edc7db30d72a4ed25b800d882" prot="public">
+          <name>PROTO_INTERNAL_NULL_ERR</name>
+          <briefdescription>
+<para>Error due to a NULL pointer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3b16d2a3f905e8c520c66165a21ca36a" prot="public">
+          <name>PROTO_FRM_ERR</name>
+          <briefdescription>
+<para>Frame error related. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aeb2d658da2b839495ee81b440bd9e448" prot="public">
+          <name>PROTO_HEAD_END_AUTH_ERR</name>
+          <initializer>= PROTO_FRM_ERR</initializer>
+          <briefdescription>
+<para>Head-End authentication failed (Hash Kenc, Klog, kchg computation result is not valid) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a5fd497262abbb38627be2a5b51c9b627" prot="public">
+          <name>PROTO_GATEWAY_AUTH_ERR</name>
+          <briefdescription>
+<para>Gateway authentication failed (Hash Kmac computation result is not valid) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a6e236d1c02a3ae77a503445cf24cab3b" prot="public">
+          <name>PROTO_PROTO_UNK_ERR</name>
+          <briefdescription>
+<para>The Protocol is unknown (not Wize, CiField doesn&apos;t match). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274acc73143f40ca02925489c343beb07a85" prot="public">
+          <name>PROTO_FRAME_UNK_ERR</name>
+          <briefdescription>
+<para>The Frame is unknown (not Wize, CField doesn&apos;t match). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a2f800c06b09d5b160b9ae9cfd56a6f94" prot="public">
+          <name>PROTO_FRAME_CRC_ERR</name>
+          <briefdescription>
+<para>The Frame is corrupted (CRC computation is not valid). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aa59628c438becff180748e8178c8ed02" prot="public">
+          <name>PROTO_FRAME_RS_ERR</name>
+          <briefdescription>
+<para>The Frame is corrupted (RS could not correct the frame). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a0820d3b70d21fa1311ce43c57ea73796" prot="public">
+          <name>PROTO_FRAME_SZ_ERR</name>
+          <briefdescription>
+<para>The Frame size is too short (&lt; 0x16) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3e1e78e80b948eabbe110cc9f99a9d06" prot="public">
+          <name>PROTO_APP_MSG_SZ_ERR</name>
+          <briefdescription>
+<para>The APP message length is too long. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4e33c8238f74c24964f45a3d75734c53" prot="public">
+          <name>PROTO_KEYID_UNK_ERR</name>
+          <briefdescription>
+<para>The key id is unknown or not match. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a63e0cd115a2c44e01d7188588d647e3d" prot="public">
+          <name>PROTO_NETWID_UNK_ERR</name>
+          <briefdescription>
+<para>The Network id is unknown or not match. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad4a44485cb88dcd71a4442d7b814d5dd" prot="public">
+          <name>PROTO_FRM_WRN</name>
+          <briefdescription>
+<para>Frame warning related. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a419f40e78fef04b660fe19fa80147025" prot="public">
+          <name>PROTO_GATEWAY_AUTH_WRN</name>
+          <initializer>= PROTO_FRM_WRN</initializer>
+          <briefdescription>
+<para>Don&apos;t know how to authenticate the Gateway (Kmac selection OprID/NetwID) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ae53363e02937338126c38d82b784fce9" prot="public">
+          <name>PROTO_DOWNLOAD_VER_WRN</name>
+          <briefdescription>
+<para>The Download version is invalid (not register from previous) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aba81ea56f394f3ccdb3c78c00323ed62" prot="public">
+          <name>PROTO_FRM_INF</name>
+          <briefdescription>
+<para>Frame info related. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad8482e973deb3e9423c92099fe6a4d3b" prot="public">
+          <name>PROTO_DW_BLK_PASS_INF</name>
+          <initializer>= PROTO_FRM_INF</initializer>
+          <briefdescription>
+<para>The Download block id is bypassed (already down loaded) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ade80c96ccca47f27b551f3fda6a54ef4" prot="public">
+          <name>PROTO_FRAME_PASS_INF</name>
+          <briefdescription>
+<para>The received frame was bypass (we are not the destination device or didn&apos;t received an anndownload or not waiting PONG) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a964da9a6d5a00fba4ff643333068d974" prot="public">
+          <name>PROTO_RET_CODE_NB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the common return codes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="85" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="85" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__wize__proto_1ga11c9fb67de3883a6ab55c57b32afcf72" prot="public" static="no">
+        <type>struct <ref refid="structfrm__err__stats__s" kindref="compound">frm_err_stats_s</ref></type>
+        <definition>typedef struct frm_err_stats_s frm_err_stats_t</definition>
+        <argsstring></argsstring>
+        <name>frm_err_stats_t</name>
+        <briefdescription>
+<para>This structure hold the frame statistics. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="133" column="17"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__proto_1gab4f42d2bd0322e6a7560f652ec3262df" prot="public" static="no">
+        <type>struct <ref refid="structproto__stats__s" kindref="compound">proto_stats_s</ref></type>
+        <definition>typedef struct proto_stats_s net_stats_t</definition>
+        <argsstring></argsstring>
+        <name>net_stats_t</name>
+        <briefdescription>
+<para>This structure hold the net device statistics. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="160" column="13"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" prot="public" static="no">
+        <type>struct <ref refid="structnet__msg__s" kindref="compound">net_msg_s</ref></type>
+        <definition>typedef struct net_msg_s net_msg_t</definition>
+        <argsstring></argsstring>
+        <name>net_msg_t</name>
+        <briefdescription>
+<para>This structure is used to hold net device message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="186" column="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__wize__proto_1ga4737829b354ddf01a147c88847c7fe70" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const wize_err_msg[]</definition>
+        <argsstring>[]</argsstring>
+        <name>wize_err_msg</name>
+        <briefdescription>
+<para>This table defines the protocol error string messages. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="65" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="53" bodyend="-1" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" declline="65" declcolumn="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file contains the common protocol definitions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/09/07 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_PROTO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PROTO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight></codeline>
+<codeline lineno="47" refid="group__wize__proto_1ga4388bb327d7812515bbcadaab00aa1ac" refkind="member"><highlight class="preprocessor">#define<sp/>L6VER_WIZE_REV_0_0<sp/>(0x0)<sp/></highlight></codeline>
+<codeline lineno="48" refid="group__wize__proto_1gae14e5be0db8f1dae755777e4bd82549d" refkind="member"><highlight class="preprocessor">#define<sp/>L6VER_WIZE_REV_1_0<sp/>(0x1)<sp/></highlight></codeline>
+<codeline lineno="49" refid="group__wize__proto_1ga5678cf6f9766f1b18de8ebef45ff98d6" refkind="member"><highlight class="preprocessor">#define<sp/>L6VER_WIZE_REV_1_1<sp/>(0x1)<sp/></highlight></codeline>
+<codeline lineno="50" refid="group__wize__proto_1gad88b74410111ac6d4797c000b18ca273" refkind="member"><highlight class="preprocessor">#define<sp/>L6VER_WIZE_REV_1_2<sp/>(0x1)<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>L6VERS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>L6VERS<sp/>L6VER_WIZE_REV_1_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>L6APP_ADM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>L6APP_ADM<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>L6APP_INST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>L6APP_INST<sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//#ifdef<sp/>WIZE_OPT_USE_CONST_ERR_MSG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__wize__proto_1ga4737829b354ddf01a147c88847c7fe70" kindref="member">wize_err_msg</ref>[];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="group__wize__proto_1ga790b42ad60fd4ed13797deb456010723" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="72" refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a9377b7d549cf79015cf1007fa5939962" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a9377b7d549cf79015cf1007fa5939962" kindref="member">APP_INSTALL</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73" refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a950a015184536a1ee84f249804fdc69d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a950a015184536a1ee84f249804fdc69d" kindref="member">APP_ADMIN</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74" refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a3e0e78c198e33346f7c9489929921ecd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a3e0e78c198e33346f7c9489929921ecd" kindref="member">APP_DOWNLOAD</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="75" refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a5d7a97ac79a5fe6a6bfd13c2d89c0071" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a5d7a97ac79a5fe6a6bfd13c2d89c0071" kindref="member">APP_DATA</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76" refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723ade1c938c9980490f9dab5eb69ec6b02d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723ade1c938c9980490f9dab5eb69ec6b02d" kindref="member">APP_DATA_PRIO</ref>,<sp/></highlight></codeline>
+<codeline lineno="77" refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a74b1cfde5679d4da10f14e82f3621fa1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a74b1cfde5679d4da10f14e82f3621fa1" kindref="member">APP_UNKNOWN</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>APP_TYPE_NB<sp/>=<sp/><ref refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a74b1cfde5679d4da10f14e82f3621fa1" kindref="member">APP_UNKNOWN</ref></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}<ref refid="group__wize__proto_1ga790b42ad60fd4ed13797deb456010723" kindref="member">app_type_e</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="group__wize__proto_1ga67f927d283d97b0f340f7f8c8500f274" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Generic<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a459b60cb66be0d935cbfcea85ceb75d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a459b60cb66be0d935cbfcea85ceb75d2" kindref="member">PROTO_SUCCESS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,<sp/></highlight></codeline>
+<codeline lineno="88" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a216253afdcfd4cb2bfc7964cb19754f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a216253afdcfd4cb2bfc7964cb19754f3" kindref="member">PROTO_FAILED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Internal<sp/>Stack<sp/>related<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4c996b8ea707871c608e547f51c263dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4c996b8ea707871c608e547f51c263dc" kindref="member">PROTO_STACK_MISMATCH_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="91" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad169350d22d4214dcc0382143a20e55f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad169350d22d4214dcc0382143a20e55f" kindref="member">PROTO_INTERNAL_CRC_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="92" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aee97546b75f25dc4f97a60d0003f9ff7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aee97546b75f25dc4f97a60d0003f9ff7" kindref="member">PROTO_INTERNAL_HASH_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="93" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a66c367af1cb7488ab2c9725e8b8ae371" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a66c367af1cb7488ab2c9725e8b8ae371" kindref="member">PROTO_INTERNAL_CIPH_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="94" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aebf9481edc7db30d72a4ed25b800d882" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aebf9481edc7db30d72a4ed25b800d882" kindref="member">PROTO_INTERNAL_NULL_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Frame<sp/>related<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3b16d2a3f905e8c520c66165a21ca36a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3b16d2a3f905e8c520c66165a21ca36a" kindref="member">PROTO_FRM_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>error_e</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aeb2d658da2b839495ee81b440bd9e448" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aeb2d658da2b839495ee81b440bd9e448" kindref="member">PROTO_HEAD_END_AUTH_ERR</ref><sp/>=<sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3b16d2a3f905e8c520c66165a21ca36a" kindref="member">PROTO_FRM_ERR</ref>,<sp/></highlight></codeline>
+<codeline lineno="99" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a5fd497262abbb38627be2a5b51c9b627" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a5fd497262abbb38627be2a5b51c9b627" kindref="member">PROTO_GATEWAY_AUTH_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="100" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a6e236d1c02a3ae77a503445cf24cab3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a6e236d1c02a3ae77a503445cf24cab3b" kindref="member">PROTO_PROTO_UNK_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="101" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274acc73143f40ca02925489c343beb07a85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274acc73143f40ca02925489c343beb07a85" kindref="member">PROTO_FRAME_UNK_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="102" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a2f800c06b09d5b160b9ae9cfd56a6f94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a2f800c06b09d5b160b9ae9cfd56a6f94" kindref="member">PROTO_FRAME_CRC_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="103" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aa59628c438becff180748e8178c8ed02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aa59628c438becff180748e8178c8ed02" kindref="member">PROTO_FRAME_RS_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="104" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a0820d3b70d21fa1311ce43c57ea73796" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a0820d3b70d21fa1311ce43c57ea73796" kindref="member">PROTO_FRAME_SZ_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="105" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3e1e78e80b948eabbe110cc9f99a9d06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3e1e78e80b948eabbe110cc9f99a9d06" kindref="member">PROTO_APP_MSG_SZ_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="106" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4e33c8238f74c24964f45a3d75734c53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4e33c8238f74c24964f45a3d75734c53" kindref="member">PROTO_KEYID_UNK_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="107" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a63e0cd115a2c44e01d7188588d647e3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a63e0cd115a2c44e01d7188588d647e3d" kindref="member">PROTO_NETWID_UNK_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>warning_e</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad4a44485cb88dcd71a4442d7b814d5dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad4a44485cb88dcd71a4442d7b814d5dd" kindref="member">PROTO_FRM_WRN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="110" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a419f40e78fef04b660fe19fa80147025" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a419f40e78fef04b660fe19fa80147025" kindref="member">PROTO_GATEWAY_AUTH_WRN</ref><sp/>=<sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad4a44485cb88dcd71a4442d7b814d5dd" kindref="member">PROTO_FRM_WRN</ref>,<sp/></highlight></codeline>
+<codeline lineno="111" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ae53363e02937338126c38d82b784fce9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ae53363e02937338126c38d82b784fce9" kindref="member">PROTO_DOWNLOAD_VER_WRN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>info_e</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aba81ea56f394f3ccdb3c78c00323ed62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aba81ea56f394f3ccdb3c78c00323ed62" kindref="member">PROTO_FRM_INF</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="114" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad8482e973deb3e9423c92099fe6a4d3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad8482e973deb3e9423c92099fe6a4d3b" kindref="member">PROTO_DW_BLK_PASS_INF</ref><sp/>=<sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aba81ea56f394f3ccdb3c78c00323ed62" kindref="member">PROTO_FRM_INF</ref>,<sp/></highlight></codeline>
+<codeline lineno="115" refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ade80c96ccca47f27b551f3fda6a54ef4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ade80c96ccca47f27b551f3fda6a54ef4" kindref="member">PROTO_FRAME_PASS_INF</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>PROTO_RET_CODE_NB</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}<ref refid="group__wize__proto_1ga67f927d283d97b0f340f7f8c8500f274" kindref="member">ret_code_e</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="structfrm__err__stats__s" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structfrm__err__stats__s" kindref="compound">frm_err_stats_s</ref></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125" refid="structfrm__err__stats__s_1abd9b5715ad669c9bebcac6aa248a65ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1abd9b5715ad669c9bebcac6aa248a65ef" kindref="member">u32CrcErr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126" refid="structfrm__err__stats__s_1ae2d99d929919c51c83fc2c8ff751df2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1ae2d99d929919c51c83fc2c8ff751df2f" kindref="member">u32RsErr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127" refid="structfrm__err__stats__s_1a9b921a4274ee7ce0ab6f029f39ec7b7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1a9b921a4274ee7ce0ab6f029f39ec7b7b" kindref="member">u32UnkErr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128" refid="structfrm__err__stats__s_1a63f787aaa6a5cfe130684121382fbc83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1a63f787aaa6a5cfe130684121382fbc83" kindref="member">u32LenErr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129" refid="structfrm__err__stats__s_1a5833355fcfc3b069245d5fb11ee5a28b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1a5833355fcfc3b069245d5fb11ee5a28b" kindref="member">u32HeadAuthErr</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130" refid="structfrm__err__stats__s_1af9c539573acb3e1f2852109193f4ffc3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1af9c539573acb3e1f2852109193f4ffc3" kindref="member">u32GatewayAuthErr</ref>;<sp/></highlight></codeline>
+<codeline lineno="131" refid="structfrm__err__stats__s_1a373407fd463a54988a56b14cf4058eb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1a373407fd463a54988a56b14cf4058eb1" kindref="member">u32AppSzErr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132" refid="structfrm__err__stats__s_1add662fa5b9cfcd5abd2399fb0b5ba15f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structfrm__err__stats__s_1add662fa5b9cfcd5abd2399fb0b5ba15f" kindref="member">u32PassedErr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}<sp/><ref refid="group__wize__proto_1ga11c9fb67de3883a6ab55c57b32afcf72" kindref="member">frm_err_stats_t</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="structproto__stats__s" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structproto__stats__s" kindref="compound">proto_stats_s</ref></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Statistics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="structproto__stats__s_1a0ea952678418f46d863c63042044814c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structproto__stats__s_1a0ea952678418f46d863c63042044814c" kindref="member">u32TxNbBytes</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143" refid="structproto__stats__s_1a1bd385d86c2899f49a64cffdb9947cf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structproto__stats__s_1a1bd385d86c2899f49a64cffdb9947cf0" kindref="member">u32TxNbFrames</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>RX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="structproto__stats__s_1abbaba274c5ff6410b3cd971f15c2b525" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structproto__stats__s_1abbaba274c5ff6410b3cd971f15c2b525" kindref="member">u32RxNbBytes</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146" refid="structproto__stats__s_1a9136d6f08800149fd708ecf392ae8afe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structproto__stats__s_1a9136d6f08800149fd708ecf392ae8afe" kindref="member">u32RxNbFrmOK</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147" refid="structproto__stats__s_1a42d46f71bdb135984b35159eca32d3ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structproto__stats__s_1a42d46f71bdb135984b35159eca32d3ea" kindref="member">u32RxNbFrmErr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="148" refid="structproto__stats__s_1a80ed43333feb24bc40ff6616c34625ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfrm__err__stats__s" kindref="compound">frm_err_stats_t</ref><sp/><ref refid="structproto__stats__s_1a80ed43333feb24bc40ff6616c34625ee" kindref="member">sFrmErrStats</ref>;<sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="structproto__stats__s_1a93b93a4050ab4d28c563769ba30d0dc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1a93b93a4050ab4d28c563769ba30d0dc0" kindref="member">u8TxNoiseMax</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152" refid="structproto__stats__s_1add0b9865ac944ef248d13a8b5bffd158" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1add0b9865ac944ef248d13a8b5bffd158" kindref="member">u8TxNoiseAvg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="153" refid="structproto__stats__s_1a877cde5fdc92cf1b5eec86cf5aa3d730" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1a877cde5fdc92cf1b5eec86cf5aa3d730" kindref="member">u8TxNoiseMin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154" refid="structproto__stats__s_1a3a1a9d01cb0384940103c1b16369f0c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1a3a1a9d01cb0384940103c1b16369f0c2" kindref="member">u8TxReserved</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>RX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="structproto__stats__s_1a1becdabd2cab115a6b28fcc0923732e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1a1becdabd2cab115a6b28fcc0923732e3" kindref="member">u8RxRssiMax</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157" refid="structproto__stats__s_1a016a63d6f5db13a457aaaf23503a889b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1a016a63d6f5db13a457aaaf23503a889b" kindref="member">u8RxRssiAvg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158" refid="structproto__stats__s_1a6669a012bd1e518238a7e32838f5024f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1a6669a012bd1e518238a7e32838f5024f" kindref="member">u8RxRssiMin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159" refid="structproto__stats__s_1ab4108e1645a2d90ce9fe38163927a346" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__stats__s_1ab4108e1645a2d90ce9fe38163927a346" kindref="member">u8RxReserved</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}<sp/><ref refid="group__wize__proto_1gab4f42d2bd0322e6a7560f652ec3262df" kindref="member">net_stats_t</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="structnet__msg__s" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnet__msg__s" kindref="compound">net_msg_s</ref></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167" refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" kindref="member">pData</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="168" refid="structnet__msg__s_1a043145383f69aba81e45ac8582d5e5de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structnet__msg__s_1a043145383f69aba81e45ac8582d5e5de" kindref="member">u32Epoch</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169" refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" kindref="member">u16Id</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170" refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" kindref="member">u8Size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171" refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" kindref="member">u8Type</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172" refid="structnet__msg__s_1a5ac6b192df372f84048b86d166a4424a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structnet__msg__s_1a5ac6b192df372f84048b86d166a4424a" kindref="member">u8Rssi</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="173" refid="structnet__msg__s_1abe67e8bc4bda4a76780b7fc53873c150" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structnet__msg__s_1abe67e8bc4bda4a76780b7fc53873c150" kindref="member">u8KeyId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175" refid="structnet__msg__s_1a29b198f48235f9b545087708efcc4507" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structnet__msg__s_1a29b198f48235f9b545087708efcc4507" kindref="member">u16Tstamp</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="176" refid="structnet__msg__s_1a176f722127cf553cef8e45411e862562" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int16_t<sp/><ref refid="structnet__msg__s_1a176f722127cf553cef8e45411e862562" kindref="member">i16TxFreqOffset</ref>;<sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179" refid="structnet__msg__s_1a25362c2d85b9291975604a727074d0d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structnet__msg__s_1a25362c2d85b9291975604a727074d0d2" kindref="member">Option</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="182" refid="structnet__msg__s_1aff74ce19056fa977e4a082fdd57eaf9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structnet__msg__s_1aff74ce19056fa977e4a082fdd57eaf9b" kindref="member">App</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183" refid="structnet__msg__s_1a00f59da14246bd944dc090da03af95a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structnet__msg__s_1a00f59da14246bd944dc090da03af95a9" kindref="member">Ciph</ref>:1;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>Option_b;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}<sp/><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PROTO_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h"/>
+  </compounddef>
+</doxygen>

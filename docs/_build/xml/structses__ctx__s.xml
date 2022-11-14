@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structses__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>ses_ctx_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structses__ctx__s_1af4c079ece728dca1f0f69a1abe447d5b" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ses_ctx_s::pPrivate</definition>
+        <argsstring></argsstring>
+        <name>pPrivate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="217" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1add049b459fdcdeb09ac6e09ebfc5c2cb" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ses_ctx_s::hTask</definition>
+        <argsstring></argsstring>
+        <name>hTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="218" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1a2406c33f85ca570d24eac93f0af9e346" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ses_ctx_s::hMutex</definition>
+        <argsstring></argsstring>
+        <name>hMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="219" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1a803a985397370b75ac31be9275bffcba" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ses_ctx_s::hEvents</definition>
+        <argsstring></argsstring>
+        <name>hEvents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="220" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1a6bd79d15e515e05b463a4efd9fdf4eb3" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* ses_ctx_s::ini) (struct ses_ctx_s *pCtx)</definition>
+        <argsstring>)(struct ses_ctx_s *pCtx)</argsstring>
+        <name>ini</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="221" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1ab93f37136ad5e5c6618b1ce6562d0cce" prot="public" static="no" mutable="no">
+        <type>uint32_t(*</type>
+        <definition>uint32_t(* ses_ctx_s::fsm) (struct ses_ctx_s *pCtx, uint32_t u32Evt)</definition>
+        <argsstring>)(struct ses_ctx_s *pCtx, uint32_t u32Evt)</argsstring>
+        <name>fsm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="222" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1aa4c708f7676370243371a167d1b8d582" prot="public" static="no" mutable="no">
+        <type><ref refid="group__time__evt_1ga2450508d973fc558596571e5d0639057" kindref="member">time_evt_t</ref></type>
+        <definition>time_evt_t ses_ctx_s::sTimeEvt</definition>
+        <argsstring></argsstring>
+        <name>sTimeEvt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="224" column="12" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1a0b9997316c2eb8f8299bcd81fd85f364" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__mgr_1ga8ea534db49acce698d511de5010fc334" kindref="member">ses_state_e</ref></type>
+        <definition>ses_state_e ses_ctx_s::eState</definition>
+        <argsstring></argsstring>
+        <name>eState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="225" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__ctx__s_1a419b21a12801eaec277b9f16a99805d4" prot="public" static="no" mutable="no">
+        <type>ses_type_t</type>
+        <definition>ses_type_t ses_ctx_s::eType</definition>
+        <argsstring></argsstring>
+        <name>eType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="226" column="12" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>time_evt_s</label>
+        <link refid="structtime__evt__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pNext</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ses_ctx_s</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sTimeEvt</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="216" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="215" bodyend="227"/>
+    <listofallmembers>
+      <member refid="structses__ctx__s_1a0b9997316c2eb8f8299bcd81fd85f364" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>eState</name></member>
+      <member refid="structses__ctx__s_1a419b21a12801eaec277b9f16a99805d4" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>eType</name></member>
+      <member refid="structses__ctx__s_1ab93f37136ad5e5c6618b1ce6562d0cce" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>fsm</name></member>
+      <member refid="structses__ctx__s_1a803a985397370b75ac31be9275bffcba" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>hEvents</name></member>
+      <member refid="structses__ctx__s_1a2406c33f85ca570d24eac93f0af9e346" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>hMutex</name></member>
+      <member refid="structses__ctx__s_1add049b459fdcdeb09ac6e09ebfc5c2cb" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>hTask</name></member>
+      <member refid="structses__ctx__s_1a6bd79d15e515e05b463a4efd9fdf4eb3" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>ini</name></member>
+      <member refid="structses__ctx__s_1af4c079ece728dca1f0f69a1abe447d5b" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>pPrivate</name></member>
+      <member refid="structses__ctx__s_1aa4c708f7676370243371a167d1b8d582" prot="public" virt="non-virtual"><scope>ses_ctx_s</scope><name>sTimeEvt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

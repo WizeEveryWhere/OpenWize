@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="stm32l4xx__hal__timebase__tim_8c" kind="file" language="C++">
+    <compoundname>stm32l4xx_hal_timebase_tim.c</compoundname>
+    <includes local="yes">stm32l4xx_hal.h</includes>
+    <includes local="yes">stm32l4xx_hal_tim.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>stm32l4xx_hal.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c</label>
+        <link refid="stm32l4xx__hal__timebase__tim_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stm32l4xx_hal_tim.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="stm32l4xx__hal__timebase__tim_8c_1a1564492831a79fa18466467c3420c3c3" prot="public" static="no" mutable="no">
+        <type>TIM_HandleTypeDef</type>
+        <definition>TIM_HandleTypeDef htim6</definition>
+        <argsstring></argsstring>
+        <name>htim6</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" line="29" column="26" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stm32l4xx__hal__timebase__tim_8c_1a879cdb21ef051eb81ec51c18147397d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HAL_StatusTypeDef</type>
+        <definition>HAL_StatusTypeDef HAL_InitTick</definition>
+        <argsstring>(uint32_t TickPriority)</argsstring>
+        <name>HAL_InitTick</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>TickPriority</declname>
+        </param>
+        <briefdescription>
+<para>This function configures the TIM6 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function is called automatically at the beginning of program after reset by HAL_Init() or at any time when clock is configured, by HAL_RCC_ClockConfig(). </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>TickPriority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tick interrupt priority. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>HAL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>status </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" line="42" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" bodystart="42" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_SuspendTick</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_SuspendTick</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Suspend Tick increment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Disable the tick increment by disabling TIM6 update interrupt. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" line="95" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" bodystart="95" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ResumeTick</definition>
+        <argsstring>(void)</argsstring>
+        <name>HAL_ResumeTick</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Resume Tick increment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Enable the tick increment by Enabling TIM6 update interrupt. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" line="106" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" bodystart="106" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>HAL time base based on the hardware TIM. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+<heading level="2"><center><copy/> Copyright (c) 2021 STMicroelectronics. All rights reserved.</center></heading>
+</para>
+<para>This software component is licensed by ST under BSD 3-Clause license, the &quot;License&quot;; You may not use this file except in compliance with the License. You may obtain a copy of the License at: opensource.org/licenses/BSD-3-Clause </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stm32l4xx_hal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stm32l4xx_hal_tim.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>typedef<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>define<sp/>------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>macro<sp/>-------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>variables<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">TIM_HandleTypeDef<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>htim6;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>function<sp/>prototypes<sp/>-----------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>functions<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="stm32l4xx__hal__timebase__tim_8c_1a879cdb21ef051eb81ec51c18147397d5" refkind="member"><highlight class="normal">HAL_StatusTypeDef<sp/><ref refid="stm32l4xx__hal__timebase__tim_8c_1a879cdb21ef051eb81ec51c18147397d5" kindref="member">HAL_InitTick</ref>(uint32_t<sp/>TickPriority)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>RCC_ClkInitTypeDef<sp/><sp/><sp/><sp/>clkconfig;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uwTimclock<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uwPrescalerValue<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pFLatency;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*Configure<sp/>the<sp/>TIM6<sp/>IRQ<sp/>priority<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>HAL_NVIC_SetPriority(TIM6_DAC_IRQn,<sp/>TickPriority<sp/>,0);<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enable<sp/>the<sp/>TIM6<sp/>global<sp/>Interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enable<sp/>TIM6<sp/>clock<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>__HAL_RCC_TIM6_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>clock<sp/>configuration<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>HAL_RCC_GetClockConfig(&amp;clkconfig,<sp/>&amp;pFLatency);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Compute<sp/>TIM6<sp/>clock<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>uwTimclock<sp/>=<sp/>HAL_RCC_GetPCLK1Freq();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Compute<sp/>the<sp/>prescaler<sp/>value<sp/>to<sp/>have<sp/>TIM6<sp/>counter<sp/>clock<sp/>equal<sp/>to<sp/>1MHz<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>uwPrescalerValue<sp/>=<sp/>(uint32_t)<sp/>((uwTimclock<sp/>/<sp/>1000000)<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>TIM6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>htim6.Instance<sp/>=<sp/>TIM6;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>TIMx<sp/>peripheral<sp/>as<sp/>follow:</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/>+<sp/>Period<sp/>=<sp/>[(TIM6CLK/1000)<sp/>-<sp/>1].<sp/>to<sp/>have<sp/>a<sp/>(1/1000)<sp/>s<sp/>time<sp/>base.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/>+<sp/>Prescaler<sp/>=<sp/>(uwTimclock/1000000<sp/>-<sp/>1)<sp/>to<sp/>have<sp/>a<sp/>1MHz<sp/>counter<sp/>clock.</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/>+<sp/>ClockDivision<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/>+<sp/>Counter<sp/>direction<sp/>=<sp/>Up</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>htim6.Init.Period<sp/>=<sp/>(1000000<sp/>/<sp/>1000)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>htim6.Init.Prescaler<sp/>=<sp/>uwPrescalerValue;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>htim6.Init.ClockDivision<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>htim6.Init.CounterMode<sp/>=<sp/>TIM_COUNTERMODE_UP;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(HAL_TIM_Base_Init(&amp;htim6)<sp/>==<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Start<sp/>the<sp/>TIM<sp/>time<sp/>Base<sp/>generation<sp/>in<sp/>interrupt<sp/>mode<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>HAL_TIM_Base_Start_IT(&amp;htim6);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Return<sp/>function<sp/>status<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>HAL_ERROR;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="stm32l4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" kindref="member">HAL_SuspendTick</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Disable<sp/>TIM6<sp/>update<sp/>Interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>__HAL_TIM_DISABLE_IT(&amp;htim6,<sp/>TIM_IT_UPDATE);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="stm32l4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" kindref="member">HAL_ResumeTick</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enable<sp/>TIM6<sp/>Update<sp/>interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>__HAL_TIM_ENABLE_IT(&amp;htim6,<sp/>TIM_IT_UPDATE);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">/************************<sp/>(C)<sp/>COPYRIGHT<sp/>STMicroelectronics<sp/>*****END<sp/>OF<sp/>FILE****/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,818 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="time__evt_8h" kind="file" language="C++">
+    <compoundname>time_evt.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">time.h</includes>
+    <includedby refid="time__mgr_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h</includedby>
+    <includedby refid="ses__common_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</includedby>
+    <includedby refid="net__mgr_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</includedby>
+    <includedby refid="time__evt_8c" local="yes">/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c</includedby>
+    <includedby refid="port_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c</includedby>
+    <includedby refid="sys__init_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="5">
+        <label>time.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="18">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="15">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</label>
+        <link refid="net__mgr_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</label>
+        <link refid="time__mgr_8c"/>
+      </node>
+      <node id="13">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="17">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c</label>
+        <link refid="port_8c"/>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="16">
+        <label>/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c</label>
+        <link refid="time__evt_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h</label>
+        <link refid="time__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structtime__evt__s" prot="public">time_evt_s</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" prot="public" static="no">
+        <name>TIME_EVT_ALARM_ID</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>This macro define the used alarm id. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="50" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>time_evt_cfg_e</name>
+        <enumvalue id="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908eaddac08a780f49730bf18fbc72cb7de46" prot="public">
+          <name>TIMEEVT_CFG_ONESHOT</name>
+          <briefdescription>
+<para>One-shot relative timer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908ea86a9a31f083e8d63acb0854692db0515" prot="public">
+          <name>TIMEEVT_CFG_PERIODIC</name>
+          <briefdescription>
+<para>Periodic relative timer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908ea5ffe0e166fab6df0f135d35aeedd1843" prot="public">
+          <name>TIMEEVT_CFG_ABSOLUTE</name>
+          <briefdescription>
+<para>One-shot absolute timer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the timer configuration type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="57" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="56" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__time__evt_1ga2450508d973fc558596571e5d0639057" prot="public" static="no">
+        <type>struct <ref refid="structtime__evt__s" kindref="compound">time_evt_s</ref></type>
+        <definition>typedef struct time_evt_s time_evt_t</definition>
+        <argsstring></argsstring>
+        <name>time_evt_t</name>
+        <briefdescription>
+<para>This struct defines the timer type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="1" column="0" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* pfTimeEvt_HandlerCB_t) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>pfTimeEvt_HandlerCB_t</name>
+        <briefdescription>
+<para>This defines the interrupt call back for the TimeEvt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="88" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__time__evt_1gac1e60744a3a1ed20486a3e2369b0372c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_set_handler</definition>
+        <argsstring>(const uint8_t u8TimerId, pfTimeEvt_HandlerCB_t const pfCb)</argsstring>
+        <name>_timer_set_handler</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8TimerId</declname>
+        </param>
+        <param>
+          <type><ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref> const</type>
+          <declname>pfCb</declname>
+        </param>
+        <briefdescription>
+<para>Set the RTC Alarm callback handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8TimerId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alarm Id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfCb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="91" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="59" bodyend="62" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="91" declcolumn="13"/>
+        <references refid="group__rtc_1ga06643052df05b11da617b9ff1f3a96d7" compoundref="bsp__rtc_8c" startline="562" endline="572">BSP_Rtc_Alarm_SetHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1gafbc6452a8c175120e44b77c205276da8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_start</definition>
+        <argsstring>(const uint8_t u8TimerId, uint64_t u64Value)</argsstring>
+        <name>_timer_start</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8TimerId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>u64Value</declname>
+        </param>
+        <briefdescription>
+<para>Start the RTC Alarm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8TimerId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alarm Id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u64Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time in millisecond until alarm occurs </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="92" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="72" bodyend="83" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="92" declcolumn="13"/>
+        <references refid="group__rtc_1ga83bb46f768ff8abc7d3ab3cb09c7d971" compoundref="bsp__rtc_8c" startline="462" endline="533">BSP_Rtc_Alarm_StartMs</references>
+        <references refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" compoundref="time__evt_8h" startline="50">TIME_EVT_ALARM_ID</references>
+        <references refid="group__rtc_1ga696a36ceefeb120e8941376d93bacd0a" compoundref="bsp__rtc_8c" startline="541" endline="553">BSP_Rtc_Alarm_Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1ga6c1c724f4f79c767ab3269a3fe94048f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_stop</definition>
+        <argsstring>(const uint8_t u8TimerId)</argsstring>
+        <name>_timer_stop</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8TimerId</declname>
+        </param>
+        <briefdescription>
+<para>Stop the RTC Alarm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8TimerId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alarm Id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="93" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="92" bodyend="95" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="93" declcolumn="13"/>
+        <references refid="group__rtc_1ga696a36ceefeb120e8941376d93bacd0a" compoundref="bsp__rtc_8c" startline="541" endline="553">BSP_Rtc_Alarm_Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1ga0d6fb4497d012663fd946c539eaf566b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _get_current_time_ms</definition>
+        <argsstring>(uint64_t *u64MsTime)</argsstring>
+        <name>_get_current_time_ms</name>
+        <param>
+          <type>uint64_t *</type>
+          <declname>u64MsTime</declname>
+        </param>
+        <briefdescription>
+<para>Get the current epoch in millisecond. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u64MsTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to hold epoch value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="94" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="104" bodyend="107" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="94" declcolumn="13"/>
+        <references refid="group__rtc_1ga0b0ef3fc21a1fa5d69867f5e3ed33245" compoundref="bsp__rtc_8c" startline="224" endline="229">BSP_Rtc_Time_GetEpochMs</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1gae10a92692d7f8012be47ddd538ecc644" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _set_current_time</definition>
+        <argsstring>(time_t t)</argsstring>
+        <name>_set_current_time</name>
+        <param>
+          <type>time_t</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Set the current epoch in second. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Epoch value to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="95" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="128" bodyend="131" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="95" declcolumn="13"/>
+        <references refid="group__rtc_1ga0600d5f526280d68aa124253fc6645f4" compoundref="bsp__rtc_8c" startline="154" endline="183">BSP_Rtc_Time_Write</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1ga7c59534f9e854577f5c3527ee579812a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t TimeEvt_TimerInit</definition>
+        <argsstring>(time_evt_t *pTimeEvt, void(*pvTaskHandle)(uint32_t evt), time_evt_cfg_e eCfg)</argsstring>
+        <name>TimeEvt_TimerInit</name>
+        <param>
+          <type><ref refid="group__time__evt_1ga2450508d973fc558596571e5d0639057" kindref="member">time_evt_t</ref> *</type>
+          <declname>pTimeEvt</declname>
+        </param>
+        <param>
+          <type>void(*)(uint32_t evt)</type>
+          <declname>pvTaskHandle</declname>
+        </param>
+        <param>
+          <type><ref refid="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" kindref="member">time_evt_cfg_e</ref></type>
+          <declname>eCfg</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the given timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pTimeEvt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer a Timer to initialize </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pvTaskHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Task handler to notify </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timer configuration </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed (given is/are null) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="95" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="95" bodyend="116" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="100" declcolumn="9"/>
+        <references refid="structtime__evt__s_1a943e74b5053c368d3b201d98b3590c8e" compoundref="time__evt_8h" startline="67">time_evt_s::pNext</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1gac2dd6309cfdcb775e0dd564c7224293f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t TimeEvt_TimerStart</definition>
+        <argsstring>(time_evt_t *pTimeEvt, uint32_t u32Value, int16_t i16DeltaMs, uint32_t u32Event)</argsstring>
+        <name>TimeEvt_TimerStart</name>
+        <param>
+          <type><ref refid="group__time__evt_1ga2450508d973fc558596571e5d0639057" kindref="member">time_evt_t</ref> *</type>
+          <declname>pTimeEvt</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Elapse</declname>
+          <defname>u32Value</defname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>i16DeltaMs</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Event</declname>
+        </param>
+        <briefdescription>
+<para>Start the given timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pTimeEvt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer a Timer to start (insert) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Timer value in second </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">i16DeltaMs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Delta timer value in millisecond </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event to notify on timer expire </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed (the given time value is passed or negative) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="128" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="128" bodyend="177" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="102" declcolumn="9"/>
+        <references refid="structtime__evt__s_1a943e74b5053c368d3b201d98b3590c8e" compoundref="time__evt_8h" startline="67">time_evt_s::pNext</references>
+        <references refid="structtime__evt__s_1a9ad1d379f74eab2100203cd898f86b79" compoundref="time__evt_8h" startline="76">time_evt_s::u32Event</references>
+        <references refid="structtime__evt__s_1a5b6714edfae9fc2e9b89f1adc8e1d9bf" compoundref="time__evt_8h" startline="73">time_evt_s::u64InitVal</references>
+        <references refid="structtime__evt__s_1a39578dde1bdc5d0218e7d1917efce072" compoundref="time__evt_8h" startline="74">time_evt_s::u64Value</references>
+        <references refid="group__time__evt_1ga3010a0142990f4db0f2222c8cee7a517" compoundref="time__evt_8c" startline="60">sTimeEvtCtx</references>
+        <references refid="structtime__evt__ctx__s_1aa4006b47b482e0730b8d4fcd76523710" compoundref="time__evt_8c" startline="53">time_evt_ctx_s::pLock</references>
+        <references refid="group__time__evt_1ga6c1c724f4f79c767ab3269a3fe94048f" compoundref="port_8c" startline="92" endline="95">_timer_stop</references>
+        <references refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" compoundref="time__evt_8h" startline="50">TIME_EVT_ALARM_ID</references>
+        <references refid="group__time__evt_1ga0d6fb4497d012663fd946c539eaf566b" compoundref="port_8c" startline="104" endline="107">_get_current_time_ms</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1gac722a1c1aba48d94eca9fa649594a93d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimeEvt_TimerStop</definition>
+        <argsstring>(time_evt_t *pTimeEvt)</argsstring>
+        <name>TimeEvt_TimerStop</name>
+        <param>
+          <type><ref refid="group__time__evt_1ga2450508d973fc558596571e5d0639057" kindref="member">time_evt_t</ref> *</type>
+          <declname>pTimeEvt</declname>
+        </param>
+        <briefdescription>
+<para>Stop the given timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pTimeEvt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer a Timer to stop (remove) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="185" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="185" bodyend="209" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="103" declcolumn="6"/>
+        <references refid="group__time__evt_1ga3010a0142990f4db0f2222c8cee7a517" compoundref="time__evt_8c" startline="60">sTimeEvtCtx</references>
+        <references refid="structtime__evt__ctx__s_1aa4006b47b482e0730b8d4fcd76523710" compoundref="time__evt_8c" startline="53">time_evt_ctx_s::pLock</references>
+        <references refid="structtime__evt__ctx__s_1aa18cab8ddb14dbbe722179b59f11eb94" compoundref="time__evt_8c" startline="52">time_evt_ctx_s::pCurrent</references>
+        <references refid="group__time__evt_1ga6c1c724f4f79c767ab3269a3fe94048f" compoundref="port_8c" startline="92" endline="95">_timer_stop</references>
+        <references refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" compoundref="time__evt_8h" startline="50">TIME_EVT_ALARM_ID</references>
+        <references refid="structtime__evt__s_1a943e74b5053c368d3b201d98b3590c8e" compoundref="time__evt_8h" startline="67">time_evt_s::pNext</references>
+        <references refid="group__time__evt_1ga0d6fb4497d012663fd946c539eaf566b" compoundref="port_8c" startline="104" endline="107">_get_current_time_ms</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1ga648724158b910c64f69643f9ea250a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimeEvt_Setup</definition>
+        <argsstring>(void)</argsstring>
+        <name>TimeEvt_Setup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialize the TimeEvt Context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="218" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="218" bodyend="226" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="105" declcolumn="6"/>
+        <references refid="group__time__evt_1ga3010a0142990f4db0f2222c8cee7a517" compoundref="time__evt_8c" startline="60">sTimeEvtCtx</references>
+        <references refid="structtime__evt__ctx__s_1aa4006b47b482e0730b8d4fcd76523710" compoundref="time__evt_8c" startline="53">time_evt_ctx_s::pLock</references>
+        <references refid="group__time__evt_1ga7c1dbc42a9f86f4a0fad9ebd8a97f0df" compoundref="time__evt_8c" startline="233" endline="239">TimeEvt_Init</references>
+        <references refid="group__time__evt_1gac1e60744a3a1ed20486a3e2369b0372c" compoundref="port_8c" startline="59" endline="62">_timer_set_handler</references>
+        <references refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" compoundref="time__evt_8h" startline="50">TIME_EVT_ALARM_ID</references>
+        <references refid="group__time__evt_1ga37c8674ccfbb8dd46b1512ea6b1fb8b9" compoundref="time__evt_8c" startline="307" endline="355">TimeEvt_EventHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1ga7c1dbc42a9f86f4a0fad9ebd8a97f0df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimeEvt_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>TimeEvt_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialize the TimeEvt module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="233" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="233" bodyend="239" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="106" declcolumn="6"/>
+        <references refid="group__time__evt_1ga6c1c724f4f79c767ab3269a3fe94048f" compoundref="port_8c" startline="92" endline="95">_timer_stop</references>
+        <references refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" compoundref="time__evt_8h" startline="50">TIME_EVT_ALARM_ID</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1gafa337b1821d93adc27263524dc349444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimeEvt_UpdateTime</definition>
+        <argsstring>(time_t t)</argsstring>
+        <name>TimeEvt_UpdateTime</name>
+        <param>
+          <type>time_t</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>This function update time and internal structure. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new time value to update</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="248" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="248" bodyend="300" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="107" declcolumn="6"/>
+        <references refid="group__time__evt_1ga3010a0142990f4db0f2222c8cee7a517" compoundref="time__evt_8c" startline="60">sTimeEvtCtx</references>
+        <references refid="structtime__evt__ctx__s_1aa4006b47b482e0730b8d4fcd76523710" compoundref="time__evt_8c" startline="53">time_evt_ctx_s::pLock</references>
+        <references refid="structtime__evt__ctx__s_1aa18cab8ddb14dbbe722179b59f11eb94" compoundref="time__evt_8c" startline="52">time_evt_ctx_s::pCurrent</references>
+        <references refid="group__time__evt_1ga6c1c724f4f79c767ab3269a3fe94048f" compoundref="port_8c" startline="92" endline="95">_timer_stop</references>
+        <references refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" compoundref="time__evt_8h" startline="50">TIME_EVT_ALARM_ID</references>
+        <references refid="group__time__evt_1ga0d6fb4497d012663fd946c539eaf566b" compoundref="port_8c" startline="104" endline="107">_get_current_time_ms</references>
+      </memberdef>
+      <memberdef kind="function" id="group__time__evt_1ga37c8674ccfbb8dd46b1512ea6b1fb8b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimeEvt_EventHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>TimeEvt_EventHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Callback handler on alarm interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="307" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="307" bodyend="355" declfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" declline="108" declcolumn="6"/>
+        <references refid="group__time__evt_1ga3010a0142990f4db0f2222c8cee7a517" compoundref="time__evt_8c" startline="60">sTimeEvtCtx</references>
+        <references refid="structtime__evt__ctx__s_1aa4006b47b482e0730b8d4fcd76523710" compoundref="time__evt_8c" startline="53">time_evt_ctx_s::pLock</references>
+        <references refid="structtime__evt__ctx__s_1aa18cab8ddb14dbbe722179b59f11eb94" compoundref="time__evt_8c" startline="52">time_evt_ctx_s::pCurrent</references>
+        <references refid="group__time__evt_1ga0d6fb4497d012663fd946c539eaf566b" compoundref="port_8c" startline="104" endline="107">_get_current_time_ms</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file contains the basic time event management definitions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/09/09[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_TIME_EVT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_TIME_EVT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor">#ifndef<sp/>TIME_EVT_ALARM_ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TIME_EVT_ALARM_ID<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58" refid="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908eaddac08a780f49730bf18fbc72cb7de46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908eaddac08a780f49730bf18fbc72cb7de46" kindref="member">TIMEEVT_CFG_ONESHOT</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908ea86a9a31f083e8d63acb0854692db0515" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908ea86a9a31f083e8d63acb0854692db0515" kindref="member">TIMEEVT_CFG_PERIODIC</ref>,<sp/></highlight></codeline>
+<codeline lineno="60" refid="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908ea5ffe0e166fab6df0f135d35aeedd1843" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__time__evt_1gga8fcf7b8fdc4fc8ab6ccc2d6a79de908ea5ffe0e166fab6df0f135d35aeedd1843" kindref="member">TIMEEVT_CFG_ABSOLUTE</ref>,<sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}<sp/><ref refid="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" kindref="member">time_evt_cfg_e</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="structtime__evt__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtime__evt__s" kindref="compound">time_evt_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="67" refid="structtime__evt__s_1a943e74b5053c368d3b201d98b3590c8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtime__evt__s" kindref="compound">time_evt_s</ref><sp/>*<ref refid="structtime__evt__s_1a943e74b5053c368d3b201d98b3590c8e" kindref="member">pNext</ref>;<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(<sp/>__OS__<sp/>)<sp/>&amp;&amp;<sp/>(<sp/>OS_FreeRTOS<sp/>==<sp/>1<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<ref refid="structtime__evt__s_1add15c6e76a9b3b84af61a55083389d59" kindref="member">pvTaskHandle</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="structtime__evt__s_1add15c6e76a9b3b84af61a55083389d59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/><sp/>(*<ref refid="structtime__evt__s_1add15c6e76a9b3b84af61a55083389d59" kindref="member">pvTaskHandle</ref>)(uint32_t<sp/>evt);<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="structtime__evt__s_1a5b6714edfae9fc2e9b89f1adc8e1d9bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structtime__evt__s_1a5b6714edfae9fc2e9b89f1adc8e1d9bf" kindref="member">u64InitVal</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74" refid="structtime__evt__s_1a39578dde1bdc5d0218e7d1917efce072" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structtime__evt__s_1a39578dde1bdc5d0218e7d1917efce072" kindref="member">u64Value</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="structtime__evt__s_1a9ad1d379f74eab2100203cd898f86b79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structtime__evt__s_1a9ad1d379f74eab2100203cd898f86b79" kindref="member">u32Event</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77" refid="structtime__evt__s_1a4a4abf75ade1c28cc77f5ca0af331e3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" kindref="member">time_evt_cfg_e</ref><sp/><ref refid="structtime__evt__s_1a4a4abf75ade1c28cc77f5ca0af331e3e" kindref="member">eCfg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="group__time__evt_1ga2450508d973fc558596571e5d0639057" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtime__evt__s" kindref="compound">time_evt_s</ref><sp/><ref refid="structtime__evt__s" kindref="compound">time_evt_t</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref>)(void);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1gac1e60744a3a1ed20486a3e2369b0372c" kindref="member">_timer_set_handler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId,<sp/><ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1gafbc6452a8c175120e44b77c205276da8" kindref="member">_timer_start</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId,<sp/>uint64_t<sp/><ref refid="structtime__evt__s_1a39578dde1bdc5d0218e7d1917efce072" kindref="member">u64Value</ref>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1ga6c1c724f4f79c767ab3269a3fe94048f" kindref="member">_timer_stop</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1ga0d6fb4497d012663fd946c539eaf566b" kindref="member">_get_current_time_ms</ref>(uint64_t<sp/>*u64MsTime);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1gae10a92692d7f8012be47ddd538ecc644" kindref="member">_set_current_time</ref>(time_t<sp/>t);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(<sp/>__OS__<sp/>)<sp/>&amp;&amp;<sp/>(<sp/>OS_FreeRTOS<sp/>==<sp/>1<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">uint8_t<sp/><ref refid="group__time__evt_1ga7c59534f9e854577f5c3527ee579812a" kindref="member">TimeEvt_TimerInit</ref>(<ref refid="structtime__evt__s" kindref="compound">time_evt_t</ref><sp/>*pTimeEvt,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structtime__evt__s_1add15c6e76a9b3b84af61a55083389d59" kindref="member">pvTaskHandle</ref>,<sp/><ref refid="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" kindref="member">time_evt_cfg_e</ref><sp/><ref refid="structtime__evt__s_1a4a4abf75ade1c28cc77f5ca0af331e3e" kindref="member">eCfg</ref>);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">uint8_t<sp/><ref refid="group__time__evt_1ga7c59534f9e854577f5c3527ee579812a" kindref="member">TimeEvt_TimerInit</ref>(<ref refid="structtime__evt__s" kindref="compound">time_evt_t</ref><sp/>*pTimeEvt,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*<ref refid="structtime__evt__s_1add15c6e76a9b3b84af61a55083389d59" kindref="member">pvTaskHandle</ref>)(uint32_t<sp/>evt),<sp/><ref refid="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" kindref="member">time_evt_cfg_e</ref><sp/><ref refid="structtime__evt__s_1a4a4abf75ade1c28cc77f5ca0af331e3e" kindref="member">eCfg</ref>);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">uint8_t<sp/><ref refid="group__time__evt_1gac2dd6309cfdcb775e0dd564c7224293f" kindref="member">TimeEvt_TimerStart</ref>(<ref refid="structtime__evt__s" kindref="compound">time_evt_t</ref><sp/>*pTimeEvt,<sp/>uint32_t<sp/>u32Elapse,<sp/>int16_t<sp/>i16DeltaMs,<sp/>uint32_t<sp/><ref refid="structtime__evt__s_1a9ad1d379f74eab2100203cd898f86b79" kindref="member">u32Event</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1gac722a1c1aba48d94eca9fa649594a93d" kindref="member">TimeEvt_TimerStop</ref>(<ref refid="structtime__evt__s" kindref="compound">time_evt_t</ref><sp/>*pTimeEvt);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1ga648724158b910c64f69643f9ea250a1e" kindref="member">TimeEvt_Setup</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1ga7c1dbc42a9f86f4a0fad9ebd8a97f0df" kindref="member">TimeEvt_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1gafa337b1821d93adc27263524dc349444" kindref="member">TimeEvt_UpdateTime</ref>(time_t<sp/>t);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__time__evt_1ga37c8674ccfbb8dd46b1512ea6b1fb8b9" kindref="member">TimeEvt_EventHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_TIME_EVT_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h"/>
+  </compounddef>
+</doxygen>

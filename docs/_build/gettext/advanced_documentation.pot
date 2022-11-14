@@ -1,0 +1,629 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 - 2022, GRDF
+# This file is distributed under the same license as the OpenWize package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWize 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-08 13:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../advanced_documentation/appendix.rst:4
+msgid "Appendix"
+msgstr "Annexe"
+
+#: ../../advanced_documentation/appendix.rst:7
+msgid "Modifying the default parameters"
+msgstr "Modifier les paramètres par défaut"
+
+#: ../../advanced_documentation/appendix.rst:9
+msgid "(See \"HowTo.md\" in \"tools/scripts/gen_param directory\")."
+msgstr "(Voir \"HowTo.md\" dans \"tools/scripts/gen_param directory\")."
+
+#: ../../advanced_documentation/appendix.rst:11
+msgid "In \"demo/Nucleo-L476/app/cfg, open and modify as you need the \"DefaultParams.xml\" file. Then, regenerate the default tables as explained in the following."
+msgstr "Dans \"demo/Nucleo-L476/app/cfg, ouvrez et modifiez selon vos besoins le fichier \"DefaultParams.xml\". Ensuite, régénérez les tables par défaut comme expliqué dans ce qui suit."
+
+#: ../../advanced_documentation/appendix.rst:14
+msgid "Prerequisite : The \"xmlstarlet\" tool has to be installed. (sudo apt-get install xmlstarlet) The \"xmlmerge\" tool has to be installed. (sudo apt-get install gwenhywfar-tools)"
+msgstr "Conditions préalables : L'outil \"xmlstarlet\" doit être installé. (sudo apt-get install xmlstarlet) L'outil \"xmlmerge\" doit être installé. (sudo apt-get install gwenhywfar-tools)"
+
+#: ../../advanced_documentation/appendix.rst:18
+msgid "Setup the \"gen_table.sh\" script path in environment PATH variable:"
+msgstr "Définissez le chemin du script \"gen_table.sh\" dans la variable PATH de l'environnement :"
+
+#: ../../advanced_documentation/appendix.rst:27
+msgid "Merge the two xml files :"
+msgstr "Fusionner les deux fichiers xml :"
+
+#: ../../advanced_documentation/appendix.rst:33
+msgid "Then, call \"gen_table.sh\" :"
+msgstr "Ensuite, appelez \"gen_table.sh\" :"
+
+#: ../../advanced_documentation/appendix.rst:41
+msgid "It will generate 3 files in \"gen\" directory:"
+msgstr "Il va générer 3 fichiers dans le répertoire \"gen\" :"
+
+#: ../../advanced_documentation/appendix.rst:49
+msgid "In these files :"
+msgstr "Dans ces fichiers :"
+
+#: ../../advanced_documentation/appendix.rst:51
+msgid "*a_ParamAccess[]* : gives the parameters access right."
+msgstr "*a_ParamAccess[]* : donne le droit d'accès aux paramètres."
+
+#: ../../advanced_documentation/appendix.rst:53
+msgid "This table describe for each parameter, its id, local access rights, remote access rights, update time, referenced, size, offset and restriction id (see the software documentation for details)."
+msgstr "Cette table décrit pour chaque paramètre, son id, les droits d'accès locaux, les droits d'accès distants, le temps de mise à jour, la référence, la taille, l'offset et l'id de restriction (voir la documentation du logiciel pour plus de détails)."
+
+#: ../../advanced_documentation/appendix.rst:57
+msgid "*a_ParamRestr[]* : gives the restrictions on parameters values (if any)"
+msgstr "*a_ParamRestr[]* : donne les restrictions sur les valeurs des paramètres (s'il y en a)."
+
+#: ../../advanced_documentation/appendix.rst:59
+msgid "This table describe for each restriction, its id, type (modulo, range, enum), the element size (8, 16, 32, 64 bits), the number of restriction element (modulo: 1; range: 2; enum: n elements), address of the element table (see the software documentation for details)."
+msgstr "Cette table décrit pour chaque restriction, son id, son type (modulo, range, enum), la taille de l'élément (8, 16, 32, 64 bits), le nombre d'éléments de restriction (modulo : 1 ; range : 2 ; enum : n éléments), l'adresse de la table des éléments (voir la documentation du logiciel pour plus de détails)."
+
+#: ../../advanced_documentation/appendix.rst:64
+msgid "*a_ParamDefault[]* : gives the parameters defaults values"
+msgstr "*a_ParamDefault[]* : donne les valeurs des paramètres par défaut"
+
+#: ../../advanced_documentation/build_system.rst:3
+#: ../../advanced_documentation/build_system.rst:3
+msgid "Build system"
+msgstr "Système de construction"
+
+#: ../../advanced_documentation/build_system.rst:6
+#: ../../advanced_documentation/build_system.rst:6
+msgid "Introduction"
+msgstr "Introduction"
+
+#: ../../advanced_documentation/build_system.rst:8
+#: ../../advanced_documentation/build_system.rst:8
+msgid "The build system is based on CMake tool which generates makefiles. Each directory to build shall include a *CMakeList.txt* file that gives rules \"how to\" and \"what to \" build. Furthermore, some other *cmake* files provide helping support for common or generic rules. These last files are located in the *tools/build_suport* directory."
+msgstr "Le système de construction est basé sur l'outil CMake qui génère des makefiles. Chaque répertoire à construire doit inclure un fichier *CMakeList.txt* qui donne les règles \"comment\" et \"quoi\" construire. De plus, d'autres fichiers *cmake* fournissent un support d'aide pour les règles communes ou génériques. Ces derniers fichiers sont situés dans le répertoire *tools/build_suport*."
+
+#: ../../advanced_documentation/build_system.rst:15
+#: ../../advanced_documentation/build_system.rst:15
+msgid "Build Support"
+msgstr "Support de construction"
+
+#: ../../advanced_documentation/build_system.rst:18
+#: ../../advanced_documentation/build_system.rst:18
+msgid "toolchain-config.cmake"
+msgstr "toolchain-config.cmake"
+
+#: ../../advanced_documentation/build_system.rst:20
+#: ../../advanced_documentation/build_system.rst:20
+msgid "This file gives rules to select the toolchain to use. It relies on *native_toolchain-config.cmake* and *cross_toolchain-config.cmake*."
+msgstr "Ce fichier donne des règles pour sélectionner la chaîne d'outils à utiliser. Il s'appuie sur *native_toolchain-config.cmake* et *cross_toolchain-config.cmake*."
+
+#: ../../advanced_documentation/build_system.rst:23
+#: ../../advanced_documentation/build_system.rst:23
+msgid "native_toolchain-config.cmake"
+msgstr "native_toolchain-config.cmake"
+
+#: ../../advanced_documentation/build_system.rst:25
+#: ../../advanced_documentation/build_system.rst:25
+msgid "Define the minimum to be able to compile for native x86 target."
+msgstr "Définir le minimum pour pouvoir compiler pour une cible x86 native."
+
+#: ../../advanced_documentation/build_system.rst:28
+#: ../../advanced_documentation/build_system.rst:28
+msgid "cross_toolchain-config.cmake"
+msgstr "cross_toolchain-config.cmake"
+
+#: ../../advanced_documentation/build_system.rst:30
+#: ../../advanced_documentation/build_system.rst:30
+msgid "Define the arm-none-eabi-xx as cross-compiler to be used."
+msgstr "Définir le arm-none-eabi-xx comme compilateur croisé à utiliser."
+
+#: ../../advanced_documentation/build_system.rst:33
+#: ../../advanced_documentation/build_system.rst:33
+msgid "config_support-config.cmake"
+msgstr "config_support-config.cmake"
+
+#: ../../advanced_documentation/build_system.rst:35
+#: ../../advanced_documentation/build_system.rst:35
+msgid "This file provides helper macros or functions to :"
+msgstr "Ce fichier fournit des macros ou des fonctions d'aide pour :"
+
+#: ../../advanced_documentation/build_system.rst:37
+#: ../../advanced_documentation/build_system.rst:37
+msgid "*get_cfg* : this macro will include your own platform specific cmake. Based on command line argument *BUILD_CFG* and *BUILD_CFG_DIR*."
+msgstr "*get_cfg* : cette macro inclut votre propre cmake spécifique à la plate-forme. Basée sur les arguments de ligne de commande *BUILD_CFG* et *BUILD_CFG_DIR*."
+
+#: ../../advanced_documentation/build_system.rst:40
+#: ../../advanced_documentation/build_system.rst:40
+msgid "BUILD_CFG :"
+msgstr "BUILD_CFG :"
+
+#: ../../advanced_documentation/build_system.rst:40
+#: ../../advanced_documentation/build_system.rst:40
+msgid "The file name of your specific cmake (e.g. -DBUILD_CFG=Nucleo-L476.cmake)."
+msgstr "Le nom de fichier de votre cmake spécifique (par exemple -DBUILD_CFG=Nucleo-L476.cmake)."
+
+#: ../../advanced_documentation/build_system.rst:44
+#: ../../advanced_documentation/build_system.rst:44
+msgid "BUILD_CFG_DIR :"
+msgstr "BUILD_CFG_DIR :"
+
+#: ../../advanced_documentation/build_system.rst:43
+#: ../../advanced_documentation/build_system.rst:43
+msgid "The path where is located your specific cmake (e.g. -DBUILD_CFG_DIR=demo/Nucleo-L476). The default path is \"demo\"."
+msgstr "Le chemin où se trouve votre cmake spécifique (par exemple -DBUILD_CFG_DIR=demo/Nucleo-L476). Le chemin par défaut est \"demo\"."
+
+#: ../../advanced_documentation/build_system.rst:46
+#: ../../advanced_documentation/build_system.rst:46
+msgid "Furthermore, this macro will extract the git information and produce the \"version.h\" file (see `git_info_config.cmake`_)."
+msgstr "De plus, cette macro extraira les informations git et produira le fichier ``version.h`` (voir `git_info_config.cmake`_)."
+
+#: ../../advanced_documentation/build_system.rst:48
+#: ../../advanced_documentation/build_system.rst:48
+msgid "*setup_config* : this function generates a *.h* file from *.in* file."
+msgstr "*setup_config* : cette fonction génère un fichier *.h* à partir du fichier *.in*."
+
+#: ../../advanced_documentation/build_system.rst:58
+#: ../../advanced_documentation/build_system.rst:58
+msgid "<file>      : the file name (without extension) given for input and output."
+msgstr "<file>      : le nom du fichier (sans extension) donné pour l'entrée et la sortie."
+
+#: ../../advanced_documentation/build_system.rst:59
+#: ../../advanced_documentation/build_system.rst:59
+msgid "<src/path>  : the source path of the \"file\".in"
+msgstr "<src/path> : le chemin de la source du fichier \"file\".in"
+
+#: ../../advanced_documentation/build_system.rst:60
+#: ../../advanced_documentation/build_system.rst:60
+msgid "<dest/path> : the destination where to write the \"file\".h"
+msgstr "<dest/path> : la destination où écrire le fichier \"file\".h"
+
+#: ../../advanced_documentation/build_system.rst:63
+#: ../../advanced_documentation/build_system.rst:63
+msgid "install_support-config.cmake"
+msgstr "install_support-config.cmake"
+
+#: ../../advanced_documentation/build_system.rst:65
+#: ../../advanced_documentation/build_system.rst:65
+msgid "*setup_install* : helper function to create an install target"
+msgstr "*setup_install* : fonction d'aide pour créer une cible d'installation"
+
+#: ../../advanced_documentation/build_system.rst:75
+#: ../../advanced_documentation/build_system.rst:75
+msgid "<target>    : the install target name to create"
+msgstr "<target>    : le nom de la cible d'installation à créer"
+
+#: ../../advanced_documentation/build_system.rst:76
+#: ../../advanced_documentation/build_system.rst:76
+msgid "<namesapce> : optional namespace"
+msgstr "<namesapce> : espace de nom facultatif"
+
+#: ../../advanced_documentation/build_system.rst:77
+#: ../../advanced_documentation/build_system.rst:77
+msgid "<depends>   : a list of other target on which our target depend"
+msgstr "<depends>   : une liste d'autres cibles dont dépend notre cible"
+
+#: ../../advanced_documentation/build_system.rst:80
+#: ../../advanced_documentation/build_system.rst:80
+msgid "git_info_config.cmake"
+msgstr "git_info_config.cmake"
+
+#: ../../advanced_documentation/build_system.rst:82
+#: ../../advanced_documentation/build_system.rst:82
+msgid "This file provides functions to extract information from git and generates a \"version.h\" file."
+msgstr "Ce fichier fournit des fonctions permettant d'extraire des informations de git et génère un fichier \"version.h\"."
+
+#: ../../advanced_documentation/build_system.rst:84
+#: ../../advanced_documentation/build_system.rst:84
+msgid "*gitinfo* : extract the git information"
+msgstr "*gitinfo* : extrait les informations git"
+
+#: ../../advanced_documentation/build_system.rst:90
+#: ../../advanced_documentation/build_system.rst:90
+msgid "<working directory> : base directory where to find git information."
+msgstr "<répertoire de travail> : répertoire de base où trouver les informations git."
+
+#: ../../advanced_documentation/build_system.rst:93
+#: ../../advanced_documentation/build_system.rst:93
+msgid "*version_from_git* : generates the \"version.h\" file"
+msgstr "*version_from_git* : génère le fichier \"version.h\"
+"
+
+#: ../../advanced_documentation/build_system.rst:99
+#: ../../advanced_documentation/build_system.rst:99
+msgid "Example of version.h content :"
+msgstr "Exemple de contenu de version.h :"
+
+#: ../../advanced_documentation/build_system.rst:128
+#: ../../advanced_documentation/build_system.rst:128
+msgid "gen_param-config.cmake"
+msgstr "gen_param-config.cmake"
+
+#: ../../advanced_documentation/build_system.rst:130
+#: ../../advanced_documentation/build_system.rst:130
+msgid "*gen_param* : generate \".c\" and \".h\" parameter files from xml"
+msgstr "*gen_param* : génère les fichiers de paramètres \".c\" et \".h\" à partir de xml"
+
+#: ../../advanced_documentation/build_system.rst:139
+#: ../../advanced_documentation/build_system.rst:139
+msgid "<src/path>  : path where to find xml files. Both DefaultParams.xml and DefaultRestr.xml must be defined."
+msgstr "<src/path>  : chemin où trouver les fichiers xml. Les deux fichiers DefaultParams.xml et DefaultRestr.xml doivent être définis."
+
+#: ../../advanced_documentation/build_system.rst:140
+#: ../../advanced_documentation/build_system.rst:140
+msgid "<dest/path> : path where the parameters files will be generated"
+msgstr "<dest/path> : chemin où les fichiers de paramètres seront générés."
+
+#: ../../advanced_documentation/build_system.rst:143
+#: ../../advanced_documentation/build_system.rst:143
+msgid "Command line option :"
+msgstr "Option de ligne de commande :"
+
+#: ../../advanced_documentation/build_system.rst:145
+#: ../../advanced_documentation/build_system.rst:145
+msgid "**GENERATE_PARAM** : boolean, default is OFF"
+msgstr "**GENERATE_PARAM** : booléen, par défaut OFF"
+
+#: ../../advanced_documentation/build_system.rst:159
+#: ../../advanced_documentation/build_system.rst:159
+msgid "Build Options"
+msgstr "Options de construction"
+
+#: ../../advanced_documentation/build_system.rst:161
+#: ../../advanced_documentation/build_system.rst:161
+msgid "\"project_support-config.cmake\" is the \"main\" cmake file that give the rules to build the project."
+msgstr "\"project_support-config.cmake\" est le fichier cmake \"principal\" qui donne les règles pour construire le projet."
+
+#: ../../advanced_documentation/build_system.rst:163
+#: ../../advanced_documentation/build_system.rst:163
+msgid "Available options :"
+msgstr "Options disponibles :"
+
+#: ../../advanced_documentation/build_system.rst:165
+#: ../../advanced_documentation/build_system.rst:165
+msgid "DOC_COMPILE : Enable the Documentation compilation. Default is OFF."
+msgstr "DOC_COMPILE : Active la compilation de la documentation. La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:166
+#: ../../advanced_documentation/build_system.rst:166
+msgid "BUILD_OPENWIZE : . Default is ON."
+msgstr "BUILD_OPENWIZE : . La valeur par défaut est ON."
+
+#: ../../advanced_documentation/build_system.rst:167
+#: ../../advanced_documentation/build_system.rst:167
+msgid "USE_FREERTOS : . Default is OFF."
+msgstr "USE_FREERTOS : . La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:168
+#: ../../advanced_documentation/build_system.rst:168
+msgid "BUILD_DEMO : . Default is OFF."
+msgstr "BUILD_DEMO : . La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:169
+#: ../../advanced_documentation/build_system.rst:169
+msgid "BUILD_TEST : . Default is OFF."
+msgstr "BUILD_TEST : . La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:170
+#: ../../advanced_documentation/build_system.rst:170
+msgid "BUILD_UNITTEST : . Default is OFF."
+msgstr "BUILD_UNITTEST : . La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:171
+#: ../../advanced_documentation/build_system.rst:171
+msgid "BUILD_INTEGRATION_TEST : . Default is OFF."
+msgstr "BUILD_INTEGRATION_TEST : . La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:172
+#: ../../advanced_documentation/build_system.rst:172
+msgid "BUILD_SYSTEM_TEST : . Default is OFF."
+msgstr "BUILD_SYSTEM_TEST : . La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:173
+#: ../../advanced_documentation/build_system.rst:173
+msgid "ENABLE_NATIVE_UNITTEST : Enable unit-test native execution. Default is OFF."
+msgstr "ENABLE_NATIVE_UNITTEST : Active l'exécution native des tests unitaires. La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:174
+#: ../../advanced_documentation/build_system.rst:174
+msgid "ENABLE_EMEBED_UNITTEST  : . Default is OFF."
+msgstr "ENABLE_EMEBED_UNITTEST  : . La valeur par défaut est OFF."
+
+#: ../../advanced_documentation/build_system.rst:177
+#: ../../advanced_documentation/build_system.rst:177
+msgid "USE_FREERTOS_SAMPLE : Enable the use of FreeRTOS sample provided by OpenWize. Default is ON)"
+msgstr "USE_FREERTOS_SAMPLE : Active l'utilisation de l'échantillon FreeRTOS fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:178
+#: ../../advanced_documentation/build_system.rst:178
+msgid "USE_CRYPTO_SAMPLE : Enable the use of Crypto sample provided by OpenWize. Default is ON)"
+msgstr "USE_CRYPTO_SAMPLE : Active l'utilisation de l'échantillon Crypto fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:179
+#: ../../advanced_documentation/build_system.rst:179
+msgid "USE_CRC_SAMPLE : Enable the use of CRC_sw sample provided by OpenWize. Default is ON)"
+msgstr "USE_CRC_SAMPLE : Active l'utilisation de l'échantillon CRC_sw fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:180
+#: ../../advanced_documentation/build_system.rst:180
+msgid "USE_REEDSOLOMON_SAMPLE : Enable the use of ReedSolomon sample provided by OpenWize. Default is ON)"
+msgstr "USE_REEDSOLOMON_SAMPLE : Active l'utilisation de l'échantillon ReedSolomon fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:181
+#: ../../advanced_documentation/build_system.rst:181
+msgid "USE_PARAMETERS_SAMPLE : Enable the use of Parameters sample provided by OpenWize. Default is ON)"
+msgstr "USE_PARAMETERS_SAMPLE : Active l'utilisation de l'échantillon de paramètres fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:182
+#: ../../advanced_documentation/build_system.rst:182
+msgid "USE_IMGSTORAGE_SAMPLE : Enable the use of ImgStorage sample provided by OpenWize. Default is ON)"
+msgstr "USE_IMGSTORAGE_SAMPLE : Active l'utilisation de l'échantillon ImgStorage fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:183
+#: ../../advanced_documentation/build_system.rst:183
+msgid "USE_TIMEEVT_SAMPLE : Enable the use of TimeEvt sample provided by OpenWize. Default is ON)"
+msgstr "USE_TIMEEVT_SAMPLE : Active l'utilisation de l'échantillon TimeEvt fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:185
+#: ../../advanced_documentation/build_system.rst:185
+msgid "IS_LOGGER_ENABLE : Enable the Logger in OpenWize. Default is ON)"
+msgstr "IS_LOGGER_ENABLE : Active l'enregistreur dans OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:186
+#: ../../advanced_documentation/build_system.rst:186
+msgid "USE_LOGGER_SAMPLE : Enable the use of Logger sample provided by OpenWize. Default is ON)"
+msgstr "USE_LOGGER_SAMPLE : Active l'utilisation de l'échantillon de logger fourni par OpenWize. La valeur par défaut est ON)"
+
+#: ../../advanced_documentation/build_system.rst:191
+#: ../../advanced_documentation/build_system.rst:191
+msgid "Compilation options"
+msgstr "Options de compilation"
+
+#: ../../advanced_documentation/index.rst:4
+msgid "Advanced documentation"
+msgstr "Documentation avancée"
+
+#: ../../advanced_documentation/porting_guide.rst:3
+#: ../../advanced_documentation/porting_guide.rst:3
+msgid "Porting guide"
+msgstr "Guide de connexion"
+
+#: ../../advanced_documentation/porting_guide.rst:11
+#: ../../advanced_documentation/porting_guide.rst:11
+msgid "Porting your PHY device"
+msgstr "Connexion de votre dispositif PHY"
+
+#: ../../advanced_documentation/porting_guide.rst:13
+#: ../../advanced_documentation/porting_guide.rst:13
+msgid "Take a look at the *PhyFake* demo device that gives a simple example."
+msgstr "Jetez un coup d'œil au dispositif de démonstration *PhyFake* qui donne un exemple simple."
+
+#: ../../advanced_documentation/porting_guide.rst:16
+#: ../../advanced_documentation/porting_guide.rst:16
+msgid "Prepare your module"
+msgstr "Préparez votre module"
+
+#: ../../advanced_documentation/porting_guide.rst:18
+#: ../../advanced_documentation/porting_guide.rst:18
+msgid "Create a directory for your PHY device."
+msgstr "Créez un répertoire pour votre dispositif PHY."
+
+#: ../../advanced_documentation/porting_guide.rst:19
+#: ../../advanced_documentation/porting_guide.rst:19
+msgid "Create the file *include/phy_layer_private.h*."
+msgstr "Créez le fichier *include/phy_layer_private.h*."
+
+#: ../../advanced_documentation/porting_guide.rst:20
+#: ../../advanced_documentation/porting_guide.rst:20
+msgid "Create the files *src/phy_layer.c* and *src/phy_layer_private.c*."
+msgstr "Créez les fichiers *src/phy_layer.c* et *src/phy_layer_private.c*."
+
+#: ../../advanced_documentation/porting_guide.rst:21
+#: ../../advanced_documentation/porting_guide.rst:21
+msgid "Create the *CMakeLists.txt*"
+msgstr "Créez le *CMakeLists.txt*"
+
+#: ../../advanced_documentation/porting_guide.rst:23
+#: ../../advanced_documentation/porting_guide.rst:23
+msgid "Then, that should give something like :"
+msgstr "Cela devrait donner quelque chose comme :"
+
+#: ../../advanced_documentation/porting_guide.rst:36
+#: ../../advanced_documentation/porting_guide.rst:36
+msgid "Implement the low level driver"
+msgstr "Implémenter le pilote de bas niveau"
+
+#: ../../advanced_documentation/porting_guide.rst:38
+#: ../../advanced_documentation/porting_guide.rst:38
+msgid "In *phy_layer_private.h* and *phy_layer_private.c* integrate all requirements (function, defines, typedef, ...) to drive at low level your device. Its content depends strongly on the behavior of your device."
+msgstr "Dans *phy_layer_private.h* et *phy_layer_private.c* sont intégrées toutes les exigences (fonctions, définitions, typedef, ...) pour piloter à bas niveau votre dispositif. Son contenu dépend fortement du comportement de votre dispositif."
+
+#: ../../advanced_documentation/porting_guide.rst:41
+#: ../../advanced_documentation/porting_guide.rst:41
+msgid "Implement the phy driver"
+msgstr "Implémenter le pilote de bas niveau"
+
+#: ../../advanced_documentation/porting_guide.rst:43
+#: ../../advanced_documentation/porting_guide.rst:43
+msgid "The *phy_layer.c* is intended to implement the OpenWize phy interface."
+msgstr "Le fichier *phy_layer.c* est destiné à implémenter l'interface phy d'OpenWize."
+
+#: ../../advanced_documentation/porting_guide.rst:46
+#: ../../advanced_documentation/porting_guide.rst:46
+msgid "Phy interface"
+msgstr "Interface phy"
+
+#: ../../advanced_documentation/porting_guide.rst:48
+#: ../../advanced_documentation/porting_guide.rst:48
+msgid "Include the phy interafce definition from *phy_itf.h*. Define the interface implementation :"
+msgstr "Inclure la définition de l'interafce phy dans *phy_itf.h*. Définir l'implémentation de l'interface :"
+
+#: ../../advanced_documentation/porting_guide.rst:64
+#: ../../advanced_documentation/porting_guide.rst:64
+msgid "Implement the interface functions :"
+msgstr "Implémenter les fonctions de l'interface :"
+
+#: ../../advanced_documentation/porting_guide.rst:66
+#: ../../advanced_documentation/porting_guide.rst:66
+msgid "**_my_init_**     : Driver inititialization function."
+msgstr "**_my_init_**      : Fonction d'initialisation du pilote."
+
+#: ../../advanced_documentation/porting_guide.rst:72
+#: ../../advanced_documentation/porting_guide.rst:72
+msgid "This function must initialize :"
+msgstr "Cette fonction doit initialiser :"
+
+#: ../../advanced_documentation/porting_guide.rst:74
+#: ../../advanced_documentation/porting_guide.rst:74
+msgid "The *pPhydev* internal structure."
+msgstr "La structure interne de *pPhydev*."
+
+#: ../../advanced_documentation/porting_guide.rst:75
+#: ../../advanced_documentation/porting_guide.rst:86
+#: ../../advanced_documentation/porting_guide.rst:75
+#: ../../advanced_documentation/porting_guide.rst:86
+msgid "The bsp bus communication (if any)."
+msgstr "La communication du bus bsp (le cas échéant)."
+
+#: ../../advanced_documentation/porting_guide.rst:76
+#: ../../advanced_documentation/porting_guide.rst:76
+msgid "Your *my_phy_device_t* device internal structure."
+msgstr "La structure interne de votre périphérique *my_phy_device_t*."
+
+#: ../../advanced_documentation/porting_guide.rst:78
+#: ../../advanced_documentation/porting_guide.rst:78
+msgid "**_my_uninit_**   : Driver un-inititialization function."
+msgstr "**_my_uninit_** : Fonction de désinitialisation du pilote."
+
+#: ../../advanced_documentation/porting_guide.rst:84
+#: ../../advanced_documentation/porting_guide.rst:84
+msgid "This function must uninitialize :"
+msgstr "Cette fonction doit désinitialiser :"
+
+#: ../../advanced_documentation/porting_guide.rst:88
+#: ../../advanced_documentation/porting_guide.rst:88
+msgid "**_my_TX_**       : Do the transmit action"
+msgstr "**_my_TX_**       : Effectuer l'action de transmission"
+
+#: ../../advanced_documentation/porting_guide.rst:94
+#: ../../advanced_documentation/porting_guide.rst:105
+#: ../../advanced_documentation/porting_guide.rst:124
+#: ../../advanced_documentation/porting_guide.rst:134
+#: ../../advanced_documentation/porting_guide.rst:94
+#: ../../advanced_documentation/porting_guide.rst:105
+#: ../../advanced_documentation/porting_guide.rst:124
+#: ../../advanced_documentation/porting_guide.rst:134
+msgid "This function must :"
+msgstr "Cette fonction doit :"
+
+#: ../../advanced_documentation/porting_guide.rst:96
+#: ../../advanced_documentation/porting_guide.rst:107
+#: ../../advanced_documentation/porting_guide.rst:96
+#: ../../advanced_documentation/porting_guide.rst:107
+msgid "Take into account the channel and modulation changes."
+msgstr "Tenez compte des changements de canal et de modulation."
+
+#: ../../advanced_documentation/porting_guide.rst:97
+#: ../../advanced_documentation/porting_guide.rst:97
+msgid "Call low level sending function."
+msgstr "Appeler la fonction d'envoi de bas niveau."
+
+#: ../../advanced_documentation/porting_guide.rst:99
+#: ../../advanced_documentation/porting_guide.rst:99
+msgid "**_my_RX_**       : Do the listen action."
+msgstr "**_my_RX_**       : Effectuer l'action d'écoute."
+
+#: ../../advanced_documentation/porting_guide.rst:108
+#: ../../advanced_documentation/porting_guide.rst:108
+msgid "Call low level listening function."
+msgstr "Appelez la fonction d'écoute de bas niveau."
+
+#: ../../advanced_documentation/porting_guide.rst:110
+#: ../../advanced_documentation/porting_guide.rst:110
+msgid "**_my_noise_**    : Measure the noise."
+msgstr "**_my_noise_**    : Mesurer le bruit."
+
+#: ../../advanced_documentation/porting_guide.rst:116
+#: ../../advanced_documentation/porting_guide.rst:116
+msgid "This function is optional."
+msgstr "Cette fonction est optionnelle"
+
+#: ../../advanced_documentation/porting_guide.rst:118
+#: ../../advanced_documentation/porting_guide.rst:118
+msgid "**_my_set_send_** : Transfert the frame into the device internal transmiting buffer"
+msgstr "**_my_set_send_** : Transférer la trame dans le tampon de transmission interne du dispositif."
+
+#: ../../advanced_documentation/porting_guide.rst:126
+#: ../../advanced_documentation/porting_guide.rst:126
+msgid "Transfert the content of pBuf into the device internal buffer."
+msgstr "Transférer le contenu de pBuf dans le tampon interne du dispositif."
+
+#: ../../advanced_documentation/porting_guide.rst:128
+#: ../../advanced_documentation/porting_guide.rst:128
+msgid "**_my_get_recv_** : Get the frame from the device internal receiving buffer."
+msgstr "**_my_get_recv_** : Récupère la trame depuis le tampon de réception interne du périphérique."
+
+#: ../../advanced_documentation/porting_guide.rst:136
+#: ../../advanced_documentation/porting_guide.rst:136
+msgid "Get the content the device internal buffer and copy it into the pBuf."
+msgstr "Récupère le contenu du tampon interne du périphérique et le copie dans le pBuf."
+
+#: ../../advanced_documentation/porting_guide.rst:138
+#: ../../advanced_documentation/porting_guide.rst:138
+msgid "**_my_ioctl_**    : Get/Set the device configuration"
+msgstr "**_my_ioctl_**    : Obtenir/régler la configuration du dispositif"
+
+#: ../../advanced_documentation/porting_guide.rst:144
+#: ../../advanced_documentation/porting_guide.rst:144
+msgid "Phy IO control is given by *eCtl* while *args* is the value to get/set. See phy_ctl_e for details information."
+msgstr "Le contrôle des entrées/sorties phy est donné par *eCtl* tandis que *args* est la valeur à obtenir/régler. Voir phy_ctl_e pour plus d'informations."
+
+#: ../../advanced_documentation/porting_guide.rst:148
+#: ../../advanced_documentation/porting_guide.rst:148
+msgid "Setup function"
+msgstr "Fonction de paramétrage"
+
+#: ../../advanced_documentation/porting_guide.rst:150
+#: ../../advanced_documentation/porting_guide.rst:150
+msgid "This function is intended to prepare the Phy device with constant configuration."
+msgstr "Cette fonction est destinée à préparer le dispositif Phy avec une configuration constante."
+
+#: ../../advanced_documentation/porting_guide.rst:157
+#: ../../advanced_documentation/porting_guide.rst:157
+msgid "The minimal implementation is the following :"
+msgstr "L'implémentation minimale est la suivante :"
+
+#: ../../advanced_documentation/porting_guide.rst:174
+#: ../../advanced_documentation/porting_guide.rst:174
+msgid "Interrupt handler"
+msgstr "Gestionnaire d'interruptions"
+
+#: ../../advanced_documentation/porting_guide.rst:176
+#: ../../advanced_documentation/porting_guide.rst:176
+msgid "This handler must be called when an interrupt occurs from your device and should look like the following :"
+msgstr "Ce gestionnaire doit être appelé lorsqu'une interruption se produit à partir de votre périphérique et doit ressembler à ce qui suit :"
+
+#: ../../advanced_documentation/porting_guide.rst:223
+#: ../../advanced_documentation/porting_guide.rst:223
+msgid "Porting to a new board"
+msgstr "Connexion sur une nouvelle carte"
+
+#: ../../advanced_documentation/porting_guide.rst:225
+#: ../../advanced_documentation/porting_guide.rst:237
+#: ../../advanced_documentation/porting_guide.rst:225
+#: ../../advanced_documentation/porting_guide.rst:237
+msgid "TBD"
+msgstr "TBD"
+
+#: ../../advanced_documentation/porting_guide.rst:236
+#: ../../advanced_documentation/porting_guide.rst:236
+msgid "Compiler"
+msgstr "Compilateur"

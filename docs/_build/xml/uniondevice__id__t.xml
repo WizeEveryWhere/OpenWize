@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="uniondevice__id__t" kind="union" language="C++" prot="public">
+    <compoundname>device_id_t</compoundname>
+    <includes refid="net__api_8h" local="no">net_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="uniondevice__id__t_1aca706b6e575096f028628fe5f1375c62" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t device_id_t::aDevInfo[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>aDevInfo</name>
+        <briefdescription>
+<para>Device info . </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="49" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="uniondevice__id__t_1a0df42a84ec5775a10104ef89549d4b81" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t device_id_t::aManuf[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>aManuf</name>
+        <briefdescription>
+<para>Device manufacturer (8 BCD, LSB first). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="52" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="uniondevice__id__t_1afd266366a400c434c95f74f521e650d2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t device_id_t::aAddr[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>aAddr</name>
+        <briefdescription>
+<para>Unique device identification number (8 BCD, LSB first). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="55" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="uniondevice__id__t_1a03a5b1768c634dddb2dc9d4dcf2973c5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t device_id_t::aNum[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>aNum</name>
+        <briefdescription>
+<para>Unique device identification number (8 BCD, LSB first). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="58" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="uniondevice__id__t_1a7e2368c680e2511d5746c12f57a52f6f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t device_id_t::u8Ver</definition>
+        <argsstring></argsstring>
+        <name>u8Ver</name>
+        <briefdescription>
+<para>Device version (BCD). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="59" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="uniondevice__id__t_1acf25a68a3be44f91fa536e8173ae7322" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t device_id_t::u8Type</definition>
+        <argsstring></argsstring>
+        <name>u8Type</name>
+        <briefdescription>
+<para>Device type (BCD) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="60" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="uniondevice__id__t_1ac073f0a4d96f87393ce407bd37e4c339" prot="public" static="no" mutable="no">
+        <type>struct device_id_t::@28</type>
+        <definition>struct device_id_t::@28 device_id_t::@29</definition>
+        <argsstring></argsstring>
+        <name>@29</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="63" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure is used to hold the device information. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>device_id_t</label>
+        <link refid="uniondevice__id__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" line="48" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api.h" bodystart="47" bodyend="64"/>
+    <listofallmembers>
+      <member refid="uniondevice__id__t_1afd266366a400c434c95f74f521e650d2" prot="public" virt="non-virtual"><scope>device_id_t</scope><name>aAddr</name></member>
+      <member refid="uniondevice__id__t_1aca706b6e575096f028628fe5f1375c62" prot="public" virt="non-virtual"><scope>device_id_t</scope><name>aDevInfo</name></member>
+      <member refid="uniondevice__id__t_1a0df42a84ec5775a10104ef89549d4b81" prot="public" virt="non-virtual"><scope>device_id_t</scope><name>aManuf</name></member>
+      <member refid="uniondevice__id__t_1a03a5b1768c634dddb2dc9d4dcf2973c5" prot="public" virt="non-virtual"><scope>device_id_t</scope><name>aNum</name></member>
+      <member refid="uniondevice__id__t_1acf25a68a3be44f91fa536e8173ae7322" prot="public" virt="non-virtual"><scope>device_id_t</scope><name>u8Type</name></member>
+      <member refid="uniondevice__id__t_1a7e2368c680e2511d5746c12f57a52f6f" prot="public" virt="non-virtual"><scope>device_id_t</scope><name>u8Ver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

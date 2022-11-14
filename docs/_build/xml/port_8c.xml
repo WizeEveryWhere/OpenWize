@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="port_8c" kind="file" language="C++">
+    <compoundname>port.c</compoundname>
+    <includes refid="time__evt_8h" local="yes">time_evt.h</includes>
+    <includes refid="bsp_8h" local="yes">bsp.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>stdbool.h</label>
+      </node>
+      <node id="12">
+        <label>assert.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="9">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>bsp_gpio_it.h</label>
+        <link refid="bsp__gpio__it_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>bsp_rtc.h</label>
+        <link refid="bsp__rtc_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stddef.h</label>
+      </node>
+      <node id="14">
+        <label>bsp_flash.h</label>
+        <link refid="bsp__flash_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>bsp_gpio.h</label>
+        <link refid="bsp__gpio_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>bsp_uart.h</label>
+        <link refid="bsp__uart_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="6">
+        <label>time.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c</label>
+        <link refid="port_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>bsp.h</label>
+        <link refid="bsp_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>bsp_lp.h</label>
+        <link refid="bsp__lp_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>stdio.h</label>
+      </node>
+      <node id="13">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="8">
+        <label>bsp_boot.h</label>
+        <link refid="bsp__boot_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__sys_1gac1e60744a3a1ed20486a3e2369b0372c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_set_handler</definition>
+        <argsstring>(const uint8_t u8TimerId, pfTimeEvt_HandlerCB_t const pfCb)</argsstring>
+        <name>_timer_set_handler</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8TimerId</declname>
+        </param>
+        <param>
+          <type><ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref> const</type>
+          <declname>pfCb</declname>
+        </param>
+        <briefdescription>
+<para>Set the RTC Alarm callback handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8TimerId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alarm Id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfCb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="59" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="59" bodyend="62" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="44" declcolumn="6"/>
+        <references refid="group__rtc_1ga06643052df05b11da617b9ff1f3a96d7" compoundref="bsp__rtc_8c" startline="562" endline="572">BSP_Rtc_Alarm_SetHandler</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1gafbc6452a8c175120e44b77c205276da8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_start</definition>
+        <argsstring>(const uint8_t u8TimerId, uint64_t u64Value)</argsstring>
+        <name>_timer_start</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8TimerId</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>u64Value</declname>
+        </param>
+        <briefdescription>
+<para>Start the RTC Alarm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8TimerId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alarm Id </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u64Value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time in millisecond until alarm occurs </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="72" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="72" bodyend="83" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="45" declcolumn="6"/>
+        <references refid="group__rtc_1ga83bb46f768ff8abc7d3ab3cb09c7d971" compoundref="bsp__rtc_8c" startline="462" endline="533">BSP_Rtc_Alarm_StartMs</references>
+        <references refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" compoundref="time__evt_8h" startline="50">TIME_EVT_ALARM_ID</references>
+        <references refid="group__rtc_1ga696a36ceefeb120e8941376d93bacd0a" compoundref="bsp__rtc_8c" startline="541" endline="553">BSP_Rtc_Alarm_Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1ga6c1c724f4f79c767ab3269a3fe94048f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _timer_stop</definition>
+        <argsstring>(const uint8_t u8TimerId)</argsstring>
+        <name>_timer_stop</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8TimerId</declname>
+        </param>
+        <briefdescription>
+<para>Stop the RTC Alarm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8TimerId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alarm Id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="92" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="92" bodyend="95" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="46" declcolumn="6"/>
+        <references refid="group__rtc_1ga696a36ceefeb120e8941376d93bacd0a" compoundref="bsp__rtc_8c" startline="541" endline="553">BSP_Rtc_Alarm_Stop</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1ga0d6fb4497d012663fd946c539eaf566b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _get_current_time_ms</definition>
+        <argsstring>(uint64_t *u64MsTime)</argsstring>
+        <name>_get_current_time_ms</name>
+        <param>
+          <type>uint64_t *</type>
+          <declname>u64MsTime</declname>
+        </param>
+        <briefdescription>
+<para>Get the current epoch in millisecond. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u64MsTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to hold epoch value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="104" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="104" bodyend="107" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="47" declcolumn="6"/>
+        <references refid="group__rtc_1ga0b0ef3fc21a1fa5d69867f5e3ed33245" compoundref="bsp__rtc_8c" startline="224" endline="229">BSP_Rtc_Time_GetEpochMs</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1ga69af87d5b905ccda67ed36f9f9978518" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _get_current_time</definition>
+        <argsstring>(time_t *t)</argsstring>
+        <name>_get_current_time</name>
+        <param>
+          <type>time_t *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Get the current epoch en second. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to hold epoch value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="116" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="116" bodyend="119" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="48" declcolumn="6"/>
+        <references refid="group__rtc_1ga308138e3762b39d75a5ed67cd99b392a" compoundref="bsp__rtc_8c" startline="237" endline="242">BSP_Rtc_Time_Read</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1gae10a92692d7f8012be47ddd538ecc644" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _set_current_time</definition>
+        <argsstring>(time_t t)</argsstring>
+        <name>_set_current_time</name>
+        <param>
+          <type>time_t</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Set the current epoch in second. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Epoch value to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="128" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="128" bodyend="131" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="49" declcolumn="6"/>
+        <references refid="group__rtc_1ga0600d5f526280d68aa124253fc6645f4" compoundref="bsp__rtc_8c" startline="154" endline="183">BSP_Rtc_Time_Write</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1ga73e56bc518512e5ebe97e6aa77c761cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_enable</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_enable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Enable the RTC wake-up timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="143" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="143" bodyend="146" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="134" declcolumn="6"/>
+        <references refid="group__rtc_1ga357a9db41008ca9371b2867977b746fa" compoundref="bsp__rtc_8c" startline="315" endline="319">BSP_Rtc_WakeUpTimer_Enable</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1gaca4229ae9aa7ae4ba734ecec51a96e9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_reload</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_reload</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reload the RTC wake-up timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="152" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="152" bodyend="155" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="135" declcolumn="6"/>
+        <references refid="group__rtc_1gacaa3e57f2865873a5acb790a30c24fa3" compoundref="bsp__rtc_8c" startline="334" endline="360">BSP_Rtc_WakeUptimer_Reload</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1gae17cbc84ff0bf6dbbe94b9494204817b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_update_set_handler</definition>
+        <argsstring>(pfTimeEvt_HandlerCB_t const pfCb)</argsstring>
+        <name>_time_update_set_handler</name>
+        <param>
+          <type><ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref> const</type>
+          <declname>pfCb</declname>
+        </param>
+        <briefdescription>
+<para>Set the time update callback handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pfCb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="164" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="164" bodyend="167" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="136" declcolumn="6"/>
+        <references refid="group__rtc_1gac5d9d73502bb1c66d8e1743429ceff86" compoundref="bsp__rtc_8c" startline="304" endline="307">BSP_Rtc_Time_Update_SetCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1gad9592a33c498e6e602f0afdcd6509460" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_force</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_force</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Force the RTC wake-up timer notify. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" line="173" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="173" bodyend="176" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" declline="137" declcolumn="6"/>
+        <references refid="group__rtc_1ga13d50537cc01ca468d868ee153eb9cca" compoundref="bsp__rtc_8c" startline="269" endline="279">BSP_Rtc_Time_ForceNotify</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file implement ported function intended to the time_evt module. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/12/14 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="time__evt_8h" kindref="compound">time_evt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bsp_8h" kindref="compound">bsp.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gac1e60744a3a1ed20486a3e2369b0372c" kindref="member">_timer_set_handler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId,<sp/><ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gafbc6452a8c175120e44b77c205276da8" kindref="member">_timer_start</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId,<sp/>uint64_t<sp/>u64Value);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga6c1c724f4f79c767ab3269a3fe94048f" kindref="member">_timer_stop</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga0d6fb4497d012663fd946c539eaf566b" kindref="member">_get_current_time_ms</ref>(uint64_t<sp/>*u64MsTime);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga69af87d5b905ccda67ed36f9f9978518" kindref="member">_get_current_time</ref>(time_t<sp/>*t);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gae10a92692d7f8012be47ddd538ecc644" kindref="member">_set_current_time</ref>(time_t<sp/>t);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="group__sys_1gac1e60744a3a1ed20486a3e2369b0372c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gac1e60744a3a1ed20486a3e2369b0372c" kindref="member">_timer_set_handler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId,<sp/><ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga06643052df05b11da617b9ff1f3a96d7" kindref="member">BSP_Rtc_Alarm_SetHandler</ref>(u8TimerId,<sp/>pfCb);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="group__sys_1gafbc6452a8c175120e44b77c205276da8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gafbc6452a8c175120e44b77c205276da8" kindref="member">_timer_start</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId,<sp/>uint64_t<sp/>u64Value)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>less<sp/>than<sp/>1<sp/>day</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u64Value<sp/>&lt;<sp/>86400000)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga83bb46f768ff8abc7d3ab3cb09c7d971" kindref="member">BSP_Rtc_Alarm_StartMs</ref>(<ref refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" kindref="member">TIME_EVT_ALARM_ID</ref>,<sp/>u64Value);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga696a36ceefeb120e8941376d93bacd0a" kindref="member">BSP_Rtc_Alarm_Stop</ref>(<ref refid="group__time__evt_1gab77e74a906fd2459377db9707b1494d6" kindref="member">TIME_EVT_ALARM_ID</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="group__sys_1ga6c1c724f4f79c767ab3269a3fe94048f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga6c1c724f4f79c767ab3269a3fe94048f" kindref="member">_timer_stop</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8TimerId)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga696a36ceefeb120e8941376d93bacd0a" kindref="member">BSP_Rtc_Alarm_Stop</ref>(u8TimerId);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="group__sys_1ga0d6fb4497d012663fd946c539eaf566b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga0d6fb4497d012663fd946c539eaf566b" kindref="member">_get_current_time_ms</ref>(uint64_t<sp/>*u64MsTime)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>*u64MsTime<sp/>=<sp/><ref refid="group__rtc_1ga0b0ef3fc21a1fa5d69867f5e3ed33245" kindref="member">BSP_Rtc_Time_GetEpochMs</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="group__sys_1ga69af87d5b905ccda67ed36f9f9978518" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga69af87d5b905ccda67ed36f9f9978518" kindref="member">_get_current_time</ref>(time_t<sp/>*t)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>*t<sp/>=<sp/><ref refid="group__rtc_1ga308138e3762b39d75a5ed67cd99b392a" kindref="member">BSP_Rtc_Time_Read</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="group__sys_1gae10a92692d7f8012be47ddd538ecc644" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gae10a92692d7f8012be47ddd538ecc644" kindref="member">_set_current_time</ref>(time_t<sp/>t)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga0600d5f526280d68aa124253fc6645f4" kindref="member">BSP_Rtc_Time_Write</ref>(t);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga73e56bc518512e5ebe97e6aa77c761cd" kindref="member">_time_wakeup_enable</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gaca4229ae9aa7ae4ba734ecec51a96e9d" kindref="member">_time_wakeup_reload</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gae17cbc84ff0bf6dbbe94b9494204817b" kindref="member">_time_update_set_handler</ref>(<ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gad9592a33c498e6e602f0afdcd6509460" kindref="member">_time_wakeup_force</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="group__sys_1ga73e56bc518512e5ebe97e6aa77c761cd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga73e56bc518512e5ebe97e6aa77c761cd" kindref="member">_time_wakeup_enable</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga357a9db41008ca9371b2867977b746fa" kindref="member">BSP_Rtc_WakeUpTimer_Enable</ref>();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="group__sys_1gaca4229ae9aa7ae4ba734ecec51a96e9d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gaca4229ae9aa7ae4ba734ecec51a96e9d" kindref="member">_time_wakeup_reload</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1gacaa3e57f2865873a5acb790a30c24fa3" kindref="member">BSP_Rtc_WakeUptimer_Reload</ref>();</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="group__sys_1gae17cbc84ff0bf6dbbe94b9494204817b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gae17cbc84ff0bf6dbbe94b9494204817b" kindref="member">_time_update_set_handler</ref>(<ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1gac5d9d73502bb1c66d8e1743429ceff86" kindref="member">BSP_Rtc_Time_Update_SetCallback</ref>(pfCb);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="group__sys_1gad9592a33c498e6e602f0afdcd6509460" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gad9592a33c498e6e602f0afdcd6509460" kindref="member">_time_wakeup_force</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__rtc_1ga13d50537cc01ca468d868ee153eb9cca" kindref="member">BSP_Rtc_Time_ForceNotify</ref>();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c"/>
+  </compounddef>
+</doxygen>

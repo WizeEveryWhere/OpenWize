@@ -1,0 +1,649 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__logger" kind="group">
+    <compoundname>logger</compoundname>
+    <title>Logger</title>
+    <innerclass refid="structlogger__ctx__s" prot="public">logger_ctx_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__logger_1gae40b7eba4eb868178775f3f693cfcbaa" prot="public" static="no" strong="no">
+        <type></type>
+        <name>logger_level_e</name>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaabe38cbf8a26ef5eb220fbef3a0ab8ec3" prot="public">
+          <name>LOG_LV_QUIET</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+<para>Quite, no log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaaab909f78d760abf2c1095e3079c9982" prot="public">
+          <name>LOG_LV_ERR</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Error log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa191696cb204024002796ca7805d63a1e" prot="public">
+          <name>LOG_LV_WRN</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+<para>Warning log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaacc5d73d16b8fbabbace87facfcd24b69" prot="public">
+          <name>LOG_LV_INF</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+<para>Info log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaf75ff806d585dac4fc848b03fccdff5d" prot="public">
+          <name>LOG_LV_DBG</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+<para>Debug log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6a5b8f16bbcbcc1999e9c568d7e32f5d" prot="public">
+          <name>LOG_LV_FRM_IN</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+<para>Frame in log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6b3cc04fe25542a417afe723bc65f6a5" prot="public">
+          <name>LOG_LV_FRM_OUT</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+<para>Frame out log is output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum define the logger output level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="52" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="51" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__logger_1gae2763cc91ce90f527fc440c000a9886f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>logger_tstamp_e</name>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa0cb33b20f1c978238c5ee32c29e03e29" prot="public">
+          <name>LOG_TSTAMP_NONE</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+<para>No Timestamp. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa00429026700023df1278e54081c1c829" prot="public">
+          <name>LOG_TSTAMP_NORM</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+<para>Add Timestamp (epoch) to the log output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa1e54c30dcd1626834b732a3c740fff31" prot="public">
+          <name>LOG_TSTAMP_HIRES</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+<para>Add Timestamp (epoch) plus millisecond to the log output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__logger_1ggae2763cc91ce90f527fc440c000a9886fad2bc5e478101fc7ac26d9d017bfbe021" prot="public">
+          <name>LOG_TSTAMP_TRUNC</name>
+          <initializer>= 0x4</initializer>
+          <briefdescription>
+<para>Truncate Timestamp on 5 digits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum define the Timestamp added to the log output </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="84" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="83" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__logger_1ga3179c5c764a2a8fec1469ba3ef52b99e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t gLoggerLevel</definition>
+        <argsstring></argsstring>
+        <name>gLoggerLevel</name>
+        <briefdescription>
+<para>This global variable define the output logger level. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="92" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="55" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" declline="92" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__logger_1ga3179c5c764a2a8fec1469ba3ef52b99e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t gLoggerLevel</definition>
+        <argsstring></argsstring>
+        <name>gLoggerLevel</name>
+        <initializer>= <ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaabe38cbf8a26ef5eb220fbef3a0ab8ec3" kindref="member">LOG_LV_QUIET</ref></initializer>
+        <briefdescription>
+<para>This global variable define the output logger level. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="55" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__logger_1gadba39045afb413f85321fe40ac4c19bc" prot="public" static="yes" mutable="no">
+        <type>struct logger_ctx_s</type>
+        <definition>struct logger_ctx_s sLoggerCtx</definition>
+        <argsstring></argsstring>
+        <name>sLoggerCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="55" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__logger_1ga8e80afd675f5db779c0ea8d931cdf8f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger_Setup</definition>
+        <argsstring>(int32_t(*pfOut)(const char *, FILE *), FILE *pFile)</argsstring>
+        <name>Logger_Setup</name>
+        <param>
+          <type>int32_t(*)(const char *, FILE *)</type>
+          <declname>pfOut</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>pFile</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the Logger module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="119" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="119" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1ga18173d9fcf28abea14613b278a841abc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger_SetLevel</definition>
+        <argsstring>(uint8_t u8LogLevel, uint8_t u8Tstmp)</argsstring>
+        <name>Logger_SetLevel</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8LogLevel</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Tstmp</declname>
+        </param>
+        <briefdescription>
+<para>This function setup the Logger module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8LogLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logger level (ORed logger_level_e values) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Tstmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of time-stamp to use</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="145" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="145" bodyend="149"/>
+        <references refid="group__logger_1ga3179c5c764a2a8fec1469ba3ef52b99e" compoundref="logger_8c" startline="55">gLoggerLevel</references>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1ga2e5ef9146b1aa57685a90f2cd32de42b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger_Put</definition>
+        <argsstring>(char *str, uint32_t u32Nb)</argsstring>
+        <name>Logger_Put</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Nb</declname>
+        </param>
+        <briefdescription>
+<para>This function &quot;put&quot; a raw string to the logger. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Raw string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Nb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of char to logout</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="159" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="159" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1ga76ba42a144f4ec3694e45844c0df36a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger_Post</definition>
+        <argsstring>(uint8_t level, char *format,...)</argsstring>
+        <name>Logger_Post</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>This function &quot;post&quot; a formated string to the logger. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level of verbosity </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Formated string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>va_args List of variable to log</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="197" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="197" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1ga31ba4be6f76408d89c195c136f8a69eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger_Frame</definition>
+        <argsstring>(char *pStr, uint8_t *pData, uint8_t u8NbData)</argsstring>
+        <name>Logger_Frame</name>
+        <param>
+          <type>char *</type>
+          <declname>pStr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8NbData</declname>
+        </param>
+        <briefdescription>
+<para>This function log a frame as formated string of bytes array. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pStr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Formated string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frame data to log </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8NbData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of byte to log</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="262" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="262" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1ga97d3209bb0b60beb3d5bdeb466f226c2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _logger_add_timestamp_</definition>
+        <argsstring>(int32_t id)</argsstring>
+        <name>_logger_add_timestamp_</name>
+        <param>
+          <type>int32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Internal function to add timestamp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer id on which to add the timestamp</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of written bytes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="330" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="330" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1ga71b0f80b67128c4e7cc5bd9ff9763b09" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _logger_acquire_id_</definition>
+        <argsstring>()</argsstring>
+        <name>_logger_acquire_id_</name>
+        <briefdescription>
+<para>Internal function to acquire an available buffer id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The buffer id </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="372" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="372" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1gacd30c0e008431a5db23ab5004a6b657b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _logger_release_id_</definition>
+        <argsstring>(int32_t id)</argsstring>
+        <name>_logger_release_id_</name>
+        <param>
+          <type>int32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Internal function to release a buffer id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer id to release</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="401" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="401" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="group__logger_1ga2b5aff300061e088690627cc8c2dc723" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _logger_main_</definition>
+        <argsstring>(void const *argument)</argsstring>
+        <name>_logger_main_</name>
+        <param>
+          <type>void const *</type>
+          <declname>argument</declname>
+        </param>
+        <briefdescription>
+<para>This is the main task function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(not used)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="421" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="421" bodyend="442"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__logger_1ga9ecba5d25f0735cf7698e710542f52ee" prot="public" static="no">
+        <name>Logger_Setup</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="159" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga93cd9631daccce15212f0a12bd88261e" prot="public" static="no">
+        <name>Logger_SetLevel</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="162" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gac0dce8d747d46bf29e1597a5d27968ac" prot="public" static="no">
+        <name>Logger_Put</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="165" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga1f7851b604382e5ce26651114c257de2" prot="public" static="no">
+        <name>Logger_Post</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="168" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga1210f924abdda0aa4188883fc48badd9" prot="public" static="no">
+        <name>Logger_Frame</name>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="171" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga4b6ec581ed55f3c727e34baf62db69bc" prot="public" static="no">
+        <name>LOG_MSG</name>
+        <param><defname>level</defname></param>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="175" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga4e29be383f695d81955a861020a733e0" prot="public" static="no">
+        <name>LOG_ERR</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="178" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gaf46bd1afc119b045c6e00e3b7be589c8" prot="public" static="no">
+        <name>LOG_WRN</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="181" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gadf9abf2dedfe1bf87b59a295cb172e8c" prot="public" static="no">
+        <name>LOG_INF</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="184" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga3ec2b78f24416adbd63f2962e774d6de" prot="public" static="no">
+        <name>LOG_DBG</name>
+        <param><defname>fmt</defname></param>
+        <param><defname>...</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="187" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1gacd3cfdd0bbafe8587ebaae722e46c3b2" prot="public" static="no">
+        <name>LOG_FRM_OUT</name>
+        <param><defname>pFrm</defname></param>
+        <param><defname>nb_data</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="190" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__logger_1ga5eb49da169026a9eb4736a95e18ed345" prot="public" static="no">
+        <name>LOG_FRM_IN</name>
+        <param><defname>pFrm</defname></param>
+        <param><defname>nb_data</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" line="193" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/include/logger.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

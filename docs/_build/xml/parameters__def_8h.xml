@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="parameters__def_8h" kind="file" language="C++">
+    <compoundname>parameters_def.h</compoundname>
+    <includes local="yes">stdint.h</includes>
+    <includedby refid="parameters_8h" local="yes">/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h</includedby>
+    <includedby refid="parameters__lan__ids_8h" local="yes">/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_lan_ids.h</includedby>
+    <includedby refid="parameters_8c" local="yes">/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c</includedby>
+    <includedby refid="parameters__cfg_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c</includedby>
+    <includedby refid="parameters__cfg_8h" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h</includedby>
+    <includedby refid="parameters__default_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c</label>
+        <link refid="inst__internal_8c"/>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</label>
+        <link refid="time__mgr_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h</label>
+        <link refid="parameters_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c</label>
+        <link refid="parameters__default_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c</label>
+        <link refid="parameters_8c"/>
+      </node>
+      <node id="14">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c</label>
+        <link refid="parameters__cfg_8c"/>
+      </node>
+      <node id="15">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.h</label>
+        <link refid="parameters__cfg_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_lan_ids.h</label>
+        <link refid="parameters__lan__ids_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c</label>
+        <link refid="adm__internal_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structrestr__s" prot="public">restr_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_access_e</name>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3ac75245149c3f64d74430b8996b1e0558" prot="public">
+          <name>NA</name>
+          <initializer>= 0b00</initializer>
+          <briefdescription>
+<para>No Access. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a42e9aa764b9ee7ecf7e668462de6f96d" prot="public">
+          <name>RO</name>
+          <initializer>= 0b01</initializer>
+          <briefdescription>
+<para>Read only. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a60d1a52f84d34da6f6537317a1775929" prot="public">
+          <name>WO</name>
+          <initializer>= 0b10</initializer>
+          <briefdescription>
+<para>Write only. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3aec2497e0c8af01c04bec31ec0d1d7847" prot="public">
+          <name>RW</name>
+          <initializer>= 0b11</initializer>
+          <briefdescription>
+<para>Read/Write. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the parameter access type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="46" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_effective_e</name>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6caa77e6848bc2c2031677291053c6badaa" prot="public">
+          <name>IMM</name>
+          <initializer>= 0b000</initializer>
+          <briefdescription>
+<para>Immediate. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca41246e9c8691b7e33bc79b345e06b48e" prot="public">
+          <name>ACK</name>
+          <initializer>= 0b001</initializer>
+          <briefdescription>
+<para>After the write request acknowledge. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca99defa0ec9429d3e958dfb3324a35ba6" prot="public">
+          <name>MNT</name>
+          <initializer>= 0b010</initializer>
+          <briefdescription>
+<para>At the next maintenance period. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca6fb6c263cb3a43df9d661faf1e8f4b33" prot="public">
+          <name>HGA</name>
+          <initializer>= 0b011</initializer>
+          <briefdescription>
+<para>At the next Gas Hour. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca2c56d07da8a08a92de9453a00e31d55d" prot="public">
+          <name>UTC</name>
+          <initializer>= 0b100</initializer>
+          <briefdescription>
+<para>At the next 0h00 UTC. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the parameter update effectiveness. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="56" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="56" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_ref_e</name>
+        <enumvalue id="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5daaa2ba9dfa031e1fefa757c6be92da3a1" prot="public">
+          <name>REF_N</name>
+          <initializer>= 0b0</initializer>
+          <briefdescription>
+<para>Not saved into the referential. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5da6841317487359fecef805965b2146d7a" prot="public">
+          <name>REF_Y</name>
+          <initializer>= 0b1</initializer>
+          <briefdescription>
+<para>Saved into the referential. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines if the parameter is saved or not into the referential. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="67" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1ga45afffb7d12f2fe5f92b22195a83c6f9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>restr_type_e</name>
+        <enumvalue id="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a660ca9bb26d9c9df4e88cffd5de504c5" prot="public">
+          <name>RESTR_MODULO</name>
+          <initializer>= 0b001</initializer>
+          <briefdescription>
+<para>Restriction on modulo. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9aacd45bbce97af46acac9081dd503e5a5" prot="public">
+          <name>RESTR_RANGE</name>
+          <initializer>= 0b010</initializer>
+          <briefdescription>
+<para>Restriction on range. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a4cc7262dfb618f7e934a544896beb4ce" prot="public">
+          <name>RESTR_ENUM</name>
+          <initializer>= 0b011</initializer>
+          <briefdescription>
+<para>Restriction on enum list. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the parameter restriction type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="250" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="250" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1ga7a362289f266f6282f1e10f9fa577bd4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>restr_sz_type_e</name>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a2da7a85929605dce3fbaad011aaba5a8" prot="public">
+          <name>RESTR_8BITS</name>
+          <initializer>= 0b001</initializer>
+          <briefdescription>
+<para>Restriction values are on 8 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a5bfb71cc1b14b9a8ab61b19b76385c0d" prot="public">
+          <name>RESTR_16BITS</name>
+          <initializer>= 0b010</initializer>
+          <briefdescription>
+<para>Restriction values are on 16 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a90d0f0e086383611d7635656aaeec44e" prot="public">
+          <name>RESTR_32BITS</name>
+          <initializer>= 0b011</initializer>
+          <briefdescription>
+<para>Restriction values are on 32 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a50c6872b89ac9ac656198e4ddf68aaea" prot="public">
+          <name>RESTR_64BITS</name>
+          <initializer>= 0b100</initializer>
+          <briefdescription>
+<para>Restriction values are on 64 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the size on which restriction is applied. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="259" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="259" bodyend="264"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__parameters_1gaccd1d42d3e41691b46578dbf40e655d6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>param_s</definition>
+        <argsstring></argsstring>
+        <name>param_s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="169" column="2" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__parameters_1gad09246453a4dabd919c7541484046a87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct</type>
+        <definition>struct __attribute__</definition>
+        <argsstring>((__packed__))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(__packed__)</type>
+        </param>
+        <briefdescription>
+<para>This structure defines the parameter properties. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Parameter variable offset</para>
+<para>&lt; Parameter size (in bytes)</para>
+<para>&lt; Access <itemizedlist>
+<listitem><para>b7 : referenced (<ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref>). </para>
+</listitem>
+<listitem><para>b6-b4 : effectiveness (<ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref>). </para>
+</listitem>
+<listitem><para>b3-b2 : local Read/Write (<ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref>). </para>
+</listitem>
+<listitem><para>b1-b0 : remote Read/Write (<ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref>).</para>
+</listitem>
+</itemizedlist>
+&lt; Restriction table id (0x00 means no restriction)</para>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="1" column="0" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="155" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define structure and enum to deal with parameters. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2019/11/20 00:09:40 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_PARAMETERS_DEF_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PARAMETERS_DEF_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdint.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="47" refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3ac75245149c3f64d74430b8996b1e0558" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3ac75245149c3f64d74430b8996b1e0558" kindref="member">NA</ref><sp/>=<sp/>0b00,<sp/></highlight></codeline>
+<codeline lineno="48" refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a42e9aa764b9ee7ecf7e668462de6f96d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a42e9aa764b9ee7ecf7e668462de6f96d" kindref="member">RO</ref><sp/>=<sp/>0b01,<sp/></highlight></codeline>
+<codeline lineno="49" refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a60d1a52f84d34da6f6537317a1775929" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a60d1a52f84d34da6f6537317a1775929" kindref="member">WO</ref><sp/>=<sp/>0b10,<sp/></highlight></codeline>
+<codeline lineno="50" refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3aec2497e0c8af01c04bec31ec0d1d7847" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3aec2497e0c8af01c04bec31ec0d1d7847" kindref="member">RW</ref><sp/>=<sp/>0b11,<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="57" refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6caa77e6848bc2c2031677291053c6badaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6caa77e6848bc2c2031677291053c6badaa" kindref="member">IMM</ref><sp/>=<sp/>0b000,<sp/></highlight></codeline>
+<codeline lineno="58" refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca41246e9c8691b7e33bc79b345e06b48e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca41246e9c8691b7e33bc79b345e06b48e" kindref="member">ACK</ref><sp/>=<sp/>0b001,<sp/></highlight></codeline>
+<codeline lineno="59" refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca99defa0ec9429d3e958dfb3324a35ba6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca99defa0ec9429d3e958dfb3324a35ba6" kindref="member">MNT</ref><sp/>=<sp/>0b010,<sp/></highlight></codeline>
+<codeline lineno="60" refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca6fb6c263cb3a43df9d661faf1e8f4b33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca6fb6c263cb3a43df9d661faf1e8f4b33" kindref="member">HGA</ref><sp/>=<sp/>0b011,<sp/></highlight></codeline>
+<codeline lineno="61" refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca2c56d07da8a08a92de9453a00e31d55d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca2c56d07da8a08a92de9453a00e31d55d" kindref="member">UTC</ref><sp/>=<sp/>0b100,<sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}<ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="68" refid="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5daaa2ba9dfa031e1fefa757c6be92da3a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5daaa2ba9dfa031e1fefa757c6be92da3a1" kindref="member">REF_N</ref><sp/>=<sp/>0b0,<sp/></highlight></codeline>
+<codeline lineno="69" refid="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5da6841317487359fecef805965b2146d7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5da6841317487359fecef805965b2146d7a" kindref="member">REF_Y</ref><sp/>=<sp/>0b1,<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}<ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor">#define<sp/>ACCESS_MSK<sp/>0b1111</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor">#define<sp/>REF_ACCESS_POS<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor">#define<sp/>REF_ACCESS_SZ<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor">#define<sp/>REF_ACCESS_MSK<sp/>0b1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="preprocessor">#define<sp/>EFF_ACCESS_POS<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor">#define<sp/>EFF_ACCESS_SZ<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor">#define<sp/>EFF_ACCESS_MSK<sp/>0b111</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor">#define<sp/>LOC_ACCESS_POS<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="preprocessor">#define<sp/>LOC_ACCESS_SZ<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor">#define<sp/>LOC_ACCESS_MSK<sp/>0b11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="preprocessor">#define<sp/>REM_ACCESS_POS<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="preprocessor">#define<sp/>REM_ACCESS_SZ<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="preprocessor">#define<sp/>REM_ACCESS_MSK<sp/>0b11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="group__parameters_1gad09246453a4dabd919c7541484046a87" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="group__parameters_1gad09246453a4dabd919c7541484046a87" kindref="member">__attribute__</ref>((__packed__)){</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>PARAM_USE_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/>u32_address;<sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/>//<sp/>PARAM_USE_OFFSET</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/>u16_offset;<sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/>u8_size;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/>u8_access;<sp/><sp/></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/>u8_restId;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}<sp/>param_s;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="preprocessor">#define<sp/>RESTR_MSK<sp/>0b01110111</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="preprocessor">#define<sp/>TYPE_RESTR_POS<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor">#define<sp/>TYPE_RESTR_SZ<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="preprocessor">#define<sp/>TYPE_RESTR_MSK<sp/>0b0111</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="preprocessor">#define<sp/>SZ_RESTR_POS<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="preprocessor">#define<sp/>SZ_RESTR_SZ<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="preprocessor">#define<sp/>SZ_RESTR_MSK<sp/>0b0111</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="preprocessor">#define<sp/>GET_RESTR_TYPE(restr)<sp/>((restr<sp/>&gt;&gt;<sp/>TYPE_RESTR_POS)<sp/>&amp;<sp/>(TYPE_RESTR_MSK))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="preprocessor">#define<sp/>GET_RESTR_SZ(restr)<sp/><sp/><sp/>((restr<sp/>&gt;&gt;<sp/>SZ_RESTR_POS)<sp/>&amp;<sp/>(SZ_RESTR_MSK))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="preprocessor">#define<sp/>CHECK_MODULO(val,<sp/>mod)<sp/><sp/><sp/><sp/><sp/>(<sp/>(val%mod)?(0):(1)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="preprocessor">#define<sp/>CHECK_RANGE(val,<sp/>min,<sp/>max)<sp/>(<sp/>(<sp/>(val<sp/>&gt;=<sp/>min)<sp/>&amp;&amp;<sp/>(val<sp/>&lt;=<sp/>max)<sp/>)?(1):(0)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="preprocessor">#define<sp/>CHECK_ENUM_VAL(val,<sp/>enumval)<sp/>(<sp/>(val<sp/>==<sp/>enumval)?(1):(0)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250" refid="group__parameters_1ga45afffb7d12f2fe5f92b22195a83c6f9" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="251" refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a660ca9bb26d9c9df4e88cffd5de504c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a660ca9bb26d9c9df4e88cffd5de504c5" kindref="member">RESTR_MODULO</ref><sp/>=<sp/>0b001,<sp/></highlight></codeline>
+<codeline lineno="252" refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9aacd45bbce97af46acac9081dd503e5a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9aacd45bbce97af46acac9081dd503e5a5" kindref="member">RESTR_RANGE</ref><sp/><sp/>=<sp/>0b010,<sp/></highlight></codeline>
+<codeline lineno="253" refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a4cc7262dfb618f7e934a544896beb4ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a4cc7262dfb618f7e934a544896beb4ce" kindref="member">RESTR_ENUM</ref><sp/><sp/><sp/>=<sp/>0b011,<sp/></highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}<ref refid="group__parameters_1ga45afffb7d12f2fe5f92b22195a83c6f9" kindref="member">restr_type_e</ref>;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="group__parameters_1ga7a362289f266f6282f1e10f9fa577bd4" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="260" refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a2da7a85929605dce3fbaad011aaba5a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a2da7a85929605dce3fbaad011aaba5a8" kindref="member">RESTR_8BITS</ref><sp/><sp/>=<sp/>0b001,<sp/></highlight></codeline>
+<codeline lineno="261" refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a5bfb71cc1b14b9a8ab61b19b76385c0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a5bfb71cc1b14b9a8ab61b19b76385c0d" kindref="member">RESTR_16BITS</ref><sp/>=<sp/>0b010,<sp/></highlight></codeline>
+<codeline lineno="262" refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a90d0f0e086383611d7635656aaeec44e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a90d0f0e086383611d7635656aaeec44e" kindref="member">RESTR_32BITS</ref><sp/>=<sp/>0b011,<sp/></highlight></codeline>
+<codeline lineno="263" refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a50c6872b89ac9ac656198e4ddf68aaea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a50c6872b89ac9ac656198e4ddf68aaea" kindref="member">RESTR_64BITS</ref><sp/>=<sp/>0b100,<sp/></highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}<ref refid="group__parameters_1ga7a362289f266f6282f1e10f9fa577bd4" kindref="member">restr_sz_type_e</ref>;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="structrestr__s" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="270" refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>;<sp/></highlight></codeline>
+<codeline lineno="271" refid="structrestr__s_1a84410843fde67411f4e0501e6f182c6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structrestr__s_1a84410843fde67411f4e0501e6f182c6a" kindref="member">u8_restr</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="272" refid="structrestr__s_1a64e215980382db90c1fb5c493ab74d1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structrestr__s_1a64e215980382db90c1fb5c493ab74d1d" kindref="member">u8_nb</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="273"><highlight class="normal">}<ref refid="structrestr__s" kindref="compound">restr_s</ref>;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="preprocessor">#ifdef<sp/>PARAM_USE_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INIT_ACCESS_TABLE(id,<sp/>loc,<sp/>rem,<sp/>eff,<sp/>var,<sp/>restr_id)<sp/>[id]<sp/>=<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="282"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u8_access<sp/>=<sp/>(<sp/>(loc&lt;&lt;LOC_ACCESS_POS)<sp/>|<sp/>(rem&lt;&lt;REM_ACCESS_POS)<sp/>|<sp/>(eff&lt;&lt;EFF_ACCESS_POS)<sp/>),<sp/>\</highlight></codeline>
+<codeline lineno="283"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u8_size<sp/>=<sp/>(uint8_t)sizeof(var),<sp/>\</highlight></codeline>
+<codeline lineno="284"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u32_address<sp/>=<sp/>(uint32_t)(&amp;var),<sp/>\</highlight></codeline>
+<codeline lineno="285"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u8_restId<sp/>=<sp/>restr_id<sp/>\</highlight></codeline>
+<codeline lineno="286"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/>//<sp/>PARAM_USE_OFFSET</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="preprocessor">#define<sp/>INIT_ACCESS_TABLE(id,<sp/>loc,<sp/>rem,<sp/>eff,<sp/>ref,<sp/>size,<sp/>off,<sp/>restr_id)<sp/>[id]<sp/>=<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="293"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.u8_access<sp/>=<sp/>(<sp/>(loc&lt;&lt;LOC_ACCESS_POS)<sp/>|<sp/>(rem&lt;&lt;REM_ACCESS_POS)<sp/>|<sp/>(eff&lt;&lt;EFF_ACCESS_POS)<sp/>|<sp/>(ref&lt;&lt;REF_ACCESS_POS)),<sp/>\</highlight></codeline>
+<codeline lineno="294"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.u8_size<sp/>=<sp/>(uint8_t)size,<sp/>\</highlight></codeline>
+<codeline lineno="295"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.u16_offset<sp/>=<sp/>(uint16_t)(off),<sp/>\</highlight></codeline>
+<codeline lineno="296"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.u8_restId<sp/>=<sp/>restr_id<sp/>\</highlight></codeline>
+<codeline lineno="297"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="preprocessor">#define<sp/>INIT_RESTR_TABLE(id,<sp/>restr_type,<sp/>restr_sz,<sp/>restr_nb,<sp/>restr_p_table)<sp/>[id]<sp/>=<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="304"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.u8_restr<sp/>=<sp/>(<sp/>(restr_type&lt;&lt;TYPE_RESTR_POS)<sp/>|<sp/>(restr_sz&lt;&lt;SZ_RESTR_POS)<sp/>),\</highlight></codeline>
+<codeline lineno="305"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.u8_nb<sp/>=<sp/>restr_nb,<sp/>\</highlight></codeline>
+<codeline lineno="306"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>.p_Table<sp/>=<sp/>restr_p_table<sp/>\</highlight></codeline>
+<codeline lineno="307"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PARAMETERS_DEF_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h"/>
+  </compounddef>
+</doxygen>

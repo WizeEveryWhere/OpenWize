@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structping__reply__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>ping_reply_ctx_s</compoundname>
+    <includes refid="inst__internal_8h" local="no">inst_internal.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structping__reply__ctx__s_1a506cd34a650b3606aed79ca9c388e7bb" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__inst__layer_1gadf514d3c5aeeae7c804d75a2906c70e6" kindref="member">ping_reply_list_t</ref></type>
+        <definition>ping_reply_list_t ping_reply_ctx_s::aPingReplyList[NB_PING_REPLPY]</definition>
+        <argsstring>[NB_PING_REPLPY]</argsstring>
+        <name>aPingReplyList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Table of received Pong </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="90" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__ctx__s_1aca4cb6275c9b7a7a7fcd0d6b26ace36d" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__inst__layer_1gadf514d3c5aeeae7c804d75a2906c70e6" kindref="member">ping_reply_list_t</ref> *</type>
+        <definition>ping_reply_list_t* ping_reply_ctx_s::pWorst</definition>
+        <argsstring></argsstring>
+        <name>pWorst</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on the worst RSSI </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="91" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__ctx__s_1acedd4eeb9c07cbe67855f15231b0e945" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__inst__layer_1gadf514d3c5aeeae7c804d75a2906c70e6" kindref="member">ping_reply_list_t</ref> *</type>
+        <definition>ping_reply_list_t* ping_reply_ctx_s::pBest</definition>
+        <argsstring></argsstring>
+        <name>pBest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on the best RSSI </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="92" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__ctx__s_1ad3bf343c5d587431b2f235a5049564f7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ping_reply_ctx_s::u32PingEpoch</definition>
+        <argsstring></argsstring>
+        <name>u32PingEpoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ping Send Epoch </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="93" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__ctx__s_1ac422924292ca1e4dd9292a2b75c30f9d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ping_reply_ctx_s::u8NbPong</definition>
+        <argsstring></argsstring>
+        <name>u8NbPong</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of received Pong </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="94" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__ctx__s_1a1339db20594a821eaac614b594a58ee5" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structping__reply__config__s" kindref="compound">ping_reply_config_s</ref></type>
+        <definition>struct ping_reply_config_s ping_reply_ctx_s::sPingReplyConfig</definition>
+        <argsstring></argsstring>
+        <name>sPingReplyConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ping_reply configuration </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="94" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the ping_reply context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>ping_reply_config_s</label>
+        <link refid="structping__reply__config__s"/>
+      </node>
+      <node id="2">
+        <label>ping_reply_list_s</label>
+        <link refid="structping__reply__list__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pNext</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+xPingReply</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ping_reply_ctx_s</label>
+        <link refid="structping__reply__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pBest</edgelabel>
+          <edgelabel>+aPingReplyList</edgelabel>
+          <edgelabel>+pWorst</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+sPingReplyConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>inst_pong_t</label>
+        <link refid="structinst__pong__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="89" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="88" bodyend="96"/>
+    <listofallmembers>
+      <member refid="structping__reply__ctx__s_1a506cd34a650b3606aed79ca9c388e7bb" prot="public" virt="non-virtual"><scope>ping_reply_ctx_s</scope><name>aPingReplyList</name></member>
+      <member refid="structping__reply__ctx__s_1acedd4eeb9c07cbe67855f15231b0e945" prot="public" virt="non-virtual"><scope>ping_reply_ctx_s</scope><name>pBest</name></member>
+      <member refid="structping__reply__ctx__s_1aca4cb6275c9b7a7a7fcd0d6b26ace36d" prot="public" virt="non-virtual"><scope>ping_reply_ctx_s</scope><name>pWorst</name></member>
+      <member refid="structping__reply__ctx__s_1a1339db20594a821eaac614b594a58ee5" prot="public" virt="non-virtual"><scope>ping_reply_ctx_s</scope><name>sPingReplyConfig</name></member>
+      <member refid="structping__reply__ctx__s_1ad3bf343c5d587431b2f235a5049564f7" prot="public" virt="non-virtual"><scope>ping_reply_ctx_s</scope><name>u32PingEpoch</name></member>
+      <member refid="structping__reply__ctx__s_1ac422924292ca1e4dd9292a2b75c30f9d" prot="public" virt="non-virtual"><scope>ping_reply_ctx_s</scope><name>u8NbPong</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

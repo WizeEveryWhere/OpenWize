@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bsp__boot_8h" kind="file" language="C++">
+    <compoundname>bsp_boot.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includedby refid="bsp_8h" local="no">/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</includedby>
+    <includedby refid="bsp__boot_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>assert.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="8">
+        <label>time.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="9">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h</label>
+        <link refid="bsp__boot_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c</label>
+        <link refid="bsp__boot_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/platform.c</label>
+        <link refid="platform_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c</label>
+        <link refid="bsp_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c</label>
+        <link refid="port_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</label>
+        <link refid="bsp_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h</label>
+        <link refid="bsp__boot_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="unionboot__state__t" prot="public">boot_state_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__boot_1ga830c85b040fce12764c873021137099c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>boot_reason_e</name>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca2f2ca4cc923e4d813d32481f4a6e1aed" prot="public">
+          <name>FW_RSTF</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Firewall reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca9426442c8862ad7463933fde96933a5e" prot="public">
+          <name>OBL_RSTF</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Option Byte reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099cacbb9b193ca274833b45c93877b858162" prot="public">
+          <name>PIN_RSTF</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pin reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca9f62267009d19798ee0ecaf2433b55a0" prot="public">
+          <name>BOR_RSTF</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Power On Reset (power was lost or exit from Shutdown/Stdby LP) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099cada6458256386bfc6bd131558c6a6adc3" prot="public">
+          <name>SFT_RSTF</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Software reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca11aea8cb56d93a4e88b817d85977d955" prot="public">
+          <name>IWWG_RSTF</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Independent window watchdog reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca6ce5eedf3b8242eeeb0e141bf18edee7" prot="public">
+          <name>WWDG_RSTF</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Window watchdog reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099cae4dad7ee39f7d7300d3af41a2411e955" prot="public">
+          <name>LPWR_RSTF</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Low power reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the reset (boot) reason as is in mcu reset register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="79" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="78" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__boot_1ga6d454eccc10b0f5e78da41e846b84fe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_Boot_Reboot</definition>
+        <argsstring>(uint8_t bReset)</argsstring>
+        <name>BSP_Boot_Reboot</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>bReset</declname>
+        </param>
+        <briefdescription>
+<para>Reboot. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">bReset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reset the backup domain (1 ;yes, 0: no)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" line="62" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" bodystart="62" bodyend="70" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" declline="112" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__boot_1ga3eaa2c4653fb4f0fb82e124d3a2a411e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t BSP_Boot_GetState</definition>
+        <argsstring>(void)</argsstring>
+        <name>BSP_Boot_GetState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the boot state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the boot state as u32 (see <ref refid="unionboot__state__t" kindref="compound">boot_state_t</ref>) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" line="78" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" bodystart="78" bodyend="142" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" declline="113" declcolumn="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>: This file define functions to reboot and get last boot state </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/13 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_BSP_BOOT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BSP_BOOT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="common_8h" kindref="compound">common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COLD_RESET<sp/><sp/><sp/><sp/>0x0C<sp/>//<sp/>Cold<sp/>reset<sp/>(NRST<sp/>pin<sp/>or<sp/>power<sp/>lost)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WARM_RESET<sp/><sp/><sp/><sp/>0x10<sp/>//<sp/>Warm<sp/>reset<sp/>(SW)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INSTAB_DETECT<sp/>0x60<sp/>//<sp/>Instability<sp/>detected<sp/>&apos;Application<sp/>or<sp/>other)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UNAUTH_ACCESS<sp/>0x83<sp/></highlight><highlight class="comment">/*<sp/>Unauthorized<sp/>action<sp/>:</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>access<sp/>to<sp/>protected<sp/>areas</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>entering<sp/>into<sp/>forbidden<sp/>low<sp/>power<sp/>mode<sp/>(Standby,<sp/>Stop,<sp/>Shutdown)</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>reset<sp/>option<sp/>byte</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BOOT_REASON_MSK<sp/><sp/><sp/><sp/><sp/>0x00000FF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STANDBY_WKUP_MSK<sp/><sp/><sp/><sp/>0x0000100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BACKUP_RESET_MSK<sp/><sp/><sp/><sp/>0x0000200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INTERNAL_WKUP_MSK<sp/><sp/><sp/>0x0000400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WKUP_PIN_MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x001F000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WKUP_PIN_POS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALARMA_WKUP_MSK<sp/><sp/><sp/><sp/><sp/>0x0100000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALARMB_WKUP_MSK<sp/><sp/><sp/><sp/><sp/>0x0200000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIMER_WKUP_MSK<sp/><sp/><sp/><sp/><sp/><sp/>0x0400000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CALENDAR_UNINIT_MSK<sp/>0x0800000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="group__boot_1ga830c85b040fce12764c873021137099c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80" refid="group__boot_1gga830c85b040fce12764c873021137099ca2f2ca4cc923e4d813d32481f4a6e1aed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099ca2f2ca4cc923e4d813d32481f4a6e1aed" kindref="member">FW_RSTF</ref><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="81" refid="group__boot_1gga830c85b040fce12764c873021137099ca9426442c8862ad7463933fde96933a5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099ca9426442c8862ad7463933fde96933a5e" kindref="member">OBL_RSTF</ref><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="82" refid="group__boot_1gga830c85b040fce12764c873021137099cacbb9b193ca274833b45c93877b858162" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099cacbb9b193ca274833b45c93877b858162" kindref="member">PIN_RSTF</ref><sp/><sp/>=<sp/>0x04,<sp/></highlight></codeline>
+<codeline lineno="83" refid="group__boot_1gga830c85b040fce12764c873021137099ca9f62267009d19798ee0ecaf2433b55a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099ca9f62267009d19798ee0ecaf2433b55a0" kindref="member">BOR_RSTF</ref><sp/><sp/>=<sp/>0x08,<sp/></highlight></codeline>
+<codeline lineno="84" refid="group__boot_1gga830c85b040fce12764c873021137099cada6458256386bfc6bd131558c6a6adc3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099cada6458256386bfc6bd131558c6a6adc3" kindref="member">SFT_RSTF</ref><sp/><sp/>=<sp/>0x10,<sp/></highlight></codeline>
+<codeline lineno="85" refid="group__boot_1gga830c85b040fce12764c873021137099ca11aea8cb56d93a4e88b817d85977d955" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099ca11aea8cb56d93a4e88b817d85977d955" kindref="member">IWWG_RSTF</ref><sp/>=<sp/>0x20,<sp/></highlight></codeline>
+<codeline lineno="86" refid="group__boot_1gga830c85b040fce12764c873021137099ca6ce5eedf3b8242eeeb0e141bf18edee7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099ca6ce5eedf3b8242eeeb0e141bf18edee7" kindref="member">WWDG_RSTF</ref><sp/>=<sp/>0x40,<sp/></highlight></codeline>
+<codeline lineno="87" refid="group__boot_1gga830c85b040fce12764c873021137099cae4dad7ee39f7d7300d3af41a2411e955" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__boot_1gga830c85b040fce12764c873021137099cae4dad7ee39f7d7300d3af41a2411e955" kindref="member">LPWR_RSTF</ref><sp/>=<sp/>0x80,<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/><ref refid="group__boot_1ga830c85b040fce12764c873021137099c" kindref="member">boot_reason_e</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="unionboot__state__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95" refid="unionboot__state__t_1ad18b41c3bd6a8f66f7904858cb3b3e07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1ad18b41c3bd6a8f66f7904858cb3b3e07" kindref="member">state</ref>;<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98" refid="unionboot__state__t_1a4aa43c44eec2035329fb225be0370d70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1a4aa43c44eec2035329fb225be0370d70" kindref="member">reason</ref>:8;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99" refid="unionboot__state__t_1aca29315caa5dfb11c583d72b7d0f3967" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1aca29315caa5dfb11c583d72b7d0f3967" kindref="member">standby</ref>:1;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100" refid="unionboot__state__t_1aba84321baeb08bdbca5d31234e1e504d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1aba84321baeb08bdbca5d31234e1e504d" kindref="member">backup</ref>:1;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101" refid="unionboot__state__t_1af0c80f18a108d8dd4fe35194bc821186" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/></highlight><highlight class="keyword">internal</highlight><highlight class="normal">:1;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102" refid="unionboot__state__t_1a4a69930a4dd3889dbbb2b866961c8a51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="unionboot__state__t_1a847997f49d54f3bfb5483fdb975e6302" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1a847997f49d54f3bfb5483fdb975e6302" kindref="member">wkup_pin</ref>:5;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104" refid="unionboot__state__t_1a11776967fb5435a1bed8fc191f54012e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>:3;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105" refid="unionboot__state__t_1a255aa651970d3d2801235af7f306d09b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1a255aa651970d3d2801235af7f306d09b" kindref="member">wkup_alra</ref>:1;<sp/><sp/></highlight></codeline>
+<codeline lineno="106" refid="unionboot__state__t_1a4f152f08b5e1469223b5a659440ff4e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1a4f152f08b5e1469223b5a659440ff4e1" kindref="member">wkup_alrb</ref>:1;<sp/><sp/></highlight></codeline>
+<codeline lineno="107" refid="unionboot__state__t_1acaa501d89e13006a12b7e0fd16f1494b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1acaa501d89e13006a12b7e0fd16f1494b" kindref="member">wkup_timer</ref>:1;<sp/></highlight></codeline>
+<codeline lineno="108" refid="unionboot__state__t_1a8b535c7b7c282db3a7acca5070dd5c20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionboot__state__t_1a8b535c7b7c282db3a7acca5070dd5c20" kindref="member">calendar</ref>:1;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}<sp/><ref refid="unionboot__state__t" kindref="compound">boot_state_t</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__boot_1ga6d454eccc10b0f5e78da41e846b84fe9" kindref="member">BSP_Boot_Reboot</ref>(uint8_t<sp/>bReset);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">uint32_t<sp/><ref refid="group__boot_1ga3eaa2c4653fb4f0fb82e124d3a2a411e" kindref="member">BSP_Boot_GetState</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_BSP_BOOT_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h"/>
+  </compounddef>
+</doxygen>

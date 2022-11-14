@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="storage_8h" kind="file" language="C++">
+    <compoundname>storage.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="storage_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h</label>
+        <link refid="storage_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h</label>
+        <link refid="storage_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__app_1ga418c32aac3818e0fc031cc7219e83d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Storage_Init</definition>
+        <argsstring>(uint8_t bForce)</argsstring>
+        <name>Storage_Init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>bForce</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h" line="42" column="6" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h" declline="42" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1gae8170e1e320af9706766d7fdb1cfe1e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Storage_SetDefault</definition>
+        <argsstring>(void)</argsstring>
+        <name>Storage_SetDefault</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set to defaults device id, all parameters and all keys. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="204" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="204" bodyend="210" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h" declline="43" declcolumn="6"/>
+        <references refid="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" compoundref="wize__api_8c" startline="66" endline="73">WizeApi_SetDeviceId</references>
+        <references refid="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" compoundref="parameters_8c" startline="265" endline="268">Param_Init</references>
+        <references refid="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" compoundref="parameters__default_8c" startline="35">a_ParamDefault</references>
+        <references refid="group__crypto_1ga21956ce69b049977e54c004831c9bdcb">_a_Key_</references>
+        <references refid="group__app_1ga8efcaca0e25b0a89c34cce4339320449" compoundref="storage_8c" startline="139">sDefaultKey</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define the storage functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/02/07 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="34"><highlight class="preprocessor">#ifndef<sp/>_STORAGE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_STORAGE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Storage_Init(uint8_t<sp/>bForce);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__app_1gae8170e1e320af9706766d7fdb1cfe1e2" kindref="member">Storage_SetDefault</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_STORAGE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h"/>
+  </compounddef>
+</doxygen>

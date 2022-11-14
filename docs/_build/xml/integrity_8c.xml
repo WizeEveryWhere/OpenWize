@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="integrity_8c" kind="file" language="C++">
+    <compoundname>integrity.c</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">tinycrypt/cmac_mode.h</includes>
+    <includes local="no">tinycrypt/constants.h</includes>
+    <includes local="no">tinycrypt/aes.h</includes>
+    <includes local="no">tinycrypt/sha256.h</includes>
+    <includes refid="key__priv_8h" local="yes">key_priv.h</includes>
+    <includes refid="utils__secure_8h" local="yes">utils_secure.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>tinycrypt/sha256.h</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>tinycrypt/constants.h</label>
+      </node>
+      <node id="11">
+        <label>utils_secure.h</label>
+        <link refid="utils__secure_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="5">
+        <label>tinycrypt/cmac_mode.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c</label>
+        <link refid="integrity_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>key_priv.h</label>
+        <link refid="key__priv_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tinycrypt/aes.h</label>
+      </node>
+      <node id="10">
+        <label>crypto.h</label>
+        <link refid="crypto_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__crypto_1ga00cd4011ed7eb1bf97fe6a887e3d1856" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _AES128_CMAC_</definition>
+        <argsstring>(uint8_t *p_Hash, uint8_t *p_Msg, uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>_AES128_CMAC_</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Hash</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Msg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Ctr</declname>
+          <array>[CTR_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>This function compute the footprint with the AES128 in CMAC mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Hash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (footprint). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Ctr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use for compute the footprint </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_KID_UNK_ERR (2) id the key id is out of box return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="106" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="106" bodyend="134" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" declline="50" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga9a6b5cc3eb0452d36bfde8695f69d0d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _SHA256_</definition>
+        <argsstring>(uint8_t p_Sha256[SHA256_SIZE], uint8_t *p_Data, uint32_t u32_Sz)</argsstring>
+        <name>_SHA256_</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Sha256</declname>
+          <array>[SHA256_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32_Sz</declname>
+        </param>
+        <briefdescription>
+<para>This function compute the SHA256 of given buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Sha256</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (sha256, 32 bytes). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="147" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="147" bodyend="162" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" declline="52" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga60e30604375785784f6dccb9a8903b2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Crypto_AES128_CMAC</definition>
+        <argsstring>(uint8_t *p_Hash, uint8_t *p_Msg, uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>Crypto_AES128_CMAC</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Hash</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Msg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Ctr</declname>
+          <array>[CTR_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper around the <emphasis>AES128_CMAC</emphasis> function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function compute the footprint (with the AES128 in CMAC mode) of a given message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Hash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (footprint). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Ctr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use for compute the footprint </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_KID_UNK_ERR (2) id the key id is out of box return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="69" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="69" bodyend="73" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" declline="159" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga14ac8fca562dab920a6f403d248021c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Crypto_SHA256</definition>
+        <argsstring>(uint8_t p_Sha256[SHA256_SIZE], uint8_t *p_Data, uint32_t u32_Sz)</argsstring>
+        <name>Crypto_SHA256</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Sha256</declname>
+          <array>[SHA256_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32_Sz</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper around the <emphasis>SHA256</emphasis> function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function compute the SHA256 of given buffer..</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Sha256</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (sha256, 32 bytes). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="87" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="87" bodyend="90" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" declline="162" declcolumn="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file expose functions to compute AES128-CMAC footprint of a given message. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2019/11/25[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tinycrypt/cmac_mode.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tinycrypt/constants.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tinycrypt/aes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tinycrypt/sha256.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="key__priv_8h" kindref="compound">key_priv.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="utils__secure_8h" kindref="compound">utils_secure.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_AES128_CMAC_(uint8_t<sp/>*p_Hash,<sp/>uint8_t<sp/>*p_Msg,<sp/>uint8_t<sp/>u8_Sz,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>p_Ctr[CTR_SIZE],<sp/>uint8_t<sp/>u8_KeyId);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_SHA256_(uint8_t<sp/>p_Sha256[SHA256_SIZE],<sp/>uint8_t<sp/>*p_Data,<sp/>uint32_t<sp/>u32_Sz);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="group__crypto_1ga60e30604375785784f6dccb9a8903b2f" refkind="member"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__crypto_1ga60e30604375785784f6dccb9a8903b2f" kindref="member">Crypto_AES128_CMAC</ref>(uint8_t<sp/>*p_Hash,<sp/>uint8_t<sp/>*p_Msg,<sp/>uint8_t<sp/>u8_Sz,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>p_Ctr[CTR_SIZE],<sp/>uint8_t<sp/>u8_KeyId)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_AES128_CMAC_(p_Hash,<sp/>p_Msg,<sp/>u8_Sz,<sp/>p_Ctr,<sp/>u8_KeyId);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="group__crypto_1ga14ac8fca562dab920a6f403d248021c8" refkind="member"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__crypto_1ga14ac8fca562dab920a6f403d248021c8" kindref="member">Crypto_SHA256</ref>(uint8_t<sp/>p_Sha256[SHA256_SIZE],<sp/>uint8_t<sp/>*p_Data,<sp/>uint32_t<sp/>u32_Sz)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_SHA256_(p_Sha256,<sp/>p_Data,<sp/>u32_Sz);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_AES128_CMAC_(uint8_t<sp/>*p_Hash,<sp/>uint8_t<sp/>*p_Msg,<sp/>uint8_t<sp/>u8_Sz,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>p_Ctr[CTR_SIZE],<sp/>uint8_t<sp/>u8_KeyId)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tc_cmac_struct<sp/>state;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tc_aes_key_sched_struct<sp/>s_sched;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>buff[CTR_SIZE<sp/>+<sp/>u8_Sz];</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>msg_sz<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(buff);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret<sp/>=<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a60a843bc26ee85510e68d53b85e52683" kindref="member">CRYPTO_OK</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>key<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_KeyId<sp/>&gt;<sp/><ref refid="group__crypto_1ga189381496bdc6329d20d84cb8dd755e4" kindref="member">KEY_MAX_NB</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a77c3cd579f2a2120039dc18a0958771a" kindref="member">CRYPTO_KID_UNK_ERR</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>sanity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p_Hash<sp/>==<sp/>NULL<sp/>||<sp/>p_Msg<sp/>==<sp/>NULL<sp/>||<sp/>u8_Sz<sp/>==<sp/>0<sp/>||<sp/>p_Ctr<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a0cb87f7d3f8ec289a92832dea4fdcda6" kindref="member">CRYPTO_INT_NULL_ERR</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_ret<sp/>==<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a60a843bc26ee85510e68d53b85e52683" kindref="member">CRYPTO_OK</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(buff,<sp/>p_Ctr,<sp/>CTR_SIZE);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(&amp;(buff[CTR_SIZE]),<sp/>p_Msg<sp/>,<sp/>u8_Sz);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>tc_cmac_setup(&amp;state,<sp/><ref refid="group__crypto_1ga21956ce69b049977e54c004831c9bdcb" kindref="member">_a_Key_</ref>[u8_KeyId].key,<sp/>&amp;s_sched);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>(u8_ret<sp/>!=<sp/>TC_CRYPTO_SUCCESS)?(<ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a25cff552c7f5b5a4502b9e25cc0f9093" kindref="member">CRYPTO_KO</ref>):(tc_cmac_init(&amp;state));</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>(u8_ret<sp/>!=<sp/>TC_CRYPTO_SUCCESS)?(<ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a25cff552c7f5b5a4502b9e25cc0f9093" kindref="member">CRYPTO_KO</ref>):(tc_cmac_update(&amp;state,<sp/>buff,<sp/>msg_sz));</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>(u8_ret<sp/>!=<sp/>TC_CRYPTO_SUCCESS)?(<ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a25cff552c7f5b5a4502b9e25cc0f9093" kindref="member">CRYPTO_KO</ref>):(tc_cmac_final(p_Hash,<sp/>&amp;state));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>(u8_ret<sp/>!=<sp/>TC_CRYPTO_SUCCESS)?(<ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a25cff552c7f5b5a4502b9e25cc0f9093" kindref="member">CRYPTO_KO</ref>):(<ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a60a843bc26ee85510e68d53b85e52683" kindref="member">CRYPTO_OK</ref>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_SHA256_(uint8_t<sp/>p_Sha256[SHA256_SIZE],<sp/>uint8_t<sp/>*p_Data,<sp/>uint32_t<sp/>u32_Sz)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tc_sha256_state_struct<sp/>state;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret<sp/>=<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a60a843bc26ee85510e68d53b85e52683" kindref="member">CRYPTO_OK</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>p_Data<sp/>==<sp/>NULL<sp/>||<sp/>p_Sha256<sp/>==<sp/>NULL<sp/>||<sp/>u32_Sz<sp/>==<sp/>0<sp/>)<sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a0cb87f7d3f8ec289a92832dea4fdcda6" kindref="member">CRYPTO_INT_NULL_ERR</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_ret<sp/>==<sp/><ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a60a843bc26ee85510e68d53b85e52683" kindref="member">CRYPTO_OK</ref>)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>tc_sha256_init(&amp;state);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>(u8_ret<sp/>!=<sp/>TC_CRYPTO_SUCCESS)?(<ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a25cff552c7f5b5a4502b9e25cc0f9093" kindref="member">CRYPTO_KO</ref>):(tc_sha256_update(&amp;state,<sp/>p_Data,<sp/>u32_Sz));</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>(u8_ret<sp/>!=<sp/>TC_CRYPTO_SUCCESS)?(<ref refid="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a25cff552c7f5b5a4502b9e25cc0f9093" kindref="member">CRYPTO_KO</ref>):(tc_sha256_final(p_Sha256,<sp/>&amp;state));</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c"/>
+  </compounddef>
+</doxygen>

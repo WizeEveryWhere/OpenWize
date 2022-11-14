@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_0fd2cebc9d790507ae69b55a16390cda" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/WizeCore/app/src</compoundname>
+    <innerdir refid="dir_29d959d574e5813845550c128ecb7cfb">/home/nono/OpenWize/sources/WizeCore/app/src/internal</innerdir>
+    <innerfile refid="ses__dispatcher_8c">ses_dispatcher.c</innerfile>
+    <innerfile refid="time__mgr_8c">time_mgr.c</innerfile>
+    <innerfile refid="wize__api_8c">wize_api.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/src/"/>
+  </compounddef>
+</doxygen>

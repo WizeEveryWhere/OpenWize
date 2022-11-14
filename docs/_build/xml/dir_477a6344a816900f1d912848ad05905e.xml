@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_477a6344a816900f1d912848ad05905e" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476/app/sys</compoundname>
+    <innerfile refid="port_8c">port.c</innerfile>
+    <innerfile refid="rtos_8c">rtos.c</innerfile>
+    <innerfile refid="sys__init_8c">sys_init.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/"/>
+  </compounddef>
+</doxygen>

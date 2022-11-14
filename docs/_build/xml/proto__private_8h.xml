@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="proto__private_8h" kind="file" language="C++">
+    <compoundname>proto_private.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes refid="proto_8h" local="yes">proto.h</includes>
+    <includedby refid="proto__api_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h</includedby>
+    <includedby refid="proto_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>assert.h</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stddef.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="16">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c</label>
+        <link refid="net__api_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="14">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</label>
+        <link refid="net__mgr_8c"/>
+      </node>
+      <node id="15">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</label>
+        <link refid="proto_8c"/>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structl2__exch__header__t" prot="public">l2_exch_header_t</innerclass>
+    <innerclass refid="structl2__down__header__t" prot="public">l2_down_header_t</innerclass>
+    <innerclass refid="structl2__exch__footer__t" prot="public">l2_exch_footer_t</innerclass>
+    <innerclass refid="structl2__down__footer__t" prot="public">l2_down_footer_t</innerclass>
+    <innerclass refid="structl6__exch__header__t" prot="public">l6_exch_header_t</innerclass>
+    <innerclass refid="structl6__down__header__t" prot="public">l6_down_header_t</innerclass>
+    <innerclass refid="structl6__exch__footer__t" prot="public">l6_exch_footer_t</innerclass>
+    <innerclass refid="structl6__down__footer__t" prot="public">l6_down_footer_t</innerclass>
+    <innerclass refid="structproto__config__s" prot="public">proto_config_s</innerclass>
+    <innerclass refid="structproto__ctx__s" prot="public">proto_ctx_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__proto_1ga1a0a46f77e325aedcaff534bc2322dfc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>cfield_e</name>
+        <enumvalue id="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfca3935419f7b608e0bf1f4733ec67a6073" prot="public">
+          <name>INSTPONG</name>
+          <initializer>= 0x06</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PONG (CNF_IR). From Gateway to Device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcae26d84a703b1893db1db8a455beb5c27" prot="public">
+          <name>INSTPING</name>
+          <initializer>= 0x46</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PING (SND_IR). From Device to Gateway </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcae680fa7eb860abe7832f792cc18a44b4" prot="public">
+          <name>COMMAND</name>
+          <initializer>= 0x43</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>COMMAND (SND_UD2). From Gateway to Device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcafb95ee545d749f11305939b93fe2bda3" prot="public">
+          <name>RESPONSE</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RESPONSE (RSP_UD). From Device to Gateway </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfca9d7d6f31868d66330397c967c4afd2d2" prot="public">
+          <name>DATA</name>
+          <initializer>= 0x44</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>DATA (SND_NR). From Device to Gateway </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcadf97958b486f179ea7e95ab2b2107ca3" prot="public">
+          <name>DATA_PRIO</name>
+          <initializer>= DATA | DATA_PRI_MSK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Priority DATA. From Device to Gateway </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the link layer frame type . </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="220" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="220" bodyend="227"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define common structures, enum, ... </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/09/07 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="34"><highlight class="preprocessor">#ifndef<sp/>_PROTO_PRIVATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PROTO_PRIVATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="proto_8h" kindref="compound">proto.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">#define<sp/>PRE_WIZE_PROTO_ID<sp/>(0xB4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STD_WIZE_PROTO_ID<sp/>(0x20)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>L6VERS<sp/>==<sp/>L6VER_WIZE_REV_0_0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>WIZE_PROTO_ID<sp/>PRE_WIZE_PROTO_ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>WIZE_PROTO_ID<sp/>STD_WIZE_PROTO_ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>L6_DOWNLOAD_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>L6_DOWNLOAD_VER<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>L2<sp/>related</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"></highlight><highlight class="preprocessor">#define<sp/>LFIELD_SZ<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor">#define<sp/>CFIELD_SZ<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor">#define<sp/>MFIELD_SZ<sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor">#define<sp/>AFIELD_SZ<sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor">#define<sp/>CLFIELD_SZ<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor">#define<sp/>L2DWNID_SZ<sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor">#define<sp/>DATA_PRI_MSK<sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor">#define<sp/>CRC_SZ<sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor">#define<sp/>RSCODE_SZ<sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="comment">//<sp/>L6<sp/>related</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor">#define<sp/>L6_CTRL_SZ<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="preprocessor">#define<sp/>L6_NETWID_SZ<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor">#define<sp/>L6_CPT_SZ<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="preprocessor">#define<sp/>L6_APP_SZ<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor">#define<sp/>L6_DWN_VERS_SZ<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="preprocessor">#define<sp/>L6_DWN_B_NUM_SZ<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="preprocessor">#define<sp/>L6_HASH_KENC_SZ<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="preprocessor">#define<sp/>L6_TSTAMP_SZ<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor">#define<sp/>L6_EPOCH_SZ<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="preprocessor">#define<sp/>L6_TX_FREQ_OFFSET_SZ<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor">#define<sp/>L6_HASH_KMAC_SZ<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="preprocessor">#define<sp/>L6_HASH_KLOG_SZ<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>FRAME_SEND_MAX_SZ<sp/>229</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FRAME_SEND_MAX_SZ<sp/>\</highlight></codeline>
+<codeline lineno="201"><highlight class="preprocessor">(255<sp/>-<sp/>(<sp/>\</highlight></codeline>
+<codeline lineno="202"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>10<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="203"><highlight class="preprocessor">CFIELD_SZ<sp/>+<sp/>MFIELD_SZ<sp/>+<sp/>AFIELD_SZ<sp/>+<sp/>CLFIELD_SZ<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="204"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/>5<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="205"><highlight class="preprocessor">L6_CTRL_SZ<sp/>+<sp/>L6_NETWID_SZ<sp/>+<sp/>L6_CPT_SZ<sp/>+<sp/>L6_APP_SZ<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="206"><highlight class="preprocessor"><sp/></highlight><highlight class="comment">/*<sp/>8<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="207"><highlight class="preprocessor">L6_HASH_KENC_SZ<sp/>+<sp/>L6_TSTAMP_SZ<sp/>+<sp/>L6_HASH_KMAC_SZ<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="208"><highlight class="preprocessor"><sp/></highlight><highlight class="comment">/*<sp/>2<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="209"><highlight class="preprocessor">CRC_SZ))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="220" refid="group__wize__proto_1ga1a0a46f77e325aedcaff534bc2322dfc" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="221" refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfca3935419f7b608e0bf1f4733ec67a6073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfca3935419f7b608e0bf1f4733ec67a6073" kindref="member">INSTPONG</ref><sp/><sp/>=<sp/>0x06,<sp/></highlight></codeline>
+<codeline lineno="222" refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcae26d84a703b1893db1db8a455beb5c27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcae26d84a703b1893db1db8a455beb5c27" kindref="member">INSTPING</ref><sp/><sp/>=<sp/>0x46,<sp/></highlight></codeline>
+<codeline lineno="223" refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcae680fa7eb860abe7832f792cc18a44b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcae680fa7eb860abe7832f792cc18a44b4" kindref="member">COMMAND</ref><sp/><sp/><sp/>=<sp/>0x43,<sp/></highlight></codeline>
+<codeline lineno="224" refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcafb95ee545d749f11305939b93fe2bda3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcafb95ee545d749f11305939b93fe2bda3" kindref="member">RESPONSE</ref><sp/><sp/>=<sp/>0x08,<sp/></highlight></codeline>
+<codeline lineno="225" refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfca9d7d6f31868d66330397c967c4afd2d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfca9d7d6f31868d66330397c967c4afd2d2" kindref="member">DATA</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x44,<sp/></highlight></codeline>
+<codeline lineno="226" refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcadf97958b486f179ea7e95ab2b2107ca3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfcadf97958b486f179ea7e95ab2b2107ca3" kindref="member">DATA_PRIO</ref><sp/>=<sp/><ref refid="group__wize__proto_1gga1a0a46f77e325aedcaff534bc2322dfca9d7d6f31868d66330397c967c4afd2d2" kindref="member">DATA</ref><sp/>|<sp/>DATA_PRI_MSK,<sp/></highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}<ref refid="group__wize__proto_1ga1a0a46f77e325aedcaff534bc2322dfc" kindref="member">cfield_e</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>L2<sp/>Layer<sp/>fields<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="structl2__exch__header__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235" refid="structl2__exch__header__t_1a868604ad2004481eb2040341e16d023c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl2__exch__header__t_1a868604ad2004481eb2040341e16d023c" kindref="member">Cfield</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="236" refid="structl2__exch__header__t_1a19ce08b1cc4e9864c2590222f0ce055e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Mfield[MFIELD_SZ];<sp/></highlight></codeline>
+<codeline lineno="237" refid="structl2__exch__header__t_1a03b3bcefab723a4dea1e94f54e6db52b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Afield[AFIELD_SZ];<sp/></highlight></codeline>
+<codeline lineno="238" refid="structl2__exch__header__t_1a6f4fc3f1abc6604c5603bbb31a0f07ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl2__exch__header__t_1a6f4fc3f1abc6604c5603bbb31a0f07ad" kindref="member">Cifield</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}<ref refid="structl2__exch__header__t" kindref="compound">l2_exch_header_t</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="structl2__down__header__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245" refid="structl2__down__header__t_1a42b35f5fed2b95c0db790bc3b9c0dc48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L2DownId[L2DWNID_SZ];<sp/></highlight></codeline>
+<codeline lineno="247"><highlight class="normal">}<ref refid="structl2__down__header__t" kindref="compound">l2_down_header_t</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252" refid="structl2__exch__footer__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="253" refid="structl2__exch__footer__t_1a9f7cf33e6b56fd1f0da8d241790d9878" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Crc[CRC_SZ];<sp/></highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}<ref refid="structl2__exch__footer__t" kindref="compound">l2_exch_footer_t</ref>;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="structl2__down__footer__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="260" refid="structl2__down__footer__t_1adf912fe0f4b286ddcc6ada4db5d6923f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Crc[CRC_SZ];<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="261" refid="structl2__down__footer__t_1a53c3bba0ee23f857d530e32d5ea00cd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>Rs[RSCODE_SZ];<sp/></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}<ref refid="structl2__down__footer__t" kindref="compound">l2_down_footer_t</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>L6<sp/>Layer<sp/>fields<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="structl6__exch__header__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="271" refid="structl6__exch__header__t_1a7215967d9f36727c721c0e7e017ed617" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl6__exch__header__t_1a7215967d9f36727c721c0e7e017ed617" kindref="member">L6Ctrl</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273" refid="structl6__exch__header__t_1ae21c7b61060afa3ded81abeae1856918" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl6__exch__header__t_1ae21c7b61060afa3ded81abeae1856918" kindref="member">KEYSEL</ref>:4;<sp/></highlight></codeline>
+<codeline lineno="274" refid="structl6__exch__header__t_1a3b3d2c3b44c6b7f851c7311a13bc7a03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl6__exch__header__t_1a3b3d2c3b44c6b7f851c7311a13bc7a03" kindref="member">WTS</ref>:1;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="275" refid="structl6__exch__header__t_1abc8c8d23c4bd258bb7f2c691eb6dc177" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl6__exch__header__t_1abc8c8d23c4bd258bb7f2c691eb6dc177" kindref="member">VERS</ref>:3;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}L6Ctrl_b;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>L6VERS<sp/>==<sp/>L6VER_WIZE_REV_1_0<sp/>||<sp/>L6VERS<sp/>==<sp/>L6VER_WIZE_REV_1_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="structl6__exch__header__t_1a77f43e358d4f1daf3f2de3419a9799ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl6__exch__header__t_1a77f43e358d4f1daf3f2de3419a9799ea" kindref="member">L6NetwId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="280"><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="structl6__exch__header__t_1a06846b9e20d2eaf2b36d7354a83deed6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L6Cpt[L6_CPT_SZ];<sp/></highlight></codeline>
+<codeline lineno="282"><highlight class="preprocessor">#if<sp/>L6VERS<sp/>==<sp/>L6VER_WIZE_REV_1_0<sp/>||<sp/>L6VERS<sp/>==<sp/>L6VER_WIZE_REV_1_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="structl6__exch__header__t_1af2c28c0a1eba082be846d9acabc06119" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl6__exch__header__t_1af2c28c0a1eba082be846d9acabc06119" kindref="member">L6App</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="284"><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal">}<ref refid="structl6__exch__header__t" kindref="compound">l6_exch_header_t</ref>;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="structl6__down__header__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="291" refid="structl6__down__header__t_1a508e7f7d415c995aa102cba943210836" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structl6__down__header__t_1a508e7f7d415c995aa102cba943210836" kindref="member">L6DownVer</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="292" refid="structl6__down__header__t_1a0be3ff0a53585c6bdfa26e729c113291" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L6DownBnum[L6_DWN_B_NUM_SZ];<sp/></highlight></codeline>
+<codeline lineno="293"><highlight class="normal">}<ref refid="structl6__down__header__t" kindref="compound">l6_down_header_t</ref>;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298" refid="structl6__exch__footer__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="300" refid="structl6__exch__footer__t_1a96635abef47c22b8f3f078299b3f2aa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>L6HashKenc[L6_HASH_KENC_SZ];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>Epoch[L6_EPOCH_SZ];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="309" refid="structl6__exch__footer__t_1a05458e7d9f779cb68e0cbc20721456cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>L6TStamp[L6_TSTAMP_SZ];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>TxFreqOffset[L6_TX_FREQ_OFFSET_SZ];<sp/></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="315" refid="structl6__exch__footer__t_1a2e4f36dc000e5a243575a840e7892d63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L6HKmac[L6_HASH_KMAC_SZ];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="320"><highlight class="normal">}<ref refid="structl6__exch__footer__t" kindref="compound">l6_exch_footer_t</ref>;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325" refid="structl6__down__footer__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="326" refid="structl6__down__footer__t_1a2e3edfecc0ed96165f2cfbda52047957" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L6HashLog[L6_HASH_KLOG_SZ];<sp/></highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}<ref refid="structl6__down__footer__t" kindref="compound">l6_down_footer_t</ref>;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336" refid="structproto__config__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structproto__config__s" kindref="compound">proto_config_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="338" refid="structproto__config__s_1ab5cbcc4f37b9abee03f06ac84f6cfe33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1ab5cbcc4f37b9abee03f06ac84f6cfe33" kindref="member">filterDisL2</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="341" refid="structproto__config__s_1aa32c391c424e74a8ba9f1d2b31008346" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1aa32c391c424e74a8ba9f1d2b31008346" kindref="member">Crc</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="342" refid="structproto__config__s_1a2590c43a7dd3dbe9525c710084e22cde" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a2590c43a7dd3dbe9525c710084e22cde" kindref="member">AField</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="343" refid="structproto__config__s_1a8aeb35c5020f286902d569ff2bd89336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a8aeb35c5020f286902d569ff2bd89336" kindref="member">MField</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="344" refid="structproto__config__s_1ad4b8472d4fe5a2d610e2803ae28c97d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1ad4b8472d4fe5a2d610e2803ae28c97d7" kindref="member">CiField</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="345" refid="structproto__config__s_1a78d02a4adf9b60b663c36c70004d1204" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a78d02a4adf9b60b663c36c70004d1204" kindref="member">DownId</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>filterDisL2_b;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="349" refid="structproto__config__s_1ad58221ec901d50647ef5f05156cea5cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1ad58221ec901d50647ef5f05156cea5cf" kindref="member">filterDisL6</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="352" refid="structproto__config__s_1a915919b0d280038228d6eec95adeacff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a915919b0d280038228d6eec95adeacff" kindref="member">App</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="353" refid="structproto__config__s_1a5339d654e44d046467dc5f1185cb7011" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a5339d654e44d046467dc5f1185cb7011" kindref="member">HashKmac</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="354" refid="structproto__config__s_1a468b3134a933f07056083f808b46f611" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a468b3134a933f07056083f808b46f611" kindref="member">HashKenc</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="355" refid="structproto__config__s_1a6543689a9a853111b4ea967ecf8f38ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a6543689a9a853111b4ea967ecf8f38ef" kindref="member">NetId</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="356" refid="structproto__config__s_1a3b0b5dd7979be6b280b5bc77b8195a4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a3b0b5dd7979be6b280b5bc77b8195a4a" kindref="member">Ciph</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>filterDisL6_b;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="361" refid="structproto__config__s_1ab83fbb4b7b7f8d76c9e9900088fdc200" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1ab83fbb4b7b7f8d76c9e9900088fdc200" kindref="member">u8TransLenMax</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="362" refid="structproto__config__s_1a64bfa3d8357e788759a2f0a81a3e1036" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a64bfa3d8357e788759a2f0a81a3e1036" kindref="member">u8RecvLenMax</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="363" refid="structproto__config__s_1a1cc4e092be8d10b81d7c21619827860d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a1cc4e092be8d10b81d7c21619827860d" kindref="member">u8NetId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="364" refid="structproto__config__s_1aad3aff4bd0aa8811ba6a3eb84da25fe4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1aad3aff4bd0aa8811ba6a3eb84da25fe4" kindref="member">DwnId</ref>[3];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="366" refid="structproto__config__s_1a2c3480002b2101f9224a0a79102bcd14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a2c3480002b2101f9224a0a79102bcd14" kindref="member">AppInst</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="367" refid="structproto__config__s_1a0debf031a80613a4181218b381e58117" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1a0debf031a80613a4181218b381e58117" kindref="member">AppAdm</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="368" refid="structproto__config__s_1acc4931beca9130b1f9ead80296447a82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__config__s_1acc4931beca9130b1f9ead80296447a82" kindref="member">AppData</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="369"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374" refid="structproto__ctx__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref></highlight></codeline>
+<codeline lineno="375"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="376" refid="structproto__ctx__s_1a403c67c98c82f08aec36ec663549842b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structproto__config__s" kindref="compound">proto_config_s</ref><sp/><ref refid="structproto__ctx__s_1a403c67c98c82f08aec36ec663549842b" kindref="member">sProtoConfig</ref>;<sp/></highlight></codeline>
+<codeline lineno="377" refid="structproto__ctx__s_1a3ec0ac49cb94807f4bf2c6e633ecf52f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structproto__stats__s" kindref="compound">proto_stats_s</ref><sp/><sp/><ref refid="structproto__ctx__s_1a3ec0ac49cb94807f4bf2c6e633ecf52f" kindref="member">sProtoStats</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="378" refid="structproto__ctx__s_1a568060bc25d8a8ee40cd090a5ed8c190" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="structproto__ctx__s_1a568060bc25d8a8ee40cd090a5ed8c190" kindref="member">pBuffer</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="379" refid="structproto__ctx__s_1aadb73caecec026dc7fd1b216ea527cee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__ctx__s_1aadb73caecec026dc7fd1b216ea527cee" kindref="member">u8Size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="381" refid="structproto__ctx__s_1a2d2778fe4551cc5080349d853b8f8910" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__ctx__s_1a2d2778fe4551cc5080349d853b8f8910" kindref="member">aDeviceManufID</ref>[MFIELD_SZ];<sp/><sp/></highlight></codeline>
+<codeline lineno="382" refid="structproto__ctx__s_1a4d94c092c1b93513528b0858ffc53eb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structproto__ctx__s_1a4d94c092c1b93513528b0858ffc53eb6" kindref="member">aDeviceAddr</ref>[AFIELD_SZ];<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="383"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PROTO_PRIVATE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h"/>
+  </compounddef>
+</doxygen>

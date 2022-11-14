@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Système de construction &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation avancée</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Système de construction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/advanced_documentation/build_system.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="build-system">
+<h1>Système de construction<a class="headerlink" href="#build-system" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Le système de construction est basé sur l’outil CMake qui génère des makefiles. Chaque répertoire à construire doit inclure un fichier <em>CMakeList.txt</em> qui donne les règles « comment » et « quoi » construire. De plus, d’autres fichiers <em>cmake</em> fournissent un support d’aide pour les règles communes ou génériques. Ces derniers fichiers sont situés dans le répertoire <em>tools/build_suport</em>.</p>
+</section>
+<section id="build-support">
+<h2>Support de construction<a class="headerlink" href="#build-support" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="toolchain-config-cmake">
+<h3>toolchain-config.cmake<a class="headerlink" href="#toolchain-config-cmake" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Ce fichier donne des règles pour sélectionner la chaîne d’outils à utiliser. Il s’appuie sur <em>native_toolchain-config.cmake</em> et <em>cross_toolchain-config.cmake</em>.</p>
+</section>
+<section id="native-toolchain-config-cmake">
+<h3>native_toolchain-config.cmake<a class="headerlink" href="#native-toolchain-config-cmake" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Définir le minimum pour pouvoir compiler pour une cible x86 native.</p>
+</section>
+<section id="cross-toolchain-config-cmake">
+<h3>cross_toolchain-config.cmake<a class="headerlink" href="#cross-toolchain-config-cmake" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Définir le arm-none-eabi-xx comme compilateur croisé à utiliser.</p>
+</section>
+<section id="config-support-config-cmake">
+<h3>config_support-config.cmake<a class="headerlink" href="#config-support-config-cmake" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Ce fichier fournit des macros ou des fonctions d’aide pour :</p>
+<ul>
+<li><p><em>get_cfg</em> : cette macro inclut votre propre cmake spécifique à la plate-forme. Basée sur les arguments de ligne de commande <em>BUILD_CFG</em> et <em>BUILD_CFG_DIR</em>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>BUILD_CFG :</dt><dd><p>Le nom de fichier de votre cmake spécifique (par exemple -DBUILD_CFG=Nucleo-L476.cmake).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>BUILD_CFG_DIR :</dt><dd><p>Le chemin où se trouve votre cmake spécifique (par exemple -DBUILD_CFG_DIR=demo/Nucleo-L476). Le chemin par défaut est « demo ».</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>De plus, cette macro extraira les informations git et produira le fichier <code class="docutils literal notranslate"><span class="pre">version.h</span></code> (voir <a class="reference internal" href="#git-info-config-cmake">git_info_config.cmake</a>).</p>
+</div></blockquote>
+</li>
+<li><p><em>setup_config</em> : cette fonction génère un fichier <em>.h</em> à partir du fichier <em>.in</em>.</p>
+<blockquote>
+<div><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">setup_config</span><span class="p">(</span>
+<span class="w">   </span><span class="s">NAME</span><span class="w"> </span><span class="s">&lt;file&gt;</span>
+<span class="w">   </span><span class="s">SOURCE</span><span class="w"> </span><span class="s">&lt;src/path&gt;</span>
+<span class="w">   </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">&lt;dest/path&gt;</span>
+<span class="w">   </span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>&lt;file&gt;      : le nom du fichier (sans extension) donné pour l’entrée et la sortie.</p></li>
+<li><p>&lt;src/path&gt; : le chemin de la source du fichier « file ».in</p></li>
+<li><p>&lt;dest/path&gt; : la destination où écrire le fichier « file ».h</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="install-support-config-cmake">
+<h3>install_support-config.cmake<a class="headerlink" href="#install-support-config-cmake" title="Lien permanent vers cette rubrique"></a></h3>
+<ul>
+<li><p><em>setup_install</em> : fonction d’aide pour créer une cible d’installation</p>
+<blockquote>
+<div><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">setup_install</span><span class="p">(</span>
+<span class="w">   </span><span class="s">TARGET</span><span class="w">    </span><span class="s">&lt;target&gt;</span>
+<span class="w">   </span><span class="s">NAMESPACE</span><span class="w"> </span><span class="s">&lt;namesapce&gt;</span>
+<span class="w">   </span><span class="s">DEPENDS</span><span class="w">   </span><span class="s">&lt;depends&gt;</span>
+<span class="w">   </span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>&lt;target&gt;    : le nom de la cible d’installation à créer</p></li>
+<li><p>&lt;namesapce&gt; : espace de nom facultatif</p></li>
+<li><p>&lt;depends&gt;   : une liste d’autres cibles dont dépend notre cible</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="git-info-config-cmake">
+<h3>git_info_config.cmake<a class="headerlink" href="#git-info-config-cmake" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Ce fichier fournit des fonctions permettant d’extraire des informations de git et génère un fichier « version.h ».</p>
+<ul>
+<li><p><em>gitinfo</em> : extrait les informations git</p>
+<blockquote>
+<div><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">gitinfo</span><span class="p">(</span><span class="w"> </span><span class="s">&lt;working</span><span class="w"> </span><span class="s">directory&gt;</span><span class="w"> </span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>&lt;répertoire de travail&gt; : répertoire de base où trouver les informations git.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><em>version_from_git</em> : génère le fichier « version.h</p>
+<blockquote>
+<div><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">version_from_git</span><span class="p">(</span><span class="w"> </span><span class="s">&lt;config_file_path&gt;</span><span class="w"> </span><span class="s">&lt;version_file&gt;</span><span class="w"> </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Exemple de contenu de version.h :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef _VERSION_H_</span>
+<span class="cp">#define _VERSION_H_</span>
+
+<span class="cp">#define GIT_RETRIEVED_STATE false</span>
+<span class="cp">#define GIT_HEAD_SHA1 7bddf62f904a664a8c56be7904c13a8b57543222</span>
+<span class="cp">#define GIT_DESCRIBE 7bddf62</span>
+<span class="cp">#define GIT_IS_DIRTY 1</span>
+
+<span class="cp">#define GIT_TAG &quot;UNK.99.99.99&quot; </span><span class="c1">// undefined</span>
+<span class="cp">#define GIT_FW_VER_TYPE &quot;UNK&quot;</span>
+<span class="cp">#define GIT_FW_VER_MAJ 99</span>
+<span class="cp">#define GIT_FW_VER_MIN 99</span>
+<span class="cp">#define GIT_FW_VER_REV 99</span>
+
+<span class="cp">#define GIT_AUTHOR_NAME &quot;&quot;</span>
+<span class="cp">#define GIT_AUTHOR_EMAIL &quot;&quot;</span>
+
+<span class="cp">#define GIT_COMMIT_DATE_ISO8601 &quot;2022-02-22 07:45:43 +0100&quot;</span>
+<span class="cp">#define GIT_COMMIT_SUBJECT &quot;[FEATURE] Add the possibility to auto generate default parameters&quot;</span>
+<span class="cp">#define GIT_COMMIT_BODY &quot;&quot;</span>
+
+<span class="cp">#endif </span><span class="cm">/* _VERSION_H_ */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="gen-param-config-cmake">
+<h3>gen_param-config.cmake<a class="headerlink" href="#gen-param-config-cmake" title="Lien permanent vers cette rubrique"></a></h3>
+<ul>
+<li><p><em>gen_param</em> : génère les fichiers de paramètres « .c » et « .h » à partir de xml</p>
+<blockquote>
+<div><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">gen_param</span><span class="p">(</span>
+<span class="w">   </span><span class="s">SOURCE</span><span class="w"> </span><span class="s">&lt;src/path&gt;</span>
+<span class="w">   </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">&lt;dest/path&gt;</span>
+<span class="w">   </span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>&lt;src/path&gt;  : chemin où trouver les fichiers xml. Les deux fichiers DefaultParams.xml et DefaultRestr.xml doivent être définis.</p></li>
+<li><p>&lt;dest/path&gt; : chemin où les fichiers de paramètres seront générés.</p></li>
+</ul>
+</div></blockquote>
+<p>Option de ligne de commande :</p>
+<ul class="simple">
+<li><p><strong>GENERATE_PARAM</strong> : booléen, par défaut OFF</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

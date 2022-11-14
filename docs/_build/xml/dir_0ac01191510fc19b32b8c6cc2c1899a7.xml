@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_0ac01191510fc19b32b8c6cc2c1899a7" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/WizeCore/net/src</compoundname>
+    <innerfile refid="net__api_8c">net_api.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/src/"/>
+  </compounddef>
+</doxygen>

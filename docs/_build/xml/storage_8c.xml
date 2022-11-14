@@ -1,0 +1,508 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="storage_8c" kind="file" language="C++">
+    <compoundname>storage.c</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="storage_8h" local="yes">storage.h</includes>
+    <includes refid="parameters__cfg_8h" local="yes">parameters_cfg.h</includes>
+    <includes refid="parameters_8h" local="yes">parameters.h</includes>
+    <includes refid="phy__layer_8h" local="yes">phy_layer.h</includes>
+    <includes refid="wize__api_8h" local="yes">wize_api.h</includes>
+    <includes refid="crypto_8h" local="yes">crypto.h</includes>
+    <includes refid="key__priv_8h" local="yes">key_priv.h</includes>
+    <incdepgraph>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="8">
+        <label>parameters.h</label>
+        <link refid="parameters_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="10">
+        <label>wize_api.h</label>
+        <link refid="wize__api_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>OpenWize_config.h</label>
+      </node>
+      <node id="14">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>parameters_cfg.h</label>
+        <link refid="parameters__cfg_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="21">
+        <label>key_priv.h</label>
+        <link refid="key__priv_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>app_layer.h</label>
+        <link refid="app__layer_8h"/>
+      </node>
+      <node id="11">
+        <label>wize_banner.h</label>
+        <link refid="wize__banner_8h"/>
+      </node>
+      <node id="4">
+        <label>storage.h</label>
+        <link refid="storage_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>net_api.h</label>
+        <link refid="net__api_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>stdio.h</label>
+      </node>
+      <node id="20">
+        <label>crypto.h</label>
+        <link refid="crypto_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_ParamDefault[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamDefault</name>
+        <briefdescription>
+<para>This array define the parameter default value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="65" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="35" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" declline="65" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga84f49efe2202fbe3028f42d5fb3553be" prot="public" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t u16_ParamValueSz</definition>
+        <argsstring></argsstring>
+        <name>u16_ParamValueSz</name>
+        <initializer>= PARAM_DEFAULT_SZ</initializer>
+        <briefdescription>
+<para>The parameters values table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters table value size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="70" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga967743ed3bc6da990464bb439c2aa818" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamAccessCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamAccessCfgSz</name>
+        <initializer>= PARAM_ACCESS_CFG_SZ</initializer>
+        <briefdescription>
+<para>The parameters access table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters access table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="75" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga391accc1c1e9dac0d3468a8310475d01" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamRestrCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamRestrCfgSz</name>
+        <initializer>= PARAM_RESTR_CFG_SZ</initializer>
+        <briefdescription>
+<para>The restriction table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters restriction table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="80" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__app_1ga8efcaca0e25b0a89c34cce4339320449" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structkey__s" kindref="compound">key_s</ref></type>
+        <definition>const key_s sDefaultKey[KEY_MAX_NB]</definition>
+        <argsstring>[KEY_MAX_NB]</argsstring>
+        <name>sDefaultKey</name>
+        <initializer>=
+{
+	[0] = {
+	.key = {
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+	}},
+	[<ref refid="group__crypto_1ga34a3087269df4035dbaaf854ef20d9a2" kindref="member">KEY_ENC_MIN</ref>+1] = {
+	.key = {
+		0x55, 0x22, 0x19, 0xe2, 0x65, 0xeb, 0xb4, 0x8c,
+		0x8a, 0xdf, 0x58, 0x71, 0x79, 0xd9, 0xc6, 0xb0,
+		0x63, 0xd5, 0x7c, 0xa8, 0xd3, 0x7e, 0xd6, 0xcb,
+		0x11, 0x51, 0xa7, 0x59, 0xcc, 0xad, 0xba, 0x40
+	}},
+	[<ref refid="group__crypto_1gab76bbd9bd618178561644c64376be30b" kindref="member">KEY_MAC_ID</ref>] = {
+	.key = {
+		0x88, 0xe3, 0x35, 0x63, 0x8f, 0x52, 0x19, 0x46,
+		0xc3, 0x8e, 0x32, 0xee, 0xba, 0xa3, 0xc9, 0x9f,
+		0x4a, 0xe7, 0x0b, 0xfb, 0x2b, 0xb2, 0x53, 0x40,
+		0x25, 0x04, 0x85, 0x76, 0xe3, 0x81, 0xfe, 0xad
+	}}
+}</initializer>
+        <briefdescription>
+<para>This define some hard-coded default keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="139" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__app_1ga4dd337842bc6ba433c2808c8ec30c068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PERM_SECTION</definition>
+        <argsstring>(&quot;.param&quot;)</argsstring>
+        <name>PERM_SECTION</name>
+        <param>
+          <type>&quot;.param&quot;</type>
+        </param>
+        <briefdescription>
+<para>Table of parameters values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This define hard-coded default device id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="86" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="86" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1gae0f99880290b115dc6ef20b3157f17b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KEY_SECTION</definition>
+        <argsstring>(&quot;.data.keys&quot;)</argsstring>
+        <name>KEY_SECTION</name>
+        <param>
+          <type>&quot;.data.keys&quot;</type>
+        </param>
+        <briefdescription>
+<para>Table of keys. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This initialize the storage area</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">bForce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Force to defaults.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="167" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="167" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="group__app_1gae8170e1e320af9706766d7fdb1cfe1e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Storage_SetDefault</definition>
+        <argsstring>(void)</argsstring>
+        <name>Storage_SetDefault</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set to defaults device id, all parameters and all keys. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" line="204" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="204" bodyend="210" declfile="/home/nono/OpenWize/demo/Nucleo-L476/app/include/storage.h" declline="43" declcolumn="6"/>
+        <references refid="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" compoundref="wize__api_8c" startline="66" endline="73">WizeApi_SetDeviceId</references>
+        <references refid="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" compoundref="parameters_8c" startline="265" endline="268">Param_Init</references>
+        <references refid="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" compoundref="parameters__default_8c" startline="35">a_ParamDefault</references>
+        <references refid="group__crypto_1ga21956ce69b049977e54c004831c9bdcb">_a_Key_</references>
+        <references refid="group__app_1ga8efcaca0e25b0a89c34cce4339320449" compoundref="storage_8c" startline="139">sDefaultKey</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file implement storage functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/02/07 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="storage_8h" kindref="compound">storage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">#ifndef<sp/>PERM_SECTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PERM_SECTION(psection)<sp/>__attribute__((<sp/>section(psection)<sp/>))<sp/>__attribute__((used))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>KEY_SECTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KEY_SECTION(ksection)<sp/>__attribute__((<sp/>section(ksection)<sp/>))<sp/>__attribute__((used))<sp/><sp/>__attribute__((<sp/>aligned<sp/>(2048)<sp/>))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters__cfg_8h" kindref="compound">parameters_cfg.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters_8h" kindref="compound">parameters.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" kindref="member">a_ParamDefault</ref>[];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="group__app_1ga84f49efe2202fbe3028f42d5fb3553be" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="group__app_1ga84f49efe2202fbe3028f42d5fb3553be" kindref="member">u16_ParamValueSz</ref><sp/>=<sp/>PARAM_DEFAULT_SZ;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="group__app_1ga967743ed3bc6da990464bb439c2aa818" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__app_1ga967743ed3bc6da990464bb439c2aa818" kindref="member">u8_ParamAccessCfgSz</ref><sp/>=<sp/>PARAM_ACCESS_CFG_SZ;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="group__app_1ga391accc1c1e9dac0d3468a8310475d01" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__app_1ga391accc1c1e9dac0d3468a8310475d01" kindref="member">u8_ParamRestrCfgSz</ref><sp/>=<sp/>PARAM_RESTR_CFG_SZ;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="group__app_1ga4dd337842bc6ba433c2808c8ec30c068" refkind="member"><highlight class="normal"><ref refid="group__app_1ga4dd337842bc6ba433c2808c8ec30c068" kindref="member">PERM_SECTION</ref>(</highlight><highlight class="stringliteral">&quot;.param&quot;</highlight><highlight class="normal">)<sp/>uint8_t<sp/><ref refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" kindref="member">a_ParamValue</ref>[PARAM_DEFAULT_SZ];</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;phy_layer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="wize__api_8h" kindref="compound">wize_api.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="uniondevice__id__t" kindref="compound">device_id_t</ref><sp/>sDefaultDevId<sp/>=</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>How<sp/>does<sp/>it<sp/>work<sp/>?</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>(<sp/>The<sp/>Manufacturer<sp/>ID<sp/>shall<sp/>be<sp/>registered<sp/>with<sp/>the<sp/>Flag<sp/>association<sp/>30</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>http://www.dlms.com/organization/flagmanufacturesids/index.html)</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/>Device<sp/>number<sp/>:<sp/>SET<sp/>00<sp/>02<sp/>82<sp/>22<sp/>30<sp/>03</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/>Position<sp/>in<sp/>alphabet</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>SET<sp/>=&gt;<sp/>&apos;S&apos;<sp/>:<sp/>19;<sp/>&apos;E&apos;<sp/>:<sp/>5;<sp/>&apos;T&apos;<sp/>:<sp/>20</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>Manufacturer<sp/>ID<sp/>=&gt;<sp/>(<sp/>pos(&apos;S&apos;)<sp/>&lt;&lt;<sp/>5<sp/>+<sp/>pos(&apos;E&apos;))<sp/>&lt;&lt;<sp/>5<sp/>+<sp/>pos(&apos;T&apos;)<sp/>=<sp/>(19<sp/>&lt;&lt;<sp/>5<sp/>+<sp/>5)<sp/>&lt;&lt;<sp/>5<sp/>+<sp/>20</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>So,<sp/>:</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>Manufacturer<sp/>=<sp/>0xB44C</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>TRx<sp/>Number<sp/><sp/><sp/>=<sp/>0x00028222</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>Version<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x30</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>Type<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x03</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>Then<sp/>:</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>sDeviceInfo<sp/>=</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.aManuf<sp/>=<sp/>{<sp/>0x4C,<sp/>0xB4<sp/>},</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.aNum<sp/>=<sp/>{0x22,<sp/>0x82,<sp/>0x02,<sp/>0x00},</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u8Ver<sp/>=<sp/>0x30,</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u8Type<sp/>=<sp/>0x03</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">//==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="uniondevice__id__t_1a0df42a84ec5775a10104ef89549d4b81" kindref="member">aManuf</ref><sp/>=<sp/>{<sp/>0xFF,<sp/>0xFF<sp/>},</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>.aNum<sp/>=<sp/>{0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00},</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>.u8Ver<sp/>=<sp/>0x00,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>.u8Type<sp/>=<sp/>0x00</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="crypto_8h" kindref="compound">crypto.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="key__priv_8h" kindref="compound">key_priv.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="group__app_1ga8efcaca0e25b0a89c34cce4339320449" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structkey__s" kindref="compound">key_s</ref><sp/><ref refid="group__app_1ga8efcaca0e25b0a89c34cce4339320449" kindref="member">sDefaultKey</ref>[<ref refid="group__crypto_1ga189381496bdc6329d20d84cb8dd755e4" kindref="member">KEY_MAX_NB</ref>]<sp/>=</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>[0]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>.key<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}},</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__crypto_1ga34a3087269df4035dbaaf854ef20d9a2" kindref="member">KEY_ENC_MIN</ref>+1]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>.key<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x55,<sp/>0x22,<sp/>0x19,<sp/>0xe2,<sp/>0x65,<sp/>0xeb,<sp/>0xb4,<sp/>0x8c,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x8a,<sp/>0xdf,<sp/>0x58,<sp/>0x71,<sp/>0x79,<sp/>0xd9,<sp/>0xc6,<sp/>0xb0,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x63,<sp/>0xd5,<sp/>0x7c,<sp/>0xa8,<sp/>0xd3,<sp/>0x7e,<sp/>0xd6,<sp/>0xcb,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x11,<sp/>0x51,<sp/>0xa7,<sp/>0x59,<sp/>0xcc,<sp/>0xad,<sp/>0xba,<sp/>0x40</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}},</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__crypto_1gab76bbd9bd618178561644c64376be30b" kindref="member">KEY_MAC_ID</ref>]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>.key<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x88,<sp/>0xe3,<sp/>0x35,<sp/>0x63,<sp/>0x8f,<sp/>0x52,<sp/>0x19,<sp/>0x46,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xc3,<sp/>0x8e,<sp/>0x32,<sp/>0xee,<sp/>0xba,<sp/>0xa3,<sp/>0xc9,<sp/>0x9f,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x4a,<sp/>0xe7,<sp/>0x0b,<sp/>0xfb,<sp/>0x2b,<sp/>0xb2,<sp/>0x53,<sp/>0x40,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x25,<sp/>0x04,<sp/>0x85,<sp/>0x76,<sp/>0xe3,<sp/>0x81,<sp/>0xfe,<sp/>0xad</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="group__app_1gae0f99880290b115dc6ef20b3157f17b1" refkind="member"><highlight class="normal"><ref refid="group__app_1gae0f99880290b115dc6ef20b3157f17b1" kindref="member">KEY_SECTION</ref>(</highlight><highlight class="stringliteral">&quot;.data.keys&quot;</highlight><highlight class="normal">)<sp/><ref refid="structkey__s" kindref="compound">key_s</ref><sp/><ref refid="group__crypto_1ga21956ce69b049977e54c004831c9bdcb" kindref="member">_a_Key_</ref>[<ref refid="group__crypto_1ga189381496bdc6329d20d84cb8dd755e4" kindref="member">KEY_MAX_NB</ref>];</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Storage_Init(uint8_t<sp/>bForce)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>tmp;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__app_1gae8170e1e320af9706766d7fdb1cfe1e2" kindref="member">Storage_SetDefault</ref>();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>the<sp/>current<sp/>key<sp/>id<sp/>to<sp/>0,<sp/>so<sp/>un-ciphered</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a6499e193ae1415baa9a1bf495503b066" kindref="member">CIPH_CURRENT_KEY</ref>,<sp/>&amp;tmp,<sp/>1);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>sessions<sp/>delay<sp/>and<sp/>length<sp/>to<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ae8d116e359c208b13a05d25b95664050" kindref="member">EXCH_RX_DELAY</ref>,<sp/>&amp;tmp,<sp/>1);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ad9d88e1d97915cba9035211569a65c3e" kindref="member">EXCH_RX_LENGTH</ref>,<sp/>&amp;tmp,<sp/>1);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ac6ad1efb873b4df9f79046fbef17331b" kindref="member">EXCH_RESPONSE_DELAY</ref>,<sp/>&amp;tmp,<sp/>1);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ab182a57062f656fbe03d7f87e18ff186" kindref="member">PING_RX_DELAY</ref>,<sp/>&amp;tmp,<sp/>1);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(<ref refid="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a3ce5f49938b37554e99a28ffc72c33ef" kindref="member">PING_RX_LENGTH</ref>,<sp/>&amp;tmp,<sp/>1);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="group__app_1gae8170e1e320af9706766d7fdb1cfe1e2" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__app_1gae8170e1e320af9706766d7fdb1cfe1e2" kindref="member">Storage_SetDefault</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" kindref="member">WizeApi_SetDeviceId</ref>(&amp;sDefaultDevId);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" kindref="member">Param_Init</ref>(<ref refid="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" kindref="member">a_ParamDefault</ref>);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<ref refid="group__crypto_1ga21956ce69b049977e54c004831c9bdcb" kindref="member">_a_Key_</ref>,<sp/><ref refid="group__app_1ga8efcaca0e25b0a89c34cce4339320449" kindref="member">sDefaultKey</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="group__crypto_1ga21956ce69b049977e54c004831c9bdcb" kindref="member">_a_Key_</ref>));</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c"/>
+  </compounddef>
+</doxygen>

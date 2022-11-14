@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_08616489330b918c725193c9914db8d0" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476</compoundname>
+    <innerdir refid="dir_0d3b93841b91dbee9b45e9dd843576aa">/home/nono/OpenWize/demo/Nucleo-L476/app</innerdir>
+    <innerdir refid="dir_9574cddd99766563c4b7319aef8548e8">/home/nono/OpenWize/demo/Nucleo-L476/board</innerdir>
+    <innerdir refid="dir_1a7fc780a7d3df8067659fbe7489ccd3">/home/nono/OpenWize/demo/Nucleo-L476/bsp</innerdir>
+    <innerdir refid="dir_d199a71e60dc6fbf639f93cd2f03e945">/home/nono/OpenWize/demo/Nucleo-L476/device</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/"/>
+  </compounddef>
+</doxygen>

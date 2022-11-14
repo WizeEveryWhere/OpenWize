@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structphydev__s" kind="struct" language="C++" prot="public">
+    <compoundname>phydev_s</compoundname>
+    <includes refid="phy__itf_8h" local="no">phy_itf.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" prot="public" static="no" mutable="no">
+        <type>const <ref refid="group__wize__phy__itf_1gaf90b2c7d7f93a02fae5a1091297d2da0" kindref="member">phy_if_t</ref> *</type>
+        <definition>const phy_if_t* phydev_s::pIf</definition>
+        <argsstring></argsstring>
+        <name>pIf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on device interface </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="206" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* phydev_s::pCxt</definition>
+        <argsstring></argsstring>
+        <name>pCxt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Device internal context </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="207" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a97825106a5e310ae1e43b70047872ae3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t phydev_s::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Device lock </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="208" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1ac3821f81d707a900df0217a416b4b790" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga623aece251345bfe9961f5dd8209756e" kindref="member">phydev_evt_cb_t</ref></type>
+        <definition>phydev_evt_cb_t phydev_s::pfEvtCb</definition>
+        <argsstring></argsstring>
+        <name>pfEvtCb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event notifier callback function </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="209" column="21" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a2628f59d90738794a98fa5c24525d6bb" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* phydev_s::pCbParam</definition>
+        <argsstring></argsstring>
+        <name>pCbParam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="210" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1ac9f9579c18b6f09c3a4bea4a93a64824" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+        <definition>phy_chan_e phydev_s::eChannel</definition>
+        <argsstring></argsstring>
+        <name>eChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current Channel </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="213" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a26edc2e93988475aa03eb83d04a05faf" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+        <definition>phy_mod_e phydev_s::eModulation</definition>
+        <argsstring></argsstring>
+        <name>eModulation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current modulation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="214" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga291dfaf5f6ccf284805be2245db277ce" kindref="member">phy_power_e</ref></type>
+        <definition>phy_power_e phydev_s::eTxPower</definition>
+        <argsstring></argsstring>
+        <name>eTxPower</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current TX power </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="215" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a42667e4ab058ce4fa965fd9a0e2d0b32" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t phydev_s::i16TxFreqOffset</definition>
+        <argsstring></argsstring>
+        <name>i16TxFreqOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current Frequency offset </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="216" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1ad19c9aa268ff02a7ea2c3cad0fa63d71" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t phydev_s::u16_Noise</definition>
+        <argsstring></argsstring>
+        <name>u16_Noise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Last noise measured </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="218" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a096fd42a8d13e21a06450f13b8bb26ee" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t phydev_s::u16_Rssi</definition>
+        <argsstring></argsstring>
+        <name>u16_Rssi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Last RSSI measured </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="219" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a9e1ef807491f03e95903fce3504fa76d" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t phydev_s::u16_Ferr</definition>
+        <argsstring></argsstring>
+        <name>u16_Ferr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Last frequency error measured </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="220" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1afdaae59da1cca8993e6cf25803943be2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t phydev_s::bCrcOn</definition>
+        <argsstring></argsstring>
+        <name>bCrcOn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enable/Disable PHY crc computation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="222" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1ae0cb196f2a06579bda4f79e07edf4462" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t phydev_s::bPreSyncOn</definition>
+        <argsstring></argsstring>
+        <name>bPreSyncOn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enable/Disable interrupt on PREMABLE and SYNCHRO </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="223" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphydev__s_1a4154a2e7bf6de54f19fb1eac3b2a56f7" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1gae24529cecc04657b44f4b4c4ece6843c" kindref="member">phy_test_mode_e</ref></type>
+        <definition>phy_test_mode_e phydev_s::eTestMode</definition>
+        <argsstring></argsstring>
+        <name>eTestMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current Test mode (internal) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="225" column="17" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PHY device structure. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>phydev_s</label>
+        <link refid="structphydev__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pIf</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>phy_if_s</label>
+        <link refid="structphy__if__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="205" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="205" bodyend="226"/>
+    <listofallmembers>
+      <member refid="structphydev__s_1afdaae59da1cca8993e6cf25803943be2" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>bCrcOn</name></member>
+      <member refid="structphydev__s_1ae0cb196f2a06579bda4f79e07edf4462" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>bPreSyncOn</name></member>
+      <member refid="structphydev__s_1ac9f9579c18b6f09c3a4bea4a93a64824" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>eChannel</name></member>
+      <member refid="structphydev__s_1a26edc2e93988475aa03eb83d04a05faf" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>eModulation</name></member>
+      <member refid="structphydev__s_1a4154a2e7bf6de54f19fb1eac3b2a56f7" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>eTestMode</name></member>
+      <member refid="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>eTxPower</name></member>
+      <member refid="structphydev__s_1a42667e4ab058ce4fa965fd9a0e2d0b32" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>i16TxFreqOffset</name></member>
+      <member refid="structphydev__s_1a97825106a5e310ae1e43b70047872ae3" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>lock</name></member>
+      <member refid="structphydev__s_1a2628f59d90738794a98fa5c24525d6bb" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>pCbParam</name></member>
+      <member refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>pCxt</name></member>
+      <member refid="structphydev__s_1ac3821f81d707a900df0217a416b4b790" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>pfEvtCb</name></member>
+      <member refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>pIf</name></member>
+      <member refid="structphydev__s_1a9e1ef807491f03e95903fce3504fa76d" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>u16_Ferr</name></member>
+      <member refid="structphydev__s_1ad19c9aa268ff02a7ea2c3cad0fa63d71" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>u16_Noise</name></member>
+      <member refid="structphydev__s_1a096fd42a8d13e21a06450f13b8bb26ee" prot="public" virt="non-virtual"><scope>phydev_s</scope><name>u16_Rssi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

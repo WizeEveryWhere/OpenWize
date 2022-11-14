@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="crc__sw_8c" kind="file" language="C++">
+    <compoundname>crc_sw.c</compoundname>
+    <includes refid="crc__sw_8h" local="yes">crc_sw.h</includes>
+    <includes local="no">stddef.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="2">
+        <label>crc_sw.h</label>
+        <link refid="crc__sw_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c</label>
+        <link refid="crc__sw_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__crc__sw_1ga7dbf5400aad8d5ae765da0bfc1e42fd2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>static uint16_t _update_crc16_</definition>
+        <argsstring>(const uint16_t *p_Table, uint16_t u16_Crc, uint8_t u8_C)</argsstring>
+        <name>_update_crc16_</name>
+        <param>
+          <type>const uint16_t *</type>
+          <declname>p_Table</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Crc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_C</declname>
+        </param>
+        <briefdescription>
+<para>Private function to compute a part of the CRC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the polynomial table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Crc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CRC </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current byte to compute on </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>partial CRC. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="101" column="17" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="101" bodyend="107" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" declline="90" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crc__sw_1gad3751bf3eff7d03cb41cc250acea434e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t CRC_Compute</definition>
+        <argsstring>(uint8_t *p_Buf, uint8_t u8_Sz, uint16_t *p_Crc)</argsstring>
+        <name>CRC_Compute</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Buf</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>p_Crc</declname>
+        </param>
+        <briefdescription>
+<para>This function compute the CRC as defined by the EN13757 standard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the message buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Crc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Computed CRC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 success, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="117" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="117" bodyend="134" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h" declline="45" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crc__sw_1ga8a3bd45c35bbcb8fc6780c2eaa9394ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t CRC_Check</definition>
+        <argsstring>(uint16_t u16_CrcA, uint16_t u16_CrcB)</argsstring>
+        <name>CRC_Check</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_CrcA</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_CrcB</declname>
+        </param>
+        <briefdescription>
+<para>Check if two CRC are equal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_CrcA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First CRC </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_CrcB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second CRC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 equal; 0 otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="143" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="143" bodyend="146" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h" declline="44" declcolumn="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file expose function to compute and check a CRC. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/01/01[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="crc__sw_8h" kindref="compound">crc_sw.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>a_CrcTab[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>0x0000,<sp/>0x3D65,<sp/>0x7ACA,<sp/>0x47AF,<sp/>0xF594,<sp/>0xC8F1,<sp/>0x8F5E,<sp/>0xB23B,</highlight><highlight class="comment">//<sp/>1x<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>0xD64D,<sp/>0xEB28,<sp/>0xAC87,<sp/>0x91E2,<sp/>0x23D9,<sp/>0x1EBC,<sp/>0x5913,<sp/>0x6476,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>0x91FF,<sp/>0xAC9A,<sp/>0xEB35,<sp/>0xD650,<sp/>0x646B,<sp/>0x590E,<sp/>0x1EA1,<sp/>0x23C4,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>0x47B2,<sp/>0x7AD7,<sp/>0x3D78,<sp/>0x001D,<sp/>0xB226,<sp/>0x8F43,<sp/>0xC8EC,<sp/>0xF589,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>0x1E9B,<sp/>0x23FE,<sp/>0x6451,<sp/>0x5934,<sp/>0xEB0F,<sp/>0xD66A,<sp/>0x91C5,<sp/>0xACA0,</highlight><highlight class="comment">//<sp/>5x<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>0xC8D6,<sp/>0xF5B3,<sp/>0xB21C,<sp/>0x8F79,<sp/>0x3D42,<sp/>0x0027,<sp/>0x4788,<sp/>0x7AED,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>0x8F64,<sp/>0xB201,<sp/>0xF5AE,<sp/>0xC8CB,<sp/>0x7AF0,<sp/>0x4795,<sp/>0x003A,<sp/>0x3D5F,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>0x5929,<sp/>0x644C,<sp/>0x23E3,<sp/>0x1E86,<sp/>0xACBD,<sp/>0x91D8,<sp/>0xD677,<sp/>0xEB12,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>0x3D36,<sp/>0x0053,<sp/>0x47FC,<sp/>0x7A99,<sp/>0xC8A2,<sp/>0xF5C7,<sp/>0xB268,<sp/>0x8F0D,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>0xEB7B,<sp/>0xD61E,<sp/>0x91B1,<sp/>0xACD4,<sp/>0x1EEF,<sp/>0x238A,<sp/>0x6425,<sp/>0x5940,</highlight><highlight class="comment">//<sp/>10x<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>0xACC9,<sp/>0x91AC,<sp/>0xD603,<sp/>0xEB66,<sp/>0x595D,<sp/>0x6438,<sp/>0x2397,<sp/>0x1EF2,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>0x7A84,<sp/>0x47E1,<sp/>0x004E,<sp/>0x3D2B,<sp/>0x8F10,<sp/>0xB275,<sp/>0xF5DA,<sp/>0xC8BF,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>0x23AD,<sp/>0x1EC8,<sp/>0x5967,<sp/>0x6402,<sp/>0xD639,<sp/>0xEB5C,<sp/>0xACF3,<sp/>0x9196,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>0xF5E0,<sp/>0xC885,<sp/>0x8F2A,<sp/>0xB24F,<sp/>0x0074,<sp/>0x3D11,<sp/>0x7ABE,<sp/>0x47DB,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>0xB252,<sp/>0x8F37,<sp/>0xC898,<sp/>0xF5FD,<sp/>0x47C6,<sp/>0x7AA3,<sp/>0x3D0C,<sp/>0x0069,</highlight><highlight class="comment">//<sp/>15x<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>0x641F,<sp/>0x597A,<sp/>0x1ED5,<sp/>0x23B0,<sp/>0x918B,<sp/>0xACEE,<sp/>0xEB41,<sp/>0xD624,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>0x7A6C,<sp/>0x4709,<sp/>0x00A6,<sp/>0x3DC3,<sp/>0x8FF8,<sp/>0xB29D,<sp/>0xF532,<sp/>0xC857,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>0xAC21,<sp/>0x9144,<sp/>0xD6EB,<sp/>0xEB8E,<sp/>0x59B5,<sp/>0x64D0,<sp/>0x237F,<sp/>0x1E1A,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>0xEB93,<sp/>0xD6F6,<sp/>0x9159,<sp/>0xAC3C,<sp/>0x1E07,<sp/>0x2362,<sp/>0x64CD,<sp/>0x59A8,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>0x3DDE,<sp/>0x00BB,<sp/>0x4714,<sp/>0x7A71,<sp/>0xC84A,<sp/>0xF52F,<sp/>0xB280,<sp/>0x8FE5,</highlight><highlight class="comment">//<sp/>20x<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>0x64F7,<sp/>0x5992,<sp/>0x1E3D,<sp/>0x2358,<sp/>0x9163,<sp/>0xAC06,<sp/>0xEBA9,<sp/>0xD6CC,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>0xB2BA,<sp/>0x8FDF,<sp/>0xC870,<sp/>0xF515,<sp/>0x472E,<sp/>0x7A4B,<sp/>0x3DE4,<sp/>0x0081,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>0xF508,<sp/>0xC86D,<sp/>0x8FC2,<sp/>0xB2A7,<sp/>0x009C,<sp/>0x3DF9,<sp/>0x7A56,<sp/>0x4733,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>0x2345,<sp/>0x1E20,<sp/>0x598F,<sp/>0x64EA,<sp/>0xD6D1,<sp/>0xEBB4,<sp/>0xAC1B,<sp/>0x917E,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>0x475A,<sp/>0x7A3F,<sp/>0x3D90,<sp/>0x00F5,<sp/>0xB2CE,<sp/>0x8FAB,<sp/>0xC804,<sp/>0xF561,</highlight><highlight class="comment">//<sp/>25x<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>0x9117,<sp/>0xAC72,<sp/>0xEBDD,<sp/>0xD6B8,<sp/>0x6483,<sp/>0x59E6,<sp/>0x1E49,<sp/>0x232C,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>0xD6A5,<sp/>0xEBC0,<sp/>0xAC6F,<sp/>0x910A,<sp/>0x2331,<sp/>0x1E54,<sp/>0x59FB,<sp/>0x649E,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>0x00E8,<sp/>0x3D8D,<sp/>0x7A22,<sp/>0x4747,<sp/>0xF57C,<sp/>0xC819,<sp/>0x8FB6,<sp/>0xB2D3,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>0x59C1,<sp/>0x64A4,<sp/>0x230B,<sp/>0x1E6E,<sp/>0xAC55,<sp/>0x9130,<sp/>0xD69F,<sp/>0xEBFA,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>0x8F8C,<sp/>0xB2E9,<sp/>0xF546,<sp/>0xC823,<sp/>0x7A18,<sp/>0x477D,<sp/>0x00D2,<sp/>0x3DB7,</highlight><highlight class="comment">//<sp/>30x<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>0xC83E,<sp/>0xF55B,<sp/>0xB2F4,<sp/>0x8F91,<sp/>0x3DAA,<sp/>0x00CF,<sp/>0x4760,<sp/>0x7A05,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>0x1E73,<sp/>0x2316,<sp/>0x64B9,<sp/>0x59DC,<sp/>0xEBE7,<sp/>0xD682,<sp/>0x912D,<sp/>0xAC48</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint16_t<sp/>_update_crc16_(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>*p_Table,<sp/>uint16_t<sp/>u16_Crc,<sp/>uint8_t<sp/>u8_C);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint16_t<sp/>_update_crc16_(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>*p_Table,<sp/>uint16_t<sp/>u16_Crc,<sp/>uint8_t<sp/>u8_C)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>uint16_t<sp/>u16_short_c;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>u16_short_c<sp/>=<sp/>0x00ff<sp/>&amp;<sp/>(uint16_t)<sp/>u8_C;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Normal<sp/>form<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(u16_Crc<sp/>&lt;&lt;<sp/>8)<sp/>^<sp/>p_Table[(u16_Crc<sp/>&gt;&gt;<sp/>8)<sp/>^<sp/>u16_short_c];</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="group__crc__sw_1gad3751bf3eff7d03cb41cc250acea434e" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__crc__sw_1gad3751bf3eff7d03cb41cc250acea434e" kindref="member">CRC_Compute</ref>(uint8_t<sp/>*<sp/>p_Buf,<sp/>uint8_t<sp/>u8_Sz,<sp/>uint16_t<sp/>*p_Crc)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>uint8_t<sp/>u8_ret<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>uint8_t<sp/>u8_i;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>uint16_t<sp/>u16_crc<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>p_Buf<sp/>==<sp/>NULL<sp/>||<sp/>u8_Sz<sp/>==<sp/>0<sp/>||<sp/>p_Crc<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_ret<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(u8_i<sp/>=<sp/>0;<sp/>u8_i<sp/>&lt;<sp/>u8_Sz;<sp/>u8_i++)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u16_crc<sp/>=<sp/>_update_crc16_(a_CrcTab,<sp/>u16_crc,<sp/>*p_Buf++);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>*p_Crc<sp/>=<sp/>~u16_crc;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="group__crc__sw_1ga8a3bd45c35bbcb8fc6780c2eaa9394ae" refkind="member"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__crc__sw_1ga8a3bd45c35bbcb8fc6780c2eaa9394ae" kindref="member">CRC_Check</ref>(uint16_t<sp/>u16_CrcA,<sp/>uint16_t<sp/>u16_CrcB)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(u16_CrcA<sp/>==<sp/>u16_CrcB)?(1):(0);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c"/>
+  </compounddef>
+</doxygen>

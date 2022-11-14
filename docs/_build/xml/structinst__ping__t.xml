@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structinst__ping__t" kind="struct" language="C++" prot="public">
+    <compoundname>inst_ping_t</compoundname>
+    <includes refid="app__layer_8h" local="no">app_layer.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structinst__ping__t_1ac268d9783266723f6738b38e99d6e95c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_ping_t::L7DownChannel</definition>
+        <argsstring></argsstring>
+        <name>L7DownChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="235" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__ping__t_1a1ec4e73648587618d19c5403c46dc008" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_ping_t::L7DownMod</definition>
+        <argsstring></argsstring>
+        <name>L7DownMod</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="236" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__ping__t_1ab6e52d5061cf39833b120e9195bdd173" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_ping_t::L7PingRxDelay</definition>
+        <argsstring></argsstring>
+        <name>L7PingRxDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="237" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__ping__t_1a6d9ac85a1394d3cc1bc319607e3d548d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_ping_t::L7PingRxLength</definition>
+        <argsstring></argsstring>
+        <name>L7PingRxLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="238" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>inst_ping_t</label>
+        <link refid="structinst__ping__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="234" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="234" bodyend="239"/>
+    <listofallmembers>
+      <member refid="structinst__ping__t_1ac268d9783266723f6738b38e99d6e95c" prot="public" virt="non-virtual"><scope>inst_ping_t</scope><name>L7DownChannel</name></member>
+      <member refid="structinst__ping__t_1a1ec4e73648587618d19c5403c46dc008" prot="public" virt="non-virtual"><scope>inst_ping_t</scope><name>L7DownMod</name></member>
+      <member refid="structinst__ping__t_1ab6e52d5061cf39833b120e9195bdd173" prot="public" virt="non-virtual"><scope>inst_ping_t</scope><name>L7PingRxDelay</name></member>
+      <member refid="structinst__ping__t_1a6d9ac85a1394d3cc1bc319607e3d548d" prot="public" virt="non-virtual"><scope>inst_ping_t</scope><name>L7PingRxLength</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

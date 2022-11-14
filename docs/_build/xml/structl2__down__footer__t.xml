@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structl2__down__footer__t" kind="struct" language="C++" prot="public">
+    <compoundname>l2_down_footer_t</compoundname>
+    <includes refid="proto__private_8h" local="no">proto_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structl2__down__footer__t_1adf912fe0f4b286ddcc6ada4db5d6923f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l2_down_footer_t::Crc[CRC_SZ]</definition>
+        <argsstring>[CRC_SZ]</argsstring>
+        <name>Crc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Message checksum </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="260" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl2__down__footer__t_1a53c3bba0ee23f857d530e32d5ea00cd7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l2_down_footer_t::Rs[RSCODE_SZ]</definition>
+        <argsstring>[RSCODE_SZ]</argsstring>
+        <name>Rs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Error correction block (Reed-Solomon RS(255,223) ) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="261" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure defines the link layer download footer. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>l2_down_footer_t</label>
+        <link refid="structl2__down__footer__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="259" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="259" bodyend="262"/>
+    <listofallmembers>
+      <member refid="structl2__down__footer__t_1adf912fe0f4b286ddcc6ada4db5d6923f" prot="public" virt="non-virtual"><scope>l2_down_footer_t</scope><name>Crc</name></member>
+      <member refid="structl2__down__footer__t_1a53c3bba0ee23f857d530e32d5ea00cd7" prot="public" virt="non-virtual"><scope>l2_down_footer_t</scope><name>Rs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

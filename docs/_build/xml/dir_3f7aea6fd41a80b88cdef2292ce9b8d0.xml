@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_3f7aea6fd41a80b88cdef2292ce9b8d0" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/CRC_sw</compoundname>
+    <innerdir refid="dir_22e71f2c5459631b3ba9625716aea637">/home/nono/OpenWize/sources/Samples/CRC_sw/include</innerdir>
+    <innerdir refid="dir_1aac92e722c0e9369ca9740d4f1bd6ce">/home/nono/OpenWize/sources/Samples/CRC_sw/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/"/>
+  </compounddef>
+</doxygen>

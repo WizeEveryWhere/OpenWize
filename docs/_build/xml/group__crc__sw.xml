@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__crc__sw" kind="group">
+    <compoundname>crc_sw</compoundname>
+    <title>Crc_sw</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__crc__sw_1ga8a3bd45c35bbcb8fc6780c2eaa9394ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t CRC_Check</definition>
+        <argsstring>(uint16_t u16_CrcA, uint16_t u16_CrcB)</argsstring>
+        <name>CRC_Check</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_CrcA</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_CrcB</declname>
+        </param>
+        <briefdescription>
+<para>Check if two CRC are equal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_CrcA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First CRC </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_CrcB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second CRC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 equal; 0 otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="143" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="143" bodyend="146" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h" declline="44" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crc__sw_1gad3751bf3eff7d03cb41cc250acea434e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t CRC_Compute</definition>
+        <argsstring>(uint8_t *p_Buf, uint8_t u8_Sz, uint16_t *p_Crc)</argsstring>
+        <name>CRC_Compute</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Buf</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>p_Crc</declname>
+        </param>
+        <briefdescription>
+<para>This function compute the CRC as defined by the EN13757 standard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the message buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Crc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Computed CRC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 success, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="117" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="117" bodyend="134" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h" declline="45" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crc__sw_1ga7dbf5400aad8d5ae765da0bfc1e42fd2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>static uint16_t _update_crc16_</definition>
+        <argsstring>(const uint16_t *p_Table, uint16_t u16_Crc, uint8_t u8_C)</argsstring>
+        <name>_update_crc16_</name>
+        <param>
+          <type>const uint16_t *</type>
+          <declname>p_Table</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Crc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_C</declname>
+        </param>
+        <briefdescription>
+<para>Private function to compute a part of the CRC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the polynomial table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Crc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CRC </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current byte to compute on </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>partial CRC. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="101" column="17" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="101" bodyend="107" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" declline="90" declcolumn="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__gpio" kind="group">
+    <compoundname>gpio</compoundname>
+    <title>Gpio</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__gpio_1ga89d7a458e32590e59c774793cfa2584f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Gpio_InputEnable</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, const uint8_t b_Flag)</argsstring>
+        <name>BSP_Gpio_InputEnable</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>bFlag</declname>
+          <defname>b_Flag</defname>
+        </param>
+        <briefdescription>
+<para>This function set as input (or analog mode) the given gpio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">b_Flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>1 : set as input, 0: set in analog mode</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" line="54" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" bodystart="54" bodyend="70" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio.h" declline="57" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio_1gafcc05736f0d15fb95cd39e6a30333611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Gpio_OutputEnable</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, const uint8_t b_Flag)</argsstring>
+        <name>BSP_Gpio_OutputEnable</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>const uint8_t</type>
+          <declname>bFlag</declname>
+          <defname>b_Flag</defname>
+        </param>
+        <briefdescription>
+<para>This function set as output (or analog mode) the given gpio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">b_Flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>1 : set as output, 0: set in analog mode</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" line="82" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" bodystart="82" bodyend="98" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio.h" declline="58" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio_1gaedba09ceacd88405b129656e34c03a8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Gpio_Get</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, uint8_t *b_Level)</argsstring>
+        <name>BSP_Gpio_Get</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>bLevel</declname>
+          <defname>b_Level</defname>
+        </param>
+        <briefdescription>
+<para>This function get the value of the given gpio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">b_Level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Will hold the gpio current value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" line="110" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" bodystart="110" bodyend="114" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio.h" declline="60" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Gpio_Set</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, uint8_t b_Level)</argsstring>
+        <name>BSP_Gpio_Set</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>bLevel</declname>
+          <defname>b_Level</defname>
+        </param>
+        <briefdescription>
+<para>This function set the value of the given gpio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">b_Level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" line="126" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" bodystart="126" bodyend="130" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio.h" declline="61" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio_1gaac8c4d974e15a9c0c89f3c29645b7546" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Gpio_SetLow</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin)</argsstring>
+        <name>BSP_Gpio_SetLow</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <briefdescription>
+<para>This function set to 0 the given gpio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" line="141" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" bodystart="141" bodyend="150" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio.h" declline="62" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+        <references refid="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" compoundref="bsp__gpio_8c" startline="126" endline="130">BSP_Gpio_Set</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio_1ga618a8446030e1e41ab8207ab3978e94a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Gpio_SetHigh</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin)</argsstring>
+        <name>BSP_Gpio_SetHigh</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <briefdescription>
+<para>This function set to 1 the given gpio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" line="161" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c" bodystart="161" bodyend="169" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio.h" declline="63" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+        <references refid="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" compoundref="bsp__gpio_8c" startline="126" endline="130">BSP_Gpio_Set</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

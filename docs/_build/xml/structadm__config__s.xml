@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structadm__config__s" kind="struct" language="C++" prot="public">
+    <compoundname>adm_config_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structadm__config__s_1a4d9c2d6bd282b2446d43f53239a71373" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::filterDisAnn</definition>
+        <argsstring></argsstring>
+        <name>filterDisAnn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADM Reception Filter disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="372" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a975078a7f2127297d38e6646af7cb165" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::AnnDaysProg</definition>
+        <argsstring></argsstring>
+        <name>AnnDaysProg</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>AnnDown Day Prog. filter. 0: enable, 1: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="375" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a488d9b5b16f9ae1989dbe20aeb93f113" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::AnnDeltaSec</definition>
+        <argsstring></argsstring>
+        <name>AnnDeltaSec</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>AnnDown Delta Second filter. 0: enable, 1: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="376" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a46e54d112308cacda27e062298bb4231" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::AnnHwId</definition>
+        <argsstring></argsstring>
+        <name>AnnHwId</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>AnnDown HW ver.filter. 0: enable, 1: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="377" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a5ace032f616a054eb80a18711660cfc8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::AnnSwVerIni</definition>
+        <argsstring></argsstring>
+        <name>AnnSwVerIni</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>AnnDown SW Ver. Initial filter. 0: enable, 1: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="378" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1ab1bd5e01477ac0c0eab1585f44ddc65f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::AnnSwVerTgt</definition>
+        <argsstring></argsstring>
+        <name>AnnSwVerTgt</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>AnnDown SW Ver. Target filter. 0: enable, 1: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="379" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a05c7126ba689ecc4db035209992458e4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::AnnBlocksNB</definition>
+        <argsstring></argsstring>
+        <name>AnnBlocksNB</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>AnnDown Max. Block Number filter. 0: enable, 1: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="380" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a3e2793785b4119ce26f47350c3bd38c6" prot="public" static="no" mutable="no">
+        <type>union adm_config_s::@10</type>
+        <definition>union adm_config_s::@10 adm_config_s::@11</definition>
+        <argsstring></argsstring>
+        <name>@11</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="382" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1aa7d65df1ce17da42f8262d8344e06e7f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::filterDisParam</definition>
+        <argsstring></argsstring>
+        <name>filterDisParam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADM Reception Filter disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="384" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1ab84f19bd2e53aea3b268eae6204931ae" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::ParamBypassWO</definition>
+        <argsstring></argsstring>
+        <name>ParamBypassWO</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="387" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a39679b881cc68f43573cb232786bc172" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::ParamBypassRO</definition>
+        <argsstring></argsstring>
+        <name>ParamBypassRO</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="388" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a6a2f11f19f879091cef2bf1526a33dc1" prot="public" static="no" mutable="no">
+        <type>union adm_config_s::@12</type>
+        <definition>union adm_config_s::@12 adm_config_s::@13</definition>
+        <argsstring></argsstring>
+        <name>@13</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="390" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1aef2286ff45f4047c4e9755b92a3ac7fd" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::filterDisKey</definition>
+        <argsstring></argsstring>
+        <name>filterDisKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ADM Reception Filter disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="392" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="392" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a415f224348dc9e3becf9dfed12318865" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::WriteKeyBypassId</definition>
+        <argsstring></argsstring>
+        <name>WriteKeyBypassId</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="395" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a3b2deda9fd3e043025417ade5d451aac" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::KeyChgBypassUse</definition>
+        <argsstring></argsstring>
+        <name>KeyChgBypassUse</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="396" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="396" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a9e71e848f9b16d46c9fd7357f2791854" prot="public" static="no" mutable="no">
+        <type>union adm_config_s::@14</type>
+        <definition>union adm_config_s::@14 adm_config_s::@15</definition>
+        <argsstring></argsstring>
+        <name>@15</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="398" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a47f67efdbf53cb97ba47dcf166a3ff19" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::ClkFreqAutoAdj</definition>
+        <argsstring></argsstring>
+        <name>ClkFreqAutoAdj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clock and Frequency Offset Auto-Adjustment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="400" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a15e5be8df0d26aabd5adeeb285ff8ae8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::ClkAutoPong</definition>
+        <argsstring></argsstring>
+        <name>ClkAutoPong</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Coarse clock auto-adjust on PONG. 1: enable, 0: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="403" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a0afd393715e8332f3c2ab427f92b29da" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::ClkAutoAdm</definition>
+        <argsstring></argsstring>
+        <name>ClkAutoAdm</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fine clock auto-adjust on ADM CMD. 1: enable, 0: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="404" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="404" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1af81854b490e2f2909e36c70c34e2d64c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::FreqAutoPong</definition>
+        <argsstring></argsstring>
+        <name>FreqAutoPong</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frequency Offset auto-adjust on PONG. 1: enable, 0: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="405" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="405" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a96d155265ac88155772eccb2e17b0b8e" prot="public" static="no" mutable="no">
+        <type>union adm_config_s::@16</type>
+        <definition>union adm_config_s::@16 adm_config_s::@17</definition>
+        <argsstring></argsstring>
+        <name>@17</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="407" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a7bea7ec30397490f1d5a8c312c7c1c74" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_config_s::ClkFreqAutoAdjRssi</definition>
+        <argsstring></argsstring>
+        <name>ClkFreqAutoAdjRssi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clock and Frequency Offset Auto-Adjustment received frame RSSI min. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="408" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a9500782c1acfbf37074fbce08e6846eb" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t adm_config_s::u32DwnDayProgWinMin</definition>
+        <argsstring></argsstring>
+        <name>u32DwnDayProgWinMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="411" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1a04707877c59e4bea8eb3d3723872f915" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t adm_config_s::u32DwnDayProgWinMax</definition>
+        <argsstring></argsstring>
+        <name>u32DwnDayProgWinMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="412" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1ac47d13215db1dd6a4349aeebb6f35d06" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t adm_config_s::u32DwnDeltaSecMin</definition>
+        <argsstring></argsstring>
+        <name>u32DwnDeltaSecMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="413" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="413" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1addd08fb8493863b84d538dde19b53241" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t adm_config_s::u32DwnBlkDurMod</definition>
+        <argsstring></argsstring>
+        <name>u32DwnBlkDurMod</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="414" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="414" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__config__s_1ad8078374b61407d6e95225dd474530fe" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t adm_config_s::u32DwnBlkNbMax</definition>
+        <argsstring></argsstring>
+        <name>u32DwnBlkNbMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="415" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>adm_config_s</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="370" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="370" bodyend="416"/>
+    <listofallmembers>
+      <member refid="structadm__config__s_1a05c7126ba689ecc4db035209992458e4" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>AnnBlocksNB</name></member>
+      <member refid="structadm__config__s_1a975078a7f2127297d38e6646af7cb165" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>AnnDaysProg</name></member>
+      <member refid="structadm__config__s_1a488d9b5b16f9ae1989dbe20aeb93f113" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>AnnDeltaSec</name></member>
+      <member refid="structadm__config__s_1a46e54d112308cacda27e062298bb4231" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>AnnHwId</name></member>
+      <member refid="structadm__config__s_1a5ace032f616a054eb80a18711660cfc8" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>AnnSwVerIni</name></member>
+      <member refid="structadm__config__s_1ab1bd5e01477ac0c0eab1585f44ddc65f" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>AnnSwVerTgt</name></member>
+      <member refid="structadm__config__s_1a0afd393715e8332f3c2ab427f92b29da" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>ClkAutoAdm</name></member>
+      <member refid="structadm__config__s_1a15e5be8df0d26aabd5adeeb285ff8ae8" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>ClkAutoPong</name></member>
+      <member refid="structadm__config__s_1a47f67efdbf53cb97ba47dcf166a3ff19" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>ClkFreqAutoAdj</name></member>
+      <member refid="structadm__config__s_1a7bea7ec30397490f1d5a8c312c7c1c74" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>ClkFreqAutoAdjRssi</name></member>
+      <member refid="structadm__config__s_1a4d9c2d6bd282b2446d43f53239a71373" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>filterDisAnn</name></member>
+      <member refid="structadm__config__s_1aef2286ff45f4047c4e9755b92a3ac7fd" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>filterDisKey</name></member>
+      <member refid="structadm__config__s_1aa7d65df1ce17da42f8262d8344e06e7f" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>filterDisParam</name></member>
+      <member refid="structadm__config__s_1af81854b490e2f2909e36c70c34e2d64c" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>FreqAutoPong</name></member>
+      <member refid="structadm__config__s_1a3b2deda9fd3e043025417ade5d451aac" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>KeyChgBypassUse</name></member>
+      <member refid="structadm__config__s_1a39679b881cc68f43573cb232786bc172" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>ParamBypassRO</name></member>
+      <member refid="structadm__config__s_1ab84f19bd2e53aea3b268eae6204931ae" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>ParamBypassWO</name></member>
+      <member refid="structadm__config__s_1addd08fb8493863b84d538dde19b53241" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>u32DwnBlkDurMod</name></member>
+      <member refid="structadm__config__s_1ad8078374b61407d6e95225dd474530fe" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>u32DwnBlkNbMax</name></member>
+      <member refid="structadm__config__s_1a04707877c59e4bea8eb3d3723872f915" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>u32DwnDayProgWinMax</name></member>
+      <member refid="structadm__config__s_1a9500782c1acfbf37074fbce08e6846eb" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>u32DwnDayProgWinMin</name></member>
+      <member refid="structadm__config__s_1ac47d13215db1dd6a4349aeebb6f35d06" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>u32DwnDeltaSecMin</name></member>
+      <member refid="structadm__config__s_1a415f224348dc9e3becf9dfed12318865" prot="public" virt="non-virtual"><scope>adm_config_s</scope><name>WriteKeyBypassId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__boot" kind="group">
+    <compoundname>boot</compoundname>
+    <title>Boot</title>
+    <innerclass refid="unionboot__state__t" prot="public">boot_state_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__boot_1ga830c85b040fce12764c873021137099c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>boot_reason_e</name>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca2f2ca4cc923e4d813d32481f4a6e1aed" prot="public">
+          <name>FW_RSTF</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Firewall reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca9426442c8862ad7463933fde96933a5e" prot="public">
+          <name>OBL_RSTF</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Option Byte reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099cacbb9b193ca274833b45c93877b858162" prot="public">
+          <name>PIN_RSTF</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pin reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca9f62267009d19798ee0ecaf2433b55a0" prot="public">
+          <name>BOR_RSTF</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Power On Reset (power was lost or exit from Shutdown/Stdby LP) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099cada6458256386bfc6bd131558c6a6adc3" prot="public">
+          <name>SFT_RSTF</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Software reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca11aea8cb56d93a4e88b817d85977d955" prot="public">
+          <name>IWWG_RSTF</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Independent window watchdog reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099ca6ce5eedf3b8242eeeb0e141bf18edee7" prot="public">
+          <name>WWDG_RSTF</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Window watchdog reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__boot_1gga830c85b040fce12764c873021137099cae4dad7ee39f7d7300d3af41a2411e955" prot="public">
+          <name>LPWR_RSTF</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Low power reset </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the reset (boot) reason as is in mcu reset register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="79" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="78" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__boot_1ga6d454eccc10b0f5e78da41e846b84fe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_Boot_Reboot</definition>
+        <argsstring>(uint8_t bReset)</argsstring>
+        <name>BSP_Boot_Reboot</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>bReset</declname>
+        </param>
+        <briefdescription>
+<para>Reboot. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">bReset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reset the backup domain (1 ;yes, 0: no)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" line="62" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" bodystart="62" bodyend="70" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" declline="112" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__boot_1ga3eaa2c4653fb4f0fb82e124d3a2a411e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t BSP_Boot_GetState</definition>
+        <argsstring>(void)</argsstring>
+        <name>BSP_Boot_GetState</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the boot state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the boot state as u32 (see <ref refid="unionboot__state__t" kindref="compound">boot_state_t</ref>) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" line="78" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c" bodystart="78" bodyend="142" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" declline="113" declcolumn="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

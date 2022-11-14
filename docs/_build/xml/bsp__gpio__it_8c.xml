@@ -1,0 +1,841 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bsp__gpio__it_8c" kind="file" language="C++">
+    <compoundname>bsp_gpio_it.c</compoundname>
+    <includes refid="bsp__gpio__it_8h" local="yes">bsp_gpio_it.h</includes>
+    <includes refid="platform_8h" local="yes">platform.h</includes>
+    <includes local="no">stm32l4xx_hal.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="8">
+        <label>assert.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>stm32l4xx_hal.h</label>
+      </node>
+      <node id="2">
+        <label>bsp_gpio_it.h</label>
+        <link refid="bsp__gpio__it_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+      <node id="11">
+        <label>bsp_gpio.h</label>
+        <link refid="bsp__gpio_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>time.h</label>
+      </node>
+      <node id="12">
+        <label>platform.h</label>
+        <link refid="platform_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c</label>
+        <link refid="bsp__gpio__it_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="10">
+        <label>machine/endian.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structgpio__it__t" prot="public">gpio_it_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" prot="public" static="no" strong="no">
+        <type></type>
+        <name>gpio_port_e</name>
+        <enumvalue id="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa0d36b47f173bbc4bdced28d8a54fe4ac" prot="public">
+          <name>GPIO_PORTA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Port 000 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa258a8ca8e34cedcfba339d2463ae0c2a" prot="public">
+          <name>GPIO_PORTB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Port 001 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa3266325667899f8d82c0624c493fda51" prot="public">
+          <name>GPIO_PORTC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Port 010 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa4db7e328496cabe7a12e3879f7be8e39" prot="public">
+          <name>GPIO_PORTD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Port 011 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faae00a95999282684e3c5d713937bc74e3" prot="public">
+          <name>GPIO_PORTE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Port 100 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa88aec7fe0e2928a7d85e341d3cd79a1d" prot="public">
+          <name>GPIO_NUM_PORTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>maximum number of ports </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define GPIO port. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="47" column="14" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="47" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__gpio__it_1ga1465f7d2d93d6e00cde15622300928b9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t _bsp_gpioit_getport_</definition>
+        <argsstring>(uint32_t u32Line)</argsstring>
+        <name>_bsp_gpioit_getport_</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Line</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve GPIO port address from exti line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>EXTI line number</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the gpio port address </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="120" column="17" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="120" bodyend="147" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" declline="108" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1gad71cecd105a66ca64d7e75fdebf51adc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" kindref="member">gpio_port_e</ref></type>
+        <definition>static gpio_port_e _bsp_gpioit_getnumport_</definition>
+        <argsstring>(const uint32_t u32Port)</argsstring>
+        <name>_bsp_gpioit_getnumport_</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve GPIO port number from port address. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port address</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the gpio port number </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="158" column="20" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="158" bodyend="182" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" declline="109" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t BSP_GpioIt_GetLineId</definition>
+        <argsstring>(const uint16_t u16Pin)</argsstring>
+        <name>BSP_GpioIt_GetLineId</name>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <briefdescription>
+<para>Get EXTI line id from gpio pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin number</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the corresponding exti line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="192" column="8" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="192" bodyend="207" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="56" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga1faf7648b4fc23ba486bbcb8f74b178f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_ConfigLine</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, const gpio_irq_trg_cond_e ePol)</argsstring>
+        <name>BSP_GpioIt_ConfigLine</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="group__gpio__it_1ga599f4fc0ff790b99ecb76b5c83f8e97c" kindref="member">gpio_irq_trg_cond_e</ref></type>
+          <declname>ePol</declname>
+        </param>
+        <briefdescription>
+<para>Configure the gpio interruption. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ePol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interrupt polarity</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if fail (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="220" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="220" bodyend="243" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="57" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga6a7db0f6a32cf4197c995dc83e67e7ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_SetLine</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, const bool bEnable)</argsstring>
+        <name>BSP_GpioIt_SetLine</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>bEnable</declname>
+        </param>
+        <briefdescription>
+<para>Enable the gpio interruption. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bEnable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enable/Disable interrupt</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if fail (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="256" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="256" bodyend="270" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="58" declcolumn="9"/>
+        <references refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" compoundref="bsp__gpio__it_8c" startline="192" endline="207">BSP_GpioIt_GetLineId</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga3fa85ab0085df2541d576df88bed2573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_SetCallback</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, pf_cb_t const pfCb, void *const pCbParam)</argsstring>
+        <name>BSP_GpioIt_SetCallback</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>pf_cb_t const</type>
+          <declname>pfCb</declname>
+        </param>
+        <param>
+          <type>void *const</type>
+          <declname>pCbParam</declname>
+        </param>
+        <briefdescription>
+<para>Set the gpio interruption callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfCb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Callback function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pCbParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Callback parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="283" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="283" bodyend="291" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="59" declcolumn="9"/>
+        <references refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" compoundref="bsp__gpio__it_8c" startline="192" endline="207">BSP_GpioIt_GetLineId</references>
+        <references refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" compoundref="bsp__gpio__it_8c" startline="61">gpio_it_t::pf_cb</references>
+        <references refid="structgpio__it__t_1aab835fb2cf4f89cb2338059d7d1f1bd4" compoundref="bsp__gpio__it_8c" startline="62">gpio_it_t::p_CbParam</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga186eb305b8e919841c46944b0470921a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_SetGpioCpy</definition>
+        <argsstring>(const uint8_t u8ItLineId, const uint32_t u32Port, const uint16_t u16Pin)</argsstring>
+        <name>BSP_GpioIt_SetGpioCpy</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8ItLineId</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <briefdescription>
+<para>Set/Enable the gpio as copy of interrupt of the given exti line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8ItLineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>EXTI line to copy </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port on which to copy </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin on which to copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="303" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="303" bodyend="311" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="60" declcolumn="9"/>
+        <references refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" compoundref="bsp__gpio__it_8c" startline="68">gpio_it_t::port</references>
+        <references refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" compoundref="bsp__gpio__it_8c" startline="69">gpio_it_t::pin</references>
+        <references refid="group__gpio_1gafcc05736f0d15fb95cd39e6a30333611" compoundref="bsp__gpio_8c" startline="82" endline="98">BSP_Gpio_OutputEnable</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga10ef0c80be820b0273d22d30f07edcd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_ClrGpioCpy</definition>
+        <argsstring>(const uint8_t u8ItLineId)</argsstring>
+        <name>BSP_GpioIt_ClrGpioCpy</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8ItLineId</declname>
+        </param>
+        <briefdescription>
+<para>Clr/Disable the gpio as copy of interrupt of the given exti line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8ItLineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>EXTI line to disable the copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="321" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="321" bodyend="329" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="61" declcolumn="9"/>
+        <references refid="group__gpio_1gafcc05736f0d15fb95cd39e6a30333611" compoundref="bsp__gpio_8c" startline="82" endline="98">BSP_Gpio_OutputEnable</references>
+        <references refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" compoundref="bsp__gpio__it_8c" startline="68">gpio_it_t::port</references>
+        <references refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" compoundref="bsp__gpio__it_8c" startline="69">gpio_it_t::pin</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_GpioIt_Handler</definition>
+        <argsstring>(int8_t i8_ItLineId)</argsstring>
+        <name>BSP_GpioIt_Handler</name>
+        <param>
+          <type>int8_t</type>
+          <declname>i8_ItLineId</declname>
+        </param>
+        <briefdescription>
+<para>This is the gpio (exti) interrupt handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">i8_ItLineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The &quot;interrupted&quot; exti line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="337" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="337" bodyend="357" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="62" declcolumn="6"/>
+        <references refid="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" compoundref="bsp__gpio_8c" startline="126" endline="130">BSP_Gpio_Set</references>
+        <references refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" compoundref="bsp__gpio__it_8c" startline="61">gpio_it_t::pf_cb</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file contains functions to deal with external interrupt lines. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2019/12/14 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bsp__gpio__it_8h" kindref="compound">bsp_gpio_it.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="platform_8h" kindref="compound">platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stm32l4xx_hal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa0d36b47f173bbc4bdced28d8a54fe4ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa0d36b47f173bbc4bdced28d8a54fe4ac" kindref="member">GPIO_PORTA</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa258a8ca8e34cedcfba339d2463ae0c2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa258a8ca8e34cedcfba339d2463ae0c2a" kindref="member">GPIO_PORTB</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa3266325667899f8d82c0624c493fda51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa3266325667899f8d82c0624c493fda51" kindref="member">GPIO_PORTC</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa4db7e328496cabe7a12e3879f7be8e39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa4db7e328496cabe7a12e3879f7be8e39" kindref="member">GPIO_PORTD</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faae00a95999282684e3c5d713937bc74e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faae00a95999282684e3c5d713937bc74e3" kindref="member">GPIO_PORTE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//GPIO_PORTH,<sp/><sp/><sp/><sp/><sp/><sp/>/*!&lt;<sp/>Port<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa88aec7fe0e2928a7d85e341d3cd79a1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa88aec7fe0e2928a7d85e341d3cd79a1d" kindref="member">GPIO_NUM_PORTS</ref><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}<sp/><ref refid="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" kindref="member">gpio_port_e</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structgpio__it__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61" refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>pf_cb_t<sp/><ref refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" kindref="member">pf_cb</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="structgpio__it__t_1aab835fb2cf4f89cb2338059d7d1f1bd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structgpio__it__t_1aab835fb2cf4f89cb2338059d7d1f1bd4" kindref="member">p_CbParam</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65" refid="structgpio__it__t_1a4526626cd341ffa31d49919d9ae50f6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pf_cb_t<sp/><ref refid="structgpio__it__t_1a4526626cd341ffa31d49919d9ae50f6b" kindref="member">pf_cpy_cb</ref>;<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68" refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" kindref="member">port</ref>;<sp/></highlight></codeline>
+<codeline lineno="69" refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" kindref="member">pin</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}<ref refid="structgpio__it__t" kindref="compound">gpio_it_t</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor">#define<sp/>INIT_GPIO_CB()<sp/>.pf_cb<sp/>=<sp/>(pf_cb_t)NULL,<sp/>.p_CbParam<sp/>=<sp/>NULL,<sp/>.port<sp/>=<sp/>0,<sp/>.pin<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structgpio__it__t" kindref="compound">gpio_it_t</ref><sp/>aGpioCb[16]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[2]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[3]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[4]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[5]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[6]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[6]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[7]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[8]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[9]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[10]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[11]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[12]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[13]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[14]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[15]<sp/>=<sp/>{INIT_GPIO_CB()},</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GET_MODE(GPIOx,<sp/>pin)<sp/><sp/>((GPIOx-&gt;MODER<sp/>&gt;&gt;<sp/>(pin<sp/>&lt;&lt;<sp/>2)<sp/>)<sp/>&amp;<sp/>0b11)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GET_GPIO_PIN(pin)<sp/>((uint32_t)(1<sp/>&lt;&lt;<sp/>pin))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>_bsp_gpioit_getport_(uint32_t<sp/>u32Line);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" kindref="member">gpio_port_e</ref><sp/>_bsp_gpioit_getnumport_(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32_t<sp/>_bsp_gpioit_getport_(uint32_t<sp/>u32Line)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>port;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>p<sp/>=<sp/>SYSCFG-&gt;EXTICR[u32Line<sp/>&gt;&gt;<sp/>2u];</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>(<sp/>p<sp/>&gt;&gt;<sp/>((u32Line<sp/>&amp;<sp/>0x03)*4)<sp/>)<sp/>&amp;<sp/>0x07;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(p)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0<sp/>:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>(uint32_t)GPIOA;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1<sp/>:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>(uint32_t)GPIOB;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2<sp/>:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>(uint32_t)GPIOC;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>3<sp/>:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>(uint32_t)GPIOD;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>4<sp/>:</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>(uint32_t)GPIOE;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>port<sp/>=<sp/>(uint32_t)(NULL);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>port;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" kindref="member">gpio_port_e</ref><sp/>_bsp_gpioit_getnumport_(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" kindref="member">gpio_port_e</ref><sp/>gpio_port;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(u32Port)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>GPIOA_BASE<sp/>:</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio_port<sp/>=<sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa0d36b47f173bbc4bdced28d8a54fe4ac" kindref="member">GPIO_PORTA</ref>;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>GPIOB_BASE<sp/>:</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio_port<sp/>=<sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa258a8ca8e34cedcfba339d2463ae0c2a" kindref="member">GPIO_PORTB</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>GPIOC_BASE<sp/>:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio_port<sp/>=<sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa3266325667899f8d82c0624c493fda51" kindref="member">GPIO_PORTC</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>GPIOD_BASE<sp/>:</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio_port<sp/>=<sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa4db7e328496cabe7a12e3879f7be8e39" kindref="member">GPIO_PORTD</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>GPIOE_BASE<sp/>:</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio_port<sp/>=<sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faae00a95999282684e3c5d713937bc74e3" kindref="member">GPIO_PORTE</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio_port<sp/>=<sp/><ref refid="group__gpio__it_1gga23837cb0f2168984984f6cde5307f2faa88aec7fe0e2928a7d85e341d3cd79a1d" kindref="member">GPIO_NUM_PORTS</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gpio_port;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" refkind="member"><highlight class="normal">int8_t<sp/><ref refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" kindref="member">BSP_GpioIt_GetLineId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>int8_t<sp/>i8_ItLineId;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>u16_GpioPin;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>i8_ItLineId<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>u16_GpioPin<sp/>=<sp/>u16Pin;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>EXTI<sp/>line<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i8_ItLineId<sp/>=<sp/>0<sp/>;<sp/>i8_ItLineId<sp/>&lt;<sp/>16;<sp/>i8_ItLineId++){</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(u16_GpioPin<sp/>&amp;<sp/>0x1){</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u16_GpioPin<sp/>=<sp/>u16_GpioPin<sp/>&gt;&gt;<sp/>1;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i8_ItLineId;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="group__gpio__it_1ga1faf7648b4fc23ba486bbcb8f74b178f" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga1faf7648b4fc23ba486bbcb8f74b178f" kindref="member">BSP_GpioIt_ConfigLine</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__gpio__it_1ga599f4fc0ff790b99ecb76b5c83f8e97c" kindref="member">gpio_irq_trg_cond_e</ref><sp/>ePol)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>int8_t<sp/>i8_ItLineId;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32_ItLine;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>e_ret;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1ga23837cb0f2168984984f6cde5307f2fa" kindref="member">gpio_port_e</ref><sp/>e_Port;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>e_ret<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">DEV_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>e_Port<sp/>=<sp/>_bsp_gpioit_getnumport_(u32Port);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>i8_ItLineId<sp/>=<sp/><ref refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" kindref="member">BSP_GpioIt_GetLineId</ref>(u16Pin);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_Port<sp/>&lt;<sp/>GPIO_NUM_PORTS<sp/>&amp;&amp;<sp/>i8_ItLineId<sp/>&gt;=<sp/>0){</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>setup<sp/>the<sp/>required<sp/>port<sp/>for<sp/>the<sp/>given<sp/>EXTI<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SYSCFG-&gt;EXTICR[i8_ItLineId<sp/>&gt;&gt;<sp/>2u]<sp/>|=<sp/>(e_Port<sp/>&amp;<sp/>0x07)<sp/>&lt;&lt;<sp/>(i8_ItLineId<sp/>%<sp/>0x04)*4;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32_ItLine<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>i8_ItLineId);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>edge</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ePol<sp/>&amp;<sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca5e9b2cc45c19281ee00e257f67a9c028" kindref="member">GPIO_IRQ_RISING_EDGE</ref>)?<sp/>(<sp/>EXTI-&gt;RTSR1<sp/>|=<sp/>u32_ItLine<sp/>):(<sp/>EXTI-&gt;RTSR1<sp/>&amp;=<sp/>(~u32_ItLine)<sp/>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ePol<sp/>&amp;<sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca602a91261e70038ba4c5c27e820bb22b" kindref="member">GPIO_IRQ_FALLING_EDGE</ref>)?(<sp/>EXTI-&gt;FTSR1<sp/>|=<sp/>u32_ItLine<sp/>):(<sp/>EXTI-&gt;FTSR1<sp/>&amp;=<sp/>(~u32_ItLine)<sp/>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Disable<sp/>interrupt<sp/>for<sp/>given<sp/>EXTI<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXTI-&gt;IMR1<sp/>&amp;=<sp/>(~u32_ItLine);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e_ret<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e_ret;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="group__gpio__it_1ga6a7db0f6a32cf4197c995dc83e67e7ea" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga6a7db0f6a32cf4197c995dc83e67e7ea" kindref="member">BSP_GpioIt_SetLine</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bEnable)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED(u32Port);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>e_ret;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32_ItLine;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>int8_t<sp/>i8_ItLineId<sp/>=<sp/><ref refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" kindref="member">BSP_GpioIt_GetLineId</ref>(u16Pin);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>e_ret<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">DEV_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i8_ItLineId<sp/>&gt;=<sp/>0){</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32_ItLine<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>i8_ItLineId);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(bEnable)?(EXTI-&gt;IMR1<sp/>|=<sp/>u32_ItLine):(EXTI-&gt;IMR1<sp/>&amp;=<sp/>(~u32_ItLine));</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXTI-&gt;PR1<sp/>=<sp/>u32_ItLine;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e_ret<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e_ret;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="group__gpio__it_1ga3fa85ab0085df2541d576df88bed2573" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga3fa85ab0085df2541d576df88bed2573" kindref="member">BSP_GpioIt_SetCallback</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin,<sp/>pf_cb_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pCbParam<sp/>)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>UNUSED(u32Port);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ItLineId;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ItLineId<sp/>=<sp/>(uint8_t)<ref refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" kindref="member">BSP_GpioIt_GetLineId</ref>(u16Pin);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].<ref refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" kindref="member">pf_cb</ref><sp/>=<sp/>pfCb;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].<ref refid="structgpio__it__t_1aab835fb2cf4f89cb2338059d7d1f1bd4" kindref="member">p_CbParam</ref><sp/>=<sp/>pCbParam;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303" refid="group__gpio__it_1ga186eb305b8e919841c46944b0470921a" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga186eb305b8e919841c46944b0470921a" kindref="member">BSP_GpioIt_SetGpioCpy</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8ItLineId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ItLineId;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ItLineId<sp/>=<sp/>(uint8_t)u8ItLineId<sp/>&amp;<sp/>0xF;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].<ref refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" kindref="member">port</ref><sp/>=<sp/>u32Port;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].<ref refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" kindref="member">pin</ref><sp/><sp/>=<sp/>u16Pin;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio_1gafcc05736f0d15fb95cd39e6a30333611" kindref="member">BSP_Gpio_OutputEnable</ref>(u32Port,<sp/>u16Pin,<sp/>1);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321" refid="group__gpio__it_1ga10ef0c80be820b0273d22d30f07edcd3" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga10ef0c80be820b0273d22d30f07edcd3" kindref="member">BSP_GpioIt_ClrGpioCpy</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8ItLineId)</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ItLineId;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ItLineId<sp/>=<sp/>(uint8_t)u8ItLineId<sp/>&amp;<sp/>0xF;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio_1gafcc05736f0d15fb95cd39e6a30333611" kindref="member">BSP_Gpio_OutputEnable</ref>(aGpioCb[u8_ItLineId].port,<sp/>aGpioCb[u8_ItLineId].pin,<sp/>0);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].<ref refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" kindref="member">port</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].<ref refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" kindref="member">pin</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337" refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" kindref="member">BSP_GpioIt_Handler</ref>(int8_t<sp/>i8_ItLineId)</highlight></codeline>
+<codeline lineno="338"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ItLineId;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ItLineId<sp/>=<sp/>(uint8_t)i8_ItLineId<sp/>&amp;<sp/>0xF;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(aGpioCb[u8_ItLineId].pf_cb<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(aGpioCb[u8_ItLineId].port)</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" kindref="member">BSP_Gpio_Set</ref>(aGpioCb[u8_ItLineId].port,<sp/>aGpioCb[u8_ItLineId].pin,<sp/>1);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].<ref refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" kindref="member">pf_cb</ref>(</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aGpioCb[u8_ItLineId].p_CbParam,</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)((uint32_t)(u8_ItLineId))</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(aGpioCb[u8_ItLineId].port)</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" kindref="member">BSP_Gpio_Set</ref>(aGpioCb[u8_ItLineId].port,<sp/>aGpioCb[u8_ItLineId].pin,<sp/>0);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c"/>
+  </compounddef>
+</doxygen>

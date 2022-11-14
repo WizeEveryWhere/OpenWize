@@ -1,0 +1,844 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="app__layer_8h" kind="file" language="C++">
+    <compoundname>app_layer.h</compoundname>
+    <includedby refid="adm__internal_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h</includedby>
+    <includedby refid="inst__internal_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h</includedby>
+    <includedby refid="wize__api_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h</includedby>
+    <includedby refid="time__mgr_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</includedby>
+    <includedby refid="ses__common_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</includedby>
+    <invincdepgraph>
+      <node id="13">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c</label>
+        <link refid="inst__internal_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h</label>
+        <link refid="inst__internal_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h</label>
+        <link refid="adm__internal_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</label>
+        <link refid="time__mgr_8c"/>
+      </node>
+      <node id="21">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="15">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h</label>
+        <link refid="wize__api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h</label>
+        <link refid="app__layer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="18">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c</label>
+        <link refid="adm__internal_8c"/>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structadmin__rsp__cmderr__t" prot="public">admin_rsp_cmderr_t</innerclass>
+    <innerclass refid="structadmin__rsp__t" prot="public">admin_rsp_t</innerclass>
+    <innerclass refid="structadmin__rsp__err__t" prot="public">admin_rsp_err_t</innerclass>
+    <innerclass refid="structadmin__cmd__writekey__t" prot="public">admin_cmd_writekey_t</innerclass>
+    <innerclass refid="structadmin__cmd__anndownload__t" prot="public">admin_cmd_anndownload_t</innerclass>
+    <innerclass refid="structadmin__cmd__execinstping__t" prot="public">admin_cmd_execinstping_t</innerclass>
+    <innerclass refid="structadmin__rsp__execinstping__t" prot="public">admin_rsp_execinstping_t</innerclass>
+    <innerclass refid="structinst__ping__t" prot="public">inst_ping_t</innerclass>
+    <innerclass refid="structinst__pong__t" prot="public">inst_pong_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga8732ddf3ae6203a804e1954dafb738f7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_cmd_id_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a58ec81a3719fe764d8bde7d36834e789" prot="public">
+          <name>ADM_READ_PARAM</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read parameter(s) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7abe4d9d12bbfa4f3de6a5bcba23dcdab3" prot="public">
+          <name>ADM_WRITE_PARAM</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write parameter(s) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7af8bbf85ab69e37ff81e62c8f1d527d1c" prot="public">
+          <name>ADM_WRITE_KEY</name>
+          <initializer>= 0x28</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write a key </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a9cdf54f93928218d4d6fe1c863842def" prot="public">
+          <name>ADM_ANNDOWNLOAD</name>
+          <initializer>= 0x30</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;Announcement&quot; of programmed download </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a32a15cd5e73a54095a17c5f5da194132" prot="public">
+          <name>ADM_EXECINSTPING</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Execution of PING/PONG (install) request </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define known COMMAND type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="58" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="58" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga1b5d8e9d4efc26fe7510930dc3985f07" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07acf3ba09f654f5840cb070d9e0fb87391" prot="public">
+          <name>ADM_NONE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07a6cd4b5875dc0c217a3247eaede0c8edf" prot="public">
+          <name>ADM_UNK_CMD</name>
+          <initializer>= 0xFF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Command is unknown </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code on COMMAND type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="72" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga8466379311ba449fe5bbf1ee887ca302" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_read_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302afc7147cac20f98ad60a8ec64c985473e" prot="public">
+          <name>READ_UNK_PARAM</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Parameter is unknown </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302aecc7ba650842764b7b92ba2bacb04a85" prot="public">
+          <name>READ_ACCES_DENIED</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read access is forbidden </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302a2d38662d509b70b36dcc8b2ac0412b07" prot="public">
+          <name>READ_LENGTH_EXCEED</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The read result is too long </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a READ_PARAMETER. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="113" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="113" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga60a1f171495623f5df7704a67b46791b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_write_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba379f09c8b2d3f3026cf03510361f8341" prot="public">
+          <name>WRITE_UNK_PARAM</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Parameter is unknown </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791badb143598d8879a97e37ad6aa2afdff52" prot="public">
+          <name>WRITE_ACCES_DENIED</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write access is forbidden </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba6c33260bd85c812d6cb3fe4b048426e1" prot="public">
+          <name>WRITE_ILLEGAL_VALUE</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The given value to write is illegal </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a WRITE_PARAMETER. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="122" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="122" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga88a8bef792f55a9d3a5b06731430f4b7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_key_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a70ab5190e04bd923c3649ce01672357f" prot="public">
+          <name>KEY_INCORRECT_FRM_LEN</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame length is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a8b5be0a087462ad60ab7bb652edec041" prot="public">
+          <name>KEY_ILLEGAL_VALUE</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write key to this Key id is forbidden </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a18ed326a4f0e78733ebecddb1ee669b8" prot="public">
+          <name>KEY_KCHG_NOT_USED</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The cipher key is not Kchg </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a WRITEKEY. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="134" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1gaab7f578fda93475da2faf808cb30c1dd" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_ann_param_id_e</name>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf095beeec5cd839e74fe80d6fcfc7772" prot="public">
+          <name>ANN_FIELD_ID_L7DwnId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Download number </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddae42e454bf1dc2b2bd561ef8bcfb5f6e3" prot="public">
+          <name>ANN_FIELD_ID_L7Klog</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Klog </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaafe8290ab42a2e91ed80505c65c754cb" prot="public">
+          <name>ANN_FIELD_ID_L7SwVersionIni</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SW initial version </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda36f8b07ba924347e4f6a44f36177d665" prot="public">
+          <name>ANN_FIELD_ID_L7SwVersionTarget</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SW target version </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf37b1d844af73c42b720cf232c6bd5db" prot="public">
+          <name>ANN_FIELD_ID_L7MField</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>MField </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddadfdb26e5714211b53b5ef1c51f160fd7" prot="public">
+          <name>ANN_FIELD_ID_L7DcHwId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>HW version </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda96e391897be0168ee7e20ab07cebbb41" prot="public">
+          <name>ANN_FIELD_ID_L7BlocksCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Block number to download </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddade1487273aa8c25335b0532d6145d1e2" prot="public">
+          <name>ANN_FIELD_ID_L7ChannelId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Channel Id to use </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf91731f1818281bf355fc7dc34de1de4" prot="public">
+          <name>ANN_FIELD_ID_L7ModulationId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Modulation Id to use </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda7b00e668d291a62ecd740c96411d276a" prot="public">
+          <name>ANN_FIELD_ID_L7DaysProg</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Programmed day to download </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda099641f9d3bc941f796d16b502755efb" prot="public">
+          <name>ANN_FIELD_ID_L7DayRepeat</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Number of day to repeat </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda566a9ebe533d92a2dc46cf8cd160bc14" prot="public">
+          <name>ANN_FIELD_ID_L7DeltaSec</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta in second between each block </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda517fd2fa66fd0a5f1e84e94b7a2edd3b" prot="public">
+          <name>ANN_FIELD_ID_L7HashSW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Hash on the entire SW to download </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define the filed id in ANN_DOWNLOAD command. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="157" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="157" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga01b397de7bb7ce338d8a44651630993d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_ann_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da95b57aba9b5013a2a972f7f5c7fa10fc" prot="public">
+          <name>ANN_ILLEGAL_VALUE</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>One field value is illegal </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993dafbf2931a1ca3f69e22c8c7635e994c25" prot="public">
+          <name>ANN_INCORRECT_FRM_LEN</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The frame length is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da684c46240d8014bfdf3b044d7419c039" prot="public">
+          <name>ANN_INCORRECT_INI_SW_VER</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The initial version is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da4ebf901d3deab04409a8f39527ced36d" prot="public">
+          <name>ANN_INCORRECT_HW_VER</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The HW version is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da466e81a7626fd4513322950af008fbaf" prot="public">
+          <name>ANN_KCHG_NOT_USED</name>
+          <initializer>= 0x05</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The Kchg has not been used to cipher the command frame </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da7f882dea181c2c6f59cbd02ebeb92388" prot="public">
+          <name>ANN_INCORRECT_BCAST_START_DAY</name>
+          <initializer>= 0x06</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The programmed first day for download is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da9f4a1445880d163bf4006a79fd0b3da1" prot="public">
+          <name>ANN_UPD_IN_PROGRESS</name>
+          <initializer>= 0x07</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An update is already in progress </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da20c2444089ae96657e7ff57fb8ee9275" prot="public">
+          <name>ANN_TGT_SW_VER</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The target SW version is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da315aedd775f1071727d3b00f339f84e7" prot="public">
+          <name>ANN_TGT_VER_DWL</name>
+          <initializer>= 0x09</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da6f2c907184fdb32d6dabf5cc10374cc9" prot="public">
+          <name>ANN_DIFF_TIME_OUT_OF_WINDOWS</name>
+          <initializer>= 0x0A</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a ANN_DOWNLOAD. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="176" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="176" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga49fe0e2698ddb0d0dfe523d62dc42784" prot="public" static="no" strong="no">
+        <type></type>
+        <name>main_param_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784a662573da614dcaed621bdd7852b10bcb" prot="public">
+          <name>PMAX_SET</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784ab6440566b0adcf53a968385b46abb336" prot="public">
+          <name>CLK_SET</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784a7da1da85f775ce2bec60bbc12ffb6272" prot="public">
+          <name>DAYLI_SET</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784ac2b7b9bddf988c5afdfe78e42618fee5" prot="public">
+          <name>CLK_CORR</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784af2d3750f1921920f7da07f3f73fc5bb8" prot="public">
+          <name>INST_PONG</name>
+          <initializer>= 0x1000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784a88ec7d5086d2469ba843c7fcceade8a6" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= 0x8000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="255" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="255" bodyend="262"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define the structures and enums belongs to the install and administration layers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/11[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="37"><highlight class="preprocessor">#ifndef<sp/>_APP_LAYER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_APP_LAYER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor">#ifndef<sp/>EPOCH_UNIX_TO_OURS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EPOCH_UNIX_TO_OURS<sp/>1356998400U<sp/>//<sp/>second<sp/>between<sp/>Unix<sp/>Epoch<sp/>and<sp/>01/01/2013-00:00:00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="group__wize__admin__layer_1ga8732ddf3ae6203a804e1954dafb738f7" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="59" refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a58ec81a3719fe764d8bde7d36834e789" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a58ec81a3719fe764d8bde7d36834e789" kindref="member">ADM_READ_PARAM</ref><sp/><sp/><sp/>=<sp/>0x10,<sp/><sp/></highlight></codeline>
+<codeline lineno="60" refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7abe4d9d12bbfa4f3de6a5bcba23dcdab3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7abe4d9d12bbfa4f3de6a5bcba23dcdab3" kindref="member">ADM_WRITE_PARAM</ref><sp/><sp/>=<sp/>0x20,<sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7af8bbf85ab69e37ff81e62c8f1d527d1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7af8bbf85ab69e37ff81e62c8f1d527d1c" kindref="member">ADM_WRITE_KEY</ref><sp/><sp/><sp/><sp/>=<sp/>0x28,<sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a9cdf54f93928218d4d6fe1c863842def" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a9cdf54f93928218d4d6fe1c863842def" kindref="member">ADM_ANNDOWNLOAD</ref><sp/><sp/>=<sp/>0x30,<sp/><sp/></highlight></codeline>
+<codeline lineno="63" refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a32a15cd5e73a54095a17c5f5da194132" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a32a15cd5e73a54095a17c5f5da194132" kindref="member">ADM_EXECINSTPING</ref><sp/>=<sp/>0x40,<sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<sp/><ref refid="group__wize__admin__layer_1ga8732ddf3ae6203a804e1954dafb738f7" kindref="member">admin_cmd_id_e</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/****<sp/>Admin<sp/>layer<sp/>related<sp/>****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="group__wize__admin__layer_1ga1b5d8e9d4efc26fe7510930dc3985f07" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="73" refid="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07acf3ba09f654f5840cb070d9e0fb87391" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07acf3ba09f654f5840cb070d9e0fb87391" kindref="member">ADM_NONE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,<sp/></highlight></codeline>
+<codeline lineno="74" refid="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07a6cd4b5875dc0c217a3247eaede0c8edf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07a6cd4b5875dc0c217a3247eaede0c8edf" kindref="member">ADM_UNK_CMD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0xFF,<sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}<sp/><ref refid="group__wize__admin__layer_1ga1b5d8e9d4efc26fe7510930dc3985f07" kindref="member">admin_err_code_e</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structadmin__rsp__cmderr__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82" refid="structadmin__rsp__cmderr__t_1acf4672f09430a30a31548500a089ab21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__cmderr__t_1acf4672f09430a30a31548500a089ab21" kindref="member">L7ResponseId</ref>;<sp/></highlight></codeline>
+<codeline lineno="83" refid="structadmin__rsp__cmderr__t_1a620cf3a210e092cf73b25805e682565b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__cmderr__t_1a620cf3a210e092cf73b25805e682565b" kindref="member">L7ErrorCode</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}<sp/><ref refid="structadmin__rsp__cmderr__t" kindref="compound">admin_rsp_cmderr_t</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="structadmin__rsp__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90" refid="structadmin__rsp__t_1a7d4931a914bd9f8f7626ff210a3bdb9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__t_1a7d4931a914bd9f8f7626ff210a3bdb9f" kindref="member">L7ResponseId</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91" refid="structadmin__rsp__t_1af287b364eada76f12177a37be4c718e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__t_1af287b364eada76f12177a37be4c718e3" kindref="member">L7ErrorCode</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92" refid="structadmin__rsp__t_1ad06454fd2e54f6d931a1bf3c294e42be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7SwVersion[2];<sp/></highlight></codeline>
+<codeline lineno="93" refid="structadmin__rsp__t_1ae5a6dbe487b7fc829913f15123edc562" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__t_1ae5a6dbe487b7fc829913f15123edc562" kindref="member">L7Rssi</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}<sp/><ref refid="structadmin__rsp__t" kindref="compound">admin_rsp_t</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="structadmin__rsp__err__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100" refid="structadmin__rsp__err__t_1a3c77d76533ca9e3ee7256457171fcc73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__err__t_1a3c77d76533ca9e3ee7256457171fcc73" kindref="member">L7ResponseId</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101" refid="structadmin__rsp__err__t_1a4afe545a95616d0ec152a2c93175825f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__err__t_1a4afe545a95616d0ec152a2c93175825f" kindref="member">L7ErrorCode</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102" refid="structadmin__rsp__err__t_1ac60460950275d7b57a524f9c13d03fe4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7SwVersion[2];<sp/></highlight></codeline>
+<codeline lineno="103" refid="structadmin__rsp__err__t_1a18e1e1f27c2c51ffe9c1bd31ab6fee0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__err__t_1a18e1e1f27c2c51ffe9c1bd31ab6fee0b" kindref="member">L7Rssi</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104" refid="structadmin__rsp__err__t_1ae6820eb8559d6663613a466cae8b799f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__rsp__err__t_1ae6820eb8559d6663613a466cae8b799f" kindref="member">L7ErrorParam</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}<sp/><ref refid="structadmin__rsp__err__t" kindref="compound">admin_rsp_err_t</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/****<sp/>Admin<sp/>read/write<sp/>parameters<sp/>****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="group__wize__admin__layer_1ga8466379311ba449fe5bbf1ee887ca302" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="114" refid="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302afc7147cac20f98ad60a8ec64c985473e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302afc7147cac20f98ad60a8ec64c985473e" kindref="member">READ_UNK_PARAM</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="115" refid="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302aecc7ba650842764b7b92ba2bacb04a85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302aecc7ba650842764b7b92ba2bacb04a85" kindref="member">READ_ACCES_DENIED</ref><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="116" refid="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302a2d38662d509b70b36dcc8b2ac0412b07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302a2d38662d509b70b36dcc8b2ac0412b07" kindref="member">READ_LENGTH_EXCEED</ref><sp/>=<sp/>0x03,<sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}<sp/><ref refid="group__wize__admin__layer_1ga8466379311ba449fe5bbf1ee887ca302" kindref="member">admin_read_err_code_e</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="group__wize__admin__layer_1ga60a1f171495623f5df7704a67b46791b" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="123" refid="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba379f09c8b2d3f3026cf03510361f8341" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba379f09c8b2d3f3026cf03510361f8341" kindref="member">WRITE_UNK_PARAM</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="124" refid="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791badb143598d8879a97e37ad6aa2afdff52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791badb143598d8879a97e37ad6aa2afdff52" kindref="member">WRITE_ACCES_DENIED</ref><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="125" refid="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba6c33260bd85c812d6cb3fe4b048426e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba6c33260bd85c812d6cb3fe4b048426e1" kindref="member">WRITE_ILLEGAL_VALUE</ref><sp/>=<sp/>0x03,<sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}<sp/><ref refid="group__wize__admin__layer_1ga60a1f171495623f5df7704a67b46791b" kindref="member">admin_write_err_code_e</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/****<sp/>Admin<sp/>write<sp/>key<sp/>****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="group__wize__admin__layer_1ga88a8bef792f55a9d3a5b06731430f4b7" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="135" refid="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a70ab5190e04bd923c3649ce01672357f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a70ab5190e04bd923c3649ce01672357f" kindref="member">KEY_INCORRECT_FRM_LEN</ref><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="136" refid="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a8b5be0a087462ad60ab7bb652edec041" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a8b5be0a087462ad60ab7bb652edec041" kindref="member">KEY_ILLEGAL_VALUE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="137" refid="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a18ed326a4f0e78733ebecddb1ee669b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a18ed326a4f0e78733ebecddb1ee669b8" kindref="member">KEY_KCHG_NOT_USED</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x03,<sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}<sp/><ref refid="group__wize__admin__layer_1ga88a8bef792f55a9d3a5b06731430f4b7" kindref="member">admin_key_err_code_e</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="structadmin__cmd__writekey__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145" refid="structadmin__cmd__writekey__t_1a5f091d303b2cab2631b18e987ad49f52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__writekey__t_1a5f091d303b2cab2631b18e987ad49f52" kindref="member">L7CommandId</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="146" refid="structadmin__cmd__writekey__t_1af9bdb3b3772cd9fa5203657ba391a5a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__writekey__t_1af9bdb3b3772cd9fa5203657ba391a5a8" kindref="member">L7KeyId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="147" refid="structadmin__cmd__writekey__t_1a47b3af3c920a1d2733ff448adc9243e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7KeyVal[32];<sp/></highlight></codeline>
+<codeline lineno="148" refid="structadmin__cmd__writekey__t_1ad6031b3e16f1949720343be93b8401ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__writekey__t_1ad6031b3e16f1949720343be93b8401ee" kindref="member">L7KeyIndex</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}<sp/><ref refid="structadmin__cmd__writekey__t" kindref="compound">admin_cmd_writekey_t</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">/****<sp/>Admin<sp/>anndownload<sp/>****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="group__wize__admin__layer_1gaab7f578fda93475da2faf808cb30c1dd" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="158" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf095beeec5cd839e74fe80d6fcfc7772" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf095beeec5cd839e74fe80d6fcfc7772" kindref="member">ANN_FIELD_ID_L7DwnId</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddae42e454bf1dc2b2bd561ef8bcfb5f6e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddae42e454bf1dc2b2bd561ef8bcfb5f6e3" kindref="member">ANN_FIELD_ID_L7Klog</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="160" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaafe8290ab42a2e91ed80505c65c754cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaafe8290ab42a2e91ed80505c65c754cb" kindref="member">ANN_FIELD_ID_L7SwVersionIni</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="161" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda36f8b07ba924347e4f6a44f36177d665" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda36f8b07ba924347e4f6a44f36177d665" kindref="member">ANN_FIELD_ID_L7SwVersionTarget</ref>,<sp/></highlight></codeline>
+<codeline lineno="162" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf37b1d844af73c42b720cf232c6bd5db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf37b1d844af73c42b720cf232c6bd5db" kindref="member">ANN_FIELD_ID_L7MField</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddadfdb26e5714211b53b5ef1c51f160fd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddadfdb26e5714211b53b5ef1c51f160fd7" kindref="member">ANN_FIELD_ID_L7DcHwId</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda96e391897be0168ee7e20ab07cebbb41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda96e391897be0168ee7e20ab07cebbb41" kindref="member">ANN_FIELD_ID_L7BlocksCount</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddade1487273aa8c25335b0532d6145d1e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddade1487273aa8c25335b0532d6145d1e2" kindref="member">ANN_FIELD_ID_L7ChannelId</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="166" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf91731f1818281bf355fc7dc34de1de4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf91731f1818281bf355fc7dc34de1de4" kindref="member">ANN_FIELD_ID_L7ModulationId</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="167" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda7b00e668d291a62ecd740c96411d276a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda7b00e668d291a62ecd740c96411d276a" kindref="member">ANN_FIELD_ID_L7DaysProg</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="168" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda099641f9d3bc941f796d16b502755efb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda099641f9d3bc941f796d16b502755efb" kindref="member">ANN_FIELD_ID_L7DayRepeat</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda566a9ebe533d92a2dc46cf8cd160bc14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda566a9ebe533d92a2dc46cf8cd160bc14" kindref="member">ANN_FIELD_ID_L7DeltaSec</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170" refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda517fd2fa66fd0a5f1e84e94b7a2edd3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda517fd2fa66fd0a5f1e84e94b7a2edd3b" kindref="member">ANN_FIELD_ID_L7HashSW</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}<sp/><ref refid="group__wize__admin__layer_1gaab7f578fda93475da2faf808cb30c1dd" kindref="member">admin_ann_param_id_e</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="group__wize__admin__layer_1ga01b397de7bb7ce338d8a44651630993d" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="177" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da95b57aba9b5013a2a972f7f5c7fa10fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da95b57aba9b5013a2a972f7f5c7fa10fc" kindref="member">ANN_ILLEGAL_VALUE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="178" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993dafbf2931a1ca3f69e22c8c7635e994c25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993dafbf2931a1ca3f69e22c8c7635e994c25" kindref="member">ANN_INCORRECT_FRM_LEN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="179" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da684c46240d8014bfdf3b044d7419c039" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da684c46240d8014bfdf3b044d7419c039" kindref="member">ANN_INCORRECT_INI_SW_VER</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x03,<sp/></highlight></codeline>
+<codeline lineno="180" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da4ebf901d3deab04409a8f39527ced36d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da4ebf901d3deab04409a8f39527ced36d" kindref="member">ANN_INCORRECT_HW_VER</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x04,<sp/></highlight></codeline>
+<codeline lineno="181" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da466e81a7626fd4513322950af008fbaf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da466e81a7626fd4513322950af008fbaf" kindref="member">ANN_KCHG_NOT_USED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x05,<sp/></highlight></codeline>
+<codeline lineno="182" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da7f882dea181c2c6f59cbd02ebeb92388" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da7f882dea181c2c6f59cbd02ebeb92388" kindref="member">ANN_INCORRECT_BCAST_START_DAY</ref><sp/>=<sp/>0x06,<sp/></highlight></codeline>
+<codeline lineno="183" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da9f4a1445880d163bf4006a79fd0b3da1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da9f4a1445880d163bf4006a79fd0b3da1" kindref="member">ANN_UPD_IN_PROGRESS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x07,<sp/></highlight></codeline>
+<codeline lineno="184" refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da20c2444089ae96657e7ff57fb8ee9275" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da20c2444089ae96657e7ff57fb8ee9275" kindref="member">ANN_TGT_SW_VER</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x08,<sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>ANN_TGT_VER_DWL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x09,<sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>ANN_DIFF_TIME_OUT_OF_WINDOWS<sp/><sp/>=<sp/>0x0A,<sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal">}<ref refid="group__wize__admin__layer_1ga01b397de7bb7ce338d8a44651630993d" kindref="member">admin_ann_err_code_e</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="structadmin__cmd__anndownload__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193" refid="structadmin__cmd__anndownload__t_1a205282df0492cefccfafb816cda2c16b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__anndownload__t_1a205282df0492cefccfafb816cda2c16b" kindref="member">L7CommandId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="194" refid="structadmin__cmd__anndownload__t_1a6cbb56174974fc4d549efe5a088a5ba9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7DwnId[3];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="195" refid="structadmin__cmd__anndownload__t_1a1333f9611554a04e6616c660ddfdc330" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7Klog[16];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="196" refid="structadmin__cmd__anndownload__t_1ae95c828ae3eb02a26e46644e4b628587" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7SwVersionIni[2];<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="197" refid="structadmin__cmd__anndownload__t_1a995d7f84bd23147e8bf439eed09a9869" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7SwVersionTarget[2];<sp/></highlight></codeline>
+<codeline lineno="198" refid="structadmin__cmd__anndownload__t_1acea2b30c2b873839ab3e0cd7e3b87e3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7MField[2];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="199" refid="structadmin__cmd__anndownload__t_1a54c93aaaff06f199badceda1fd132221" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7DcHwId[2];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="200" refid="structadmin__cmd__anndownload__t_1ac3bc75bfc6842acc82658c8b38de6977" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7BlocksCount[2];<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="201" refid="structadmin__cmd__anndownload__t_1ad0da65081e2e693d34b802ba142c48dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__anndownload__t_1ad0da65081e2e693d34b802ba142c48dc" kindref="member">L7ChannelId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="202" refid="structadmin__cmd__anndownload__t_1ae03e7fed658fcd531123b47b780425cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__anndownload__t_1ae03e7fed658fcd531123b47b780425cc" kindref="member">L7ModulationId</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="203" refid="structadmin__cmd__anndownload__t_1a84988ae50f3a1777e7c28a7022ff5d8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7DaysProg[4];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="204" refid="structadmin__cmd__anndownload__t_1a146f12d0703284bea52f80cc5ae5a084" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__anndownload__t_1a146f12d0703284bea52f80cc5ae5a084" kindref="member">L7DayRepeat</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="205" refid="structadmin__cmd__anndownload__t_1ac95ef1a4f2ea6b0367dbf5207e5a0e65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__anndownload__t_1ac95ef1a4f2ea6b0367dbf5207e5a0e65" kindref="member">L7DeltaSec</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="206" refid="structadmin__cmd__anndownload__t_1aae35b7d1f8654d18910d584b1c1e1b3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7HashSW[4];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}<sp/><ref refid="structadmin__cmd__anndownload__t" kindref="compound">admin_cmd_anndownload_t</ref>;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">/****<sp/>Admin<sp/>execping<sp/>****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="structadmin__cmd__execinstping__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="216" refid="structadmin__cmd__execinstping__t_1aa936670f413a5270ebf8ad4b9c3387bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadmin__cmd__execinstping__t_1aa936670f413a5270ebf8ad4b9c3387bb" kindref="member">L7CommandId</ref>;<sp/></highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}<ref refid="structadmin__cmd__execinstping__t" kindref="compound">admin_cmd_execinstping_t</ref>;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="structadmin__rsp__execinstping__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structadmin__rsp__t" kindref="compound">admin_rsp_t</ref><sp/>header;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7NbPong;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7Pong[3][9];<sp/></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}<ref refid="structadmin__rsp__execinstping__t" kindref="compound">admin_rsp_execinstping_t</ref>;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">/****<sp/>Install<sp/>layer<sp/>related<sp/>****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="structinst__ping__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7DownChannel;<sp/><sp/></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7DownMod;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7PingRxDelay;<sp/><sp/></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7PingRxLength;<sp/></highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}<ref refid="structinst__ping__t" kindref="compound">inst_ping_t</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="structinst__pong__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7ConcentId[6];<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7ModemId;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7RssiUpstream;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>L7RssiDownstream;<sp/></highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}<ref refid="structinst__pong__t" kindref="compound">inst_pong_t</ref>;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="group__wize__admin__layer_1ga49fe0e2698ddb0d0dfe523d62dc42784" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>PMAX_SET<sp/><sp/><sp/><sp/>=<sp/>0x01,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>CLK_SET<sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>DAYLI_SET<sp/><sp/><sp/>=<sp/>0x04,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>CLK_CORR<sp/><sp/><sp/><sp/>=<sp/>0x08,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>INST_PONG<sp/><sp/><sp/>=<sp/>0x1000,<sp/></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>DEFAULT<sp/><sp/><sp/><sp/><sp/>=<sp/>0x8000,<sp/></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}<ref refid="group__wize__admin__layer_1ga49fe0e2698ddb0d0dfe523d62dc42784" kindref="member">main_param_e</ref>;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_APP_LAYER_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h"/>
+  </compounddef>
+</doxygen>

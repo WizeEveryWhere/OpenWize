@@ -1,0 +1,630 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__api" kind="group">
+    <compoundname>wize_api</compoundname>
+    <title>Wize_api</title>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>wize_api_ret_e</name>
+        <enumvalue id="group__wize__api_1ggab58813867afe63f330bb7a1a15ca5dd7a188089774202a8c83eb94f7cd8046702" prot="public">
+          <name>WIZE_API_SUCCESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__api_1ggab58813867afe63f330bb7a1a15ca5dd7aa05c6ce21a1e14286b8d18b9c634b15c" prot="public">
+          <name>WIZE_API_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__api_1ggab58813867afe63f330bb7a1a15ca5dd7a70d3a23ac6f1a691b4df6393bc5cc580" prot="public">
+          <name>WIZE_API_ADM_SUCCESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__api_1ggab58813867afe63f330bb7a1a15ca5dd7af5e05575f4d83ddef3456e8220a6935c" prot="public">
+          <name>WIZE_API_ACCESS_TIMEOUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__api_1ggab58813867afe63f330bb7a1a15ca5dd7af08f1cbac4d5e2790a3303912b3adf4a" prot="public">
+          <name>WIZE_API_INVALID_PARAM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the return code from Wize API. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" line="62" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" bodystart="61" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__wize__api_1ga3aedcf16d8cb33fb30486f02462ed181" prot="public" static="yes" mutable="no">
+        <type><ref refid="group__wize__net__api_1ga3a430a72aef99fbe3d4d227aaec8099b" kindref="member">wize_net_t</ref></type>
+        <definition>wize_net_t sNetCtx</definition>
+        <argsstring></argsstring>
+        <name>sNetCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="54" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__api_1gaf90194f8a5507e7d394632969f0ccd65" prot="public" static="yes" mutable="no">
+        <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref></type>
+        <definition>struct ses_disp_ctx_s sSesDispCtx</definition>
+        <argsstring></argsstring>
+        <name>sSesDispCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="54" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__api_1gabd93daf993bc59595a47f46b60307342" prot="public" static="yes" mutable="no">
+        <type>struct <ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref></type>
+        <definition>struct time_upd_s sTimeUpdCtx</definition>
+        <argsstring></argsstring>
+        <name>sTimeUpdCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="54" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__api_1ga2c536934392dc23221bce927ba9c99e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_GetAdmCmd</definition>
+        <argsstring>(net_msg_t *pMsg)</argsstring>
+        <name>WizeApi_GetAdmCmd</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pAdmMsg</declname>
+          <defname>pMsg</defname>
+        </param>
+        <briefdescription>
+<para>This function get the last received ADM command message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on message buffer</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="143" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="143" bodyend="168" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="72" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga013b4b3b0aeeacc6afc6bde192926c79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_GetAdmRsp</definition>
+        <argsstring>(net_msg_t *pMsg)</argsstring>
+        <name>WizeApi_GetAdmRsp</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pAdmMsg</declname>
+          <defname>pMsg</defname>
+        </param>
+        <briefdescription>
+<para>This function get the last sent ADM response message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on message buffer</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="179" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="179" bodyend="204" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="73" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1gac50f287fbd380352ad005b2d26bdc56f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_GetStats</definition>
+        <argsstring>(net_stats_t *pStats)</argsstring>
+        <name>WizeApi_GetStats</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gab4f42d2bd0322e6a7560f652ec3262df" kindref="member">net_stats_t</ref> *</type>
+          <declname>pStats</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" line="74" column="16" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="74" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga6107b71129b9482a12eedf3172ea1beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_SetDeviceId</definition>
+        <argsstring>(device_id_t *pDevId)</argsstring>
+        <name>WizeApi_SetDeviceId</name>
+        <param>
+          <type><ref refid="uniondevice__id__t" kindref="compound">device_id_t</ref> *</type>
+          <declname>pDevId</declname>
+        </param>
+        <briefdescription>
+<para>This function set the device identification. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sDevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device identification to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="66" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="66" bodyend="73" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="75" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1gafb37408259ac2060c74e03ac959d5d65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_GetDeviceId</definition>
+        <argsstring>(device_id_t *pDevId)</argsstring>
+        <name>WizeApi_GetDeviceId</name>
+        <param>
+          <type><ref refid="uniondevice__id__t" kindref="compound">device_id_t</ref> *</type>
+          <declname>pDevId</declname>
+        </param>
+        <briefdescription>
+<para>This function get the device identification. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pDevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the device identification holder</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="82" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="82" bodyend="89" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="76" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga3bfa01bc6f5f5a75a23e41ff4aa62ea9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_ExecPing</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_ExecPing</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function start a INST (PING/PONG) session. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_FAILED (1) if INST session failed return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="104" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="104" bodyend="126" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="78" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1gad18308449f50944835c464090b9deec4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_Send</definition>
+        <argsstring>(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)</argsstring>
+        <name>WizeApi_Send</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Size</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Type</declname>
+        </param>
+        <briefdescription>
+<para>This function send a DATA message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on raw data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of byte to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of frame DATA or DATA_PRIO</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_FAILED (1) if ADN session failed return wize_api_ret_e::WIZE_API_ADM_SUCCESS (2) if ADM CMD has been received return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="291" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="291" bodyend="345" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="79" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga5b04e3cf3c15bda5140d9d2f9ed1e00e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__wize__api_1gab58813867afe63f330bb7a1a15ca5dd7" kindref="member">wize_api_ret_e</ref></type>
+        <definition>wize_api_ret_e WizeApi_SendEx</definition>
+        <argsstring>(uint8_t *pData, uint8_t u8Size, uint8_t u8Type)</argsstring>
+        <name>WizeApi_SendEx</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Size</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Type</declname>
+        </param>
+        <briefdescription>
+<para>This function send a DATA message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on raw data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of byte to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of frame DATA or DATA_PRIO</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine return wize_api_ret_e::WIZE_API_FAILED (1) if ADN session failed return wize_api_ret_e::WIZE_API_ADM_SUCCESS (2) if ADM CMD has been received return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (3) if access is refused return wize_api_ret_e::WIZE_API_INVALID_PARAM (4) if given parameter(s) is/are invalid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="219" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="219" bodyend="276" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="80" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga1721feb2c03d8b38cc2ae69a389ba463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_Setup</definition>
+        <argsstring>(phydev_t *pPhyDev)</argsstring>
+        <name>WizeApi_Setup</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhyDev</declname>
+        </param>
+        <briefdescription>
+<para>This function setup the wize stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="389" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="389" bodyend="397" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="82" declcolumn="6"/>
+        <references refid="group__wize__time__mgr_1gaadf7600a3bccc68b4b49fc9583ec95c2" compoundref="time__mgr_8c" startline="101" endline="108">TimeMgr_Setup</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga84eb78c1a37bd62c731da353ef6e8464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_Enable</definition>
+        <argsstring>(uint8_t bFlag)</argsstring>
+        <name>WizeApi_Enable</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>bFlag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="411" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="411" bodyend="414" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="83" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1gad5caf07c1e9d49946395590839c393a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_CtxClear</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_CtxClear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function Clear the Time Update state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="354" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="354" bodyend="359" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="85" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga7320c3c14db98cd6e9afd3808a8f35d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_CtxSave</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_CtxSave</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function Save the Time Update state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="377" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="377" bodyend="381" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="86" declcolumn="6"/>
+        <references refid="group__rtc_1ga6823644967f78ea14d790e3ce73f2070" compoundref="bsp__rtc_8c" startline="127" endline="130">BSP_Rtc_Backup_Write</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga027a29f62b83877f6c0e69987ccf604c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_CtxRestore</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_CtxRestore</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function Restore the Time Update state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="366" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="366" bodyend="370" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h" declline="87" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__api_1ga726e794d96fa3658a13eff9ccc3cafc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WizeApi_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>WizeApi_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initialize the wize stack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhyDev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the phy device</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="407" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="407" bodyend="409"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__wize__api_1ga9824606579124a6bea20cc65038b3683" prot="public" static="no">
+        <name>SES_MGR_INST_REQ_TMO_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="92" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1gaa09617a30cdf244205d27db0807ef38e" prot="public" static="no">
+        <name>SES_MGR_INST_FLG_TMO_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="93" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1ga6ffe63d0a427c320d6a49ecbe077d51e" prot="public" static="no">
+        <name>SES_MGR_INST_FLG_ALL_MSK</name>
+        <initializer>0x0000FFFFU | (SES_INST &lt;&lt; SES_MGR_FLG_POS)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="94" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1gad39908abeef2311068b00d8eea1b49ec" prot="public" static="no">
+        <name>SES_MGR_ADM_REQ_TIMEOUT_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="130" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1ga374a1a6acffc10832d81c6b03e085927" prot="public" static="no">
+        <name>SES_MGR_ADM_FLG_TIMEOUT_MSK</name>
+        <initializer>0xFFFFFFFFU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="131" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__api_1ga00f659348b17af026c59a143cba67c5e" prot="public" static="no">
+        <name>SES_MGR_ADM_FLG_ALL_MSK</name>
+        <initializer>0x0000FFFFU | (SES_ADM &lt;&lt; SES_MGR_FLG_POS)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" line="132" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

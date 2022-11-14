@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structmedium__cfg__s" kind="struct" language="C++" prot="public">
+    <compoundname>medium_cfg_s</compoundname>
+    <includes refid="net__api__private_8h" local="no">net_api_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmedium__cfg__s_1a31e01aab3a132ad69471c680c187859f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+        <definition>phy_chan_e medium_cfg_s::eRxChannel</definition>
+        <argsstring></argsstring>
+        <name>eRxChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RX channel (aka: RF_DOWNLINK_CHANNEL) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="172" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmedium__cfg__s_1ad656ee43b4bb1a40c25d95fad8ec51c1" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+        <definition>phy_mod_e medium_cfg_s::eRxModulation</definition>
+        <argsstring></argsstring>
+        <name>eRxModulation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RX modulation (aka: RF_DOWNLINK_MOD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="173" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmedium__cfg__s_1a4562f6e8302458f8a9ceb0f8444b43d1" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+        <definition>phy_chan_e medium_cfg_s::eTxChannel</definition>
+        <argsstring></argsstring>
+        <name>eTxChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TX channel (RF_UPLINK_CHANNEL) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="175" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmedium__cfg__s_1ae0beb1fbda4ae6d0d1db394c4816792f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+        <definition>phy_mod_e medium_cfg_s::eTxModulation</definition>
+        <argsstring></argsstring>
+        <name>eTxModulation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TX modulation (aka: RF_UPLINK_MOD) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="176" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmedium__cfg__s_1ac7b462f099eb9e0780fbbf80ef874de6" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga291dfaf5f6ccf284805be2245db277ce" kindref="member">phy_power_e</ref></type>
+        <definition>phy_power_e medium_cfg_s::eTxPower</definition>
+        <argsstring></argsstring>
+        <name>eTxPower</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TX power (aka: TX_POWER) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="177" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmedium__cfg__s_1a22befd7cb3a2de71b55b5000e5b8d6be" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t medium_cfg_s::i16TxFreqOffset</definition>
+        <argsstring></argsstring>
+        <name>i16TxFreqOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TX frequency offset (aka: TX_FREQ_OFFSET) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="178" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure define the medium configuration (RX/TX channel, modulation, power... </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>medium_cfg_s</label>
+        <link refid="structmedium__cfg__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="170" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="170" bodyend="179"/>
+    <listofallmembers>
+      <member refid="structmedium__cfg__s_1a31e01aab3a132ad69471c680c187859f" prot="public" virt="non-virtual"><scope>medium_cfg_s</scope><name>eRxChannel</name></member>
+      <member refid="structmedium__cfg__s_1ad656ee43b4bb1a40c25d95fad8ec51c1" prot="public" virt="non-virtual"><scope>medium_cfg_s</scope><name>eRxModulation</name></member>
+      <member refid="structmedium__cfg__s_1a4562f6e8302458f8a9ceb0f8444b43d1" prot="public" virt="non-virtual"><scope>medium_cfg_s</scope><name>eTxChannel</name></member>
+      <member refid="structmedium__cfg__s_1ae0beb1fbda4ae6d0d1db394c4816792f" prot="public" virt="non-virtual"><scope>medium_cfg_s</scope><name>eTxModulation</name></member>
+      <member refid="structmedium__cfg__s_1ac7b462f099eb9e0780fbbf80ef874de6" prot="public" virt="non-virtual"><scope>medium_cfg_s</scope><name>eTxPower</name></member>
+      <member refid="structmedium__cfg__s_1a22befd7cb3a2de71b55b5000e5b8d6be" prot="public" virt="non-virtual"><scope>medium_cfg_s</scope><name>i16TxFreqOffset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structkey__s" kind="struct" language="C++" prot="public">
+    <compoundname>key_s</compoundname>
+    <includes refid="key__priv_8h" local="no">key_priv.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structkey__s_1ad9d8aab2b2685a259578f44b6d820783" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t key_s::key[KEY_SIZE]</definition>
+        <argsstring>[KEY_SIZE]</argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" line="54" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure hold a key used for en/de-cryption and authentication. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>key_s</label>
+        <link refid="structkey__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" line="53" column="15" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" bodystart="53" bodyend="55"/>
+    <listofallmembers>
+      <member refid="structkey__s_1ad9d8aab2b2685a259578f44b6d820783" prot="public" virt="non-virtual"><scope>key_s</scope><name>key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,733 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="parameters_8h" kind="file" language="C++">
+    <compoundname>parameters.h</compoundname>
+    <includes refid="parameters__def_8h" local="yes">parameters_def.h</includes>
+    <includedby refid="adm__internal_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c</includedby>
+    <includedby refid="inst__internal_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c</includedby>
+    <includedby refid="ses__dispatcher_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</includedby>
+    <includedby refid="time__mgr_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</includedby>
+    <includedby refid="wize__api_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</includedby>
+    <includedby refid="app__entry_8h" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</includedby>
+    <includedby refid="storage_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</includedby>
+    <includedby refid="sys__init_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h</label>
+        <link refid="parameters_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/inst_internal.c</label>
+        <link refid="inst__internal_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</label>
+        <link refid="time__mgr_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h</label>
+        <link refid="parameters_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c</label>
+        <link refid="adm__internal_8c"/>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Param_Init</definition>
+        <argsstring>(const uint8_t *p_Param)</argsstring>
+        <name>Param_Init</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>p_Param</declname>
+        </param>
+        <briefdescription>
+<para>Init parameters by with default values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input parameters table. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="265" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="265" bodyend="268" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="44" declcolumn="6"/>
+        <references refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4">a_ParamValue</references>
+        <references refid="group__parameters_1ga84f49efe2202fbe3028f42d5fb3553be" compoundref="storage_8c" startline="70">u16_ParamValueSz</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga86c322ee4a48330f3fba7896ec033882" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_IsValidId</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_IsValidId</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Check if Id is in acess table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not valid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: valid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="277" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="277" bodyend="279" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="45" declcolumn="9"/>
+        <references refid="group__parameters_1ga967743ed3bc6da990464bb439c2aa818" compoundref="storage_8c" startline="75">u8_ParamAccessCfgSz</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga5d6f8a6494103ae84a2c12a28354bc61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_GetSize</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetSize</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the parameter size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The parameter size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="287" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="287" bodyend="289" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="46" declcolumn="9"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref></type>
+        <definition>param_access_e Param_GetLocAccess</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetLocAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the local access rights field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The local access rights field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="297" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="297" bodyend="299" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="47" declcolumn="16"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref></type>
+        <definition>param_access_e Param_GetRemAccess</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRemAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the remote access rights field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The remote access rights field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="307" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="307" bodyend="309" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="48" declcolumn="16"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga7f7dce9138c26ae37af7f31703c9aabc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref></type>
+        <definition>param_effective_e Param_GetEffect</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetEffect</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the &quot;effective&quot; field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The &quot;effective&quot; field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="317" column="19" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="317" bodyend="319" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="49" declcolumn="19"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf667d345e2617fb9a56f95a2f692a078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref></type>
+        <definition>param_ref_e Param_GetReferenced</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetReferenced</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the &quot;referenced&quot; field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The &quot;referenced&quot; field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="327" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="327" bodyend="329" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="50" declcolumn="13"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga7123182d7b2e73313da7283a82b71772" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Param_GetAddOf</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetAddOf</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the memory address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The parameter address </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="338" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="338" bodyend="344" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="51" declcolumn="10"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+        <references refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4">a_ParamValue</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga251ae563ea25c3afb5b941d59e00438c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_GetRestrId</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRestrId</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction id of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction id field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="352" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="352" bodyend="354" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="52" declcolumn="9"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga81d781f58a54f102fba660b5f42f6fe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * Param_GetRestrTableAdd</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRestrTableAdd</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction table address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction table address. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="362" column="12" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="362" bodyend="369" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="53" declcolumn="12"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+        <references refid="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" compoundref="storage_8c" startline="80">u8_ParamRestrCfgSz</references>
+        <references refid="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" compoundref="parameters__cfg_8c" startline="292">a_ParamRestr</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf9315b4b7f366378428f88edb81b72e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_CheckConformity</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data)</argsstring>
+        <name>Param_CheckConformity</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to its restriction definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the parameter to check </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="379" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="379" bodyend="400" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="54" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_Access</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_Access</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Pseudo-Direct access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>success </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="411" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="411" bodyend="425" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="56" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga37a2f18b3815d6368701e433ce07789f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_LocalAccess</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_LocalAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Local access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access is forbidden </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access granted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="437" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="437" bodyend="453" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="57" declcolumn="9"/>
+        <references refid="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" compoundref="parameters_8c" startline="297" endline="299">Param_GetLocAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga727ea9de05a38b0d5f42d7cd6abb35c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_RemoteAccess</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_RemoteAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Remote access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access is forbidden; 1: access granted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="464" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="464" bodyend="481" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="58" declcolumn="9"/>
+        <references refid="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" compoundref="parameters_8c" startline="307" endline="309">Param_GetRemAccess</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define function to deal with parameters. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2019/11/20 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_PARAMETERS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PARAMETERS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters__def_8h" kindref="compound">parameters_def.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" kindref="member">Param_Init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*p_Param);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga86c322ee4a48330f3fba7896ec033882" kindref="member">Param_IsValidId</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga5d6f8a6494103ae84a2c12a28354bc61" kindref="member">Param_GetSize</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref><sp/><ref refid="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" kindref="member">Param_GetLocAccess</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref><sp/><ref refid="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" kindref="member">Param_GetRemAccess</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref><sp/><ref refid="group__parameters_1ga7f7dce9138c26ae37af7f31703c9aabc" kindref="member">Param_GetEffect</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref><sp/><ref refid="group__parameters_1gaf667d345e2617fb9a56f95a2f692a078" kindref="member">Param_GetReferenced</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">uint32_t<sp/><ref refid="group__parameters_1ga7123182d7b2e73313da7283a82b71772" kindref="member">Param_GetAddOf</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga251ae563ea25c3afb5b941d59e00438c" kindref="member">Param_GetRestrId</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="group__parameters_1ga81d781f58a54f102fba660b5f42f6fe4" kindref="member">Param_GetRestrTableAdd</ref>(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1gaf9315b4b7f366378428f88edb81b72e2" kindref="member">Param_CheckConformity</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga37a2f18b3815d6368701e433ce07789f" kindref="member">Param_LocalAccess</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga727ea9de05a38b0d5f42d7cd6abb35c7" kindref="member">Param_RemoteAccess</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PARAMETERS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_b62ac8bbaee40234ed02d0001b6fe583" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/ReedSolomon</compoundname>
+    <innerdir refid="dir_0ed5b0f6be5450358c89c68b72af02ea">/home/nono/OpenWize/sources/Samples/ReedSolomon/include</innerdir>
+    <innerdir refid="dir_31c344db2ff8c687bc36385aaa2a8455">/home/nono/OpenWize/sources/Samples/ReedSolomon/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/"/>
+  </compounddef>
+</doxygen>

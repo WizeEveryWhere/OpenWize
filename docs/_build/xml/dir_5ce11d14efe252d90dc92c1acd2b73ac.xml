@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_5ce11d14efe252d90dc92c1acd2b73ac" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include</compoundname>
+    <innerfile refid="bsp_8h">bsp.h</innerfile>
+    <innerfile refid="bsp__boot_8h">bsp_boot.h</innerfile>
+    <innerfile refid="bsp__flash_8h">bsp_flash.h</innerfile>
+    <innerfile refid="bsp__gpio_8h">bsp_gpio.h</innerfile>
+    <innerfile refid="bsp__gpio__it_8h">bsp_gpio_it.h</innerfile>
+    <innerfile refid="bsp__lp_8h">bsp_lp.h</innerfile>
+    <innerfile refid="bsp__rtc_8h">bsp_rtc.h</innerfile>
+    <innerfile refid="bsp__uart_8h">bsp_uart.h</innerfile>
+    <innerfile refid="common_8h">common.h</innerfile>
+    <innerfile refid="pin__cfg_8h">pin_cfg.h</innerfile>
+    <innerfile refid="platform_8h">platform.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/"/>
+  </compounddef>
+</doxygen>

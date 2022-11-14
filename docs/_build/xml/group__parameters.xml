@@ -1,0 +1,1602 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__parameters" kind="group">
+    <compoundname>parameters</compoundname>
+    <title>Parameters</title>
+    <innerclass refid="structrestr__s" prot="public">restr_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_access_e</name>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3ac75245149c3f64d74430b8996b1e0558" prot="public">
+          <name>NA</name>
+          <initializer>= 0b00</initializer>
+          <briefdescription>
+<para>No Access. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a42e9aa764b9ee7ecf7e668462de6f96d" prot="public">
+          <name>RO</name>
+          <initializer>= 0b01</initializer>
+          <briefdescription>
+<para>Read only. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a60d1a52f84d34da6f6537317a1775929" prot="public">
+          <name>WO</name>
+          <initializer>= 0b10</initializer>
+          <briefdescription>
+<para>Write only. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3aec2497e0c8af01c04bec31ec0d1d7847" prot="public">
+          <name>RW</name>
+          <initializer>= 0b11</initializer>
+          <briefdescription>
+<para>Read/Write. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the parameter access type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="46" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_effective_e</name>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6caa77e6848bc2c2031677291053c6badaa" prot="public">
+          <name>IMM</name>
+          <initializer>= 0b000</initializer>
+          <briefdescription>
+<para>Immediate. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca41246e9c8691b7e33bc79b345e06b48e" prot="public">
+          <name>ACK</name>
+          <initializer>= 0b001</initializer>
+          <briefdescription>
+<para>After the write request acknowledge. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca99defa0ec9429d3e958dfb3324a35ba6" prot="public">
+          <name>MNT</name>
+          <initializer>= 0b010</initializer>
+          <briefdescription>
+<para>At the next maintenance period. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca6fb6c263cb3a43df9d661faf1e8f4b33" prot="public">
+          <name>HGA</name>
+          <initializer>= 0b011</initializer>
+          <briefdescription>
+<para>At the next Gas Hour. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga148972e18720300c9bad8011ef6f2a6ca2c56d07da8a08a92de9453a00e31d55d" prot="public">
+          <name>UTC</name>
+          <initializer>= 0b100</initializer>
+          <briefdescription>
+<para>At the next 0h00 UTC. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the parameter update effectiveness. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="56" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="56" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_ref_e</name>
+        <enumvalue id="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5daaa2ba9dfa031e1fefa757c6be92da3a1" prot="public">
+          <name>REF_N</name>
+          <initializer>= 0b0</initializer>
+          <briefdescription>
+<para>Not saved into the referential. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1ggaf6b0d01d3d809666c3dc05d4042c8a5da6841317487359fecef805965b2146d7a" prot="public">
+          <name>REF_Y</name>
+          <initializer>= 0b1</initializer>
+          <briefdescription>
+<para>Saved into the referential. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines if the parameter is saved or not into the referential. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="67" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1ga45afffb7d12f2fe5f92b22195a83c6f9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>restr_type_e</name>
+        <enumvalue id="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a660ca9bb26d9c9df4e88cffd5de504c5" prot="public">
+          <name>RESTR_MODULO</name>
+          <initializer>= 0b001</initializer>
+          <briefdescription>
+<para>Restriction on modulo. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9aacd45bbce97af46acac9081dd503e5a5" prot="public">
+          <name>RESTR_RANGE</name>
+          <initializer>= 0b010</initializer>
+          <briefdescription>
+<para>Restriction on range. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a4cc7262dfb618f7e934a544896beb4ce" prot="public">
+          <name>RESTR_ENUM</name>
+          <initializer>= 0b011</initializer>
+          <briefdescription>
+<para>Restriction on enum list. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the parameter restriction type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="250" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="250" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1ga7a362289f266f6282f1e10f9fa577bd4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>restr_sz_type_e</name>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a2da7a85929605dce3fbaad011aaba5a8" prot="public">
+          <name>RESTR_8BITS</name>
+          <initializer>= 0b001</initializer>
+          <briefdescription>
+<para>Restriction values are on 8 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a5bfb71cc1b14b9a8ab61b19b76385c0d" prot="public">
+          <name>RESTR_16BITS</name>
+          <initializer>= 0b010</initializer>
+          <briefdescription>
+<para>Restriction values are on 16 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a90d0f0e086383611d7635656aaeec44e" prot="public">
+          <name>RESTR_32BITS</name>
+          <initializer>= 0b011</initializer>
+          <briefdescription>
+<para>Restriction values are on 32 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a50c6872b89ac9ac656198e4ddf68aaea" prot="public">
+          <name>RESTR_64BITS</name>
+          <initializer>= 0b100</initializer>
+          <briefdescription>
+<para>Restriction values are on 64 bits. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the size on which restriction is applied. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="259" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="259" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__parameters_1ga9c642374fbdaae99ed43e1fe43318ac0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>param_lan_ids_e</name>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ab3f6e26718312d495ab5ef20847d2b0b" prot="public">
+          <name>VERS_HW_TRX</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Hardware version number of the device (or transceiver for a remote module) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a986651d04c3488b4c64e0709127377d8" prot="public">
+          <name>VERS_FW_TRX</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+<para>Software version number run by the device (or transceiver for a remote module) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a270afd63769ac0e4a3328bf82369e993" prot="public">
+          <name>DATEHOUR_LAST_UPDATE</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+<para>Date/time of the last successful firmware download. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a43c2a2d50c3d593d662dc92422d67c7c" prot="public">
+          <name>L6App</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+<para>Version of the application layer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a47004e2a9df426d8fc094abb6c021ee2" prot="public">
+          <name>RF_UPLINK_CHANNEL</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+<para>Frequency channel to be used for all uplink message transmissions. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a92d7ed82d7e079cbeddb40a901a17c67" prot="public">
+          <name>RF_DOWNLINK_CHANNEL</name>
+          <initializer>= 0x09</initializer>
+          <briefdescription>
+<para>Frequency channel to be used for all message receptions (except firmware download) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a9933cd4504128fd118c0c6e24c88780f" prot="public">
+          <name>RF_UPLINK_MOD</name>
+          <initializer>= 0x0A</initializer>
+          <briefdescription>
+<para>Modulation to be used for all uplink message transmissions. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a0356d0b6740da1e87357fa61c9642206" prot="public">
+          <name>RF_DOWNLINK_MOD</name>
+          <initializer>= 0x0B</initializer>
+          <briefdescription>
+<para>Modulation to be used for all message receptions (except firmware download) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0aef09c8b9fce1847ca51a17c3ed0af6cd" prot="public">
+          <name>TX_POWER</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+<para>Transceiver nominal transmission power. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a660b54d9d87e37e266fb5209cf747970" prot="public">
+          <name>TX_DELAY_FULLPOWER</name>
+          <initializer>= 0x11</initializer>
+          <briefdescription>
+<para>Maximum time between two COMMAND messages before the device automatically returns to maximum transmission power. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ac544786fa1711bf15c7807f9fc6425a6" prot="public">
+          <name>TX_FREQ_OFFSET</name>
+          <initializer>= 0x12</initializer>
+          <briefdescription>
+<para>Absolute transmission correction frequency of. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ae8d116e359c208b13a05d25b95664050" prot="public">
+          <name>EXCH_RX_DELAY</name>
+          <initializer>= 0x18</initializer>
+          <briefdescription>
+<para>Fixed wait time after transmission of a DATA message by the device and before opening the COMMAND message listening window. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ad9d88e1d97915cba9035211569a65c3e" prot="public">
+          <name>EXCH_RX_LENGTH</name>
+          <initializer>= 0x19</initializer>
+          <briefdescription>
+<para>Duration of the COMMAND message listening window by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ac6ad1efb873b4df9f79046fbef17331b" prot="public">
+          <name>EXCH_RESPONSE_DELAY</name>
+          <initializer>= 0x1A</initializer>
+          <briefdescription>
+<para>Time between reception of a COMMAND message by the device and transmission of the corresponding RESPONSE message. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ad1c0a996b12b172bb5f035dcc6b52c13" prot="public">
+          <name>EXCH_RESPONSE_DELAY_MIN</name>
+          <initializer>= 0x1B</initializer>
+          <briefdescription>
+<para>Minimum value accepted for the EXCH_RESPONSE_DELAY parameter (defined by the device MANUFACTURER) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a59ce36970074aaf467567461b85a36af" prot="public">
+          <name>L7TRANSMIT_LENGTH_MAX</name>
+          <initializer>= 0x1C</initializer>
+          <briefdescription>
+<para>Maximum length of application messages that can be sent by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ad00327b06872c517829149c698e68e50" prot="public">
+          <name>L7RECEIVE_LENGTH_MAX</name>
+          <initializer>= 0x1D</initializer>
+          <briefdescription>
+<para>Maximum length of application messages that can be received by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0aa16f6a91fd03bfe0af60b37f655eaff8" prot="public">
+          <name>CLOCK_CURRENT_EPOC</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+<para>Current time of device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a7196c899428ba7d1ebe953c23438b59b" prot="public">
+          <name>CLOCK_OFFSET_CORRECTION</name>
+          <initializer>= 0x21</initializer>
+          <briefdescription>
+<para>Relative correction (time delta) to be applied to the device clock once only to correct its absolute drift. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a0ed0c51391ba9cd6c0a40a2837b8d7e5" prot="public">
+          <name>CLOCK_DRIFT_CORRECTION</name>
+          <initializer>= 0x22</initializer>
+          <briefdescription>
+<para>Correction of device clock frequency. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a6499e193ae1415baa9a1bf495503b066" prot="public">
+          <name>CIPH_CURRENT_KEY</name>
+          <initializer>= 0x28</initializer>
+          <briefdescription>
+<para>Current key number. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0acbbfbf0abfff42ca16071817dd4a0fd9" prot="public">
+          <name>CIPH_KEY_COUNT</name>
+          <initializer>= 0x29</initializer>
+          <briefdescription>
+<para>Number of encryption keys available in the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ae1424bf2530724400f2bf2033d7832d4" prot="public">
+          <name>L6NetwIdSelect</name>
+          <initializer>= 0x2A</initializer>
+          <briefdescription>
+<para>Kmac key index. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ab182a57062f656fbe03d7f87e18ff186" prot="public">
+          <name>PING_RX_DELAY</name>
+          <initializer>= 0x30</initializer>
+          <briefdescription>
+<para>Fixed waiting time after transmission of an INSTPING message by the device and before opening the INSTPONG message listening window. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a3ce5f49938b37554e99a28ffc72c33ef" prot="public">
+          <name>PING_RX_LENGTH</name>
+          <initializer>= 0x31</initializer>
+          <briefdescription>
+<para>Duration of the INSTPONG message listening window by the device. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ae3c5de5c34b60cd5b43e07902b0a3f01" prot="public">
+          <name>PING_RX_DELAY_MIN</name>
+          <initializer>= 0x32</initializer>
+          <briefdescription>
+<para>Minimum value of the PING_RX_DELAY parameter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a38d0bbd3199ea210fe22dcdb36b78235" prot="public">
+          <name>PING_RX_LENGTH_MAX</name>
+          <initializer>= 0x33</initializer>
+          <briefdescription>
+<para>Maximum value of the PING_RX_LENGTH parameter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ac47f4a3a34b8f5d6a73dc65d33ac4518" prot="public">
+          <name>PING_LAST_EPOCH</name>
+          <initializer>= 0x34</initializer>
+          <briefdescription>
+<para>Execution time of the last connectivity test (INSTPING/INSTPONG) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a6e77bb526054adb3227167be3c6b4151" prot="public">
+          <name>PING_NBFOUND</name>
+          <initializer>= 0x35</initializer>
+          <briefdescription>
+<para>Number of different INSTPONG messages received in response to the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0abb1365e19169300db76145b834ce945a" prot="public">
+          <name>PING_REPLY1</name>
+          <initializer>= 0x36</initializer>
+          <briefdescription>
+<para>Response 1 received for the last connectivity test (Bigest L7RssiDown) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a624c83eb45f20517a5b5c6bcd826b577" prot="public">
+          <name>PING_REPLY2</name>
+          <initializer>= 0x37</initializer>
+          <briefdescription>
+<para>Response 2 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a82aa9ea24baa57ed1c9f5c2c73eef867" prot="public">
+          <name>PING_REPLY3</name>
+          <initializer>= 0x38</initializer>
+          <briefdescription>
+<para>Response 3 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ad456122dd189cf96f490aebeba9e3874" prot="public">
+          <name>PING_REPLY4</name>
+          <initializer>= 0x39</initializer>
+          <briefdescription>
+<para>Response 4 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a0a9ab98f326de7328d66a5ffead3f51d" prot="public">
+          <name>PING_REPLY5</name>
+          <initializer>= 0x3A</initializer>
+          <briefdescription>
+<para>Response 5 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a3204f8b2794410445956712b64dfec8e" prot="public">
+          <name>PING_REPLY6</name>
+          <initializer>= 0x3B</initializer>
+          <briefdescription>
+<para>Response 6 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0aee9ee318bbd72e29120af915b90c564d" prot="public">
+          <name>PING_REPLY7</name>
+          <initializer>= 0x3C</initializer>
+          <briefdescription>
+<para>Response 7 received for the last connectivity test. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a6f651cdaed18f7ad0405212208085742" prot="public">
+          <name>PING_REPLY8</name>
+          <initializer>= 0x3D</initializer>
+          <briefdescription>
+<para>Response 8 received for the last connectivity test (Weakess L7RssiDown) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0ab07a90adf38fc81a1a69fd7e6f25f62b" prot="public">
+          <name>EXECPING_PERIODE</name>
+          <initializer>= 0x3E</initializer>
+          <briefdescription>
+<para>Periodic time of execping sending by the device, in months. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__parameters_1gga9c642374fbdaae99ed43e1fe43318ac0a29b7dcc5f3de57d1b95eadb0702a0036" prot="public">
+          <name>LAST_ID</name>
+          <initializer>= EXECPING_PERIODE</initializer>
+          <briefdescription>
+<para>Don&apos;t remove, it marks the end of table. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the lan parameter ids. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_lan_ids.h" line="48" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_lan_ids.h" bodystart="48" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__parameters_1gaccd1d42d3e41691b46578dbf40e655d6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>param_s</definition>
+        <argsstring></argsstring>
+        <name>param_s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="169" column="2" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga84f49efe2202fbe3028f42d5fb3553be" prot="public" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t u16_ParamValueSz</definition>
+        <argsstring></argsstring>
+        <name>u16_ParamValueSz</name>
+        <briefdescription>
+<para>This external variable hold the parameters table value size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters table value size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="45" column="23" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="70" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="45" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t a_ParamValue[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamValue</name>
+        <briefdescription>
+<para>This external variable hold the parameters table value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="49" column="16" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="49" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga967743ed3bc6da990464bb439c2aa818" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamAccessCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamAccessCfgSz</name>
+        <briefdescription>
+<para>This external variable hold the parameters access table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters access table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="54" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="75" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="54" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" prot="public" static="no" mutable="no">
+        <type>const param_s</type>
+        <definition>const param_s a_ParamAccess[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamAccess</name>
+        <briefdescription>
+<para>This external variable hold parameters access table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="58" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c" bodystart="33" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="58" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamRestrCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamRestrCfgSz</name>
+        <briefdescription>
+<para>This external variable hold the parameters restriction table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters restriction table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="63" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="80" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="63" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrestr__s" kindref="compound">restr_s</ref></type>
+        <definition>const restr_s a_ParamRestr[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamRestr</name>
+        <briefdescription>
+<para>This external variable hold the parameters restriction table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="67" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c" bodystart="292" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="67" declcolumn="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Param_Init</definition>
+        <argsstring>(const uint8_t *p_Param)</argsstring>
+        <name>Param_Init</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>p_Param</declname>
+        </param>
+        <briefdescription>
+<para>Init parameters by with default values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input parameters table. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="265" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="265" bodyend="268" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="44" declcolumn="6"/>
+        <references refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4">a_ParamValue</references>
+        <references refid="group__parameters_1ga84f49efe2202fbe3028f42d5fb3553be" compoundref="storage_8c" startline="70">u16_ParamValueSz</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga86c322ee4a48330f3fba7896ec033882" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_IsValidId</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_IsValidId</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Check if Id is in acess table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not valid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: valid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="277" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="277" bodyend="279" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="45" declcolumn="9"/>
+        <references refid="group__parameters_1ga967743ed3bc6da990464bb439c2aa818" compoundref="storage_8c" startline="75">u8_ParamAccessCfgSz</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga5d6f8a6494103ae84a2c12a28354bc61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_GetSize</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetSize</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the parameter size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The parameter size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="287" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="287" bodyend="289" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="46" declcolumn="9"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref></type>
+        <definition>param_access_e Param_GetLocAccess</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetLocAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the local access rights field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The local access rights field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="297" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="297" bodyend="299" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="47" declcolumn="16"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref></type>
+        <definition>param_access_e Param_GetRemAccess</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRemAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the remote access rights field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The remote access rights field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="307" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="307" bodyend="309" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="48" declcolumn="16"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga7f7dce9138c26ae37af7f31703c9aabc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref></type>
+        <definition>param_effective_e Param_GetEffect</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetEffect</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the &quot;effective&quot; field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The &quot;effective&quot; field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="317" column="19" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="317" bodyend="319" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="49" declcolumn="19"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf667d345e2617fb9a56f95a2f692a078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref></type>
+        <definition>param_ref_e Param_GetReferenced</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetReferenced</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the &quot;referenced&quot; field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The &quot;referenced&quot; field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="327" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="327" bodyend="329" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="50" declcolumn="13"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga7123182d7b2e73313da7283a82b71772" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Param_GetAddOf</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetAddOf</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the memory address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The parameter address </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="338" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="338" bodyend="344" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="51" declcolumn="10"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+        <references refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4">a_ParamValue</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga251ae563ea25c3afb5b941d59e00438c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_GetRestrId</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRestrId</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction id of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction id field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="352" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="352" bodyend="354" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="52" declcolumn="9"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga81d781f58a54f102fba660b5f42f6fe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * Param_GetRestrTableAdd</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRestrTableAdd</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction table address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction table address. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="362" column="12" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="362" bodyend="369" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="53" declcolumn="12"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+        <references refid="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" compoundref="storage_8c" startline="80">u8_ParamRestrCfgSz</references>
+        <references refid="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" compoundref="parameters__cfg_8c" startline="292">a_ParamRestr</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf9315b4b7f366378428f88edb81b72e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_CheckConformity</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data)</argsstring>
+        <name>Param_CheckConformity</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to its restriction definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the parameter to check </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="379" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="379" bodyend="400" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="54" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_Access</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_Access</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Pseudo-Direct access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>success </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="411" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="411" bodyend="425" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="56" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga37a2f18b3815d6368701e433ce07789f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_LocalAccess</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_LocalAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Local access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access is forbidden </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access granted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="437" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="437" bodyend="453" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="57" declcolumn="9"/>
+        <references refid="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" compoundref="parameters_8c" startline="297" endline="299">Param_GetLocAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga727ea9de05a38b0d5f42d7cd6abb35c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_RemoteAccess</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_RemoteAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Remote access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access is forbidden; 1: access granted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="464" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="464" bodyend="481" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="58" declcolumn="9"/>
+        <references refid="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" compoundref="parameters_8c" startline="307" endline="309">Param_GetRemAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gad09246453a4dabd919c7541484046a87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct</type>
+        <definition>struct __attribute__</definition>
+        <argsstring>((__packed__))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(__packed__)</type>
+        </param>
+        <briefdescription>
+<para>This structure defines the parameter properties. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Parameter variable offset</para>
+<para>&lt; Parameter size (in bytes)</para>
+<para>&lt; Access <itemizedlist>
+<listitem><para>b7 : referenced (<ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref>). </para>
+</listitem>
+<listitem><para>b6-b4 : effectiveness (<ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref>). </para>
+</listitem>
+<listitem><para>b3-b2 : local Read/Write (<ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref>). </para>
+</listitem>
+<listitem><para>b1-b0 : remote Read/Write (<ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref>).</para>
+</listitem>
+</itemizedlist>
+&lt; Restriction table id (0x00 means no restriction)</para>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" line="1" column="0" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters_def.h" bodystart="155" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaacc69700183206dc2bbca07289d34e50" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _param_access_</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir, uint8_t u8_Access)</argsstring>
+        <name>_param_access_</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Access</declname>
+        </param>
+        <briefdescription>
+<para>This private function deal with access to parameter table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Access</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access rights. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="87" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="87" bodyend="124" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="69" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga82a29092c2d9a37a7e762f4a36d3c98d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+        <definition>static restr_s * _get_restr_add_</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>_get_restr_add_</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction table address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction table address. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="133" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="133" bodyend="140" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="70" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gafb67d057bf7c94d26919eba48e1ebdc3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _check_conform_modulo_</definition>
+        <argsstring>(restr_s *p_Restr, uint8_t *p_Data)</argsstring>
+        <name>_check_conform_modulo_</name>
+        <param>
+          <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+          <declname>p_Restr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to the modulo value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Restr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the restriction table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="201" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="201" bodyend="223" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="71" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga885dd1e94adf24061ccdd9674bc3a670" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _check_conform_enum_</definition>
+        <argsstring>(restr_s *p_Restr, uint8_t *p_Data)</argsstring>
+        <name>_check_conform_enum_</name>
+        <param>
+          <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+          <declname>p_Restr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to one of the enum value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Restr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the restriction table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="151" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="151" bodyend="190" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="72" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gad4619899c62b0b58c30df25278dea828" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _check_conform_range_</definition>
+        <argsstring>(restr_s *p_Restr, uint8_t *p_Data)</argsstring>
+        <name>_check_conform_range_</name>
+        <param>
+          <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+          <declname>p_Restr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to the range value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Restr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the restriction table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="234" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="234" bodyend="256" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="73" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

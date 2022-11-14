@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_a572170b4cee92ff7edb83d602a4ffab" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/TimeEvt</compoundname>
+    <innerdir refid="dir_eeed903ee3c8285d6cfffbfb4abe2da9">/home/nono/OpenWize/sources/Samples/TimeEvt/include</innerdir>
+    <innerdir refid="dir_2c78435e039cfdc7da2087546755fb1f">/home/nono/OpenWize/sources/Samples/TimeEvt/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/"/>
+  </compounddef>
+</doxygen>

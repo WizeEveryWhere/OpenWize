@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structadm__mgr__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>adm_mgr_ctx_s</compoundname>
+    <includes refid="adm__mgr_8h" local="no">adm_mgr.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a8124254f4130a78b046f82bb70f0a8ea" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref></type>
+        <definition>net_msg_t adm_mgr_ctx_s::sDataMsg</definition>
+        <argsstring></argsstring>
+        <name>sDataMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data message content </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="78" column="11" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref></type>
+        <definition>net_msg_t adm_mgr_ctx_s::sCmdMsg</definition>
+        <argsstring></argsstring>
+        <name>sCmdMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Command message content </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="79" column="11" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1adec3f707432f31fb0a358c8a7d775456" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref></type>
+        <definition>net_msg_t adm_mgr_ctx_s::sRspMsg</definition>
+        <argsstring></argsstring>
+        <name>sRspMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Response message content </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="80" column="11" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a5b9b972b729bc9cd9d10ce207667b48a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::aDataBuff[SEND_BUFFER_SZ]</definition>
+        <argsstring>[SEND_BUFFER_SZ]</argsstring>
+        <name>aDataBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer that hold the data frame to send </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="82" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a4e8462f09c0685e2d4b4c351cdaa0ef7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::aRecvBuff[RECV_BUFFER_SZ]</definition>
+        <argsstring>[RECV_BUFFER_SZ]</argsstring>
+        <name>aRecvBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer that hold the received command frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="83" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a08da3ff49968c3c0a6544fe71ef47db2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::aSendBuff[SEND_BUFFER_SZ]</definition>
+        <argsstring>[SEND_BUFFER_SZ]</argsstring>
+        <name>aSendBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer that hold the response frame to send </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="84" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1af41de2b58ff0f00dc20c2dfa924613f9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::u8ExchRxLength</definition>
+        <argsstring></argsstring>
+        <name>u8ExchRxLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Admin reception window length (0 : disable, otherwise [5ms; 1.27s]) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="86" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a7b9f2efe6294bb5f92b06cf7cc671d3d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::u8ExchRxDelay</definition>
+        <argsstring></argsstring>
+        <name>u8ExchRxDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opening reception window delay ([1s; 255s]) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="87" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a54a31e72d3609ed829cab673c4813031" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::u8ExchRespDelay</definition>
+        <argsstring></argsstring>
+        <name>u8ExchRespDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Admin response delay ([0s; 255s]) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="88" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1acfdd70d9df20e759bfc51da8ee5823e6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::u8Pending</definition>
+        <argsstring></argsstring>
+        <name>u8Pending</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Received command is pending </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="90" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadm__mgr__ctx__s_1a66be28da4b4be857508cda1f01c2f416" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t adm_mgr_ctx_s::u8ByPassCmd</definition>
+        <argsstring></argsstring>
+        <name>u8ByPassCmd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bypass the Received command </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="91" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the admin manager internal context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>adm_mgr_ctx_s</label>
+        <link refid="structadm__mgr__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sDataMsg</edgelabel>
+          <edgelabel>+sRspMsg</edgelabel>
+          <edgelabel>+sCmdMsg</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>net_msg_s</label>
+        <link refid="structnet__msg__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" line="77" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" bodystart="76" bodyend="92"/>
+    <listofallmembers>
+      <member refid="structadm__mgr__ctx__s_1a5b9b972b729bc9cd9d10ce207667b48a" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>aDataBuff</name></member>
+      <member refid="structadm__mgr__ctx__s_1a4e8462f09c0685e2d4b4c351cdaa0ef7" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>aRecvBuff</name></member>
+      <member refid="structadm__mgr__ctx__s_1a08da3ff49968c3c0a6544fe71ef47db2" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>aSendBuff</name></member>
+      <member refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>sCmdMsg</name></member>
+      <member refid="structadm__mgr__ctx__s_1a8124254f4130a78b046f82bb70f0a8ea" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>sDataMsg</name></member>
+      <member refid="structadm__mgr__ctx__s_1adec3f707432f31fb0a358c8a7d775456" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>sRspMsg</name></member>
+      <member refid="structadm__mgr__ctx__s_1a66be28da4b4be857508cda1f01c2f416" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>u8ByPassCmd</name></member>
+      <member refid="structadm__mgr__ctx__s_1a54a31e72d3609ed829cab673c4813031" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>u8ExchRespDelay</name></member>
+      <member refid="structadm__mgr__ctx__s_1a7b9f2efe6294bb5f92b06cf7cc671d3d" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>u8ExchRxDelay</name></member>
+      <member refid="structadm__mgr__ctx__s_1af41de2b58ff0f00dc20c2dfa924613f9" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>u8ExchRxLength</name></member>
+      <member refid="structadm__mgr__ctx__s_1acfdd70d9df20e759bfc51da8ee5823e6" prot="public" virt="non-virtual"><scope>adm_mgr_ctx_s</scope><name>u8Pending</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

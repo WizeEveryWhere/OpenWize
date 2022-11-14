@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_4d09058b5015a03d44baeb4ec7a9862d" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476/app/gen</compoundname>
+    <innerfile refid="parameters__cfg_8c">parameters_cfg.c</innerfile>
+    <innerfile refid="parameters__cfg_8h">parameters_cfg.h</innerfile>
+    <innerfile refid="parameters__default_8c">parameters_default.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structtime__upd__s" kind="struct" language="C++" prot="public">
+    <compoundname>time_upd_s</compoundname>
+    <includes refid="time__mgr_8h" local="no">time_mgr.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtime__upd__s_1ad4d0c2347ee78196213fe84129035f7d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t time_upd_s::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>Value of currently pending correction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="54" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1aac432981952d063f35d67d42d602fa11" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t time_upd_s::drift</definition>
+        <argsstring></argsstring>
+        <name>drift</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="56" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1a9027e8d25c49819e1a35372c90c65014" prot="public" static="no" mutable="no">
+        <type>int8_t</type>
+        <definition>int8_t time_upd_s::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>Drift correction value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="58" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1a623671647823f2115cc845f1641af166" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t time_upd_s::period</definition>
+        <argsstring></argsstring>
+        <name>period</name>
+        <briefdescription>
+<para>Drift correction period. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="59" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1a80ee33f91febf378bbd2ec30313181b8" prot="public" static="no" mutable="no">
+        <type>union time_upd_s::@4</type>
+        <definition>union time_upd_s::@4 time_upd_s::drift_</definition>
+        <argsstring></argsstring>
+        <name>drift_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="61" column="7"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1af1f40908d6ba0bc685c297c2ae2afb92" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t time_upd_s::days_cnt</definition>
+        <argsstring></argsstring>
+        <name>days_cnt</name>
+        <briefdescription>
+<para>Number of remaining days for the Drift correction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="63" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1ab3fe02f869453568717ae7cd7b567c5c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t time_upd_s::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+<para>Currently pending correction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="65" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1a14a2dd59c50dfb6a45a48a9443c1378c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t time_upd_s::clock_init</definition>
+        <argsstring></argsstring>
+        <name>clock_init</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+<para>Clock Time has been initialized. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="68" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1a770652037f917d77a56af216952c9d1d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t time_upd_s::epoch_pend</definition>
+        <argsstring></argsstring>
+        <name>epoch_pend</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+<para>Epoch correction is pending. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="69" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1af686b9a29c44441c52a67b76020655e4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t time_upd_s::offset_pend</definition>
+        <argsstring></argsstring>
+        <name>offset_pend</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+<para>Offset correction is pending. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="70" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__upd__s_1a757b87d6006c3a90169876b6f073e9c7" prot="public" static="no" mutable="no">
+        <type>union time_upd_s::@5</type>
+        <definition>union time_upd_s::@5 time_upd_s::state_</definition>
+        <argsstring></argsstring>
+        <name>state_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="72" column="7"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct define the time update context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>time_upd_s</label>
+        <link refid="structtime__upd__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="53" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" bodystart="52" bodyend="73"/>
+    <listofallmembers>
+      <member refid="structtime__upd__s_1a14a2dd59c50dfb6a45a48a9443c1378c" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>clock_init</name></member>
+      <member refid="structtime__upd__s_1af1f40908d6ba0bc685c297c2ae2afb92" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>days_cnt</name></member>
+      <member refid="structtime__upd__s_1aac432981952d063f35d67d42d602fa11" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>drift</name></member>
+      <member refid="structtime__upd__s_1a80ee33f91febf378bbd2ec30313181b8" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>drift_</name></member>
+      <member refid="structtime__upd__s_1a770652037f917d77a56af216952c9d1d" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>epoch_pend</name></member>
+      <member refid="structtime__upd__s_1af686b9a29c44441c52a67b76020655e4" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>offset_pend</name></member>
+      <member refid="structtime__upd__s_1a623671647823f2115cc845f1641af166" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>period</name></member>
+      <member refid="structtime__upd__s_1ab3fe02f869453568717ae7cd7b567c5c" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>state</name></member>
+      <member refid="structtime__upd__s_1a757b87d6006c3a90169876b6f073e9c7" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>state_</name></member>
+      <member refid="structtime__upd__s_1ad4d0c2347ee78196213fe84129035f7d" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>value</name></member>
+      <member refid="structtime__upd__s_1a9027e8d25c49819e1a35372c90c65014" prot="public" virt="non-virtual"><scope>time_upd_s</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

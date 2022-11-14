@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_77492c02b479e2a77f177787535e8e4f" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples</compoundname>
+    <innerdir refid="dir_3f7aea6fd41a80b88cdef2292ce9b8d0">/home/nono/OpenWize/sources/Samples/CRC_sw</innerdir>
+    <innerdir refid="dir_ec32444c98345d59e5cad48c6e3ade09">/home/nono/OpenWize/sources/Samples/Crypto</innerdir>
+    <innerdir refid="dir_5904990b769deaeec7a96db8e5a1ea4e">/home/nono/OpenWize/sources/Samples/ImgStorage</innerdir>
+    <innerdir refid="dir_844708b29cdf74899ccab5cfbe715d7a">/home/nono/OpenWize/sources/Samples/Logger</innerdir>
+    <innerdir refid="dir_038d26c87b09be743bb3ba29c4c7b8a1">/home/nono/OpenWize/sources/Samples/Parameters</innerdir>
+    <innerdir refid="dir_b62ac8bbaee40234ed02d0001b6fe583">/home/nono/OpenWize/sources/Samples/ReedSolomon</innerdir>
+    <innerdir refid="dir_a572170b4cee92ff7edb83d602a4ffab">/home/nono/OpenWize/sources/Samples/TimeEvt</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/"/>
+  </compounddef>
+</doxygen>

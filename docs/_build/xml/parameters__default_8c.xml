@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="parameters__default_8c" kind="file" language="C++">
+    <compoundname>parameters_default.c</compoundname>
+    <includes refid="parameters__def_8h" local="yes">parameters_def.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c</label>
+        <link refid="parameters__default_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_ParamDefault[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamDefault</name>
+        <briefdescription>
+<para>This array define the parameter default value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" line="35" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__default_8c_1a5147f70b89800d7a0c4789e01478e109" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_ENUM_01[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>a_ENUM_01</name>
+        <initializer>= { 100, 110, 120, 130, 140, 150, }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" line="79" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__default_8c_1a9bf923b571ee637ae0a273553268ed0c" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_02[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_02</name>
+        <initializer>= { 0, 2, }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" line="80" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__default_8c_1a548717f8e0c1c0067d0d6a5182ad7570" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_03[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_03</name>
+        <initializer>= { 40, 200, }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" line="81" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__default_8c_1a150b04196175d23d60409fd7fdc7bd1a" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_04[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_04</name>
+        <initializer>= { 50, 200, }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" line="82" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parameters__default_8c_1ae27624b3eaef1b36185bb1030103e9b7" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t a_RANGE_05[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>a_RANGE_05</name>
+        <initializer>= { 0, 14, }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" line="83" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file was generated from demo/Nucleo-L476/app/cfg/MergedParam.xml(Modif.<nonbreakablespace/>: 2022-03-14 06:36:30.109935700 +0100). </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Generation Date</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>x.x.x : 14/03/2022 06:36 [neo]</title><para></para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="28"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters__def_8h" kindref="compound">parameters_def.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="35" refid="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__app_1gaad0ace3d4bed158fcb8d93c74d706a7d" kindref="member">a_ParamDefault</ref>[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/>0x1,0x0,<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/>0x1,0x0,<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/>0x64,<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/>0x78,<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/>0x5,<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/>0x8,<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/>0x5,<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/>0x50,<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/>0x64,<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/>0x50,0xe2,0x27,0x0,<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/>0x0,0x1,<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/>0x2,<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/>0xe,<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/>0x1,<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/>0xa,<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/>0x5,<sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/>0x14,<sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/>0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/>0x6,<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/>0x0,<sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_ENUM_01[6]<sp/>=<sp/>{<sp/>100,<sp/>110,<sp/>120,<sp/>130,<sp/>140,<sp/>150,<sp/>};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_02[2]<sp/>=<sp/>{<sp/>0,<sp/>2,<sp/>};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_03[2]<sp/>=<sp/>{<sp/>40,<sp/>200,<sp/>};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_04[2]<sp/>=<sp/>{<sp/>50,<sp/>200,<sp/>};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>a_RANGE_05[2]<sp/>=<sp/>{<sp/>0,<sp/>14,<sp/>};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_default.c"/>
+  </compounddef>
+</doxygen>

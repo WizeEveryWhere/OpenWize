@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_78ac73fa9c25f2f744176d3cb8e70974" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/Crypto/include</compoundname>
+    <innerfile refid="crypto_8h">crypto.h</innerfile>
+    <innerfile refid="key__priv_8h">key_priv.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/"/>
+  </compounddef>
+</doxygen>

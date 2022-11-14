@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_a7a1f33e8d3c687c595f180f9a31aebe" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/WizeCore/net</compoundname>
+    <innerdir refid="dir_0794777186ab1106fdb4a0b2cfb281c2">/home/nono/OpenWize/sources/WizeCore/net/include</innerdir>
+    <innerdir refid="dir_0ac01191510fc19b32b8c6cc2c1899a7">/home/nono/OpenWize/sources/WizeCore/net/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/"/>
+  </compounddef>
+</doxygen>

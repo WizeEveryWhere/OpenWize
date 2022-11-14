@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structinst__pong__t" kind="struct" language="C++" prot="public">
+    <compoundname>inst_pong_t</compoundname>
+    <includes refid="app__layer_8h" local="no">app_layer.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structinst__pong__t_1a9b77ccf21b0a0deda95aa5fa26ecc18b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_pong_t::L7ConcentId[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>L7ConcentId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="245" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__pong__t_1a1898224814376a3029f4717a33156cd3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_pong_t::L7ModemId</definition>
+        <argsstring></argsstring>
+        <name>L7ModemId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="246" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__pong__t_1adae09879dbd727d9893de9ea0a168518" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_pong_t::L7RssiUpstream</definition>
+        <argsstring></argsstring>
+        <name>L7RssiUpstream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="247" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__pong__t_1ac88003d0dd7fe15993656c1d16f3601c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_pong_t::L7RssiDownstream</definition>
+        <argsstring></argsstring>
+        <name>L7RssiDownstream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="248" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>inst_pong_t</label>
+        <link refid="structinst__pong__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="244" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="244" bodyend="249"/>
+    <listofallmembers>
+      <member refid="structinst__pong__t_1a9b77ccf21b0a0deda95aa5fa26ecc18b" prot="public" virt="non-virtual"><scope>inst_pong_t</scope><name>L7ConcentId</name></member>
+      <member refid="structinst__pong__t_1a1898224814376a3029f4717a33156cd3" prot="public" virt="non-virtual"><scope>inst_pong_t</scope><name>L7ModemId</name></member>
+      <member refid="structinst__pong__t_1ac88003d0dd7fe15993656c1d16f3601c" prot="public" virt="non-virtual"><scope>inst_pong_t</scope><name>L7RssiDownstream</name></member>
+      <member refid="structinst__pong__t_1adae09879dbd727d9893de9ea0a168518" prot="public" virt="non-virtual"><scope>inst_pong_t</scope><name>L7RssiUpstream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="unionses__flg__t" kind="union" language="C++" prot="public">
+    <compoundname>ses_flg_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionses__flg__t_1a2e1359e023fc58abffc012d0bdd5960b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::SES_FLG</definition>
+        <argsstring></argsstring>
+        <name>SES_FLG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="62" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a59f080bd2d637d0c574e0a20ec4aadc7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::ERROR</definition>
+        <argsstring></argsstring>
+        <name>ERROR</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="65" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1aaadb598a79e366f6f05cf651f9980322" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::SUCCESS</definition>
+        <argsstring></argsstring>
+        <name>SUCCESS</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="66" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a00762e3a93f828a43c86516b3d28f55c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::NC1</definition>
+        <argsstring></argsstring>
+        <name>NC1</name>
+        <bitfield> 6</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="67" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1aefde70968182f272cd0121c5fdc72d62" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::SENT</definition>
+        <argsstring></argsstring>
+        <name>SENT</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="69" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a39e2c101ccb3e2d69619fb0af795e28e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::RECEIVED</definition>
+        <argsstring></argsstring>
+        <name>RECEIVED</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="70" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a6e51ac38c22dbe1b6d13318716ee0f29" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::COMPLETE</definition>
+        <argsstring></argsstring>
+        <name>COMPLETE</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="71" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a4b83b9ae7ba53c14b9078557c400cd35" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::OUT_DATE</definition>
+        <argsstring></argsstring>
+        <name>OUT_DATE</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="72" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1ad1655415c26b726b75666e5bc1e34c17" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::CORRUPTED</definition>
+        <argsstring></argsstring>
+        <name>CORRUPTED</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="73" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1aac543e224955959417176cb947bec6d8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::PASSED</definition>
+        <argsstring></argsstring>
+        <name>PASSED</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="74" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a09dcd7b40e87cf15ec47bbaa2f2653f3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::NC2</definition>
+        <argsstring></argsstring>
+        <name>NC2</name>
+        <bitfield> 2</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="75" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1ac44374de90eb7e67e695284820fe32d0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::RX_DELAY</definition>
+        <argsstring></argsstring>
+        <name>RX_DELAY</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="77" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a97e510337d021315555c329d2d3787bd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::TX_DELAY</definition>
+        <argsstring></argsstring>
+        <name>TX_DELAY</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="78" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a6f60376c3005e9b6a7b73a4966cc0c98" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::TIMEOUT</definition>
+        <argsstring></argsstring>
+        <name>TIMEOUT</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="79" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1ad0f4a79293c462724952472cce15d556" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::TIMEOUT_EX</definition>
+        <argsstring></argsstring>
+        <name>TIMEOUT_EX</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="80" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a8d4401524054273cf394e0c2ae4ac284" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::DAY_DELAY</definition>
+        <argsstring></argsstring>
+        <name>DAY_DELAY</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="81" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a9d59600018cf1deb3baed164b0e4fc22" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::DELTA_DELAY</definition>
+        <argsstring></argsstring>
+        <name>DELTA_DELAY</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="82" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1ab080ebdd4e45c6dea5ff8307764865fb" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::NC3</definition>
+        <argsstring></argsstring>
+        <name>NC3</name>
+        <bitfield> 2</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="83" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1aa6af862c8f3635f2e045170e2b893554" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ses_flg_t::RESEREVD</definition>
+        <argsstring></argsstring>
+        <name>RESEREVD</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="85" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionses__flg__t_1a975f75e347a2411f5168c7a952d5734a" prot="public" static="no" mutable="no">
+        <type>struct ses_flg_t::@27</type>
+        <definition>struct ses_flg_t::@27 ses_flg_t::SES_FLG_b</definition>
+        <argsstring></argsstring>
+        <name>SES_FLG_b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="86" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ses_flg_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="61" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="60" bodyend="87"/>
+    <listofallmembers>
+      <member refid="unionses__flg__t_1a6e51ac38c22dbe1b6d13318716ee0f29" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>COMPLETE</name></member>
+      <member refid="unionses__flg__t_1ad1655415c26b726b75666e5bc1e34c17" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>CORRUPTED</name></member>
+      <member refid="unionses__flg__t_1a8d4401524054273cf394e0c2ae4ac284" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>DAY_DELAY</name></member>
+      <member refid="unionses__flg__t_1a9d59600018cf1deb3baed164b0e4fc22" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>DELTA_DELAY</name></member>
+      <member refid="unionses__flg__t_1a59f080bd2d637d0c574e0a20ec4aadc7" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>ERROR</name></member>
+      <member refid="unionses__flg__t_1a00762e3a93f828a43c86516b3d28f55c" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>NC1</name></member>
+      <member refid="unionses__flg__t_1a09dcd7b40e87cf15ec47bbaa2f2653f3" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>NC2</name></member>
+      <member refid="unionses__flg__t_1ab080ebdd4e45c6dea5ff8307764865fb" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>NC3</name></member>
+      <member refid="unionses__flg__t_1a4b83b9ae7ba53c14b9078557c400cd35" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>OUT_DATE</name></member>
+      <member refid="unionses__flg__t_1aac543e224955959417176cb947bec6d8" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>PASSED</name></member>
+      <member refid="unionses__flg__t_1a39e2c101ccb3e2d69619fb0af795e28e" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>RECEIVED</name></member>
+      <member refid="unionses__flg__t_1aa6af862c8f3635f2e045170e2b893554" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>RESEREVD</name></member>
+      <member refid="unionses__flg__t_1ac44374de90eb7e67e695284820fe32d0" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>RX_DELAY</name></member>
+      <member refid="unionses__flg__t_1aefde70968182f272cd0121c5fdc72d62" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>SENT</name></member>
+      <member refid="unionses__flg__t_1a2e1359e023fc58abffc012d0bdd5960b" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>SES_FLG</name></member>
+      <member refid="unionses__flg__t_1a975f75e347a2411f5168c7a952d5734a" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>SES_FLG_b</name></member>
+      <member refid="unionses__flg__t_1aaadb598a79e366f6f05cf651f9980322" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>SUCCESS</name></member>
+      <member refid="unionses__flg__t_1a6f60376c3005e9b6a7b73a4966cc0c98" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>TIMEOUT</name></member>
+      <member refid="unionses__flg__t_1ad0f4a79293c462724952472cce15d556" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>TIMEOUT_EX</name></member>
+      <member refid="unionses__flg__t_1a97e510337d021315555c329d2d3787bd" prot="public" virt="non-virtual"><scope>ses_flg_t</scope><name>TX_DELAY</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

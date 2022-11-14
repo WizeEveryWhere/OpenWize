@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structses__disp__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>ses_disp_ctx_s</compoundname>
+    <includes refid="ses__dispatcher_8h" local="no">ses_dispatcher.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structses__disp__ctx__s_1ad6a0c2b40676c357e86ef3ff5e8b1484" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ses_disp_ctx_s::hTask</definition>
+        <argsstring></argsstring>
+        <name>hTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="178" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1ad0d1fefcb2f53256f1452691ae49ad55" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ses_disp_ctx_s::hMutex</definition>
+        <argsstring></argsstring>
+        <name>hMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="179" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1adb73174787c59c862f9b3443fcaaf34d" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ses_disp_ctx_s::hEvents</definition>
+        <argsstring></argsstring>
+        <name>hEvents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="180" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1a746b0f04d7f06fe315b003f345ab35f3" prot="public" static="no" mutable="no">
+        <type>struct ses_ctx_s *</type>
+        <definition>struct ses_ctx_s* ses_disp_ctx_s::pActive</definition>
+        <argsstring></argsstring>
+        <name>pActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="181" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1ac0fd47287999b7caa9d1eb5a70c09fa6" prot="public" static="no" mutable="no">
+        <type>struct ses_ctx_s</type>
+        <definition>struct ses_ctx_s ses_disp_ctx_s::sSesCtx[SES_NB]</definition>
+        <argsstring>[SES_NB]</argsstring>
+        <name>sSesCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="181" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1a9028b3b2b35ca5a7581c95f66c4a1567" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinst__mgr__ctx__s" kindref="compound">inst_mgr_ctx_s</ref></type>
+        <definition>struct inst_mgr_ctx_s ses_disp_ctx_s::sInstMgrCtx</definition>
+        <argsstring></argsstring>
+        <name>sInstMgrCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="181" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1a282172084a557e72e75eadfdce8dbd76" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref></type>
+        <definition>struct adm_mgr_ctx_s ses_disp_ctx_s::sAdmMgrCtx</definition>
+        <argsstring></argsstring>
+        <name>sAdmMgrCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="181" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1aa0c7e6e5880515edb1d12e6558b51946" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structdwn__mgr__ctx__s" kindref="compound">dwn_mgr_ctx_s</ref></type>
+        <definition>struct dwn_mgr_ctx_s ses_disp_ctx_s::sDwnMgrCtx</definition>
+        <argsstring></argsstring>
+        <name>sDwnMgrCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="181" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1a890fbed262a1174218ea17416508e80f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ses_disp_ctx_s::bPendAction</definition>
+        <argsstring></argsstring>
+        <name>bPendAction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="188" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1a4e16da8f1dcef362b223ebabf3a043bc" prot="public" static="no" mutable="no">
+        <type>ses_type_t</type>
+        <definition>ses_type_t ses_disp_ctx_s::eActiveId</definition>
+        <argsstring></argsstring>
+        <name>eActiveId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="190" column="12" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1ad53512797501f1067a244eabff6c4efc" prot="public" static="no" mutable="no">
+        <type>ses_type_t</type>
+        <definition>ses_type_t ses_disp_ctx_s::eReqId</definition>
+        <argsstring></argsstring>
+        <name>eReqId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="191" column="12" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1a751976e3186aa65a15b2308ddf52a792" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__app_1gaee2bed120c11faeca02d6ec58d119046" kindref="member">ses_disp_state_e</ref></type>
+        <definition>ses_disp_state_e ses_disp_ctx_s::eState</definition>
+        <argsstring></argsstring>
+        <name>eState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="193" column="18" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1adcc23a5be8fbe53fb29dbfef36164575" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structping__reply__ctx__s" kindref="compound">ping_reply_ctx_s</ref></type>
+        <definition>struct ping_reply_ctx_s ses_disp_ctx_s::sPingReplyCtx</definition>
+        <argsstring></argsstring>
+        <name>sPingReplyCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="193" column="18" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1af5b28b73ff5886b8fb2218c493cf5e5c" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ses_disp_ctx_s::u16PeriodInst</definition>
+        <argsstring></argsstring>
+        <name>u16PeriodInst</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="196" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structses__disp__ctx__s_1a551109cd09914eb4eea0cd9893f64b31" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ses_disp_ctx_s::u16FullPower</definition>
+        <argsstring></argsstring>
+        <name>u16FullPower</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="197" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the session dispatcher context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>adm_mgr_ctx_s</label>
+        <link refid="structadm__mgr__ctx__s"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+sDataMsg</edgelabel>
+          <edgelabel>+sRspMsg</edgelabel>
+          <edgelabel>+sCmdMsg</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>net_msg_s</label>
+        <link refid="structnet__msg__s"/>
+      </node>
+      <node id="5">
+        <label>ping_reply_config_s</label>
+        <link refid="structping__reply__config__s"/>
+      </node>
+      <node id="3">
+        <label>ping_reply_list_s</label>
+        <link refid="structping__reply__list__s"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+pNext</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+xPingReply</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>inst_mgr_ctx_s</label>
+        <link refid="structinst__mgr__ctx__s"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+sRspMsg</edgelabel>
+          <edgelabel>+sCmdMsg</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ses_disp_ctx_s</label>
+        <link refid="structses__disp__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sPingReplyCtx</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+sAdmMgrCtx</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+sDwnMgrCtx</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+sInstMgrCtx</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ping_reply_ctx_s</label>
+        <link refid="structping__reply__ctx__s"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+pBest</edgelabel>
+          <edgelabel>+aPingReplyList</edgelabel>
+          <edgelabel>+pWorst</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+sPingReplyConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>inst_pong_t</label>
+        <link refid="structinst__pong__t"/>
+      </node>
+      <node id="8">
+        <label>dwn_mgr_ctx_s</label>
+        <link refid="structdwn__mgr__ctx__s"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+sRecvMsg</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="177" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="176" bodyend="199"/>
+    <listofallmembers>
+      <member refid="structses__disp__ctx__s_1a890fbed262a1174218ea17416508e80f" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>bPendAction</name></member>
+      <member refid="structses__disp__ctx__s_1a4e16da8f1dcef362b223ebabf3a043bc" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>eActiveId</name></member>
+      <member refid="structses__disp__ctx__s_1ad53512797501f1067a244eabff6c4efc" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>eReqId</name></member>
+      <member refid="structses__disp__ctx__s_1a751976e3186aa65a15b2308ddf52a792" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>eState</name></member>
+      <member refid="structses__disp__ctx__s_1adb73174787c59c862f9b3443fcaaf34d" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>hEvents</name></member>
+      <member refid="structses__disp__ctx__s_1ad0d1fefcb2f53256f1452691ae49ad55" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>hMutex</name></member>
+      <member refid="structses__disp__ctx__s_1ad6a0c2b40676c357e86ef3ff5e8b1484" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>hTask</name></member>
+      <member refid="structses__disp__ctx__s_1a746b0f04d7f06fe315b003f345ab35f3" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>pActive</name></member>
+      <member refid="structses__disp__ctx__s_1a282172084a557e72e75eadfdce8dbd76" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>sAdmMgrCtx</name></member>
+      <member refid="structses__disp__ctx__s_1aa0c7e6e5880515edb1d12e6558b51946" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>sDwnMgrCtx</name></member>
+      <member refid="structses__disp__ctx__s_1a9028b3b2b35ca5a7581c95f66c4a1567" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>sInstMgrCtx</name></member>
+      <member refid="structses__disp__ctx__s_1adcc23a5be8fbe53fb29dbfef36164575" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>sPingReplyCtx</name></member>
+      <member refid="structses__disp__ctx__s_1ac0fd47287999b7caa9d1eb5a70c09fa6" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>sSesCtx</name></member>
+      <member refid="structses__disp__ctx__s_1a551109cd09914eb4eea0cd9893f64b31" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>u16FullPower</name></member>
+      <member refid="structses__disp__ctx__s_1af5b28b73ff5886b8fb2218c493cf5e5c" prot="public" virt="non-virtual"><scope>ses_disp_ctx_s</scope><name>u16PeriodInst</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

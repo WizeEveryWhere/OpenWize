@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bsp__flash_8h" kind="file" language="C++">
+    <compoundname>bsp_flash.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includedby refid="bsp_8h" local="no">/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</includedby>
+    <includedby refid="bsp__flash_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>assert.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h</label>
+        <link refid="bsp__flash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>time.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="9">
+        <label>machine/endian.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h</label>
+        <link refid="bsp__flash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/platform.c</label>
+        <link refid="platform_8c"/>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c</label>
+        <link refid="bsp__flash_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c</label>
+        <link refid="bsp_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c</label>
+        <link refid="port_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</label>
+        <link refid="bsp_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__flash_1ga59e92cf524adf0412037f59b98dc216c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref></type>
+        <definition>dev_res_e BSP_Flash_Erase</definition>
+        <argsstring>(uint32_t u32PageId)</argsstring>
+        <name>BSP_Flash_Erase</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Page</declname>
+          <defname>u32PageId</defname>
+        </param>
+        <briefdescription>
+<para>Erase the given flash page area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32PageId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Page Id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="52" column="11" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="52" bodyend="73" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="43" declcolumn="11"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga989fada78a67b4d9633fd6548de07bb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref></type>
+        <definition>dev_res_e BSP_Flash_EraseArea</definition>
+        <argsstring>(uint32_t u32Address, uint32_t u32NbBytes)</argsstring>
+        <name>BSP_Flash_EraseArea</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Address</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32NbBytes</declname>
+        </param>
+        <briefdescription>
+<para>Erase the related flash memory area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start address of area to erase </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32NbBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Area size to erase</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="84" column="11" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="84" bodyend="120" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="44" declcolumn="11"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" compoundref="bsp__flash_8c" startline="212" endline="215">BSP_Flash_GetPage</references>
+        <references refid="group__flash_1ga59e92cf524adf0412037f59b98dc216c" compoundref="bsp__flash_8c" startline="52" endline="73">BSP_Flash_Erase</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref></type>
+        <definition>dev_res_e BSP_Flash_Write</definition>
+        <argsstring>(uint32_t u32Address, uint64_t *pData, uint32_t u32NbDword)</argsstring>
+        <name>BSP_Flash_Write</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Address</declname>
+        </param>
+        <param>
+          <type>uint64_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32NbDword</declname>
+        </param>
+        <briefdescription>
+<para>Write double-word aligned data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on data sto store </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>u32NbDword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of double-word of data to store</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="131" column="11" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="131" bodyend="158" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="45" declcolumn="11"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga7f97c99954aac59cb1ae954ad4d83d6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t BSP_Flash_Store</definition>
+        <argsstring>(uint32_t u32Address, void *pData, uint32_t u32NbBytes)</argsstring>
+        <name>BSP_Flash_Store</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32DestAddr</declname>
+          <defname>u32Address</defname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32NbBytes</declname>
+        </param>
+        <briefdescription>
+<para>Store the given data into Flash memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>: If the number of byte to write is not double-word aligned, the rest is filled with padding (0xFF). </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on data to store </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>u32NbBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of byte of data to store</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>next 64 bits aligned flash address if everything is fine. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>0xFFFFFFFF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if failed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="171" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="171" bodyend="205" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="46" declcolumn="10"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+        <references refid="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" compoundref="bsp__flash_8c" startline="131" endline="158">BSP_Flash_Write</references>
+      </memberdef>
+      <memberdef kind="function" id="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t BSP_Flash_GetPage</definition>
+        <argsstring>(uint32_t u32Address)</argsstring>
+        <name>BSP_Flash_GetPage</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Addr</declname>
+          <defname>u32Address</defname>
+        </param>
+        <briefdescription>
+<para>Obtains the page id from the given address. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>u32Address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash Address </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flash page id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" line="212" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c" bodystart="212" bodyend="215" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h" declline="47" declcolumn="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define the bsp function to access the flash memory. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/02/19 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_BSP_FLASH_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BSP_FLASH_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="common_8h" kindref="compound">common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/><ref refid="group__flash_1ga59e92cf524adf0412037f59b98dc216c" kindref="member">BSP_Flash_Erase</ref>(uint32_t<sp/>u32Page);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/><ref refid="group__flash_1ga989fada78a67b4d9633fd6548de07bb0" kindref="member">BSP_Flash_EraseArea</ref>(uint32_t<sp/>u32Address,<sp/>uint32_t<sp/>u32NbBytes);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" kindref="member">dev_res_e</ref><sp/><ref refid="group__flash_1ga578f90253897e2e4f5ae33acc58afc9e" kindref="member">BSP_Flash_Write</ref>(uint32_t<sp/>u32Address,<sp/>uint64_t<sp/>*pData,<sp/>uint32_t<sp/>u32NbDword);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">uint32_t<sp/><ref refid="group__flash_1ga7f97c99954aac59cb1ae954ad4d83d6d" kindref="member">BSP_Flash_Store</ref>(uint32_t<sp/>u32DestAddr,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>pData,<sp/>uint32_t<sp/>u32NbBytes);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">uint32_t<sp/><ref refid="group__flash_1ga8b0c57652baca9a4e2403b468cc7f326" kindref="member">BSP_Flash_GetPage</ref>(uint32_t<sp/>u32Addr);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_BSP_FLASH_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_flash.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structuart__dev__t" kind="struct" language="C++" prot="public">
+    <compoundname>uart_dev_t</compoundname>
+    <includes refid="bsp__uart_8h" local="no">bsp_uart.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structuart__dev__t_1a1b2b0d99a8766b99b113ec9443cf88d1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t uart_dev_t::bus_id</definition>
+        <argsstring></argsstring>
+        <name>bus_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Peripheral Bus Id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="83" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuart__dev__t_1a9eadc95135c09a9d5e7f92c523bb8c3e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t uart_dev_t::u8Mode</definition>
+        <argsstring></argsstring>
+        <name>u8Mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current UART device mode </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="84" column="12" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuart__dev__t_1a93b9b5d094b5dd2af4e83ac3f67727e8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t uart_dev_t::u8CharMatch</definition>
+        <argsstring></argsstring>
+        <name>u8CharMatch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Character to match (if mode is enabled) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="85" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuart__dev__t_1a6b3f9e171ee520e0269f73820b602f4d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t uart_dev_t::u32Tmo</definition>
+        <argsstring></argsstring>
+        <name>u32Tmo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time-out value (0 : disable) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="86" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuart__dev__t_1aaa36da6cb29431f08c4ceda6da511e30" prot="public" static="no" mutable="no">
+        <type>pfEvtCb_t</type>
+        <definition>pfEvtCb_t uart_dev_t::pfEvent</definition>
+        <argsstring></argsstring>
+        <name>pfEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function pointer on event call-back </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="87" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuart__dev__t_1a6116517953c13fff9acb6da180811d8e" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* uart_dev_t::pCbParam</definition>
+        <argsstring></argsstring>
+        <name>pCbParam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on Call-back parameter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="88" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuart__dev__t_1a8b01596e4f6486747096b23455f99f08" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* uart_dev_t::hHandle</definition>
+        <argsstring></argsstring>
+        <name>hHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on HAL UART handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="89" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure define the UART device. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>uart_dev_t</label>
+        <link refid="structuart__dev__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="82" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="81" bodyend="90"/>
+    <listofallmembers>
+      <member refid="structuart__dev__t_1a1b2b0d99a8766b99b113ec9443cf88d1" prot="public" virt="non-virtual"><scope>uart_dev_t</scope><name>bus_id</name></member>
+      <member refid="structuart__dev__t_1a8b01596e4f6486747096b23455f99f08" prot="public" virt="non-virtual"><scope>uart_dev_t</scope><name>hHandle</name></member>
+      <member refid="structuart__dev__t_1a6116517953c13fff9acb6da180811d8e" prot="public" virt="non-virtual"><scope>uart_dev_t</scope><name>pCbParam</name></member>
+      <member refid="structuart__dev__t_1aaa36da6cb29431f08c4ceda6da511e30" prot="public" virt="non-virtual"><scope>uart_dev_t</scope><name>pfEvent</name></member>
+      <member refid="structuart__dev__t_1a6b3f9e171ee520e0269f73820b602f4d" prot="public" virt="non-virtual"><scope>uart_dev_t</scope><name>u32Tmo</name></member>
+      <member refid="structuart__dev__t_1a93b9b5d094b5dd2af4e83ac3f67727e8" prot="public" virt="non-virtual"><scope>uart_dev_t</scope><name>u8CharMatch</name></member>
+      <member refid="structuart__dev__t_1a9eadc95135c09a9d5e7f92c523bb8c3e" prot="public" virt="non-virtual"><scope>uart_dev_t</scope><name>u8Mode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

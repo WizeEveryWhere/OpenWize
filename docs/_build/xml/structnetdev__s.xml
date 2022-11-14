@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structnetdev__s" kind="struct" language="C++" prot="public">
+    <compoundname>netdev_s</compoundname>
+    <includes refid="net__api__private_8h" local="no">net_api_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnetdev__s_1a34b3d35b00bad47fecb870fbf01d7bb5" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* netdev_s::pCtx</definition>
+        <argsstring></argsstring>
+        <name>pCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on internal context </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="158" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnetdev__s_1aa74d591f4475bc2aecec0abb8d33ea7c" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* netdev_s::hLock</definition>
+        <argsstring></argsstring>
+        <name>hLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on lock </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="159" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnetdev__s_1abf01df8dd6dc5c8fa194730c88ab7c1f" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+        <definition>phydev_t* netdev_s::pPhydev</definition>
+        <argsstring></argsstring>
+        <name>pPhydev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on phy context </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="160" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnetdev__s_1a356bed01aade78e4c0ee5b00ce8e2ef7" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__net__api_1ga1b0bb3e6064c1843396cb56730b4efd2" kindref="member">netdev_state_e</ref></type>
+        <definition>netdev_state_e netdev_s::eState</definition>
+        <argsstring></argsstring>
+        <name>eState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current state <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="161" column="20" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnetdev__s_1ad57758d65ac895fec7229269b770d3be" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__net__api_1ga7b8294a05864f228ea7fa38d44045e78" kindref="member">netdev_evt_cb_t</ref></type>
+        <definition>netdev_evt_cb_t netdev_s::cbEvent</definition>
+        <argsstring></argsstring>
+        <name>cbEvent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event call-back </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="162" column="21" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnetdev__s_1a339a785774d2927cfb2f298fbe57a944" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__net__api_1ga59c492c5b58742e7b6644b6143cdd588" kindref="member">netdev_err_type_e</ref></type>
+        <definition>netdev_err_type_e netdev_s::eErrType</definition>
+        <argsstring></argsstring>
+        <name>eErrType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Last error type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="163" column="23" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This define the netdev context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>phydev_s</label>
+        <link refid="structphydev__s"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+pIf</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>netdev_s</label>
+        <link refid="structnetdev__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pPhydev</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>phy_if_s</label>
+        <link refid="structphy__if__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="157" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="157" bodyend="164"/>
+    <listofallmembers>
+      <member refid="structnetdev__s_1ad57758d65ac895fec7229269b770d3be" prot="public" virt="non-virtual"><scope>netdev_s</scope><name>cbEvent</name></member>
+      <member refid="structnetdev__s_1a339a785774d2927cfb2f298fbe57a944" prot="public" virt="non-virtual"><scope>netdev_s</scope><name>eErrType</name></member>
+      <member refid="structnetdev__s_1a356bed01aade78e4c0ee5b00ce8e2ef7" prot="public" virt="non-virtual"><scope>netdev_s</scope><name>eState</name></member>
+      <member refid="structnetdev__s_1aa74d591f4475bc2aecec0abb8d33ea7c" prot="public" virt="non-virtual"><scope>netdev_s</scope><name>hLock</name></member>
+      <member refid="structnetdev__s_1a34b3d35b00bad47fecb870fbf01d7bb5" prot="public" virt="non-virtual"><scope>netdev_s</scope><name>pCtx</name></member>
+      <member refid="structnetdev__s_1abf01df8dd6dc5c8fa194730c88ab7c1f" prot="public" virt="non-virtual"><scope>netdev_s</scope><name>pPhydev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

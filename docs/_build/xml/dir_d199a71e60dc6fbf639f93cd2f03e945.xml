@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_d199a71e60dc6fbf639f93cd2f03e945" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476/device</compoundname>
+    <innerdir refid="dir_f718c16a51bcff98c086906287e213ce">/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/"/>
+  </compounddef>
+</doxygen>

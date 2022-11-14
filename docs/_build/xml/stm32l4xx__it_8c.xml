@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="stm32l4xx__it_8c" kind="file" language="C++">
+    <compoundname>stm32l4xx_it.c</compoundname>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes refid="stm32l4xx__it_8h" local="yes">stm32l4xx_it.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>stm32l4xx_hal.h</label>
+      </node>
+      <node id="4">
+        <label>stm32l4xx_it.h</label>
+        <link refid="stm32l4xx__it_8h"/>
+      </node>
+      <node id="2">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c</label>
+        <link refid="stm32l4xx__it_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="stm32l4xx__it_8c_1aa0c7fca836406ade332e1e3f1039d8ab" prot="public" static="no" mutable="no">
+        <type>RTC_HandleTypeDef</type>
+        <definition>RTC_HandleTypeDef hrtc</definition>
+        <argsstring></argsstring>
+        <name>hrtc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="5" column="26" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c" bodystart="45" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" declline="5" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32l4xx__it_8c_1aa9479c261d65eecedd3d9582f7f0f89c" prot="public" static="no" mutable="no">
+        <type>UART_HandleTypeDef</type>
+        <definition>UART_HandleTypeDef huart2</definition>
+        <argsstring></argsstring>
+        <name>huart2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="6" column="27" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c" bodystart="47" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" declline="6" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32l4xx__it_8c_1ae273feb3e0dc44e38892650faa58fced" prot="public" static="no" mutable="no">
+        <type>UART_HandleTypeDef</type>
+        <definition>UART_HandleTypeDef huart4</definition>
+        <argsstring></argsstring>
+        <name>huart4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="7" column="27" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c" bodystart="48" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" declline="7" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32l4xx__it_8c_1a5c3f9dccaa7cebcc70e1657af9e5e5dc" prot="public" static="no" mutable="no">
+        <type>UART_HandleTypeDef</type>
+        <definition>UART_HandleTypeDef hlpuart1</definition>
+        <argsstring></argsstring>
+        <name>hlpuart1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="8" column="27" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c" bodystart="49" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" declline="8" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="variable" id="stm32l4xx__it_8c_1a1564492831a79fa18466467c3420c3c3" prot="public" static="no" mutable="no">
+        <type>TIM_HandleTypeDef</type>
+        <definition>TIM_HandleTypeDef htim6</definition>
+        <argsstring></argsstring>
+        <name>htim6</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="9" column="26" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_hal_timebase_tim.c" bodystart="29" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" declline="9" declcolumn="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a53a3fe340e323e2fec8d851cd2e83554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RTC_WKUP_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>RTC_WKUP_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles RTC wake-up interrupt through EXTI line 20. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="14" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a4da4fb52ec579671d337938e78f9a207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RTC_Alarm_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>RTC_Alarm_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles RTC alarm interrupt through EXTI line 18. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="22" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a0ca6fd0e6f77921dd1123539857ba0a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void USART2_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>USART2_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles USART2 global interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="30" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="30" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a88774889b903ae43403cd7e7a11a8f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UART4_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>UART4_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles UART4 global interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="46" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="46" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1ad6426d36e0b02912ed0ca65f3bf92719" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LPUART1_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>LPUART1_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles LPUART1 global interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="62" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="62" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a0839a45f331c4c067939b9c4533bbf4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TIM6_DAC_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>TIM6_DAC_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles TIM6 global interrupt, DAC channel1 and channel2 underrun error interrupts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="78" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_GpioIt_Handler</definition>
+        <argsstring>(int8_t i8_ItLineId)</argsstring>
+        <name>BSP_GpioIt_Handler</name>
+        <param>
+          <type>int8_t</type>
+          <declname>i8_ItLineId</declname>
+        </param>
+        <briefdescription>
+<para>This is the gpio (exti) interrupt handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">i8_ItLineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The &quot;interrupted&quot; exti line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="85" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="337" bodyend="357" declfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" declline="85" declcolumn="13"/>
+        <references refid="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" compoundref="bsp__gpio_8c" startline="126" endline="130">BSP_Gpio_Set</references>
+        <references refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" compoundref="bsp__gpio__it_8c" startline="61">gpio_it_t::pf_cb</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a49cfdd46eb8d0ef3e1987514aa9343dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI1_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI1_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles EXTI line1 interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="90" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="90" bodyend="100"/>
+        <references refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" compoundref="bsp__gpio__it_8c" startline="337" endline="357">BSP_GpioIt_Handler</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1ab5a1d9e9c8ef50e0cb9ddb5745a20a14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI2_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI2_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles EXTI line2 interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="105" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="105" bodyend="115"/>
+        <references refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" compoundref="bsp__gpio__it_8c" startline="337" endline="357">BSP_GpioIt_Handler</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a7b2096b8b2643286dc3a7e5110e5ae85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI9_5_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI9_5_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles EXTI line[9:5] interrupts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="120" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="120" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32l4xx__it_8c_1a738473a5b43f6c92b80ce1d3d6f77ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI15_10_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI15_10_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles EXTI line[15:10] interrupts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" line="138" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c" bodystart="138" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32l4xx__it_8h" kindref="compound">stm32l4xx_it.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>RTC_HandleTypeDef<sp/>hrtc;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>UART_HandleTypeDef<sp/>huart2;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>UART_HandleTypeDef<sp/>huart4;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>UART_HandleTypeDef<sp/>hlpuart1;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>TIM_HandleTypeDef<sp/>htim6;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="stm32l4xx__it_8h_1a53a3fe340e323e2fec8d851cd2e83554" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__it_8h_1a53a3fe340e323e2fec8d851cd2e83554" kindref="member">RTC_WKUP_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>HAL_RTCEx_WakeUpTimerIRQHandler(&amp;hrtc);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="stm32l4xx__it_8h_1a4da4fb52ec579671d337938e78f9a207" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__it_8h_1a4da4fb52ec579671d337938e78f9a207" kindref="member">RTC_Alarm_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>HAL_RTC_AlarmIRQHandler(&amp;hrtc);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="stm32l4xx__it_8h_1a0ca6fd0e6f77921dd1123539857ba0a8" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__it_8h_1a0ca6fd0e6f77921dd1123539857ba0a8" kindref="member">USART2_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART2_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>huart2.Instance-&gt;ISR<sp/>&amp;<sp/>USART_ISR_RTOF)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>huart2.RxISR(&amp;huart2);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_UART_IRQHandler(&amp;huart2);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UART4_IRQHandler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART2_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>huart4.Instance-&gt;ISR<sp/>&amp;<sp/>USART_ISR_RTOF)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>huart4.RxISR(&amp;huart4);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_UART_IRQHandler(&amp;huart4);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>LPUART1_IRQHandler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART2_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>hlpuart1.Instance-&gt;ISR<sp/>&amp;<sp/>USART_ISR_RTOF)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hlpuart1.RxISR(&amp;hlpuart1);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_UART_IRQHandler(&amp;hlpuart1);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="stm32l4xx__it_8h_1a0839a45f331c4c067939b9c4533bbf4d" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__it_8h_1a0839a45f331c4c067939b9c4533bbf4d" kindref="member">TIM6_DAC_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>HAL_TIM_IRQHandler(&amp;htim6);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO<sp/>:<sp/>fix<sp/>that<sp/>following<sp/>for<sp/>STMCube<sp/>code<sp/>generation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" kindref="member">BSP_GpioIt_Handler</ref>(int8_t<sp/>i8_ItLineId);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="stm32l4xx__it_8h_1a49cfdd46eb8d0ef3e1987514aa9343dc" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__it_8h_1a49cfdd46eb8d0ef3e1987514aa9343dc" kindref="member">EXTI1_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint32_t<sp/>msk;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>msk<sp/>=<sp/>0x1<sp/>&lt;&lt;<sp/>num;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>EXTI-&gt;PR1<sp/>&amp;<sp/>msk<sp/>)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" kindref="member">BSP_GpioIt_Handler</ref>(num);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXTI-&gt;PR1<sp/>=<sp/>msk;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="stm32l4xx__it_8h_1ab5a1d9e9c8ef50e0cb9ddb5745a20a14" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32l4xx__it_8h_1ab5a1d9e9c8ef50e0cb9ddb5745a20a14" kindref="member">EXTI2_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint32_t<sp/>msk;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>num<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>msk<sp/>=<sp/>0x1<sp/>&lt;&lt;<sp/>num;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>EXTI-&gt;PR1<sp/>&amp;<sp/>msk<sp/>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" kindref="member">BSP_GpioIt_Handler</ref>(num);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXTI-&gt;PR1<sp/>=<sp/>msk;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EXTI9_5_IRQHandler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint32_t<sp/>msk;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint8_t<sp/>num;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(num<sp/>=<sp/>5;<sp/>num<sp/>&lt;<sp/>10;<sp/>num++)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msk<sp/>=<sp/>0x1<sp/>&lt;&lt;<sp/>num;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>EXTI-&gt;PR1<sp/>&amp;<sp/>msk<sp/>)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" kindref="member">BSP_GpioIt_Handler</ref>(num);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXTI-&gt;PR1<sp/>=<sp/>msk;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EXTI15_10_IRQHandler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint32_t<sp/>msk;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint8_t<sp/>num;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(num<sp/>=<sp/>10;<sp/>num<sp/>&lt;=<sp/>15;<sp/>num++)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msk<sp/>=<sp/>0x1<sp/>&lt;&lt;<sp/>num;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>EXTI-&gt;PR1<sp/>&amp;<sp/>msk<sp/>)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" kindref="member">BSP_GpioIt_Handler</ref>(num);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXTI-&gt;PR1<sp/>=<sp/>msk;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/src/stm32l4xx_it.c"/>
+  </compounddef>
+</doxygen>
