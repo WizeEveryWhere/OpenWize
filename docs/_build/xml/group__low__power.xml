@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__low__power" kind="group">
+    <compoundname>low_power</compoundname>
+    <title>Low_power</title>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__low__power_1ga89c08aa0d5391e11da484d4b30b2b4b3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>lp_mode_e</name>
+        <enumvalue id="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a6c8362ed4e333b36aea475fc27bb9a87" prot="public">
+          <name>LP_SLEEP_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sleep mode (CPU is sleeping) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a5265b34f9a45f92480dc48e5aa0fb5c0" prot="public">
+          <name>LP_STOP1_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Stop 1 mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a745c9aec2d57a37530926cbe7f19701b" prot="public">
+          <name>LP_STOP2_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Stop 2 mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a810ff0b824779f414797c47a19cada6f" prot="public">
+          <name>LP_STDBY_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Standby mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a292a2fae5b6bf02b90afacdc724166f7" prot="public">
+          <name>LP_SHTDWN_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Shutdown mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the sleep mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_lp.h" line="47" column="14" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_lp.h" bodystart="47" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__low__power_1gaa0c7fca836406ade332e1e3f1039d8ab" prot="public" static="no" mutable="no">
+        <type>RTC_HandleTypeDef</type>
+        <definition>RTC_HandleTypeDef hrtc</definition>
+        <argsstring></argsstring>
+        <name>hrtc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" line="65" column="26" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c" bodystart="45" bodyend="-1" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" declline="65" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__low__power_1ga9370b7747f3b63b87070292b95b5314e" prot="public" static="no" mutable="no">
+        <type>UART_HandleTypeDef *</type>
+        <definition>UART_HandleTypeDef* paUART_BusHandle[UART_ID_MAX]</definition>
+        <argsstring>[UART_ID_MAX]</argsstring>
+        <name>paUART_BusHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" line="66" column="27" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" declline="66" declcolumn="27"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__low__power_1gaa1cfd268c238ce160d970cfb5d9335cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_LowPower_Enter</definition>
+        <argsstring>(lp_mode_e eLpMode)</argsstring>
+        <name>BSP_LowPower_Enter</name>
+        <param>
+          <type><ref refid="group__low__power_1ga89c08aa0d5391e11da484d4b30b2b4b3" kindref="member">lp_mode_e</ref></type>
+          <declname>eLpMode</declname>
+        </param>
+        <briefdescription>
+<para>This function enter in the given low power mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">eLpMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The low power mode (see <ref refid="group__low__power_1ga89c08aa0d5391e11da484d4b30b2b4b3" kindref="member">lp_mode_e</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" line="326" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" bodystart="326" bodyend="358" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_lp.h" declline="55" declcolumn="6"/>
+        <references refid="stm32l4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" compoundref="stm32l4xx__hal__timebase__tim_8c" startline="95" endline="99">HAL_SuspendTick</references>
+        <references refid="group__low__power_1gac7b56a7e55221f8b95af7d07bd2185c7" compoundref="bsp__lp_8c" startline="318">WAKEUP_PIN</references>
+        <references refid="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a292a2fae5b6bf02b90afacdc724166f7" compoundref="bsp__lp_8h" startline="52">LP_SHTDWN_MODE</references>
+        <references refid="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a810ff0b824779f414797c47a19cada6f" compoundref="bsp__lp_8h" startline="51">LP_STDBY_MODE</references>
+        <references refid="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a5265b34f9a45f92480dc48e5aa0fb5c0" compoundref="bsp__lp_8h" startline="49">LP_STOP1_MODE</references>
+        <references refid="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a745c9aec2d57a37530926cbe7f19701b" compoundref="bsp__lp_8h" startline="50">LP_STOP2_MODE</references>
+        <references refid="group__low__power_1gga89c08aa0d5391e11da484d4b30b2b4b3a6c8362ed4e333b36aea475fc27bb9a87" compoundref="bsp__lp_8h" startline="48">LP_SLEEP_MODE</references>
+        <references refid="stm32l4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" compoundref="stm32l4xx__hal__timebase__tim_8c" startline="106" endline="110">HAL_ResumeTick</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__low__power_1gac7b56a7e55221f8b95af7d07bd2185c7" prot="public" static="no">
+        <name>WAKEUP_PIN</name>
+        <initializer>PC13_WKUP_PIN</initializer>
+        <briefdescription>
+<para>This define the current wake-up pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" line="318" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

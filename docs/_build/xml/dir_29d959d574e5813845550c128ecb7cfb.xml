@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_29d959d574e5813845550c128ecb7cfb" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/WizeCore/app/src/internal</compoundname>
+    <innerfile refid="adm__internal_8c">adm_internal.c</innerfile>
+    <innerfile refid="dwn__internal_8c">dwn_internal.c</innerfile>
+    <innerfile refid="inst__internal_8c">inst_internal.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/"/>
+  </compounddef>
+</doxygen>

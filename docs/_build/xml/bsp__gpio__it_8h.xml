@@ -1,0 +1,663 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bsp__gpio__it_8h" kind="file" language="C++">
+    <compoundname>bsp_gpio_it.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includes refid="bsp__gpio_8h" local="yes">bsp_gpio.h</includes>
+    <includedby refid="bsp_8h" local="no">/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</includedby>
+    <includedby refid="bsp__gpio__it_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c</includedby>
+    <includedby refid="bsp__lp_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>assert.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h</label>
+        <link refid="bsp__gpio__it_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="10">
+        <label>bsp_gpio.h</label>
+        <link refid="bsp__gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>time.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="9">
+        <label>machine/endian.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h</label>
+        <link refid="bsp__gpio__it_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/platform.c</label>
+        <link refid="platform_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c</label>
+        <link refid="bsp_8c"/>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c</label>
+        <link refid="bsp__lp_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c</label>
+        <link refid="port_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</label>
+        <link refid="bsp_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c</label>
+        <link refid="bsp__gpio__it_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__gpio__it_1ga599f4fc0ff790b99ecb76b5c83f8e97c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>gpio_irq_trg_cond_e</name>
+        <enumvalue id="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97caadfff0a9178f595f88e75dfe6d451bc1" prot="public">
+          <name>GPIO_IRQ_NONE_EDGE</name>
+          <initializer>=(0b0000)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Trigger an interrupt on a none edge. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca5e9b2cc45c19281ee00e257f67a9c028" prot="public">
+          <name>GPIO_IRQ_RISING_EDGE</name>
+          <initializer>=(0b0001)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Trigger an interrupt on a rising edge. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca602a91261e70038ba4c5c27e820bb22b" prot="public">
+          <name>GPIO_IRQ_FALLING_EDGE</name>
+          <initializer>=(0b0010)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Trigger an interrupt on a falling edge. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca3859d8bff77993b52a309f1f19dc60a3" prot="public">
+          <name>GPIO_IRQ_EITHER_EDGE</name>
+          <initializer>=(0b0011)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Trigger an interrupt on either edge. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca2037ab55504cd800cefd83f9e07ff767" prot="public">
+          <name>GPIO_IRQ_HIGH_LEVEL</name>
+          <initializer>=(0b0100)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Trigger an interrupt on a high level. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97cabf3b8c023fc327a9969410d84674a90c" prot="public">
+          <name>GPIO_IRQ_LOW_LEVEL</name>
+          <initializer>=(0b1000)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Trigger an interrupt on a low level. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97cab7034e3207d824f3a795e3ed943ac2e8" prot="public">
+          <name>GPIO_IRQ_EITHERLEVEL</name>
+          <initializer>=(0b1100)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Trigger an interrupt on a low level. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum define the GPIO trigger condition </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" line="46" column="14" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" bodystart="46" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t BSP_GpioIt_GetLineId</definition>
+        <argsstring>(const uint16_t u16Pin)</argsstring>
+        <name>BSP_GpioIt_GetLineId</name>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <briefdescription>
+<para>Get EXTI line id from gpio pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin number</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the corresponding exti line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="192" column="8" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="192" bodyend="207" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="56" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga1faf7648b4fc23ba486bbcb8f74b178f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_ConfigLine</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, const gpio_irq_trg_cond_e ePol)</argsstring>
+        <name>BSP_GpioIt_ConfigLine</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>const <ref refid="group__gpio__it_1ga599f4fc0ff790b99ecb76b5c83f8e97c" kindref="member">gpio_irq_trg_cond_e</ref></type>
+          <declname>ePol</declname>
+        </param>
+        <briefdescription>
+<para>Configure the gpio interruption. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ePol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interrupt polarity</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if fail (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="220" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="220" bodyend="243" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="57" declcolumn="9"/>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga6a7db0f6a32cf4197c995dc83e67e7ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_SetLine</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, const bool bEnable)</argsstring>
+        <name>BSP_GpioIt_SetLine</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>bEnable</declname>
+        </param>
+        <briefdescription>
+<para>Enable the gpio interruption. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bEnable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enable/Disable interrupt</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_FAILURE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if fail (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">dev_res_e::DEV_FAILURE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="256" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="256" bodyend="270" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="58" declcolumn="9"/>
+        <references refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" compoundref="bsp__gpio__it_8c" startline="192" endline="207">BSP_GpioIt_GetLineId</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" compoundref="common_8h" startline="97">DEV_FAILURE</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga3fa85ab0085df2541d576df88bed2573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_SetCallback</definition>
+        <argsstring>(const uint32_t u32Port, const uint16_t u16Pin, pf_cb_t const pfCb, void *const pCbParam)</argsstring>
+        <name>BSP_GpioIt_SetCallback</name>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <param>
+          <type>pf_cb_t const</type>
+          <declname>pfCb</declname>
+        </param>
+        <param>
+          <type>void *const</type>
+          <declname>pCbParam</declname>
+        </param>
+        <briefdescription>
+<para>Set the gpio interruption callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfCb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Callback function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pCbParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Callback parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="283" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="283" bodyend="291" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="59" declcolumn="9"/>
+        <references refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" compoundref="bsp__gpio__it_8c" startline="192" endline="207">BSP_GpioIt_GetLineId</references>
+        <references refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" compoundref="bsp__gpio__it_8c" startline="61">gpio_it_t::pf_cb</references>
+        <references refid="structgpio__it__t_1aab835fb2cf4f89cb2338059d7d1f1bd4" compoundref="bsp__gpio__it_8c" startline="62">gpio_it_t::p_CbParam</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga186eb305b8e919841c46944b0470921a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_SetGpioCpy</definition>
+        <argsstring>(const uint8_t u8ItLineId, const uint32_t u32Port, const uint16_t u16Pin)</argsstring>
+        <name>BSP_GpioIt_SetGpioCpy</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8ItLineId</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>u32Port</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>u16Pin</declname>
+        </param>
+        <briefdescription>
+<para>Set/Enable the gpio as copy of interrupt of the given exti line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8ItLineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>EXTI line to copy </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio port on which to copy </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gpio pin on which to copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="303" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="303" bodyend="311" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="60" declcolumn="9"/>
+        <references refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" compoundref="bsp__gpio__it_8c" startline="68">gpio_it_t::port</references>
+        <references refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" compoundref="bsp__gpio__it_8c" startline="69">gpio_it_t::pin</references>
+        <references refid="group__gpio_1gafcc05736f0d15fb95cd39e6a30333611" compoundref="bsp__gpio_8c" startline="82" endline="98">BSP_Gpio_OutputEnable</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1ga10ef0c80be820b0273d22d30f07edcd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_GpioIt_ClrGpioCpy</definition>
+        <argsstring>(const uint8_t u8ItLineId)</argsstring>
+        <name>BSP_GpioIt_ClrGpioCpy</name>
+        <param>
+          <type>const uint8_t</type>
+          <declname>u8ItLineId</declname>
+        </param>
+        <briefdescription>
+<para>Clr/Disable the gpio as copy of interrupt of the given exti line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8ItLineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>EXTI line to disable the copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="321" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="321" bodyend="329" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="61" declcolumn="9"/>
+        <references refid="group__gpio_1gafcc05736f0d15fb95cd39e6a30333611" compoundref="bsp__gpio_8c" startline="82" endline="98">BSP_Gpio_OutputEnable</references>
+        <references refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" compoundref="bsp__gpio__it_8c" startline="68">gpio_it_t::port</references>
+        <references refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" compoundref="bsp__gpio__it_8c" startline="69">gpio_it_t::pin</references>
+        <references refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" compoundref="common_8h" startline="96">DEV_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_GpioIt_Handler</definition>
+        <argsstring>(int8_t i8_ItLineId)</argsstring>
+        <name>BSP_GpioIt_Handler</name>
+        <param>
+          <type>int8_t</type>
+          <declname>i8_ItLineId</declname>
+        </param>
+        <briefdescription>
+<para>This is the gpio (exti) interrupt handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">i8_ItLineId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The &quot;interrupted&quot; exti line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="337" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="337" bodyend="357" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h" declline="62" declcolumn="6"/>
+        <references refid="group__gpio_1ga0f8e943487baf47c94629b7e803ee7bb" compoundref="bsp__gpio_8c" startline="126" endline="130">BSP_Gpio_Set</references>
+        <references refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" compoundref="bsp__gpio__it_8c" startline="61">gpio_it_t::pf_cb</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file defines functions to deal with external interrupt lines. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2019/12/14 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_BSP_GPIO_IT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BSP_GPIO_IT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="common_8h" kindref="compound">common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bsp__gpio_8h" kindref="compound">bsp_gpio.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="group__gpio__it_1ga599f4fc0ff790b99ecb76b5c83f8e97c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="47" refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97caadfff0a9178f595f88e75dfe6d451bc1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97caadfff0a9178f595f88e75dfe6d451bc1" kindref="member">GPIO_IRQ_NONE_EDGE</ref><sp/><sp/><sp/><sp/><sp/><sp/>=(0b0000),<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48" refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca5e9b2cc45c19281ee00e257f67a9c028" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca5e9b2cc45c19281ee00e257f67a9c028" kindref="member">GPIO_IRQ_RISING_EDGE</ref><sp/><sp/><sp/><sp/>=(0b0001),<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca602a91261e70038ba4c5c27e820bb22b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca602a91261e70038ba4c5c27e820bb22b" kindref="member">GPIO_IRQ_FALLING_EDGE</ref><sp/><sp/><sp/>=(0b0010),<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca3859d8bff77993b52a309f1f19dc60a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca3859d8bff77993b52a309f1f19dc60a3" kindref="member">GPIO_IRQ_EITHER_EDGE</ref><sp/><sp/><sp/><sp/>=(0b0011),<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca2037ab55504cd800cefd83f9e07ff767" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97ca2037ab55504cd800cefd83f9e07ff767" kindref="member">GPIO_IRQ_HIGH_LEVEL</ref><sp/><sp/><sp/><sp/><sp/>=(0b0100),<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97cabf3b8c023fc327a9969410d84674a90c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97cabf3b8c023fc327a9969410d84674a90c" kindref="member">GPIO_IRQ_LOW_LEVEL</ref><sp/><sp/><sp/><sp/><sp/><sp/>=(0b1000),<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53" refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97cab7034e3207d824f3a795e3ed943ac2e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__gpio__it_1gga599f4fc0ff790b99ecb76b5c83f8e97cab7034e3207d824f3a795e3ed943ac2e8" kindref="member">GPIO_IRQ_EITHERLEVEL</ref><sp/><sp/><sp/><sp/>=(0b1100)<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}<sp/><ref refid="group__gpio__it_1ga599f4fc0ff790b99ecb76b5c83f8e97c" kindref="member">gpio_irq_trg_cond_e</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">int8_t<sp/><ref refid="group__gpio__it_1ga7839d3870b65918ac9670031e191d813" kindref="member">BSP_GpioIt_GetLineId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga1faf7648b4fc23ba486bbcb8f74b178f" kindref="member">BSP_GpioIt_ConfigLine</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__gpio__it_1ga599f4fc0ff790b99ecb76b5c83f8e97c" kindref="member">gpio_irq_trg_cond_e</ref><sp/>ePol);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga6a7db0f6a32cf4197c995dc83e67e7ea" kindref="member">BSP_GpioIt_SetLine</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bEnable);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga3fa85ab0085df2541d576df88bed2573" kindref="member">BSP_GpioIt_SetCallback</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin,<sp/>pf_cb_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pCbParam<sp/>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga186eb305b8e919841c46944b0470921a" kindref="member">BSP_GpioIt_SetGpioCpy</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8ItLineId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>u32Port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>u16Pin);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">uint8_t<sp/><ref refid="group__gpio__it_1ga10ef0c80be820b0273d22d30f07edcd3" kindref="member">BSP_GpioIt_ClrGpioCpy</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>u8ItLineId);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__gpio__it_1gad35f0b0f4dec2f85814796bde6c0fbd0" kindref="member">BSP_GpioIt_Handler</ref>(int8_t<sp/>i8_ItLineId);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_BSP_GPIO_IT_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_gpio_it.h"/>
+  </compounddef>
+</doxygen>

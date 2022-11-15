@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_80737a8c5a6911c3c084426500224a10" kind="dir">
+    <compoundname>/home/nono/OpenWize/demo/Nucleo-L476/board/include</compoundname>
+    <innerfile refid="main_8h">main.h</innerfile>
+    <innerfile refid="stm32l4xx__it_8h">stm32l4xx_it.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/board/include/"/>
+  </compounddef>
+</doxygen>

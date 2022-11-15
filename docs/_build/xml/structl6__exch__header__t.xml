@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structl6__exch__header__t" kind="struct" language="C++" prot="public">
+    <compoundname>l6_exch_header_t</compoundname>
+    <includes refid="proto__private_8h" local="no">proto_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structl6__exch__header__t_1a7215967d9f36727c721c0e7e017ed617" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_header_t::L6Ctrl</definition>
+        <argsstring></argsstring>
+        <name>L6Ctrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control field </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="271" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1ae21c7b61060afa3ded81abeae1856918" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_header_t::KEYSEL</definition>
+        <argsstring></argsstring>
+        <name>KEYSEL</name>
+        <bitfield>4</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current encryption and authentication key id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="273" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1a3b3d2c3b44c6b7f851c7311a13bc7a03" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_header_t::WTS</definition>
+        <argsstring></argsstring>
+        <name>WTS</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reserved value, set to 1. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="274" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1abc8c8d23c4bd258bb7f2c691eb6dc177" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_header_t::VERS</definition>
+        <argsstring></argsstring>
+        <name>VERS</name>
+        <bitfield>3</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The LAN protocol Version </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="275" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1a69e8a59cb26fcc509630043fd2abeddf" prot="public" static="no" mutable="no">
+        <type>struct l6_exch_header_t::@39::@41</type>
+        <definition>struct l6_exch_header_t::@39::@41 l6_exch_header_t::L6Ctrl_b</definition>
+        <argsstring></argsstring>
+        <name>L6Ctrl_b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="276" column="9"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1aa2bf174843dbbf26d5d16e2ca73211de" prot="public" static="no" mutable="no">
+        <type>union l6_exch_header_t::@39</type>
+        <definition>union l6_exch_header_t::@39 l6_exch_header_t::@40</definition>
+        <argsstring></argsstring>
+        <name>@40</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="277" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1a77f43e358d4f1daf3f2de3419a9799ea" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_header_t::L6NetwId</definition>
+        <argsstring></argsstring>
+        <name>L6NetwId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Network identifier </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="279" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1a06846b9e20d2eaf2b36d7354a83deed6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_header_t::L6Cpt[L6_CPT_SZ]</definition>
+        <argsstring>[L6_CPT_SZ]</argsstring>
+        <name>L6Cpt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Message incremental number </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="281" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structl6__exch__header__t_1af2c28c0a1eba082be846d9acabc06119" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_exch_header_t::L6App</definition>
+        <argsstring></argsstring>
+        <name>L6App</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The application layer Id. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="283" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure defines the presentation layer exchange header. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>l6_exch_header_t</label>
+        <link refid="structl6__exch__header__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="269" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="269" bodyend="285"/>
+    <listofallmembers>
+      <member refid="structl6__exch__header__t_1ae21c7b61060afa3ded81abeae1856918" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>KEYSEL</name></member>
+      <member refid="structl6__exch__header__t_1af2c28c0a1eba082be846d9acabc06119" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>L6App</name></member>
+      <member refid="structl6__exch__header__t_1a06846b9e20d2eaf2b36d7354a83deed6" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>L6Cpt</name></member>
+      <member refid="structl6__exch__header__t_1a7215967d9f36727c721c0e7e017ed617" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>L6Ctrl</name></member>
+      <member refid="structl6__exch__header__t_1a69e8a59cb26fcc509630043fd2abeddf" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>L6Ctrl_b</name></member>
+      <member refid="structl6__exch__header__t_1a77f43e358d4f1daf3f2de3419a9799ea" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>L6NetwId</name></member>
+      <member refid="structl6__exch__header__t_1abc8c8d23c4bd258bb7f2c691eb6dc177" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>VERS</name></member>
+      <member refid="structl6__exch__header__t_1a3b3d2c3b44c6b7f851c7311a13bc7a03" prot="public" virt="non-virtual"><scope>l6_exch_header_t</scope><name>WTS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

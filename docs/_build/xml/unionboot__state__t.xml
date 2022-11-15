@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="unionboot__state__t" kind="union" language="C++" prot="public">
+    <compoundname>boot_state_t</compoundname>
+    <includes refid="bsp__boot_8h" local="no">bsp_boot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionboot__state__t_1ad18b41c3bd6a8f66f7904858cb3b3e07" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Boot State <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="95" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a4aa43c44eec2035329fb225be0370d70" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::reason</definition>
+        <argsstring></argsstring>
+        <name>reason</name>
+        <bitfield>8</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>boot reason (see <ref refid="group__boot_1ga830c85b040fce12764c873021137099c" kindref="member">boot_reason_e</ref>) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="98" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1aca29315caa5dfb11c583d72b7d0f3967" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::standby</definition>
+        <argsstring></argsstring>
+        <name>standby</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>wake-up from standby </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="99" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1aba84321baeb08bdbca5d31234e1e504d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::backup</definition>
+        <argsstring></argsstring>
+        <name>backup</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>backup-up domain has been cleared </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="100" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1af0c80f18a108d8dd4fe35194bc821186" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::internal</definition>
+        <argsstring></argsstring>
+        <name>internal</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>wake-up from internal </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="101" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a4a69930a4dd3889dbbb2b866961c8a51" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::__pad0__</definition>
+        <argsstring></argsstring>
+        <name>__pad0__</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>not used </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="102" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a847997f49d54f3bfb5483fdb975e6302" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::wkup_pin</definition>
+        <argsstring></argsstring>
+        <name>wkup_pin</name>
+        <bitfield>5</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>wake-up from pin </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="103" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a11776967fb5435a1bed8fc191f54012e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::__pad1__</definition>
+        <argsstring></argsstring>
+        <name>__pad1__</name>
+        <bitfield>3</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>not used </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="104" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a255aa651970d3d2801235af7f306d09b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::wkup_alra</definition>
+        <argsstring></argsstring>
+        <name>wkup_alra</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>wake-up from rtc alarm A </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="105" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a4f152f08b5e1469223b5a659440ff4e1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::wkup_alrb</definition>
+        <argsstring></argsstring>
+        <name>wkup_alrb</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>wake-up from rtc alarm B </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="106" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1acaa501d89e13006a12b7e0fd16f1494b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::wkup_timer</definition>
+        <argsstring></argsstring>
+        <name>wkup_timer</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>wake-up from rtc wake-up timer </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="107" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a8b535c7b7c282db3a7acca5070dd5c20" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t boot_state_t::calendar</definition>
+        <argsstring></argsstring>
+        <name>calendar</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>calendar configuration required </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="108" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionboot__state__t_1a06e34ec48a56e6d1fba14658474b6604" prot="public" static="no" mutable="no">
+        <type>struct boot_state_t::@56</type>
+        <definition>struct boot_state_t::@56 boot_state_t::@57</definition>
+        <argsstring></argsstring>
+        <name>@57</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="109" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This union hold the boot state. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>boot_state_t</label>
+        <link refid="unionboot__state__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" line="94" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_boot.h" bodystart="93" bodyend="110"/>
+    <listofallmembers>
+      <member refid="unionboot__state__t_1a4a69930a4dd3889dbbb2b866961c8a51" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>__pad0__</name></member>
+      <member refid="unionboot__state__t_1a11776967fb5435a1bed8fc191f54012e" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>__pad1__</name></member>
+      <member refid="unionboot__state__t_1aba84321baeb08bdbca5d31234e1e504d" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>backup</name></member>
+      <member refid="unionboot__state__t_1a8b535c7b7c282db3a7acca5070dd5c20" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>calendar</name></member>
+      <member refid="unionboot__state__t_1af0c80f18a108d8dd4fe35194bc821186" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>internal</name></member>
+      <member refid="unionboot__state__t_1a4aa43c44eec2035329fb225be0370d70" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>reason</name></member>
+      <member refid="unionboot__state__t_1aca29315caa5dfb11c583d72b7d0f3967" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>standby</name></member>
+      <member refid="unionboot__state__t_1ad18b41c3bd6a8f66f7904858cb3b3e07" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>state</name></member>
+      <member refid="unionboot__state__t_1a255aa651970d3d2801235af7f306d09b" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>wkup_alra</name></member>
+      <member refid="unionboot__state__t_1a4f152f08b5e1469223b5a659440ff4e1" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>wkup_alrb</name></member>
+      <member refid="unionboot__state__t_1a847997f49d54f3bfb5483fdb975e6302" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>wkup_pin</name></member>
+      <member refid="unionboot__state__t_1acaa501d89e13006a12b7e0fd16f1494b" prot="public" virt="non-virtual"><scope>boot_state_t</scope><name>wkup_timer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

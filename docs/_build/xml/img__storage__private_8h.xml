@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="img__storage__private_8h" kind="file" language="C++">
+    <compoundname>img_storage_private.h</compoundname>
+    <includes refid="img__storage_8h" local="yes">img_storage.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includedby refid="img__storage_8c" local="yes">/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="2">
+        <label>img_storage.h</label>
+        <link refid="img__storage_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h</label>
+        <link refid="img__storage__private_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c</label>
+        <link refid="img__storage_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h</label>
+        <link refid="img__storage__private_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structsw__pend__buff__s" prot="public">sw_pend_buff_s</innerclass>
+    <innerclass refid="structsw__pend__ctrl__s" prot="public">sw_pend_ctrl_s</innerclass>
+    <innerclass refid="structimg__mgr__ctx__s" prot="public">img_mgr_ctx_s</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__ing__storage_1ga8fab2b63de8322f56a3453c2cc7ae882" prot="public" static="no">
+        <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref></type>
+        <definition>typedef struct img_mgr_ctx_s img_mgr_ctx_t</definition>
+        <argsstring></argsstring>
+        <name>img_mgr_ctx_t</name>
+        <briefdescription>
+<para>This struct defines the image context type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="1" column="0" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="img__storage__private_8h_1a9474c255d4d3258252be8a2d48a9c7ed" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t aPend[PENDING_LINE_PEND_BYTES]</definition>
+        <argsstring>[PENDING_LINE_PEND_BYTES]</argsstring>
+        <name>aPend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pending bytes <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="2" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__ing__storage_1ga16f3886c179d00cbbbc799ca5ebf8a44" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structsw__pend__ctrl__s" kindref="compound">sw_pend_ctrl_s</ref></type>
+        <definition>struct sw_pend_ctrl_s __attribute__</definition>
+        <argsstring></argsstring>
+        <name>__attribute__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="177" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__ing__storage_1gac84fb6b583b857a4ac2165add5d454dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structsw__pend__buff__s" kindref="compound">sw_pend_buff_s</ref></type>
+        <definition>struct sw_pend_buff_s __attribute__</definition>
+        <argsstring>((aligned(8)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(8))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="1" column="0" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" declline="1" declcolumn="0"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define data structure of the image storage module. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/08/25[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_IMG_STORAGE_PRIVATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_IMG_STORAGE_PRIVATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="img__storage_8h" kindref="compound">img_storage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor">#ifndef<sp/>FLASH_PAGE_SIZE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>FLASH_PAGE_SIZE<sp/>2048</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FLASH_START_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>FLASH_START_ADDRESS<sp/>0x08000000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMG_ADRR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>IMG_ADRR<sp/>0x0802C000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMG_MAX_SZ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//#define<sp/>IMG_MAX_SZ<sp/>262144<sp/>//!&lt;<sp/>This<sp/>is<sp/>arbitrarily<sp/>fixed<sp/>256ko<sp/>(half<sp/>of<sp/>hyp.512ko<sp/>flash<sp/>memory)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>IMG_MAX_SZ<sp/>169984<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IMG_NB_PAGES<sp/>IMG_MAX_SZ/FLASH_PAGE_SIZE<sp/>//<sp/>128</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor">#define<sp/>GET_START_PAGE_ADDRESS(page)<sp/>(FLASH_START_ADDRESS<sp/>+<sp/>(0x800<sp/>*page)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor">#define<sp/>GET_END_PAGE_ADDRESS(page)<sp/>(FLASH_START_ADDRESS<sp/>+<sp/>(0x7FF<sp/>*<sp/>(page+1))<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>Note<sp/>:</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>-<sp/>STM32<sp/>Flash<sp/>memory<sp/>must<sp/>be<sp/>programmed<sp/>with<sp/>64<sp/>bit<sp/>word<sp/>aligned<sp/>on<sp/>double<sp/>word</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>-<sp/>Software<sp/>block<sp/>(download)<sp/>are<sp/>fix<sp/>size<sp/>of<sp/>210<sp/>bytes</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>4<sp/>block<sp/>of<sp/>210<sp/>bytes<sp/>are<sp/>required<sp/>to<sp/>fully<sp/>write<sp/>8<sp/>bytes<sp/>aligned<sp/>into<sp/>the<sp/>flash<sp/>memory</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/>-<sp/>Let<sp/>call<sp/>&quot;line&quot;<sp/>a<sp/>4<sp/>blocks,<sp/>with<sp/>a<sp/>block<sp/>0,<sp/>1,<sp/>2<sp/>and<sp/>3<sp/>relative<sp/>to<sp/>this<sp/>line</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>In<sp/>this<sp/>&quot;line&quot;<sp/>it<sp/>exist<sp/>3<sp/>parts<sp/>of<sp/>unaligned<sp/>to<sp/>double-word</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>-<sp/>Between<sp/>the<sp/>end<sp/>of<sp/>block[0]<sp/>(2<sp/>bytes)<sp/>and<sp/>the<sp/>beginning<sp/>of<sp/>block[1]<sp/>(6<sp/>bytes)</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>-<sp/>Between<sp/>the<sp/>end<sp/>of<sp/>block[1]<sp/>(4<sp/>bytes)<sp/>and<sp/>the<sp/>beginning<sp/>of<sp/>block[2]<sp/>(4<sp/>bytes)</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>-<sp/>Between<sp/>the<sp/>end<sp/>of<sp/>block[2]<sp/>(6<sp/>bytes)<sp/>and<sp/>the<sp/>beginning<sp/>of<sp/>block[3]<sp/>(2<sp/>bytes)</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>-<sp/>The<sp/>maximum<sp/>block<sp/>number<sp/>is<sp/>800,<sp/>that<sp/>is<sp/>200<sp/>lines<sp/>(200<sp/>*<sp/>3<sp/>*<sp/>8<sp/>bytes<sp/>=<sp/>4800<sp/>bytes,</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/><sp/>which<sp/>is<sp/>relatively<sp/>too<sp/>large).</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>number<sp/>of<sp/>line<sp/>is<sp/>reduced<sp/>to<sp/>200/8<sp/>=<sp/>25<sp/>(25<sp/>*<sp/>3<sp/>*<sp/>8<sp/>=<sp/>600<sp/>bytes)</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>So,<sp/>in<sp/>the<sp/>pending<sp/>table<sp/>25<sp/>entries<sp/>of<sp/>8<sp/>bytes</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Each<sp/>entry<sp/>is<sp/>allocated<sp/>to<sp/>8<sp/>different<sp/>line</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>-<sp/>Expecting<sp/>that<sp/>missed<sp/>block<sp/>are<sp/>uncommon</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>-<sp/>Expecting<sp/>that<sp/>missed<sp/>block<sp/>will<sp/>be<sp/>re-emitted</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>-<sp/>Entries<sp/>in<sp/>the<sp/>pending<sp/>table<sp/>are<sp/>as<sp/>the<sp/>following<sp/>:</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>int16_t<sp/><sp/><sp/><sp/><sp/>i16Id<sp/>:<sp/>id<sp/>of<sp/>the<sp/>first<sp/>pending<sp/>block</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>uint8_t<sp/>aPend[24]<sp/>:<sp/>3<sp/>x<sp/>pending<sp/>double-word</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>-<sp/>If<sp/>an<sp/>entry<sp/>is<sp/>already<sp/>takes<sp/>by<sp/>an<sp/>other<sp/>block<sp/>id,<sp/>then<sp/>the<sp/>block<sp/>is<sp/>dropped</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor">#define<sp/>BANK_SZ<sp/>IMG_MAX_SZ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="preprocessor">#define<sp/>BLOCK_SZ<sp/>210</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="preprocessor">#define<sp/>BLOCK_NB<sp/>(<sp/>BANK_SZ/BLOCK_SZ<sp/>)<sp/>//<sp/>800<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="preprocessor">#define<sp/>BITMAP_BLOCK_NB<sp/>(<sp/>BLOCK_NB/8<sp/>)<sp/>//<sp/>100<sp/>=<sp/>800<sp/>block<sp/>/<sp/>8<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PENDING_LINE_NB<sp/>25<sp/>//(BANK_SZ/BLOCK_SZ)/4<sp/>/8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PENDING_LINE_PEND_BYTES<sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="structsw__pend__buff__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsw__pend__buff__s" kindref="compound">sw_pend_buff_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="162" refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" kindref="member">aPend</ref>[PENDING_LINE_PEND_BYTES];<sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}<sp/>__attribute__<sp/>((aligned<sp/>(8)));</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="structsw__pend__ctrl__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsw__pend__ctrl__s" kindref="compound">sw_pend_ctrl_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>u16Id;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="173" refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" kindref="member">ID</ref>:15;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174" refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" kindref="member">EMPTY</ref>:1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="structimg__mgr__ctx__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="183" refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsw__pend__buff__s" kindref="compound">sw_pend_buff_s</ref><sp/><ref refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" kindref="member">sPendBuff</ref>[PENDING_LINE_NB];<sp/></highlight></codeline>
+<codeline lineno="184" refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsw__pend__ctrl__s" kindref="compound">sw_pend_ctrl_s</ref><sp/><ref refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" kindref="member">sPendCtrl</ref>[PENDING_LINE_NB];<sp/></highlight></codeline>
+<codeline lineno="186" refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" kindref="member">aBitMap</ref>[BITMAP_BLOCK_NB];<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="192" refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="193" refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="195" refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" kindref="member">u32NbExpectedBlk</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="196" refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" kindref="member">u32NbBlk</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="198" refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref><sp/><ref refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" kindref="member">eImgPend</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>(*write)(uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref>,<sp/>uint64_t<sp/>*pData,<sp/>uint32_t<sp/>u32NbDoubleWord);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>(*erase)(uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" kindref="member">u32Addr</ref>,<sp/>uint32_t<sp/><ref refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" kindref="member">u32Size</ref>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="group__ing__storage_1ga8fab2b63de8322f56a3453c2cc7ae882" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref><sp/><ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_t</ref>;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_IMG_STORAGE_PRIVATE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,785 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="proto__api_8h" kind="file" language="C++">
+    <compoundname>proto_api.h</compoundname>
+    <includes refid="proto__private_8h" local="yes">proto_private.h</includes>
+    <includedby refid="net__mgr_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</includedby>
+    <includedby refid="net__api__private_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h</includedby>
+    <includedby refid="proto_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>assert.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="2">
+        <label>proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="15">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c</label>
+        <link refid="net__api_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="13">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</label>
+        <link refid="net__mgr_8c"/>
+      </node>
+      <node id="14">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</label>
+        <link refid="proto_8c"/>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__proto_1ga27f90597cd165ac2145e3fbf1c9da342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Wize_ProtoBuild</definition>
+        <argsstring>(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg)</argsstring>
+        <name>Wize_ProtoBuild</name>
+        <param>
+          <type>struct <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pNetMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function build the Presentation and Link Layer. The Application Layer must be into the given net_msg_t buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the protocol context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the Application message.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PROTO_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a459b60cb66be0d935cbfcea85ceb75d2" kindref="member">ret_code_e::PROTO_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_FRAME_SZ_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a0820d3b70d21fa1311ce43c57ea73796" kindref="member">ret_code_e::PROTO_FRAME_SZ_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_APP_MSG_SZ_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3e1e78e80b948eabbe110cc9f99a9d06" kindref="member">ret_code_e::PROTO_APP_MSG_SZ_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_STACK_MISMATCH_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4c996b8ea707871c608e547f51c263dc" kindref="member">ret_code_e::PROTO_STACK_MISMATCH_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_INTERNAL_CIPH_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a66c367af1cb7488ab2c9725e8b8ae371" kindref="member">ret_code_e::PROTO_INTERNAL_CIPH_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_INTERNAL_HASH_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aee97546b75f25dc4f97a60d0003f9ff7" kindref="member">ret_code_e::PROTO_INTERNAL_HASH_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_INTERNAL_CRC_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad169350d22d4214dcc0382143a20e55f" kindref="member">ret_code_e::PROTO_INTERNAL_CRC_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" line="198" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="198" bodyend="229" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h" declline="43" declcolumn="9"/>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aebf9481edc7db30d72a4ed25b800d882" compoundref="proto_8h" startline="94">PROTO_INTERNAL_NULL_ERR</references>
+        <references refid="structproto__ctx__s_1a568060bc25d8a8ee40cd090a5ed8c190" compoundref="proto__private_8h" startline="378">proto_ctx_s::pBuffer</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="structproto__ctx__s_1aadb73caecec026dc7fd1b216ea527cee" compoundref="proto__private_8h" startline="379">proto_ctx_s::u8Size</references>
+        <references refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" compoundref="proto_8h" startline="170">net_msg_s::u8Size</references>
+        <references refid="structproto__ctx__s_1a403c67c98c82f08aec36ec663549842b" compoundref="proto__private_8h" startline="376">proto_ctx_s::sProtoConfig</references>
+        <references refid="structproto__config__s_1ab83fbb4b7b7f8d76c9e9900088fdc200" compoundref="proto__private_8h" startline="361">proto_config_s::u8TransLenMax</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__proto_1ga4e1573d32553cd94984261c0a129868c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Wize_ProtoExtract</definition>
+        <argsstring>(struct proto_ctx_s *pCtx, net_msg_t *pNetMsg)</argsstring>
+        <name>Wize_ProtoExtract</name>
+        <param>
+          <type>struct <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pNetMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function extract the Presentation and Link Layer. The resulting Application Layer is set into the given net_msg_t buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the protocol context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the Application message.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PROTO_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a459b60cb66be0d935cbfcea85ceb75d2" kindref="member">ret_code_e::PROTO_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_FRAME_RS_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aa59628c438becff180748e8178c8ed02" kindref="member">ret_code_e::PROTO_FRAME_RS_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_DW_BLK_PASS_INF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad8482e973deb3e9423c92099fe6a4d3b" kindref="member">ret_code_e::PROTO_DW_BLK_PASS_INF</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_DOWNLOAD_VER_WRN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ae53363e02937338126c38d82b784fce9" kindref="member">ret_code_e::PROTO_DOWNLOAD_VER_WRN</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_FRAME_CRC_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a2f800c06b09d5b160b9ae9cfd56a6f94" kindref="member">ret_code_e::PROTO_FRAME_CRC_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_HEAD_END_AUTH_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aeb2d658da2b839495ee81b440bd9e448" kindref="member">ret_code_e::PROTO_HEAD_END_AUTH_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_GATEWAY_AUTH_WRN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a419f40e78fef04b660fe19fa80147025" kindref="member">ret_code_e::PROTO_GATEWAY_AUTH_WRN</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_PROTO_UNK_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a6e236d1c02a3ae77a503445cf24cab3b" kindref="member">ret_code_e::PROTO_PROTO_UNK_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_KEYID_UNK_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4e33c8238f74c24964f45a3d75734c53" kindref="member">ret_code_e::PROTO_KEYID_UNK_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_NETWID_UNK_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a63e0cd115a2c44e01d7188588d647e3d" kindref="member">ret_code_e::PROTO_NETWID_UNK_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_FRAME_PASS_INF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ade80c96ccca47f27b551f3fda6a54ef4" kindref="member">ret_code_e::PROTO_FRAME_PASS_INF</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_FRAME_UNK_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274acc73143f40ca02925489c343beb07a85" kindref="member">ret_code_e::PROTO_FRAME_UNK_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_FRAME_SZ_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a0820d3b70d21fa1311ce43c57ea73796" kindref="member">ret_code_e::PROTO_FRAME_SZ_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_APP_MSG_SZ_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3e1e78e80b948eabbe110cc9f99a9d06" kindref="member">ret_code_e::PROTO_APP_MSG_SZ_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_STACK_MISMATCH_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a4c996b8ea707871c608e547f51c263dc" kindref="member">ret_code_e::PROTO_STACK_MISMATCH_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_INTERNAL_CRC_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274ad169350d22d4214dcc0382143a20e55f" kindref="member">ret_code_e::PROTO_INTERNAL_CRC_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_INTERNAL_HASH_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aee97546b75f25dc4f97a60d0003f9ff7" kindref="member">ret_code_e::PROTO_INTERNAL_HASH_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PROTO_INTERNAL_CIPH_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a66c367af1cb7488ab2c9725e8b8ae371" kindref="member">ret_code_e::PROTO_INTERNAL_CIPH_ERR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" line="142" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="142" bodyend="180" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h" declline="44" declcolumn="9"/>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aebf9481edc7db30d72a4ed25b800d882" compoundref="proto_8h" startline="94">PROTO_INTERNAL_NULL_ERR</references>
+        <references refid="structproto__ctx__s_1a568060bc25d8a8ee40cd090a5ed8c190" compoundref="proto__private_8h" startline="378">proto_ctx_s::pBuffer</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" compoundref="proto_8h" startline="171">net_msg_s::u8Type</references>
+        <references refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a74b1cfde5679d4da10f14e82f3621fa1" compoundref="proto_8h" startline="77">APP_UNKNOWN</references>
+        <references refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" compoundref="proto_8h" startline="170">net_msg_s::u8Size</references>
+        <references refid="structproto__ctx__s_1aadb73caecec026dc7fd1b216ea527cee" compoundref="proto__private_8h" startline="379">proto_ctx_s::u8Size</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__proto_1ga2be54175c8e53283e766d154812cf896" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Wize_ProtoStats_RxUpdate</definition>
+        <argsstring>(struct proto_ctx_s *pCtx, uint8_t u8ErrCode, uint8_t u8Rssi)</argsstring>
+        <name>Wize_ProtoStats_RxUpdate</name>
+        <param>
+          <type>struct <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8ErrCode</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Rssi</declname>
+        </param>
+        <briefdescription>
+<para>This function update the reception statistics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the protocol context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8ErrCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Protocol error code returned from previous Wize_ProtoExtract call. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Rssi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RSSI from previous reception.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" line="241" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="241" bodyend="301" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h" declline="45" declcolumn="6"/>
+        <references refid="structproto__ctx__s_1a3ec0ac49cb94807f4bf2c6e633ecf52f" compoundref="proto__private_8h" startline="377">proto_ctx_s::sProtoStats</references>
+        <references refid="structproto__stats__s_1abbaba274c5ff6410b3cd971f15c2b525" compoundref="proto_8h" startline="145">proto_stats_s::u32RxNbBytes</references>
+        <references refid="structproto__ctx__s_1aadb73caecec026dc7fd1b216ea527cee" compoundref="proto__private_8h" startline="379">proto_ctx_s::u8Size</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a459b60cb66be0d935cbfcea85ceb75d2" compoundref="proto_8h" startline="87">PROTO_SUCCESS</references>
+        <references refid="structproto__stats__s_1a1becdabd2cab115a6b28fcc0923732e3" compoundref="proto_8h" startline="156">proto_stats_s::u8RxRssiMax</references>
+        <references refid="structproto__stats__s_1a6669a012bd1e518238a7e32838f5024f" compoundref="proto_8h" startline="158">proto_stats_s::u8RxRssiMin</references>
+        <references refid="structproto__stats__s_1a016a63d6f5db13a457aaaf23503a889b" compoundref="proto_8h" startline="157">proto_stats_s::u8RxRssiAvg</references>
+        <references refid="structproto__stats__s_1a9136d6f08800149fd708ecf392ae8afe" compoundref="proto_8h" startline="146">proto_stats_s::u32RxNbFrmOK</references>
+        <references refid="structproto__stats__s_1a42d46f71bdb135984b35159eca32d3ea" compoundref="proto_8h" startline="147">proto_stats_s::u32RxNbFrmErr</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aeb2d658da2b839495ee81b440bd9e448" compoundref="proto_8h" startline="98">PROTO_HEAD_END_AUTH_ERR</references>
+        <references refid="structproto__stats__s_1a80ed43333feb24bc40ff6616c34625ee" compoundref="proto_8h" startline="148">proto_stats_s::sFrmErrStats</references>
+        <references refid="structfrm__err__stats__s_1a5833355fcfc3b069245d5fb11ee5a28b" compoundref="proto_8h" startline="129">frm_err_stats_s::u32HeadAuthErr</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a5fd497262abbb38627be2a5b51c9b627" compoundref="proto_8h" startline="99">PROTO_GATEWAY_AUTH_ERR</references>
+        <references refid="structfrm__err__stats__s_1af9c539573acb3e1f2852109193f4ffc3" compoundref="proto_8h" startline="130">frm_err_stats_s::u32GatewayAuthErr</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274acc73143f40ca02925489c343beb07a85" compoundref="proto_8h" startline="101">PROTO_FRAME_UNK_ERR</references>
+        <references refid="structfrm__err__stats__s_1a9b921a4274ee7ce0ab6f029f39ec7b7b" compoundref="proto_8h" startline="127">frm_err_stats_s::u32UnkErr</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a2f800c06b09d5b160b9ae9cfd56a6f94" compoundref="proto_8h" startline="102">PROTO_FRAME_CRC_ERR</references>
+        <references refid="structfrm__err__stats__s_1abd9b5715ad669c9bebcac6aa248a65ef" compoundref="proto_8h" startline="125">frm_err_stats_s::u32CrcErr</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274aa59628c438becff180748e8178c8ed02" compoundref="proto_8h" startline="103">PROTO_FRAME_RS_ERR</references>
+        <references refid="structfrm__err__stats__s_1ae2d99d929919c51c83fc2c8ff751df2f" compoundref="proto_8h" startline="126">frm_err_stats_s::u32RsErr</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a0820d3b70d21fa1311ce43c57ea73796" compoundref="proto_8h" startline="104">PROTO_FRAME_SZ_ERR</references>
+        <references refid="structfrm__err__stats__s_1a63f787aaa6a5cfe130684121382fbc83" compoundref="proto_8h" startline="128">frm_err_stats_s::u32LenErr</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a3e1e78e80b948eabbe110cc9f99a9d06" compoundref="proto_8h" startline="105">PROTO_APP_MSG_SZ_ERR</references>
+        <references refid="structfrm__err__stats__s_1a373407fd463a54988a56b14cf4058eb1" compoundref="proto_8h" startline="131">frm_err_stats_s::u32AppSzErr</references>
+        <references refid="structfrm__err__stats__s_1add662fa5b9cfcd5abd2399fb0b5ba15f" compoundref="proto_8h" startline="132">frm_err_stats_s::u32PassedErr</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__proto_1gacfb26291ab6f92761a85f055976a0b37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Wize_ProtoStats_TxUpdate</definition>
+        <argsstring>(struct proto_ctx_s *pCtx, uint8_t u8ErrCode, uint8_t u8Noise)</argsstring>
+        <name>Wize_ProtoStats_TxUpdate</name>
+        <param>
+          <type>struct <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8ErrCode</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Noise</declname>
+        </param>
+        <briefdescription>
+<para>This function update the transmission statistics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the protocol context. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8ErrCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Protocol error code returned from previous Wize_ProtoBuild call. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Noise</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Noise from previous transmission.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" line="314" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="314" bodyend="340" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h" declline="46" declcolumn="6"/>
+        <references refid="structproto__ctx__s_1a3ec0ac49cb94807f4bf2c6e633ecf52f" compoundref="proto__private_8h" startline="377">proto_ctx_s::sProtoStats</references>
+        <references refid="structproto__stats__s_1a0ea952678418f46d863c63042044814c" compoundref="proto_8h" startline="142">proto_stats_s::u32TxNbBytes</references>
+        <references refid="structproto__ctx__s_1aadb73caecec026dc7fd1b216ea527cee" compoundref="proto__private_8h" startline="379">proto_ctx_s::u8Size</references>
+        <references refid="group__wize__proto_1gga67f927d283d97b0f340f7f8c8500f274a459b60cb66be0d935cbfcea85ceb75d2" compoundref="proto_8h" startline="87">PROTO_SUCCESS</references>
+        <references refid="structproto__stats__s_1a93b93a4050ab4d28c563769ba30d0dc0" compoundref="proto_8h" startline="151">proto_stats_s::u8TxNoiseMax</references>
+        <references refid="structproto__stats__s_1a877cde5fdc92cf1b5eec86cf5aa3d730" compoundref="proto_8h" startline="153">proto_stats_s::u8TxNoiseMin</references>
+        <references refid="structproto__stats__s_1add0b9865ac944ef248d13a8b5bffd158" compoundref="proto_8h" startline="152">proto_stats_s::u8TxNoiseAvg</references>
+        <references refid="structproto__stats__s_1a1bd385d86c2899f49a64cffdb9947cf0" compoundref="proto_8h" startline="143">proto_stats_s::u32TxNbFrames</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__proto_1ga1aad3ff4a7e93fd9bb7898eb6a897f5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Wize_ProtoStats_RxClear</definition>
+        <argsstring>(struct proto_ctx_s *pCtx)</argsstring>
+        <name>Wize_ProtoStats_RxClear</name>
+        <param>
+          <type>struct <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function clear the reception statistics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the protocol context.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" line="350" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="350" bodyend="366" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h" declline="47" declcolumn="6"/>
+        <references refid="structproto__ctx__s_1a3ec0ac49cb94807f4bf2c6e633ecf52f" compoundref="proto__private_8h" startline="377">proto_ctx_s::sProtoStats</references>
+        <references refid="structproto__stats__s_1a1becdabd2cab115a6b28fcc0923732e3" compoundref="proto_8h" startline="156">proto_stats_s::u8RxRssiMax</references>
+        <references refid="structproto__stats__s_1a6669a012bd1e518238a7e32838f5024f" compoundref="proto_8h" startline="158">proto_stats_s::u8RxRssiMin</references>
+        <references refid="structproto__stats__s_1a016a63d6f5db13a457aaaf23503a889b" compoundref="proto_8h" startline="157">proto_stats_s::u8RxRssiAvg</references>
+        <references refid="structproto__stats__s_1ab4108e1645a2d90ce9fe38163927a346" compoundref="proto_8h" startline="159">proto_stats_s::u8RxReserved</references>
+        <references refid="structproto__stats__s_1abbaba274c5ff6410b3cd971f15c2b525" compoundref="proto_8h" startline="145">proto_stats_s::u32RxNbBytes</references>
+        <references refid="structproto__stats__s_1a9136d6f08800149fd708ecf392ae8afe" compoundref="proto_8h" startline="146">proto_stats_s::u32RxNbFrmOK</references>
+        <references refid="structproto__stats__s_1a42d46f71bdb135984b35159eca32d3ea" compoundref="proto_8h" startline="147">proto_stats_s::u32RxNbFrmErr</references>
+        <references refid="structproto__stats__s_1a80ed43333feb24bc40ff6616c34625ee" compoundref="proto_8h" startline="148">proto_stats_s::sFrmErrStats</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__proto_1ga9967dc0f8ba98f016bc80f7ff6421faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Wize_ProtoStats_TxClear</definition>
+        <argsstring>(struct proto_ctx_s *pCtx)</argsstring>
+        <name>Wize_ProtoStats_TxClear</name>
+        <param>
+          <type>struct <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function clear the transmission statistics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the protocol context.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" line="376" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="376" bodyend="390" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h" declline="48" declcolumn="6"/>
+        <references refid="structproto__ctx__s_1a3ec0ac49cb94807f4bf2c6e633ecf52f" compoundref="proto__private_8h" startline="377">proto_ctx_s::sProtoStats</references>
+        <references refid="structproto__stats__s_1a93b93a4050ab4d28c563769ba30d0dc0" compoundref="proto_8h" startline="151">proto_stats_s::u8TxNoiseMax</references>
+        <references refid="structproto__stats__s_1add0b9865ac944ef248d13a8b5bffd158" compoundref="proto_8h" startline="152">proto_stats_s::u8TxNoiseAvg</references>
+        <references refid="structproto__stats__s_1a877cde5fdc92cf1b5eec86cf5aa3d730" compoundref="proto_8h" startline="153">proto_stats_s::u8TxNoiseMin</references>
+        <references refid="structproto__stats__s_1a3a1a9d01cb0384940103c1b16369f0c2" compoundref="proto_8h" startline="154">proto_stats_s::u8TxReserved</references>
+        <references refid="structproto__stats__s_1a1bd385d86c2899f49a64cffdb9947cf0" compoundref="proto_8h" startline="143">proto_stats_s::u32TxNbFrames</references>
+        <references refid="structproto__stats__s_1a0ea952678418f46d863c63042044814c" compoundref="proto_8h" startline="142">proto_stats_s::u32TxNbBytes</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__proto_1gad07cc819d06793bab8859d0dabb21d4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * Wize_Proto_GetStrErr</definition>
+        <argsstring>(uint8_t eErr)</argsstring>
+        <name>Wize_Proto_GetStrErr</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>eErr</declname>
+        </param>
+        <briefdescription>
+<para>This function return a pointer on string error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">eErr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code number.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>Pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on string error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" line="399" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c" bodystart="399" bodyend="406" declfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h" declline="49" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define public function to deal with the Wize protocol. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/09/07 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="34"><highlight class="preprocessor">#ifndef<sp/>_PROTO_API_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PROTO_API_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="proto__private_8h" kindref="compound">proto_private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">uint8_t<sp/><ref refid="group__wize__proto_1ga27f90597cd165ac2145e3fbf1c9da342" kindref="member">Wize_ProtoBuild</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pCtx,<sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pNetMsg);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">uint8_t<sp/><ref refid="group__wize__proto_1ga4e1573d32553cd94984261c0a129868c" kindref="member">Wize_ProtoExtract</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pCtx,<sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pNetMsg);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__proto_1ga2be54175c8e53283e766d154812cf896" kindref="member">Wize_ProtoStats_RxUpdate</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pCtx,<sp/>uint8_t<sp/>u8ErrCode,<sp/>uint8_t<sp/>u8Rssi);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__proto_1gacfb26291ab6f92761a85f055976a0b37" kindref="member">Wize_ProtoStats_TxUpdate</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pCtx,<sp/>uint8_t<sp/>u8ErrCode,<sp/>uint8_t<sp/>u8Noise);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__proto_1ga1aad3ff4a7e93fd9bb7898eb6a897f5e" kindref="member">Wize_ProtoStats_RxClear</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pCtx);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__proto_1ga9967dc0f8ba98f016bc80f7ff6421faf" kindref="member">Wize_ProtoStats_TxClear</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref><sp/>*pCtx);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__wize__proto_1gad07cc819d06793bab8859d0dabb21d4e" kindref="member">Wize_Proto_GetStrErr</ref>(uint8_t<sp/>eErr);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PROTO_API_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_api.h"/>
+  </compounddef>
+</doxygen>

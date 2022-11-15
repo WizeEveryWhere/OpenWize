@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_c5f1abdc9905d2bf1edd79bdc6d48f24" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/WizeCore/mgr/include</compoundname>
+    <innerfile refid="adm__mgr_8h">adm_mgr.h</innerfile>
+    <innerfile refid="app__layer_8h">app_layer.h</innerfile>
+    <innerfile refid="dwn__mgr_8h">dwn_mgr.h</innerfile>
+    <innerfile refid="inst__mgr_8h">inst_mgr.h</innerfile>
+    <innerfile refid="net__mgr_8h">net_mgr.h</innerfile>
+    <innerfile refid="ses__common_8h">ses_common.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/"/>
+  </compounddef>
+</doxygen>

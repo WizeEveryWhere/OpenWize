@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_31c344db2ff8c687bc36385aaa2a8455" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/ReedSolomon/src</compoundname>
+    <innerfile refid="rs_8c">rs.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/"/>
+  </compounddef>
+</doxygen>

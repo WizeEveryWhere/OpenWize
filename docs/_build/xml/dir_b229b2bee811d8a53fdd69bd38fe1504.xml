@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_b229b2bee811d8a53fdd69bd38fe1504" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/Crypto/src</compoundname>
+    <innerfile refid="confidentiality_8c">confidentiality.c</innerfile>
+    <innerfile refid="integrity_8c">integrity.c</innerfile>
+    <innerfile refid="key_8c">key.c</innerfile>
+    <innerfile refid="utils__secure_8c">utils_secure.c</innerfile>
+    <innerfile refid="utils__secure_8h">utils_secure.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/"/>
+  </compounddef>
+</doxygen>

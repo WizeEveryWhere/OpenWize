@@ -1,0 +1,737 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__ing__storage" kind="group">
+    <compoundname>ing_storage</compoundname>
+    <title>Ing_storage</title>
+    <innerclass refid="structsw__pend__buff__s" prot="public">sw_pend_buff_s</innerclass>
+    <innerclass refid="structsw__pend__ctrl__s" prot="public">sw_pend_ctrl_s</innerclass>
+    <innerclass refid="structimg__mgr__ctx__s" prot="public">img_mgr_ctx_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>img_pend_e</name>
+        <enumvalue id="group__ing__storage_1ggaed3139f981a477515ce7a28b5f655f6da5b8f48c5b2a8ca3b36770d2c81926be6" prot="public">
+          <name>PENDING_SETUP</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__ing__storage_1ggaed3139f981a477515ce7a28b5f655f6dae0d143df348e9057f8ea564791cfd01a" prot="public">
+          <name>PENDING_NONE</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__ing__storage_1ggaed3139f981a477515ce7a28b5f655f6da7294a049a78f1877711e1d6717263d6f" prot="public">
+          <name>PENDING_LOCAL</name>
+          <initializer>= 0x11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__ing__storage_1ggaed3139f981a477515ce7a28b5f655f6da5cf21bc17b17fdc88a61846c9f7919b7" prot="public">
+          <name>PENDING_REMOTE</name>
+          <initializer>= 0x21</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define pending image entry. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" line="47" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" bodystart="47" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__ing__storage_1ga0d07748bda413074bcac18f7bf9d6d9f" prot="public" static="no">
+        <type>uint8_t(*</type>
+        <definition>typedef uint8_t(* pfWriteFlash_t) (uint32_t u32Addr, uint64_t *pData, uint32_t u32NbDoubleWord)</definition>
+        <argsstring>)(uint32_t u32Addr, uint64_t *pData, uint32_t u32NbDoubleWord)</argsstring>
+        <name>pfWriteFlash_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" line="54" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__ing__storage_1gaf176b93567ea3afd20dbaf01a6c273a6" prot="public" static="no">
+        <type>uint8_t(*</type>
+        <definition>typedef uint8_t(* pfEraseFlash_t) (uint32_t u32Addr, uint32_t u32Size)</definition>
+        <argsstring>)(uint32_t u32Addr, uint32_t u32Size)</argsstring>
+        <name>pfEraseFlash_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" line="55" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__ing__storage_1ga8fab2b63de8322f56a3453c2cc7ae882" prot="public" static="no">
+        <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref></type>
+        <definition>typedef struct img_mgr_ctx_s img_mgr_ctx_t</definition>
+        <argsstring></argsstring>
+        <name>img_mgr_ctx_t</name>
+        <briefdescription>
+<para>This struct defines the image context type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="1" column="0" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__ing__storage_1ga16f3886c179d00cbbbc799ca5ebf8a44" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structsw__pend__ctrl__s" kindref="compound">sw_pend_ctrl_s</ref></type>
+        <definition>struct sw_pend_ctrl_s __attribute__</definition>
+        <argsstring></argsstring>
+        <name>__attribute__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="177" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__ing__storage_1gac2442b5652047cd8fec47df158d7f23b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref></type>
+        <definition>struct img_mgr_ctx_s sImgMgrCtx</definition>
+        <argsstring></argsstring>
+        <name>sImgMgrCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="64" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__ing__storage_1ga144e1e6dcc412c77efbf7d010f88475f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ImgStore_StoreBlock</definition>
+        <argsstring>(uint16_t u16_BlkId, uint8_t *p_Blk)</argsstring>
+        <name>ImgStore_StoreBlock</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_BlkId</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Blk</declname>
+        </param>
+        <briefdescription>
+<para>Save the given software block and set its corresponding bit &quot;on&quot; into the bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_BlkId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the given block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Blk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the software block. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="77" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="77" bodyend="253" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="57" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" compoundref="img__storage__private_8h" startline="193">img_mgr_ctx_s::u32Size</references>
+        <references refid="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" compoundref="img__storage_8c" startline="425" endline="432">_get_bitmap_bit</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gaefbe2245b4976f5040f48a3c3ef84289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ImgStore_IsComplete</definition>
+        <argsstring>(void)</argsstring>
+        <name>ImgStore_IsComplete</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if the given software image is complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not complete </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Complete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="261" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="261" bodyend="264" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="58" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga338ec5b155cfe028d5bc961be39d27b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ImgStore_Verify</definition>
+        <argsstring>(uint8_t *pImgHash, uint8_t u8DigestSz)</argsstring>
+        <name>ImgStore_Verify</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pImgHash</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8DigestSz</declname>
+        </param>
+        <briefdescription>
+<para>Verify the sw image integrity (sha256). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pImgHash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on expected image sha256 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8DigestSz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of expected image sha256</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="275" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="275" bodyend="288" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="59" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga664014c354a334ba246eae430c1a4bc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ImgStore_GetBitmapLine</definition>
+        <argsstring>(uint16_t u16_Id)</argsstring>
+        <name>ImgStore_GetBitmapLine</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the line value (from bitmap) of the given block Id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the block. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>8 bits bitmap line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="296" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="296" bodyend="299" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="60" declcolumn="9"/>
+        <references refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" compoundref="img__storage_8c" startline="410" endline="413">_get_bitmap_line</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gacf9ff477ebe1648d6836257fd7b79068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t ImgStore_GetMaxBlockNb</definition>
+        <argsstring>(void)</argsstring>
+        <name>ImgStore_GetMaxBlockNb</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the maximum admissible block number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum block number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="306" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="306" bodyend="309" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="61" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga80bd20490da8b18fcd16ff20c7c52e5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref></type>
+        <definition>img_pend_e ImgStore_GetPending</definition>
+        <argsstring>(void)</argsstring>
+        <name>ImgStore_GetPending</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the pending flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>img_pend_e::PENDING_SETUP return img_pend_e::PENDING_NONE return img_pend_e::PENDING_LOCAL return img_pend_e::PENDING_REMOTE </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="318" column="19" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="318" bodyend="321" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="62" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga94c00390e210d422d7cfd7a9fc8326c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ImgStore_SetPending</definition>
+        <argsstring>(img_pend_e ePend)</argsstring>
+        <name>ImgStore_SetPending</name>
+        <param>
+          <type><ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref></type>
+          <declname>ePend</declname>
+        </param>
+        <briefdescription>
+<para>Set the pending flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ePend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pending flag to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="330" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="330" bodyend="333" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="63" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gaee930c8f4195669e1675ab9ab4c4f2dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t ImgStore_Init</definition>
+        <argsstring>(uint16_t u16NbExpectedBlk)</argsstring>
+        <name>ImgStore_Init</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16NbExpectedBlk</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the image manager context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16NbExpectedBlk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number block for expected new sw image</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed (at least one of given parameters is out of range) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>-1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fatal (unable to erase the flash memory area) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="344" column="8" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="344" bodyend="367" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="64" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gab6c617026df784eca3da265773c5f12c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int8_t</type>
+        <definition>int8_t ImgStore_Setup</definition>
+        <argsstring>(uint32_t u32ImgAdd, pfWriteFlash_t pfWrite, pfEraseFlash_t pfErase)</argsstring>
+        <name>ImgStore_Setup</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32ImgAdd</declname>
+        </param>
+        <param>
+          <type>pfWriteFlash_t</type>
+          <declname>pfWrite</declname>
+        </param>
+        <param>
+          <type>pfEraseFlash_t</type>
+          <declname>pfErase</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the image manager context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32ImgAdd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Software Image address (64 bits aligned) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfWrite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer on write sub function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfErase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer on erase sub function</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Failed (at least one of given parameters is out of range) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="379" column="8" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="379" bodyend="397" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/img_storage.h" declline="65" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1gac84fb6b583b857a4ac2165add5d454dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structsw__pend__buff__s" kindref="compound">sw_pend_buff_s</ref></type>
+        <definition>struct sw_pend_buff_s __attribute__</definition>
+        <argsstring>((aligned(8)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(8))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="1" column="0" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" declline="1" declcolumn="0"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t _get_bitmap_line</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id)</argsstring>
+        <name>_get_bitmap_line</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the line value (from bitmap) of the given block Id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the block.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the line value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="410" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="410" bodyend="413" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="60" declcolumn="9"/>
+        <references refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" compoundref="img__storage__private_8h" startline="186">img_mgr_ctx_s::aBitMap</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga804d3a2653800be126e7c68a0465e996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t _get_bitmap_bit</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id)</argsstring>
+        <name>_get_bitmap_bit</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the bit value (from bitmap) of the given block Id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of the block.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>this block is not yet present. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>this block is already present. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="425" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="425" bodyend="432" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="61" declcolumn="9"/>
+        <references refid="group__ing__storage_1ga56506675106069d6cc90d292ecd75ceb" compoundref="img__storage_8c" startline="410" endline="413">_get_bitmap_line</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga8c8dc9b5a5c837e569609c7bd3a4c72f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _set_bitmap</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx, uint16_t u16_Id)</argsstring>
+        <name>_set_bitmap</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_Id</declname>
+        </param>
+        <briefdescription>
+<para>Set &quot;on&quot; the bit corresponding to the given block Id into the bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id of block to set &quot;on&quot;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="441" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="441" bodyend="448" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="62" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" compoundref="img__storage__private_8h" startline="186">img_mgr_ctx_s::aBitMap</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga80ac351f69f8bcbfd91fd235a3e854c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _clr_bitmap</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx)</argsstring>
+        <name>_clr_bitmap</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>Clear the entire bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="456" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="456" bodyend="462" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="63" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" compoundref="img__storage__private_8h" startline="186">img_mgr_ctx_s::aBitMap</references>
+      </memberdef>
+      <memberdef kind="function" id="group__ing__storage_1ga923a7091b879d0d2d766dc7c7f55e387" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _clr_pending</definition>
+        <argsstring>(struct img_mgr_ctx_s *pCtx)</argsstring>
+        <name>_clr_pending</name>
+        <param>
+          <type>struct <ref refid="structimg__mgr__ctx__s" kindref="compound">img_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>Clear the pending table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on image manager context </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" line="470" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" bodystart="470" bodyend="479" declfile="/home/nono/OpenWize/sources/Samples/ImgStorage/src/img_storage.c" declline="64" declcolumn="6"/>
+        <references refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" compoundref="img__storage__private_8h" startline="184">img_mgr_ctx_s::sPendCtrl</references>
+        <references refid="structsw__pend__ctrl__s_1a53799d6d052a30112c8076136d9d26c4" compoundref="img__storage__private_8h" startline="174">sw_pend_ctrl_s::EMPTY</references>
+        <references refid="structsw__pend__ctrl__s_1a893ae9b3edae0d372ed4072021a0b07d" compoundref="img__storage__private_8h" startline="173">sw_pend_ctrl_s::ID</references>
+        <references refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" compoundref="img__storage__private_8h" startline="183">img_mgr_ctx_s::sPendBuff</references>
+        <references refid="structsw__pend__buff__s_1a225e376707b06d7e25fb85aedbac2335" compoundref="img__storage__private_8h" startline="162">sw_pend_buff_s::aPend</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

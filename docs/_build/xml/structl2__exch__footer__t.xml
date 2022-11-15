@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structl2__exch__footer__t" kind="struct" language="C++" prot="public">
+    <compoundname>l2_exch_footer_t</compoundname>
+    <includes refid="proto__private_8h" local="no">proto_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structl2__exch__footer__t_1a9f7cf33e6b56fd1f0da8d241790d9878" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l2_exch_footer_t::Crc[CRC_SZ]</definition>
+        <argsstring>[CRC_SZ]</argsstring>
+        <name>Crc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Message checksum </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="253" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure defines the link layer exchange footer. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>l2_exch_footer_t</label>
+        <link refid="structl2__exch__footer__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="252" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="252" bodyend="254"/>
+    <listofallmembers>
+      <member refid="structl2__exch__footer__t_1a9f7cf33e6b56fd1f0da8d241790d9878" prot="public" virt="non-virtual"><scope>l2_exch_footer_t</scope><name>Crc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

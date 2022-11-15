@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structlogger__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>logger_ctx_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlogger__ctx__s_1a2c95402f7db6a0deb50de7639f31086a" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* logger_ctx_s::hTask</definition>
+        <argsstring></argsstring>
+        <name>hTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="91" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1acb38571f242caf9c6f3b4840ed002804" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* logger_ctx_s::hMutex</definition>
+        <argsstring></argsstring>
+        <name>hMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="92" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1a5fa82b72aadda043a488299297153ebb" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* logger_ctx_s::hQueue</definition>
+        <argsstring></argsstring>
+        <name>hQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="93" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1afc7e41d08297e7aa5a72861421f56140" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* logger_ctx_s::hCntSem</definition>
+        <argsstring></argsstring>
+        <name>hCntSem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="94" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1a1a34a7d39fc8819f3c6c99dbeba4dcfa" prot="public" static="no" mutable="no">
+        <type>FILE *</type>
+        <definition>FILE* logger_ctx_s::pFile</definition>
+        <argsstring></argsstring>
+        <name>pFile</name>
+        <briefdescription>
+<para>Output File pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="95" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1a1604ca6b0bfcfbb97c4c1e7105e42498" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* logger_ctx_s::pfOut) (const char *, FILE *)</definition>
+        <argsstring>)(const char *, FILE *)</argsstring>
+        <name>pfOut</name>
+        <briefdescription>
+<para>Output function pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="100" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1a7fcb6d356eda69573cd7a95ec85691bb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t logger_ctx_s::aPoolBuffer[LOGGER_QUEUE_MESSAGE_ITEM_NB][LOGGER_POOL_BUFFER_SIZE+1]</definition>
+        <argsstring>[LOGGER_QUEUE_MESSAGE_ITEM_NB][LOGGER_POOL_BUFFER_SIZE+1]</argsstring>
+        <name>aPoolBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="102" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1a27dd257ace33ca5ce9165863e5f91745" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t logger_ctx_s::aPoolLock[LOGGER_QUEUE_MESSAGE_ITEM_NB]</definition>
+        <argsstring>[LOGGER_QUEUE_MESSAGE_ITEM_NB]</argsstring>
+        <name>aPoolLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="104" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlogger__ctx__s_1aaa3a31e0cfb971a96c12c87db7c273a5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t logger_ctx_s::u8Tstmp</definition>
+        <argsstring></argsstring>
+        <name>u8Tstmp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="105" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>logger_ctx_s</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" line="90" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/Logger/src/logger.c" bodystart="89" bodyend="106"/>
+    <listofallmembers>
+      <member refid="structlogger__ctx__s_1a7fcb6d356eda69573cd7a95ec85691bb" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>aPoolBuffer</name></member>
+      <member refid="structlogger__ctx__s_1a27dd257ace33ca5ce9165863e5f91745" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>aPoolLock</name></member>
+      <member refid="structlogger__ctx__s_1afc7e41d08297e7aa5a72861421f56140" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>hCntSem</name></member>
+      <member refid="structlogger__ctx__s_1acb38571f242caf9c6f3b4840ed002804" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>hMutex</name></member>
+      <member refid="structlogger__ctx__s_1a5fa82b72aadda043a488299297153ebb" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>hQueue</name></member>
+      <member refid="structlogger__ctx__s_1a2c95402f7db6a0deb50de7639f31086a" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>hTask</name></member>
+      <member refid="structlogger__ctx__s_1a1a34a7d39fc8819f3c6c99dbeba4dcfa" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>pFile</name></member>
+      <member refid="structlogger__ctx__s_1a1604ca6b0bfcfbb97c4c1e7105e42498" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>pfOut</name></member>
+      <member refid="structlogger__ctx__s_1aaa3a31e0cfb971a96c12c87db7c273a5" prot="public" virt="non-virtual"><scope>logger_ctx_s</scope><name>u8Tstmp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

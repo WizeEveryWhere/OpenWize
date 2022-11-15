@@ -43,6 +43,7 @@ release = u'1.0.0'
 #
 # needs_sphinx = '1.0'
 
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -237,3 +238,9 @@ intersphinx_mapping = {
     #'OpenWizeUp': ('https://www.openwize-up/master/', None),
 }
 
+# Configuration for translation: For localization
+gettext_uuid = True
+gettext_compact = False
+
+# Configuration for translation: Needed for locales on readthedocs
+locale_dirs = ['locales/']

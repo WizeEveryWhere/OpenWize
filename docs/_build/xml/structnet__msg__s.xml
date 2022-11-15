@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structnet__msg__s" kind="struct" language="C++" prot="public">
+    <compoundname>net_msg_s</compoundname>
+    <includes refid="proto_8h" local="no">proto.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* net_msg_s::pData</definition>
+        <argsstring></argsstring>
+        <name>pData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on data (transmit or received) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="167" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a043145383f69aba81e45ac8582d5e5de" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t net_msg_s::u32Epoch</definition>
+        <argsstring></argsstring>
+        <name>u32Epoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Epoch of the last frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="168" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t net_msg_s::u16Id</definition>
+        <argsstring></argsstring>
+        <name>u16Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Counter of the last frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="169" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t net_msg_s::u8Size</definition>
+        <argsstring></argsstring>
+        <name>u8Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of the last frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="170" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t net_msg_s::u8Type</definition>
+        <argsstring></argsstring>
+        <name>u8Type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Type of the last frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="171" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a5ac6b192df372f84048b86d166a4424a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t net_msg_s::u8Rssi</definition>
+        <argsstring></argsstring>
+        <name>u8Rssi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RSSI of the last frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="172" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1abe67e8bc4bda4a76780b7fc53873c150" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t net_msg_s::u8KeyId</definition>
+        <argsstring></argsstring>
+        <name>u8KeyId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key id used for the last frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="173" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a29b198f48235f9b545087708efcc4507" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t net_msg_s::u16Tstamp</definition>
+        <argsstring></argsstring>
+        <name>u16Tstamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time stamp of the last received frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="175" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a176f722127cf553cef8e45411e862562" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t net_msg_s::i16TxFreqOffset</definition>
+        <argsstring></argsstring>
+        <name>i16TxFreqOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frequency offset of the last received frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="176" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a7da93bda15ecaaace0ee1603a8ac4a72" prot="public" static="no" mutable="no">
+        <type>union net_msg_s::@34</type>
+        <definition>union net_msg_s::@34 net_msg_s::@35</definition>
+        <argsstring></argsstring>
+        <name>@35</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="177" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a25362c2d85b9291975604a727074d0d2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t net_msg_s::Option</definition>
+        <argsstring></argsstring>
+        <name>Option</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application payload option </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="179" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1aff74ce19056fa977e4a082fdd57eaf9b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t net_msg_s::App</definition>
+        <argsstring></argsstring>
+        <name>App</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application payload has L6App embedded. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="182" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1a00f59da14246bd944dc090da03af95a9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t net_msg_s::Ciph</definition>
+        <argsstring></argsstring>
+        <name>Ciph</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application payload has ciphered L7 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="183" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1ab0beb5e45461dc1dad8cbd1743018a47" prot="public" static="no" mutable="no">
+        <type>struct net_msg_s::@36::@38</type>
+        <definition>struct net_msg_s::@36::@38 net_msg_s::Option_b</definition>
+        <argsstring></argsstring>
+        <name>Option_b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="184" column="10"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnet__msg__s_1ad079ecec6d13c79816af2c69741f69ce" prot="public" static="no" mutable="no">
+        <type>union net_msg_s::@36</type>
+        <definition>union net_msg_s::@36 net_msg_s::@37</definition>
+        <argsstring></argsstring>
+        <name>@37</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="185" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure is used to hold net device message. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>net_msg_s</label>
+        <link refid="structnet__msg__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="166" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="165" bodyend="186"/>
+    <listofallmembers>
+      <member refid="structnet__msg__s_1aff74ce19056fa977e4a082fdd57eaf9b" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>App</name></member>
+      <member refid="structnet__msg__s_1a00f59da14246bd944dc090da03af95a9" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>Ciph</name></member>
+      <member refid="structnet__msg__s_1a176f722127cf553cef8e45411e862562" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>i16TxFreqOffset</name></member>
+      <member refid="structnet__msg__s_1a25362c2d85b9291975604a727074d0d2" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>Option</name></member>
+      <member refid="structnet__msg__s_1ab0beb5e45461dc1dad8cbd1743018a47" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>Option_b</name></member>
+      <member refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>pData</name></member>
+      <member refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>u16Id</name></member>
+      <member refid="structnet__msg__s_1a29b198f48235f9b545087708efcc4507" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>u16Tstamp</name></member>
+      <member refid="structnet__msg__s_1a043145383f69aba81e45ac8582d5e5de" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>u32Epoch</name></member>
+      <member refid="structnet__msg__s_1abe67e8bc4bda4a76780b7fc53873c150" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>u8KeyId</name></member>
+      <member refid="structnet__msg__s_1a5ac6b192df372f84048b86d166a4424a" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>u8Rssi</name></member>
+      <member refid="structnet__msg__s_1a40f5980da2c93845e841e85a02d221e6" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>u8Size</name></member>
+      <member refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" prot="public" virt="non-virtual"><scope>net_msg_s</scope><name>u8Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

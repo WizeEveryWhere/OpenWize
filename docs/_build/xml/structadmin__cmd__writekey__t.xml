@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structadmin__cmd__writekey__t" kind="struct" language="C++" prot="public">
+    <compoundname>admin_cmd_writekey_t</compoundname>
+    <includes refid="app__layer_8h" local="no">app_layer.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structadmin__cmd__writekey__t_1a5f091d303b2cab2631b18e987ad49f52" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_writekey_t::L7CommandId</definition>
+        <argsstring></argsstring>
+        <name>L7CommandId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Command id (in <ref refid="group__wize__admin__layer_1ga8732ddf3ae6203a804e1954dafb738f7" kindref="member">admin_cmd_id_e</ref>) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="145" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__writekey__t_1af9bdb3b3772cd9fa5203657ba391a5a8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_writekey_t::L7KeyId</definition>
+        <argsstring></argsstring>
+        <name>L7KeyId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The key type to set </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="146" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__writekey__t_1a47b3af3c920a1d2733ff448adc9243e2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_writekey_t::L7KeyVal[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>L7KeyVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The new key value to set </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="147" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__writekey__t_1ad6031b3e16f1949720343be93b8401ee" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_writekey_t::L7KeyIndex</definition>
+        <argsstring></argsstring>
+        <name>L7KeyIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The key id to set </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="148" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the administration response frame format in case of error in WRITE_KEY command. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>admin_cmd_writekey_t</label>
+        <link refid="structadmin__cmd__writekey__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="144" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="144" bodyend="149"/>
+    <listofallmembers>
+      <member refid="structadmin__cmd__writekey__t_1a5f091d303b2cab2631b18e987ad49f52" prot="public" virt="non-virtual"><scope>admin_cmd_writekey_t</scope><name>L7CommandId</name></member>
+      <member refid="structadmin__cmd__writekey__t_1af9bdb3b3772cd9fa5203657ba391a5a8" prot="public" virt="non-virtual"><scope>admin_cmd_writekey_t</scope><name>L7KeyId</name></member>
+      <member refid="structadmin__cmd__writekey__t_1ad6031b3e16f1949720343be93b8401ee" prot="public" virt="non-virtual"><scope>admin_cmd_writekey_t</scope><name>L7KeyIndex</name></member>
+      <member refid="structadmin__cmd__writekey__t_1a47b3af3c920a1d2733ff448adc9243e2" prot="public" virt="non-virtual"><scope>admin_cmd_writekey_t</scope><name>L7KeyVal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

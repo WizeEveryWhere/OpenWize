@@ -1,0 +1,861 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="bsp__uart_8h" kind="file" language="C++">
+    <compoundname>bsp_uart.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includedby refid="bsp_8h" local="no">/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</includedby>
+    <includedby refid="bsp__uart_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="7">
+        <label>assert.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h</label>
+        <link refid="bsp__uart_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>time.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="9">
+        <label>machine/endian.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/platform.c</label>
+        <link refid="platform_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h</label>
+        <link refid="bsp__uart_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c</label>
+        <link refid="bsp_8c"/>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c</label>
+        <link refid="bsp__uart_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c</label>
+        <link refid="port_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h</label>
+        <link refid="bsp_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structuart__dev__t" prot="public">uart_dev_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__uart_1gac48ef63be8d117793ddedf61b9af1f88" prot="public" static="no">
+        <name>CONSOLE_TX_TIMEOUT</name>
+        <initializer>2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="99" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__uart_1gac09031223414bb5c50d2eb730905c9f8" prot="public" static="no">
+        <name>CONSOLE_RX_TIMEOUT</name>
+        <initializer>0xFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="102" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__uart_1ga6f438b1d1767658dc7e9eefb523f6384" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uart_evt_e</name>
+        <enumvalue id="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384adc06f6f51824ad1fd940ff02de5afea5" prot="public">
+          <name>UART_EVT_NONE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>None </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a95e8c9099671dc5d7bf337602e10f53c" prot="public">
+          <name>UART_EVT_TX_CPLT</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Transmition is complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a5c0b5d8ff56f506f748c98e8929ef135" prot="public">
+          <name>UART_EVT_RX_CPLT</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reception is complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a8723280538aa66bd98e89d2bfb6d1732" prot="public">
+          <name>UART_EVT_RX_HCPLT</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384ad82b3ff50a0bd19b967ea65ba46023fa" prot="public">
+          <name>UART_EVT_RX_ABT</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define possible events from UART. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="48" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="47" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__uart_1ga37f291939c1337e54189443cc7a57ce1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uart_flag_e</name>
+        <enumvalue id="group__uart_1gga37f291939c1337e54189443cc7a57ce1aba9c8c33eb97ae66b1e6110625914b2f" prot="public">
+          <name>UART_FLG_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga37f291939c1337e54189443cc7a57ce1ae837e8161d9fc03b02b9dc7161d89e93" prot="public">
+          <name>UART_FLG_RX_TMO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga37f291939c1337e54189443cc7a57ce1a9dea82f113ff3b57966fee144dcd72b2" prot="public">
+          <name>UART_FLG_RX_OVFL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga37f291939c1337e54189443cc7a57ce1a1380867d6214b0b8d6498b4fe103a7af" prot="public">
+          <name>UART_FLG_RX_SOB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1gga37f291939c1337e54189443cc7a57ce1afb494c5a5313a9d931d5d9036eb58df1" prot="public">
+          <name>UART_FLG_RX_EOB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define flags ... from UART. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="60" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="59" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__uart_1gaa9b294ac5b0f07a30daa293f5f7ed543" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uart_mode_e</name>
+        <enumvalue id="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543afda5fb77b66ad0986c5cb492b63ea5ff" prot="public">
+          <name>UART_MODE_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>None (wait until the buffer reach the geiven size) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543aa5515a16810232ac2219ba281da8d366" prot="public">
+          <name>UART_MODE_EOB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Event is sent when character match the end of block </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543a60836509eb0414299a4730f0c55d728a" prot="public">
+          <name>UART_MODE_ADDR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Event is sent when character match the start of block </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the &quot;detection&quot; mode for UART. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="72" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="71" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__uart_1ga758fe60d363c723938b636791efd4007" prot="public" static="no">
+        <type><ref refid="structuart__dev__t" kindref="compound">uart_dev_t</ref> *</type>
+        <definition>typedef uart_dev_t* p_uart_dev_t</definition>
+        <argsstring></argsstring>
+        <name>p_uart_dev_t</name>
+        <briefdescription>
+<para>This type define a pointer on UART device structure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="95" column="20" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__uart_1gabc513dd972081ae765b6949a62872eb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int __io_putchar</definition>
+        <argsstring>(int ch)</argsstring>
+        <name>__io_putchar</name>
+        <param>
+          <type>int</type>
+          <declname>ch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="119" column="5" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="119" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1gad0122671640a3af49792ddaa59e8294e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int __io_getchar</definition>
+        <argsstring>(void)</argsstring>
+        <name>__io_getchar</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" line="120" column="5" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="120" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1gaa66fe4e68da559d3297bb8d72b29fd87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_Console_SetTXCallback</definition>
+        <argsstring>(pfHandlerCB_t const pfCb)</argsstring>
+        <name>BSP_Console_SetTXCallback</name>
+        <param>
+          <type>pfHandlerCB_t const</type>
+          <declname>pfCb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="47" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="47" bodyend="50" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="122" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1ga85958da447b731f0c42d4b0a0cf51697" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_Console_SetRXCallback</definition>
+        <argsstring>(pfHandlerCB_t const pfCb)</argsstring>
+        <name>BSP_Console_SetRXCallback</name>
+        <param>
+          <type>pfHandlerCB_t const</type>
+          <declname>pfCb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="52" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="52" bodyend="55" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="123" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1ga3db2d192635f078a2185993730d6c9ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_Console_SetWakupCallback</definition>
+        <argsstring>(pfHandlerCB_t const pfCb)</argsstring>
+        <name>BSP_Console_SetWakupCallback</name>
+        <param>
+          <type>pfHandlerCB_t const</type>
+          <declname>pfCb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="57" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="57" bodyend="60" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="124" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1ga5b95ba303c10c2479e57dc5f55d92a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Console_Send</definition>
+        <argsstring>(uint8_t *pData, uint16_t u16Length)</argsstring>
+        <name>BSP_Console_Send</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16Length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="79" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="79" bodyend="87" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="126" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1ga662aa947915a7fa6856c0c52d99c9a48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Uart_SetCallback</definition>
+        <argsstring>(uint8_t u8DevId, pfEvtCb_t const pfEvtCb, void *pCbParam)</argsstring>
+        <name>BSP_Uart_SetCallback</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8DevId</declname>
+        </param>
+        <param>
+          <type>pfEvtCb_t const</type>
+          <declname>pfEvtCb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCbParam</declname>
+        </param>
+        <briefdescription>
+<para>Set the Uart interrupt callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8DevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uart device id (see <ref refid="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" kindref="member">uart_id_e</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfEvtCb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the callback function </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pCbParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the callback parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_INVALID_PARAM</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the given paramater is in valid (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a673a34603423863416310db94277acea" kindref="member">dev_res_e::DEV_INVALID_PARAM</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="299" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="299" bodyend="309" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="128" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1gac3d30bc25c5c87863d8daee9735e3feb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Uart_Init</definition>
+        <argsstring>(uint8_t u8DevId, uint8_t u8CharMatch, uint8_t u8Mode, uint32_t u32Tmo)</argsstring>
+        <name>BSP_Uart_Init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8DevId</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8CharMatch</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Mode</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Tmo</declname>
+        </param>
+        <briefdescription>
+<para>Configure the given uart (interrupt mode) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8DevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uart device id (see <ref refid="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" kindref="member">uart_id_e</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8CharMatch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character to match </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uart detection mode (see <ref refid="group__uart_1gaa9b294ac5b0f07a30daa293f5f7ed543" kindref="member">uart_mode_e</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Tmo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeout (0 : timeout is not used)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_INVALID_PARAM</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the given parameter is invalid (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a673a34603423863416310db94277acea" kindref="member">dev_res_e::DEV_INVALID_PARAM</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="323" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="323" bodyend="377" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="129" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1ga0d92d892dfc53345decd3dec30a3df62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Uart_Transmit</definition>
+        <argsstring>(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)</argsstring>
+        <name>BSP_Uart_Transmit</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8DevId</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16Length</declname>
+        </param>
+        <briefdescription>
+<para>Start to transmit on the given uart (interrupt mode) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8DevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uart device id (see <ref refid="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" kindref="member">uart_id_e</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the buffer to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_INVALID_PARAM</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the given parameter is invalid (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a673a34603423863416310db94277acea" kindref="member">dev_res_e::DEV_INVALID_PARAM</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the given device is busy (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a75e5063f193825eea38ab72bada8e31e" kindref="member">dev_res_e::DEV_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="391" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="391" bodyend="428" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="130" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1gafaf0c7eae9c99c3a7a3d587e3e80bc34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Uart_Receive</definition>
+        <argsstring>(uint8_t u8DevId, uint8_t *pData, uint16_t u16Length)</argsstring>
+        <name>BSP_Uart_Receive</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8DevId</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pData</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16Length</declname>
+        </param>
+        <briefdescription>
+<para>Start to receive on the given uart (interrupt mode) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8DevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uart device id (see <ref refid="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" kindref="member">uart_id_e</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on receiving buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of expected message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_INVALID_PARAM</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the given parameter is invalid (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a673a34603423863416310db94277acea" kindref="member">dev_res_e::DEV_INVALID_PARAM</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the given device is busy (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a75e5063f193825eea38ab72bada8e31e" kindref="member">dev_res_e::DEV_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="442" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="442" bodyend="515" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="131" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__uart_1ga8fcc5154f7a3bb9425007394c28e799b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t BSP_Uart_AbortReceive</definition>
+        <argsstring>(uint8_t u8DevId)</argsstring>
+        <name>BSP_Uart_AbortReceive</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8DevId</declname>
+        </param>
+        <briefdescription>
+<para>Abort the UART receive (interrupt mode) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8DevId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uart device id (see <ref refid="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" kindref="member">uart_id_e</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>DEV_SUCCESS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if everything is fine (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">dev_res_e::DEV_SUCCESS</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DEV_INVALID_PARAM</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the given parameter is invalid (see <ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a673a34603423863416310db94277acea" kindref="member">dev_res_e::DEV_INVALID_PARAM</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" line="526" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c" bodystart="526" bodyend="556" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h" declline="132" declcolumn="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define bsp functions to access UART preipheral. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/09/30 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_BSP_UART_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BSP_UART_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="common_8h" kindref="compound">common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="group__uart_1ga6f438b1d1767658dc7e9eefb523f6384" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49" refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384adc06f6f51824ad1fd940ff02de5afea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384adc06f6f51824ad1fd940ff02de5afea5" kindref="member">UART_EVT_NONE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,<sp/></highlight></codeline>
+<codeline lineno="50" refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a95e8c9099671dc5d7bf337602e10f53c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a95e8c9099671dc5d7bf337602e10f53c" kindref="member">UART_EVT_TX_CPLT</ref><sp/><sp/>=<sp/>0x01,<sp/></highlight></codeline>
+<codeline lineno="51" refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a5c0b5d8ff56f506f748c98e8929ef135" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a5c0b5d8ff56f506f748c98e8929ef135" kindref="member">UART_EVT_RX_CPLT</ref><sp/><sp/>=<sp/>0x02,<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_EVT_RX_HCPLT<sp/>=<sp/>0x04,<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_EVT_RX_ABT<sp/><sp/><sp/>=<sp/>0x08,<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}<sp/><ref refid="group__uart_1ga6f438b1d1767658dc7e9eefb523f6384" kindref="member">uart_evt_e</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="group__uart_1ga37f291939c1337e54189443cc7a57ce1" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_FLG_NONE,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_FLG_RX_TMO,<sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_FLG_RX_OVFL,<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_FLG_RX_SOB,<sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_FLG_RX_EOB,<sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}<sp/><ref refid="group__uart_1ga37f291939c1337e54189443cc7a57ce1" kindref="member">uart_flag_e</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="group__uart_1gaa9b294ac5b0f07a30daa293f5f7ed543" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73" refid="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543afda5fb77b66ad0986c5cb492b63ea5ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543afda5fb77b66ad0986c5cb492b63ea5ff" kindref="member">UART_MODE_NONE</ref>,<sp/></highlight></codeline>
+<codeline lineno="74" refid="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543aa5515a16810232ac2219ba281da8d366" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543aa5515a16810232ac2219ba281da8d366" kindref="member">UART_MODE_EOB</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="75" refid="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543a60836509eb0414299a4730f0c55d728a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543a60836509eb0414299a4730f0c55d728a" kindref="member">UART_MODE_ADDR</ref>,<sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}<sp/><ref refid="group__uart_1gaa9b294ac5b0f07a30daa293f5f7ed543" kindref="member">uart_mode_e</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structuart__dev__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83" refid="structuart__dev__t_1a1b2b0d99a8766b99b113ec9443cf88d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structuart__dev__t_1a1b2b0d99a8766b99b113ec9443cf88d1" kindref="member">bus_id</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84" refid="structuart__dev__t_1a9eadc95135c09a9d5e7f92c523bb8c3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structuart__dev__t_1a9eadc95135c09a9d5e7f92c523bb8c3e" kindref="member">u8Mode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85" refid="structuart__dev__t_1a93b9b5d094b5dd2af4e83ac3f67727e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structuart__dev__t_1a93b9b5d094b5dd2af4e83ac3f67727e8" kindref="member">u8CharMatch</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="86" refid="structuart__dev__t_1a6b3f9e171ee520e0269f73820b602f4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structuart__dev__t_1a6b3f9e171ee520e0269f73820b602f4d" kindref="member">u32Tmo</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87" refid="structuart__dev__t_1aaa36da6cb29431f08c4ceda6da511e30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>pfEvtCb_t<sp/><ref refid="structuart__dev__t_1aaa36da6cb29431f08c4ceda6da511e30" kindref="member">pfEvent</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="structuart__dev__t_1a6116517953c13fff9acb6da180811d8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structuart__dev__t_1a6116517953c13fff9acb6da180811d8e" kindref="member">pCbParam</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89" refid="structuart__dev__t_1a8b01596e4f6486747096b23455f99f08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structuart__dev__t_1a8b01596e4f6486747096b23455f99f08" kindref="member">hHandle</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}<sp/><ref refid="structuart__dev__t" kindref="compound">uart_dev_t</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="group__uart_1ga758fe60d363c723938b636791efd4007" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structuart__dev__t" kindref="compound">uart_dev_t</ref>*<sp/><ref refid="group__uart_1ga758fe60d363c723938b636791efd4007" kindref="member">p_uart_dev_t</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONSOLE_TX_TIMEOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONSOLE_TX_TIMEOUT<sp/>2000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONSOLE_RX_TIMEOUT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONSOLE_RX_TIMEOUT<sp/>0xFFFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>pfHandlerCB_t<sp/>pfConsoleTXEvent;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>pfHandlerCB_t<sp/>pfConsoleRXEvent;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>pfHandlerCB_t<sp/>pfConsoleWakupEvent;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>__io_putchar(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ch);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>__io_getchar(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BSP_Console_SetTXCallback<sp/>(pfHandlerCB_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BSP_Console_SetRXCallback<sp/>(pfHandlerCB_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BSP_Console_SetWakupCallback<sp/>(pfHandlerCB_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">uint8_t<sp/>BSP_Console_Send(uint8_t<sp/>*pData,<sp/>uint16_t<sp/>u16Length);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">uint8_t<sp/><ref refid="group__uart_1ga662aa947915a7fa6856c0c52d99c9a48" kindref="member">BSP_Uart_SetCallback</ref><sp/>(uint8_t<sp/>u8DevId,<sp/>pfEvtCb_t<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfEvtCb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pCbParam);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">uint8_t<sp/><ref refid="group__uart_1gac3d30bc25c5c87863d8daee9735e3feb" kindref="member">BSP_Uart_Init</ref>(uint8_t<sp/>u8DevId,<sp/>uint8_t<sp/>u8CharMatch,<sp/>uint8_t<sp/>u8Mode,<sp/>uint32_t<sp/>u32Tmo);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">uint8_t<sp/><ref refid="group__uart_1ga0d92d892dfc53345decd3dec30a3df62" kindref="member">BSP_Uart_Transmit</ref>(uint8_t<sp/>u8DevId,<sp/>uint8_t<sp/>*pData,<sp/>uint16_t<sp/>u16Length);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">uint8_t<sp/><ref refid="group__uart_1gafaf0c7eae9c99c3a7a3d587e3e80bc34" kindref="member">BSP_Uart_Receive</ref>(uint8_t<sp/>u8DevId,<sp/>uint8_t<sp/>*pData,<sp/>uint16_t<sp/>u16Length);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">uint8_t<sp/><ref refid="group__uart_1ga8fcc5154f7a3bb9425007394c28e799b" kindref="member">BSP_Uart_AbortReceive</ref>(uint8_t<sp/>u8DevId);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_BSP_UART_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp_uart.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structadmin__cmd__anndownload__t" kind="struct" language="C++" prot="public">
+    <compoundname>admin_cmd_anndownload_t</compoundname>
+    <includes refid="app__layer_8h" local="no">app_layer.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1a205282df0492cefccfafb816cda2c16b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7CommandId</definition>
+        <argsstring></argsstring>
+        <name>L7CommandId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Command id (in <ref refid="group__wize__admin__layer_1ga8732ddf3ae6203a804e1954dafb738f7" kindref="member">admin_cmd_id_e</ref>) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="193" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1a6cbb56174974fc4d549efe5a088a5ba9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7DwnId[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>L7DwnId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The download session identification <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="194" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1a1333f9611554a04e6616c660ddfdc330" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7Klog[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>L7Klog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The klog use to ciphering SW blocks </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="195" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1ae95c828ae3eb02a26e46644e4b628587" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7SwVersionIni[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>L7SwVersionIni</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The expected initial SW version <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="196" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1a995d7f84bd23147e8bf439eed09a9869" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7SwVersionTarget[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>L7SwVersionTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The target SW version </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="197" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1acea2b30c2b873839ab3e0cd7e3b87e3d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7MField[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>L7MField</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The expected MField </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="198" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1a54c93aaaff06f199badceda1fd132221" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7DcHwId[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>L7DcHwId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The expected HW version </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="199" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1ac3bc75bfc6842acc82658c8b38de6977" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7BlocksCount[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>L7BlocksCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of block to download </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="200" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1ad0da65081e2e693d34b802ba142c48dc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7ChannelId</definition>
+        <argsstring></argsstring>
+        <name>L7ChannelId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The channel Id to use </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="201" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1ae03e7fed658fcd531123b47b780425cc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7ModulationId</definition>
+        <argsstring></argsstring>
+        <name>L7ModulationId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The modulation Id to use </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="202" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1a84988ae50f3a1777e7c28a7022ff5d8e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7DaysProg[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>L7DaysProg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Eppch of the programmed first day to download </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="203" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1a146f12d0703284bea52f80cc5ae5a084" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7DayRepeat</definition>
+        <argsstring></argsstring>
+        <name>L7DayRepeat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of repeat days </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="204" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1ac95ef1a4f2ea6b0367dbf5207e5a0e65" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7DeltaSec</definition>
+        <argsstring></argsstring>
+        <name>L7DeltaSec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The delta in second between SW block </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="205" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__cmd__anndownload__t_1aae35b7d1f8654d18910d584b1c1e1b3a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_cmd_anndownload_t::L7HashSW[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>L7HashSW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Hash computed on the entire downloaded SW </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="206" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the administration command frame in case of ANN_DOWNLOAD command. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>admin_cmd_anndownload_t</label>
+        <link refid="structadmin__cmd__anndownload__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="192" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="192" bodyend="207"/>
+    <listofallmembers>
+      <member refid="structadmin__cmd__anndownload__t_1ac3bc75bfc6842acc82658c8b38de6977" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7BlocksCount</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1ad0da65081e2e693d34b802ba142c48dc" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7ChannelId</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1a205282df0492cefccfafb816cda2c16b" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7CommandId</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1a146f12d0703284bea52f80cc5ae5a084" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7DayRepeat</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1a84988ae50f3a1777e7c28a7022ff5d8e" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7DaysProg</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1a54c93aaaff06f199badceda1fd132221" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7DcHwId</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1ac95ef1a4f2ea6b0367dbf5207e5a0e65" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7DeltaSec</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1a6cbb56174974fc4d549efe5a088a5ba9" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7DwnId</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1aae35b7d1f8654d18910d584b1c1e1b3a" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7HashSW</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1a1333f9611554a04e6616c660ddfdc330" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7Klog</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1acea2b30c2b873839ab3e0cd7e3b87e3d" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7MField</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1ae03e7fed658fcd531123b47b780425cc" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7ModulationId</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1ae95c828ae3eb02a26e46644e4b628587" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7SwVersionIni</name></member>
+      <member refid="structadmin__cmd__anndownload__t_1a995d7f84bd23147e8bf439eed09a9869" prot="public" virt="non-virtual"><scope>admin_cmd_anndownload_t</scope><name>L7SwVersionTarget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

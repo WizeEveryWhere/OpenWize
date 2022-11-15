@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__time__mgr" kind="group">
+    <compoundname>wize_time_mgr</compoundname>
+    <title>Wize_time_mgr</title>
+    <innerclass refid="structtime__upd__s" prot="public">time_upd_s</innerclass>
+    <innerclass refid="structtime__mgr__ctx__s" prot="public">time_mgr_ctx_s</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__wize__time__mgr_1gae7ccb5624630606adbde14f5be3ebf16" prot="public" static="yes" mutable="no">
+        <type>struct <ref refid="structtime__mgr__ctx__s" kindref="compound">time_mgr_ctx_s</ref></type>
+        <definition>struct time_mgr_ctx_s sTimeMgrCtx</definition>
+        <argsstring></argsstring>
+        <name>sTimeMgrCtx</name>
+        <briefdescription>
+<para>This define the Time manager context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="1" column="0" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__time__mgr_1ga73e56bc518512e5ebe97e6aa77c761cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_enable</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_enable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Enable the RTC wake-up timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="75" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="143" bodyend="146" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="75" declcolumn="13"/>
+        <references refid="group__rtc_1ga357a9db41008ca9371b2867977b746fa" compoundref="bsp__rtc_8c" startline="315" endline="319">BSP_Rtc_WakeUpTimer_Enable</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1gaca4229ae9aa7ae4ba734ecec51a96e9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_reload</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_reload</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reload the RTC wake-up timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="76" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="152" bodyend="155" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="76" declcolumn="13"/>
+        <references refid="group__rtc_1gacaa3e57f2865873a5acb790a30c24fa3" compoundref="bsp__rtc_8c" startline="334" endline="360">BSP_Rtc_WakeUptimer_Reload</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1gad9592a33c498e6e602f0afdcd6509460" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_force</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_force</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Force the RTC wake-up timer notify. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="77" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="173" bodyend="176" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="77" declcolumn="13"/>
+        <references refid="group__rtc_1ga13d50537cc01ca468d868ee153eb9cca" compoundref="bsp__rtc_8c" startline="269" endline="279">BSP_Rtc_Time_ForceNotify</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1gaadf7600a3bccc68b4b49fc9583ec95c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimeMgr_Setup</definition>
+        <argsstring>(struct time_upd_s *pTimeUpdCtx)</argsstring>
+        <name>TimeMgr_Setup</name>
+        <param>
+          <type>struct <ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref> *</type>
+          <declname>pTimeUpdCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the TimeMgr context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="101" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="101" bodyend="108" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="80" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1ga46b80681769cae1f23e40d55dd306150" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _time_mgr_main_</definition>
+        <argsstring>(void const *argument)</argsstring>
+        <name>_time_mgr_main_</name>
+        <param>
+          <type>void const *</type>
+          <declname>argument</declname>
+        </param>
+        <briefdescription>
+<para>This is the main task function, as FSM that treat events from periodic wake-up timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(not used)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="121" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="121" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1ga7c7af71af0385327c875e505b188464b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t _time_mgr_check_upd_time_</definition>
+        <argsstring>(struct time_upd_s *pCtx, uint32_t cur_epoch)</argsstring>
+        <name>_time_mgr_check_upd_time_</name>
+        <param>
+          <type>struct <ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cur_epoch</declname>
+        </param>
+        <briefdescription>
+<para>This function check if there are pending time/clock correction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cur_epoch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current epoch</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The corrected epoch value to apply; 0 is none; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="226" column="17" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="226" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1ga8577cdfc6792ae2d9ddddbc35da120b0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _time_mgr_evtCb_</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_mgr_evtCb_</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>ISR Callback function to notify an event occurs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="294" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="294" bodyend="299"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

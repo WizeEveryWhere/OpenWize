@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="adm__internal_8h" kind="file" language="C++">
+    <compoundname>adm_internal.h</compoundname>
+    <includes refid="proto_8h" local="yes">proto.h</includes>
+    <includes refid="app__layer_8h" local="yes">app_layer.h</includes>
+    <includedby refid="ses__dispatcher_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</includedby>
+    <includedby refid="adm__internal_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h</label>
+        <link refid="adm__internal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>app_layer.h</label>
+        <link refid="app__layer_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h</label>
+        <link refid="adm__internal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c</label>
+        <link refid="adm__internal_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__admin__layer_1gaa3c435a7c3aa339bf393c5c5222bcdda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AdmInt_PreCmd</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>AdmInt_PreCmd</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the command and build the response. The command is not effectively executed here. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: response not yet available </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: response is available </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: action already done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="73" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="73" bodyend="116" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h" declline="44" declcolumn="9"/>
+        <references refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" compoundref="proto_8h" startline="169">net_msg_s::u16Id</references>
+        <references refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" compoundref="proto_8h" startline="171">net_msg_s::u8Type</references>
+        <references refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a950a015184536a1ee84f249804fdc69d" compoundref="proto_8h" startline="73">APP_ADMIN</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a58ec81a3719fe764d8bde7d36834e789" compoundref="app__layer_8h" startline="59">ADM_READ_PARAM</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define the functions to treat the administration L7. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/11[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_ADM_INTERNAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_ADM_INTERNAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="proto_8h" kindref="compound">proto.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="app__layer_8h" kindref="compound">app_layer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">uint8_t<sp/><ref refid="group__wize__admin__layer_1gaa3c435a7c3aa339bf393c5c5222bcdda" kindref="member">AdmInt_PreCmd</ref>(<ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pReqMsg,<sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/>*pRspMsg);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_ADM_INTERNAL_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h"/>
+  </compounddef>
+</doxygen>

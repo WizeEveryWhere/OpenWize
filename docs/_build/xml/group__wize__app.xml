@@ -1,0 +1,924 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__app" kind="group">
+    <compoundname>wize_app</compoundname>
+    <title>Wize_app</title>
+    <innerclass refid="structses__disp__ctx__s" prot="public">ses_disp_ctx_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__app_1ga9c295cde12c030b86cfc5beba6197b56" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_mgr_evt_e</name>
+        <enumvalue id="group__wize__app_1gga9c295cde12c030b86cfc5beba6197b56ac6fc6b41c16b55d5ad378ebe93ffe5cb" prot="public">
+          <name>SES_MGR_EVT_MSK</name>
+          <initializer>= 0xFF000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga9c295cde12c030b86cfc5beba6197b56afff7bebabb3f2ba7b2249020ffd8f573" prot="public">
+          <name>SES_MGR_INST_EVT_OPEN</name>
+          <initializer>= (SES_INST &lt;&lt; SES_MGR_EVT_POS) | SES_EVT_OPEN</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga9c295cde12c030b86cfc5beba6197b56af84c197075ff41331333743455b8a216" prot="public">
+          <name>SES_MGR_INST_EVT_CLOSE</name>
+          <initializer>= (SES_INST &lt;&lt; SES_MGR_EVT_POS) | SES_EVT_CLOSE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga9c295cde12c030b86cfc5beba6197b56acd9647404ba69b435304ac999312bb82" prot="public">
+          <name>SES_MGR_ADM_EVT_OPEN</name>
+          <initializer>= (SES_ADM &lt;&lt; SES_MGR_EVT_POS) | SES_EVT_OPEN</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga9c295cde12c030b86cfc5beba6197b56a7f2224b4a6deb203ca20ce8b9429cbe0" prot="public">
+          <name>SES_MGR_ADM_EVT_CLOSE</name>
+          <initializer>= (SES_ADM &lt;&lt; SES_MGR_EVT_POS) | SES_EVT_CLOSE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="59" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="58" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__app_1gaad99b9b0d0c01e1a901492181e16234e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_mgr_flg_e</name>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234ea5db849d5c75231c3d850809d4aebf040" prot="public">
+          <name>SES_MGR_FLG_NONE</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234eae1a4f0a323451b4c65472ae9eb0f99ec" prot="public">
+          <name>SES_MGR_FLG_SUCCESS</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234ea903d1f62107c9e2666f79139b40d29cd" prot="public">
+          <name>SES_MGR_FLG_FAILED</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234eaaf7a433bc0a1b4898a7ab6cf1c437d1b" prot="public">
+          <name>SES_MGR_FLG_REQUEST</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234ea87e982cb46f53ad89d8458173d44a6e9" prot="public">
+          <name>SES_MGR_FLG_MSK</name>
+          <initializer>= 0x00FF0000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234ea2a1fde4c56d5bb737d7de2f8726b2791" prot="public">
+          <name>SES_MGR_ADM_FLG_SUCCES</name>
+          <initializer>= (SES_ADM &lt;&lt; SES_MGR_FLG_POS)  | SES_MGR_FLG_SUCCESS</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234ea141cc7f1ae09f568953409cfb073b621" prot="public">
+          <name>SES_MGR_ADM_FLG_FAILED</name>
+          <initializer>= (SES_ADM &lt;&lt; SES_MGR_FLG_POS)  | SES_MGR_FLG_FAILED</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234ea8178e53fa7f81c842fbb99bff4d98b7c" prot="public">
+          <name>SES_MGR_ADM_FLG_REQUEST</name>
+          <initializer>= (SES_ADM &lt;&lt; SES_MGR_FLG_POS)  | SES_MGR_FLG_REQUEST</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234eace8b21655e1b6e9fad01d09b3d86476a" prot="public">
+          <name>SES_MGR_INST_FLG_SUCCESS</name>
+          <initializer>= (SES_INST &lt;&lt; SES_MGR_FLG_POS) | SES_MGR_FLG_SUCCESS</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad99b9b0d0c01e1a901492181e16234ea805828caa12b70f4d8370870529d7376" prot="public">
+          <name>SES_MGR_INST_FLG_FAILED</name>
+          <initializer>= (SES_INST &lt;&lt; SES_MGR_FLG_POS) | SES_MGR_FLG_FAILED</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="72" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="71" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__app_1gaad33ff716afc0330d1c638c30189af29" prot="public" static="no" strong="no">
+        <type></type>
+        <name>glo_flg_e</name>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a1e17265efb5449cefbf1bb3e1c8a5a4b" prot="public">
+          <name>GLO_FLG_NONE</name>
+          <initializer>= 0x00000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a5678142fe50bd89fa94e85cbd7aedf8b" prot="public">
+          <name>GLO_FLG_SEND_RECV_MSK</name>
+          <initializer>= 0x000000FF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29ad120c50edeb98dd621c8b42c270e1a73" prot="public">
+          <name>GLO_FLG_CMD_RECV_READ</name>
+          <initializer>= 0x00000001</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29ac84ea671d318c5b43be3b220360dbcbe" prot="public">
+          <name>GLO_FLG_CMD_RECV_WRITE</name>
+          <initializer>= 0x00000002</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29afd9a14f0380d0b31390640e5b0ebfb12" prot="public">
+          <name>GLO_FLG_CMD_RECV_KEY</name>
+          <initializer>= 0x00000003</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29ab01cebe5b95bb36a9efbedaaebc3972a" prot="public">
+          <name>GLO_FLG_CMD_RECV_EXEC</name>
+          <initializer>= 0x00000004</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29af6458565c309e4fb18d4f9805a9c41e9" prot="public">
+          <name>GLO_FLG_CMD_RECV_ANN</name>
+          <initializer>= 0x00000005</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a448d79baa92d8a302aa3b271a046faf0" prot="public">
+          <name>GLO_FLG_CMD_RECV</name>
+          <initializer>= 0x00000007</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a214ac04a4ad6c4eda05ba03730f439bb" prot="public">
+          <name>GLO_FLG_PONG_RECV</name>
+          <initializer>= 0x00000008</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a0a10e23f811a9668787c4f80774783bd" prot="public">
+          <name>GLO_FLG_BLK_RECV</name>
+          <initializer>= 0x00080010</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a5a16722c375501b2e39a018e80a52260" prot="public">
+          <name>GLO_FLG_DATA_SENT</name>
+          <initializer>= 0x00000020</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29af2546258073fb2c32815f7adc28e94c5" prot="public">
+          <name>GLO_FLG_RSP_SENT</name>
+          <initializer>= 0x00000040</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a93efd2766c37a59955175008d8b0395d" prot="public">
+          <name>GLO_FLG_PING_SENT</name>
+          <initializer>= 0x00000080</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29acf42b2ec5ef3a6561889eb141cf5f62f" prot="public">
+          <name>GLO_FLG_TIME_MSK</name>
+          <initializer>= 0x00000F00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a3fe71fd98f76fb99688bd0d30dd69037" prot="public">
+          <name>GLO_FLG_FINE_ADJUST</name>
+          <initializer>= 0x00000100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a847b1df38f114a28340fea6fc32bcf30" prot="public">
+          <name>GLO_FLG_COARSE_ADJUST</name>
+          <initializer>= 0x00000200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29ac8598f8ee03bff03bba3feb5a651cea2" prot="public">
+          <name>GLO_FLG_DAY_PASSED</name>
+          <initializer>= 0x00000400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a4d8adfe8520517a0e5437d880697a835" prot="public">
+          <name>GLO_FLG_DAYLIGHT_CHG</name>
+          <initializer>= 0x00000800</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a69b764719ee2112cd390b5f58ce9d30f" prot="public">
+          <name>GLO_FLG_SESSION_MSK</name>
+          <initializer>= 0x00FFF000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a52ede5dc963384731dc418cf6001c711" prot="public">
+          <name>GLO_FLG_ADM_START</name>
+          <initializer>= 0x00001000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a2bfd1e9408851f9cbb968fbeb1a1391e" prot="public">
+          <name>GLO_FLG_ADM_COMPLETE</name>
+          <initializer>= 0x00002000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a8c5293561c405c750f90d8cec9280789" prot="public">
+          <name>GLO_FLG_ADM_ERROR</name>
+          <initializer>= 0x00004000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29affc7abc1afe5d0e7dc8f5ef4e2227950" prot="public">
+          <name>GLO_FLG_FULL_POWER</name>
+          <initializer>= 0x00008000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a205da0f1cbdb12b268e4413e2ab40d09" prot="public">
+          <name>GLO_FLG_INST_START</name>
+          <initializer>= 0x00010000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a82a019d6f3017a5163746cb92f693bb9" prot="public">
+          <name>GLO_FLG_INST_COMPLETE</name>
+          <initializer>= 0x00020000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a916b71b4e3ac900f491d615e199ab0c5" prot="public">
+          <name>GLO_FLG_INST_ERROR</name>
+          <initializer>= 0x00040000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a6b89c31be13e526685f653a5da39a9d1" prot="public">
+          <name>GLO_FLG_PERIODIC_INST</name>
+          <initializer>= 0x00080000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29ae14392306b70861667a3a6c14b30bcaf" prot="public">
+          <name>GLO_FLG_DWN_START</name>
+          <initializer>= 0x00100000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a09dea9ad8b9e52302f22c21cc7e6cc8b" prot="public">
+          <name>GLO_FLG_DWN_COMPLETE</name>
+          <initializer>= 0x00200000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a4c3912a73d1bb47a8b4b02739543bfc6" prot="public">
+          <name>GLO_FLG_DWN_ERROR</name>
+          <initializer>= 0x00400000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a747978360e19a8add3c7f29056e97bd8" prot="public">
+          <name>GLO_FLG_DWN_CORRUPTED</name>
+          <initializer>= 0x00800000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a11789411c0360c6ba8a127e28e33fc23" prot="public">
+          <name>GLO_FLG_ADM_ACTIVE</name>
+          <initializer>= 0x01000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29aa51a3fe3524aaed52ab6f1bab07f6cdb" prot="public">
+          <name>GLO_FLG_ADM_TIMEOUT</name>
+          <initializer>= 0x02000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29a47ed37a7a6e62da5e45e5e61bb4e1442" prot="public">
+          <name>GLO_FLG_INST_ACTIVE</name>
+          <initializer>= 0x04000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29ab1f13b77725c93648e1d55d70efab0c2" prot="public">
+          <name>GLO_FLG_INST_TIMEOUT</name>
+          <initializer>= 0x08000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29afb2172082c31f9e52e7e669dbc2ed63a" prot="public">
+          <name>GLO_FLG_DWN_ACTIVE</name>
+          <initializer>= 0x10000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaad33ff716afc0330d1c638c30189af29ad204b5732638cf5336d6fc78e967ba65" prot="public">
+          <name>GLO_FLG_DWN_TIMEOUT</name>
+          <initializer>= 0x20000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="91" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="90" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__app_1gaee2bed120c11faeca02d6ec58d119046" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_disp_state_e</name>
+        <enumvalue id="group__wize__app_1ggaee2bed120c11faeca02d6ec58d119046aa9860a71d208b8c7fb8b9ee1b0ff56f7" prot="public">
+          <name>SES_DISP_STATE_DISABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1ggaee2bed120c11faeca02d6ec58d119046a2535ac10e179f3dd6671a6619e94655b" prot="public">
+          <name>SES_DISP_STATE_ENABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="155" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="154" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__app_1ga288ac2c7b8f54ab24c627f9e40923436" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_disp_pending_e</name>
+        <enumvalue id="group__wize__app_1gga288ac2c7b8f54ab24c627f9e40923436a68e829f8f9bbb5aca7e75fde01a785c0" prot="public">
+          <name>SES_ADM_CMD_PEND</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga288ac2c7b8f54ab24c627f9e40923436ae543c54eb856d7124c678940cba801a7" prot="public">
+          <name>SES_ADM_RSP_PEND</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga288ac2c7b8f54ab24c627f9e40923436afc91819ac525139c9edd8785bf3732df" prot="public">
+          <name>SES_ADM_SES_PEND</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga288ac2c7b8f54ab24c627f9e40923436ad583082e5eef48cb34e4ae512b4601ad" prot="public">
+          <name>SES_INST_SES_PEND</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__app_1gga288ac2c7b8f54ab24c627f9e40923436a5a8f5dea14dc4cbf940a1ca6781445c4" prot="public">
+          <name>SES_DWN_SES_PEND</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="164" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="163" bodyend="171"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__app_1gadcdd5b8d27b93e9a90df7c0ab4191d05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SesDisp_Setup</definition>
+        <argsstring>(struct ses_disp_ctx_s *pCtx)</argsstring>
+        <name>SesDisp_Setup</name>
+        <param>
+          <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function setup the SesDisp (Session Dispatcher) module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="95" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="95" bodyend="122" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" declline="201" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1gad22b37ea628e2f3c2a78877e4368684e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SesDisp_Init</definition>
+        <argsstring>(struct ses_disp_ctx_s *pCtx, uint8_t bEnable)</argsstring>
+        <name>SesDisp_Init</name>
+        <param>
+          <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>bEnable</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the SesDisp (Session Dispatcher) module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bEnable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enable / Disable the Session dispatcher</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="132" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="132" bodyend="152" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" declline="202" declcolumn="6"/>
+        <references refid="group__time__evt_1gac722a1c1aba48d94eca9fa649594a93d" compoundref="time__evt_8c" startline="185" endline="209">TimeEvt_TimerStop</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1ga0046eb10ef6c601c625691dc9b7176f9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t _get_pos</definition>
+        <argsstring>(uint32_t ulFlg)</argsstring>
+        <name>_get_pos</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulFlg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="204" column="24" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="204" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1ga2f5467849ef6db9fa3f93011a2ca66ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _ses_disp_main_</definition>
+        <argsstring>(void const *argument)</argsstring>
+        <name>_ses_disp_main_</name>
+        <param>
+          <type>void const *</type>
+          <declname>argument</declname>
+        </param>
+        <briefdescription>
+<para>This is the session dispatcher task. It call its FSM to treat events from Wize API and NetMgr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(not used)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="165" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="165" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1gac148e3e6dbe9ed547e74ddf94ebb98a0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _ses_disp_fsm_</definition>
+        <argsstring>(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)</argsstring>
+        <name>_ses_disp_fsm_</name>
+        <param>
+          <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Event</declname>
+        </param>
+        <briefdescription>
+<para>This is the session dispatcher FSM that treat events from Wize API and NetMgr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current session dispatcher context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Received event to treat</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="192" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="192" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1gad2cfb9788e9ad9f29521264a1c99a5e7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _ses_disp_bckflg_</definition>
+        <argsstring>(struct ses_disp_ctx_s *pCtx, uint32_t u32Flag)</argsstring>
+        <name>_ses_disp_bckflg_</name>
+        <param>
+          <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Flag</declname>
+        </param>
+        <briefdescription>
+<para>This is function send back to the caller the session result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current session dispatcher context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="505" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="505" bodyend="533"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1gaee3f9b236acaa922fb1b4cffb5129f33" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t _ses_disp_postCmd_</definition>
+        <argsstring>(struct ses_disp_ctx_s *pCtx)</argsstring>
+        <name>_ses_disp_postCmd_</name>
+        <param>
+          <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function effectively execute the &quot;COMMAND&quot; treatment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current session dispatcher context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="550" column="17" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="550" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1ga7e409bbf5dfe5dfaac1dfd615ee78428" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t _ses_disp_OnDayPass_</definition>
+        <argsstring>(struct ses_disp_ctx_s *pCtx)</argsstring>
+        <name>_ses_disp_OnDayPass_</name>
+        <param>
+          <type>struct <ref refid="structses__disp__ctx__s" kindref="compound">ses_disp_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This is update &quot;Periodic Install&quot; and &quot;Back to Full Power&quot; counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the current session dispatcher context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="642" column="17" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="642" bodyend="676"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1ga9b42d5288f50dc03b7efc0b036c1a609" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _ses_disp_get_param_</definition>
+        <argsstring>(void)</argsstring>
+        <name>_ses_disp_get_param_</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function get parameters from global table and setup internal variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="684" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="684" bodyend="722"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1gac1a8d4fd35f38f3ea4db44892e702bd1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _adm_mgr_get_param_</definition>
+        <argsstring>(struct adm_mgr_ctx_s *pCtx)</argsstring>
+        <name>_adm_mgr_get_param_</name>
+        <param>
+          <type>struct <ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function get parameters from global table and setup internal variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the current context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="732" column="20" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="732" bodyend="740"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__app_1ga8c298f6f799e0ade45f20f4936e6a7a6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _inst_mgr_get_param_</definition>
+        <argsstring>(struct inst_mgr_ctx_s *pCtx)</argsstring>
+        <name>_inst_mgr_get_param_</name>
+        <param>
+          <type>struct <ref refid="structinst__mgr__ctx__s" kindref="compound">inst_mgr_ctx_s</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function get parameters from global table and setup internal variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the current context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" line="750" column="20" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c" bodystart="750" bodyend="754"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__wize__app_1ga859d2178546b8b8056598aff77a0ae47" prot="public" static="no">
+        <name>SES_MGR_EVT_POS</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="52" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__app_1gad3b024a8d63331947437ebd84bddd08e" prot="public" static="no">
+        <name>SES_MGR_FLG_POS</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" line="53" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

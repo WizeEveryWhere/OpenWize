@@ -1,0 +1,651 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__mgr" kind="group">
+    <compoundname>wize_mgr</compoundname>
+    <title>Wize_mgr</title>
+    <innerclass refid="unionses__evt__t" prot="public">ses_evt_t</innerclass>
+    <innerclass refid="unionses__flg__t" prot="public">ses_flg_t</innerclass>
+    <innerclass refid="structses__ctx__s" prot="public">ses_ctx_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__mgr_1gaf0a9fb91dd92eb278e44cd2d669c7d58" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_log_e</name>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a71b54a23281f8f00cce38092485d35aa" prot="public">
+          <name>SES_LOG_NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ae0218370da00c584927327b68000a77e" prot="public">
+          <name>SES_LOG_CMD_RECV_READ</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a9f75c3b38cc8767ae63ff9986b3d0c5f" prot="public">
+          <name>SES_LOG_CMD_RECV_WRITE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a107a93ee6e7693905de71a20467959db" prot="public">
+          <name>SES_LOG_CMD_RECV_KEY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a4a0ce9ebbd52c341fd3c454ad296cbbb" prot="public">
+          <name>SES_LOG_CMD_RECV_EXEC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a4f4a3ee09548c02c0458facce8fee33f" prot="public">
+          <name>SES_LOG_CMD_RECV_ANN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a69df6d73a9d5ab9927355606581b3440" prot="public">
+          <name>SES_LOG_PONG_RECV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a0c75f68a54f53b4cdac05952e153db53" prot="public">
+          <name>SES_LOG_BLK_RECV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a5dd1e1b02c52f3e9983b0930b590500f" prot="public">
+          <name>SES_LOG_DATA_SENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a93b8cee78cd30af32d455afaf058de83" prot="public">
+          <name>SES_LOG_RSP_SENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58aeda0a4bdf5fe4cd38d7fbd7a459859bc" prot="public">
+          <name>SES_LOG_PING_SENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ab612041a985c2ea5cc3a12caeec42f86" prot="public">
+          <name>SES_LOG_FINE_ADJUST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ad4e1def71668775d4dbbdba55bcbd186" prot="public">
+          <name>SES_LOG_COARSE_ADJUST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58aa5f797df45da3e9713bc19b066016501" prot="public">
+          <name>SES_LOG_DAY_PASSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ab506f30e19295544e2cd582def5d622f" prot="public">
+          <name>SES_LOG_DAYLIGHT_CHG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="89" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="89" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1ga8ea534db49acce698d511de5010fc334" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_state_e</name>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a291c983cbc12ca56bd6f11a6d612c8e7" prot="public">
+          <name>SES_STATE_DISABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334ab28f3658060df6540461ac185ce64fef" prot="public">
+          <name>SES_STATE_IDLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a86b2ed5c9b58d2d08a785158241a5aa1" prot="public">
+          <name>SES_STATE_SENDING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a67370290d98cfccce29ecc83cc3b2451" prot="public">
+          <name>SES_STATE_LISTENING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a1b41ed41bdd45ecb3136cd849ec85be9" prot="public">
+          <name>SES_STATE_WAITING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334af86bad1b2c5f8820df3454bc5c4788f2" prot="public">
+          <name>SES_STATE_WAITING_RX_DELAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334ae8c8c935e9f7ba3e426d198168ed7dfe" prot="public">
+          <name>SES_STATE_WAITING_TX_DELAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define session state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="114" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="113" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1gabba3174e56b474d3e3043c37f608623a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_flg_e</name>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa1de86cdff429e1d941a72cf8e0cfc01e" prot="public">
+          <name>SES_FLG_NONE</name>
+          <initializer>= 0x00000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Nothing <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa9f0470af0a0ecca4cab47801a96a4a2a" prot="public">
+          <name>SES_FLG_FAILED</name>
+          <initializer>= 0x00000001</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Failed </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaf3fee8921d4ee8ccbd628fe6b69e3607" prot="public">
+          <name>SES_FLG_SUCCESS</name>
+          <initializer>= 0x00000002</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Success </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa05c8e0e106dd486353cda936d21d192e" prot="public">
+          <name>SES_FLG_ERROR</name>
+          <initializer>= 0x00000004</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa58ad010fb773261c581adc6ee6a26e88" prot="public">
+          <name>SES_FLG_TIMEOUT</name>
+          <initializer>= 0x00000008</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Time Out </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaadb005a45ce238f7563e930d4366ceb2" prot="public">
+          <name>SES_FLG_RECV_MSK</name>
+          <initializer>= 0x000001F0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Convenient mask on recv flags </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aac27eabde7ff6fe5c7c2ccbda553475f3" prot="public">
+          <name>SES_FLG_CMD_RECV</name>
+          <initializer>= 0x00000070</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Command has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aae85f403a526743f0ce9afa215fe7792c" prot="public">
+          <name>SES_FLG_PONG_RECV</name>
+          <initializer>= 0x00000080</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pong has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa129e9e598c563713d63daaf701a72fee" prot="public">
+          <name>SES_FLG_BLK_RECV</name>
+          <initializer>= 0x00000100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SW Block has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa32f23bfdac402917fcbeb9414e5fb141" prot="public">
+          <name>SES_FLG_SENT_MSK</name>
+          <initializer>= 0x00000E00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Convenient mask on send flags </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aadd3fca238d06d01902213891713996ad" prot="public">
+          <name>SES_FLG_DATA_SENT</name>
+          <initializer>= 0x00000200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Data has been sent </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaaf09a14b4b4b11434727e250c709fb20" prot="public">
+          <name>SES_FLG_RSP_SENT</name>
+          <initializer>= 0x00000400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Response has been sent </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa6d3e5b140c6619e3c14f5655850844a4" prot="public">
+          <name>SES_FLG_PING_SENT</name>
+          <initializer>= 0x00000800</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ping has been sent </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab581c3ff8b94f18c9ff4f38e9690b348" prot="public">
+          <name>SES_FLG_COMPLETE</name>
+          <initializer>= 0x00001000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Session is complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa7ba9f69d18fc03ab388fa6a6e993c041" prot="public">
+          <name>SES_FLG_OUT_DATE</name>
+          <initializer>= 0x00002000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Message is out of date </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab68a8612fdff80b30452092d47b70b5a" prot="public">
+          <name>SES_FLG_CORRUPTED</name>
+          <initializer>= 0x00004000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Image is corrupted </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa67d902496a45acec958a891380b94b78" prot="public">
+          <name>SES_FLG_FRM_PASSED</name>
+          <initializer>= 0x00008000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame is by passed </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the session return flags. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="128" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="127" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1ga9c2263c02a0e8e70a19b2369ece71e86" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_evt_e</name>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ac89ee58f52447ea72fab0b382e92db8d" prot="public">
+          <name>SES_EVT_NET_MGR_MSK</name>
+          <initializer>= NET_EVENT_MSK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ab6cb959064a53ff3bc97c65c41770f7b" prot="public">
+          <name>SES_EVT_NONE</name>
+          <initializer>= NET_EVENT_NONE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ac85eb881f0912971a056b4cb848af199" prot="public">
+          <name>SES_EVT_SEND_DONE</name>
+          <initializer>= NET_EVENT_SEND_DONE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ad497b68dace58aa857b354616e2477dd" prot="public">
+          <name>SES_EVT_RECV_DONE</name>
+          <initializer>= NET_EVENT_RECV_DONE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a6f9d09923f8d704fd22e5ef7c248e5d5" prot="public">
+          <name>SES_EVT_FRM_PASSED</name>
+          <initializer>= NET_EVENT_FRM_PASSED</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a8906ef0d931a1c157d7ec7ee982d5470" prot="public">
+          <name>SES_EVT_TIMEOUT</name>
+          <initializer>= NET_EVENT_TIMEOUT</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a4ee7a95420ee993b11788891009526d4" prot="public">
+          <name>SES_EVT_SES_MGR_MSK</name>
+          <initializer>= 0x0000FF00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a98033de34a78fc5b4352dd5677a8230e" prot="public">
+          <name>SES_EVT_ADM_DELAY_EXPIRED</name>
+          <initializer>= 0x00000100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86adc8b82b70fdb41cb8f0a34662cf20784" prot="public">
+          <name>SES_EVT_INST_DELAY_EXPIRED</name>
+          <initializer>= 0x00000200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86afa33d26eada141c2f08d7788d0c5b40d" prot="public">
+          <name>SES_EVT_DWN_DELAY_EXPIRED</name>
+          <initializer>= 0x00000400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a679bb6b28666157721deec72df64bf83" prot="public">
+          <name>SES_EVT_ADM_READY</name>
+          <initializer>= 0x00001000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a41e41968f182d391dc3d1eaf473bc85f" prot="public">
+          <name>SES_EVT_INST_READY</name>
+          <initializer>= 0x00002000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a0ccee6e5b91a4360ade935ee8abea923" prot="public">
+          <name>SES_EVT_DWN_READY</name>
+          <initializer>= 0x00004000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86af0b7cbc42df771cfb58481c3bf11a7ee" prot="public">
+          <name>SES_EVT_MSK</name>
+          <initializer>= 0x00FF0000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a0e5f2f748d9f15328d04daf5d74647b7" prot="public">
+          <name>SES_EVT_OPEN</name>
+          <initializer>= 0x00010000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86abf19016e3a8d8dad958a2654079ccfe8" prot="public">
+          <name>SES_EVT_CLOSE</name>
+          <initializer>= 0x00020000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a8fed6ff0ed11e04fe92023d757273897" prot="public">
+          <name>SES_EVT_CANCEL</name>
+          <initializer>= SES_EVT_CLOSE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a1a4e459b06864a7be8d165640d142361" prot="public">
+          <name>SES_EVT_EXT_MSK</name>
+          <initializer>= 0xFF000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a68303baf3cfa064bf729737443448a95" prot="public">
+          <name>SES_EVT_DAY_PASSED</name>
+          <initializer>= 0x04000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="162" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="161" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1ga8aa9fc668c536075a33ef951d0b4acf4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_type_t</name>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4a3f8c0661e5ee1f160ac210e56a41bf29" prot="public">
+          <name>SES_INST</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4a029460f9b37c28d61a183cc64b21f6e7" prot="public">
+          <name>SES_ADM</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4aa745a56ea6e4ea43957b4c1b544aa5f0" prot="public">
+          <name>SES_DWN</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4adf7168bd237bc96fbdc7824f850567e4" prot="public">
+          <name>SES_NB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4a01513c9178e72deb3df2c34f2ed4da5d" prot="public">
+          <name>SES_NONE</name>
+          <initializer>= 0xFF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="205" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="205" bodyend="212"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__wize__mgr_1ga9d7c57952fcd151d4ed43eb85fa82c05" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const _ses_name_str_[]</definition>
+        <argsstring>[]</argsstring>
+        <name>_ses_name_str_</name>
+        <initializer>=
+{
+	[SES_INST] = &quot;INST&quot;,
+	[SES_ADM]  = &quot;ADM&quot;,
+	[SES_DWN]  = &quot;DWN&quot;,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="231" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__mgr_1gaafea5424d4fc912681796a1c43dd649c" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const _ses_state_str_[]</definition>
+        <argsstring>[]</argsstring>
+        <name>_ses_state_str_</name>
+        <initializer>=
+{
+	[SES_STATE_DISABLE]            = &quot;DISABLE&quot;,
+	[SES_STATE_IDLE]               = &quot;IDLE&quot;,
+	[SES_STATE_SENDING]            = &quot;SENDING&quot;,
+	[SES_STATE_LISTENING]          = &quot;LISTENING&quot;,
+	[SES_STATE_WAITING]            = &quot;WAITING&quot;,
+	[SES_STATE_WAITING_RX_DELAY]   = &quot;WAITING_RX_DELAY&quot;,
+	[SES_STATE_WAITING_TX_DELAY]   = &quot;WAITING_TX_DELAY&quot;,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="238" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__mgr_1ga3d8cb446b2675c84c20a496c8e43e11d" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const _ses_log_str_[]</definition>
+        <argsstring>[]</argsstring>
+        <name>_ses_log_str_</name>
+        <initializer>=
+{
+	[SES_LOG_NONE]           = &quot;...&quot;,
+	[SES_LOG_CMD_RECV_READ]  = &quot;READ&quot;,
+	[SES_LOG_CMD_RECV_WRITE] = &quot;WRITE&quot;,
+	[SES_LOG_CMD_RECV_KEY]   = &quot;KEY&quot;,
+	[SES_LOG_CMD_RECV_EXEC]  = &quot;EXEC&quot;,
+	[SES_LOG_CMD_RECV_ANN]   = &quot;ANN&quot;,
+
+	[SES_LOG_PONG_RECV]      = &quot;PONG&quot;,
+	[SES_LOG_BLK_RECV]       = &quot;BLK&quot;,
+	[SES_LOG_DATA_SENT]      = &quot;DATA&quot;,
+	[SES_LOG_RSP_SENT]       = &quot;RSP&quot;,
+	[SES_LOG_PING_SENT]      = &quot;PING&quot;,
+
+	[SES_LOG_FINE_ADJUST]    = &quot;FINE ADJ&quot;,
+	[SES_LOG_COARSE_ADJUST]  = &quot;COARSE ADJ&quot;,
+	[SES_LOG_DAY_PASSED]     = &quot;DAY PASSED&quot;,
+	[SES_LOG_DAYLIGHT_CHG]   = &quot;DAYLIGHT CHG&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="249" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

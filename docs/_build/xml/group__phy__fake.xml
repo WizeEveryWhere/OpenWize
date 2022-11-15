@@ -1,0 +1,978 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__phy__fake" kind="group">
+    <compoundname>phy_fake</compoundname>
+    <title>Phy_fake</title>
+    <innerclass refid="structfakeuart__device__t" prot="public">fakeuart_device_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__phy__fake_1gac7590e94c59150d3b8d794d285db07c0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>fakeuart_state_e</name>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0aeca4500f6f729608a014643f8c8f4003" prot="public">
+          <name>IDLE_STATE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0a77f5dd1089fc82a71dabcef62ef04f85" prot="public">
+          <name>INITIALIZED_STATE</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0af120a64ec022d6f3eecc0e201e4e5d39" prot="public">
+          <name>CONFIGURED_STATE</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0a250ac4d7aa59a4cccd41f715f4eb1203" prot="public">
+          <name>TRANSMITTING_STATE</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0a304f469d217d90131227d22c7d03f9d6" prot="public">
+          <name>RECEIVING_STATE</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the PḧyFake state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" line="60" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" bodystart="59" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__phy__fake_1gac80bca5cb8e5cb10597389d188a0130f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>fakeuart_error_e</name>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa362eb99321ca4ef96ede36ca5c3809cb" prot="public">
+          <name>FAKEUART_ERR_NONE</name>
+          <initializer>= DEV_SUCCESS</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa25242d28b9861f3e24ebbdc521444221" prot="public">
+          <name>FAKEUART_FAILURE</name>
+          <initializer>= DEV_FAILURE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130faf4d94f4fbf844d55825a3c0a486238f6" prot="public">
+          <name>FAKEUART_BUSY</name>
+          <initializer>= DEV_BUSY</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa4cd0915479a3f66da0e287bbcddecff2" prot="public">
+          <name>FAKEUART_TIMEOUT</name>
+          <initializer>= DEV_TIMEOUT</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa6d9f6e1cb82beaedb928de04d9827989" prot="public">
+          <name>FAKEUART_INVALID_PARAM</name>
+          <initializer>= DEV_INVALID_PARAM</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the PhyFake error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" line="72" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" bodystart="71" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__phy__fake_1ga9d871f4bab2f26a8102cf096c3caa6bc" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const phyfake_error_msgs[]</definition>
+        <argsstring>[]</argsstring>
+        <name>phyfake_error_msgs</name>
+        <initializer>=
+{
+    [FAKEUART_ERR_NONE]      = &quot;PhyFake ERR_NONE&quot;,
+	[FAKEUART_FAILURE]       = &quot;PhyFake FAILURE&quot;,
+	[FAKEUART_BUSY]          = &quot;PhyFake BUSY&quot;,
+	[FAKEUART_TIMEOUT]       = &quot;PhyFake TIMEOUT&quot;,
+	[FAKEUART_INVALID_PARAM] = &quot;PhyFake INVALID_PARAM&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human error representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="48" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1ga5f502ecff48964f64662f44ac31f2580" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const aChanStr[PHY_NB_CH]</definition>
+        <argsstring>[PHY_NB_CH]</argsstring>
+        <name>aChanStr</name>
+        <initializer>= {
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda77bee9497fd2dbcaa6f3343d14db26ff" kindref="member">PHY_CH100</ref>] = &quot;100&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cdaf05ff6cec7a42c98941accafe0ac810e" kindref="member">PHY_CH110</ref>] = &quot;110&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda80f71444039b077e32488ca621f00ecd" kindref="member">PHY_CH120</ref>] = &quot;120&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda4de348f41a6465278df71885b1aec3e0" kindref="member">PHY_CH130</ref>] = &quot;130&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda57ae58732a03104edd512c57c15f9ca1" kindref="member">PHY_CH140</ref>] = &quot;140&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda08313b5be781c7183ca1dd7bca2570ad" kindref="member">PHY_CH150</ref>] = &quot;150&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human channel representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="60" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1ga692499ad735ad77a2f493217e2765f7d" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const aModulationStr[PHY_NB_MOD]</definition>
+        <argsstring>[PHY_NB_MOD]</argsstring>
+        <name>aModulationStr</name>
+        <initializer>= {
+    [<ref refid="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640ab8496923f0e4e86d84cc36c7ea16ac7d" kindref="member">PHY_WM2400</ref>] = &quot;WM2400&quot;,
+    [PHY_WM4800] = &quot;WM4800&quot;,
+    [PHY_WM6400] = &quot;WM6400&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human modulation representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="72" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1gac13f54129295753fa72a2c9df539cef3" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const aTestModeStr[PHY_NB_TST_MODE]</definition>
+        <argsstring>[PHY_NB_TST_MODE]</argsstring>
+        <name>aTestModeStr</name>
+        <initializer>= {
+    [<ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" kindref="member">PHY_TST_MODE_NONE</ref>]   = &quot;Disable&quot;,
+    [PHY_TST_MODE_RX]     = &quot;RX&quot;,
+    [PHY_TST_MODE_PER_RX] = &quot;RX PER&quot;,
+	[PHY_TST_MODE_TX]     = &quot;TX&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human test mode representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="81" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1ga03f3d2c63f00a3bf0c0ea4f80422b9a7" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="group__wize__phy__itf_1gaf90b2c7d7f93a02fae5a1091297d2da0" kindref="member">phy_if_t</ref></type>
+        <definition>const phy_if_t _phy_if</definition>
+        <argsstring></argsstring>
+        <name>_phy_if</name>
+        <initializer>= {
+    .pfInit          = _init,
+    .pfUnInit        = _uninit,
+
+	.pfTx            = _do_TX,
+    .pfRx            = _do_RX,
+	.pfNoise         = _do_CCA,
+
+	.pfSetSend       = _set_send,
+	.pfGetRecv       = _get_recv,
+
+	.pfIoctl         = _ioctl
+}</initializer>
+        <briefdescription>
+<para>This structure hold the Phy device interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="104" column="23" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__phy__fake_1ga941823902bad7ade409cae912ab7defc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Phy_PhyFake_setup</definition>
+        <argsstring>(phydev_t *pPhydev, fakeuart_device_t *pCtx)</argsstring>
+        <name>Phy_PhyFake_setup</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function prepare the Phy device with constant configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="127" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="127" bodyend="137" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" declline="91" declcolumn="9"/>
+        <references refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" compoundref="phy__itf_8h" startline="109">PHY_STATUS_ERROR</references>
+        <references refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" compoundref="phy__itf_8h" startline="206">phydev_s::pIf</references>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga1e2597baa8da5ac73de93b4f0de2076a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _init</definition>
+        <argsstring>(phydev_t *pPhydev)</argsstring>
+        <name>_init</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the Phy device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="154" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="154" bodyend="182" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="89" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga632bbd8d41565a6c1ed2ce6df79c8d3e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _uninit</definition>
+        <argsstring>(phydev_t *pPhydev)</argsstring>
+        <name>_uninit</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <briefdescription>
+<para>This function un-initialize the Phy device. (Power OFF and Reset released) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="194" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="194" bodyend="205" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="90" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gab614a72d6a33d064b11e49ca56fa71d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_TX</definition>
+        <argsstring>(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>_do_TX</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eModulation</declname>
+        </param>
+        <briefdescription>
+<para>This function execute a TX sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel use to TX </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eModulation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation use to TX</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="324" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="324" bodyend="341" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="92" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gaf8c5242f9727aa64eb41fcdbdc29980f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_RX</definition>
+        <argsstring>(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>_do_RX</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eModulation</declname>
+        </param>
+        <briefdescription>
+<para>This function execute an RX sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel use to RX </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eModulation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation use to RX</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="355" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="355" bodyend="372" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="93" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga1a74cde2139e95a07205051a2998f471" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_CCA</definition>
+        <argsstring>(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>_do_CCA</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eModulation</declname>
+        </param>
+        <briefdescription>
+<para>This function execute a Noise Measurement sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel on which the Noise must be measured </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eModulation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation on which the Noise must be measured</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="386" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="386" bodyend="391" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="94" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga7a46f3927278b202c365b12fecbf3f76" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _set_send</definition>
+        <argsstring>(phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len)</argsstring>
+        <name>_set_send</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pBuf</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Len</declname>
+        </param>
+        <briefdescription>
+<para>This function set the packet to send. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to get data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference on the data length to send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="405" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="405" bodyend="430" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="96" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gac4590c38f5d64844961720d8bccf52a5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _get_recv</definition>
+        <argsstring>(phydev_t *pPhydev, uint8_t *pBuf, uint8_t *u8Len)</argsstring>
+        <name>_get_recv</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pBuf</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>u8Len</declname>
+        </param>
+        <briefdescription>
+<para>This function get the received packet. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on buffer to get received data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference on received number of bytes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="444" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="444" bodyend="467" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="97" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gada587aeb66a14bff67f57dabcbd19e65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _ioctl</definition>
+        <argsstring>(phydev_t *pPhydev, uint32_t eCtl, uint32_t args)</argsstring>
+        <name>_ioctl</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>eCtl</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>This function Get/Set internal configuration variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eCtl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of configuration variable to get/set (see phy_ctl_e) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scalar or pointer that hold the value to set/get</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="482" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="482" bodyend="549" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="99" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga23dc0d3a123046b0b180088a76a7bc93" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_cmd</definition>
+        <argsstring>(phydev_t *pPhydev, uint8_t eCmd)</argsstring>
+        <name>_do_cmd</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>eCmd</declname>
+        </param>
+        <briefdescription>
+<para>This is the main FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function ensure that transition between state are respected. ... :<itemizedlist>
+<listitem><para>Wake-up, (re)configuration,</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eCmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Requested command to execute</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="225" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="225" bodyend="263" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="141" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga0c92fce4474e8edbd65fd89d6106bdc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _frame_it</definition>
+        <argsstring>(void *p_CbParam, void *p_Arg)</argsstring>
+        <name>_frame_it</name>
+        <param>
+          <type>void *</type>
+          <declname>p_CbParam</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_Arg</declname>
+        </param>
+        <briefdescription>
+<para>Interruption handler to treat the frame event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_CbParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on call-back parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on call-back argument</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="274" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="274" bodyend="307" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="142" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

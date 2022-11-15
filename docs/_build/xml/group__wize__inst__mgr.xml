@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__inst__mgr" kind="group">
+    <compoundname>wize_inst_mgr</compoundname>
+    <title>Wize_inst_mgr</title>
+    <innerclass refid="structinst__mgr__ctx__s" prot="public">inst_mgr_ctx_s</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__inst__mgr_1gad3ce8e07ee163fec5ebc702e9c534152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void InstMgr_Setup</definition>
+        <argsstring>(struct ses_ctx_s *pCtx)</argsstring>
+        <name>InstMgr_Setup</name>
+        <param>
+          <type>struct ses_ctx_s *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the session context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the current context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c" line="67" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c" bodystart="67" bodyend="76" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" declline="81" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__inst__mgr_1ga97711bf209a73770e5b5b6c91348f341" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _inst_mgr_ini_</definition>
+        <argsstring>(struct ses_ctx_s *pCtx)</argsstring>
+        <name>_inst_mgr_ini_</name>
+        <param>
+          <type>struct ses_ctx_s *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the fsm internal private context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the current context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c" line="86" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c" bodystart="86" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__inst__mgr_1gaa6fb62a91ecd3aa414968960d5a07f0d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t _inst_mgr_fsm_</definition>
+        <argsstring>(struct ses_ctx_s *pCtx, uint32_t u32Evt)</argsstring>
+        <name>_inst_mgr_fsm_</name>
+        <param>
+          <type>struct ses_ctx_s *</type>
+          <declname>pCtx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32Evt</declname>
+        </param>
+        <briefdescription>
+<para>This is the FSM that treat input/output events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the current context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32Evt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input event from outside (see ses_evt_e)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>SES_FLG_NONE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa1de86cdff429e1d941a72cf8e0cfc01e" kindref="member">ses_flag_e::SES_FLG_NONE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SES_FLG_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa05c8e0e106dd486353cda936d21d192e" kindref="member">ses_flag_e::SES_FLG_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SES_FLG_PING_SENT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa6d3e5b140c6619e3c14f5655850844a4" kindref="member">ses_flag_e::SES_FLG_PING_SENT</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SES_FLG_PONG_RECV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aae85f403a526743f0ce9afa215fe7792c" kindref="member">ses_flag_e::SES_FLG_PONG_RECV</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SES_FLG_COMPLETE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab581c3ff8b94f18c9ff4f38e9690b348" kindref="member">ses_flag_e::SES_FLG_COMPLETE</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SES_FLG_FRM_PASSED</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa67d902496a45acec958a891380b94b78" kindref="member">ses_flag_e::SES_FLG_FRM_PASSED</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SES_FLG_TIMEOUT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa58ad010fb773261c581adc6ee6a26e88" kindref="member">ses_flag_e::SES_FLG_TIMEOUT</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c" line="112" column="17" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c" bodystart="112" bodyend="249"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

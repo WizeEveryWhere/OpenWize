@@ -1,0 +1,1057 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__net__api" kind="group">
+    <compoundname>wize_net_api</compoundname>
+    <title>Wize_net_api</title>
+    <innerclass refid="uniondevice__id__t" prot="public">device_id_t</innerclass>
+    <innerclass refid="structnetdev__s" prot="public">netdev_s</innerclass>
+    <innerclass refid="structmedium__cfg__s" prot="public">medium_cfg_s</innerclass>
+    <innerclass refid="structwize__net__s" prot="public">wize_net_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__net__api_1ga115abc2ea2f43599755e3a8692ae0672" prot="public" static="no" strong="no">
+        <type></type>
+        <name>netdev_ctl_e</name>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a76e38932444df5acef512e30ea570a10" prot="public">
+          <name>NETDEV_CTL_SET_UPLINK_CH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the up-link channel </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a0694afdbbb1fdcb02002becc512bc37b" prot="public">
+          <name>NETDEV_CTL_SET_UPLINK_MOD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the up-link modulation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a83701ee21336ef6256368be0b7fef2e3" prot="public">
+          <name>NETDEV_CTL_SET_DWLINK_CH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the down-link channel </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672ac28da7956b6f7964b75e6f9b7f072272" prot="public">
+          <name>NETDEV_CTL_SET_DWLINK_MOD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the down-link modulation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a8c4f295c8c0b9abffbf3248eb95bce11" prot="public">
+          <name>NETDEV_CTL_SET_FOFFSET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the frequency offset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672abe9d456c10b259520b65c98bc558920d" prot="public">
+          <name>NETDEV_CTL_SET_PWR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the RF transmission power </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a74e1cd6a9f19344959a6876198a91e54" prot="public">
+          <name>NETDEV_CTL_SET_TRANSLEN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the max. application layer transmission length </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a2fd92eeeb8fc573da797c17d630e67e1" prot="public">
+          <name>NETDEV_CTL_SET_RECVLEN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the max. application layer reception length </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a8b24ebde9f8c18f94ee9afb3d3e59307" prot="public">
+          <name>NETDEV_CTL_SET_NETWID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the network ID </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a3651853bb74b6faee68c046c5d5a1d9a" prot="public">
+          <name>NETDEV_CTL_SET_DWNID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the download ID </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672ac49e16bd3cd7f8aad30a270c42b8e15a" prot="public">
+          <name>NETDEV_CTL_SET_DEVID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the device ID </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a76d5177ca9027cea529e851b93f86419" prot="public">
+          <name>NETDEV_CTL_CFG_MEDIUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Configure the medium </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a2ef3ad5bf8366ed6487b57409f1910e8" prot="public">
+          <name>NETDEV_CTL_CFG_PROTO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Configure the protocol </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a97097326f855ed2576fd2b097e84fd06" prot="public">
+          <name>NETDEV_CTL_GET_DEVID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the device ID </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a0b8b6f03828baee6eacd426941d76335" prot="public">
+          <name>_NETDEV_CTL_ERR_</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Delimiter for netdev error control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a8e9196dae587b7e4868019208db4f2e4" prot="public">
+          <name>NETDEV_CTL_GET_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the current error code </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672ace0e298539d15eb84cdef88ae0f771f9" prot="public">
+          <name>NETDEV_CTL_CLR_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Clear the current error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672ae8f4d7d51080df5d92793c81683d15f2" prot="public">
+          <name>NETDEV_CTL_GET_STR_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the current error string </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a02ecd0af169c2801f092c160e9e05b8c" prot="public">
+          <name>_NETDEV_CTL_STATS_</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Delimiter for netdev statistics control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a447d0cdbf1c7b66a26b87fb5459222d4" prot="public">
+          <name>NETDEV_CTL_GET_STATS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the statistics </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a04a2a086e1908418aa680a353100b000" prot="public">
+          <name>NETDEV_CTL_CLR_STATS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Clear the statistics </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a4671a2ddcc1a64b9166b508e81c79993" prot="public">
+          <name>NETDEV_CTL_PHY_CMD</name>
+          <initializer>= 0x8000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pass command to the PHY </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define netdev control/configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="66" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="65" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__net__api_1ga60578474790c3d9123eb079bfb85ca13" prot="public" static="no" strong="no">
+        <type></type>
+        <name>netdev_evt_e</name>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13ac9160503a48d037600936fef8a4fc9ec" prot="public">
+          <name>NETDEV_EVT_NONE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13a91283ca754dda12f4582d616e9acf7c1" prot="public">
+          <name>NETDEV_EVT_RX_STARTED</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Started to receive a packet </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13ac8a358546686fc5954d2b7e2d621ec86" prot="public">
+          <name>NETDEV_EVT_RX_COMPLETE</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Finished receiving a packet </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13ac0b8e136f0ddc4ecff4bd94845e5f7c6" prot="public">
+          <name>NETDEV_EVT_TX_STARTED</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Started to transfer a packet </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13ae9a6f0900fd2bccf249bca21390d99fd" prot="public">
+          <name>NETDEV_EVT_TX_COMPLETE</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Transfer packet complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13a82f595ab6ff87badca0ccf22d3ebd076" prot="public">
+          <name>NETDEV_EVT_ERROR</name>
+          <initializer>= 0x05</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An error occurs in net, phy or stack </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13ab1a1be688b68729d568ff6e10ebb5cdc" prot="public">
+          <name>NETDEV_EVT_TIMEOUT</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Timeout event occurs </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga60578474790c3d9123eb079bfb85ca13a3b6936a623171b81126d3b354fc095d7" prot="public">
+          <name>NETDEV_EVT_LAST</name>
+          <initializer>= 0x0F</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Last event ID </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the netdev possible events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="102" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="102" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__net__api_1ga86dd2735986f16a1a4b8510c037c56a1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>netdev_status_e</name>
+        <enumvalue id="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" prot="public">
+          <name>NETDEV_STATUS_OK</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Net device return status OK </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" prot="public">
+          <name>NETDEV_STATUS_ERROR</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Net device return status ERROR </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" prot="public">
+          <name>NETDEV_STATUS_BUSY</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Net device return status BUSY </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the netdev return status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="118" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="118" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__net__api_1ga59c492c5b58742e7b6644b6143cdd588" prot="public" static="no" strong="no">
+        <type></type>
+        <name>netdev_err_type_e</name>
+        <enumvalue id="group__wize__net__api_1gga59c492c5b58742e7b6644b6143cdd588a04926862806e9cb20e768ed7507d7dc3" prot="public">
+          <name>NETDEV_ERROR_NONE</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error None </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga59c492c5b58742e7b6644b6143cdd588a2b0896e3eb988557f4f3585ca68fbcd3" prot="public">
+          <name>NETDEV_ERROR_PHY</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error in phy dev </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga59c492c5b58742e7b6644b6143cdd588ad2034c8a050380dc04aec8938ee47ba6" prot="public">
+          <name>NETDEV_ERROR_PROTO</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error in protocol </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga59c492c5b58742e7b6644b6143cdd588a71c7eae1d38e3827c87bbb1e034819b2" prot="public">
+          <name>NETDEV_ERROR_NET</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error in net dev </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the netdev possible error types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="127" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="127" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__net__api_1ga1b0bb3e6064c1843396cb56730b4efd2" prot="public" static="no" strong="no">
+        <type></type>
+        <name>netdev_state_e</name>
+        <enumvalue id="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2ab2f8cb86f9c29ce6aa6af9b97c73a6ad" prot="public">
+          <name>NETDEV_STATE_UNKWON</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Net Device state is UNKNOWN </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2afc0f457355583725d3792bfda33d11a0" prot="public">
+          <name>NETDEV_STATE_IDLE</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Net device is IDLE </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2a9a1f4540a1a6afec747feaf0bca8371e" prot="public">
+          <name>NETDEV_STATE_BUSY</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Net device is BUSY </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2a45e8e342950547d552033cc9c1ad29d6" prot="public">
+          <name>NETDEV_STATE_ERROR</name>
+          <initializer>= 0x8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Net device is ERROR </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the netdev possible states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="137" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="137" bodyend="142"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" prot="public" static="no">
+        <type>struct <ref refid="structnetdev__s" kindref="compound">netdev_s</ref></type>
+        <definition>typedef struct netdev_s netdev_t</definition>
+        <argsstring></argsstring>
+        <name>netdev_t</name>
+        <briefdescription>
+<para>This define the netdev type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="1" column="0" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__net__api_1ga7b8294a05864f228ea7fa38d44045e78" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* netdev_evt_cb_t) (uint32_t eEvt)</definition>
+        <argsstring>)(uint32_t eEvt)</argsstring>
+        <name>netdev_evt_cb_t</name>
+        <briefdescription>
+<para>This define the event call-back pointer function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="152" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__net__api_1ga3a430a72aef99fbe3d4d227aaec8099b" prot="public" static="no">
+        <type>struct <ref refid="structwize__net__s" kindref="compound">wize_net_s</ref></type>
+        <definition>typedef struct wize_net_s wize_net_t</definition>
+        <argsstring></argsstring>
+        <name>wize_net_t</name>
+        <briefdescription>
+<para>This structure define the Wize network context. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="195" column="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__net__api_1gaa9d632ee79d28d7a0415a25e85f073b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WizeNet_Setup</definition>
+        <argsstring>(netdev_t *pNetdev, wize_net_t *pWizeCtx, phydev_t *pPhydev)</argsstring>
+        <name>WizeNet_Setup</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__net__api_1ga3a430a72aef99fbe3d4d227aaec8099b" kindref="member">wize_net_t</ref> *</type>
+          <declname>pWizeCtx</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <briefdescription>
+<para>This function setup the netdev_t device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pWizeCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on network context </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the PHY device context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="61" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="61" bodyend="72" declfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" declline="198" declcolumn="9"/>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" compoundref="net__api__private_8h" startline="120">NETDEV_STATUS_ERROR</references>
+        <references refid="structnetdev__s_1a34b3d35b00bad47fecb870fbf01d7bb5" compoundref="net__api__private_8h" startline="158">netdev_s::pCtx</references>
+        <references refid="structnetdev__s_1abf01df8dd6dc5c8fa194730c88ab7c1f" compoundref="net__api__private_8h" startline="160">netdev_s::pPhydev</references>
+        <references refid="structnetdev__s_1a356bed01aade78e4c0ee5b00ce8e2ef7" compoundref="net__api__private_8h" startline="161">netdev_s::eState</references>
+        <references refid="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2ab2f8cb86f9c29ce6aa6af9b97c73a6ad" compoundref="net__api__private_8h" startline="138">NETDEV_STATE_UNKWON</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1gadba355920bf6ac45fb3939cfbb713e3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WizeNet_Init</definition>
+        <argsstring>(netdev_t *pNetdev, netdev_evt_cb_t pfcbEvent)</argsstring>
+        <name>WizeNet_Init</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__net__api_1ga7b8294a05864f228ea7fa38d44045e78" kindref="member">netdev_evt_cb_t</ref></type>
+          <declname>pfcbEvent</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the netdev_t and phy devices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pfcbEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event call-back to upper layer (still in interrupt)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="85" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="85" bodyend="107" declfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" declline="200" declcolumn="9"/>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" compoundref="net__api__private_8h" startline="120">NETDEV_STATUS_ERROR</references>
+        <references refid="structnetdev__s_1abf01df8dd6dc5c8fa194730c88ab7c1f" compoundref="net__api__private_8h" startline="160">netdev_s::pPhydev</references>
+        <references refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" compoundref="phy__itf_8h" startline="206">phydev_s::pIf</references>
+        <references refid="structphy__if__s_1a1685c3709d0595da24ed21299548e336" compoundref="phy__itf_8h" startline="188">phy_if_s::pfInit</references>
+        <references refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" compoundref="phy__itf_8h" startline="108">PHY_STATUS_OK</references>
+        <references refid="structnetdev__s_1a356bed01aade78e4c0ee5b00ce8e2ef7" compoundref="net__api__private_8h" startline="161">netdev_s::eState</references>
+        <references refid="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2ab2f8cb86f9c29ce6aa6af9b97c73a6ad" compoundref="net__api__private_8h" startline="138">NETDEV_STATE_UNKWON</references>
+        <references refid="structnetdev__s_1a339a785774d2927cfb2f298fbe57a944" compoundref="net__api__private_8h" startline="163">netdev_s::eErrType</references>
+        <references refid="group__wize__net__api_1gga59c492c5b58742e7b6644b6143cdd588a2b0896e3eb988557f4f3585ca68fbcd3" compoundref="net__api__private_8h" startline="129">NETDEV_ERROR_PHY</references>
+        <references refid="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2afc0f457355583725d3792bfda33d11a0" compoundref="net__api__private_8h" startline="139">NETDEV_STATE_IDLE</references>
+        <references refid="group__wize__net__api_1gga59c492c5b58742e7b6644b6143cdd588a04926862806e9cb20e768ed7507d7dc3" compoundref="net__api__private_8h" startline="128">NETDEV_ERROR_NONE</references>
+        <references refid="structnetdev__s_1ad57758d65ac895fec7229269b770d3be" compoundref="net__api__private_8h" startline="162">netdev_s::cbEvent</references>
+        <references refid="structphydev__s_1ae0cb196f2a06579bda4f79e07edf4462" compoundref="phy__itf_8h" startline="223">phydev_s::bPreSyncOn</references>
+        <references refid="structphydev__s_1ac3821f81d707a900df0217a416b4b790" compoundref="phy__itf_8h" startline="209">phydev_s::pfEvtCb</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1gafa0c0d696000e9c838c1892d8a7a2d9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WizeNet_Uninit</definition>
+        <argsstring>(netdev_t *pNetdev)</argsstring>
+        <name>WizeNet_Uninit</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <briefdescription>
+<para>This function de-initialize the netdev_t and phy devices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="119" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="119" bodyend="132" declfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" declline="201" declcolumn="9"/>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" compoundref="net__api__private_8h" startline="120">NETDEV_STATUS_ERROR</references>
+        <references refid="structnetdev__s_1abf01df8dd6dc5c8fa194730c88ab7c1f" compoundref="net__api__private_8h" startline="160">netdev_s::pPhydev</references>
+        <references refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" compoundref="phy__itf_8h" startline="206">phydev_s::pIf</references>
+        <references refid="structphy__if__s_1af97ce5b6fd435cab3ecdcc8822dd55ef" compoundref="phy__itf_8h" startline="189">phy_if_s::pfUnInit</references>
+        <references refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" compoundref="phy__itf_8h" startline="108">PHY_STATUS_OK</references>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" compoundref="net__api__private_8h" startline="119">NETDEV_STATUS_OK</references>
+        <references refid="structnetdev__s_1a356bed01aade78e4c0ee5b00ce8e2ef7" compoundref="net__api__private_8h" startline="161">netdev_s::eState</references>
+        <references refid="group__wize__net__api_1gga1b0bb3e6064c1843396cb56730b4efd2ab2f8cb86f9c29ce6aa6af9b97c73a6ad" compoundref="net__api__private_8h" startline="138">NETDEV_STATE_UNKWON</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1ga4557229fb917373a5e3fcb53ad5fd21c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WizeNet_Send</definition>
+        <argsstring>(netdev_t *pNetdev, net_msg_t *pNetMsg)</argsstring>
+        <name>WizeNet_Send</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pNetMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function send the given message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that hold the message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="145" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="145" bodyend="204" declfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" declline="203" declcolumn="9"/>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" compoundref="net__api__private_8h" startline="120">NETDEV_STATUS_ERROR</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1ga8d2ec88580cf59bdb22d25b528a81b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WizeNet_Recv</definition>
+        <argsstring>(netdev_t *pNetdev, net_msg_t *pNetMsg)</argsstring>
+        <name>WizeNet_Recv</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pNetMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function get the received message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on structure that will hold the message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="217" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="217" bodyend="259" declfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" declline="204" declcolumn="9"/>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" compoundref="net__api__private_8h" startline="120">NETDEV_STATUS_ERROR</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1gae9bedd126fb315623a2334966b0481d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WizeNet_Listen</definition>
+        <argsstring>(netdev_t *pNetdev)</argsstring>
+        <name>WizeNet_Listen</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <briefdescription>
+<para>This function open a listen window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="271" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="271" bodyend="298" declfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" declline="205" declcolumn="9"/>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" compoundref="net__api__private_8h" startline="120">NETDEV_STATUS_ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1ga279ae9aabdf8eb53fc0fb880218bc92e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t WizeNet_Ioctl</definition>
+        <argsstring>(netdev_t *pNetdev, uint32_t eCtl, uint32_t args)</argsstring>
+        <name>WizeNet_Ioctl</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>eCtl</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>This function Get/Set internal configuration variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eCtl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of configuration variable to get/set (see netdev_ctl_e) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scalar or pointer that hold the value to set/get</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="311" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="311" bodyend="546" declfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" declline="207" declcolumn="9"/>
+        <references refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" compoundref="net__api__private_8h" startline="120">NETDEV_STATUS_ERROR</references>
+        <references refid="structnetdev__s_1abf01df8dd6dc5c8fa194730c88ab7c1f" compoundref="net__api__private_8h" startline="160">netdev_s::pPhydev</references>
+        <references refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" compoundref="phy__itf_8h" startline="206">phydev_s::pIf</references>
+        <references refid="structnetdev__s_1a34b3d35b00bad47fecb870fbf01d7bb5" compoundref="net__api__private_8h" startline="158">netdev_s::pCtx</references>
+        <references refid="group__wize__net__api_1gga115abc2ea2f43599755e3a8692ae0672a4671a2ddcc1a64b9166b508e81c79993" compoundref="net__api__private_8h" startline="96">NETDEV_CTL_PHY_CMD</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1ga237d57229f54c01d19eaec7915b89662" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _check_idle_state</definition>
+        <argsstring>(netdev_t *pNetdev)</argsstring>
+        <name>_check_idle_state</name>
+        <param>
+          <type><ref refid="group__wize__net__api_1gacf6042992f32f6caa9779564346c4a3f" kindref="member">netdev_t</ref> *</type>
+          <declname>pNetdev</declname>
+        </param>
+        <briefdescription>
+<para>This function check if the device is in IDLE state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pNetdev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1add688afc493a49642229dc4fb78c4348" kindref="member">netdev_status_e::NETDEV_STATUS_OK</ref>)) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1ad294a109a1b4ac9ddbb5426617404890" kindref="member">netdev_status_e::NETDEV_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NETDEV_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__net__api_1gga86dd2735986f16a1a4b8510c037c56a1a33f521ef00ae722c852080fa47e578ae" kindref="member">netdev_status_e::NETDEV_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="563" column="16" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="563" bodyend="584" declfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" declline="44" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__net__api_1gadd05ddf7a39c31b46b64289fe58860ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _evt_cb</definition>
+        <argsstring>(void *p_CbParam, uint32_t evt)</argsstring>
+        <name>_evt_cb</name>
+        <param>
+          <type>void *</type>
+          <declname>p_CbParam</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>evt</declname>
+        </param>
+        <briefdescription>
+<para>Callback function, from Phy to Higher level (still in interrupt handler) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_CbParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on netdev_t device structure </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">evt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event from lower PHY layer</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" line="596" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" bodystart="596" bodyend="626" declfile="/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c" declline="47" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

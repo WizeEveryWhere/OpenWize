@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide de documentation &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_documentation/index.html">Documentation avancée</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Guide de documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/contributing/documentation_guide.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation-guide">
+<span id="id1"></span><h1>Guide de documentation<a class="headerlink" href="#documentation-guide" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="files">
+<h2>Fichiers<a class="headerlink" href="#files" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Chaque fichier source et fichier d’en-tête doit commencer par :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>/*!
+<span class="linenos"> 2</span>  * @file filename.[c/h]
+<span class="linenos"> 3</span>  * @brief A brief file description
+<span class="linenos"> 4</span>  *
+<span class="linenos"> 5</span>  * @details Optionaly, describe details about this file
+<span class="linenos"> 6</span>  *
+<span class="linenos"> 7</span>  * @copyright 2022, Company Name, Inc.  All rights reserved.
+<span class="linenos"> 8</span>  *
+<span class="linenos"> 9</span>  * Redistribution and use in source and binary forms, with or without
+<span class="linenos">10</span>  * modification, are permitted (subject to the limitations in the disclaimer
+<span class="linenos">11</span>  * below) provided that the following conditions are met:
+<span class="linenos">12</span>  *    - Redistributions of source code must retain the above copyright notice,
+<span class="linenos">13</span>  *      this list of conditions and the following disclaimer.
+<span class="linenos">14</span>  *    - Redistributions in binary form must reproduce the above copyright
+<span class="linenos">15</span>  *      notice, this list of conditions and the following disclaimer in the
+<span class="linenos">16</span>  *      documentation and/or other materials provided with the distribution.
+<span class="linenos">17</span>  *    - Neither the name of GRDF, Inc. nor the names of its contributors
+<span class="linenos">18</span>  *      may be used to endorse or promote products derived from this software
+<span class="linenos">19</span>  *      without specific prior written permission.
+<span class="linenos">20</span>  *
+<span class="linenos">21</span>  *
+<span class="linenos">22</span>  * @par Revision history
+<span class="linenos">23</span>  *
+<span class="linenos">24</span>  * @par 1.0.0 : 2021/03/01 [ABC]
+<span class="linenos">25</span>  * Initial version
+<span class="linenos">26</span>  *
+<span class="linenos">27</span>  * @par 1.0.1 : 2022/03/01 [CBA]
+<span class="linenos">28</span>  * Changes in function X to take into account the feature Z
+<span class="linenos">29</span>  *
+<span class="linenos">30</span>  */
+</pre></div>
+</div>
+<p>L’historique des révisions est formaté comme suit :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="nd">@par</span> <span class="n">MAJ</span><span class="o">.</span><span class="n">MIN</span><span class="o">.</span><span class="n">REV</span> <span class="p">:</span> <span class="n">DATE</span> <span class="p">[</span><span class="n">AUTHOR</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">Describe</span> <span class="n">the</span> <span class="n">revisions</span> <span class="n">changes</span>
+</pre></div>
+</div>
+<p>Où, « MAJ.MIN.REV » est respectivement le numéro de version majeure, mineure et de révision. Ce dernier doit être suivi de la date et de l’auteur. Ensuite, sur la ligne suivante, décrivez les changements de révision.</p>
+</section>
+<section id="functions">
+<h2>Fonctions<a class="headerlink" href="#functions" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Toutes les fonctions doivent commencer par leur bloc de documentation :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+  * @brief Brief documentation of this function
+  *
+  * @details Optionaly, give some details about this function.
+  *
+  * @param [in]      in_param    Input Parameter description.
+  * @param [out]     out_param   Output Parameter description.
+  * @param [in, out] inout_param Input/Output Parameter description.
+  *
+  * @retval return value x if everything is fine
+  *         return value y if something goes wrong
+  */
+</pre></div>
+</div>
+<p>Si la fonction est privée, ajoutez <em>&#64;static</em> au début, juste avant <em>&#64;brief</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+  * @static
+  * @brief ...
+  *
+</pre></div>
+</div>
+<p>Si nécessaire, placez une partie de la documentation sous le bloc <em>&#64;cond</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+ * @cond INTERNAL
+ * @{
+ */
+
+Here the content that should appear in documention only if INTERNAL is defined
+
+/*!
+ * @}
+ * @endcond
+ */
+</pre></div>
+</div>
+<p>Afin d’organiser la documentation, ajoutez un groupe à votre module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+ * @addtogroup groupe_name
+ * @{
+ *
+ */
+
+   ... body of this module ...
+
+/*! @} */
+</pre></div>
+</div>
+</section>
+<section id="structures-and-enumeration">
+<h2>Structures et énumération<a class="headerlink" href="#structures-and-enumeration" title="Lien permanent vers cette rubrique"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+ * @brief Describe your enum
+ */
+typedef enum{
+   ENUM_0,        /*!&lt; Enum 0 decritption */
+   ENUM_1,        /*!&lt; Enum 0 decritption */
+
+   /* Optionaly add a &quot;marker&quot; */
+   ENUM_NB
+} my_enum_e;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+ * @brief Describe your structure
+ */
+typedef struct  {
+   uint8_t u8Field1;  /*! Field 1 description */
+   int16_t i16Field2; /*! Field 2 description */
+} my_struct_t
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+ * @brief
+ */
+#define MY_DEFINE 1
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+ * @brief
+ */
+extern my_struct_t sMyStruct;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*!
+ * @static
+ * @brief
+ */
+static my_struct_t _my_struct_;
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

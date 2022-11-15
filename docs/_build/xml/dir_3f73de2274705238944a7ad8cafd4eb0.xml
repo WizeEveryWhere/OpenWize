@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_3f73de2274705238944a7ad8cafd4eb0" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/WizeCore/proto/include</compoundname>
+    <innerfile refid="proto_8h">proto.h</innerfile>
+    <innerfile refid="proto__api_8h">proto_api.h</innerfile>
+    <innerfile refid="proto__private_8h">proto_private.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structdwn__mgr__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>dwn_mgr_ctx_s</compoundname>
+    <includes refid="dwn__mgr_8h" local="no">dwn_mgr.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a5e07161b422563a972553cf7654b8a41" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref></type>
+        <definition>net_msg_t dwn_mgr_ctx_s::sRecvMsg</definition>
+        <argsstring></argsstring>
+        <name>sRecvMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="66" column="11" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a10e981fca526889f28477ec774135f38" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t dwn_mgr_ctx_s::u32DaysProg</definition>
+        <argsstring></argsstring>
+        <name>u32DaysProg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="71" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a8bf98f26a10a27fff1fefeb5e25060bc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::u8DayRepeat</definition>
+        <argsstring></argsstring>
+        <name>u8DayRepeat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="72" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a8936f2092274ad5959d4e66179464062" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::u8DeltaSec</definition>
+        <argsstring></argsstring>
+        <name>u8DeltaSec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="73" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1ad8b9cf4351865b1877e171024d5d1f79" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t dwn_mgr_ctx_s::u16BlocksCount</definition>
+        <argsstring></argsstring>
+        <name>u16BlocksCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="74" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a185264d61f0baf6ff8217784e16dc125" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t dwn_mgr_ctx_s::u32HashSW</definition>
+        <argsstring></argsstring>
+        <name>u32HashSW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="76" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1aad349e29a78b92341391c295ab59c5a5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::L7SwVersionTarget[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>L7SwVersionTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="77" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a82e3b8ae3cd936af85ee483d38a7eb04" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::u8ChannelId</definition>
+        <argsstring></argsstring>
+        <name>u8ChannelId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="79" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a1da3556ee0907856de391e9ac1b9f855" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::u8ModulationId</definition>
+        <argsstring></argsstring>
+        <name>u8ModulationId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="80" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1af58df59569b4216b47b71ae93d114c17" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::L7DwnId[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>L7DwnId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="82" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1ab362e4c43f9b5ed408f69a53d4f69d6b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::u8DownRxLength</definition>
+        <argsstring></argsstring>
+        <name>u8DownRxLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="84" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a8eb36975d4b796d985104df221e244bd" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::u8Pending</definition>
+        <argsstring></argsstring>
+        <name>u8Pending</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="91" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a1acdd474b52c6df6d9efbfb4152e795f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t dwn_mgr_ctx_s::u32InitDelayMin</definition>
+        <argsstring></argsstring>
+        <name>u32InitDelayMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="94" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1adbbf125a4112258298affbaffee5cec3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t dwn_mgr_ctx_s::_u32DayNext</definition>
+        <argsstring></argsstring>
+        <name>_u32DayNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="96" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1accfb26bcd52c42d1fddb25cd7c2e0141" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t dwn_mgr_ctx_s::_u16BlocksCount</definition>
+        <argsstring></argsstring>
+        <name>_u16BlocksCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="97" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a0fae11d013f57e3f9a3ddc78e0327434" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dwn_mgr_ctx_s::_u8DayCount</definition>
+        <argsstring></argsstring>
+        <name>_u8DayCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="98" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdwn__mgr__ctx__s_1a6fc003c049b379d938c98dedae119b33" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t dwn_mgr_ctx_s::_u32NextBlkDelay</definition>
+        <argsstring></argsstring>
+        <name>_u32NextBlkDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="101" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structdwn__mgr__ctx__s_1a42efad0524c9a00caafd61a9a2b1ac93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t aRecvBuff[RECV_BUFFER_SZ]</type>
+        <definition>uint8_t aRecvBuff [RECV_BUFFER_SZ] dwn_mgr_ctx_s::__attribute__</definition>
+        <argsstring>((aligned(8)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(8))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="68" column="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the download manager internal context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>net_msg_s</label>
+        <link refid="structnet__msg__s"/>
+      </node>
+      <node id="1">
+        <label>dwn_mgr_ctx_s</label>
+        <link refid="structdwn__mgr__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sRecvMsg</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" line="65" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h" bodystart="64" bodyend="103"/>
+    <listofallmembers>
+      <member refid="structdwn__mgr__ctx__s_1a42efad0524c9a00caafd61a9a2b1ac93" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>__attribute__</name></member>
+      <member refid="structdwn__mgr__ctx__s_1accfb26bcd52c42d1fddb25cd7c2e0141" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>_u16BlocksCount</name></member>
+      <member refid="structdwn__mgr__ctx__s_1adbbf125a4112258298affbaffee5cec3" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>_u32DayNext</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a6fc003c049b379d938c98dedae119b33" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>_u32NextBlkDelay</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a0fae11d013f57e3f9a3ddc78e0327434" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>_u8DayCount</name></member>
+      <member refid="structdwn__mgr__ctx__s_1af58df59569b4216b47b71ae93d114c17" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>L7DwnId</name></member>
+      <member refid="structdwn__mgr__ctx__s_1aad349e29a78b92341391c295ab59c5a5" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>L7SwVersionTarget</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a5e07161b422563a972553cf7654b8a41" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>sRecvMsg</name></member>
+      <member refid="structdwn__mgr__ctx__s_1ad8b9cf4351865b1877e171024d5d1f79" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u16BlocksCount</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a10e981fca526889f28477ec774135f38" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u32DaysProg</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a185264d61f0baf6ff8217784e16dc125" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u32HashSW</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a1acdd474b52c6df6d9efbfb4152e795f" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u32InitDelayMin</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a82e3b8ae3cd936af85ee483d38a7eb04" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u8ChannelId</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a8bf98f26a10a27fff1fefeb5e25060bc" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u8DayRepeat</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a8936f2092274ad5959d4e66179464062" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u8DeltaSec</name></member>
+      <member refid="structdwn__mgr__ctx__s_1ab362e4c43f9b5ed408f69a53d4f69d6b" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u8DownRxLength</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a1da3556ee0907856de391e9ac1b9f855" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u8ModulationId</name></member>
+      <member refid="structdwn__mgr__ctx__s_1a8eb36975d4b796d985104df221e244bd" prot="public" virt="non-virtual"><scope>dwn_mgr_ctx_s</scope><name>u8Pending</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

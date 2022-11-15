@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structinst__mgr__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>inst_mgr_ctx_s</compoundname>
+    <includes refid="inst__mgr_8h" local="no">inst_mgr.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structinst__mgr__ctx__s_1afca5f4e1ba61add5150bf9047f26d0a2" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref></type>
+        <definition>net_msg_t inst_mgr_ctx_s::sCmdMsg</definition>
+        <argsstring></argsstring>
+        <name>sCmdMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Input message content </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="69" column="11" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__mgr__ctx__s_1adefe41f11558e55ef60f147d983e441e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref></type>
+        <definition>net_msg_t inst_mgr_ctx_s::sRspMsg</definition>
+        <argsstring></argsstring>
+        <name>sRspMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Output message content </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="70" column="11" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__mgr__ctx__s_1afd2c49db6f6e5cf4db70ab9d910c9aed" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_mgr_ctx_s::aRecvBuff[RECV_BUFFER_SZ]</definition>
+        <argsstring>[RECV_BUFFER_SZ]</argsstring>
+        <name>aRecvBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer that hold the received frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="72" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__mgr__ctx__s_1add5e84a41a5023cd3166a951b9e5e709" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_mgr_ctx_s::aSendBuff[SEND_BUFFER_SZ]</definition>
+        <argsstring>[SEND_BUFFER_SZ]</argsstring>
+        <name>aSendBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer that hold the frame to send </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="73" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__mgr__ctx__s_1a91f7989b6953181d7dcf91f4a9d02b3d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_mgr_ctx_s::u8InstRxLength</definition>
+        <argsstring></argsstring>
+        <name>u8InstRxLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Install reception window length ([1s; 255s]) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="75" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__mgr__ctx__s_1a4d098a9d7121d763d0952d18cf2456af" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_mgr_ctx_s::u8InstRxDelay</definition>
+        <argsstring></argsstring>
+        <name>u8InstRxDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opening reception window delay ([1s; 255s]) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="76" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinst__mgr__ctx__s_1a3c874775c0461b12050f82f47eedf2be" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t inst_mgr_ctx_s::u8Pending</definition>
+        <argsstring></argsstring>
+        <name>u8Pending</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Received message is pending <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="78" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the install manager internal context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>net_msg_s</label>
+        <link refid="structnet__msg__s"/>
+      </node>
+      <node id="1">
+        <label>inst_mgr_ctx_s</label>
+        <link refid="structinst__mgr__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sRspMsg</edgelabel>
+          <edgelabel>+sCmdMsg</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" line="68" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h" bodystart="67" bodyend="79"/>
+    <listofallmembers>
+      <member refid="structinst__mgr__ctx__s_1afd2c49db6f6e5cf4db70ab9d910c9aed" prot="public" virt="non-virtual"><scope>inst_mgr_ctx_s</scope><name>aRecvBuff</name></member>
+      <member refid="structinst__mgr__ctx__s_1add5e84a41a5023cd3166a951b9e5e709" prot="public" virt="non-virtual"><scope>inst_mgr_ctx_s</scope><name>aSendBuff</name></member>
+      <member refid="structinst__mgr__ctx__s_1afca5f4e1ba61add5150bf9047f26d0a2" prot="public" virt="non-virtual"><scope>inst_mgr_ctx_s</scope><name>sCmdMsg</name></member>
+      <member refid="structinst__mgr__ctx__s_1adefe41f11558e55ef60f147d983e441e" prot="public" virt="non-virtual"><scope>inst_mgr_ctx_s</scope><name>sRspMsg</name></member>
+      <member refid="structinst__mgr__ctx__s_1a4d098a9d7121d763d0952d18cf2456af" prot="public" virt="non-virtual"><scope>inst_mgr_ctx_s</scope><name>u8InstRxDelay</name></member>
+      <member refid="structinst__mgr__ctx__s_1a91f7989b6953181d7dcf91f4a9d02b3d" prot="public" virt="non-virtual"><scope>inst_mgr_ctx_s</scope><name>u8InstRxLength</name></member>
+      <member refid="structinst__mgr__ctx__s_1a3c874775c0461b12050f82f47eedf2be" prot="public" virt="non-virtual"><scope>inst_mgr_ctx_s</scope><name>u8Pending</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

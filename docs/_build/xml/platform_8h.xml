@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="platform_8h" kind="file" language="C++">
+    <compoundname>platform.h</compoundname>
+    <includedby refid="bsp_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c</includedby>
+    <includedby refid="bsp__boot_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c</includedby>
+    <includedby refid="bsp__flash_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c</includedby>
+    <includedby refid="bsp__gpio_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c</includedby>
+    <includedby refid="bsp__gpio__it_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c</includedby>
+    <includedby refid="bsp__lp_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c</includedby>
+    <includedby refid="bsp__rtc_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_rtc.c</includedby>
+    <includedby refid="bsp__uart_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c</includedby>
+    <includedby refid="platform_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/platform.c</includedby>
+    <includedby refid="phy__layer_8c" local="no">/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</includedby>
+    <invincdepgraph>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_rtc.c</label>
+        <link refid="bsp__rtc_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_boot.c</label>
+        <link refid="bsp__boot_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio.c</label>
+        <link refid="bsp__gpio_8c"/>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/platform.c</label>
+        <link refid="platform_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_flash.c</label>
+        <link refid="bsp__flash_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c</label>
+        <link refid="bsp_8c"/>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_uart.c</label>
+        <link refid="bsp__uart_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_lp.c</label>
+        <link refid="bsp__lp_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/platform.h</label>
+        <link refid="platform_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c</label>
+        <link refid="bsp__gpio__it_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uart_id_e</name>
+        <enumvalue id="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7a46340c7c4a5f968d03cad4b8628a294a" prot="public">
+          <name>UART_ID_CONSOLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Concole id </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7a8525333f704069c436d8fa8cff94e36a" prot="public">
+          <name>UART_ID_COM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Communication Id </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" prot="public">
+          <name>UART_ID_PHY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Phy id </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7a355bd7de758b1eaf3743e220a9cb2de6" prot="public">
+          <name>UART_ID_MAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the UART device id. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/platform.h" line="62" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/platform.h" bodystart="61" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file defines some specific platform constants.. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/09/09 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_PLATFORM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PLATFORM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">#define<sp/>STDOUT_UART_ID<sp/>UART_ID_CONSOLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RTC_PREDIV_S<sp/>1023</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RTC_PREDIV_A<sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63" refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7a46340c7c4a5f968d03cad4b8628a294a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7a46340c7c4a5f968d03cad4b8628a294a" kindref="member">UART_ID_CONSOLE</ref>,<sp/></highlight></codeline>
+<codeline lineno="64" refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7a8525333f704069c436d8fa8cff94e36a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7a8525333f704069c436d8fa8cff94e36a" kindref="member">UART_ID_COM</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" kindref="member">UART_ID_PHY</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>UART_ID_MAX</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/><ref refid="group__platform_1ga7a07a9c22cf4b4f755d1e2e35a0ea9c7" kindref="member">uart_id_e</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PLATFORM_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/platform.h"/>
+  </compounddef>
+</doxygen>

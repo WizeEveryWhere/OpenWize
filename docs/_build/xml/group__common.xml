@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__common" kind="group">
+    <compoundname>common</compoundname>
+    <title>Common</title>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__common_1ga94b6f98b42247b3a224a1d66f9d94f45" prot="public" static="no" strong="no">
+        <type></type>
+        <name>dev_res_e</name>
+        <enumvalue id="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" prot="public">
+          <name>DEV_SUCCESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Generic success </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" prot="public">
+          <name>DEV_FAILURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Generic Failure </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a75e5063f193825eea38ab72bada8e31e" prot="public">
+          <name>DEV_BUSY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Device is Busy </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a41dedf36ed8225e72b231ed93f764bc7" prot="public">
+          <name>DEV_TIMEOUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Device Timeout </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a673a34603423863416310db94277acea" prot="public">
+          <name>DEV_INVALID_PARAM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Parameter is invalid </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the common return code from devices. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/common.h" line="95" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/common.h" bodystart="94" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__common_1ga0dcbbb0847c8786e08430afbda8c6f68" prot="public" static="no" mutable="no">
+        <type><ref refid="unionboot__state__t" kindref="compound">boot_state_t</ref></type>
+        <definition>boot_state_t gBootState</definition>
+        <argsstring></argsstring>
+        <name>gBootState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" line="146" column="14" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__common_1gaec10efdbac1c7466daf49de48b13cbf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ascii2hex</definition>
+        <argsstring>(uint16_t u16Char)</argsstring>
+        <name>ascii2hex</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16Char</declname>
+        </param>
+        <briefdescription>
+<para>Function convert a hexa represented as 2 bytes char into hexa value (1 byte). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16Char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Two byte char to convert</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>converted one byte hex value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" line="55" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" bodystart="55" bodyend="69" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h" declline="53" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__common_1ga33020db34346d04a6a7ac64c0fdd7f0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t hex2ascii</definition>
+        <argsstring>(uint8_t u8Hex)</argsstring>
+        <name>hex2ascii</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Hex</declname>
+        </param>
+        <briefdescription>
+<para>Function convert a hexa value (1 byte) into its 2 bytes char representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Hex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One byte hexa value to convert</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>converted two bytes char representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" line="78" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" bodystart="78" bodyend="92" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h" declline="54" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="group__common_1gadfc63b674e9e335fd191663ad1784ee0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void msleep</definition>
+        <argsstring>(uint32_t milisecond)</argsstring>
+        <name>msleep</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>milisecond</declname>
+        </param>
+        <briefdescription>
+<para>Alias for HAL_Delay function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">milisecond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of milisecond to wait </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" line="103" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" bodystart="103" bodyend="103" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h" declline="55" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__common_1ga1730ffe1e560465665eb47d9264826f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Error_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>Error_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is executed in case of error occurrence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h" line="56" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/board/src/main.c" bodystart="459" bodyend="465" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h" declline="56" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__common_1ga903e37e356fc981619694cc2ab3d8388" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BSP_Init</definition>
+        <argsstring>(uint32_t u32BootState)</argsstring>
+        <name>BSP_Init</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32BootState</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the bsp. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u32BootState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current boot state</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" line="155" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp.c" bodystart="155" bodyend="175" declfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/include/bsp.h" declline="57" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

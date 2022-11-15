@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structtime__mgr__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>time_mgr_ctx_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtime__mgr__ctx__s_1ad07e423fbdd0ebe6235922e7f85e53bd" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* time_mgr_ctx_s::hTask</definition>
+        <argsstring></argsstring>
+        <name>hTask</name>
+        <briefdescription>
+<para>Task handler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="85" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__mgr__ctx__s_1aba1d85fc9a2f119449952b5364721bdb" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* time_mgr_ctx_s::hMutex</definition>
+        <argsstring></argsstring>
+        <name>hMutex</name>
+        <briefdescription>
+<para>Mutex handler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="86" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct define the time manager task context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>time_mgr_ctx_s</label>
+        <link refid="structtime__mgr__ctx__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="84" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="83" bodyend="87"/>
+    <listofallmembers>
+      <member refid="structtime__mgr__ctx__s_1aba1d85fc9a2f119449952b5364721bdb" prot="public" virt="non-virtual"><scope>time_mgr_ctx_s</scope><name>hMutex</name></member>
+      <member refid="structtime__mgr__ctx__s_1ad07e423fbdd0ebe6235922e7f85e53bd" prot="public" virt="non-virtual"><scope>time_mgr_ctx_s</scope><name>hTask</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

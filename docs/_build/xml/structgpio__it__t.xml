@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structgpio__it__t" kind="struct" language="C++" prot="public">
+    <compoundname>gpio_it_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" prot="public" static="no" mutable="no">
+        <type>pf_cb_t</type>
+        <definition>pf_cb_t gpio_it_t::pf_cb</definition>
+        <argsstring></argsstring>
+        <name>pf_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interruption callback </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="61" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgpio__it__t_1aab835fb2cf4f89cb2338059d7d1f1bd4" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* gpio_it_t::p_CbParam</definition>
+        <argsstring></argsstring>
+        <name>p_CbParam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on Callback parameter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="62" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgpio__it__t_1a4526626cd341ffa31d49919d9ae50f6b" prot="public" static="no" mutable="no">
+        <type>pf_cb_t</type>
+        <definition>pf_cb_t gpio_it_t::pf_cpy_cb</definition>
+        <argsstring></argsstring>
+        <name>pf_cpy_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback for gpio copy </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="65" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gpio_it_t::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gpio copy on port </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="68" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t gpio_it_t::pin</definition>
+        <argsstring></argsstring>
+        <name>pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gpio copy on pin </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="69" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgpio__it__t_1a4b7ccf960f86ae7730bd41ad278ecb7a" prot="public" static="no" mutable="no">
+        <type>union gpio_it_t::@58</type>
+        <definition>union gpio_it_t::@58 gpio_it_t::@59</definition>
+        <argsstring></argsstring>
+        <name>@59</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="71" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct define the gpio interrupt. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>gpio_it_t</label>
+        <link refid="structgpio__it__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" line="60" column="15" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/bsp_gpio_it.c" bodystart="60" bodyend="72"/>
+    <listofallmembers>
+      <member refid="structgpio__it__t_1aab835fb2cf4f89cb2338059d7d1f1bd4" prot="public" virt="non-virtual"><scope>gpio_it_t</scope><name>p_CbParam</name></member>
+      <member refid="structgpio__it__t_1aac6a97e62d004fffe18abe8bd3cf57da" prot="public" virt="non-virtual"><scope>gpio_it_t</scope><name>pf_cb</name></member>
+      <member refid="structgpio__it__t_1a4526626cd341ffa31d49919d9ae50f6b" prot="public" virt="non-virtual"><scope>gpio_it_t</scope><name>pf_cpy_cb</name></member>
+      <member refid="structgpio__it__t_1ae4291c2c2411e364dfaf5aa64b2680d1" prot="public" virt="non-virtual"><scope>gpio_it_t</scope><name>pin</name></member>
+      <member refid="structgpio__it__t_1a87ef92d23ca778d9d1902cbf2f1f4e96" prot="public" virt="non-virtual"><scope>gpio_it_t</scope><name>port</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

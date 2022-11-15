@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structping__reply__list__s" kind="struct" language="C++" prot="public">
+    <compoundname>ping_reply_list_s</compoundname>
+    <includes refid="inst__internal_8h" local="no">inst_internal.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structping__reply__list__s_1a7f4e0e7af80aa33c61cd19e7cc4285e3" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structping__reply__list__s" kindref="compound">ping_reply_list_s</ref> *</type>
+        <definition>struct ping_reply_list_s* ping_reply_list_s::pNext</definition>
+        <argsstring></argsstring>
+        <name>pNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on the next element </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="78" column="24" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__list__s_1a7d460bf74d062bca5f3aa0d458f5acc8" prot="public" static="no" mutable="no">
+        <type><ref refid="structinst__pong__t" kindref="compound">inst_pong_t</ref></type>
+        <definition>inst_pong_t ping_reply_list_s::xPingReply</definition>
+        <argsstring></argsstring>
+        <name>xPingReply</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Content values of the received pong </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="79" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__list__s_1a197ec56434ab16d8eceee0be76bf32d9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ping_reply_list_s::u32RecvEpoch</definition>
+        <argsstring></argsstring>
+        <name>u32RecvEpoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pong Reception Epoch </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="80" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__list__s_1a070b16f4b7baa9e4f18c52e96546206e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ping_reply_list_s::u32PongEpoch</definition>
+        <argsstring></argsstring>
+        <name>u32PongEpoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pong Send Epoch </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="81" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__list__s_1abc7cb73f341cdfebd8c510f35245de4e" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t ping_reply_list_s::i16PongFreqOff</definition>
+        <argsstring></argsstring>
+        <name>i16PongFreqOff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pong Frequency offset </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="82" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the ping_reply element list. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ping_reply_list_s</label>
+        <link refid="structping__reply__list__s"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+pNext</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+xPingReply</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>inst_pong_t</label>
+        <link refid="structinst__pong__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="77" column="32" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="77" bodyend="83"/>
+    <listofallmembers>
+      <member refid="structping__reply__list__s_1abc7cb73f341cdfebd8c510f35245de4e" prot="public" virt="non-virtual"><scope>ping_reply_list_s</scope><name>i16PongFreqOff</name></member>
+      <member refid="structping__reply__list__s_1a7f4e0e7af80aa33c61cd19e7cc4285e3" prot="public" virt="non-virtual"><scope>ping_reply_list_s</scope><name>pNext</name></member>
+      <member refid="structping__reply__list__s_1a070b16f4b7baa9e4f18c52e96546206e" prot="public" virt="non-virtual"><scope>ping_reply_list_s</scope><name>u32PongEpoch</name></member>
+      <member refid="structping__reply__list__s_1a197ec56434ab16d8eceee0be76bf32d9" prot="public" virt="non-virtual"><scope>ping_reply_list_s</scope><name>u32RecvEpoch</name></member>
+      <member refid="structping__reply__list__s_1a7d460bf74d062bca5f3aa0d458f5acc8" prot="public" virt="non-virtual"><scope>ping_reply_list_s</scope><name>xPingReply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

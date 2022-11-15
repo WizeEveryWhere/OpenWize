@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_844708b29cdf74899ccab5cfbe715d7a" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/Logger</compoundname>
+    <innerdir refid="dir_c5c0be70a1988806e94c1607cbef7760">/home/nono/OpenWize/sources/Samples/Logger/include</innerdir>
+    <innerdir refid="dir_1847f1120ddb8ac2fcd6209540c15d8c">/home/nono/OpenWize/sources/Samples/Logger/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/Logger/"/>
+  </compounddef>
+</doxygen>

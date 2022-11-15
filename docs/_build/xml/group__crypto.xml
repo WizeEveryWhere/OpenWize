@@ -1,0 +1,994 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__crypto" kind="group">
+    <compoundname>crypto</compoundname>
+    <title>Crypto</title>
+    <innerclass refid="structkey__s" prot="public">key_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__crypto_1gaba880ecd29a19ea1bfe55d32bf0176c9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>crypto_code_e</name>
+        <enumvalue id="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a25cff552c7f5b5a4502b9e25cc0f9093" prot="public">
+          <name>CRYPTO_KO</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Crypto function failed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a60a843bc26ee85510e68d53b85e52683" prot="public">
+          <name>CRYPTO_OK</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Crypto function success. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a77c3cd579f2a2120039dc18a0958771a" prot="public">
+          <name>CRYPTO_KID_UNK_ERR</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>The key id is unknown. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__crypto_1ggaba880ecd29a19ea1bfe55d32bf0176c9a0cb87f7d3f8ec289a92832dea4fdcda6" prot="public">
+          <name>CRYPTO_INT_NULL_ERR</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Error due to a NULL pointer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Returned code from Crypto functions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="53" column="14" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="53" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__crypto_1ga21956ce69b049977e54c004831c9bdcb" prot="public" static="no" mutable="no">
+        <type>KEY_STORE <ref refid="structkey__s" kindref="compound">key_s</ref></type>
+        <definition>KEY_STORE key_s _a_Key_[]</definition>
+        <argsstring>[]</argsstring>
+        <name>_a_Key_</name>
+        <briefdescription>
+<para>This table hold all keys used in the system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" line="60" column="24" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" declline="60" declcolumn="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__crypto_1gaa323defb572bfa6496f11d714395ae3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Crypto_Encrypt</definition>
+        <argsstring>(uint8_t *p_Out, uint8_t *p_In, uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>Crypto_Encrypt</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Out</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_In</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Ctr</declname>
+          <array>[CTR_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper around <emphasis>crypt</emphasis> function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function encrypt (with the AES128 in CTR mode) a given message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (Cipher text). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (Plain text). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Ctr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter buffer. Warning : it will be altered by this function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use for encrypt </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_KID_UNK_ERR (2) id the key id is out of box return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/confidentiality.c" line="70" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/confidentiality.c" bodystart="70" bodyend="74" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" declline="152" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga95cb4ca092b168f220d4bc0c5caae92f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Crypto_Decrypt</definition>
+        <argsstring>(uint8_t *p_Out, uint8_t *p_In, uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>Crypto_Decrypt</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Out</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_In</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Ctr</declname>
+          <array>[CTR_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper around the <emphasis>crypt</emphasis> function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function decrypt (with the AES128 in CTR mode) a given message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (Plain text). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (Cipher text). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Ctr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter buffer. Warning : it will be altered by this function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use for decrypt </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_KID_UNK_ERR (2) id the key id is out of box return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/confidentiality.c" line="91" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/confidentiality.c" bodystart="91" bodyend="95" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" declline="155" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga60e30604375785784f6dccb9a8903b2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Crypto_AES128_CMAC</definition>
+        <argsstring>(uint8_t *p_Hash, uint8_t *p_Msg, uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>Crypto_AES128_CMAC</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Hash</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Msg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Ctr</declname>
+          <array>[CTR_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper around the <emphasis>AES128_CMAC</emphasis> function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function compute the footprint (with the AES128 in CMAC mode) of a given message.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Hash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (footprint). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Ctr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use for compute the footprint </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_KID_UNK_ERR (2) id the key id is out of box return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="69" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="69" bodyend="73" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" declline="159" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga14ac8fca562dab920a6f403d248021c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Crypto_SHA256</definition>
+        <argsstring>(uint8_t p_Sha256[SHA256_SIZE], uint8_t *p_Data, uint32_t u32_Sz)</argsstring>
+        <name>Crypto_SHA256</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Sha256</declname>
+          <array>[SHA256_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32_Sz</declname>
+        </param>
+        <briefdescription>
+<para>Wrapper around the <emphasis>SHA256</emphasis> function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function compute the SHA256 of given buffer..</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Sha256</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (sha256, 32 bytes). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="87" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="87" bodyend="90" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" declline="162" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga53fb35d3a1884f1c2fcea7ceb45b3b70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Crypto_WriteKey</definition>
+        <argsstring>(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>Crypto_WriteKey</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Key</declname>
+          <array>[KEY_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>This function set (write) a key at specified key id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The given key to set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>CRYPTO_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(1) if everything is fine </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CRYPTO_KID_UNK_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(2) id the key id is out of box </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/key.c" line="99" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/key.c" bodystart="99" bodyend="102" declfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" declline="166" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1gafb8dbd75bee17780e4a3a8eafec71b2f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _crypt_</definition>
+        <argsstring>(uint8_t *p_Out, uint8_t *p_In, uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>_crypt_</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Out</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_In</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Ctr</declname>
+          <array>[CTR_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>This function en/de crypt with the AES128 in CTR mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer. Plain text for decrypt, cipher text for encrypt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer. Cipher text for encrypt, plain text for decrypt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Ctr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter buffer. Warning : it will be altered by this function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use for encrypt or decrypt </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_KID_UNK_ERR (2) id the key id is out of box return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/confidentiality.c" line="111" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/confidentiality.c" bodystart="111" bodyend="137" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/confidentiality.c" declline="51" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga00cd4011ed7eb1bf97fe6a887e3d1856" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _AES128_CMAC_</definition>
+        <argsstring>(uint8_t *p_Hash, uint8_t *p_Msg, uint8_t u8_Sz, uint8_t p_Ctr[CTR_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>_AES128_CMAC_</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Hash</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Msg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Ctr</declname>
+          <array>[CTR_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>This function compute the footprint with the AES128 in CMAC mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Hash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (footprint). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Ctr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use for compute the footprint </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_KID_UNK_ERR (2) id the key id is out of box return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="106" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="106" bodyend="134" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" declline="50" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga9a6b5cc3eb0452d36bfde8695f69d0d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _SHA256_</definition>
+        <argsstring>(uint8_t p_Sha256[SHA256_SIZE], uint8_t *p_Data, uint32_t u32_Sz)</argsstring>
+        <name>_SHA256_</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Sha256</declname>
+          <array>[SHA256_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>u32_Sz</declname>
+        </param>
+        <briefdescription>
+<para>This function compute the SHA256 of given buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Sha256</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on output buffer (sha256, 32 bytes). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input buffer (the message on which the footprint is computed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u32_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input buffer size </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>crypto_code_e::CRYPTO_OK (1) if everything is fine return crypto_code_e::CRYPTO_KO (0) if something goes wrong return crypto_code_e::CRYPTO_INT_NULL_ERR (4) if one of the given pointer is NULL </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" line="147" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" bodystart="147" bodyend="162" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/integrity.c" declline="52" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga9b52e6f9149815df428c8d974ffcf776" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _set_key_</definition>
+        <argsstring>(uint8_t p_Key[KEY_SIZE], uint8_t u8_KeyId)</argsstring>
+        <name>_set_key_</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Key</declname>
+          <array>[KEY_SIZE]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_KeyId</declname>
+        </param>
+        <briefdescription>
+<para>This function set (write) a key at specified key id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The given key to set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_KeyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key id to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>CRYPTO_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(1) if everything is fine </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>CRYPTO_KID_UNK_ERR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(2) id the key id is out of box </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/key.c" line="57" column="23" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/key.c" bodystart="57" bodyend="88" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/key.c" declline="46" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga35410547162bf6973941d8e6fb7773ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * secure_memcpy</definition>
+        <argsstring>(void *__restrict __dest, const void *__restrict __src, size_t __n)</argsstring>
+        <name>secure_memcpy</name>
+        <param>
+          <type>void *__restrict</type>
+          <declname>__dest</declname>
+        </param>
+        <param>
+          <type>const void *__restrict</type>
+          <declname>__src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>__n</declname>
+        </param>
+        <briefdescription>
+<para>This function is intended to replaced memcpy into secure area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">__dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination pointer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">__src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source pointer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">__n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of byte to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/utils_secure.c" line="50" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/utils_secure.c" bodystart="50" bodyend="61" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/utils_secure.h" declline="43" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crypto_1ga8c56fa5dc7b67f5a6447c5424fa43dd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * secure_memset</definition>
+        <argsstring>(void *__s, int __c, size_t __n)</argsstring>
+        <name>secure_memset</name>
+        <param>
+          <type>void *</type>
+          <declname>__s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>__c</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>__n</declname>
+        </param>
+        <briefdescription>
+<para>This function is intended to replaced memset into secure area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">__s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination pointer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">__c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character value to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">__n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of char to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>return</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/src/utils_secure.c" line="72" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/src/utils_secure.c" bodystart="72" bodyend="77" declfile="/home/nono/OpenWize/sources/Samples/Crypto/src/utils_secure.h" declline="45" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__crypto_1gadbf672e4592d8a9cdcb4e3866fbc26e4" prot="public" static="no">
+        <name>KEY_STORE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="47" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1ga189381496bdc6329d20d84cb8dd755e4" prot="public" static="no">
+        <name>KEY_MAX_NB</name>
+        <initializer>20</initializer>
+        <briefdescription>
+<para>Define the maximum number of key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="66" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1ga537ea021d38b5a49fc0fce829134438b" prot="public" static="no">
+        <name>KEY_NONE_ID</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Define the key id for no encryption. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="72" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1ga34a3087269df4035dbaaf854ef20d9a2" prot="public" static="no">
+        <name>KEY_ENC_MIN</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Define the first key id for the kenc key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="78" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1ga0c8f3ab073964c8a891734d0444c95fd" prot="public" static="no">
+        <name>KEY_ENC_MAX</name>
+        <initializer>14</initializer>
+        <briefdescription>
+<para>Define the last key id for the kenc key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="84" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1gafd8fe54632552c3967ba59667e6fa9ee" prot="public" static="no">
+        <name>KEY_CHG_ID</name>
+        <initializer>15</initializer>
+        <briefdescription>
+<para>Define the key id for the kchg key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="90" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1gad3aed3bae39513f051f65131ccb0ab09" prot="public" static="no">
+        <name>KEY_MOB_ID</name>
+        <initializer>16</initializer>
+        <briefdescription>
+<para>Define the key id for the kmob key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="96" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1gab76bbd9bd618178561644c64376be30b" prot="public" static="no">
+        <name>KEY_MAC_ID</name>
+        <initializer>17</initializer>
+        <briefdescription>
+<para>Define the key id for the kmac key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="102" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1ga38635bd797d1a5a9eaa17b9167c02288" prot="public" static="no">
+        <name>KEY_LOG_ID</name>
+        <initializer>18</initializer>
+        <briefdescription>
+<para>Define the key id for the klog key. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" line="108" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/crypto.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__crypto_1ga3b991baaad592117e55f498c60025133" prot="public" static="no">
+        <name>Crypto_KEY_PRIV_H_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" line="42" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Crypto/include/key_priv.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structann__dwn__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>ann_dwn_ctx_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1afbc01c5bc7b637b202a93830c7863fbf" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ann_dwn_ctx_s::u8ChannelId</definition>
+        <argsstring></argsstring>
+        <name>u8ChannelId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="46" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1ae6b5902cae1027fdab699466097851dd" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ann_dwn_ctx_s::u8ModulationId</definition>
+        <argsstring></argsstring>
+        <name>u8ModulationId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="47" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1af5887d86373055d35b6c28b4379d102a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ann_dwn_ctx_s::u16BlocksCount</definition>
+        <argsstring></argsstring>
+        <name>u16BlocksCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="48" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1ab4fbfb41bd3d21712dc1fe171076209c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ann_dwn_ctx_s::u8DayRepeat</definition>
+        <argsstring></argsstring>
+        <name>u8DayRepeat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="49" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1abc02e3803db8bdd30002bdc243660444" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ann_dwn_ctx_s::u8DeltaSec</definition>
+        <argsstring></argsstring>
+        <name>u8DeltaSec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="50" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1ab6ab283674d54e8bd73384324ac85f11" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ann_dwn_ctx_s::u32DaysProg</definition>
+        <argsstring></argsstring>
+        <name>u32DaysProg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="51" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1aeb8d65f648a89251417a71d614ea9367" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ann_dwn_ctx_s::u32HashSW</definition>
+        <argsstring></argsstring>
+        <name>u32HashSW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="52" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1af7d9973427f8114a228152a68f7ce5b9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ann_dwn_ctx_s::L7SwVersionTarget[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>L7SwVersionTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="53" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structann__dwn__ctx__s_1a9e0b6e00feb78691faebced48823ee96" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ann_dwn_ctx_s::L7DwnId[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>L7DwnId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="54" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ann_dwn_ctx_s</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" line="45" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/dwn_internal.h" bodystart="44" bodyend="60"/>
+    <listofallmembers>
+      <member refid="structann__dwn__ctx__s_1a9e0b6e00feb78691faebced48823ee96" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>L7DwnId</name></member>
+      <member refid="structann__dwn__ctx__s_1af7d9973427f8114a228152a68f7ce5b9" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>L7SwVersionTarget</name></member>
+      <member refid="structann__dwn__ctx__s_1af5887d86373055d35b6c28b4379d102a" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>u16BlocksCount</name></member>
+      <member refid="structann__dwn__ctx__s_1ab6ab283674d54e8bd73384324ac85f11" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>u32DaysProg</name></member>
+      <member refid="structann__dwn__ctx__s_1aeb8d65f648a89251417a71d614ea9367" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>u32HashSW</name></member>
+      <member refid="structann__dwn__ctx__s_1afbc01c5bc7b637b202a93830c7863fbf" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>u8ChannelId</name></member>
+      <member refid="structann__dwn__ctx__s_1ab4fbfb41bd3d21712dc1fe171076209c" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>u8DayRepeat</name></member>
+      <member refid="structann__dwn__ctx__s_1abc02e3803db8bdd30002bdc243660444" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>u8DeltaSec</name></member>
+      <member refid="structann__dwn__ctx__s_1ae6b5902cae1027fdab699466097851dd" prot="public" virt="non-virtual"><scope>ann_dwn_ctx_s</scope><name>u8ModulationId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

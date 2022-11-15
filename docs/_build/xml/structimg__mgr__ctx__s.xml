@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structimg__mgr__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>img_mgr_ctx_s</compoundname>
+    <includes refid="img__storage__private_8h" local="no">img_storage_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structsw__pend__buff__s" kindref="compound">sw_pend_buff_s</ref></type>
+        <definition>struct sw_pend_buff_s img_mgr_ctx_s::sPendBuff[PENDING_LINE_NB]</definition>
+        <argsstring>[PENDING_LINE_NB]</argsstring>
+        <name>sPendBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pending table buffer <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="174" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structsw__pend__ctrl__s" kindref="compound">sw_pend_ctrl_s</ref></type>
+        <definition>struct sw_pend_ctrl_s img_mgr_ctx_s::sPendCtrl[PENDING_LINE_NB]</definition>
+        <argsstring>[PENDING_LINE_NB]</argsstring>
+        <name>sPendCtrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pending table control </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="174" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t img_mgr_ctx_s::aBitMap[BITMAP_BLOCK_NB]</definition>
+        <argsstring>[BITMAP_BLOCK_NB]</argsstring>
+        <name>aBitMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bitmap of already get block Each bit representing a block. at index 0, MSB is block 0 ad LSB block 7 at index 1, MSB is block 8 ad LSB block 15 and so on. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="186" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t img_mgr_ctx_s::u32Addr</definition>
+        <argsstring></argsstring>
+        <name>u32Addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start address of the image SW area </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="192" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t img_mgr_ctx_s::u32Size</definition>
+        <argsstring></argsstring>
+        <name>u32Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of the image SW area </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="193" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t img_mgr_ctx_s::u32NbExpectedBlk</definition>
+        <argsstring></argsstring>
+        <name>u32NbExpectedBlk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of expected block </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="195" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t img_mgr_ctx_s::u32NbBlk</definition>
+        <argsstring></argsstring>
+        <name>u32NbBlk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current total number of block </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="196" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" prot="public" static="no" mutable="no">
+        <type><ref refid="group__ing__storage_1gaed3139f981a477515ce7a28b5f655f6d" kindref="member">img_pend_e</ref></type>
+        <definition>img_pend_e img_mgr_ctx_s::eImgPend</definition>
+        <argsstring></argsstring>
+        <name>eImgPend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Indicate if img is already pending </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="198" column="12" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1ad566782066c74e8ac147efa6e0b68116" prot="public" static="no" mutable="no">
+        <type>uint8_t(*</type>
+        <definition>uint8_t(* img_mgr_ctx_s::write) (uint32_t u32Addr, uint64_t *pData, uint32_t u32NbDoubleWord)</definition>
+        <argsstring>)(uint32_t u32Addr, uint64_t *pData, uint32_t u32NbDoubleWord)</argsstring>
+        <name>write</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="199" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimg__mgr__ctx__s_1a7b62b149415905bfaf936ea2ec21f999" prot="public" static="no" mutable="no">
+        <type>uint8_t(*</type>
+        <definition>uint8_t(* img_mgr_ctx_s::erase) (uint32_t u32Addr, uint32_t u32Size)</definition>
+        <argsstring>)(uint32_t u32Addr, uint32_t u32Size)</argsstring>
+        <name>erase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="200" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure hold a image manager context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>img_mgr_ctx_s</label>
+        <link refid="structimg__mgr__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sPendCtrl</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+sPendBuff</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>sw_pend_buff_s</label>
+        <link refid="structsw__pend__buff__s"/>
+      </node>
+      <node id="2">
+        <label>sw_pend_ctrl_s</label>
+        <link refid="structsw__pend__ctrl__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" line="182" column="20" bodyfile="/home/nono/OpenWize/sources/Samples/ImgStorage/include/private/img_storage_private.h" bodystart="182" bodyend="201"/>
+    <listofallmembers>
+      <member refid="structimg__mgr__ctx__s_1a821e54b069a076ec76c654df08fb89aa" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>aBitMap</name></member>
+      <member refid="structimg__mgr__ctx__s_1a022f8ecd29a738b5d902b7203b3934eb" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>eImgPend</name></member>
+      <member refid="structimg__mgr__ctx__s_1a7b62b149415905bfaf936ea2ec21f999" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>erase</name></member>
+      <member refid="structimg__mgr__ctx__s_1aa3864904b8729c0cbafcba7a010aad3f" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>sPendBuff</name></member>
+      <member refid="structimg__mgr__ctx__s_1abeb6fbb1e84387b057cdb95af45bb790" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>sPendCtrl</name></member>
+      <member refid="structimg__mgr__ctx__s_1a30e26061eadfa3af0678dae475007dc5" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>u32Addr</name></member>
+      <member refid="structimg__mgr__ctx__s_1a8a276940ae68ff204ed314ba13d60690" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>u32NbBlk</name></member>
+      <member refid="structimg__mgr__ctx__s_1a5004eb462a25ac616fec3ea7b578f8bb" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>u32NbExpectedBlk</name></member>
+      <member refid="structimg__mgr__ctx__s_1a4220013bebebb4eba2144a3b8fdc8d46" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>u32Size</name></member>
+      <member refid="structimg__mgr__ctx__s_1ad566782066c74e8ac147efa6e0b68116" prot="public" virt="non-virtual"><scope>img_mgr_ctx_s</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,571 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__phy__itf" kind="group">
+    <compoundname>wize_phy_itf</compoundname>
+    <title>Wize_phy_itf</title>
+    <innerclass refid="structphy__if__s" prot="public">phy_if_s</innerclass>
+    <innerclass refid="structphydev__s" prot="public">phydev_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__phy__itf_1ga74947dd7f2dae3bc33731625a298113f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_status_e</name>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" prot="public">
+          <name>PHY_STATUS_OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status OK </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" prot="public">
+          <name>PHY_STATUS_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status Error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" prot="public">
+          <name>PHY_STATUS_BUSY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status Busy </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa087ee629b2087d5f7c98fba1caf3b849" prot="public">
+          <name>PHY_STATUS_DISABLE</name>
+          <initializer>= 0xFF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status Disable </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the PHY device status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="107" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="107" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1gafbdbc8d1faf5deaac496ad929db06eac" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_ctl_e</name>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca263c3ac9de129113ebca9960e262625a" prot="public">
+          <name>PHY_CTL_SET_TX_FREQ_OFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the TX frequency Offset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca948a54f56b66bf1a1990a7e941ac7c6a" prot="public">
+          <name>PHY_CTL_SET_TX_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the TX Power </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca7a6330c38cc876d127bd8e2d432d1684" prot="public">
+          <name>PHY_CTL_SET_PA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Enable/Disable the PA (if any) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0deba927ba8c83e63c4de70ece11438f" prot="public">
+          <name>PHY_CTL_GET_TX_FREQ_OFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the TX frequency Offset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca9029fceced8f70d1ede64676c806cfa7" prot="public">
+          <name>PHY_CTL_GET_TX_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the TX Power </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8c72e887da88b4b8b38c3177ddd118ab" prot="public">
+          <name>PHY_CTL_GET_PA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the PA state </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaae7bfa7d84b0a3f7f494ddd7e0864eea" prot="public">
+          <name>PHY_CTL_GET_FREQ_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the frequency error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca2905747f10421f24888f43d6a753d8a2" prot="public">
+          <name>PHY_CTL_GET_RSSI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the RX RSSI </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8b97abc4477870734b7d643bff0eebf7" prot="public">
+          <name>PHY_CTL_GET_NOISE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the TX Noise </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0fb46eb58e895f99665f0209dbc6fb8a" prot="public">
+          <name>PHY_CTL_GET_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the Last error id </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca3c6b91585a6b83abb049ecfb6e5a2a96" prot="public">
+          <name>PHY_CTL_GET_STR_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the Last error string </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca23722fbded4f7ac94506223aa5dc33d3" prot="public">
+          <name>PHY_CTL_SPE</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacae64445bda4b89d7ca57ce46d5774ff2f" prot="public">
+          <name>PHY_CTL_SPE_TEST_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Test mode (if any) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacac339b3be4a9fa04fa20102d6aa930fe6" prot="public">
+          <name>PHY_CTL_CMD</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaa0a9c0802a975519cd45346802b63cba" prot="public">
+          <name>PHY_CTL_CMD_PWR_OFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Power off the device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca063100b03bdab8734c09a8fb805a2c25" prot="public">
+          <name>PHY_CTL_CMD_PWR_ON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Power on the device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca1782c40afcb1fa6400a33631471d1a34" prot="public">
+          <name>PHY_CTL_CMD_RESET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reset the PHY device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca435b12c9f197ac28266f27ec025637cb" prot="public">
+          <name>PHY_CTL_CMD_READY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Go in ready state </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca826f156c530260644efee6035552c866" prot="public">
+          <name>PHY_CTL_CMD_SLEEP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sleep command </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca32844954e4847867dc99969b1e62bae7" prot="public">
+          <name>PHY_CTL_CMD_LAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the available command to change the PHY state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="117" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="117" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1gae24529cecc04657b44f4b4c4ece6843c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_test_mode_e</name>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" prot="public">
+          <name>PHY_TST_MODE_NONE</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Test mode deactivated </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cac91464917843f212b29cfd0c39be622d" prot="public">
+          <name>PHY_TST_MODE_RX</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RX test mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cabff8d6693a77572e4b25142eb0a288e3" prot="public">
+          <name>PHY_TST_MODE_PER_RX</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PER RX test mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca7818877244e74577a8892e56b17f0561" prot="public">
+          <name>PHY_TST_MODE_TX</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>TX test mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca02d08b2e4e2926c849da4db6bc6fe616" prot="public">
+          <name>PHY_NB_TST_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the available test mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="149" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="149" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1ga0d56115487d7cfe76d9c15685c0629bc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phydev_evt_e</name>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcad5d6adb226f32ecc84f7a4d080aa3a14" prot="public">
+          <name>PHYDEV_EVT_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Nothing special </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca20450e3262e999661e387f2713c44b30" prot="public">
+          <name>PHYDEV_EVT_RX_STARTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Received packet started (preamble received) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca77c5a0bcdd5cea7ce331ff634d285ec9" prot="public">
+          <name>PHYDEV_EVT_RX_COMPLETE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Packet has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab1eff27aa374a8e4cd1ca17ba876f92b" prot="public">
+          <name>PHYDEV_EVT_TX_STARTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Transfer packet started </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcaec9c2960667dda0ad1c67dc0e0380ca9" prot="public">
+          <name>PHYDEV_EVT_TX_COMPLETE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Transfer packet complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab9b87fdaad7dc6c05d61ea434875cdac" prot="public">
+          <name>PHYDEV_EVT_CCA_STARTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CCA sequence has started </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca839e9f772cc209379ccb06be89305742" prot="public">
+          <name>PHYDEV_EVT_CCA_COMPLETE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CCA sequence complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca8124585572c1e571fbacc9f575b5e379" prot="public">
+          <name>PHYDEV_EVT_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error occurs </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the PHY device events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="162" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="162" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_chan_e</name>
+        <enumvalue id="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda77bee9497fd2dbcaa6f3343d14db26ff" prot="public">
+          <name>PHY_CH100</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>(100 + 0) * 10 = 100 (0x64) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cdaf05ff6cec7a42c98941accafe0ac810e" prot="public">
+          <name>PHY_CH110</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>(100 + 1) * 10 = 110 (0x6E) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda80f71444039b077e32488ca621f00ecd" prot="public">
+          <name>PHY_CH120</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>(100 + 2) * 10 = 120 (0x78) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda4de348f41a6465278df71885b1aec3e0" prot="public">
+          <name>PHY_CH130</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>(100 + 3) * 10 = 130 (0x82) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda57ae58732a03104edd512c57c15f9ca1" prot="public">
+          <name>PHY_CH140</name>
+          <initializer>= 0x4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>(100 + 4) * 10 = 140 (0x8C) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda08313b5be781c7183ca1dd7bca2570ad" prot="public">
+          <name>PHY_CH150</name>
+          <initializer>= 0x5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>(100 + 5) * 10 = 150 (0x96) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cdaecd530f32ba17df4467d881f269d58e1" prot="public">
+          <name>PHY_NB_CH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the available channel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_layer.h" line="48" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_layer.h" bodystart="48" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_mod_e</name>
+        <enumvalue id="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640ab8496923f0e4e86d84cc36c7ea16ac7d" prot="public">
+          <name>PHY_WM2400</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>WM2400 modulation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640ae5841d0bada08e367081e949606aafa8" prot="public">
+          <name>PHY_WM4800</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>WM4800 modulation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640a89b70830c6414bd4b54aa0a2b8d72f61" prot="public">
+          <name>PHY_WM6400</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>WM6400 modulation - TX only </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640a63224255685bd06a0aaab58e414ef73a" prot="public">
+          <name>PHY_NB_MOD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the available modulation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_layer.h" line="62" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_layer.h" bodystart="62" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1ga291dfaf5f6ccf284805be2245db277ce" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_power_e</name>
+        <enumvalue id="group__wize__phy__itf_1gga291dfaf5f6ccf284805be2245db277cea838f6c1d89a2aa40db820f54988482d7" prot="public">
+          <name>PHY_PMAX_minus_0db</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Maximum TX power </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga291dfaf5f6ccf284805be2245db277cea7075f7c4531e862457e8e5584e43a77c" prot="public">
+          <name>PHY_PMAX_minus_6db</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Maximum TX power minus 6dB </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga291dfaf5f6ccf284805be2245db277cea20a3ac02c3e30dadc142feadcb2d7db4" prot="public">
+          <name>PHY_PMAX_minus_12db</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Maximum TX power minus 12db </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga291dfaf5f6ccf284805be2245db277ceac13160edf4c7e9fdbb339da97c19e701" prot="public">
+          <name>PHY_NB_PWR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the available TX power. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_layer.h" line="73" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_layer.h" bodystart="73" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__wize__phy__itf_1ga623aece251345bfe9961f5dd8209756e" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* phydev_evt_cb_t) (void *pCbParam, uint32_t eEvt)</definition>
+        <argsstring>)(void *pCbParam, uint32_t eEvt)</argsstring>
+        <name>phydev_evt_cb_t</name>
+        <briefdescription>
+<para>PHY device event call-back. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="176" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" prot="public" static="no">
+        <type>struct <ref refid="structphydev__s" kindref="compound">phydev_s</ref></type>
+        <definition>typedef struct phydev_s phydev_t</definition>
+        <argsstring></argsstring>
+        <name>phydev_t</name>
+        <briefdescription>
+<para>The PHY device type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="176" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__phy__itf_1gaf90b2c7d7f93a02fae5a1091297d2da0" prot="public" static="no">
+        <type>struct <ref refid="structphy__if__s" kindref="compound">phy_if_s</ref></type>
+        <definition>typedef struct phy_if_s phy_if_t</definition>
+        <argsstring></argsstring>
+        <name>phy_if_t</name>
+        <briefdescription>
+<para>PHY device interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="200" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="adm__mgr_8h" kind="file" language="C++">
+    <compoundname>adm_mgr.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="ses__common_8h" local="yes">ses_common.h</includes>
+    <includedby refid="ses__dispatcher_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</includedby>
+    <includedby refid="ses__dispatcher_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</includedby>
+    <includedby refid="adm__mgr_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</includedby>
+    <incdepgraph>
+      <node id="20">
+        <label>stdarg.h</label>
+      </node>
+      <node id="10">
+        <label>net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>assert.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="22">
+        <label>OpenWize_config.h</label>
+      </node>
+      <node id="13">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>limits.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="16">
+        <label>proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>time.h</label>
+      </node>
+      <node id="18">
+        <label>app_layer.h</label>
+        <link refid="app__layer_8h"/>
+      </node>
+      <node id="15">
+        <label>proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>net_api.h</label>
+        <link refid="net__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structadm__mgr__ctx__s" prot="public">adm_mgr_ctx_s</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__admin__mgr_1ga09321b9524c7631c903a01f4ffc66582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AdmMgr_Setup</definition>
+        <argsstring>(struct ses_ctx_s *pCtx)</argsstring>
+        <name>AdmMgr_Setup</name>
+        <param>
+          <type>struct ses_ctx_s *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the session context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the current context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c" line="68" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c" bodystart="68" bodyend="77" declfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h" declline="94" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file declare functions to use the Administration session Manager. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2019/11/15 12:14:27 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_ADM_MGR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_ADM_MGR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ses__common_8h" kindref="compound">ses_common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor">#undef<sp/>RECV_BUFFER_SZ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RECV_BUFFER_SZ<sp/>229<sp/>//<sp/>L7:<sp/>229;<sp/>L6:<sp/>13<sp/>;<sp/>L2:<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>SEND_BUFFER_SZ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SEND_BUFFER_SZ<sp/>229<sp/>//<sp/>L7:<sp/>229;<sp/>L6:<sp/>13<sp/>;<sp/>L2:<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>ADM_RSP_NONE<sp/><sp/>=<sp/>0b00,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>ADM_RSP_PEND<sp/><sp/>=<sp/>0b01,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>ADM_RSP_READY<sp/>=<sp/>0b10,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}<sp/>adm_rsp_pend_e;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="structadm__mgr__ctx__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structadm__mgr__ctx__s" kindref="compound">adm_mgr_ctx_s</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78" refid="structadm__mgr__ctx__s_1a8124254f4130a78b046f82bb70f0a8ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/><ref refid="structadm__mgr__ctx__s_1a8124254f4130a78b046f82bb70f0a8ea" kindref="member">sDataMsg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79" refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/><ref refid="structadm__mgr__ctx__s_1a7081c32769cb7532a4333a1f7a50de8e" kindref="member">sCmdMsg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80" refid="structadm__mgr__ctx__s_1adec3f707432f31fb0a358c8a7d775456" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnet__msg__s" kindref="compound">net_msg_t</ref><sp/><ref refid="structadm__mgr__ctx__s_1adec3f707432f31fb0a358c8a7d775456" kindref="member">sRspMsg</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82" refid="structadm__mgr__ctx__s_1a5b9b972b729bc9cd9d10ce207667b48a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1a5b9b972b729bc9cd9d10ce207667b48a" kindref="member">aDataBuff</ref>[SEND_BUFFER_SZ];<sp/></highlight></codeline>
+<codeline lineno="83" refid="structadm__mgr__ctx__s_1a4e8462f09c0685e2d4b4c351cdaa0ef7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1a4e8462f09c0685e2d4b4c351cdaa0ef7" kindref="member">aRecvBuff</ref>[RECV_BUFFER_SZ];<sp/></highlight></codeline>
+<codeline lineno="84" refid="structadm__mgr__ctx__s_1a08da3ff49968c3c0a6544fe71ef47db2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1a08da3ff49968c3c0a6544fe71ef47db2" kindref="member">aSendBuff</ref>[SEND_BUFFER_SZ];<sp/></highlight></codeline>
+<codeline lineno="86" refid="structadm__mgr__ctx__s_1af41de2b58ff0f00dc20c2dfa924613f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1af41de2b58ff0f00dc20c2dfa924613f9" kindref="member">u8ExchRxLength</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87" refid="structadm__mgr__ctx__s_1a7b9f2efe6294bb5f92b06cf7cc671d3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1a7b9f2efe6294bb5f92b06cf7cc671d3d" kindref="member">u8ExchRxDelay</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="structadm__mgr__ctx__s_1a54a31e72d3609ed829cab673c4813031" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1a54a31e72d3609ed829cab673c4813031" kindref="member">u8ExchRespDelay</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90" refid="structadm__mgr__ctx__s_1acfdd70d9df20e759bfc51da8ee5823e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1acfdd70d9df20e759bfc51da8ee5823e6" kindref="member">u8Pending</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91" refid="structadm__mgr__ctx__s_1a66be28da4b4be857508cda1f01c2f416" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structadm__mgr__ctx__s_1a66be28da4b4be857508cda1f01c2f416" kindref="member">u8ByPassCmd</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__admin__mgr_1ga09321b9524c7631c903a01f4ffc66582" kindref="member">AdmMgr_Setup</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>ses_ctx_s<sp/>*pCtx);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_ADM_MGR_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h"/>
+  </compounddef>
+</doxygen>

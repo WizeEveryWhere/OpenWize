@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structl6__down__footer__t" kind="struct" language="C++" prot="public">
+    <compoundname>l6_down_footer_t</compoundname>
+    <includes refid="proto__private_8h" local="no">proto_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structl6__down__footer__t_1a2e3edfecc0ed96165f2cfbda52047957" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t l6_down_footer_t::L6HashLog[L6_HASH_KLOG_SZ]</definition>
+        <argsstring>[L6_HASH_KLOG_SZ]</argsstring>
+        <name>L6HashLog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Authentication footprint of the transmitter of the message between the gateway and the device. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="326" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure defines the presentation layer download footer. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>l6_down_footer_t</label>
+        <link refid="structl6__down__footer__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" line="325" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto_private.h" bodystart="325" bodyend="329"/>
+    <listofallmembers>
+      <member refid="structl6__down__footer__t_1a2e3edfecc0ed96165f2cfbda52047957" prot="public" virt="non-virtual"><scope>l6_down_footer_t</scope><name>L6HashLog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

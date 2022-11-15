@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide de connexion &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation avancée</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Guide de connexion</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/advanced_documentation/porting_guide.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="porting-guide">
+<h1>Guide de connexion<a class="headerlink" href="#porting-guide" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="porting-your-phy-device">
+<h2>Connexion de votre dispositif PHY<a class="headerlink" href="#porting-your-phy-device" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Jetez un coup d’œil au dispositif de démonstration <em>PhyFake</em> qui donne un exemple simple.</p>
+<section id="prepare-your-module">
+<h3>Préparez votre module<a class="headerlink" href="#prepare-your-module" title="Lien permanent vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p>Créez un répertoire pour votre dispositif PHY.</p></li>
+<li><p>Créez le fichier <em>include/phy_layer_private.h</em>.</p></li>
+<li><p>Créez les fichiers <em>src/phy_layer.c</em> et <em>src/phy_layer_private.c</em>.</p></li>
+<li><p>Créez le <em>CMakeLists.txt</em></p></li>
+</ul>
+<p>Cela devrait donner quelque chose comme :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MyPhy
+├── CMakeLists.txt
+├── include
+│   └── phy_layer_private.h
+└── src
+    ├── phy_layer_private.c
+    └── phy_layer.c
+</pre></div>
+</div>
+</section>
+<section id="implement-the-low-level-driver">
+<h3>Implémentez le pilote de bas niveau<a class="headerlink" href="#implement-the-low-level-driver" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Dans <em>phy_layer_private.h</em> et <em>phy_layer_private.c</em> sont intégrées toutes les exigences (fonctions, définitions, typedef, …) pour piloter à bas niveau votre dispositif. Son contenu dépend fortement du comportement de votre dispositif.</p>
+</section>
+<section id="implement-the-phy-driver">
+<h3>Implémenter le pilote de bas niveau<a class="headerlink" href="#implement-the-phy-driver" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Le fichier <em>phy_layer.c</em> est destiné à implémenter l’interface phy d’OpenWize.</p>
+<section id="phy-interface">
+<h4>Interface phy<a class="headerlink" href="#phy-interface" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Inclure la définition de l’interafce phy dans <em>phy_itf.h</em>. Définir l’implémentation de l’interface :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">phy_if_t</span><span class="w"> </span><span class="n">_phy_if</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfInit</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">_my_init_</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfUnInit</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">_my_uninit_</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfTx</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">_my_TX_</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfRx</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">_my_RX_</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfNoise</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">_my_noise_</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfSetSend</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">_my_set_send_</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfGetRecv</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">_my_get_recv_</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="p">.</span><span class="n">pfIoctl</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">_my_ioctl_</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Implémenter les fonctions de l’interface :</p>
+<ul>
+<li><p><strong>_my_init_</strong>      : Fonction d’initialisation du pilote.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">_my_init_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Cette fonction doit initialiser :</p>
+<ul class="simple">
+<li><p>La structure interne de <em>pPhydev</em>.</p></li>
+<li><p>La communication du bus bsp (le cas échéant).</p></li>
+<li><p>La structure interne de votre périphérique <em>my_phy_device_t</em>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>_my_uninit_</strong> : Fonction de désinitialisation du pilote.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">_my_uninit_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Cette fonction doit désinitialiser :</p>
+<ul class="simple">
+<li><p>La communication du bus bsp (le cas échéant).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>_my_TX_</strong>       : Effectuer l’action de transmission</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">_my_TX_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="n">phy_chan_e</span><span class="w"> </span><span class="n">eChannel</span><span class="p">,</span><span class="w"> </span><span class="n">phy_mod_e</span><span class="w"> </span><span class="n">eModulation</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Cette fonction doit :</p>
+<ul class="simple">
+<li><p>Tenez compte des changements de canal et de modulation.</p></li>
+<li><p>Appeler la fonction d’envoi de bas niveau.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>_my_RX_</strong>       : Effectuer l’action d’écoute.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">_my_RX_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="n">phy_chan_e</span><span class="w"> </span><span class="n">eChannel</span><span class="p">,</span><span class="w"> </span><span class="n">phy_mod_e</span><span class="w"> </span><span class="n">eModulation</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Cette fonction doit :</p>
+<ul class="simple">
+<li><p>Tenez compte des changements de canal et de modulation.</p></li>
+<li><p>Appelez la fonction d’écoute de bas niveau.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>_my_noise_</strong>    : Mesurer le bruit.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">_my_noise_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="n">phy_chan_e</span><span class="w"> </span><span class="n">eChannel</span><span class="p">,</span><span class="w"> </span><span class="n">phy_mod_e</span><span class="w"> </span><span class="n">eModulation</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Cette fonction est optionnelle</p>
+</div></blockquote>
+</li>
+<li><p><strong>_my_set_send_</strong> : Transférer la trame dans le tampon de transmission interne du dispositif.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">_my_set_send_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pBuf</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">u8Len</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Cette fonction doit :</p>
+<ul class="simple">
+<li><p>Transférer le contenu de pBuf dans le tampon interne du dispositif.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>_my_get_recv_</strong> : Récupère la trame depuis le tampon de réception interne du périphérique.</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">_my_get_recv_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">pBuf</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">u8Len</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Cette fonction doit :</p>
+<ul class="simple">
+<li><p>Récupère le contenu du tampon interne du périphérique et le copie dans le pBuf.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>_my_ioctl_</strong>    : Obtenir/régler la configuration du dispositif</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">_my_ioctl_</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">eCtl</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Le contrôle des entrées/sorties phy est donné par <em>eCtl</em> tandis que <em>args</em> est la valeur à obtenir/régler. Voir phy_ctl_e pour plus d’informations.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="setup-function">
+<h4>Fonction de paramétrage<a class="headerlink" href="#setup-function" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Cette fonction est destinée à préparer le dispositif Phy avec une configuration constante.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span><span class="w"> </span><span class="n">Phy_MyPhy_setup</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="n">my_phy_device_t</span><span class="w"> </span><span class="o">*</span><span class="n">pCtx</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>L’implémentation minimale est la suivante :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int32_t</span><span class="w"> </span><span class="nf">Phy_MyPhy_setup</span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="p">,</span><span class="w"> </span><span class="n">my_phy_device_t</span><span class="w"> </span><span class="o">*</span><span class="n">pCtx</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">i32Ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PHY_STATUS_ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pPhydev</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pCtx</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">pPhydev</span><span class="o">-&gt;</span><span class="n">pIf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">_phy_if</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">pPhydev</span><span class="o">-&gt;</span><span class="n">pCxt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pCtx</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">i32Ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PHY_STATUS_OK</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i32Ret</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="interrupt-handler">
+<h4>Gestionnaire d’interruptions<a class="headerlink" href="#interrupt-handler" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Ce gestionnaire doit être appelé lorsqu’une interruption se produit à partir de votre périphérique et doit ressembler à ce qui suit :</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">_my_frame_it_</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_CbParam</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p_Arg</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">eEvt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PHYDEV_EVT_NONE</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="n">pPhydev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">phydev_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">p_CbParam</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="n">my_phy_device_t</span><span class="w"> </span><span class="o">*</span><span class="n">pDevice</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">u32IrqStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MY_PHY_EVT_NONE</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pPhydev</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">pDevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pPhydev</span><span class="o">-&gt;</span><span class="n">pCxt</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// ...do something with private structure, if required</span>
+<span class="w">      </span><span class="c1">// Get irq status</span>
+<span class="w">      </span><span class="c1">// ...from passing argument</span>
+<span class="w">      </span><span class="c1">// u32IrqStatus = ((uint32_t)p_Arg);</span>
+<span class="w">      </span><span class="c1">// ...or from calling low level function</span>
+<span class="w">      </span><span class="c1">// u32IrqStatus = MyPhy_GetIrq(...);</span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u32IrqStatus</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MY_PHY_EVT_RX_STARTED</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">eEvt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PHYDEV_EVT_RX_STARTED</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// ...implement some action on this event, if any</span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u32IrqStatus</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MY_PHY_EVT_TX_CPLT</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">eEvt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PHYDEV_EVT_TX_COMPLETE</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// ...implement some action on this event, if any</span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u32IrqStatus</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MY_PHY_EVT_RX_CPLT</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">eEvt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PHYDEV_EVT_RX_COMPLETE</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// ...implement some action on this event, if any</span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">   </span><span class="c1">// event notification</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">eEvt</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">PHYDEV_EVT_NONE</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pPhydev</span><span class="o">-&gt;</span><span class="n">pfEvtCb</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// Notify the higher level</span>
+<span class="w">      </span><span class="n">pPhydev</span><span class="o">-&gt;</span><span class="n">pfEvtCb</span><span class="p">(</span><span class="n">pPhydev</span><span class="o">-&gt;</span><span class="n">pCbParam</span><span class="p">,</span><span class="w"> </span><span class="n">eEvt</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="porting-to-a-new-board">
+<h2>Connexion sur une nouvelle carte<a class="headerlink" href="#porting-to-a-new-board" title="Lien permanent vers cette rubrique"></a></h2>
+<p>TBD</p>
+</section>
+<section id="compiler">
+<h2>Compilateur<a class="headerlink" href="#compiler" title="Lien permanent vers cette rubrique"></a></h2>
+<p>TBD</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

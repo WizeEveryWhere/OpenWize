@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pour commencer &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="API Reference" href="../api_doc/index.html" />
+    <link rel="prev" title="Bienvenue sur OpenWize" href="../welcome.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pour commencer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirement">Exigence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#restriction">Restriction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minimum-version">Version minimale</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#first-steps">Premières étapes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloning-this-repository">Cloner ce dépôt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-the-stm32cube-ide">Installez l’IDE STM32Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-environment-variables">Configurer les variables d’environnement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#demo-application">Application démo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-the-application">Construction de l’application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-and-run-the-firmware">Chargez et lancez le firmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debug-the-demo-application">Déboguer l’application de démonstration</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_documentation/index.html">Advanced documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Pour commencer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting_started/index.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Pour commencer<a class="headerlink" href="#getting-started" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="requirement">
+<h2>Exigence<a class="headerlink" href="#requirement" title="Lien permanent vers cette rubrique"></a></h2>
+<p>La stack OpenWize est essentiellement développée pour cibler les MCU de STMicroelectronic, basés sur le cœur du processeur ARM-M. Pour des raisons pratiques, nous utilisons le STM32CubeIDE comme IDE. Il est livré avec tout ce qui est nécessaire pour compiler, charger et déboguer un firmware sur ce MCU ST. Cet IDE peut être téléchargé sur le site de STMicroelectronics (<a class="reference external" href="https://www.st.com/en/development-tools/stm32cubeide.html#get-software">STM32CubeIDE</a>).</p>
+<p>Le système de construction est basé sur les outils <em>cmake</em> et <em>make</em> qui s’appuient sur le cross-toolchain fourni par le STM32CubeIDE. Nous fournissons un petit script bash « set_env.sh » dans « tools/script » pour vous aider à configurer certaines variables d’environnement.</p>
+<section id="restriction">
+<h3>Restriction<a class="headerlink" href="#restriction" title="Lien permanent vers cette rubrique"></a></h3>
+<p>L’ensemble du développement et des tests a été réalisé sous le système d’exploitation Linux, Windows n’est pas supporté.</p>
+</section>
+<section id="minimum-version">
+<h3>Version minimale<a class="headerlink" href="#minimum-version" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Le tableau suivant indique les versions minimales recommandées pour pouvoir construire la stack OpenWize.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 30%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Host</p></td>
+<td><p>Linux Ubuntu 18.04</p></td>
+<td><p>Il n’y a pas d’exigence particulière. Il devrait fonctionner sur n’importe quelle distribution Linux.</p></td>
+</tr>
+<tr class="row-even"><td><p>Git</p></td>
+<td><p>2.24</p></td>
+<td><p>Il n’y a pas d’exigence particulière</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cmake</p></td>
+<td><p>3.13.2</p></td>
+<td><p>Les fichiers CMakeLists.txt et <em>xxx</em>.cmake sont basés sur une version de cmake supérieure ou égale à 3.12.</p></td>
+</tr>
+<tr class="row-even"><td><p>Make</p></td>
+<td><p>4.1</p></td>
+<td><p>Il n’y a pas d’exigence particulière</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cross-toolchain</p></td>
+<td><p>7.3.1 (arm-non-eabi-gcc) et 2.30.0 (binutils)</p></td>
+<td><p>Il n’y a pas d’exigence particulière</p></td>
+</tr>
+<tr class="row-even"><td><p>Newlib</p></td>
+<td><p>3.0.0</p></td>
+<td><p>Il s’agit des versions rassemblées avec le cross-toolchain.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notez que <a class="reference external" href="https://git-scm.com">Git</a>, <a class="reference external" href="https://cmake.org">Cmake</a> et <a class="reference external" href="https://www.gnu.org/software/make">Make</a> sont généralement déjà installés sur la distribution Linux de base, il n’y a donc rien de plus à faire.</p>
+</section>
+</section>
+<section id="first-steps">
+<h2>Premières étapes<a class="headerlink" href="#first-steps" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="cloning-this-repository">
+<h3>Cloner ce dépôt<a class="headerlink" href="#cloning-this-repository" title="Lien permanent vers cette rubrique"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/WizeEveryWhere/OpenWize.git
+</pre></div>
+</div>
+<p>ou encore</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/WizeEveryWhere/OpenWize.git
+<span class="nb">cd</span> OpenWize
+git submodule init --recursive
+git submodule update --recursive
+</pre></div>
+</div>
+<p>Cette opération clonera également les sous-modules requis suivants :</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 38%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sous-modules</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Destination (depuis third-party/)</p></th>
+<th class="head"><p>sha</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FreeRTOS</p></td>
+<td><p>V10.4.4</p></td>
+<td><p>rtos/FreeRTOS/FreeRTOS-Kernel</p></td>
+<td><p>8de8a9da1aa9b036812a72fdcd7cbdefc2789365</p></td>
+</tr>
+<tr class="row-odd"><td><p>cmsis core</p></td>
+<td><p>v5.4.0_cm4</p></td>
+<td><p>firmware/STM32/cmsis_core</p></td>
+<td><p>cb6d9400754e6c9050487dfa573949b61152ac99</p></td>
+</tr>
+<tr class="row-even"><td><p>cmsis device L4</p></td>
+<td><p>v1.5.1</p></td>
+<td><p>firmware/STM32/cmsis_device_l4</p></td>
+<td><p>f42a6c319cc887c8a13f171d347294f2eabfab3b</p></td>
+</tr>
+<tr class="row-odd"><td><p>stm32l4xx_hal_driver</p></td>
+<td><p>v1.10.0</p></td>
+<td><p>firmware/STM32/stm32l4xx_hal_driver</p></td>
+<td><p>2737a6e3fdefa41570a29321afb6cd9c1de69b1c</p></td>
+</tr>
+<tr class="row-even"><td><p>CMock</p></td>
+<td><p>v2.5.2</p></td>
+<td><p>testing/Unity/CMock</p></td>
+<td><p>150573c742ce15061a0b675aa0f8e29c85008062</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tinycrypt</p></td>
+<td><p>master branch</p></td>
+<td><p>libraries/Tinycrypt/tinycrypt</p></td>
+<td><p>5969b0e0f572a15ed95dc272e57104faeb5eb6b0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="install-the-stm32cube-ide">
+<h3>Installez l’IDE STM32Cube<a class="headerlink" href="#install-the-stm32cube-ide" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Allez sur la page web de STMicroelectronic (<a class="reference external" href="https://www.st.com/en/development-tools/stm32cubeide.html#get-software">STM32CubeIDE</a>), sur la ligne <em>STM32CubeIDE Generic Linux Installer</em>, sélectionnez la version 1.8.0 et téléchargez-la. Décompressez le fichier zip quelque part dans un répertoire temporaire, puis exécutez le fichier résultant (<code class="docutils literal notranslate"><span class="pre">STMCubeIdeExecutable|</span></code>) et suivez les instructions.</p>
+<p>Notez que le chemin d’installation préféré est « /opt/Application/st/stm32cubeide_1.8.0 ».</p>
+<p>Après quelques minutes, l’installation du STM32CubeIDE est terminée.</p>
+</section>
+<section id="setup-environment-variables">
+<h3>Configurer les variables d’environnement<a class="headerlink" href="#setup-environment-variables" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Variables d’environnement</p>
+<ul class="simple">
+<li><p>CROSS_TOOL_PATH : donne le chemin principal du cross-toolchain, qui est utilisé et obligatoire par le système de construction cmake.</p></li>
+<li><p>ST_PROG_PATH : donne le chemin principal de l’outil du programmateur STM32Cube. Cet outil est utilisé pour télécharger le firmware binaire sur la carte cible à partir de la ligne de commande, il n’est donc pas nécessaire avec l’IDE.</p></li>
+<li><p>JLINK_PROG_PATH : donne le chemin principal de l’outil du programmateur Segger. Cet outil est utilisé pour télécharger le firmware binaire sur la carte cible à partir de la ligne de commande, il n’est donc pas nécessaire avec l’IDE.</p></li>
+</ul>
+<p>Le moyen le plus simple de définir ces variables est d’exécuter le script fourni dans OpenWize/tools/scripts. Ce script créera tout ce qui est nécessaire pour définir ces variables d’environnement sur une nouvelle console ou un nouveau terminal.</p>
+<p>Dans la console, lancez le script :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> OpenWize/tools/scripts
+./set_env.sh -i
+</pre></div>
+</div>
+<p>et suivez les instructions</p>
+<p>C’est aussi possible de « désinstaller » :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> OpenWize/tools/scripts
+./set_env.sh -u
+</pre></div>
+</div>
+<p>Exécutez ce script uniquement la première fois. Ensuite, dans chaque nouvelle console ouverte, ces variables d’environnement seront automatiquement définies.</p>
+</section>
+</section>
+<section id="demo-application">
+<h2>Application démo<a class="headerlink" href="#demo-application" title="Lien permanent vers cette rubrique"></a></h2>
+<ul>
+<li><p>Cette application est fournie comme une démonstration simple de la stack OpenWize ciblant une carte ST Nucleo-L476RG.</p></li>
+<li><p>La carte Nucleo-L476RG n’intègre aucun dispositif RF, donc pour pallier ce problème, l’application de démonstration utilise le dispositif <code class="docutils literal notranslate"><span class="pre">PhyFake</span></code>, qui entre/sort des trames via un périphérique UART.</p></li>
+<li><p>Cette démo est très simple, il n’y a donc pas de console ou d’interface locale pour communiquer avec elle. Au lieu de cela, l’application envoie périodiquement des messages DATA et INSTALL (alias PING) et utilise le module <em>Logger</em> fourni pour imprimer les messages (info, warning, debug, erreur).</p></li>
+<li><p>Le <em>Logger</em> est connecté au périphérique USART2 du MCU</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Configuration : 115200 bps, 8 bits de données, pas de parité, 1 bit de stop.</p></li>
+<li><p>Ce USART est mappé sur CN1 (USB-mini).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Le <em>PhyFake</em> est connecté au périphérique LPUART1 du MCU :</p>
+<blockquote>
+<div><ul>
+<li><p>Configuration : 115200 bps, 8 bits de données, pas de parité, 1 bit de stop.</p></li>
+<li><p>Cet USART est mappé sur :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>RX : PC0 (CN7-38)</p></li>
+<li><p>TX : PC1 (CN7-36).</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Certains paramètres par défaut ont été réglés sur :</p>
+<blockquote>
+<div><table class="colwidths-auto docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Nom</p></th>
+<th class="head"><p>Valeur</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x28</p></td>
+<td><p>CIPH_CURRENT_KEY</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x18</p></td>
+<td><p>EXCH_RX_DELAY</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>0x19</p></td>
+<td><p>EXCH_RX_LENGTH</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1A</p></td>
+<td><p>EXCH_RESPONSE_DELAY</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>0x30</p></td>
+<td><p>PING_RX_DELAY</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x31</p></td>
+<td><p>PING_RX_LENGTH</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+</ul>
+<section id="build-the-application">
+<h3>Construction de l’application<a class="headerlink" href="#build-the-application" title="Lien permanent vers cette rubrique"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Openwize
+mkdir -p _build
+<span class="nb">cd</span> _build
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DBUILD_CFG<span class="o">=</span>Nucleo-L476/Nucleo-L476 -DCMAKE_BUILD_TYPE<span class="o">=</span>Debug ../.
+make DemoApp -j
+make install
+</pre></div>
+</div>
+<p>Les fichiers du firmware sont installés dans le répertoire OpenWize/<em>_install</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>_install/
+   └── bin
+       ├── DemoApp.elf  : The &quot;elf&quot; file (i.e. with debug symbols)
+       ├── DemoApp.bin  : Pure binary file
+       ├── DemoApp.lst  : Disassembly listing
+       └── DemoApp.map  : Symbols and files mapping
+</pre></div>
+</div>
+</section>
+<section id="load-and-run-the-firmware">
+<h3>Chargez et lancez le firmware<a class="headerlink" href="#load-and-run-the-firmware" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Pour charger et lancer l’application demo, tu auras besoin d’une carte ST Nucleo-L476 et d’une convertisseur UBS-to-UART.</p>
+<ol class="arabic">
+<li><p>Connectez votre carte Nucleo-L476RG à votre ordinateur.</p></li>
+<li><p>Connectez votre convertisseur USB-to-UART à votre ordinateur.</p></li>
+<li><p>Vérifier l’ID de la sonde ST-Link</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> OpenWize
+STM32_Programmer_CLI -l
+</pre></div>
+</div>
+<p>Vous devriez avoir quelque chose comme ça :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="o">-------------------------------------------------------------------</span>
+                        <span class="n">STM32CubeProgrammer</span> <span class="n">v2</span><span class="mf">.9.0</span><span class="o">-</span><span class="n">RC01</span>
+      <span class="o">-------------------------------------------------------------------</span>
+
+<span class="o">=====</span>  <span class="n">DFU</span> <span class="n">Interface</span>   <span class="o">=====</span>
+
+<span class="n">No</span> <span class="n">STM32</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">DFU</span> <span class="n">mode</span> <span class="n">connected</span>
+
+<span class="o">=====</span> <span class="n">STLink</span> <span class="n">Interface</span> <span class="o">=====</span>
+
+<span class="o">--------</span> <span class="n">Connected</span> <span class="n">ST</span><span class="o">-</span><span class="n">LINK</span> <span class="n">Probes</span> <span class="n">List</span> <span class="o">--------</span>
+
+<span class="n">ST</span><span class="o">-</span><span class="n">Link</span> <span class="n">Probe</span> <span class="mi">0</span> <span class="p">:</span>
+   <span class="n">ST</span><span class="o">-</span><span class="n">LINK</span> <span class="n">SN</span>  <span class="p">:</span> <span class="mi">066</span><span class="n">CFF383333554157243011</span>
+   <span class="n">ST</span><span class="o">-</span><span class="n">LINK</span> <span class="n">FW</span>  <span class="p">:</span> <span class="n">V2J34M25</span>
+<span class="o">-----------------------------------------------</span>
+
+<span class="o">=====</span>  <span class="n">UART</span> <span class="n">Interface</span>  <span class="o">=====</span>
+
+<span class="n">Total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">serial</span> <span class="n">ports</span> <span class="n">available</span><span class="p">:</span> <span class="mi">4</span>
+
+<span class="n">Port</span><span class="p">:</span> <span class="n">ttyUSB0</span>
+<span class="n">Location</span><span class="p">:</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span>
+<span class="n">Description</span><span class="p">:</span> <span class="n">FT232R</span> <span class="n">USB</span> <span class="n">UART</span>
+<span class="n">Manufacturer</span><span class="p">:</span> <span class="n">FTDI</span>
+
+<span class="n">Port</span><span class="p">:</span> <span class="n">ttyACM0</span>
+<span class="n">Location</span><span class="p">:</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span>
+<span class="n">Description</span><span class="p">:</span> <span class="n">STM32</span> <span class="n">STLink</span>
+<span class="n">Manufacturer</span><span class="p">:</span> <span class="n">STMicroelectronics</span>
+
+<span class="n">Port</span><span class="p">:</span> <span class="n">ttyS0</span>
+<span class="n">Location</span><span class="p">:</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyS0</span>
+<span class="n">Description</span><span class="p">:</span> <span class="n">N</span><span class="o">/</span><span class="n">A</span>
+<span class="n">Manufacturer</span><span class="p">:</span> <span class="n">N</span><span class="o">/</span><span class="n">A</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<hr class="docutils" />
+<blockquote>
+<div><p>Dans cet exemple, l’ID de la sonde 0 :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ST</span><span class="o">-</span><span class="n">Link</span> <span class="n">Probe</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="n">ST</span><span class="o">-</span><span class="n">LINK</span> <span class="n">SN</span>  <span class="p">:</span> <span class="mi">066</span><span class="n">CFF383333554157243011</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Ensuite, téléchargez le firmware sur la carte</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>STM32_Programmer_CLI -c <span class="nv">port</span><span class="o">=</span>SWD <span class="nv">mode</span><span class="o">=</span>UR <span class="nv">reset</span><span class="o">=</span>HWrst <span class="nv">index</span><span class="o">=</span><span class="m">0</span> -d _install/bin//DemoApp.bin 0x08000000
+</pre></div>
+</div>
+<p>Vous devriez pouvoir voir les messages <em>Logger</em> sur <em>ttyACM0</em> et les trames Wize sur <em>ttyUSB0</em></p>
+</div></blockquote>
+</section>
+<section id="debug-the-demo-application">
+<h3>Déboguer l’application de démonstration<a class="headerlink" href="#debug-the-demo-application" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Dans le répertoire « OpenWize/demo/project », nous fournissons des fichiers de projet Eclipse. Ouvrez l’IDE STMCube32 et <em>Importez</em> comme <em>Projets existants dans l’espace de travail</em>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../welcome.html" class="btn btn-neutral float-left" title="Bienvenue sur OpenWize" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../api_doc/index.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

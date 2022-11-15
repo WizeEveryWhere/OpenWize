@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structfrm__err__stats__s" kind="struct" language="C++" prot="public">
+    <compoundname>frm_err_stats_s</compoundname>
+    <includes refid="proto_8h" local="no">proto.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfrm__err__stats__s_1abd9b5715ad669c9bebcac6aa248a65ef" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32CrcErr</definition>
+        <argsstring></argsstring>
+        <name>u32CrcErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame CRC error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="125" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfrm__err__stats__s_1ae2d99d929919c51c83fc2c8ff751df2f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32RsErr</definition>
+        <argsstring></argsstring>
+        <name>u32RsErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame RS error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="126" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfrm__err__stats__s_1a9b921a4274ee7ce0ab6f029f39ec7b7b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32UnkErr</definition>
+        <argsstring></argsstring>
+        <name>u32UnkErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame unknown error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="127" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfrm__err__stats__s_1a63f787aaa6a5cfe130684121382fbc83" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32LenErr</definition>
+        <argsstring></argsstring>
+        <name>u32LenErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame length error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="128" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfrm__err__stats__s_1a5833355fcfc3b069245d5fb11ee5a28b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32HeadAuthErr</definition>
+        <argsstring></argsstring>
+        <name>u32HeadAuthErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame head-end authenticate error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="129" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfrm__err__stats__s_1af9c539573acb3e1f2852109193f4ffc3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32GatewayAuthErr</definition>
+        <argsstring></argsstring>
+        <name>u32GatewayAuthErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame gateway authenticate error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="130" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfrm__err__stats__s_1a373407fd463a54988a56b14cf4058eb1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32AppSzErr</definition>
+        <argsstring></argsstring>
+        <name>u32AppSzErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame application size error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="131" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfrm__err__stats__s_1add662fa5b9cfcd5abd2399fb0b5ba15f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t frm_err_stats_s::u32PassedErr</definition>
+        <argsstring></argsstring>
+        <name>u32PassedErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of Frame passed error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="132" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure hold the frame statistics. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>frm_err_stats_s</label>
+        <link refid="structfrm__err__stats__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" line="124" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/proto/include/proto.h" bodystart="123" bodyend="133"/>
+    <listofallmembers>
+      <member refid="structfrm__err__stats__s_1a373407fd463a54988a56b14cf4058eb1" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32AppSzErr</name></member>
+      <member refid="structfrm__err__stats__s_1abd9b5715ad669c9bebcac6aa248a65ef" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32CrcErr</name></member>
+      <member refid="structfrm__err__stats__s_1af9c539573acb3e1f2852109193f4ffc3" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32GatewayAuthErr</name></member>
+      <member refid="structfrm__err__stats__s_1a5833355fcfc3b069245d5fb11ee5a28b" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32HeadAuthErr</name></member>
+      <member refid="structfrm__err__stats__s_1a63f787aaa6a5cfe130684121382fbc83" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32LenErr</name></member>
+      <member refid="structfrm__err__stats__s_1add662fa5b9cfcd5abd2399fb0b5ba15f" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32PassedErr</name></member>
+      <member refid="structfrm__err__stats__s_1ae2d99d929919c51c83fc2c8ff751df2f" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32RsErr</name></member>
+      <member refid="structfrm__err__stats__s_1a9b921a4274ee7ce0ab6f029f39ec7b7b" prot="public" virt="non-virtual"><scope>frm_err_stats_s</scope><name>u32UnkErr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

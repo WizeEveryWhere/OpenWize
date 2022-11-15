@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__dwn__layer" kind="group">
+    <compoundname>Wize_dwn_layer</compoundname>
+    <title>Wize_dwn_layer</title>
+    <innerclass refid="structann__dwn__ctx__s" prot="public">ann_dwn_ctx_s</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

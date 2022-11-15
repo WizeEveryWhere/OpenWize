@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="rs_8h" kind="file" language="C++">
+    <compoundname>rs.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="proto_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</includedby>
+    <includedby refid="rs_8c" local="yes">/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h</label>
+        <link refid="rs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</label>
+        <link refid="proto_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c</label>
+        <link refid="rs_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h</label>
+        <link refid="rs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__reed__solomon_1gaf9d5cb2cb2baa77a1467616b3675bd1f" prot="public" static="no">
+        <name>mm</name>
+        <initializer>8           /* RS code over GF(2**8) - change to suit */</initializer>
+        <briefdescription>
+<para>Define the symboles bits number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" line="48" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__reed__solomon_1gaa5a72b19b78042bbe9cecd9307882d1b" prot="public" static="no">
+        <name>nn</name>
+        <initializer>255          /* nn=2**<ref refid="group__reed__solomon_1gaf9d5cb2cb2baa77a1467616b3675bd1f" kindref="member">mm</ref> -1   length of codeword */</initializer>
+        <briefdescription>
+<para>Define the total message size (with parity word) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" line="54" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__reed__solomon_1ga86855f863f0699fce707c88f33920b8b" prot="public" static="no">
+        <name>tt</name>
+        <initializer>16           /* number of errors that can be corrected */</initializer>
+        <briefdescription>
+<para>Define the number of error that can be corrected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" line="60" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__reed__solomon_1gaeff91e10c1fc668c0df040c3ac54c3bf" prot="public" static="no">
+        <name>kk</name>
+        <initializer>(223) /* kk = <ref refid="group__reed__solomon_1gaa5a72b19b78042bbe9cecd9307882d1b" kindref="member">nn</ref>-2*<ref refid="group__reed__solomon_1ga86855f863f0699fce707c88f33920b8b" kindref="member">tt</ref>  */</initializer>
+        <briefdescription>
+<para>Define the useable message size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" line="68" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__reed__solomon_1ga7a01fd150b1700236faa5a0abeb927b1" prot="public" static="no">
+        <name>RS_MESSAGE_SZ</name>
+        <initializer><ref refid="group__reed__solomon_1gaeff91e10c1fc668c0df040c3ac54c3bf" kindref="member">kk</ref></initializer>
+        <briefdescription>
+<para>Define an alias to kk. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" line="74" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__reed__solomon_1ga9dbba481e4b83f3abc168592ac712c61" prot="public" static="no">
+        <name>RS_PARITY_SZ</name>
+        <initializer>(<ref refid="group__reed__solomon_1ga86855f863f0699fce707c88f33920b8b" kindref="member">tt</ref>*2)</initializer>
+        <briefdescription>
+<para>Define the parity word size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" line="80" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__reed__solomon_1ga2d9ab2dec0d839b6139c372379063cdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RS_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>RS_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initialize the Galois field and polynomial generator tables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="225" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="225" bodyend="232" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="82" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__reed__solomon_1ga9746d223575e88237381e36eb05feb6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t RS_Decode</definition>
+        <argsstring>(uint8_t b_recd[RS_MESSAGE_SZ+RS_PARITY_SZ])</argsstring>
+        <name>RS_Decode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Data</declname>
+          <defname>b_recd</defname>
+          <array>[RS_MESSAGE_SZ+RS_PARITY_SZ]</array>
+        </param>
+        <briefdescription>
+<para>This function detect and correct the given message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">b_recd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source and destination data (Message and Parity). b_recd[0 to 222] contains message data, while b_recd[223 to 223 + 32] contains the parity bytes). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="244" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="244" bodyend="557" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="83" declcolumn="9"/>
+        <references refid="group__reed__solomon_1gaa5a72b19b78042bbe9cecd9307882d1b" compoundref="rs_8h" startline="54">nn</references>
+        <references refid="group__reed__solomon_1gaeff91e10c1fc668c0df040c3ac54c3bf" compoundref="rs_8h" startline="68">kk</references>
+        <references refid="group__reed__solomon_1ga86855f863f0699fce707c88f33920b8b" compoundref="rs_8h" startline="60">tt</references>
+      </memberdef>
+      <memberdef kind="function" id="group__reed__solomon_1ga53f4615ae90ced8e5df1f737f65ec2b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RS_Encode</definition>
+        <argsstring>(uint8_t p_Data[RS_MESSAGE_SZ], uint8_t p_Out[RS_PARITY_SZ])</argsstring>
+        <name>RS_Encode</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Data</declname>
+          <array>[RS_MESSAGE_SZ]</array>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>p_Out</declname>
+          <array>[RS_PARITY_SZ]</array>
+        </param>
+        <briefdescription>
+<para>This function generate the parity word of the given message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on message (source data).</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on parity (destination). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="567" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="567" bodyend="611" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="84" declcolumn="6"/>
+        <references refid="group__reed__solomon_1gaa5a72b19b78042bbe9cecd9307882d1b" compoundref="rs_8h" startline="54">nn</references>
+        <references refid="group__reed__solomon_1gaeff91e10c1fc668c0df040c3ac54c3bf" compoundref="rs_8h" startline="68">kk</references>
+      </memberdef>
+      <memberdef kind="function" id="group__reed__solomon_1gad86a28fcaf4fa9782dbd18902870f4f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RS_GetMsgSize</definition>
+        <argsstring>(void)</argsstring>
+        <name>RS_GetMsgSize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function give the message size (in byte). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The message size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="119" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="119" bodyend="122" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="87" declcolumn="10"/>
+        <references refid="group__reed__solomon_1gaeff91e10c1fc668c0df040c3ac54c3bf" compoundref="rs_8h" startline="68">kk</references>
+      </memberdef>
+      <memberdef kind="function" id="group__reed__solomon_1ga240670a7fcd57564256f540e11ff9ffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RS_GetParitySize</definition>
+        <argsstring>(void)</argsstring>
+        <name>RS_GetParitySize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function give the parity word size (in byte). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The parity word size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="129" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="129" bodyend="132" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="88" declcolumn="10"/>
+        <references refid="group__reed__solomon_1ga86855f863f0699fce707c88f33920b8b" compoundref="rs_8h" startline="60">tt</references>
+      </memberdef>
+      <memberdef kind="function" id="group__reed__solomon_1gad498d44b95fb83a42940926e7284fad5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t * RS_GetGG_ptr</definition>
+        <argsstring>(uint32_t *u32_ggSz)</argsstring>
+        <name>RS_GetGG_ptr</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>u32_ggSz</declname>
+        </param>
+        <briefdescription>
+<para>This function give the generator polynomial pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*u32_ggSz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This pointer will hold the generator polynomial size.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The generator polynomial pointer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="82" column="15" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="82" bodyend="86" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="89" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__reed__solomon_1ga8cedf8afe3e356d3aec07a8cda6a5908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t * RS_GetAlphaOf_ptr</definition>
+        <argsstring>(uint32_t *u32_alphaOfSz)</argsstring>
+        <name>RS_GetAlphaOf_ptr</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>u32_alphaOfSz</declname>
+        </param>
+        <briefdescription>
+<para>This function give the alpha_to pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*u32_alphaOfSz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This pointer will hold the alpha_to size.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The alpha_to pointer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="95" column="15" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="95" bodyend="99" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="90" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__reed__solomon_1gacec5c47c378ab4ee48ff4fbc4d9f37da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const int16_t *</type>
+        <definition>const int16_t * RS_GetIndexOf_ptr</definition>
+        <argsstring>(uint32_t *u32_indexOfSz)</argsstring>
+        <name>RS_GetIndexOf_ptr</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>u32_indexOfSz</declname>
+        </param>
+        <briefdescription>
+<para>This function give the index_of pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">*u32_indexOfSz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This pointer will hold the index_of size.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index_of pointer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" line="108" column="15" bodyfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/src/rs.c" bodystart="108" bodyend="112" declfile="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h" declline="91" declcolumn="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file expose prototype of encode and decode function for the Reed-Solomon error correction code. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/01/01[SCO]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_RS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_RS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="group__reed__solomon_1gaf9d5cb2cb2baa77a1467616b3675bd1f" refkind="member"><highlight class="preprocessor">#define<sp/>mm<sp/><sp/>8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>RS<sp/>code<sp/>over<sp/>GF(2**8)<sp/>-<sp/>change<sp/>to<sp/>suit<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="group__reed__solomon_1gaa5a72b19b78042bbe9cecd9307882d1b" refkind="member"><highlight class="preprocessor">#define<sp/>nn<sp/><sp/>255<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>nn=2**mm<sp/>-1<sp/><sp/><sp/>length<sp/>of<sp/>codeword<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="group__reed__solomon_1ga86855f863f0699fce707c88f33920b8b" refkind="member"><highlight class="preprocessor">#define<sp/>tt<sp/><sp/>16<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>number<sp/>of<sp/>errors<sp/>that<sp/>can<sp/>be<sp/>corrected<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>kk<sp/><sp/>(nn<sp/>-<sp/>PARITY_RS_SIZE)<sp/>/*<sp/>kk<sp/>=<sp/>nn-2*tt<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="group__reed__solomon_1gaeff91e10c1fc668c0df040c3ac54c3bf" refkind="member"><highlight class="preprocessor">#define<sp/>kk<sp/>(223)<sp/></highlight><highlight class="comment">/*<sp/>kk<sp/>=<sp/>nn-2*tt<sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="group__reed__solomon_1ga7a01fd150b1700236faa5a0abeb927b1" refkind="member"><highlight class="preprocessor">#define<sp/>RS_MESSAGE_SZ<sp/>kk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="group__reed__solomon_1ga9dbba481e4b83f3abc168592ac712c61" refkind="member"><highlight class="preprocessor">#define<sp/>RS_PARITY_SZ<sp/>(tt*2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__reed__solomon_1ga2d9ab2dec0d839b6139c372379063cdd" kindref="member">RS_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">uint8_t<sp/><ref refid="group__reed__solomon_1ga9746d223575e88237381e36eb05feb6a" kindref="member">RS_Decode</ref>(uint8_t<sp/>p_Data[<ref refid="group__reed__solomon_1ga7a01fd150b1700236faa5a0abeb927b1" kindref="member">RS_MESSAGE_SZ</ref><sp/>+<sp/><ref refid="group__reed__solomon_1ga9dbba481e4b83f3abc168592ac712c61" kindref="member">RS_PARITY_SZ</ref>]);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__reed__solomon_1ga53f4615ae90ced8e5df1f737f65ec2b7" kindref="member">RS_Encode</ref>(uint8_t<sp/>p_Data[<ref refid="group__reed__solomon_1ga7a01fd150b1700236faa5a0abeb927b1" kindref="member">RS_MESSAGE_SZ</ref>],<sp/>uint8_t<sp/>p_Out[<ref refid="group__reed__solomon_1ga9dbba481e4b83f3abc168592ac712c61" kindref="member">RS_PARITY_SZ</ref>]);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>debugging<sp/>helper<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">uint32_t<sp/><ref refid="group__reed__solomon_1gad86a28fcaf4fa9782dbd18902870f4f8" kindref="member">RS_GetMsgSize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">uint32_t<sp/><ref refid="group__reed__solomon_1ga240670a7fcd57564256f540e11ff9ffa" kindref="member">RS_GetParitySize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/><ref refid="group__reed__solomon_1gad498d44b95fb83a42940926e7284fad5" kindref="member">RS_GetGG_ptr</ref>(uint32_t<sp/>*u32_ggSz);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/><ref refid="group__reed__solomon_1ga8cedf8afe3e356d3aec07a8cda6a5908" kindref="member">RS_GetAlphaOf_ptr</ref>(uint32_t<sp/>*u32_alphaOfSz);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int16_t*<sp/><ref refid="group__reed__solomon_1gacec5c47c378ab4ee48ff4fbc4d9f37da" kindref="member">RS_GetIndexOf_ptr</ref>(uint32_t<sp/>*u32_indexOfSz);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_RS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/ReedSolomon/include/rs.h"/>
+  </compounddef>
+</doxygen>

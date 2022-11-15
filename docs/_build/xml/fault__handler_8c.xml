@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="fault__handler_8c" kind="file" language="C++">
+    <compoundname>fault_handler.c</compoundname>
+    <includes local="no">cmsis_compiler.h</includes>
+    <includes local="no">stdio.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>cmsis_compiler.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/fault_handler.c</label>
+        <link refid="fault__handler_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>This file contains basic fault handlers with a kind of core dump.. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/10/01 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmsis_compiler.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">#ifndef<sp/>TRACE_DUMP_CORE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRACE_DUMP_CORE(...)<sp/>fprintf<sp/>(stderr,<sp/>__VA_ARGS__<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__init_exception_handlers__(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SYS_SECTION(hsection)<sp/>__attribute__((<sp/>section(hsection)<sp/>))<sp/>__attribute__((used))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HANDLER_SECTION(hsection)<sp/>__attribute__((<sp/>section(hsection)<sp/>))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32_t<sp/>StackUnwind(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">SYS_SECTION(</highlight><highlight class="stringliteral">&quot;.sys&quot;</highlight><highlight class="normal">)<sp/>static<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CoreDump(<sp/>uint32_t<sp/>*hardfault_args<sp/>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">static<sp/>inline<sp/>uint32_t<sp/>StackUnwind(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>Fault_Add;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm(</highlight><highlight class="stringliteral">&quot;mrs<sp/>r0,<sp/>msp<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm(</highlight><highlight class="stringliteral">&quot;ldr<sp/>%0,<sp/>[r0,#28]&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;=r&quot;</highlight><highlight class="normal"><sp/>(Fault_Add));</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Fault_Add;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">HANDLER_SECTION(</highlight><highlight class="stringliteral">&quot;.exception&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">void<sp/>HardFault_Handler(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)<sp/>__attribute__((naked,<sp/>noreturn));</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">HANDLER_SECTION(&quot;.exception&quot;)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MemManage_Handler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>__attribute__((naked,<sp/>noreturn));</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">HANDLER_SECTION(&quot;.exception&quot;)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BusFault_Handler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>__attribute__((naked,<sp/>noreturn));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">HANDLER_SECTION(&quot;.exception&quot;)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UsageFault_Handler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>__attribute__((naked,<sp/>noreturn));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">SYS_SECTION(&quot;.sys&quot;)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">static<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CoreDump(<sp/>uint32_t<sp/>*hardfault_args<sp/>)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>These<sp/>are<sp/>volatile<sp/>to<sp/>try<sp/>and<sp/>prevent<sp/>the<sp/>compiler/linker<sp/>optimizing<sp/>them</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/>away<sp/>as<sp/>the<sp/>variables<sp/>never<sp/>actually<sp/>get<sp/>used.<sp/><sp/>If<sp/>the<sp/>debugger<sp/>won&apos;t<sp/>show<sp/>the</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/>values<sp/>of<sp/>the<sp/>variables,<sp/>make<sp/>them<sp/>global<sp/>my<sp/>moving<sp/>their<sp/>declaration<sp/>outside</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/>of<sp/>this<sp/>function.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_r0;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_r1;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_r2;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_r3;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_r12;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_lr;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_pc;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>stacked_psr;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_FAULT_STATUS_REGISTER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>_CFSR;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>_HFSR;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>_DFSR;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>_AFSR;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>_BFAR;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>_MMAR;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_r0<sp/>=<sp/>((uint32_t)hardfault_args[0]);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_r1<sp/>=<sp/>((uint32_t)hardfault_args[1]);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_r2<sp/>=<sp/>((uint32_t)hardfault_args[2]);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_r3<sp/>=<sp/>((uint32_t)hardfault_args[3]);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_r12<sp/>=<sp/>((uint32_t)hardfault_args[4]);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_lr<sp/>=<sp/>((uint32_t)hardfault_args[5]);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_pc<sp/>=<sp/>((uint32_t)hardfault_args[6]);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>stacked_psr<sp/>=<sp/>((uint32_t)hardfault_args[7]);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_FAULT_STATUS_REGISTER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configurable<sp/>Fault<sp/>Status<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Consists<sp/>of<sp/>MMSR,<sp/>BFSR<sp/>and<sp/>UFSR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>_CFSR<sp/>=<sp/>(*((</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*)(0xE000ED28)));</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Hard<sp/>Fault<sp/>Status<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>_HFSR<sp/>=<sp/>(*((</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*)(0xE000ED2C)));</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Debug<sp/>Fault<sp/>Status<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>_DFSR<sp/>=<sp/>(*((</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*)(0xE000ED30)));</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Auxiliary<sp/>Fault<sp/>Status<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>_AFSR<sp/>=<sp/>(*((</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*)(0xE000ED3C)));</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>the<sp/>Fault<sp/>Address<sp/>Registers.<sp/>These<sp/>may<sp/>not<sp/>contain<sp/>valid<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>BFARVALID/MMARVALID<sp/>to<sp/>see<sp/>if<sp/>they<sp/>are<sp/>valid<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MemManage<sp/>Fault<sp/>Address<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>_MMAR<sp/>=<sp/>(*((</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*)(0xE000ED34)));</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bus<sp/>Fault<sp/>Address<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>_BFAR<sp/>=<sp/>(*((</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/>*)(0xE000ED38)));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;\nHard<sp/>fault<sp/>handler<sp/>:\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;R0<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>stacked_r0);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;R1<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>stacked_r1);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;R2<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>stacked_r2);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;R3<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>stacked_r3);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;R12<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>stacked_r12);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;LR<sp/>[R14]<sp/>=<sp/>0x%lx<sp/><sp/>subroutine<sp/>call<sp/>return<sp/>address\n&quot;</highlight><highlight class="normal">,<sp/>stacked_lr);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;PC<sp/>[R15]<sp/>=<sp/>0x%lx<sp/><sp/>program<sp/>counter\n&quot;</highlight><highlight class="normal">,<sp/>stacked_pc);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;PSR<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>stacked_psr);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_FAULT_STATUS_REGISTER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;CFSR<sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>_CFSR);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;-<sp/>Usage<sp/><sp/>Fault<sp/>Status<sp/>Register<sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>(_CFSR<sp/>&gt;&gt;<sp/>16));</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;-<sp/>Bus<sp/><sp/><sp/><sp/>Fault<sp/>Status<sp/>Register<sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>((_CFSR<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF)<sp/>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;-<sp/>Memory<sp/>Fault<sp/>Status<sp/>Register<sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>(_CFSR<sp/>&amp;<sp/>0xFF)<sp/>);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;HFSR<sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>_HFSR);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_HFSR<sp/>&amp;<sp/>0b10)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;-<sp/>BusFault<sp/>on<sp/>vector<sp/>table<sp/>read.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;DFSR<sp/><sp/>=<sp/>0x%lx\n&quot;</highlight><highlight class="normal">,<sp/>_DFSR);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;AFSR<sp/><sp/>=<sp/>0x%lx<sp/>(Auxiliary<sp/>Fault)\n&quot;</highlight><highlight class="normal">,<sp/>_AFSR);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;MMFAR<sp/>=<sp/>0x%lx<sp/>(Mem<sp/>Manager<sp/>Fault<sp/>Address)\n&quot;</highlight><highlight class="normal">,<sp/>_MMAR);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE<sp/>(</highlight><highlight class="stringliteral">&quot;BFAR<sp/><sp/>=<sp/>0x%lx<sp/>(Bus<sp/>Fault<sp/>Address)\n&quot;</highlight><highlight class="normal">,<sp/>_BFAR);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_r0;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_r1;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_r2;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_r3;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_r12;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_lr;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_pc;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>stacked_psr;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_FAULT_STATUS_REGISTER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>_CFSR;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>_HFSR;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>_DFSR;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>_AFSR;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>_BFAR;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>_MMAR;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:<sp/>Break<sp/>into<sp/>the<sp/>debugger</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm(</highlight><highlight class="stringliteral">&quot;BKPT<sp/>#0\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HardFault_Handler(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>movs<sp/>r0,#4<sp/><sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>load<sp/>bit<sp/>mask<sp/>into<sp/>R0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>mov<sp/><sp/>r1,<sp/>lr<sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>load<sp/>link<sp/>register<sp/>into<sp/>R1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>tst<sp/>r0,<sp/>r1<sp/><sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>compare<sp/>with<sp/>bitmask<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>beq<sp/>_MSP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>if<sp/>bitmask<sp/>is<sp/>set:<sp/>stack<sp/>pointer<sp/>is<sp/>in<sp/>PSP.<sp/>Otherwise<sp/>in<sp/>MSP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>mrs<sp/>r0,<sp/>psp<sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>otherwise:<sp/>stack<sp/>pointer<sp/>is<sp/>in<sp/>PSP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>b<sp/>_GetPC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>go<sp/>to<sp/>part<sp/>which<sp/>loads<sp/>the<sp/>PC<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;_MSP:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>stack<sp/>pointer<sp/>is<sp/>in<sp/>MSP<sp/>register<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>mrs<sp/>r0,<sp/>msp<sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>load<sp/>stack<sp/>pointer<sp/>into<sp/>R0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;_GetPC:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>find<sp/>out<sp/>where<sp/>the<sp/>hard<sp/>fault<sp/>happened<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>ldr<sp/>r1,[r0,#20]<sp/>\n&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>load<sp/>program<sp/>counter<sp/>into<sp/>R1.<sp/>R1<sp/>contains<sp/>address<sp/>of<sp/>the<sp/>next<sp/>instruction<sp/>where<sp/>the<sp/>hard<sp/>fault<sp/>happened<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>ldr<sp/>r2,<sp/>=CoreDump<sp/>\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>bx<sp/>r2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MemManage_Handler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint32_t<sp/>fault_address;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>fault_address<sp/>=<sp/>StackUnwind();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE(</highlight><highlight class="stringliteral">&quot;\nMemory<sp/>Fault<sp/>(MPU<sp/>fault)<sp/>at<sp/>address<sp/>0X%x\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)fault_address);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>__ISB();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>__DMB();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DUMP_CORE_HAS_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>fault_address;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&quot;BKPT<sp/>#01&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BusFault_Handler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm(</highlight><highlight class="stringliteral">&quot;nop&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm(</highlight><highlight class="stringliteral">&quot;nop&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint32_t<sp/>fault_address;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>fault_address<sp/>=<sp/>StackUnwind();</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE(</highlight><highlight class="stringliteral">&quot;\nBus<sp/>Fault<sp/>at<sp/>address<sp/>0X%x\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)fault_address);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>__ISB();</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>__DMB();</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DUMP_CORE_HAS_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>fault_address;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&quot;BKPT<sp/>#01&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UsageFault_Handler(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">register</highlight><highlight class="normal"><sp/>uint32_t<sp/>fault_address;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>fault_address<sp/>=<sp/>StackUnwind();</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DUMP_CORE_HAS_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>TRACE_DUMP_CORE(</highlight><highlight class="stringliteral">&quot;\nUsage<sp/>fault<sp/>at<sp/>address<sp/>0X%x&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)fault_address);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>__ISB();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>__DMB();</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DUMP_CORE_HAS_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>fault_address;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>__asm<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&quot;BKPT<sp/>#01&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/bsp/src/fault_handler.c"/>
+  </compounddef>
+</doxygen>

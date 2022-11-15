@@ -1,0 +1,1126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="ses__common_8h" kind="file" language="C++">
+    <compoundname>ses_common.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="time__evt_8h" local="yes">time_evt.h</includes>
+    <includes refid="net__mgr_8h" local="yes">net_mgr.h</includes>
+    <includes refid="app__layer_8h" local="yes">app_layer.h</includes>
+    <includes refid="logger_8h" local="yes">logger.h</includes>
+    <includedby refid="ses__dispatcher_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</includedby>
+    <includedby refid="adm__mgr_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</includedby>
+    <includedby refid="dwn__mgr_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</includedby>
+    <includedby refid="inst__mgr_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</includedby>
+    <incdepgraph>
+      <node id="19">
+        <label>stdarg.h</label>
+      </node>
+      <node id="9">
+        <label>net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>assert.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="21">
+        <label>OpenWize_config.h</label>
+      </node>
+      <node id="12">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="15">
+        <label>proto_private.h</label>
+        <link refid="proto__private_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>time.h</label>
+      </node>
+      <node id="17">
+        <label>app_layer.h</label>
+        <link refid="app__layer_8h"/>
+      </node>
+      <node id="14">
+        <label>proto_api.h</label>
+        <link refid="proto__api_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>net_api.h</label>
+        <link refid="net__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="unionses__evt__t" prot="public">ses_evt_t</innerclass>
+    <innerclass refid="unionses__flg__t" prot="public">ses_flg_t</innerclass>
+    <innerclass refid="structses__ctx__s" prot="public">ses_ctx_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__mgr_1gaf0a9fb91dd92eb278e44cd2d669c7d58" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_log_e</name>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a71b54a23281f8f00cce38092485d35aa" prot="public">
+          <name>SES_LOG_NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ae0218370da00c584927327b68000a77e" prot="public">
+          <name>SES_LOG_CMD_RECV_READ</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a9f75c3b38cc8767ae63ff9986b3d0c5f" prot="public">
+          <name>SES_LOG_CMD_RECV_WRITE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a107a93ee6e7693905de71a20467959db" prot="public">
+          <name>SES_LOG_CMD_RECV_KEY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a4a0ce9ebbd52c341fd3c454ad296cbbb" prot="public">
+          <name>SES_LOG_CMD_RECV_EXEC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a4f4a3ee09548c02c0458facce8fee33f" prot="public">
+          <name>SES_LOG_CMD_RECV_ANN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a69df6d73a9d5ab9927355606581b3440" prot="public">
+          <name>SES_LOG_PONG_RECV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a0c75f68a54f53b4cdac05952e153db53" prot="public">
+          <name>SES_LOG_BLK_RECV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a5dd1e1b02c52f3e9983b0930b590500f" prot="public">
+          <name>SES_LOG_DATA_SENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58a93b8cee78cd30af32d455afaf058de83" prot="public">
+          <name>SES_LOG_RSP_SENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58aeda0a4bdf5fe4cd38d7fbd7a459859bc" prot="public">
+          <name>SES_LOG_PING_SENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ab612041a985c2ea5cc3a12caeec42f86" prot="public">
+          <name>SES_LOG_FINE_ADJUST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ad4e1def71668775d4dbbdba55bcbd186" prot="public">
+          <name>SES_LOG_COARSE_ADJUST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58aa5f797df45da3e9713bc19b066016501" prot="public">
+          <name>SES_LOG_DAY_PASSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggaf0a9fb91dd92eb278e44cd2d669c7d58ab506f30e19295544e2cd582def5d622f" prot="public">
+          <name>SES_LOG_DAYLIGHT_CHG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="89" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="89" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1ga8ea534db49acce698d511de5010fc334" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_state_e</name>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a291c983cbc12ca56bd6f11a6d612c8e7" prot="public">
+          <name>SES_STATE_DISABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334ab28f3658060df6540461ac185ce64fef" prot="public">
+          <name>SES_STATE_IDLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a86b2ed5c9b58d2d08a785158241a5aa1" prot="public">
+          <name>SES_STATE_SENDING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a67370290d98cfccce29ecc83cc3b2451" prot="public">
+          <name>SES_STATE_LISTENING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334a1b41ed41bdd45ecb3136cd849ec85be9" prot="public">
+          <name>SES_STATE_WAITING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334af86bad1b2c5f8820df3454bc5c4788f2" prot="public">
+          <name>SES_STATE_WAITING_RX_DELAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8ea534db49acce698d511de5010fc334ae8c8c935e9f7ba3e426d198168ed7dfe" prot="public">
+          <name>SES_STATE_WAITING_TX_DELAY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define session state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="114" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="113" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1gabba3174e56b474d3e3043c37f608623a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_flg_e</name>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa1de86cdff429e1d941a72cf8e0cfc01e" prot="public">
+          <name>SES_FLG_NONE</name>
+          <initializer>= 0x00000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Nothing <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa9f0470af0a0ecca4cab47801a96a4a2a" prot="public">
+          <name>SES_FLG_FAILED</name>
+          <initializer>= 0x00000001</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Failed </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaf3fee8921d4ee8ccbd628fe6b69e3607" prot="public">
+          <name>SES_FLG_SUCCESS</name>
+          <initializer>= 0x00000002</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Success </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa05c8e0e106dd486353cda936d21d192e" prot="public">
+          <name>SES_FLG_ERROR</name>
+          <initializer>= 0x00000004</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa58ad010fb773261c581adc6ee6a26e88" prot="public">
+          <name>SES_FLG_TIMEOUT</name>
+          <initializer>= 0x00000008</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Time Out </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaadb005a45ce238f7563e930d4366ceb2" prot="public">
+          <name>SES_FLG_RECV_MSK</name>
+          <initializer>= 0x000001F0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Convenient mask on recv flags </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aac27eabde7ff6fe5c7c2ccbda553475f3" prot="public">
+          <name>SES_FLG_CMD_RECV</name>
+          <initializer>= 0x00000070</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Command has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aae85f403a526743f0ce9afa215fe7792c" prot="public">
+          <name>SES_FLG_PONG_RECV</name>
+          <initializer>= 0x00000080</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pong has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa129e9e598c563713d63daaf701a72fee" prot="public">
+          <name>SES_FLG_BLK_RECV</name>
+          <initializer>= 0x00000100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SW Block has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa32f23bfdac402917fcbeb9414e5fb141" prot="public">
+          <name>SES_FLG_SENT_MSK</name>
+          <initializer>= 0x00000E00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Convenient mask on send flags </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aadd3fca238d06d01902213891713996ad" prot="public">
+          <name>SES_FLG_DATA_SENT</name>
+          <initializer>= 0x00000200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Data has been sent </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaaf09a14b4b4b11434727e250c709fb20" prot="public">
+          <name>SES_FLG_RSP_SENT</name>
+          <initializer>= 0x00000400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Response has been sent </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa6d3e5b140c6619e3c14f5655850844a4" prot="public">
+          <name>SES_FLG_PING_SENT</name>
+          <initializer>= 0x00000800</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ping has been sent </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab581c3ff8b94f18c9ff4f38e9690b348" prot="public">
+          <name>SES_FLG_COMPLETE</name>
+          <initializer>= 0x00001000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Session is complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa7ba9f69d18fc03ab388fa6a6e993c041" prot="public">
+          <name>SES_FLG_OUT_DATE</name>
+          <initializer>= 0x00002000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Message is out of date </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab68a8612fdff80b30452092d47b70b5a" prot="public">
+          <name>SES_FLG_CORRUPTED</name>
+          <initializer>= 0x00004000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Image is corrupted </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa67d902496a45acec958a891380b94b78" prot="public">
+          <name>SES_FLG_FRM_PASSED</name>
+          <initializer>= 0x00008000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame is by passed </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum define the session return flags. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="128" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="127" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1ga9c2263c02a0e8e70a19b2369ece71e86" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_evt_e</name>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ac89ee58f52447ea72fab0b382e92db8d" prot="public">
+          <name>SES_EVT_NET_MGR_MSK</name>
+          <initializer>= NET_EVENT_MSK</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ab6cb959064a53ff3bc97c65c41770f7b" prot="public">
+          <name>SES_EVT_NONE</name>
+          <initializer>= NET_EVENT_NONE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ac85eb881f0912971a056b4cb848af199" prot="public">
+          <name>SES_EVT_SEND_DONE</name>
+          <initializer>= NET_EVENT_SEND_DONE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86ad497b68dace58aa857b354616e2477dd" prot="public">
+          <name>SES_EVT_RECV_DONE</name>
+          <initializer>= NET_EVENT_RECV_DONE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a6f9d09923f8d704fd22e5ef7c248e5d5" prot="public">
+          <name>SES_EVT_FRM_PASSED</name>
+          <initializer>= NET_EVENT_FRM_PASSED</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a8906ef0d931a1c157d7ec7ee982d5470" prot="public">
+          <name>SES_EVT_TIMEOUT</name>
+          <initializer>= NET_EVENT_TIMEOUT</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a4ee7a95420ee993b11788891009526d4" prot="public">
+          <name>SES_EVT_SES_MGR_MSK</name>
+          <initializer>= 0x0000FF00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a98033de34a78fc5b4352dd5677a8230e" prot="public">
+          <name>SES_EVT_ADM_DELAY_EXPIRED</name>
+          <initializer>= 0x00000100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86adc8b82b70fdb41cb8f0a34662cf20784" prot="public">
+          <name>SES_EVT_INST_DELAY_EXPIRED</name>
+          <initializer>= 0x00000200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86afa33d26eada141c2f08d7788d0c5b40d" prot="public">
+          <name>SES_EVT_DWN_DELAY_EXPIRED</name>
+          <initializer>= 0x00000400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a679bb6b28666157721deec72df64bf83" prot="public">
+          <name>SES_EVT_ADM_READY</name>
+          <initializer>= 0x00001000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a41e41968f182d391dc3d1eaf473bc85f" prot="public">
+          <name>SES_EVT_INST_READY</name>
+          <initializer>= 0x00002000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a0ccee6e5b91a4360ade935ee8abea923" prot="public">
+          <name>SES_EVT_DWN_READY</name>
+          <initializer>= 0x00004000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86af0b7cbc42df771cfb58481c3bf11a7ee" prot="public">
+          <name>SES_EVT_MSK</name>
+          <initializer>= 0x00FF0000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a0e5f2f748d9f15328d04daf5d74647b7" prot="public">
+          <name>SES_EVT_OPEN</name>
+          <initializer>= 0x00010000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86abf19016e3a8d8dad958a2654079ccfe8" prot="public">
+          <name>SES_EVT_CLOSE</name>
+          <initializer>= 0x00020000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a8fed6ff0ed11e04fe92023d757273897" prot="public">
+          <name>SES_EVT_CANCEL</name>
+          <initializer>= SES_EVT_CLOSE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a1a4e459b06864a7be8d165640d142361" prot="public">
+          <name>SES_EVT_EXT_MSK</name>
+          <initializer>= 0xFF000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga9c2263c02a0e8e70a19b2369ece71e86a68303baf3cfa064bf729737443448a95" prot="public">
+          <name>SES_EVT_DAY_PASSED</name>
+          <initializer>= 0x04000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="162" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="161" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__mgr_1ga8aa9fc668c536075a33ef951d0b4acf4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ses_type_t</name>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4a3f8c0661e5ee1f160ac210e56a41bf29" prot="public">
+          <name>SES_INST</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4a029460f9b37c28d61a183cc64b21f6e7" prot="public">
+          <name>SES_ADM</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4aa745a56ea6e4ea43957b4c1b544aa5f0" prot="public">
+          <name>SES_DWN</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4adf7168bd237bc96fbdc7824f850567e4" prot="public">
+          <name>SES_NB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__mgr_1gga8aa9fc668c536075a33ef951d0b4acf4a01513c9178e72deb3df2c34f2ed4da5d" prot="public">
+          <name>SES_NONE</name>
+          <initializer>= 0xFF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="205" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="205" bodyend="212"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__wize__mgr_1ga9d7c57952fcd151d4ed43eb85fa82c05" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const _ses_name_str_[]</definition>
+        <argsstring>[]</argsstring>
+        <name>_ses_name_str_</name>
+        <initializer>=
+{
+	[SES_INST] = &quot;INST&quot;,
+	[SES_ADM]  = &quot;ADM&quot;,
+	[SES_DWN]  = &quot;DWN&quot;,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="231" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__mgr_1gaafea5424d4fc912681796a1c43dd649c" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const _ses_state_str_[]</definition>
+        <argsstring>[]</argsstring>
+        <name>_ses_state_str_</name>
+        <initializer>=
+{
+	[SES_STATE_DISABLE]            = &quot;DISABLE&quot;,
+	[SES_STATE_IDLE]               = &quot;IDLE&quot;,
+	[SES_STATE_SENDING]            = &quot;SENDING&quot;,
+	[SES_STATE_LISTENING]          = &quot;LISTENING&quot;,
+	[SES_STATE_WAITING]            = &quot;WAITING&quot;,
+	[SES_STATE_WAITING_RX_DELAY]   = &quot;WAITING_RX_DELAY&quot;,
+	[SES_STATE_WAITING_TX_DELAY]   = &quot;WAITING_TX_DELAY&quot;,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="238" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__wize__mgr_1ga3d8cb446b2675c84c20a496c8e43e11d" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const _ses_log_str_[]</definition>
+        <argsstring>[]</argsstring>
+        <name>_ses_log_str_</name>
+        <initializer>=
+{
+	[SES_LOG_NONE]           = &quot;...&quot;,
+	[SES_LOG_CMD_RECV_READ]  = &quot;READ&quot;,
+	[SES_LOG_CMD_RECV_WRITE] = &quot;WRITE&quot;,
+	[SES_LOG_CMD_RECV_KEY]   = &quot;KEY&quot;,
+	[SES_LOG_CMD_RECV_EXEC]  = &quot;EXEC&quot;,
+	[SES_LOG_CMD_RECV_ANN]   = &quot;ANN&quot;,
+
+	[SES_LOG_PONG_RECV]      = &quot;PONG&quot;,
+	[SES_LOG_BLK_RECV]       = &quot;BLK&quot;,
+	[SES_LOG_DATA_SENT]      = &quot;DATA&quot;,
+	[SES_LOG_RSP_SENT]       = &quot;RSP&quot;,
+	[SES_LOG_PING_SENT]      = &quot;PING&quot;,
+
+	[SES_LOG_FINE_ADJUST]    = &quot;FINE ADJ&quot;,
+	[SES_LOG_COARSE_ADJUST]  = &quot;COARSE ADJ&quot;,
+	[SES_LOG_DAY_PASSED]     = &quot;DAY PASSED&quot;,
+	[SES_LOG_DAYLIGHT_CHG]   = &quot;DAYLIGHT CHG&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" line="249" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>// TODO This file ... </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/03/16[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_SES_COMMON_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_SES_COMMON_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="time__evt_8h" kindref="compound">time_evt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="net__mgr_8h" kindref="compound">net_mgr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="app__layer_8h" kindref="compound">app_layer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="logger_8h" kindref="compound">logger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>SES_EVT;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>NET_EVT<sp/><sp/>:<sp/>8;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>TIM_EVT<sp/><sp/>:<sp/>8;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>API_EVT<sp/><sp/>:<sp/>8;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>RESERVED<sp/>:<sp/>8;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>SES_EVT_b;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/>ses_evt_t;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>SES_FLG;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Error<sp/>communicating<sp/>with<sp/>NetDev</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>SUCCESS<sp/><sp/><sp/><sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>NC1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>6;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>SENT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>RECEIVED<sp/><sp/><sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>COMPLETE<sp/><sp/><sp/><sp/>:<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Session<sp/>terminated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>OUT_DATE<sp/><sp/><sp/><sp/>:<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>RSP<sp/>is<sp/>not<sp/>ready</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>CORRUPTED<sp/><sp/><sp/>:<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Received<sp/>FRM<sp/>is<sp/>corrupted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>PASSED<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Received<sp/>FRM<sp/>is<sp/>passed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>NC2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>2;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>RX_DELAY<sp/><sp/><sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>TX_DELAY<sp/><sp/><sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>TIMEOUT<sp/><sp/><sp/><sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>TIMEOUT_EX<sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>DAY_DELAY<sp/><sp/><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>DELTA_DELAY<sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>NC3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>2;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>RESEREVD<sp/><sp/><sp/><sp/>:<sp/>8;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>SES_FLG_b;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/>ses_flg_t;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_NONE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_CMD_RECV_READ<sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_CMD_RECV_WRITE,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_CMD_RECV_KEY,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_CMD_RECV_EXEC,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_CMD_RECV_ANN,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_PONG_RECV<sp/>,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_BLK_RECV,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_DATA_SENT,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_RSP_SENT,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_PING_SENT,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_FINE_ADJUST,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_COARSE_ADJUST,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_DAY_PASSED,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_LOG_DAYLIGHT_CHG,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}<sp/>ses_log_e;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="group__wize__mgr_1ga8ea534db49acce698d511de5010fc334" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_STATE_DISABLE,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_STATE_IDLE,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_STATE_SENDING,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_STATE_LISTENING,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_STATE_WAITING,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_STATE_WAITING_RX_DELAY,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_STATE_WAITING_TX_DELAY</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/><ref refid="group__wize__mgr_1ga8ea534db49acce698d511de5010fc334" kindref="member">ses_state_e</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="group__wize__mgr_1gabba3174e56b474d3e3043c37f608623a" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SES_FLG__MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0000000F,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa1de86cdff429e1d941a72cf8e0cfc01e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa1de86cdff429e1d941a72cf8e0cfc01e" kindref="member">SES_FLG_NONE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000000,<sp/></highlight></codeline>
+<codeline lineno="133" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa9f0470af0a0ecca4cab47801a96a4a2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa9f0470af0a0ecca4cab47801a96a4a2a" kindref="member">SES_FLG_FAILED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000001,<sp/></highlight></codeline>
+<codeline lineno="134" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaf3fee8921d4ee8ccbd628fe6b69e3607" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaf3fee8921d4ee8ccbd628fe6b69e3607" kindref="member">SES_FLG_SUCCESS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000002,<sp/></highlight></codeline>
+<codeline lineno="135" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa05c8e0e106dd486353cda936d21d192e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa05c8e0e106dd486353cda936d21d192e" kindref="member">SES_FLG_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000004,<sp/></highlight></codeline>
+<codeline lineno="136" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa58ad010fb773261c581adc6ee6a26e88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa58ad010fb773261c581adc6ee6a26e88" kindref="member">SES_FLG_TIMEOUT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000008,<sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaadb005a45ce238f7563e930d4366ceb2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaadb005a45ce238f7563e930d4366ceb2" kindref="member">SES_FLG_RECV_MSK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x000001F0,<sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aac27eabde7ff6fe5c7c2ccbda553475f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aac27eabde7ff6fe5c7c2ccbda553475f3" kindref="member">SES_FLG_CMD_RECV</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000070,<sp/></highlight></codeline>
+<codeline lineno="142" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aae85f403a526743f0ce9afa215fe7792c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aae85f403a526743f0ce9afa215fe7792c" kindref="member">SES_FLG_PONG_RECV</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000080,<sp/></highlight></codeline>
+<codeline lineno="143" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa129e9e598c563713d63daaf701a72fee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa129e9e598c563713d63daaf701a72fee" kindref="member">SES_FLG_BLK_RECV</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000100,<sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa32f23bfdac402917fcbeb9414e5fb141" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa32f23bfdac402917fcbeb9414e5fb141" kindref="member">SES_FLG_SENT_MSK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000E00,<sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aadd3fca238d06d01902213891713996ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aadd3fca238d06d01902213891713996ad" kindref="member">SES_FLG_DATA_SENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000200,<sp/></highlight></codeline>
+<codeline lineno="149" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaaf09a14b4b4b11434727e250c709fb20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aaaf09a14b4b4b11434727e250c709fb20" kindref="member">SES_FLG_RSP_SENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000400,<sp/></highlight></codeline>
+<codeline lineno="150" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa6d3e5b140c6619e3c14f5655850844a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa6d3e5b140c6619e3c14f5655850844a4" kindref="member">SES_FLG_PING_SENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000800,<sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SES_FLG__MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0000F000,<sp/>/*!&lt;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab581c3ff8b94f18c9ff4f38e9690b348" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab581c3ff8b94f18c9ff4f38e9690b348" kindref="member">SES_FLG_COMPLETE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00001000,<sp/></highlight></codeline>
+<codeline lineno="156" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa7ba9f69d18fc03ab388fa6a6e993c041" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa7ba9f69d18fc03ab388fa6a6e993c041" kindref="member">SES_FLG_OUT_DATE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00002000,<sp/></highlight></codeline>
+<codeline lineno="157" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab68a8612fdff80b30452092d47b70b5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aab68a8612fdff80b30452092d47b70b5a" kindref="member">SES_FLG_CORRUPTED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00004000,<sp/></highlight></codeline>
+<codeline lineno="158" refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa67d902496a45acec958a891380b94b78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ggabba3174e56b474d3e3043c37f608623aa67d902496a45acec958a891380b94b78" kindref="member">SES_FLG_FRM_PASSED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00008000,<sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}<sp/><ref refid="group__wize__mgr_1gabba3174e56b474d3e3043c37f608623a" kindref="member">ses_flg_e</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_NET_MGR_MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>NET_EVENT_MSK,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Events<sp/>from<sp/>NetMgr<sp/>intended<sp/>to<sp/>the<sp/>current<sp/>(own<sp/>the<sp/>NetDev)<sp/>active<sp/>session</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Note<sp/>:<sp/>for<sp/>these<sp/>event<sp/>the<sp/>current<sp/>active<sp/>session<sp/>should<sp/>be<sp/>in<sp/>SENDING</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>or<sp/>LISTENING<sp/>state.<sp/>Otherwise,<sp/>something<sp/>wrong<sp/>happened.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_NONE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca09a5b4f3a1a9fa094dab145cc099b668" kindref="member">NET_EVENT_NONE</ref>,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_SEND_DONE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcade9515453f338241db2c064bd81b8447" kindref="member">NET_EVENT_SEND_DONE</ref>,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_RECV_DONE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcad83b8693c3c03bcd44afd72b672d7c15" kindref="member">NET_EVENT_RECV_DONE</ref>,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_FRM_PASSED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dcaaa78e26bd359597ec2db36257a4be3fb" kindref="member">NET_EVENT_FRM_PASSED</ref>,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_TIMEOUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__wize__net__mgr_1gga44c192bd9e39528b5318159b2d0085dca7fa77f9df6fe915d41ad1057f1b78611" kindref="member">NET_EVENT_TIMEOUT</ref>,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_SES_MGR_MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0000FF00,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Events<sp/>from<sp/>TimeEvt<sp/>or<sp/>Timer<sp/>intended<sp/>to<sp/>sessions<sp/>in<sp/>waiting<sp/>state.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_ADM_DELAY_EXPIRED<sp/><sp/>=<sp/>0x00000100,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_INST_DELAY_EXPIRED<sp/>=<sp/>0x00000200,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_DWN_DELAY_EXPIRED<sp/><sp/>=<sp/>0x00000400,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Events<sp/>from<sp/>internal<sp/>to<sp/>validate<sp/>(be<sp/>available)<sp/>the<sp/>send<sp/>or<sp/>receive<sp/>buffer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_ADM_READY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00001000,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_INST_READY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00002000,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_DWN_READY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00004000,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00FF0000,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Events<sp/>from<sp/>API<sp/>(Adm<sp/>and<sp/>Install)<sp/>to<sp/>request<sp/>session<sp/>start<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_OPEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00010000,</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_CLOSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00020000,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_CANCEL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>SES_EVT_CLOSE,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_EXT_MSK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0xFF000000,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Events<sp/>from<sp/>Time<sp/>Mgr<sp/>task<sp/>signaling<sp/>special<sp/>time<sp/>passed.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SES_EVT_FULL_POWER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x08000000,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SES_EVT_PERIODIC_INST<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x80000000,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_EVT_DAY_PASSED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x04000000,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SES_EVT_TIME_ADJUST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x03000000,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}<sp/>ses_evt_e;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_INST<sp/>=<sp/>0x00,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_ADM<sp/><sp/>=<sp/>0x01,</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_DWN<sp/><sp/>=<sp/>0x02,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_NB,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>SES_NONE<sp/>=<sp/>0xFF,</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}<sp/>ses_type_t;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pPrivate;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*hTask;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*hMutex;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*hEvents;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*ini)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s<sp/>*pCtx);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>(*fsm)(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ses_ctx_s<sp/>*pCtx,<sp/>uint32_t<sp/>u32Evt);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtime__evt__s" kindref="compound">time_evt_t</ref><sp/>sTimeEvt;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__mgr_1ga8ea534db49acce698d511de5010fc334" kindref="member">ses_state_e</ref><sp/>eState;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>ses_type_t<sp/>eType;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>_ses_name_str_[]<sp/>=</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_INST]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;INST&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_ADM]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ADM&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_DWN]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DWN&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>_ses_state_str_[]<sp/>=</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_STATE_DISABLE]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DISABLE&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_STATE_IDLE]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;IDLE&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_STATE_SENDING]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;SENDING&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_STATE_LISTENING]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;LISTENING&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_STATE_WAITING]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WAITING&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_STATE_WAITING_RX_DELAY]<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WAITING_RX_DELAY&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_STATE_WAITING_TX_DELAY]<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WAITING_TX_DELAY&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>_ses_log_str_[]<sp/>=</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_NONE]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;...&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_CMD_RECV_READ]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;READ&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_CMD_RECV_WRITE]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WRITE&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_CMD_RECV_KEY]<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;KEY&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_CMD_RECV_EXEC]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;EXEC&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_CMD_RECV_ANN]<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ANN&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_PONG_RECV]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PONG&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_BLK_RECV]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;BLK&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_DATA_SENT]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DATA&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_RSP_SENT]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;RSP&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_PING_SENT]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PING&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_FINE_ADJUST]<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;FINE<sp/>ADJ&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_COARSE_ADJUST]<sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;COARSE<sp/>ADJ&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_DAY_PASSED]<sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DAY<sp/>PASSED&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>[SES_LOG_DAYLIGHT_CHG]<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;DAYLIGHT<sp/>CHG&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_SES_DISPATCHER_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h"/>
+  </compounddef>
+</doxygen>

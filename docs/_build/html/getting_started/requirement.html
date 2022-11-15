@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr-FR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exigence &mdash; Documentation OpenWize 1.0.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #3D3D3D" >
+            <a href="../index.html" class="icon icon-home"> OpenWize
+            <img src="../_static/logo_grdf_simplifie_94-48.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Bienvenue sur OpenWize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Pour commencer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_doc/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_documentation/index.html">Documentation avancée</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #3D3D3D" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenWize</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Exigence</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting_started/requirement.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="requirement">
+<h1>Exigence<a class="headerlink" href="#requirement" title="Lien permanent vers cette rubrique"></a></h1>
+<p>La stack OpenWize est essentiellement développée pour cibler les MCU de STMicroelectronic, basés sur le cœur du processeur ARM-M. Pour des raisons pratiques, nous utilisons le STM32CubeIDE comme IDE. Il est livré avec tout ce qui est nécessaire pour compiler, charger et déboguer un firmware sur ce MCU ST. Cet IDE peut être téléchargé sur le site de STMicroelectronics (<a class="reference external" href="https://www.st.com/en/development-tools/stm32cubeide.html#get-software">STM32CubeIDE</a>).</p>
+<p>Le système de construction est basé sur les outils <em>cmake</em> et <em>make</em> qui s’appuient sur le cross-toolchain fourni par le STM32CubeIDE. Nous fournissons un petit script bash « set_env.sh » dans « tools/script » pour vous aider à configurer certaines variables d’environnement.</p>
+<section id="restriction">
+<h2>Restriction<a class="headerlink" href="#restriction" title="Lien permanent vers cette rubrique"></a></h2>
+<p>L’ensemble du développement et des tests a été réalisé sous le système d’exploitation Linux, Windows n’est pas supporté.</p>
+</section>
+<section id="minimum-version">
+<h2>Version minimale<a class="headerlink" href="#minimum-version" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Le tableau suivant indique les versions minimales recommandées pour pouvoir construire la stack OpenWize.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 30%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Host</p></td>
+<td><p>Linux Ubuntu 18.04</p></td>
+<td><p>Il n’y a pas d’exigence particulière. Il devrait fonctionner sur n’importe quelle distribution Linux.</p></td>
+</tr>
+<tr class="row-even"><td><p>Git</p></td>
+<td><p>2.24</p></td>
+<td><p>Il n’y a pas d’exigence particulière</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cmake</p></td>
+<td><p>3.13.2</p></td>
+<td><p>Les fichiers CMakeLists.txt et <em>xxx</em>.cmake sont basés sur une version de cmake supérieure ou égale à 3.12.</p></td>
+</tr>
+<tr class="row-even"><td><p>Make</p></td>
+<td><p>4.1</p></td>
+<td><p>Il n’y a pas d’exigence particulière</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cross-toolchain</p></td>
+<td><p>7.3.1 (arm-non-eabi-gcc) et 2.30.0 (binutils)</p></td>
+<td><p>Il n’y a pas d’exigence particulière</p></td>
+</tr>
+<tr class="row-even"><td><p>Newlib</p></td>
+<td><p>3.0.0</p></td>
+<td><p>Il s’agit des versions rassemblées avec le cross-toolchain.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notez que <a class="reference external" href="https://git-scm.com">Git</a>, <a class="reference external" href="https://cmake.org">Cmake</a> et <a class="reference external" href="https://www.gnu.org/software/make">Make</a> sont généralement déjà installés sur la distribution Linux de base, il n’y a donc rien de plus à faire.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 - 2022, GRDF.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

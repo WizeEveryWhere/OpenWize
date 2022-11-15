@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structwize__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>wize_ctx_s</compoundname>
+    <includes refid="net__mgr_8h" local="no">net_mgr.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwize__ctx__s_1abc4f16d65cf8cd70c5637076b5fdbd84" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wize_ctx_s::hCaller</definition>
+        <argsstring></argsstring>
+        <name>hCaller</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold the caller task&apos;s id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="90" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1a6fa0de6b85cd8973fcddb37213b9f0ec" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wize_ctx_s::hTask</definition>
+        <argsstring></argsstring>
+        <name>hTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold the net_mgr task&apos;s id <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="91" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1adb6b030515232cb8fd0986e13c41a291" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wize_ctx_s::hMutex</definition>
+        <argsstring></argsstring>
+        <name>hMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold a mutex to lock the net_mgr </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="92" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1a7adf6f1893fa5b269a0a93c382ac507c" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wize_ctx_s::pBuffDesc</definition>
+        <argsstring></argsstring>
+        <name>pBuffDesc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer on passed buffer descriptor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="94" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1a765c88d7afe2363843ef0f4b75c0754d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_ctx_s::u8TransRetries</definition>
+        <argsstring></argsstring>
+        <name>u8TransRetries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of transmission retry in case of internal error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="95" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1aaeb546ac50a59a19859465dee5c78ccc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_ctx_s::u8RecvRetries</definition>
+        <argsstring></argsstring>
+        <name>u8RecvRetries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of reception retry in case of internal error </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="97" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1ad3e5e64af164f1fba18e8ae4852de8ed" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t wize_ctx_s::i16ExpandTmo</definition>
+        <argsstring></argsstring>
+        <name>i16ExpandTmo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expand timeout duration in millisecond </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="99" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1a3b70e7b55fa73c7f7fa0193cafae9aed" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_ctx_s::u8Detected</definition>
+        <argsstring></argsstring>
+        <name>u8Detected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Indicate that a listen message has been detected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="100" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1af1bcb4074135bf2fc29372d159b86828" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_ctx_s::bListenPend</definition>
+        <argsstring></argsstring>
+        <name>bListenPend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Indicate that a listen is pending </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="101" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1a88c6b08c5da78dc76446f28901f441b2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_ctx_s::u8Type</definition>
+        <argsstring></argsstring>
+        <name>u8Type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The expected listen application message </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="102" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1ac2e53f8067256aa4da0f5b55aa10a040" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__net__mgr_1gaa14214208285671836bdb8eccf56719b" kindref="member">net_listen_type_e</ref></type>
+        <definition>net_listen_type_e wize_ctx_s::eListenType</definition>
+        <argsstring></argsstring>
+        <name>eListenType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The current listen type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="103" column="19" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__ctx__s_1a884efc8b78707d27e27f02c7e0b1b1ff" prot="public" static="no" mutable="no">
+        <type><ref refid="group__time__evt_1ga2450508d973fc558596571e5d0639057" kindref="member">time_evt_t</ref></type>
+        <definition>time_evt_t wize_ctx_s::sTimeOut</definition>
+        <argsstring></argsstring>
+        <name>sTimeOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Internal timeout on send or listen </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="104" column="12" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the network manager context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>wize_ctx_s</label>
+        <link refid="structwize__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sTimeOut</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>time_evt_s</label>
+        <link refid="structtime__evt__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pNext</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" line="89" column="1" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h" bodystart="88" bodyend="105"/>
+    <listofallmembers>
+      <member refid="structwize__ctx__s_1af1bcb4074135bf2fc29372d159b86828" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>bListenPend</name></member>
+      <member refid="structwize__ctx__s_1ac2e53f8067256aa4da0f5b55aa10a040" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>eListenType</name></member>
+      <member refid="structwize__ctx__s_1abc4f16d65cf8cd70c5637076b5fdbd84" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>hCaller</name></member>
+      <member refid="structwize__ctx__s_1adb6b030515232cb8fd0986e13c41a291" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>hMutex</name></member>
+      <member refid="structwize__ctx__s_1a6fa0de6b85cd8973fcddb37213b9f0ec" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>hTask</name></member>
+      <member refid="structwize__ctx__s_1ad3e5e64af164f1fba18e8ae4852de8ed" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>i16ExpandTmo</name></member>
+      <member refid="structwize__ctx__s_1a7adf6f1893fa5b269a0a93c382ac507c" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>pBuffDesc</name></member>
+      <member refid="structwize__ctx__s_1a884efc8b78707d27e27f02c7e0b1b1ff" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>sTimeOut</name></member>
+      <member refid="structwize__ctx__s_1a3b70e7b55fa73c7f7fa0193cafae9aed" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>u8Detected</name></member>
+      <member refid="structwize__ctx__s_1aaeb546ac50a59a19859465dee5c78ccc" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>u8RecvRetries</name></member>
+      <member refid="structwize__ctx__s_1a765c88d7afe2363843ef0f4b75c0754d" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>u8TransRetries</name></member>
+      <member refid="structwize__ctx__s_1a88c6b08c5da78dc76446f28901f441b2" prot="public" virt="non-virtual"><scope>wize_ctx_s</scope><name>u8Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

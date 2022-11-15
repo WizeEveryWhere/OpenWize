@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structadmin__rsp__execinstping__t" kind="struct" language="C++" prot="public">
+    <compoundname>admin_rsp_execinstping_t</compoundname>
+    <includes refid="app__layer_8h" local="no">app_layer.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structadmin__rsp__execinstping__t_1a3d70d3ce47ca7b19bfc694ee7db19f4f" prot="public" static="no" mutable="no">
+        <type><ref refid="structadmin__rsp__t" kindref="compound">admin_rsp_t</ref></type>
+        <definition>admin_rsp_t admin_rsp_execinstping_t::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="223" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__rsp__execinstping__t_1a1b23c96f515a53aa555a0d2c5c999558" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_rsp_execinstping_t::L7NbPong</definition>
+        <argsstring></argsstring>
+        <name>L7NbPong</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="224" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structadmin__rsp__execinstping__t_1a4bc44bf71b0ee24e23014e89518a8fb1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t admin_rsp_execinstping_t::L7Pong[3][9]</definition>
+        <argsstring>[3][9]</argsstring>
+        <name>L7Pong</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="225" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>admin_rsp_execinstping_t</label>
+        <link refid="structadmin__rsp__execinstping__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+header</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>admin_rsp_t</label>
+        <link refid="structadmin__rsp__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="222" column="15" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="222" bodyend="226"/>
+    <listofallmembers>
+      <member refid="structadmin__rsp__execinstping__t_1a3d70d3ce47ca7b19bfc694ee7db19f4f" prot="public" virt="non-virtual"><scope>admin_rsp_execinstping_t</scope><name>header</name></member>
+      <member refid="structadmin__rsp__execinstping__t_1a1b23c96f515a53aa555a0d2c5c999558" prot="public" virt="non-virtual"><scope>admin_rsp_execinstping_t</scope><name>L7NbPong</name></member>
+      <member refid="structadmin__rsp__execinstping__t_1a4bc44bf71b0ee24e23014e89518a8fb1" prot="public" virt="non-virtual"><scope>admin_rsp_execinstping_t</scope><name>L7Pong</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

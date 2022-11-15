@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structtime__evt__s" kind="struct" language="C++" prot="public">
+    <compoundname>time_evt_s</compoundname>
+    <includes refid="time__evt_8h" local="no">time_evt.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtime__evt__s_1a943e74b5053c368d3b201d98b3590c8e" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structtime__evt__s" kindref="compound">time_evt_s</ref> *</type>
+        <definition>struct time_evt_s* time_evt_s::pNext</definition>
+        <argsstring></argsstring>
+        <name>pNext</name>
+        <briefdescription>
+<para>Pointer on the next timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="67" column="17" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__evt__s_1add15c6e76a9b3b84af61a55083389d59" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* time_evt_s::pvTaskHandle) (uint32_t evt)</definition>
+        <argsstring>)(uint32_t evt)</argsstring>
+        <name>pvTaskHandle</name>
+        <briefdescription>
+<para>Pointer on call-back notification function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="71" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__evt__s_1a5b6714edfae9fc2e9b89f1adc8e1d9bf" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t time_evt_s::u64InitVal</definition>
+        <argsstring></argsstring>
+        <name>u64InitVal</name>
+        <briefdescription>
+<para>The initial timer value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="73" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__evt__s_1a39578dde1bdc5d0218e7d1917efce072" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t time_evt_s::u64Value</definition>
+        <argsstring></argsstring>
+        <name>u64Value</name>
+        <briefdescription>
+<para>The current timer value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="74" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__evt__s_1a9ad1d379f74eab2100203cd898f86b79" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t time_evt_s::u32Event</definition>
+        <argsstring></argsstring>
+        <name>u32Event</name>
+        <briefdescription>
+<para>Event to notify on expire timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="76" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__evt__s_1a4a4abf75ade1c28cc77f5ca0af331e3e" prot="public" static="no" mutable="no">
+        <type><ref refid="group__time__evt_1ga8fcf7b8fdc4fc8ab6ccc2d6a79de908e" kindref="member">time_evt_cfg_e</ref></type>
+        <definition>time_evt_cfg_e time_evt_s::eCfg</definition>
+        <argsstring></argsstring>
+        <name>eCfg</name>
+        <briefdescription>
+<para>The timer configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="77" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct define the timer context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>time_evt_s</label>
+        <link refid="structtime__evt__s"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+pNext</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" line="66" column="17" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/include/time_evt.h" bodystart="66" bodyend="78"/>
+    <listofallmembers>
+      <member refid="structtime__evt__s_1a4a4abf75ade1c28cc77f5ca0af331e3e" prot="public" virt="non-virtual"><scope>time_evt_s</scope><name>eCfg</name></member>
+      <member refid="structtime__evt__s_1a943e74b5053c368d3b201d98b3590c8e" prot="public" virt="non-virtual"><scope>time_evt_s</scope><name>pNext</name></member>
+      <member refid="structtime__evt__s_1add15c6e76a9b3b84af61a55083389d59" prot="public" virt="non-virtual"><scope>time_evt_s</scope><name>pvTaskHandle</name></member>
+      <member refid="structtime__evt__s_1a9ad1d379f74eab2100203cd898f86b79" prot="public" virt="non-virtual"><scope>time_evt_s</scope><name>u32Event</name></member>
+      <member refid="structtime__evt__s_1a5b6714edfae9fc2e9b89f1adc8e1d9bf" prot="public" virt="non-virtual"><scope>time_evt_s</scope><name>u64InitVal</name></member>
+      <member refid="structtime__evt__s_1a39578dde1bdc5d0218e7d1917efce072" prot="public" virt="non-virtual"><scope>time_evt_s</scope><name>u64Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

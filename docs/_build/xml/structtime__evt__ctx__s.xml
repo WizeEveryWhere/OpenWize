@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structtime__evt__ctx__s" kind="struct" language="C++" prot="public">
+    <compoundname>time_evt_ctx_s</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtime__evt__ctx__s_1aa18cab8ddb14dbbe722179b59f11eb94" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structtime__evt__s" kindref="compound">time_evt_s</ref> *</type>
+        <definition>struct time_evt_s* time_evt_ctx_s::pCurrent</definition>
+        <argsstring></argsstring>
+        <name>pCurrent</name>
+        <briefdescription>
+<para>Pointer on the current timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="52" column="17" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__evt__ctx__s_1aa4006b47b482e0730b8d4fcd76523710" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* time_evt_ctx_s::pLock</definition>
+        <argsstring></argsstring>
+        <name>pLock</name>
+        <briefdescription>
+<para>Lock the access to the context (RTOS) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="53" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtime__evt__ctx__s_1a3d9d7c566e5d202b06854f76f69aab47" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t time_evt_ctx_s::u64LastUpdate</definition>
+        <argsstring></argsstring>
+        <name>u64LastUpdate</name>
+        <briefdescription>
+<para>Last time update. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="54" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct define the TimeEvt context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>time_evt_ctx_s</label>
+        <link refid="structtime__evt__ctx__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pCurrent</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>time_evt_s</label>
+        <link refid="structtime__evt__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pNext</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" line="51" column="1" bodyfile="/home/nono/OpenWize/sources/Samples/TimeEvt/src/time_evt.c" bodystart="50" bodyend="55"/>
+    <listofallmembers>
+      <member refid="structtime__evt__ctx__s_1aa18cab8ddb14dbbe722179b59f11eb94" prot="public" virt="non-virtual"><scope>time_evt_ctx_s</scope><name>pCurrent</name></member>
+      <member refid="structtime__evt__ctx__s_1aa4006b47b482e0730b8d4fcd76523710" prot="public" virt="non-virtual"><scope>time_evt_ctx_s</scope><name>pLock</name></member>
+      <member refid="structtime__evt__ctx__s_1a3d9d7c566e5d202b06854f76f69aab47" prot="public" virt="non-virtual"><scope>time_evt_ctx_s</scope><name>u64LastUpdate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

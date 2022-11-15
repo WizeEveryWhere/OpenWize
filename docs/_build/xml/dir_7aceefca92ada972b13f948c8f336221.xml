@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_7aceefca92ada972b13f948c8f336221" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/Samples/Parameters/include</compoundname>
+    <innerfile refid="parameters_8h">parameters.h</innerfile>
+    <innerfile refid="parameters__def_8h">parameters_def.h</innerfile>
+    <innerfile refid="parameters__lan__ids_8h">parameters_lan_ids.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/Samples/Parameters/include/"/>
+  </compounddef>
+</doxygen>

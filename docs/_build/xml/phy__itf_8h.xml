@@ -1,0 +1,764 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="phy__itf_8h" kind="file" language="C++">
+    <compoundname>phy_itf.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="phy__layer_8h" local="yes">phy_layer.h</includes>
+    <includedby refid="wize__api_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h</includedby>
+    <includedby refid="net__api__private_8h" local="yes">/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h</includedby>
+    <includedby refid="phy__layer__private_8h" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="3">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="20">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/src/net_api.c</label>
+        <link refid="net__api_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/ses_dispatcher.c</label>
+        <link refid="ses__dispatcher_8c"/>
+      </node>
+      <node id="19">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/net_mgr.c</label>
+        <link refid="net__mgr_8c"/>
+      </node>
+      <node id="9">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h</label>
+        <link refid="net__api__private_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/inst_mgr.c</label>
+        <link refid="inst__mgr_8c"/>
+      </node>
+      <node id="11">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/ses_common.h</label>
+        <link refid="ses__common_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/include/app_entry.h</label>
+        <link refid="app__entry_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/inst_mgr.h</label>
+        <link refid="inst__mgr_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/dwn_mgr.c</label>
+        <link refid="dwn__mgr_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/wize_api.h</label>
+        <link refid="wize__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/adm_mgr.h</label>
+        <link refid="adm__mgr_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h</label>
+        <link refid="phy__layer__private_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/ses_dispatcher.h</label>
+        <link refid="ses__dispatcher_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/net_mgr.h</label>
+        <link refid="net__mgr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="14">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/src/adm_mgr.c</label>
+        <link refid="adm__mgr_8c"/>
+      </node>
+      <node id="15">
+        <label>/home/nono/OpenWize/sources/WizeCore/mgr/include/dwn_mgr.h</label>
+        <link refid="dwn__mgr_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/app_entry.c</label>
+        <link refid="app__entry_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c</label>
+        <link refid="storage_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structphy__if__s" prot="public">phy_if_s</innerclass>
+    <innerclass refid="structphydev__s" prot="public">phydev_s</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__phy__itf_1ga74947dd7f2dae3bc33731625a298113f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_status_e</name>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" prot="public">
+          <name>PHY_STATUS_OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status OK </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" prot="public">
+          <name>PHY_STATUS_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status Error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" prot="public">
+          <name>PHY_STATUS_BUSY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status Busy </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa087ee629b2087d5f7c98fba1caf3b849" prot="public">
+          <name>PHY_STATUS_DISABLE</name>
+          <initializer>= 0xFF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Status Disable </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the PHY device status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="107" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="107" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1gafbdbc8d1faf5deaac496ad929db06eac" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_ctl_e</name>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca263c3ac9de129113ebca9960e262625a" prot="public">
+          <name>PHY_CTL_SET_TX_FREQ_OFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the TX frequency Offset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca948a54f56b66bf1a1990a7e941ac7c6a" prot="public">
+          <name>PHY_CTL_SET_TX_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set the TX Power </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca7a6330c38cc876d127bd8e2d432d1684" prot="public">
+          <name>PHY_CTL_SET_PA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Enable/Disable the PA (if any) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0deba927ba8c83e63c4de70ece11438f" prot="public">
+          <name>PHY_CTL_GET_TX_FREQ_OFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the TX frequency Offset </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca9029fceced8f70d1ede64676c806cfa7" prot="public">
+          <name>PHY_CTL_GET_TX_POWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the TX Power </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8c72e887da88b4b8b38c3177ddd118ab" prot="public">
+          <name>PHY_CTL_GET_PA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the PA state </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaae7bfa7d84b0a3f7f494ddd7e0864eea" prot="public">
+          <name>PHY_CTL_GET_FREQ_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the frequency error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca2905747f10421f24888f43d6a753d8a2" prot="public">
+          <name>PHY_CTL_GET_RSSI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the RX RSSI </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8b97abc4477870734b7d643bff0eebf7" prot="public">
+          <name>PHY_CTL_GET_NOISE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the TX Noise </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0fb46eb58e895f99665f0209dbc6fb8a" prot="public">
+          <name>PHY_CTL_GET_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the Last error id </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca3c6b91585a6b83abb049ecfb6e5a2a96" prot="public">
+          <name>PHY_CTL_GET_STR_ERR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Get the Last error string </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca23722fbded4f7ac94506223aa5dc33d3" prot="public">
+          <name>PHY_CTL_SPE</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacae64445bda4b89d7ca57ce46d5774ff2f" prot="public">
+          <name>PHY_CTL_SPE_TEST_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Test mode (if any) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacac339b3be4a9fa04fa20102d6aa930fe6" prot="public">
+          <name>PHY_CTL_CMD</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaa0a9c0802a975519cd45346802b63cba" prot="public">
+          <name>PHY_CTL_CMD_PWR_OFF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Power off the device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca063100b03bdab8734c09a8fb805a2c25" prot="public">
+          <name>PHY_CTL_CMD_PWR_ON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Power on the device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca1782c40afcb1fa6400a33631471d1a34" prot="public">
+          <name>PHY_CTL_CMD_RESET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Reset the PHY device </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca435b12c9f197ac28266f27ec025637cb" prot="public">
+          <name>PHY_CTL_CMD_READY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Go in ready state </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca826f156c530260644efee6035552c866" prot="public">
+          <name>PHY_CTL_CMD_SLEEP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sleep command </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca32844954e4847867dc99969b1e62bae7" prot="public">
+          <name>PHY_CTL_CMD_LAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the available command to change the PHY state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="117" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="117" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1gae24529cecc04657b44f4b4c4ece6843c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phy_test_mode_e</name>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" prot="public">
+          <name>PHY_TST_MODE_NONE</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Test mode deactivated </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cac91464917843f212b29cfd0c39be622d" prot="public">
+          <name>PHY_TST_MODE_RX</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>RX test mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cabff8d6693a77572e4b25142eb0a288e3" prot="public">
+          <name>PHY_TST_MODE_PER_RX</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PER RX test mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca7818877244e74577a8892e56b17f0561" prot="public">
+          <name>PHY_TST_MODE_TX</name>
+          <initializer>= 0x3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>TX test mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca02d08b2e4e2926c849da4db6bc6fe616" prot="public">
+          <name>PHY_NB_TST_MODE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the available test mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="149" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="149" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__phy__itf_1ga0d56115487d7cfe76d9c15685c0629bc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>phydev_evt_e</name>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcad5d6adb226f32ecc84f7a4d080aa3a14" prot="public">
+          <name>PHYDEV_EVT_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Nothing special </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca20450e3262e999661e387f2713c44b30" prot="public">
+          <name>PHYDEV_EVT_RX_STARTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Received packet started (preamble received) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca77c5a0bcdd5cea7ce331ff634d285ec9" prot="public">
+          <name>PHYDEV_EVT_RX_COMPLETE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Packet has been received </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab1eff27aa374a8e4cd1ca17ba876f92b" prot="public">
+          <name>PHYDEV_EVT_TX_STARTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Transfer packet started </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcaec9c2960667dda0ad1c67dc0e0380ca9" prot="public">
+          <name>PHYDEV_EVT_TX_COMPLETE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Transfer packet complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab9b87fdaad7dc6c05d61ea434875cdac" prot="public">
+          <name>PHYDEV_EVT_CCA_STARTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CCA sequence has started </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca839e9f772cc209379ccb06be89305742" prot="public">
+          <name>PHYDEV_EVT_CCA_COMPLETE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CCA sequence complete </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca8124585572c1e571fbacc9f575b5e379" prot="public">
+          <name>PHYDEV_EVT_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error occurs </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This define the PHY device events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="162" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="162" bodyend="171"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__wize__phy__itf_1ga623aece251345bfe9961f5dd8209756e" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* phydev_evt_cb_t) (void *pCbParam, uint32_t eEvt)</definition>
+        <argsstring>)(void *pCbParam, uint32_t eEvt)</argsstring>
+        <name>phydev_evt_cb_t</name>
+        <briefdescription>
+<para>PHY device event call-back. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="176" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" prot="public" static="no">
+        <type>struct <ref refid="structphydev__s" kindref="compound">phydev_s</ref></type>
+        <definition>typedef struct phydev_s phydev_t</definition>
+        <argsstring></argsstring>
+        <name>phydev_t</name>
+        <briefdescription>
+<para>The PHY device type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="176" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__wize__phy__itf_1gaf90b2c7d7f93a02fae5a1091297d2da0" prot="public" static="no">
+        <type>struct <ref refid="structphy__if__s" kindref="compound">phy_if_s</ref></type>
+        <definition>typedef struct phy_if_s phy_if_t</definition>
+        <argsstring></argsstring>
+        <name>phy_if_t</name>
+        <briefdescription>
+<para>PHY device interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="200" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define the interface between the phy and net devices. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/10/30[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_PHY_ITF_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PHY_ITF_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="phy__layer_8h" kindref="compound">phy_layer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_PREAMBLE_DATA<sp/>0x5555</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_PREAMBLE_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_SYNC_WORD<sp/>0xF672</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_SYNC_WORD_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_MODULATION<sp/>GFSK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_FILTER_BT<sp/>0.5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_BIT_RATE<sp/>2400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM2400_BIN_ENC<sp/>NRZ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_PREAMBLE_DATA<sp/>0x5555</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_PREAMBLE_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_SYNC_WORD_DATA<sp/>0xF672</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_SYNC_WORD_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_MODULATION<sp/>GFSK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_FILTER_BT<sp/>0.5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_BIT_RATE<sp/>4800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM4800_BIN_ENC<sp/>NRZ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_PREAMBLE_DATA<sp/>0xADADADADADADADAD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_PREAMBLE_SIZE<sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_SYNC_WORD_DATA<sp/>0xDDDDADDAADDDAADA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_SYNC_WORD_SIZE<sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_MODULATION<sp/>4GFSK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_FILTER_BT<sp/>0.5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_BIT_RATE<sp/>6400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_WM6400_BIN_ENC<sp/>NRZ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_FREQUENCY_BASE<sp/>(169406250UL)<sp/>//<sp/>CH100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_CHANNEL_WIDTH<sp/>(12500)<sp/>//<sp/>in<sp/>hertz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PHY_FREQUENCY_CH(i)<sp/>(PHY_FREQUENCY_BASE<sp/>+<sp/>i*PHY_CHANNEL_WIDTH)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEFAULT_MOD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>DEFAULT_MOD<sp/>PHY_WM2400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEFAULT_CH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>DEFAULT_CH<sp/>PHY_CH120</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEFAULT_TX_POWER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>DEFAULT_TX_POWER<sp/>PHY_PMAX_minus_0db</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEFAULT_TX_FREQ_OFFSET</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>DEFAULT_TX_FREQ_OFFSET<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="group__wize__phy__itf_1ga74947dd7f2dae3bc33731625a298113f" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="108" refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109" refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110" refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">PHY_STATUS_BUSY</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111" refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa087ee629b2087d5f7c98fba1caf3b849" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa087ee629b2087d5f7c98fba1caf3b849" kindref="member">PHY_STATUS_DISABLE</ref><sp/>=<sp/>0xFF,<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}<sp/><ref refid="group__wize__phy__itf_1ga74947dd7f2dae3bc33731625a298113f" kindref="member">phy_status_e</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="group__wize__phy__itf_1gafbdbc8d1faf5deaac496ad929db06eac" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="118" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca263c3ac9de129113ebca9960e262625a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca263c3ac9de129113ebca9960e262625a" kindref="member">PHY_CTL_SET_TX_FREQ_OFF</ref><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="119" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca948a54f56b66bf1a1990a7e941ac7c6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca948a54f56b66bf1a1990a7e941ac7c6a" kindref="member">PHY_CTL_SET_TX_POWER</ref><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="120" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca7a6330c38cc876d127bd8e2d432d1684" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca7a6330c38cc876d127bd8e2d432d1684" kindref="member">PHY_CTL_SET_PA</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="122" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0deba927ba8c83e63c4de70ece11438f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0deba927ba8c83e63c4de70ece11438f" kindref="member">PHY_CTL_GET_TX_FREQ_OFF</ref><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="123" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca9029fceced8f70d1ede64676c806cfa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca9029fceced8f70d1ede64676c806cfa7" kindref="member">PHY_CTL_GET_TX_POWER</ref><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="124" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8c72e887da88b4b8b38c3177ddd118ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8c72e887da88b4b8b38c3177ddd118ab" kindref="member">PHY_CTL_GET_PA</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="125" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaae7bfa7d84b0a3f7f494ddd7e0864eea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaae7bfa7d84b0a3f7f494ddd7e0864eea" kindref="member">PHY_CTL_GET_FREQ_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="126" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca2905747f10421f24888f43d6a753d8a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca2905747f10421f24888f43d6a753d8a2" kindref="member">PHY_CTL_GET_RSSI</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="127" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8b97abc4477870734b7d643bff0eebf7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8b97abc4477870734b7d643bff0eebf7" kindref="member">PHY_CTL_GET_NOISE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="128" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0fb46eb58e895f99665f0209dbc6fb8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0fb46eb58e895f99665f0209dbc6fb8a" kindref="member">PHY_CTL_GET_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="129" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca3c6b91585a6b83abb049ecfb6e5a2a96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca3c6b91585a6b83abb049ecfb6e5a2a96" kindref="member">PHY_CTL_GET_STR_ERR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>PHY_CTL_SPE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x40,</highlight></codeline>
+<codeline lineno="132" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacae64445bda4b89d7ca57ce46d5774ff2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacae64445bda4b89d7ca57ce46d5774ff2f" kindref="member">PHY_CTL_SPE_TEST_MODE</ref><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>PHY_CTL_CMD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x80,</highlight></codeline>
+<codeline lineno="135" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaa0a9c0802a975519cd45346802b63cba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaa0a9c0802a975519cd45346802b63cba" kindref="member">PHY_CTL_CMD_PWR_OFF</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="136" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca063100b03bdab8734c09a8fb805a2c25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca063100b03bdab8734c09a8fb805a2c25" kindref="member">PHY_CTL_CMD_PWR_ON</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="137" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca1782c40afcb1fa6400a33631471d1a34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca1782c40afcb1fa6400a33631471d1a34" kindref="member">PHY_CTL_CMD_RESET</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca435b12c9f197ac28266f27ec025637cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca435b12c9f197ac28266f27ec025637cb" kindref="member">PHY_CTL_CMD_READY</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="140" refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca826f156c530260644efee6035552c866" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca826f156c530260644efee6035552c866" kindref="member">PHY_CTL_CMD_SLEEP</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>PHY_CTL_CMD_LAST,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}<sp/><ref refid="group__wize__phy__itf_1gafbdbc8d1faf5deaac496ad929db06eac" kindref="member">phy_ctl_e</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="group__wize__phy__itf_1gae24529cecc04657b44f4b4c4ece6843c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="150" refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" kindref="member">PHY_TST_MODE_NONE</ref><sp/><sp/><sp/>=<sp/>0x0,<sp/><sp/></highlight></codeline>
+<codeline lineno="151" refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cac91464917843f212b29cfd0c39be622d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cac91464917843f212b29cfd0c39be622d" kindref="member">PHY_TST_MODE_RX</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x1,<sp/><sp/></highlight></codeline>
+<codeline lineno="152" refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cabff8d6693a77572e4b25142eb0a288e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cabff8d6693a77572e4b25142eb0a288e3" kindref="member">PHY_TST_MODE_PER_RX</ref><sp/>=<sp/>0x2,<sp/><sp/></highlight></codeline>
+<codeline lineno="153" refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca7818877244e74577a8892e56b17f0561" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca7818877244e74577a8892e56b17f0561" kindref="member">PHY_TST_MODE_TX</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x3,<sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//PHY_TST_MODE_PER_TX<sp/>=<sp/>0x4,<sp/><sp/>/*!&lt;<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>PHY_NB_TST_MODE,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}<sp/><ref refid="group__wize__phy__itf_1gae24529cecc04657b44f4b4c4ece6843c" kindref="member">phy_test_mode_e</ref>;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="group__wize__phy__itf_1ga0d56115487d7cfe76d9c15685c0629bc" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="163" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcad5d6adb226f32ecc84f7a4d080aa3a14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcad5d6adb226f32ecc84f7a4d080aa3a14" kindref="member">PHYDEV_EVT_NONE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca20450e3262e999661e387f2713c44b30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca20450e3262e999661e387f2713c44b30" kindref="member">PHYDEV_EVT_RX_STARTED</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca77c5a0bcdd5cea7ce331ff634d285ec9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca77c5a0bcdd5cea7ce331ff634d285ec9" kindref="member">PHYDEV_EVT_RX_COMPLETE</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="166" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab1eff27aa374a8e4cd1ca17ba876f92b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab1eff27aa374a8e4cd1ca17ba876f92b" kindref="member">PHYDEV_EVT_TX_STARTED</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="167" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcaec9c2960667dda0ad1c67dc0e0380ca9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcaec9c2960667dda0ad1c67dc0e0380ca9" kindref="member">PHYDEV_EVT_TX_COMPLETE</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="168" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab9b87fdaad7dc6c05d61ea434875cdac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcab9b87fdaad7dc6c05d61ea434875cdac" kindref="member">PHYDEV_EVT_CCA_STARTED</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="169" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca839e9f772cc209379ccb06be89305742" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca839e9f772cc209379ccb06be89305742" kindref="member">PHYDEV_EVT_CCA_COMPLETE</ref>,<sp/></highlight></codeline>
+<codeline lineno="170" refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca8124585572c1e571fbacc9f575b5e379" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca8124585572c1e571fbacc9f575b5e379" kindref="member">PHYDEV_EVT_ERROR</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}<sp/><ref refid="group__wize__phy__itf_1ga0d56115487d7cfe76d9c15685c0629bc" kindref="member">phydev_evt_e</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="group__wize__phy__itf_1ga623aece251345bfe9961f5dd8209756e" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group__wize__phy__itf_1ga623aece251345bfe9961f5dd8209756e" kindref="member">phydev_evt_cb_t</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pCbParam,<sp/>uint32_t<sp/>eEvt);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structphydev__s" kindref="compound">phydev_s</ref><sp/><ref refid="structphydev__s" kindref="compound">phydev_t</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="structphy__if__s" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structphy__if__s" kindref="compound">phy_if_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="structphy__if__s_1a1685c3709d0595da24ed21299548e336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1a1685c3709d0595da24ed21299548e336" kindref="member">pfInit</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189" refid="structphy__if__s_1af97ce5b6fd435cab3ecdcc8822dd55ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1af97ce5b6fd435cab3ecdcc8822dd55ef" kindref="member">pfUnInit</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev);<sp/></highlight></codeline>
+<codeline lineno="191" refid="structphy__if__s_1abb27fe659e02d347df1169e509c643be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1abb27fe659e02d347df1169e509c643be" kindref="member">pfTx</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation);<sp/></highlight></codeline>
+<codeline lineno="192" refid="structphy__if__s_1a01e6f01c68fa13976cf37991d8a2db4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1a01e6f01c68fa13976cf37991d8a2db4c" kindref="member">pfRx</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation);<sp/></highlight></codeline>
+<codeline lineno="194" refid="structphy__if__s_1abe225c6412348f28c1882717136a6a58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1abe225c6412348f28c1882717136a6a58" kindref="member">pfNoise</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation);<sp/></highlight></codeline>
+<codeline lineno="196" refid="structphy__if__s_1a137a626335f8f8e86d908d931c4d2ec3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1a137a626335f8f8e86d908d931c4d2ec3" kindref="member">pfSetSend</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>*pBuf,<sp/>uint8_t<sp/>u8Len);<sp/><sp/></highlight></codeline>
+<codeline lineno="197" refid="structphy__if__s_1a4ea5669eb15f6bad072209569d60008d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1a4ea5669eb15f6bad072209569d60008d" kindref="member">pfGetRecv</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>*pBuf,<sp/>uint8_t<sp/>*u8Len);<sp/></highlight></codeline>
+<codeline lineno="199" refid="structphy__if__s_1afda491897b441f50975cbf3228d59037" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>(*<ref refid="structphy__if__s_1afda491897b441f50975cbf3228d59037" kindref="member">pfIoctl</ref>)(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint32_t<sp/>eCtl,<sp/>uint32_t<sp/>args);<sp/></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}<sp/><ref refid="group__wize__phy__itf_1gaf90b2c7d7f93a02fae5a1091297d2da0" kindref="member">phy_if_t</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="structphydev__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structphydev__s" kindref="compound">phydev_s</ref><sp/>{</highlight></codeline>
+<codeline lineno="206" refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structphy__if__s" kindref="compound">phy_if_t</ref><sp/>*<ref refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" kindref="member">pIf</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="207" refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="208" refid="structphydev__s_1a97825106a5e310ae1e43b70047872ae3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structphydev__s_1a97825106a5e310ae1e43b70047872ae3" kindref="member">lock</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="209" refid="structphydev__s_1ac3821f81d707a900df0217a416b4b790" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ga623aece251345bfe9961f5dd8209756e" kindref="member">phydev_evt_cb_t</ref><sp/><ref refid="structphydev__s_1ac3821f81d707a900df0217a416b4b790" kindref="member">pfEvtCb</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pCbParam;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>private<sp/>field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="structphydev__s_1ac9f9579c18b6f09c3a4bea4a93a64824" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/><sp/><ref refid="structphydev__s_1ac9f9579c18b6f09c3a4bea4a93a64824" kindref="member">eChannel</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="214" refid="structphydev__s_1a26edc2e93988475aa03eb83d04a05faf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/><sp/><sp/><ref refid="structphydev__s_1a26edc2e93988475aa03eb83d04a05faf" kindref="member">eModulation</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="215" refid="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1ga291dfaf5f6ccf284805be2245db277ce" kindref="member">phy_power_e</ref><sp/><ref refid="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" kindref="member">eTxPower</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="216" refid="structphydev__s_1a42667e4ab058ce4fa965fd9a0e2d0b32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><ref refid="structphydev__s_1a42667e4ab058ce4fa965fd9a0e2d0b32" kindref="member">i16TxFreqOffset</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218" refid="structphydev__s_1ad19c9aa268ff02a7ea2c3cad0fa63d71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><ref refid="structphydev__s_1ad19c9aa268ff02a7ea2c3cad0fa63d71" kindref="member">u16_Noise</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="219" refid="structphydev__s_1a096fd42a8d13e21a06450f13b8bb26ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><ref refid="structphydev__s_1a096fd42a8d13e21a06450f13b8bb26ee" kindref="member">u16_Rssi</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="220" refid="structphydev__s_1a9e1ef807491f03e95903fce3504fa76d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/><sp/><sp/><sp/><sp/><ref refid="structphydev__s_1a9e1ef807491f03e95903fce3504fa76d" kindref="member">u16_Ferr</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="222" refid="structphydev__s_1afdaae59da1cca8993e6cf25803943be2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><ref refid="structphydev__s_1afdaae59da1cca8993e6cf25803943be2" kindref="member">bCrcOn</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="223" refid="structphydev__s_1ae0cb196f2a06579bda4f79e07edf4462" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><ref refid="structphydev__s_1ae0cb196f2a06579bda4f79e07edf4462" kindref="member">bPreSyncOn</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="225" refid="structphydev__s_1a4154a2e7bf6de54f19fb1eac3b2a56f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__phy__itf_1gae24529cecc04657b44f4b4c4ece6843c" kindref="member">phy_test_mode_e</ref><sp/><ref refid="structphydev__s_1a4154a2e7bf6de54f19fb1eac3b2a56f7" kindref="member">eTestMode</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PHY_ITF_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h"/>
+  </compounddef>
+</doxygen>

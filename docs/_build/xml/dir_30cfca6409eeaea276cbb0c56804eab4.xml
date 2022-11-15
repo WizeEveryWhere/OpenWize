@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_30cfca6409eeaea276cbb0c56804eab4" kind="dir">
+    <compoundname>/home/nono/OpenWize/sources/WizeCore/app/include</compoundname>
+    <innerdir refid="dir_7fabe3f0accd2873653200eb01f479cb">/home/nono/OpenWize/sources/WizeCore/app/include/internal</innerdir>
+    <innerfile refid="ses__dispatcher_8h">ses_dispatcher.h</innerfile>
+    <innerfile refid="time__mgr_8h">time_mgr.h</innerfile>
+    <innerfile refid="wize__api_8h">wize_api.h</innerfile>
+    <innerfile refid="wize__banner_8h">wize_banner.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/"/>
+  </compounddef>
+</doxygen>

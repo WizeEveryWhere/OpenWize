@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="time__mgr_8h" kind="file" language="C++">
+    <compoundname>time_mgr.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes refid="time__evt_8h" local="yes">time_evt.h</includes>
+    <includedby refid="time__mgr_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</includedby>
+    <includedby refid="wize__api_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="6">
+        <label>time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>limits.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="7">
+        <label>time.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h</label>
+        <link refid="time__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c</label>
+        <link refid="time__mgr_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/src/wize_api.c</label>
+        <link refid="wize__api_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h</label>
+        <link refid="time__mgr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structtime__upd__s" prot="public">time_upd_s</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__time__mgr_1ga73e56bc518512e5ebe97e6aa77c761cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_enable</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_enable</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Enable the RTC wake-up timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="75" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="143" bodyend="146" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="75" declcolumn="13"/>
+        <references refid="group__rtc_1ga357a9db41008ca9371b2867977b746fa" compoundref="bsp__rtc_8c" startline="315" endline="319">BSP_Rtc_WakeUpTimer_Enable</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1gaca4229ae9aa7ae4ba734ecec51a96e9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_reload</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_reload</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reload the RTC wake-up timer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="76" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="152" bodyend="155" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="76" declcolumn="13"/>
+        <references refid="group__rtc_1gacaa3e57f2865873a5acb790a30c24fa3" compoundref="bsp__rtc_8c" startline="334" endline="360">BSP_Rtc_WakeUptimer_Reload</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1gad9592a33c498e6e602f0afdcd6509460" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_wakeup_force</definition>
+        <argsstring>(void)</argsstring>
+        <name>_time_wakeup_force</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Force the RTC wake-up timer notify. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="77" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="173" bodyend="176" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="77" declcolumn="13"/>
+        <references refid="group__rtc_1ga13d50537cc01ca468d868ee153eb9cca" compoundref="bsp__rtc_8c" startline="269" endline="279">BSP_Rtc_Time_ForceNotify</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1gae17cbc84ff0bf6dbbe94b9494204817b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void _time_update_set_handler</definition>
+        <argsstring>(pfTimeEvt_HandlerCB_t const pfCb)</argsstring>
+        <name>_time_update_set_handler</name>
+        <param>
+          <type><ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref> const</type>
+          <declname>pfCb</declname>
+        </param>
+        <briefdescription>
+<para>Set the time update callback handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pfCb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the callback function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" line="78" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/port.c" bodystart="164" bodyend="167" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="78" declcolumn="13"/>
+        <references refid="group__rtc_1gac5d9d73502bb1c66d8e1743429ceff86" compoundref="bsp__rtc_8c" startline="304" endline="307">BSP_Rtc_Time_Update_SetCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__time__mgr_1gaadf7600a3bccc68b4b49fc9583ec95c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimeMgr_Setup</definition>
+        <argsstring>(struct time_upd_s *pTimeUpdCtx)</argsstring>
+        <name>TimeMgr_Setup</name>
+        <param>
+          <type>struct <ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref> *</type>
+          <declname>pTimeUpdCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the TimeMgr context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" line="101" column="6" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/time_mgr.c" bodystart="101" bodyend="108" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h" declline="80" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file implement the time correction related functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/06/28[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="35"><highlight class="preprocessor">#ifndef<sp/>_TIME_MGR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_TIME_MGR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="time__evt_8h" kindref="compound">time_evt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structtime__upd__s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54" refid="structtime__upd__s_1ad4d0c2347ee78196213fe84129035f7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structtime__upd__s_1ad4d0c2347ee78196213fe84129035f7d" kindref="member">value</ref>;<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>drift;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58" refid="structtime__upd__s_1a9027e8d25c49819e1a35372c90c65014" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int8_t<sp/><sp/><ref refid="structtime__upd__s_1a9027e8d25c49819e1a35372c90c65014" kindref="member">value</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="structtime__upd__s_1a623671647823f2115cc845f1641af166" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structtime__upd__s_1a623671647823f2115cc845f1641af166" kindref="member">period</ref>;<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}drift_;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structtime__upd__s_1af1f40908d6ba0bc685c297c2ae2afb92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structtime__upd__s_1af1f40908d6ba0bc685c297c2ae2afb92" kindref="member">days_cnt</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65" refid="structtime__upd__s_1ab3fe02f869453568717ae7cd7b567c5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structtime__upd__s_1ab3fe02f869453568717ae7cd7b567c5c" kindref="member">state</ref>;<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68" refid="structtime__upd__s_1a14a2dd59c50dfb6a45a48a9443c1378c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structtime__upd__s_1a14a2dd59c50dfb6a45a48a9443c1378c" kindref="member">clock_init</ref>:1;<sp/><sp/></highlight></codeline>
+<codeline lineno="69" refid="structtime__upd__s_1a770652037f917d77a56af216952c9d1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structtime__upd__s_1a770652037f917d77a56af216952c9d1d" kindref="member">epoch_pend</ref>:1;<sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="structtime__upd__s_1af686b9a29c44441c52a67b76020655e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structtime__upd__s_1af686b9a29c44441c52a67b76020655e4" kindref="member">offset_pend</ref>:1;<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}state_;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}<sp/>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__time__mgr_1ga73e56bc518512e5ebe97e6aa77c761cd" kindref="member">_time_wakeup_enable</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__time__mgr_1gaca4229ae9aa7ae4ba734ecec51a96e9d" kindref="member">_time_wakeup_reload</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__time__mgr_1gad9592a33c498e6e602f0afdcd6509460" kindref="member">_time_wakeup_force</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__time__mgr_1gae17cbc84ff0bf6dbbe94b9494204817b" kindref="member">_time_update_set_handler</ref>(<ref refid="group__time__evt_1gafe811b90b11815ddf6118b201adb5c39" kindref="member">pfTimeEvt_HandlerCB_t</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pfCb);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__wize__time__mgr_1gaadf7600a3bccc68b4b49fc9583ec95c2" kindref="member">TimeMgr_Setup</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structtime__upd__s" kindref="compound">time_upd_s</ref><sp/>*pTimeUpdCtx);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_TIME_MGR_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/time_mgr.h"/>
+  </compounddef>
+</doxygen>

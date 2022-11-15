@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="crc__sw_8h" kind="file" language="C++">
+    <compoundname>crc_sw.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="proto_8c" local="yes">/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</includedby>
+    <includedby refid="crc__sw_8c" local="yes">/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h</label>
+        <link refid="crc__sw_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nono/OpenWize/sources/WizeCore/proto/src/proto.c</label>
+        <link refid="proto_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h</label>
+        <link refid="crc__sw_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c</label>
+        <link refid="crc__sw_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__crc__sw_1ga8a3bd45c35bbcb8fc6780c2eaa9394ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t CRC_Check</definition>
+        <argsstring>(uint16_t u16_CrcA, uint16_t u16_CrcB)</argsstring>
+        <name>CRC_Check</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_CrcA</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>u16_CrcB</declname>
+        </param>
+        <briefdescription>
+<para>Check if two CRC are equal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_CrcA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First CRC </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u16_CrcB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second CRC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 equal; 0 otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="143" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="143" bodyend="146" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h" declline="44" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__crc__sw_1gad3751bf3eff7d03cb41cc250acea434e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t CRC_Compute</definition>
+        <argsstring>(uint8_t *p_Buf, uint8_t u8_Sz, uint16_t *p_Crc)</argsstring>
+        <name>CRC_Compute</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Buf</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Sz</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>p_Crc</declname>
+        </param>
+        <briefdescription>
+<para>This function compute the CRC as defined by the EN13757 standard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer in the message buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_Crc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Computed CRC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 success, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" line="117" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/CRC_sw/src/crc_sw.c" bodystart="117" bodyend="134" declfile="/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h" declline="45" declcolumn="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file expose the prototype function to compute and check a CRC. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/01/01[GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_CRC_SW_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_CRC_SW_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">uint8_t<sp/><ref refid="group__crc__sw_1ga8a3bd45c35bbcb8fc6780c2eaa9394ae" kindref="member">CRC_Check</ref>(uint16_t<sp/>u16_CrcA,<sp/>uint16_t<sp/>u16_CrcB);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">uint8_t<sp/><ref refid="group__crc__sw_1gad3751bf3eff7d03cb41cc250acea434e" kindref="member">CRC_Compute</ref>(uint8_t<sp/>*<sp/>p_Buf,<sp/>uint8_t<sp/>u8_Sz,<sp/>uint16_t<sp/>*p_Crc);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_CRC_SW_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/CRC_sw/include/crc_sw.h"/>
+  </compounddef>
+</doxygen>

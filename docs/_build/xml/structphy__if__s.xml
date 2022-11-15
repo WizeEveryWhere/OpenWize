@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structphy__if__s" kind="struct" language="C++" prot="public">
+    <compoundname>phy_if_s</compoundname>
+    <includes refid="phy__itf_8h" local="no">phy_itf.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structphy__if__s_1a1685c3709d0595da24ed21299548e336" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfInit) (phydev_t *pPhydev)</definition>
+        <argsstring>)(phydev_t *pPhydev)</argsstring>
+        <name>pfInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialization function </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="188" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphy__if__s_1af97ce5b6fd435cab3ecdcc8822dd55ef" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfUnInit) (phydev_t *pPhydev)</definition>
+        <argsstring>)(phydev_t *pPhydev)</argsstring>
+        <name>pfUnInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Un-Initialization function </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="189" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphy__if__s_1abb27fe659e02d347df1169e509c643be" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfTx) (phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</definition>
+        <argsstring>)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>pfTx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TX or Send function </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="191" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphy__if__s_1a01e6f01c68fa13976cf37991d8a2db4c" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfRx) (phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</definition>
+        <argsstring>)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>pfRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RX or listen function </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="192" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphy__if__s_1abe225c6412348f28c1882717136a6a58" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfNoise) (phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</definition>
+        <argsstring>)(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>pfNoise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to measure the noise (on TX Channel) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="194" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphy__if__s_1a137a626335f8f8e86d908d931c4d2ec3" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfSetSend) (phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len)</definition>
+        <argsstring>)(phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len)</argsstring>
+        <name>pfSetSend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set or write the frame to send into the PHY device internal buffer </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="196" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphy__if__s_1a4ea5669eb15f6bad072209569d60008d" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfGetRecv) (phydev_t *pPhydev, uint8_t *pBuf, uint8_t *u8Len)</definition>
+        <argsstring>)(phydev_t *pPhydev, uint8_t *pBuf, uint8_t *u8Len)</argsstring>
+        <name>pfGetRecv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get or read the received frame from the PHY device internal buffer </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="197" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structphy__if__s_1afda491897b441f50975cbf3228d59037" prot="public" static="no" mutable="no">
+        <type>int32_t(*</type>
+        <definition>int32_t(* phy_if_s::pfIoctl) (phydev_t *pPhydev, uint32_t eCtl, uint32_t args)</definition>
+        <argsstring>)(phydev_t *pPhydev, uint32_t eCtl, uint32_t args)</argsstring>
+        <name>pfIoctl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>IOCTL function </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="199" column="5" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PHY device interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>phy_if_s</label>
+        <link refid="structphy__if__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" line="186" column="23" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/phy_itf.h" bodystart="186" bodyend="200"/>
+    <listofallmembers>
+      <member refid="structphy__if__s_1a4ea5669eb15f6bad072209569d60008d" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfGetRecv</name></member>
+      <member refid="structphy__if__s_1a1685c3709d0595da24ed21299548e336" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfInit</name></member>
+      <member refid="structphy__if__s_1afda491897b441f50975cbf3228d59037" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfIoctl</name></member>
+      <member refid="structphy__if__s_1abe225c6412348f28c1882717136a6a58" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfNoise</name></member>
+      <member refid="structphy__if__s_1a01e6f01c68fa13976cf37991d8a2db4c" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfRx</name></member>
+      <member refid="structphy__if__s_1a137a626335f8f8e86d908d931c4d2ec3" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfSetSend</name></member>
+      <member refid="structphy__if__s_1abb27fe659e02d347df1169e509c643be" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfTx</name></member>
+      <member refid="structphy__if__s_1af97ce5b6fd435cab3ecdcc8822dd55ef" prot="public" virt="non-virtual"><scope>phy_if_s</scope><name>pfUnInit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

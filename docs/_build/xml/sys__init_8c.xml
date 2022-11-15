@@ -1,0 +1,467 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="sys__init_8c" kind="file" language="C++">
+    <compoundname>sys_init.c</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes local="yes">FreeRTOS.h</includes>
+    <includes local="yes">task.h</includes>
+    <includes refid="parameters__cfg_8h" local="yes">parameters_cfg.h</includes>
+    <includes refid="parameters_8h" local="yes">parameters.h</includes>
+    <includes refid="bsp_8h" local="yes">bsp.h</includes>
+    <includes refid="crypto_8h" local="yes">crypto.h</includes>
+    <includes refid="time__evt_8h" local="yes">time_evt.h</includes>
+    <includes refid="phy__layer_8h" local="yes">phy_layer.h</includes>
+    <includes refid="phy__layer__private_8h" local="yes">phy_layer_private.h</includes>
+    <includes refid="wize__api_8h" local="yes">wize_api.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>stdbool.h</label>
+      </node>
+      <node id="35">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5">
+        <label>assert.h</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>parameters.h</label>
+        <link refid="parameters_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>time_evt.h</label>
+        <link refid="time__evt_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>bsp_gpio_it.h</label>
+        <link refid="bsp__gpio__it_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>bsp_rtc.h</label>
+        <link refid="bsp__rtc_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>proto.h</label>
+        <link refid="proto_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>stddef.h</label>
+      </node>
+      <node id="29">
+        <label>wize_api.h</label>
+        <link refid="wize__api_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>OpenWize_config.h</label>
+      </node>
+      <node id="18">
+        <label>bsp_flash.h</label>
+        <link refid="bsp__flash_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>bsp_gpio.h</label>
+        <link refid="bsp__gpio_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>parameters_cfg.h</label>
+        <link refid="parameters__cfg_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>phy_layer_private.h</label>
+        <link refid="phy__layer__private_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>bsp_uart.h</label>
+        <link refid="bsp__uart_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="16">
+        <label>time.h</label>
+      </node>
+      <node id="33">
+        <label>app_layer.h</label>
+        <link refid="app__layer_8h"/>
+      </node>
+      <node id="11">
+        <label>bsp.h</label>
+        <link refid="bsp_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>wize_banner.h</label>
+        <link refid="wize__banner_8h"/>
+      </node>
+      <node id="23">
+        <label>bsp_lp.h</label>
+        <link refid="bsp__lp_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>net_api.h</label>
+        <link refid="net__api_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="6">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="17">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="24">
+        <label>crypto.h</label>
+        <link refid="crypto_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>task.h</label>
+      </node>
+      <node id="9">
+        <label>parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>bsp_boot.h</label>
+        <link refid="bsp__boot_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__sys_1gaba78d7407e31a7e8536876f367d8b141" prot="public" static="yes" mutable="no">
+        <type><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref></type>
+        <definition>fakeuart_device_t fakeuart_ctx</definition>
+        <argsstring></argsstring>
+        <name>fakeuart_ctx</name>
+        <briefdescription>
+<para>This is the context for the uart use as fake phy. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" line="64" column="26" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__sys_1ga99efaf99d1059717cc1fa8187213f1d0" prot="public" static="no" mutable="no">
+        <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref></type>
+        <definition>phydev_t sPhyDev</definition>
+        <argsstring></argsstring>
+        <name>sPhyDev</name>
+        <briefdescription>
+<para>This store the phy device structure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" line="69" column="10" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__sys_1gadfdb874494a7e96ac1256869f1a7e9d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function initialize the &quot;system part&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" line="74" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" bodystart="74" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1ga29dc9580faaadaee127eb51d2484fd0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sys_Fini</definition>
+        <argsstring>(void)</argsstring>
+        <name>Sys_Fini</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function finalize the &quot;system part&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" line="117" column="6" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sys_1gaea7ccb1f68c35c1ace876675a6c406d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__attribute__</definition>
+        <argsstring>((always_inline))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(always_inline)</type>
+        </param>
+        <briefdescription>
+<para>Start the RTOS scheduler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" line="125" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c" bodystart="125" bodyend="129"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file implement (just for convenient) some &quot;system&quot; initialization. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/11/04 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;FreeRTOS.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;task.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters__cfg_8h" kindref="compound">parameters_cfg.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters_8h" kindref="compound">parameters.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bsp_8h" kindref="compound">bsp.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="crypto_8h" kindref="compound">crypto.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="time__evt_8h" kindref="compound">time_evt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="phy__layer_8h" kindref="compound">phy_layer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="phy__layer__private_8h" kindref="compound">phy_layer_private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="wize__api_8h" kindref="compound">wize_api.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>fakeuart_ctx;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="group__sys_1ga99efaf99d1059717cc1fa8187213f1d0" refkind="member"><highlight class="normal"><ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/><ref refid="group__sys_1ga99efaf99d1059717cc1fa8187213f1d0" kindref="member">sPhyDev</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="group__sys_1gadfdb874494a7e96ac1256869f1a7e9d4" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1gadfdb874494a7e96ac1256869f1a7e9d4" kindref="member">Sys_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8LogLevel;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8Tstmp;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>buffer<sp/>stdout,<sp/>so<sp/>that<sp/>single<sp/>chars<sp/>are<sp/>output<sp/>without<sp/>any<sp/>delay<sp/>to<sp/>the<sp/>console.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>setvbuf(stdout,<sp/>NULL,<sp/>_IONBF,<sp/>0);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>not<sp/>buffer<sp/>stdin,<sp/>so<sp/>that<sp/>single<sp/>chars<sp/>are<sp/>output<sp/>without<sp/>any<sp/>delay<sp/>to<sp/>the<sp/>console.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>setvbuf(stdin,<sp/>NULL,<sp/>_IONBF,<sp/>0);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Show<sp/>the<sp/>welcome<sp/>message<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAS_NO_BANNER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n###########################################################\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>WIZE_ALLIANCE_BANNER);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n###########################################################\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Init<sp/>Logger</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>LOGGER_USE_FWRITE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ga8e80afd675f5db779c0ea8d931cdf8f2" kindref="member">Logger_Setup</ref>((int32_t<sp/>(*)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/>FILE*))fwrite,<sp/>stdout);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ga8e80afd675f5db779c0ea8d931cdf8f2" kindref="member">Logger_Setup</ref>((int32_t<sp/>(*)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/>FILE*))fputs,<sp/>stdout);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Change<sp/>logger<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__logger_1ga18173d9fcf28abea14613b278a841abc" kindref="member">Logger_SetLevel</ref>(<sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa6b3cc04fe25542a417afe723bc65f6a5" kindref="member">LOG_LV_FRM_OUT</ref><sp/>|<sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaaab909f78d760abf2c1095e3079c9982" kindref="member">LOG_LV_ERR</ref><sp/>|<sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaa191696cb204024002796ca7805d63a1e" kindref="member">LOG_LV_WRN</ref><sp/>|<sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaacc5d73d16b8fbabbace87facfcd24b69" kindref="member">LOG_LV_INF</ref><sp/>|<sp/><ref refid="group__logger_1ggae40b7eba4eb868178775f3f693cfcbaaaf75ff806d585dac4fc848b03fccdff5d" kindref="member">LOG_LV_DBG</ref>,<sp/><ref refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fa1e54c30dcd1626834b732a3c740fff31" kindref="member">LOG_TSTAMP_HIRES</ref><sp/>|<sp/><ref refid="group__logger_1ggae2763cc91ce90f527fc440c000a9886fad2bc5e478101fc7ac26d9d017bfbe021" kindref="member">LOG_TSTAMP_TRUNC</ref><sp/>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(0<sp/>==<sp/><ref refid="group__phy__fake_1ga941823902bad7ade409cae912ab7defc" kindref="member">Phy_PhyFake_setup</ref>(&amp;<ref refid="group__sys_1ga99efaf99d1059717cc1fa8187213f1d0" kindref="member">sPhyDev</ref>,<sp/>&amp;fakeuart_ctx)<sp/>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Init<sp/>storage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>Storage_Init(0);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>Time<sp/>Event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__time__evt_1ga648724158b910c64f69643f9ea250a1e" kindref="member">TimeEvt_Setup</ref>();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>setup<sp/>wize<sp/>device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__wize__api_1ga1721feb2c03d8b38cc2ae69a389ba463" kindref="member">WizeApi_Setup</ref>(&amp;<ref refid="group__sys_1ga99efaf99d1059717cc1fa8187213f1d0" kindref="member">sPhyDev</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>WizeApi_Enable(1);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="group__sys_1ga29dc9580faaadaee127eb51d2484fd0e" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sys_1ga29dc9580faaadaee127eb51d2484fd0e" kindref="member">Sys_Fini</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="group__sys_1gaea7ccb1f68c35c1ace876675a6c406d7" refkind="member"><highlight class="normal"><ref refid="group__sys_1gaea7ccb1f68c35c1ace876675a6c406d7" kindref="member">__attribute__</ref><sp/>((<sp/>always_inline<sp/>))<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Sys_Start(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Start<sp/>scheduler<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskStartScheduler();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c"/>
+  </compounddef>
+</doxygen>

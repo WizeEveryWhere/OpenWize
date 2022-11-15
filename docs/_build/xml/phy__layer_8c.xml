@@ -1,0 +1,1411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="phy__layer_8c" kind="file" language="C++">
+    <compoundname>phy_layer.c</compoundname>
+    <includes refid="bsp_8h" local="no">bsp.h</includes>
+    <includes refid="platform_8h" local="no">platform.h</includes>
+    <includes refid="phy__layer__private_8h" local="yes">phy_layer_private.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="9">
+        <label>assert.h</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>bsp_gpio_it.h</label>
+        <link refid="bsp__gpio__it_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>bsp_rtc.h</label>
+        <link refid="bsp__rtc_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>stddef.h</label>
+      </node>
+      <node id="12">
+        <label>bsp_flash.h</label>
+        <link refid="bsp__flash_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>bsp_gpio.h</label>
+        <link refid="bsp__gpio_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>phy_layer_private.h</label>
+        <link refid="phy__layer__private_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>bsp_uart.h</label>
+        <link refid="bsp__uart_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>string.h</label>
+      </node>
+      <node id="10">
+        <label>time.h</label>
+      </node>
+      <node id="2">
+        <label>bsp.h</label>
+        <link refid="bsp_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>platform.h</label>
+        <link refid="platform_8h"/>
+      </node>
+      <node id="17">
+        <label>bsp_lp.h</label>
+        <link refid="bsp__lp_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+      <node id="11">
+        <label>machine/endian.h</label>
+      </node>
+      <node id="3">
+        <label>bsp_boot.h</label>
+        <link refid="bsp__boot_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__phy__fake_1ga9d871f4bab2f26a8102cf096c3caa6bc" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const phyfake_error_msgs[]</definition>
+        <argsstring>[]</argsstring>
+        <name>phyfake_error_msgs</name>
+        <initializer>=
+{
+    [FAKEUART_ERR_NONE]      = &quot;PhyFake ERR_NONE&quot;,
+	[FAKEUART_FAILURE]       = &quot;PhyFake FAILURE&quot;,
+	[FAKEUART_BUSY]          = &quot;PhyFake BUSY&quot;,
+	[FAKEUART_TIMEOUT]       = &quot;PhyFake TIMEOUT&quot;,
+	[FAKEUART_INVALID_PARAM] = &quot;PhyFake INVALID_PARAM&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human error representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="48" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1ga5f502ecff48964f64662f44ac31f2580" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const aChanStr[PHY_NB_CH]</definition>
+        <argsstring>[PHY_NB_CH]</argsstring>
+        <name>aChanStr</name>
+        <initializer>= {
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda77bee9497fd2dbcaa6f3343d14db26ff" kindref="member">PHY_CH100</ref>] = &quot;100&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cdaf05ff6cec7a42c98941accafe0ac810e" kindref="member">PHY_CH110</ref>] = &quot;110&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda80f71444039b077e32488ca621f00ecd" kindref="member">PHY_CH120</ref>] = &quot;120&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda4de348f41a6465278df71885b1aec3e0" kindref="member">PHY_CH130</ref>] = &quot;130&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda57ae58732a03104edd512c57c15f9ca1" kindref="member">PHY_CH140</ref>] = &quot;140&quot;,
+    [<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda08313b5be781c7183ca1dd7bca2570ad" kindref="member">PHY_CH150</ref>] = &quot;150&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human channel representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="60" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1ga692499ad735ad77a2f493217e2765f7d" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const aModulationStr[PHY_NB_MOD]</definition>
+        <argsstring>[PHY_NB_MOD]</argsstring>
+        <name>aModulationStr</name>
+        <initializer>= {
+    [<ref refid="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640ab8496923f0e4e86d84cc36c7ea16ac7d" kindref="member">PHY_WM2400</ref>] = &quot;WM2400&quot;,
+    [PHY_WM4800] = &quot;WM4800&quot;,
+    [PHY_WM6400] = &quot;WM6400&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human modulation representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="72" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1gac13f54129295753fa72a2c9df539cef3" prot="public" static="no" mutable="no">
+        <type>const char *const</type>
+        <definition>const char* const aTestModeStr[PHY_NB_TST_MODE]</definition>
+        <argsstring>[PHY_NB_TST_MODE]</argsstring>
+        <name>aTestModeStr</name>
+        <initializer>= {
+    [<ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" kindref="member">PHY_TST_MODE_NONE</ref>]   = &quot;Disable&quot;,
+    [PHY_TST_MODE_RX]     = &quot;RX&quot;,
+    [PHY_TST_MODE_PER_RX] = &quot;RX PER&quot;,
+	[PHY_TST_MODE_TX]     = &quot;TX&quot;,
+}</initializer>
+        <briefdescription>
+<para>This convenient table hold the human test mode representation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="81" column="19" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__phy__fake_1ga03f3d2c63f00a3bf0c0ea4f80422b9a7" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="group__wize__phy__itf_1gaf90b2c7d7f93a02fae5a1091297d2da0" kindref="member">phy_if_t</ref></type>
+        <definition>const phy_if_t _phy_if</definition>
+        <argsstring></argsstring>
+        <name>_phy_if</name>
+        <initializer>= {
+    .pfInit          = _init,
+    .pfUnInit        = _uninit,
+
+	.pfTx            = _do_TX,
+    .pfRx            = _do_RX,
+	.pfNoise         = _do_CCA,
+
+	.pfSetSend       = _set_send,
+	.pfGetRecv       = _get_recv,
+
+	.pfIoctl         = _ioctl
+}</initializer>
+        <briefdescription>
+<para>This structure hold the Phy device interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="104" column="23" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__phy__fake_1ga1e2597baa8da5ac73de93b4f0de2076a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _init</definition>
+        <argsstring>(phydev_t *pPhydev)</argsstring>
+        <name>_init</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <briefdescription>
+<para>This function initialize the Phy device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="154" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="154" bodyend="182" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="89" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga632bbd8d41565a6c1ed2ce6df79c8d3e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _uninit</definition>
+        <argsstring>(phydev_t *pPhydev)</argsstring>
+        <name>_uninit</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <briefdescription>
+<para>This function un-initialize the Phy device. (Power OFF and Reset released) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="194" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="194" bodyend="205" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="90" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gab614a72d6a33d064b11e49ca56fa71d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_TX</definition>
+        <argsstring>(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>_do_TX</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eModulation</declname>
+        </param>
+        <briefdescription>
+<para>This function execute a TX sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel use to TX </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eModulation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation use to TX</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="324" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="324" bodyend="341" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="92" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gaf8c5242f9727aa64eb41fcdbdc29980f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_RX</definition>
+        <argsstring>(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>_do_RX</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eModulation</declname>
+        </param>
+        <briefdescription>
+<para>This function execute an RX sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel use to RX </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eModulation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation use to RX</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="355" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="355" bodyend="372" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="93" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga1a74cde2139e95a07205051a2998f471" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_CCA</definition>
+        <argsstring>(phydev_t *pPhydev, phy_chan_e eChannel, phy_mod_e eModulation)</argsstring>
+        <name>_do_CCA</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref></type>
+          <declname>eChannel</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref></type>
+          <declname>eModulation</declname>
+        </param>
+        <briefdescription>
+<para>This function execute a Noise Measurement sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel on which the Noise must be measured </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eModulation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Modulation on which the Noise must be measured</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="386" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="386" bodyend="391" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="94" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga7a46f3927278b202c365b12fecbf3f76" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _set_send</definition>
+        <argsstring>(phydev_t *pPhydev, uint8_t *pBuf, uint8_t u8Len)</argsstring>
+        <name>_set_send</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pBuf</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8Len</declname>
+        </param>
+        <briefdescription>
+<para>This function set the packet to send. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to get data to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference on the data length to send</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="405" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="405" bodyend="430" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="96" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gac4590c38f5d64844961720d8bccf52a5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _get_recv</definition>
+        <argsstring>(phydev_t *pPhydev, uint8_t *pBuf, uint8_t *u8Len)</argsstring>
+        <name>_get_recv</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pBuf</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>u8Len</declname>
+        </param>
+        <briefdescription>
+<para>This function get the received packet. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on buffer to get received data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8Len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference on received number of bytes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="444" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="444" bodyend="467" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="97" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1gada587aeb66a14bff67f57dabcbd19e65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _ioctl</definition>
+        <argsstring>(phydev_t *pPhydev, uint32_t eCtl, uint32_t args)</argsstring>
+        <name>_ioctl</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>eCtl</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>This function Get/Set internal configuration variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eCtl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Id of configuration variable to get/set (see phy_ctl_e) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>scalar or pointer that hold the value to set/get</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="482" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="482" bodyend="549" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="99" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga941823902bad7ade409cae912ab7defc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Phy_PhyFake_setup</definition>
+        <argsstring>(phydev_t *pPhydev, fakeuart_device_t *pCtx)</argsstring>
+        <name>Phy_PhyFake_setup</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function prepare the Phy device with constant configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="127" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="127" bodyend="137" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" declline="91" declcolumn="9"/>
+        <references refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" compoundref="phy__itf_8h" startline="109">PHY_STATUS_ERROR</references>
+        <references refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" compoundref="phy__itf_8h" startline="206">phydev_s::pIf</references>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga23dc0d3a123046b0b180088a76a7bc93" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>static int32_t _do_cmd</definition>
+        <argsstring>(phydev_t *pPhydev, uint8_t eCmd)</argsstring>
+        <name>_do_cmd</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>eCmd</declname>
+        </param>
+        <briefdescription>
+<para>This is the main FSM. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function ensure that transition between state are respected. ... :<itemizedlist>
+<listitem><para>Wake-up, (re)configuration,</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eCmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Requested command to execute</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="225" column="16" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="225" bodyend="263" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="141" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__phy__fake_1ga0c92fce4474e8edbd65fd89d6106bdc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _frame_it</definition>
+        <argsstring>(void *p_CbParam, void *p_Arg)</argsstring>
+        <name>_frame_it</name>
+        <param>
+          <type>void *</type>
+          <declname>p_CbParam</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p_Arg</declname>
+        </param>
+        <briefdescription>
+<para>Interruption handler to treat the frame event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_CbParam</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on call-back parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on call-back argument</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="274" column="13" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="274" bodyend="307" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" declline="142" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file implement the phy fake device driver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2020/05/15 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="bsp_8h" kindref="compound">bsp.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="platform_8h" kindref="compound">platform.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="phy__layer__private_8h" kindref="compound">phy_layer_private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="group__phy__fake_1ga9d871f4bab2f26a8102cf096c3caa6bc" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__phy__fake_1ga9d871f4bab2f26a8102cf096c3caa6bc" kindref="member">phyfake_error_msgs</ref>[]<sp/>=</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>[FAKEUART_ERR_NONE]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PhyFake<sp/>ERR_NONE&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>[FAKEUART_FAILURE]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PhyFake<sp/>FAILURE&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>[FAKEUART_BUSY]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PhyFake<sp/>BUSY&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>[FAKEUART_TIMEOUT]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PhyFake<sp/>TIMEOUT&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>[FAKEUART_INVALID_PARAM]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PhyFake<sp/>INVALID_PARAM&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="group__phy__fake_1ga5f502ecff48964f64662f44ac31f2580" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__phy__fake_1ga5f502ecff48964f64662f44ac31f2580" kindref="member">aChanStr</ref>[PHY_NB_CH]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda77bee9497fd2dbcaa6f3343d14db26ff" kindref="member">PHY_CH100</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;100&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cdaf05ff6cec7a42c98941accafe0ac810e" kindref="member">PHY_CH110</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;110&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda80f71444039b077e32488ca621f00ecd" kindref="member">PHY_CH120</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;120&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda4de348f41a6465278df71885b1aec3e0" kindref="member">PHY_CH130</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;130&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda57ae58732a03104edd512c57c15f9ca1" kindref="member">PHY_CH140</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;140&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggaf0a30dbd383c5ecdd20797b1b76b16cda08313b5be781c7183ca1dd7bca2570ad" kindref="member">PHY_CH150</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;150&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="group__phy__fake_1ga692499ad735ad77a2f493217e2765f7d" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__phy__fake_1ga692499ad735ad77a2f493217e2765f7d" kindref="member">aModulationStr</ref>[PHY_NB_MOD]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640ab8496923f0e4e86d84cc36c7ea16ac7d" kindref="member">PHY_WM2400</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WM2400&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640ae5841d0bada08e367081e949606aafa8" kindref="member">PHY_WM4800</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WM4800&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1gga896b435cd1e07f9e75d557d00e063640a89b70830c6414bd4b54aa0a2b8d72f61" kindref="member">PHY_WM6400</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WM6400&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="group__phy__fake_1gac13f54129295753fa72a2c9df539cef3" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__phy__fake_1gac13f54129295753fa72a2c9df539cef3" kindref="member">aTestModeStr</ref>[PHY_NB_TST_MODE]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" kindref="member">PHY_TST_MODE_NONE</ref>]<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Disable&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cac91464917843f212b29cfd0c39be622d" kindref="member">PHY_TST_MODE_RX</ref>]<sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;RX&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843cabff8d6693a77572e4b25142eb0a288e3" kindref="member">PHY_TST_MODE_PER_RX</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;RX<sp/>PER&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>[<ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca7818877244e74577a8892e56b17f0561" kindref="member">PHY_TST_MODE_TX</ref>]<sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TX&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Private<sp/>function<sp/>(mapped<sp/>to<sp/>interface)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_init(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_uninit(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_TX(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_RX(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_CCA(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_set_send(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>*pBuf,<sp/>uint8_t<sp/>u8Len);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_get_recv(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>*pBuf,<sp/>uint8_t<sp/>*u8Len);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_ioctl(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint32_t<sp/>eCtl,<sp/>uint32_t<sp/>args);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structphy__if__s" kindref="compound">phy_if_t</ref><sp/>_phy_if<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structphy__if__s_1a1685c3709d0595da24ed21299548e336" kindref="member">pfInit</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_init,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>.pfUnInit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_uninit,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>.pfTx<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_do_TX,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>.pfRx<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_do_RX,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>.pfNoise<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_do_CCA,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>.pfSetSend<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_set_send,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>.pfGetRecv<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_get_recv,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>.pfIoctl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>_ioctl</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="127" refid="group__phy__fake_1ga941823902bad7ade409cae912ab7defc" refkind="member"><highlight class="normal">int32_t<sp/><ref refid="group__phy__fake_1ga941823902bad7ade409cae912ab7defc" kindref="member">Phy_PhyFake_setup</ref>(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pCtx)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pPhydev<sp/>&amp;&amp;<sp/>pCtx)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" kindref="member">pIf</ref><sp/>=<sp/>&amp;_phy_if;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref><sp/>=<sp/>pCtx;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Internal<sp/>private<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_cmd(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>eCmd);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_frame_it(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_CbParam,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_Arg);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_init(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pPhydev)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>default<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a42667e4ab058ce4fa965fd9a0e2d0b32" kindref="member">i16TxFreqOffset</ref><sp/>=<sp/>DEFAULT_TX_FREQ_OFFSET;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a26edc2e93988475aa03eb83d04a05faf" kindref="member">eModulation</ref><sp/>=<sp/>DEFAULT_MOD;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" kindref="member">eTxPower</ref><sp/>=<sp/>DEFAULT_TX_POWER;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ac9f9579c18b6f09c3a4bea4a93a64824" kindref="member">eChannel</ref><sp/>=<sp/>DEFAULT_CH;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ac3821f81d707a900df0217a416b4b790" kindref="member">pfEvtCb</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;pCbParam<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ae0cb196f2a06579bda4f79e07edf4462" kindref="member">bPreSyncOn</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1afdaae59da1cca8993e6cf25803943be2" kindref="member">bCrcOn</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a4154a2e7bf6de54f19fb1eac3b2a56f7" kindref="member">eTestMode</ref><sp/>=<sp/><ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" kindref="member">PHY_TST_MODE_NONE</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eState<sp/>=<sp/>IDLE_STATE;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__uart_1ga662aa947915a7fa6856c0c52d99c9a48" kindref="member">BSP_Uart_SetCallback</ref><sp/>(<ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" kindref="member">UART_ID_PHY</ref>,<sp/>_frame_it,<sp/>pPhydev);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="group__uart_1gac3d30bc25c5c87863d8daee9735e3feb" kindref="member">BSP_Uart_Init</ref>(<sp/><ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" kindref="member">UART_ID_PHY</ref>,<sp/></highlight><highlight class="charliteral">&apos;\r&apos;</highlight><highlight class="normal">,<sp/><ref refid="group__uart_1ggaa9b294ac5b0f07a30daa293f5f7ed543aa5515a16810232ac2219ba281da8d366" kindref="member">UART_MODE_EOB</ref>,<sp/>0)<sp/>==<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eState<sp/>=<sp/>INITIALIZED_STATE;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_uninit(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pPhydev)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eState<sp/>=<sp/>IDLE_STATE;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_cmd(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>eCmd)</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>eStatus<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)pDevice;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>eCmd<sp/>&lt;<sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca435b12c9f197ac28266f27ec025637cb" kindref="member">PHY_CTL_CMD_READY</ref>)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1afdaae59da1cca8993e6cf25803943be2" kindref="member">bCrcOn</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ae0cb196f2a06579bda4f79e07edf4462" kindref="member">bPreSyncOn</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ad19c9aa268ff02a7ea2c3cad0fa63d71" kindref="member">u16_Noise</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a096fd42a8d13e21a06450f13b8bb26ee" kindref="member">u16_Rssi</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a9e1ef807491f03e95903fce3504fa76d" kindref="member">u16_Ferr</ref><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a4154a2e7bf6de54f19fb1eac3b2a56f7" kindref="member">eTestMode</ref><sp/>=<sp/><ref refid="group__wize__phy__itf_1ggae24529cecc04657b44f4b4c4ece6843ca5cb73d95f289b44db1a64005d6914d7e" kindref="member">PHY_TST_MODE_NONE</ref>;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(eCmd)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaa0a9c0802a975519cd45346802b63cba" kindref="member">PHY_CTL_CMD_PWR_OFF</ref>:</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca063100b03bdab8734c09a8fb805a2c25" kindref="member">PHY_CTL_CMD_PWR_ON</ref>:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca1782c40afcb1fa6400a33631471d1a34" kindref="member">PHY_CTL_CMD_RESET</ref>:</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__uart_1ga8fcc5154f7a3bb9425007394c28e799b" kindref="member">BSP_Uart_AbortReceive</ref>(<ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" kindref="member">UART_ID_PHY</ref>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(eCmd)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca435b12c9f197ac28266f27ec025637cb" kindref="member">PHY_CTL_CMD_READY</ref>:</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca826f156c530260644efee6035552c866" kindref="member">PHY_CTL_CMD_SLEEP</ref>:</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__uart_1ga8fcc5154f7a3bb9425007394c28e799b" kindref="member">BSP_Uart_AbortReceive</ref>(<ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" kindref="member">UART_ID_PHY</ref>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>eStatus;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_frame_it(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_CbParam,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p_Arg)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>eEvt<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcad5d6adb226f32ecc84f7a4d080aa3a14" kindref="member">PHYDEV_EVT_NONE</ref>;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev<sp/>=<sp/>(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*)<sp/>p_CbParam;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>u32IrqStatus<sp/>=<sp/><ref refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384adc06f6f51824ad1fd940ff02de5afea5" kindref="member">UART_EVT_NONE</ref>;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pPhydev)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u32IrqStatus<sp/>=<sp/>((uint32_t)p_Arg);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32IrqStatus<sp/>==<sp/>UART_EVT_RX_HCPLT)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eEvt<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca20450e3262e999661e387f2713c44b30" kindref="member">PHYDEV_EVT_RX_STARTED</ref>;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>(pDevice-&gt;NAD<sp/>==<sp/>pPhydev-&gt;eChannel)<sp/>{<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32IrqStatus<sp/>==<sp/><ref refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a95e8c9099671dc5d7bf337602e10f53c" kindref="member">UART_EVT_TX_CPLT</ref>)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eEvt<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcaec9c2960667dda0ad1c67dc0e0380ca9" kindref="member">PHYDEV_EVT_TX_COMPLETE</ref>;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eState<sp/>&amp;=<sp/>~(TRANSMITTING_STATE);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u32IrqStatus<sp/>==<sp/><ref refid="group__uart_1gga6f438b1d1767658dc7e9eefb523f6384a5c0b5d8ff56f506f748c98e8929ef135" kindref="member">UART_EVT_RX_CPLT</ref>)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eEvt<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bca77c5a0bcdd5cea7ce331ff634d285ec9" kindref="member">PHYDEV_EVT_RX_COMPLETE</ref>;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eState<sp/>&amp;=<sp/>~(RECEIVING_STATE);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>event<sp/>notification</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>(eEvt<sp/>!=<sp/><ref refid="group__wize__phy__itf_1gga0d56115487d7cfe76d9c15685c0629bcad5d6adb226f32ecc84f7a4d080aa3a14" kindref="member">PHYDEV_EVT_NONE</ref>)<sp/>&amp;&amp;<sp/>pPhydev-&gt;<ref refid="structphydev__s_1ac3821f81d707a900df0217a416b4b790" kindref="member">pfEvtCb</ref><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ac3821f81d707a900df0217a416b4b790" kindref="member">pfEvtCb</ref>(pPhydev-&gt;pCbParam,<sp/>eEvt);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_TX(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pDevice)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ac9f9579c18b6f09c3a4bea4a93a64824" kindref="member">eChannel</ref><sp/>=<sp/>eChannel;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a26edc2e93988475aa03eb83d04a05faf" kindref="member">eModulation</ref><sp/>=<sp/>eModulation;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eError<sp/>=<sp/><ref refid="group__uart_1ga0d92d892dfc53345decd3dec30a3df62" kindref="member">BSP_Uart_Transmit</ref>(<ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" kindref="member">UART_ID_PHY</ref>,<sp/>pDevice-&gt;pBuf,<sp/>pDevice-&gt;u16Len);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pDevice-&gt;eError<sp/>==<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>)</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eState<sp/>=<sp/>TRANSMITTING_STATE;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_RX(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation)</highlight></codeline>
+<codeline lineno="356"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pDevice)</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1ac9f9579c18b6f09c3a4bea4a93a64824" kindref="member">eChannel</ref><sp/>=<sp/>eChannel;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a26edc2e93988475aa03eb83d04a05faf" kindref="member">eModulation</ref><sp/>=<sp/>eModulation;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eError<sp/>=<sp/><ref refid="group__uart_1gafaf0c7eae9c99c3a7a3d587e3e80bc34" kindref="member">BSP_Uart_Receive</ref>(<ref refid="group__platform_1gga7a07a9c22cf4b4f755d1e2e35a0ea9c7af312a9f9424444b9e5c82d7d52822301" kindref="member">UART_ID_PHY</ref>,<sp/>pDevice-&gt;pBuf,<sp/>BUF_SZ);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>pDevice-&gt;eError<sp/>==<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>)</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eState<sp/>=<sp/>RECEIVING_STATE;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_do_CCA(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="group__wize__phy__itf_1gaf0a30dbd383c5ecdd20797b1b76b16cd" kindref="member">phy_chan_e</ref><sp/>eChannel,<sp/><ref refid="group__wize__phy__itf_1ga896b435cd1e07f9e75d557d00e063640" kindref="member">phy_mod_e</ref><sp/>eModulation)</highlight></codeline>
+<codeline lineno="387"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_set_send(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>*pBuf,<sp/>uint8_t<sp/>u8Len)</highlight></codeline>
+<codeline lineno="406"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((!pBuf)<sp/>||<sp/>(!u8Len)<sp/>||<sp/>(!pDevice)<sp/>)</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eError<sp/>=<sp/>FAKEUART_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>i;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>*p<sp/>=<sp/>(uint16_t*)(pDevice-&gt;pBuf);</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*p++<sp/>=<sp/>__htons(<sp/><ref refid="group__common_1ga33020db34346d04a6a7ac64c0fdd7f0e" kindref="member">hex2ascii</ref>(u8Len)<sp/>);</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>u8Len;<sp/>i++)</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*p++<sp/>=<sp/>__htons(<sp/><ref refid="group__common_1ga33020db34346d04a6a7ac64c0fdd7f0e" kindref="member">hex2ascii</ref>(pBuf[i])<sp/>);</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;u16Len<sp/>=<sp/>(u8Len<sp/>+1)<sp/>&lt;&lt;<sp/>1;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;pBuf[pDevice-&gt;u16Len]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\r&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;u16Len++;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="430"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_get_recv(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint8_t<sp/>*pBuf,<sp/>uint8_t*<sp/>u8Len)</highlight></codeline>
+<codeline lineno="445"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">PHY_STATUS_ERROR</ref>;</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((!pBuf)<sp/>||<sp/>(!u8Len)<sp/>||<sp/>(!pDevice)<sp/>)</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eError<sp/>=<sp/>FAKEUART_INVALID_PARAM;</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>i;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>*p<sp/>=<sp/>(uint16_t*)(pDevice-&gt;pBuf);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*u8Len<sp/>=<sp/><ref refid="group__common_1gaec10efdbac1c7466daf49de48b13cbf0" kindref="member">ascii2hex</ref>(<sp/>__ntohs(<sp/>*p++<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>*u8Len;<sp/>i++)</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[i]<sp/>=<sp/><ref refid="group__common_1gaec10efdbac1c7466daf49de48b13cbf0" kindref="member">ascii2hex</ref>(<sp/>__ntohs(<sp/>*p++<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;u16Len<sp/>=<sp/>(*u8Len<sp/>+<sp/>1)<sp/>&lt;&lt;<sp/>1<sp/>;</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;u16Len++;</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="482"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>int32_t<sp/>_ioctl(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/>uint32_t<sp/>eCtl,<sp/>uint32_t<sp/>args)</highlight></codeline>
+<codeline lineno="483"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>i32Ret<sp/>=<sp/><ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">PHY_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pDevice<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1adcabe9013bc12c50a11ad18ddd2885c1" kindref="member">pCxt</ref>;</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(eCtl<sp/>&gt;<sp/>PHY_CTL_CMD)</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i32Ret<sp/>=<sp/>_do_cmd(pPhydev,<sp/>eCtl);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(eCtl<sp/>==<sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca3c6b91585a6b83abb049ecfb6e5a2a96" kindref="member">PHY_CTL_GET_STR_ERR</ref>)</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*((uint32_t*)args)<sp/>=<sp/>(uint32_t)(<ref refid="group__phy__fake_1ga9d871f4bab2f26a8102cf096c3caa6bc" kindref="member">phyfake_error_msgs</ref>[pDevice-&gt;eError]);<sp/><sp/></highlight><highlight class="comment">//<sp/>0x08017cf8<sp/>:<sp/>phyfake_error_msgs[2]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pDevice-&gt;eError<sp/>=<sp/>FAKEUART_ERR_NONE;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(eCtl)</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca7a6330c38cc876d127bd8e2d432d1684" kindref="member">PHY_CTL_SET_PA</ref>:</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca263c3ac9de129113ebca9960e262625a" kindref="member">PHY_CTL_SET_TX_FREQ_OFF</ref>:</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a42667e4ab058ce4fa965fd9a0e2d0b32" kindref="member">i16TxFreqOffset</ref><sp/>=<sp/>(int16_t)args;</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca948a54f56b66bf1a1990a7e941ac7c6a" kindref="member">PHY_CTL_SET_TX_POWER</ref>:</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<ref refid="group__wize__phy__itf_1ga291dfaf5f6ccf284805be2245db277ce" kindref="member">phy_power_e</ref>)args<sp/>!=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" kindref="member">eTxPower</ref>)</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pPhydev-&gt;<ref refid="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" kindref="member">eTxPower</ref><sp/>=<sp/>(<ref refid="group__wize__phy__itf_1ga291dfaf5f6ccf284805be2245db277ce" kindref="member">phy_power_e</ref>)args;</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>run-time<sp/>configure<sp/>TX<sp/>power<sp/>is<sp/>required</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8c72e887da88b4b8b38c3177ddd118ab" kindref="member">PHY_CTL_GET_PA</ref>:</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(uint8_t*)args<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0deba927ba8c83e63c4de70ece11438f" kindref="member">PHY_CTL_GET_TX_FREQ_OFF</ref>:</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(uint8_t*)args<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1a42667e4ab058ce4fa965fd9a0e2d0b32" kindref="member">i16TxFreqOffset</ref>;</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca9029fceced8f70d1ede64676c806cfa7" kindref="member">PHY_CTL_GET_TX_POWER</ref>:</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(uint8_t*)args<sp/>=<sp/>pPhydev-&gt;<ref refid="structphydev__s_1a868bfc23133f609dde9f78cf80dbfe7a" kindref="member">eTxPower</ref>;</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eacaae7bfa7d84b0a3f7f494ddd7e0864eea" kindref="member">PHY_CTL_GET_FREQ_ERR</ref>:</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//*(float*)args<sp/>=<sp/>PHY_CONV_AfcFreqErrToFloat(<sp/>pPhydev-&gt;u16_Ferr<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)args<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca2905747f10421f24888f43d6a753d8a2" kindref="member">PHY_CTL_GET_RSSI</ref>:</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//*(uint8_t*)args<sp/>=<sp/>PHY_CONV_Signed11ToRssi(<sp/>pPhydev-&gt;u16_Rssi<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(uint8_t*)args<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca8b97abc4477870734b7d643bff0eebf7" kindref="member">PHY_CTL_GET_NOISE</ref>:</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//*(uint8_t*)args<sp/>=<sp/>PHY_CONV_Signed11ToRssi(<sp/>pPhydev-&gt;u16_Noise<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(uint8_t*)args<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__wize__phy__itf_1ggafbdbc8d1faf5deaac496ad929db06eaca0fb46eb58e895f99665f0209dbc6fb8a" kindref="member">PHY_CTL_GET_ERR</ref>:</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*(uint8_t*)args<sp/>=<sp/>pDevice-&gt;eError;</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i32Ret;</highlight></codeline>
+<codeline lineno="549"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"></highlight></codeline>
+<codeline lineno="551"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="552"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c"/>
+  </compounddef>
+</doxygen>

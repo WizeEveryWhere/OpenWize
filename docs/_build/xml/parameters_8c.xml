@@ -1,0 +1,1310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="parameters_8c" kind="file" language="C++">
+    <compoundname>parameters.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="parameters__def_8h" local="yes">parameters_def.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>limits.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c</label>
+        <link refid="parameters_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>parameters_def.h</label>
+        <link refid="parameters__def_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__parameters_1ga84f49efe2202fbe3028f42d5fb3553be" prot="public" static="no" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t u16_ParamValueSz</definition>
+        <argsstring></argsstring>
+        <name>u16_ParamValueSz</name>
+        <briefdescription>
+<para>This external variable hold the parameters table value size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters table value size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="45" column="23" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="70" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="45" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t a_ParamValue[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamValue</name>
+        <briefdescription>
+<para>This external variable hold the parameters table value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="49" column="16" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="49" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga967743ed3bc6da990464bb439c2aa818" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamAccessCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamAccessCfgSz</name>
+        <briefdescription>
+<para>This external variable hold the parameters access table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters access table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="54" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="75" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="54" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" prot="public" static="no" mutable="no">
+        <type>const param_s</type>
+        <definition>const param_s a_ParamAccess[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamAccess</name>
+        <briefdescription>
+<para>This external variable hold parameters access table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="58" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c" bodystart="33" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="58" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t u8_ParamRestrCfgSz</definition>
+        <argsstring></argsstring>
+        <name>u8_ParamRestrCfgSz</name>
+        <briefdescription>
+<para>This external variable hold the parameters restriction table size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This external variable hold the parameters restriction table size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="63" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/src/storage.c" bodystart="80" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="63" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structrestr__s" kindref="compound">restr_s</ref></type>
+        <definition>const restr_s a_ParamRestr[]</definition>
+        <argsstring>[]</argsstring>
+        <name>a_ParamRestr</name>
+        <briefdescription>
+<para>This external variable hold the parameters restriction table. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="67" column="22" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/app/gen/parameters_cfg.c" bodystart="292" bodyend="-1" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="67" declcolumn="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__parameters_1gaacc69700183206dc2bbca07289d34e50" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _param_access_</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir, uint8_t u8_Access)</argsstring>
+        <name>_param_access_</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Access</declname>
+        </param>
+        <briefdescription>
+<para>This private function deal with access to parameter table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Access</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access rights. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Success </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="87" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="87" bodyend="124" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="69" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga82a29092c2d9a37a7e762f4a36d3c98d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+        <definition>static restr_s * _get_restr_add_</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>_get_restr_add_</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction table address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction table address. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="133" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="133" bodyend="140" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="70" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gafb67d057bf7c94d26919eba48e1ebdc3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _check_conform_modulo_</definition>
+        <argsstring>(restr_s *p_Restr, uint8_t *p_Data)</argsstring>
+        <name>_check_conform_modulo_</name>
+        <param>
+          <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+          <declname>p_Restr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to the modulo value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Restr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the restriction table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="201" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="201" bodyend="223" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="71" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga885dd1e94adf24061ccdd9674bc3a670" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _check_conform_enum_</definition>
+        <argsstring>(restr_s *p_Restr, uint8_t *p_Data)</argsstring>
+        <name>_check_conform_enum_</name>
+        <param>
+          <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+          <declname>p_Restr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to one of the enum value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Restr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the restriction table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="151" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="151" bodyend="190" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="72" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gad4619899c62b0b58c30df25278dea828" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t _check_conform_range_</definition>
+        <argsstring>(restr_s *p_Restr, uint8_t *p_Data)</argsstring>
+        <name>_check_conform_range_</name>
+        <param>
+          <type><ref refid="structrestr__s" kindref="compound">restr_s</ref> *</type>
+          <declname>p_Restr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to the range value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Restr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the restriction table </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="234" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="234" bodyend="256" declfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" declline="73" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Param_Init</definition>
+        <argsstring>(const uint8_t *p_Param)</argsstring>
+        <name>Param_Init</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>p_Param</declname>
+        </param>
+        <briefdescription>
+<para>Init parameters by with default values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p_Param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on input parameters table. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="265" column="6" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="265" bodyend="268" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="44" declcolumn="6"/>
+        <references refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4">a_ParamValue</references>
+        <references refid="group__parameters_1ga84f49efe2202fbe3028f42d5fb3553be" compoundref="storage_8c" startline="70">u16_ParamValueSz</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga86c322ee4a48330f3fba7896ec033882" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_IsValidId</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_IsValidId</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Check if Id is in acess table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not valid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: valid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="277" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="277" bodyend="279" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="45" declcolumn="9"/>
+        <references refid="group__parameters_1ga967743ed3bc6da990464bb439c2aa818" compoundref="storage_8c" startline="75">u8_ParamAccessCfgSz</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga5d6f8a6494103ae84a2c12a28354bc61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_GetSize</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetSize</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the parameter size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The parameter size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="287" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="287" bodyend="289" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="46" declcolumn="9"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref></type>
+        <definition>param_access_e Param_GetLocAccess</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetLocAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the local access rights field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The local access rights field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="297" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="297" bodyend="299" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="47" declcolumn="16"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref></type>
+        <definition>param_access_e Param_GetRemAccess</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRemAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the remote access rights field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The remote access rights field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="307" column="16" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="307" bodyend="309" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="48" declcolumn="16"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga7f7dce9138c26ae37af7f31703c9aabc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref></type>
+        <definition>param_effective_e Param_GetEffect</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetEffect</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the &quot;effective&quot; field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The &quot;effective&quot; field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="317" column="19" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="317" bodyend="319" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="49" declcolumn="19"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf667d345e2617fb9a56f95a2f692a078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref></type>
+        <definition>param_ref_e Param_GetReferenced</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetReferenced</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the &quot;referenced&quot; field of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The &quot;referenced&quot; field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="327" column="13" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="327" bodyend="329" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="50" declcolumn="13"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga7123182d7b2e73313da7283a82b71772" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Param_GetAddOf</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetAddOf</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the memory address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The parameter address </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="338" column="10" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="338" bodyend="344" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="51" declcolumn="10"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+        <references refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4">a_ParamValue</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga251ae563ea25c3afb5b941d59e00438c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_GetRestrId</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRestrId</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction id of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction id field. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="352" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="352" bodyend="354" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="52" declcolumn="9"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga81d781f58a54f102fba660b5f42f6fe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * Param_GetRestrTableAdd</definition>
+        <argsstring>(uint8_t u8_Id)</argsstring>
+        <name>Param_GetRestrTableAdd</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <briefdescription>
+<para>Get the restriction table address of the parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The restriction table address. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="362" column="12" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="362" bodyend="369" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="53" declcolumn="12"/>
+        <references refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" compoundref="parameters__cfg_8c" startline="33">a_ParamAccess</references>
+        <references refid="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" compoundref="storage_8c" startline="80">u8_ParamRestrCfgSz</references>
+        <references refid="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" compoundref="parameters__cfg_8c" startline="292">a_ParamRestr</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaf9315b4b7f366378428f88edb81b72e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_CheckConformity</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data)</argsstring>
+        <name>Param_CheckConformity</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <briefdescription>
+<para>Check that given value conform to its restriction definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the parameter to check </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point on the data to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: not conform </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: conform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="379" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="379" bodyend="400" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="54" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_Access</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_Access</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Pseudo-Direct access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>success </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="411" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="411" bodyend="425" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="56" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga37a2f18b3815d6368701e433ce07789f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_LocalAccess</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_LocalAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Local access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access is forbidden </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access granted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="437" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="437" bodyend="453" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="57" declcolumn="9"/>
+        <references refid="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" compoundref="parameters_8c" startline="297" endline="299">Param_GetLocAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="group__parameters_1ga727ea9de05a38b0d5f42d7cd6abb35c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Param_RemoteAccess</definition>
+        <argsstring>(uint8_t u8_Id, uint8_t *p_Data, uint8_t u8_Dir)</argsstring>
+        <name>Param_RemoteAccess</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Id</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>p_Data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>u8_Dir</declname>
+        </param>
+        <briefdescription>
+<para>Remote access to the parameters table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter Id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">p_Data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on source or destination data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">u8_Dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The access direction (0:read; 1:write). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>access is forbidden; 1: access granted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" line="464" column="9" bodyfile="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c" bodystart="464" bodyend="481" declfile="/home/nono/OpenWize/sources/Samples/Parameters/include/parameters.h" declline="58" declcolumn="9"/>
+        <references refid="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" compoundref="parameters_8c" startline="307" endline="309">Param_GetRemAccess</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file expose all parameter function&apos;s for local, remote and direct access. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2019/11/20 00:08:20 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="parameters__def_8h" kindref="compound">parameters_def.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="group__parameters_1ga84f49efe2202fbe3028f42d5fb3553be" kindref="member">u16_ParamValueSz</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" kindref="member">a_ParamValue</ref>[];</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__parameters_1ga967743ed3bc6da990464bb439c2aa818" kindref="member">u8_ParamAccessCfgSz</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>param_s<sp/><ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[];</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" kindref="member">u8_ParamRestrCfgSz</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/><ref refid="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" kindref="member">a_ParamRestr</ref>[];</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_param_access_(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir,<sp/>uint8_t<sp/>u8_Access);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structrestr__s" kindref="compound">restr_s</ref>*<sp/>_get_restr_add_(uint8_t<sp/>u8_Id);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_check_conform_modulo_(<ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/>*p_Restr,<sp/>uint8_t*<sp/>p_Data);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_check_conform_enum_(<ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/>*p_Restr,<sp/>uint8_t*<sp/>p_Data);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_check_conform_range_(<ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/>*p_Restr,<sp/>uint8_t*<sp/>p_Data);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_param_access_(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir,<sp/>uint8_t<sp/>u8_Access){</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret,<sp/>u8_isAuth;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pvSrc,<sp/>*pvDest;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_isAuth<sp/>=<sp/>(u8_Dir)?(u8_Access<sp/>&amp;<sp/><ref refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a60d1a52f84d34da6f6537317a1775929" kindref="member">WO</ref>):(u8_Access<sp/>&amp;<sp/><ref refid="group__parameters_1ggaea605a6a5d00cc7838ce9ff8874bd3c3a42e9aa764b9ee7ecf7e668462de6f96d" kindref="member">RO</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>u8_Dir<sp/>try<sp/>to<sp/>write<sp/>and<sp/>!(u8_Access<sp/>&amp;<sp/>WO)<sp/>not<sp/>writable,<sp/>u8_isAuth<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>!u8_Dir<sp/>try<sp/>to<sp/>read<sp/>and<sp/>!(u8_Access<sp/>&amp;<sp/>RO)<sp/>not<sp/>readable,<sp/>u8_isAuth<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_isAuth){<sp/></highlight><highlight class="comment">//<sp/>authorized<sp/>to<sp/>access</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_Dir)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvSrc<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)p_Data;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>PARAM_USE_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvDest<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u32_address);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvDest<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)(&amp;(<ref refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" kindref="member">a_ParamValue</ref>[<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u16_offset]));</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvDest<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)p_Data;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>PARAM_USE_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvSrc<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u32_address);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvSrc<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)(&amp;(<ref refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" kindref="member">a_ParamValue</ref>[<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u16_offset]));</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pvDest<sp/>==<sp/>NULL<sp/>||<sp/>pvSrc<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//_param_lock_((void*)&amp;(a_ParamAccess[u8_Id].u8_access));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(pvDest,<sp/>pvSrc,<sp/><ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_size);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//_param_unlock_((void*)&amp;(a_ParamAccess[u8_Id].u8_access));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structrestr__s" kindref="compound">restr_s</ref>*<sp/>_get_restr_add_(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_restId<sp/>&gt;<sp/>0)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_restId<sp/>&lt;<sp/><ref refid="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" kindref="member">u8_ParamRestrCfgSz</ref><sp/>)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>){</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="structrestr__s" kindref="compound">restr_s</ref>*)(&amp;(<ref refid="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" kindref="member">a_ParamRestr</ref>[<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_restId]));</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_check_conform_enum_(<ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/>*p_Restr,<sp/>uint8_t*<sp/>p_Data)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>i;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ga7a362289f266f6282f1e10f9fa577bd4" kindref="member">restr_sz_type_e</ref><sp/>e_size;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p_Restr<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>p_Data<sp/>!=<sp/>NULL){</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e_size<sp/>=<sp/>GET_RESTR_SZ(p_Restr-&gt;<ref refid="structrestr__s_1a84410843fde67411f4e0501e6f182c6a" kindref="member">u8_restr</ref>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i<sp/>&lt;<sp/>p_Restr-&gt;<ref refid="structrestr__s_1a64e215980382db90c1fb5c493ab74d1d" kindref="member">u8_nb</ref>;<sp/>i++){</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a2da7a85929605dce3fbaad011aaba5a8" kindref="member">RESTR_8BITS</ref>){</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(u8_ret<sp/>=<sp/>CHECK_ENUM_VAL(((uint8_t*)p_Data)[0],<sp/>((uint8_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[i]))<sp/>){</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>found<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a5bfb71cc1b14b9a8ab61b19b76385c0d" kindref="member">RESTR_16BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(u8_ret<sp/>=<sp/>CHECK_ENUM_VAL(((uint16_t*)p_Data)[0],<sp/>((uint16_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[i]))<sp/>){</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>found<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a90d0f0e086383611d7635656aaeec44e" kindref="member">RESTR_32BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(u8_ret<sp/>=<sp/>CHECK_ENUM_VAL(((uint32_t*)p_Data)[0],<sp/>((uint32_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[i]))<sp/>){</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>found<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a50c6872b89ac9ac656198e4ddf68aaea" kindref="member">RESTR_64BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(u8_ret<sp/>=<sp/>CHECK_ENUM_VAL(((uint64_t*)p_Data)[0],<sp/>((uint64_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[i]))<sp/>){</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>found<sp/>the<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>e_size<sp/>seems<sp/>to<sp/>be<sp/>unknown,<sp/>so<sp/>stop<sp/>the<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_check_conform_modulo_(<ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/>*p_Restr,<sp/>uint8_t*<sp/>p_Data)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ga7a362289f266f6282f1e10f9fa577bd4" kindref="member">restr_sz_type_e</ref><sp/>e_size;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p_Restr<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>p_Data<sp/>!=<sp/>NULL){</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e_size<sp/>=<sp/>GET_RESTR_SZ(p_Restr-&gt;<ref refid="structrestr__s_1a84410843fde67411f4e0501e6f182c6a" kindref="member">u8_restr</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a2da7a85929605dce3fbaad011aaba5a8" kindref="member">RESTR_8BITS</ref>){</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_MODULO(<sp/>((uint8_t*)p_Data)[0],<sp/>((uint8_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0]<sp/>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a5bfb71cc1b14b9a8ab61b19b76385c0d" kindref="member">RESTR_16BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_MODULO(<sp/>((uint16_t*)p_Data)[0],<sp/>((uint16_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0]<sp/>);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a90d0f0e086383611d7635656aaeec44e" kindref="member">RESTR_32BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_MODULO(<sp/>((uint32_t*)p_Data)[0],<sp/>((uint32_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0]<sp/>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a50c6872b89ac9ac656198e4ddf68aaea" kindref="member">RESTR_64BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_MODULO(<sp/>((uint64_t*)p_Data)[0],<sp/>((uint64_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0]<sp/>);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>else<sp/>{}<sp/>//<sp/>e_size<sp/>seems<sp/>to<sp/>be<sp/>unknown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>_check_conform_range_(<ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/>*p_Restr,<sp/>uint8_t*<sp/>p_Data)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ga7a362289f266f6282f1e10f9fa577bd4" kindref="member">restr_sz_type_e</ref><sp/>e_size;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p_Restr<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>p_Data<sp/>!=<sp/>NULL){</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e_size<sp/>=<sp/>GET_RESTR_SZ(p_Restr-&gt;<ref refid="structrestr__s_1a84410843fde67411f4e0501e6f182c6a" kindref="member">u8_restr</ref>);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a2da7a85929605dce3fbaad011aaba5a8" kindref="member">RESTR_8BITS</ref>){</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_RANGE(<sp/>((uint8_t*)p_Data)[0],<sp/>((uint8_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0],<sp/>((uint8_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[1]<sp/>);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a5bfb71cc1b14b9a8ab61b19b76385c0d" kindref="member">RESTR_16BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_RANGE(<sp/>((uint16_t*)p_Data)[0],<sp/>((uint16_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0],<sp/>((uint16_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[1]<sp/>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a90d0f0e086383611d7635656aaeec44e" kindref="member">RESTR_32BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_RANGE(<sp/>((uint32_t*)p_Data)[0],<sp/>((uint32_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0],<sp/>((uint32_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[1]<sp/>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(e_size<sp/>==<sp/><ref refid="group__parameters_1gga7a362289f266f6282f1e10f9fa577bd4a50c6872b89ac9ac656198e4ddf68aaea" kindref="member">RESTR_64BITS</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>CHECK_RANGE(<sp/>((uint64_t*)p_Data)[0],<sp/>((uint64_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[0],<sp/>((uint64_t*)p_Restr-&gt;<ref refid="structrestr__s_1a95e4a5d227c297149942c7ed12074681" kindref="member">p_Table</ref>)[1]<sp/>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>else<sp/>{}<sp/>//<sp/>e_size<sp/>seems<sp/>to<sp/>be<sp/>unknown</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265" refid="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__parameters_1ga35ac235560efb735183d8ddcb8922ca4" kindref="member">Param_Init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*p_Param)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(<ref refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" kindref="member">a_ParamValue</ref>,<sp/>p_Param,<sp/><ref refid="group__parameters_1ga84f49efe2202fbe3028f42d5fb3553be" kindref="member">u16_ParamValueSz</ref>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277" refid="group__parameters_1ga86c322ee4a48330f3fba7896ec033882" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga86c322ee4a48330f3fba7896ec033882" kindref="member">Param_IsValidId</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((u8_Id<sp/>&gt;=<sp/><ref refid="group__parameters_1ga967743ed3bc6da990464bb439c2aa818" kindref="member">u8_ParamAccessCfgSz</ref>)?(0):(1)<sp/>);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="group__parameters_1ga5d6f8a6494103ae84a2c12a28354bc61" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga5d6f8a6494103ae84a2c12a28354bc61" kindref="member">Param_GetSize</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_size;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297" refid="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" refkind="member"><highlight class="normal"><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref><sp/><ref refid="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" kindref="member">Param_GetLocAccess</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref>)(<sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_access<sp/>&gt;&gt;<sp/>LOC_ACCESS_POS)<sp/>&amp;<sp/>LOC_ACCESS_MSK);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307" refid="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" refkind="member"><highlight class="normal"><ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref><sp/><ref refid="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" kindref="member">Param_GetRemAccess</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="group__parameters_1gaea605a6a5d00cc7838ce9ff8874bd3c3" kindref="member">param_access_e</ref>)(<sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_access<sp/>&gt;&gt;<sp/>REM_ACCESS_POS)<sp/>&amp;<sp/>REM_ACCESS_MSK);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317" refid="group__parameters_1ga7f7dce9138c26ae37af7f31703c9aabc" refkind="member"><highlight class="normal"><ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref><sp/><ref refid="group__parameters_1ga7f7dce9138c26ae37af7f31703c9aabc" kindref="member">Param_GetEffect</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="group__parameters_1ga148972e18720300c9bad8011ef6f2a6c" kindref="member">param_effective_e</ref>)(<sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_access<sp/>&gt;&gt;<sp/>EFF_ACCESS_POS)<sp/>&amp;<sp/>EFF_ACCESS_MSK);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327" refid="group__parameters_1gaf667d345e2617fb9a56f95a2f692a078" refkind="member"><highlight class="normal"><ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref><sp/><ref refid="group__parameters_1gaf667d345e2617fb9a56f95a2f692a078" kindref="member">Param_GetReferenced</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="group__parameters_1gaf6b0d01d3d809666c3dc05d4042c8a5d" kindref="member">param_ref_e</ref>)(<sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_access<sp/>&gt;&gt;<sp/>REF_ACCESS_POS)<sp/>&amp;<sp/>REF_ACCESS_MSK);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338" refid="group__parameters_1ga7123182d7b2e73313da7283a82b71772" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="group__parameters_1ga7123182d7b2e73313da7283a82b71772" kindref="member">Param_GetAddOf</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>PARAM_USE_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u32_address;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(uint32_t)(&amp;(<ref refid="group__parameters_1ga5da9782f19826b7bad8a58cf594c9df4" kindref="member">a_ParamValue</ref>[<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u16_offset]));</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352" refid="group__parameters_1ga251ae563ea25c3afb5b941d59e00438c" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga251ae563ea25c3afb5b941d59e00438c" kindref="member">Param_GetRestrId</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_restId<sp/>);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362" refid="group__parameters_1ga81d781f58a54f102fba660b5f42f6fe4" refkind="member"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="group__parameters_1ga81d781f58a54f102fba660b5f42f6fe4" kindref="member">Param_GetRestrTableAdd</ref>(uint8_t<sp/>u8_Id){</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_restId<sp/>&gt;<sp/>0)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_restId<sp/>&lt;<sp/><ref refid="group__parameters_1ga391accc1c1e9dac0d3468a8310475d01" kindref="member">u8_ParamRestrCfgSz</ref><sp/>)</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>){</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>(<ref refid="group__parameters_1ga76ef526ac0278fabf6ffb069af909478" kindref="member">a_ParamRestr</ref>[<ref refid="group__parameters_1ga0a4f868d30cd22bb0c524f60d8c0f02e" kindref="member">a_ParamAccess</ref>[u8_Id].u8_restId].p_Table)<sp/>);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379" refid="group__parameters_1gaf9315b4b7f366378428f88edb81b72e2" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1gaf9315b4b7f366378428f88edb81b72e2" kindref="member">Param_CheckConformity</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data){</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__parameters_1ga45afffb7d12f2fe5f92b22195a83c6f9" kindref="member">restr_type_e</ref><sp/>e_type;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrestr__s" kindref="compound">restr_s</ref><sp/>*p_restr<sp/>=<sp/>_get_restr_add_(u8_Id);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><sp/>p_restr<sp/>!=<sp/>NULL){</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e_type<sp/>=<sp/>GET_RESTR_TYPE(p_restr-&gt;<ref refid="structrestr__s_1a84410843fde67411f4e0501e6f182c6a" kindref="member">u8_restr</ref>);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<sp/>e_type<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a660ca9bb26d9c9df4e88cffd5de504c5" kindref="member">RESTR_MODULO</ref>:</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>_check_conform_modulo_(p_restr,<sp/>p_Data);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9aacd45bbce97af46acac9081dd503e5a5" kindref="member">RESTR_RANGE</ref>:</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>_check_conform_range_(p_restr,<sp/>p_Data);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group__parameters_1gga45afffb7d12f2fe5f92b22195a83c6f9a4cc7262dfb618f7e934a544896beb4ce" kindref="member">RESTR_ENUM</ref>:</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>_check_conform_enum_(p_restr,<sp/>p_Data);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default<sp/>:</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411" refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1gaa6884ee37e011e23391af79b6a6cb6f7" kindref="member">Param_Access</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir){</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>_param_access_(u8_Id,<sp/>p_Data,<sp/>u8_Dir,<sp/>0b11);</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CONST_PARAM_ERR_MSG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_ret<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_Dir)<sp/>{<sp/></highlight><highlight class="comment">//we<sp/>try<sp/>to<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;write<sp/>access<sp/>error\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>we<sp/>try<sp/>to<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;read<sp/>access<sp/>error\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437" refid="group__parameters_1ga37a2f18b3815d6368701e433ce07789f" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga37a2f18b3815d6368701e433ce07789f" kindref="member">Param_LocalAccess</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir){</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret,<sp/>u8_access;</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_access<sp/>=<sp/><ref refid="group__parameters_1gaf68141017796c3e3f369b1ca701a9c19" kindref="member">Param_GetLocAccess</ref>(u8_Id);</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>_param_access_(u8_Id,<sp/>p_Data,<sp/>u8_Dir,<sp/>u8_access);</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CONST_PARAM_ERR_MSG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_ret<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_Dir)<sp/>{<sp/></highlight><highlight class="comment">//we<sp/>try<sp/>to<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;local<sp/>write<sp/>access<sp/>is<sp/>forbidden\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>we<sp/>try<sp/>to<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;local<sp/>read<sp/>access<sp/>is<sp/>forbidden\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="453"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="464" refid="group__parameters_1ga727ea9de05a38b0d5f42d7cd6abb35c7" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group__parameters_1ga727ea9de05a38b0d5f42d7cd6abb35c7" kindref="member">Param_RemoteAccess</ref>(uint8_t<sp/>u8_Id,<sp/>uint8_t*<sp/>p_Data,<sp/>uint8_t<sp/>u8_Dir){</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>u8_ret,<sp/>u8_access;</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_access<sp/>=<sp/><ref refid="group__parameters_1ga43ad6c2649de0b265ef656181abe1b32" kindref="member">Param_GetRemAccess</ref>(u8_Id);</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/>u8_ret<sp/>=<sp/>_param_access_(u8_Id,<sp/>p_Data,<sp/>u8_Dir,<sp/>u8_access);</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_CONST_PARAM_ERR_MSG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_ret<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(u8_Dir)<sp/>{<sp/></highlight><highlight class="comment">//we<sp/>try<sp/>to<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;remote<sp/>write<sp/>access<sp/>is<sp/>forbidden\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>we<sp/>try<sp/>to<sp/>read</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;remote<sp/>read<sp/>access<sp/>is<sp/>forbidden\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8_ret;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/sources/Samples/Parameters/src/parameters.c"/>
+  </compounddef>
+</doxygen>

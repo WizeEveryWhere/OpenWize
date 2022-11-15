@@ -1,0 +1,927 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__admin__layer" kind="group">
+    <compoundname>Wize_admin_layer</compoundname>
+    <title>Wize_admin_layer</title>
+    <innerclass refid="structadm__config__s" prot="public">adm_config_s</innerclass>
+    <innerclass refid="structadmin__rsp__cmderr__t" prot="public">admin_rsp_cmderr_t</innerclass>
+    <innerclass refid="structadmin__rsp__t" prot="public">admin_rsp_t</innerclass>
+    <innerclass refid="structadmin__rsp__err__t" prot="public">admin_rsp_err_t</innerclass>
+    <innerclass refid="structadmin__cmd__writekey__t" prot="public">admin_cmd_writekey_t</innerclass>
+    <innerclass refid="structadmin__cmd__anndownload__t" prot="public">admin_cmd_anndownload_t</innerclass>
+    <innerclass refid="structadmin__cmd__execinstping__t" prot="public">admin_cmd_execinstping_t</innerclass>
+    <innerclass refid="structadmin__rsp__execinstping__t" prot="public">admin_rsp_execinstping_t</innerclass>
+    <innerclass refid="structinst__ping__t" prot="public">inst_ping_t</innerclass>
+    <innerclass refid="structinst__pong__t" prot="public">inst_pong_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga8732ddf3ae6203a804e1954dafb738f7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_cmd_id_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a58ec81a3719fe764d8bde7d36834e789" prot="public">
+          <name>ADM_READ_PARAM</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read parameter(s) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7abe4d9d12bbfa4f3de6a5bcba23dcdab3" prot="public">
+          <name>ADM_WRITE_PARAM</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write parameter(s) </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7af8bbf85ab69e37ff81e62c8f1d527d1c" prot="public">
+          <name>ADM_WRITE_KEY</name>
+          <initializer>= 0x28</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write a key </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a9cdf54f93928218d4d6fe1c863842def" prot="public">
+          <name>ADM_ANNDOWNLOAD</name>
+          <initializer>= 0x30</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>&quot;Announcement&quot; of programmed download </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a32a15cd5e73a54095a17c5f5da194132" prot="public">
+          <name>ADM_EXECINSTPING</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Execution of PING/PONG (install) request </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define known COMMAND type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="58" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="58" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga1b5d8e9d4efc26fe7510930dc3985f07" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07acf3ba09f654f5840cb070d9e0fb87391" prot="public">
+          <name>ADM_NONE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga1b5d8e9d4efc26fe7510930dc3985f07a6cd4b5875dc0c217a3247eaede0c8edf" prot="public">
+          <name>ADM_UNK_CMD</name>
+          <initializer>= 0xFF</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Command is unknown </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code on COMMAND type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="72" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga8466379311ba449fe5bbf1ee887ca302" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_read_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302afc7147cac20f98ad60a8ec64c985473e" prot="public">
+          <name>READ_UNK_PARAM</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Parameter is unknown </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302aecc7ba650842764b7b92ba2bacb04a85" prot="public">
+          <name>READ_ACCES_DENIED</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read access is forbidden </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga8466379311ba449fe5bbf1ee887ca302a2d38662d509b70b36dcc8b2ac0412b07" prot="public">
+          <name>READ_LENGTH_EXCEED</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The read result is too long </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a READ_PARAMETER. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="113" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="113" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga60a1f171495623f5df7704a67b46791b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_write_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba379f09c8b2d3f3026cf03510361f8341" prot="public">
+          <name>WRITE_UNK_PARAM</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Parameter is unknown </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791badb143598d8879a97e37ad6aa2afdff52" prot="public">
+          <name>WRITE_ACCES_DENIED</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write access is forbidden </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga60a1f171495623f5df7704a67b46791ba6c33260bd85c812d6cb3fe4b048426e1" prot="public">
+          <name>WRITE_ILLEGAL_VALUE</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The given value to write is illegal </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a WRITE_PARAMETER. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="122" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="122" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga88a8bef792f55a9d3a5b06731430f4b7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_key_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a70ab5190e04bd923c3649ce01672357f" prot="public">
+          <name>KEY_INCORRECT_FRM_LEN</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Frame length is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a8b5be0a087462ad60ab7bb652edec041" prot="public">
+          <name>KEY_ILLEGAL_VALUE</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write key to this Key id is forbidden </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga88a8bef792f55a9d3a5b06731430f4b7a18ed326a4f0e78733ebecddb1ee669b8" prot="public">
+          <name>KEY_KCHG_NOT_USED</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The cipher key is not Kchg </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a WRITEKEY. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="134" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1gaab7f578fda93475da2faf808cb30c1dd" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_ann_param_id_e</name>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf095beeec5cd839e74fe80d6fcfc7772" prot="public">
+          <name>ANN_FIELD_ID_L7DwnId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Download number </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddae42e454bf1dc2b2bd561ef8bcfb5f6e3" prot="public">
+          <name>ANN_FIELD_ID_L7Klog</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Klog </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaafe8290ab42a2e91ed80505c65c754cb" prot="public">
+          <name>ANN_FIELD_ID_L7SwVersionIni</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SW initial version </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda36f8b07ba924347e4f6a44f36177d665" prot="public">
+          <name>ANN_FIELD_ID_L7SwVersionTarget</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SW target version </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf37b1d844af73c42b720cf232c6bd5db" prot="public">
+          <name>ANN_FIELD_ID_L7MField</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>MField </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddadfdb26e5714211b53b5ef1c51f160fd7" prot="public">
+          <name>ANN_FIELD_ID_L7DcHwId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>HW version </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda96e391897be0168ee7e20ab07cebbb41" prot="public">
+          <name>ANN_FIELD_ID_L7BlocksCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Block number to download </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddade1487273aa8c25335b0532d6145d1e2" prot="public">
+          <name>ANN_FIELD_ID_L7ChannelId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Channel Id to use </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1ddaf91731f1818281bf355fc7dc34de1de4" prot="public">
+          <name>ANN_FIELD_ID_L7ModulationId</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Modulation Id to use </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda7b00e668d291a62ecd740c96411d276a" prot="public">
+          <name>ANN_FIELD_ID_L7DaysProg</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Programmed day to download </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda099641f9d3bc941f796d16b502755efb" prot="public">
+          <name>ANN_FIELD_ID_L7DayRepeat</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Number of day to repeat </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda566a9ebe533d92a2dc46cf8cd160bc14" prot="public">
+          <name>ANN_FIELD_ID_L7DeltaSec</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Delta in second between each block </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1ggaab7f578fda93475da2faf808cb30c1dda517fd2fa66fd0a5f1e84e94b7a2edd3b" prot="public">
+          <name>ANN_FIELD_ID_L7HashSW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Hash on the entire SW to download </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define the filed id in ANN_DOWNLOAD command. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="157" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="157" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga01b397de7bb7ce338d8a44651630993d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>admin_ann_err_code_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da95b57aba9b5013a2a972f7f5c7fa10fc" prot="public">
+          <name>ANN_ILLEGAL_VALUE</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>One field value is illegal </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993dafbf2931a1ca3f69e22c8c7635e994c25" prot="public">
+          <name>ANN_INCORRECT_FRM_LEN</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The frame length is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da684c46240d8014bfdf3b044d7419c039" prot="public">
+          <name>ANN_INCORRECT_INI_SW_VER</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The initial version is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da4ebf901d3deab04409a8f39527ced36d" prot="public">
+          <name>ANN_INCORRECT_HW_VER</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The HW version is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da466e81a7626fd4513322950af008fbaf" prot="public">
+          <name>ANN_KCHG_NOT_USED</name>
+          <initializer>= 0x05</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The Kchg has not been used to cipher the command frame </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da7f882dea181c2c6f59cbd02ebeb92388" prot="public">
+          <name>ANN_INCORRECT_BCAST_START_DAY</name>
+          <initializer>= 0x06</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The programmed first day for download is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da9f4a1445880d163bf4006a79fd0b3da1" prot="public">
+          <name>ANN_UPD_IN_PROGRESS</name>
+          <initializer>= 0x07</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An update is already in progress </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da20c2444089ae96657e7ff57fb8ee9275" prot="public">
+          <name>ANN_TGT_SW_VER</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The target SW version is incorrect </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da315aedd775f1071727d3b00f339f84e7" prot="public">
+          <name>ANN_TGT_VER_DWL</name>
+          <initializer>= 0x09</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga01b397de7bb7ce338d8a44651630993da6f2c907184fdb32d6dabf5cc10374cc9" prot="public">
+          <name>ANN_DIFF_TIME_OUT_OF_WINDOWS</name>
+          <initializer>= 0x0A</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define error code when command is a ANN_DOWNLOAD. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="176" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="176" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__wize__admin__layer_1ga49fe0e2698ddb0d0dfe523d62dc42784" prot="public" static="no" strong="no">
+        <type></type>
+        <name>main_param_e</name>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784a662573da614dcaed621bdd7852b10bcb" prot="public">
+          <name>PMAX_SET</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784ab6440566b0adcf53a968385b46abb336" prot="public">
+          <name>CLK_SET</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784a7da1da85f775ce2bec60bbc12ffb6272" prot="public">
+          <name>DAYLI_SET</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784ac2b7b9bddf988c5afdfe78e42618fee5" prot="public">
+          <name>CLK_CORR</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784af2d3750f1921920f7da07f3f73fc5bb8" prot="public">
+          <name>INST_PONG</name>
+          <initializer>= 0x1000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__wize__admin__layer_1gga49fe0e2698ddb0d0dfe523d62dc42784a88ec7d5086d2469ba843c7fcceade8a6" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= 0x8000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enumeration define. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" line="255" column="14" bodyfile="/home/nono/OpenWize/sources/WizeCore/mgr/include/app_layer.h" bodystart="255" bodyend="262"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__wize__admin__layer_1ga1df2f845040cc34f9e8017823b4aae91" prot="public" static="no" mutable="no">
+        <type>struct adm_config_s</type>
+        <definition>struct adm_config_s sAdmConfig</definition>
+        <argsstring></argsstring>
+        <name>sAdmConfig</name>
+        <initializer>=
+{
+	.u32DwnDayProgWinMin = DWN_DAY_PROG_WIN_MIN,
+	.u32DwnDayProgWinMax = DWN_DAY_PROG_WIN_MAX,
+	.u32DwnDeltaSecMin = DWN_DELTA_SEC_MIN_WM2400,
+	.u32DwnBlkDurMod = DWN_BLK_DURATION_WM2400
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="336" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="419" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__wize__admin__layer_1gaa3c435a7c3aa339bf393c5c5222bcdda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AdmInt_PreCmd</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>AdmInt_PreCmd</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the command and build the response. The command is not effectively executed here. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: response not yet available </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: response is available </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: action already done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="73" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="73" bodyend="116" declfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/adm_internal.h" declline="44" declcolumn="9"/>
+        <references refid="structnet__msg__s_1a742adf101885837a2bb1310790b00b05" compoundref="proto_8h" startline="169">net_msg_s::u16Id</references>
+        <references refid="structnet__msg__s_1a126eb90bceff21320fd2f0c63027430b" compoundref="proto_8h" startline="171">net_msg_s::u8Type</references>
+        <references refid="group__wize__proto_1gga790b42ad60fd4ed13797deb456010723a950a015184536a1ee84f249804fdc69d" compoundref="proto_8h" startline="73">APP_ADMIN</references>
+        <references refid="structnet__msg__s_1afe7bd3b4d167a78b1320114b9720c1a2" compoundref="proto_8h" startline="167">net_msg_s::pData</references>
+        <references refid="group__wize__admin__layer_1gga8732ddf3ae6203a804e1954dafb738f7a58ec81a3719fe764d8bde7d36834e789" compoundref="app__layer_8h" startline="59">ADM_READ_PARAM</references>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__admin__layer_1ga3f223e6110350875c0a5466e4428ec1b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _adm_unknown_</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>_adm_unknown_</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the L7 unknown command. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="128" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="128" bodyend="133" declfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" declline="52" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__admin__layer_1gab3eefc0433e1279e29119e92290d247c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _adm_read_param_</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>_adm_read_param_</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the L7 read parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="142" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="142" bodyend="223" declfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" declline="53" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__admin__layer_1ga5e78df4d61ded0b95939a623e122eb81" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _adm_write_param_</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>_adm_write_param_</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the L7 write parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="232" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="232" bodyend="299" declfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" declline="54" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__admin__layer_1gab6f09a537849b1f9ba5c58f44a4986ce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _adm_write_key_</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>_adm_write_key_</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the L7 write key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="308" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="308" bodyend="327" declfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" declline="55" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__admin__layer_1ga90cbaaead55e9d6d5d18a9d71e3ae4b0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _adm_anndownload_</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>_adm_anndownload_</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the L7 ann_download. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="434" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="434" bodyend="640" declfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" declline="56" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__wize__admin__layer_1ga1c0339b2bf935bb798462aab7783c54a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void _adm_execping_</definition>
+        <argsstring>(net_msg_t *pReqMsg, net_msg_t *pRspMsg)</argsstring>
+        <name>_adm_execping_</name>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pReqMsg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__wize__proto_1gaa869d642cfdd1c06d14478f701389342" kindref="member">net_msg_t</ref> *</type>
+          <declname>pRspMsg</declname>
+        </param>
+        <briefdescription>
+<para>This function treat the L7 exec_ping. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pReqMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on request message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pRspMsg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on response message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>None </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="336" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="336" bodyend="352" declfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" declline="57" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__wize__admin__layer_1gaad4aed6f765176c85a071c35c84a5b12" prot="public" static="no">
+        <name>DWN_BLK_DURATION_WM2400</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="354" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__admin__layer_1gabe756e8da251d09a259116e526403fbb" prot="public" static="no">
+        <name>DWN_BLK_DURATION_WM4800</name>
+        <initializer>500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="355" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__admin__layer_1ga1850d54a4583e1cfb9797e794c5f3c09" prot="public" static="no">
+        <name>BYPASS_DELTASEC_RESTRICTION</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="357" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__admin__layer_1gaccdb422f54d19f395a58fec814c681fe" prot="public" static="no">
+        <name>DWN_DELTA_SEC_MIN_WM2400</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="363" column="11" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__admin__layer_1gafe62e6e16321235a85efbf07f53f0b68" prot="public" static="no">
+        <name>DWN_DELTA_SEC_MIN_WM4800</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="364" column="10" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__admin__layer_1gae821a16532c537c5cce9a667c7a741bd" prot="public" static="no">
+        <name>DWN_DAY_PROG_WIN_MIN</name>
+        <initializer>864000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="367" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__wize__admin__layer_1gaf2e1f9a952b85634d48a7b304c338f96" prot="public" static="no">
+        <name>DWN_DAY_PROG_WIN_MAX</name>
+        <initializer>5184000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" line="368" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/src/internal/adm_internal.c" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

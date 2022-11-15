@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structping__reply__config__s" kind="struct" language="C++" prot="public">
+    <compoundname>ping_reply_config_s</compoundname>
+    <includes refid="inst__internal_8h" local="no">inst_internal.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structping__reply__config__s_1aefec46bb904883853a4ace493ac6fcc2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ping_reply_config_s::AutoAdj_ClkFreq</definition>
+        <argsstring></argsstring>
+        <name>AutoAdj_ClkFreq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clock and Frequency Offset Auto-Adjustment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="64" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__config__s_1aa2e9027f392ccf8095fb54af84d43e6a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ping_reply_config_s::AutoClk</definition>
+        <argsstring></argsstring>
+        <name>AutoClk</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Coarse clock auto-adjust on PONG. 1: enable, 0: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="67" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__config__s_1a3a4d77ba7cdd097f48780f2a1c731b62" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ping_reply_config_s::AutoFreq</definition>
+        <argsstring></argsstring>
+        <name>AutoFreq</name>
+        <bitfield>1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frequency Offset auto-adjust on PONG. 1: enable, 0: disable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="68" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__config__s_1a379a1b93ce2bffe27319914c09f32bf9" prot="public" static="no" mutable="no">
+        <type>union ping_reply_config_s::@0</type>
+        <definition>union ping_reply_config_s::@0 ping_reply_config_s::@1</definition>
+        <argsstring></argsstring>
+        <name>@1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structping__reply__config__s_1abc0bfc62af4eda7d9bc8463a8ca1e4cc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ping_reply_config_s::AutoAdj_Rssi</definition>
+        <argsstring></argsstring>
+        <name>AutoAdj_Rssi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clock and Frequency Offset Auto-Adjustment received frame RSSI min. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="71" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This struct defines the ping_reply configuration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ping_reply_config_s</label>
+        <link refid="structping__reply__config__s"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" line="62" column="26" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/internal/inst_internal.h" bodystart="62" bodyend="72"/>
+    <listofallmembers>
+      <member refid="structping__reply__config__s_1aefec46bb904883853a4ace493ac6fcc2" prot="public" virt="non-virtual"><scope>ping_reply_config_s</scope><name>AutoAdj_ClkFreq</name></member>
+      <member refid="structping__reply__config__s_1abc0bfc62af4eda7d9bc8463a8ca1e4cc" prot="public" virt="non-virtual"><scope>ping_reply_config_s</scope><name>AutoAdj_Rssi</name></member>
+      <member refid="structping__reply__config__s_1aa2e9027f392ccf8095fb54af84d43e6a" prot="public" virt="non-virtual"><scope>ping_reply_config_s</scope><name>AutoClk</name></member>
+      <member refid="structping__reply__config__s_1a3a4d77ba7cdd097f48780f2a1c731b62" prot="public" virt="non-virtual"><scope>ping_reply_config_s</scope><name>AutoFreq</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__wize__core" kind="group">
+    <compoundname>wize_core</compoundname>
+    <title>Wize_core</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__wize__core_1ga2c92e56529dacf36c6e99625be523622" prot="public" static="no">
+        <name>WIZE_ALLIANCE_BANNER</name>
+        <initializer>&quot;__      _ _            _   _ _ _\n&quot; \
+&quot;\\ \\    / (_)__ ___    /_\\ | | (_) __ _ _ _   __ ___\n&quot; \
+&quot; \\ \\/\\/ /| |_ / -_)  / _ \\| | | |/ _` | &apos; \\ / _/ -_)\n&quot; \
+&quot;  \\_/\\_/ |_/__\\___| /_/ \\_\\_|_|_|\\__,_|_||_|\\__\\___|\n&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/app/include/wize_banner.h" line="51" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/app/include/wize_banner.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

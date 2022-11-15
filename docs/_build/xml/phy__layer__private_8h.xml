@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="phy__layer__private_8h" kind="file" language="C++">
+    <compoundname>phy_layer_private.h</compoundname>
+    <includes refid="phy__itf_8h" local="yes">phy_itf.h</includes>
+    <includedby refid="sys__init_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</includedby>
+    <includedby refid="phy__layer_8c" local="yes">/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>phy_itf.h</label>
+        <link refid="phy__itf_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h</label>
+        <link refid="phy__layer__private_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="4">
+        <label>phy_layer.h</label>
+        <link refid="phy__layer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/app/sys/sys_init.c</label>
+        <link refid="sys__init_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c</label>
+        <link refid="phy__layer_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h</label>
+        <link refid="phy__layer__private_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structfakeuart__device__t" prot="public">fakeuart_device_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__phy__fake_1gac7590e94c59150d3b8d794d285db07c0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>fakeuart_state_e</name>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0aeca4500f6f729608a014643f8c8f4003" prot="public">
+          <name>IDLE_STATE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0a77f5dd1089fc82a71dabcef62ef04f85" prot="public">
+          <name>INITIALIZED_STATE</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0af120a64ec022d6f3eecc0e201e4e5d39" prot="public">
+          <name>CONFIGURED_STATE</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0a250ac4d7aa59a4cccd41f715f4eb1203" prot="public">
+          <name>TRANSMITTING_STATE</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac7590e94c59150d3b8d794d285db07c0a304f469d217d90131227d22c7d03f9d6" prot="public">
+          <name>RECEIVING_STATE</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the PḧyFake state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" line="60" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" bodystart="59" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__phy__fake_1gac80bca5cb8e5cb10597389d188a0130f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>fakeuart_error_e</name>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa362eb99321ca4ef96ede36ca5c3809cb" prot="public">
+          <name>FAKEUART_ERR_NONE</name>
+          <initializer>= DEV_SUCCESS</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa25242d28b9861f3e24ebbdc521444221" prot="public">
+          <name>FAKEUART_FAILURE</name>
+          <initializer>= DEV_FAILURE</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130faf4d94f4fbf844d55825a3c0a486238f6" prot="public">
+          <name>FAKEUART_BUSY</name>
+          <initializer>= DEV_BUSY</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa4cd0915479a3f66da0e287bbcddecff2" prot="public">
+          <name>FAKEUART_TIMEOUT</name>
+          <initializer>= DEV_TIMEOUT</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__phy__fake_1ggac80bca5cb8e5cb10597389d188a0130fa6d9f6e1cb82beaedb928de04d9827989" prot="public">
+          <name>FAKEUART_INVALID_PARAM</name>
+          <initializer>= DEV_INVALID_PARAM</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This enum defines the PhyFake error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" line="72" column="1" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" bodystart="71" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__phy__fake_1ga941823902bad7ade409cae912ab7defc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Phy_PhyFake_setup</definition>
+        <argsstring>(phydev_t *pPhydev, fakeuart_device_t *pCtx)</argsstring>
+        <name>Phy_PhyFake_setup</name>
+        <param>
+          <type><ref refid="group__wize__phy__itf_1ga48d87fbfe68868db2de6fbe15e8310c8" kindref="member">phydev_t</ref> *</type>
+          <declname>pPhydev</declname>
+        </param>
+        <param>
+          <type><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref> *</type>
+          <declname>pCtx</declname>
+        </param>
+        <briefdescription>
+<para>This function prepare the Phy device with constant configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pPhydev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pCtx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer on the Phy device context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf9a34b9c1fa1f15f4867e2e588de4202" kindref="member">phy_status_e::PHY_STATUS_OK</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" kindref="member">phy_status_e::PHY_STATUS_ERROR</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PHY_STATUS_BUSY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(see <ref refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113fa7ded42bfcf65612e884bf0dea01d3496" kindref="member">phy_status_e::PHY_STATUS_BUSY</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" line="127" column="9" bodyfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/src/phy_layer.c" bodystart="127" bodyend="137" declfile="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h" declline="91" declcolumn="9"/>
+        <references refid="group__wize__phy__itf_1gga74947dd7f2dae3bc33731625a298113faf4e858a7002ce34aae08876b8e8949eb" compoundref="phy__itf_8h" startline="109">PHY_STATUS_ERROR</references>
+        <references refid="structphydev__s_1a99b9fe82b73383c0e184e91b493e56b6" compoundref="phy__itf_8h" startline="206">phydev_s::pIf</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file define the phy fake device driver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2019, GRDF, Inc. All rights reserved.</para>
+</simplesect>
+Redistribution and use in source and binary forms, with or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are met:<itemizedlist>
+<listitem><para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+</listitem><listitem><para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+</listitem><listitem><para>Neither the name of GRDF, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Revision history</title><para></para>
+</simplesect>
+<simplesect kind="par"><title>1.0.0 : 2021/11/24 [GBI]</title><para>Initial version </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifndef<sp/>_PHY_LAYER_PRIVATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_PHY_LAYER_PRIVATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="phy__itf_8h" kindref="compound">phy_itf.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">#define<sp/>BUF_SZ<sp/>515<sp/>//<sp/>2<sp/>(packet<sp/>len)<sp/>+<sp/>256*2<sp/>because<sp/>it<sp/>communicate<sp/>on<sp/>uart,<sp/>so<sp/>we<sp/>need<sp/>to<sp/>convert<sp/>hex<sp/>to<sp/>char<sp/>+<sp/>1<sp/>(EOB)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="group__phy__fake_1gac7590e94c59150d3b8d794d285db07c0" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE_STATE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>INITIALIZED_STATE<sp/><sp/>=<sp/>0x01,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>CONFIGURED_STATE<sp/><sp/><sp/>=<sp/>0x02,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>TRANSMITTING_STATE<sp/>=<sp/>0x10,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>RECEIVING_STATE<sp/><sp/><sp/><sp/>=<sp/>0x20,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}<sp/><ref refid="group__phy__fake_1gac7590e94c59150d3b8d794d285db07c0" kindref="member">fakeuart_state_e</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="group__phy__fake_1gac80bca5cb8e5cb10597389d188a0130f" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>FAKEUART_ERR_NONE<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ad29b92de0e82e55fca434978e59296eb" kindref="member">DEV_SUCCESS</ref>,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>FAKEUART_FAILURE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45ada2514a94bd96bf7c205c6f30b7aee74" kindref="member">DEV_FAILURE</ref>,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>FAKEUART_BUSY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a75e5063f193825eea38ab72bada8e31e" kindref="member">DEV_BUSY</ref>,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>FAKEUART_TIMEOUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a41dedf36ed8225e72b231ed93f764bc7" kindref="member">DEV_TIMEOUT</ref>,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>FAKEUART_INVALID_PARAM<sp/>=<sp/><ref refid="group__common_1gga94b6f98b42247b3a224a1d66f9d94f45a673a34603423863416310db94277acea" kindref="member">DEV_INVALID_PARAM</ref>,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/><ref refid="group__phy__fake_1gac80bca5cb8e5cb10597389d188a0130f" kindref="member">fakeuart_error_e</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structfakeuart__device__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>eState;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>eError;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>u16Len;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pBuf[BUF_SZ];</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">int32_t<sp/><ref refid="group__phy__fake_1ga941823902bad7ade409cae912ab7defc" kindref="member">Phy_PhyFake_setup</ref>(<ref refid="structphydev__s" kindref="compound">phydev_t</ref><sp/>*pPhydev,<sp/><ref refid="structfakeuart__device__t" kindref="compound">fakeuart_device_t</ref><sp/>*pCtx);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_PHY_LAYER_PRIVATE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nono/OpenWize/demo/Nucleo-L476/device/PhyFake/include/phy_layer_private.h"/>
+  </compounddef>
+</doxygen>

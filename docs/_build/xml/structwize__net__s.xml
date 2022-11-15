@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structwize__net__s" kind="struct" language="C++" prot="public">
+    <compoundname>wize_net_s</compoundname>
+    <includes refid="net__api__private_8h" local="no">net_api_private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwize__net__s_1a8430211f996a3070c3be6565f215624d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref></type>
+        <definition>struct proto_ctx_s wize_net_s::sProtoCtx</definition>
+        <argsstring></argsstring>
+        <name>sProtoCtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold the protocol context (see <ref refid="structproto__ctx__s" kindref="compound">proto_ctx_s</ref>) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="178" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__net__s_1a9f5689f7176d200074d2ea4cd90fcc0d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structmedium__cfg__s" kindref="compound">medium_cfg_s</ref></type>
+        <definition>struct medium_cfg_s wize_net_s::sMediumCfg</definition>
+        <argsstring></argsstring>
+        <name>sMediumCfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold the medium configuration (see <ref refid="structmedium__cfg__s" kindref="compound">medium_cfg_s</ref>) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="178" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__net__s_1a17239cf9f4d4697f48a4c359f8b04cbf" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_net_s::u8ProtoErr</definition>
+        <argsstring></argsstring>
+        <name>u8ProtoErr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold the last error code (see <ref refid="group__wize__proto_1ga67f927d283d97b0f340f7f8c8500f274" kindref="member">ret_code_e</ref>). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="191" column="9" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__net__s_1a6921afdbaa224cc6738d824410afff5e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_net_s::aSendBuff[SEND_BUF_SZ]</definition>
+        <argsstring>[SEND_BUF_SZ]</argsstring>
+        <name>aSendBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Transmission buffer </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="193" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwize__net__s_1af401a1502461bc64344b05f72abfb5ca" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t wize_net_s::aRecvBuff[RECV_BUF_SZ]</definition>
+        <argsstring>[RECV_BUF_SZ]</argsstring>
+        <name>aRecvBuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reception buffer </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="194" column="13" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This structure define the Wize network context. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>proto_ctx_s</label>
+        <link refid="structproto__ctx__s"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+sProtoStats</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+sProtoConfig</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>proto_config_s</label>
+        <link refid="structproto__config__s"/>
+      </node>
+      <node id="4">
+        <label>proto_stats_s</label>
+        <link refid="structproto__stats__s"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+sFrmErrStats</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>medium_cfg_s</label>
+        <link refid="structmedium__cfg__s"/>
+      </node>
+      <node id="5">
+        <label>frm_err_stats_s</label>
+        <link refid="structfrm__err__stats__s"/>
+      </node>
+      <node id="1">
+        <label>wize_net_s</label>
+        <link refid="structwize__net__s"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+sMediumCfg</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+sProtoCtx</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" line="185" column="25" bodyfile="/home/nono/OpenWize/sources/WizeCore/net/include/net_api_private.h" bodystart="185" bodyend="195"/>
+    <listofallmembers>
+      <member refid="structwize__net__s_1af401a1502461bc64344b05f72abfb5ca" prot="public" virt="non-virtual"><scope>wize_net_s</scope><name>aRecvBuff</name></member>
+      <member refid="structwize__net__s_1a6921afdbaa224cc6738d824410afff5e" prot="public" virt="non-virtual"><scope>wize_net_s</scope><name>aSendBuff</name></member>
+      <member refid="structwize__net__s_1a9f5689f7176d200074d2ea4cd90fcc0d" prot="public" virt="non-virtual"><scope>wize_net_s</scope><name>sMediumCfg</name></member>
+      <member refid="structwize__net__s_1a8430211f996a3070c3be6565f215624d" prot="public" virt="non-virtual"><scope>wize_net_s</scope><name>sProtoCtx</name></member>
+      <member refid="structwize__net__s_1a17239cf9f4d4697f48a4c359f8b04cbf" prot="public" virt="non-virtual"><scope>wize_net_s</scope><name>u8ProtoErr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

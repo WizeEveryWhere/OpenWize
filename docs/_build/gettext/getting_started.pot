@@ -1,0 +1,595 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021 - 2022, GRDF
+# This file is distributed under the same license as the OpenWize package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWize 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-08 13:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../getting_started/demo_NucleoL476.rst:3
+#: ../../getting_started/demo_NucleoL476.rst:3
+msgid "Demo application"
+msgstr "Application démo"
+
+#: ../../getting_started/demo_NucleoL476.rst:5
+#: ../../getting_started/demo_NucleoL476.rst:5
+msgid "This application is provided as a simple demonstration of OpenWize stack targeting an ST Nucleo-L476RG board."
+msgstr "Cette application est fournie comme une démonstration simple de la stack OpenWize ciblant une carte ST Nucleo-L476RG."
+
+#: ../../getting_started/demo_NucleoL476.rst:7
+#: ../../getting_started/demo_NucleoL476.rst:7
+msgid "The Nucleo-L476RG board doesn't integrate any RF device, so to overcome this, the demo application uses the ``PhyFake`` device, which input/output frames over a UART peripheral."
+msgstr "La carte Nucleo-L476RG n'intègre aucun dispositif RF, donc pour pallier ce problème, l'application de démonstration utilise le dispositif ``PhyFake``, qui entre/sort des trames via un périphérique UART."
+
+#: ../../getting_started/demo_NucleoL476.rst:9
+#: ../../getting_started/demo_NucleoL476.rst:9
+msgid "This demo is very simple, so, there is no console or local interface to communicate with it. Instead, application periodically sends DATA and INSTALL (aka. PING) message and use the provided *Logger* module to print out messages (info, warning, debug, error)."
+msgstr "Cette démo est très simple, il n'y a donc pas de console ou d'interface locale pour communiquer avec elle. Au lieu de cela, l'application envoie périodiquement des messages DATA et INSTALL (alias PING) et utilise le module *Logger* fourni pour imprimer les messages (info, warning, debug, erreur)."
+
+#: ../../getting_started/demo_NucleoL476.rst:11
+#: ../../getting_started/demo_NucleoL476.rst:11
+msgid "The *Logger* is connected to the MCU USART2 peripheral"
+msgstr "Le *Logger* est connecté au périphérique USART2 du MCU"
+
+#: ../../getting_started/demo_NucleoL476.rst:13
+#: ../../getting_started/demo_NucleoL476.rst:18
+#: ../../getting_started/demo_NucleoL476.rst:13
+#: ../../getting_started/demo_NucleoL476.rst:18
+msgid "Configuration : 115200 bps, 8 bits data, no parity, 1 stop bit."
+msgstr "Configuration : 115200 bps, 8 bits de données, pas de parité, 1 bit de stop."
+
+#: ../../getting_started/demo_NucleoL476.rst:14
+#: ../../getting_started/demo_NucleoL476.rst:14
+msgid "This USART is mapped onto CN1 (USB-mini)."
+msgstr "Ce USART est mappé sur CN1 (USB-mini)."
+
+#: ../../getting_started/demo_NucleoL476.rst:16
+#: ../../getting_started/demo_NucleoL476.rst:16
+msgid "The *PhyFake* is connected to the MCU LPUART1 peripheral :"
+msgstr "Le *PhyFake* est connecté au périphérique LPUART1 du MCU :"
+
+#: ../../getting_started/demo_NucleoL476.rst:20
+#: ../../getting_started/demo_NucleoL476.rst:20
+msgid "This USART is mapped onto :"
+msgstr "Cet USART est mappé sur :"
+
+#: ../../getting_started/demo_NucleoL476.rst:22
+#: ../../getting_started/demo_NucleoL476.rst:22
+msgid "RX : PC0 (CN7-38)"
+msgstr "RX : PC0 (CN7-38)"
+
+#: ../../getting_started/demo_NucleoL476.rst:23
+#: ../../getting_started/demo_NucleoL476.rst:23
+msgid "TX : PC1 (CN7-36)."
+msgstr "TX : PC1 (CN7-36)."
+
+#: ../../getting_started/demo_NucleoL476.rst:25
+#: ../../getting_started/demo_NucleoL476.rst:25
+msgid "Some default parameters have been set to :"
+msgstr "Certains paramètres par défaut ont été réglés sur :"
+
+#: ../../getting_started/demo_NucleoL476.rst:32
+#: ../../getting_started/demo_NucleoL476.rst:32
+msgid "ID"
+msgstr "ID"
+
+#: ../../getting_started/demo_NucleoL476.rst:33
+#: ../../getting_started/demo_NucleoL476.rst:33
+msgid "Name"
+msgstr "Nom"
+
+#: ../../getting_started/demo_NucleoL476.rst:34
+#: ../../getting_started/demo_NucleoL476.rst:34
+msgid "Value"
+msgstr "Valeur"
+
+#: ../../getting_started/demo_NucleoL476.rst:35
+#: ../../getting_started/demo_NucleoL476.rst:35
+msgid "0x28"
+msgstr "0x28"
+
+#: ../../getting_started/demo_NucleoL476.rst:36
+#: ../../getting_started/demo_NucleoL476.rst:36
+msgid "CIPH_CURRENT_KEY"
+msgstr "CIPH_CURRENT_KEY"
+
+#: ../../getting_started/demo_NucleoL476.rst:37
+#: ../../getting_started/demo_NucleoL476.rst:37
+msgid "0"
+msgstr "0"
+
+#: ../../getting_started/demo_NucleoL476.rst:38
+#: ../../getting_started/demo_NucleoL476.rst:38
+msgid "0x18"
+msgstr "0x18"
+
+#: ../../getting_started/demo_NucleoL476.rst:39
+#: ../../getting_started/demo_NucleoL476.rst:39
+msgid "EXCH_RX_DELAY"
+msgstr "EXCH_RX_DELAY"
+
+#: ../../getting_started/demo_NucleoL476.rst:40
+#: ../../getting_started/demo_NucleoL476.rst:43
+#: ../../getting_started/demo_NucleoL476.rst:46
+#: ../../getting_started/demo_NucleoL476.rst:49
+#: ../../getting_started/demo_NucleoL476.rst:52
+#: ../../getting_started/demo_NucleoL476.rst:40
+#: ../../getting_started/demo_NucleoL476.rst:43
+#: ../../getting_started/demo_NucleoL476.rst:46
+#: ../../getting_started/demo_NucleoL476.rst:49
+#: ../../getting_started/demo_NucleoL476.rst:52
+msgid "1"
+msgstr "1"
+
+#: ../../getting_started/demo_NucleoL476.rst:41
+#: ../../getting_started/demo_NucleoL476.rst:41
+msgid "0x19"
+msgstr "0x19"
+
+#: ../../getting_started/demo_NucleoL476.rst:42
+#: ../../getting_started/demo_NucleoL476.rst:42
+msgid "EXCH_RX_LENGTH"
+msgstr "EXCH_RX_LENGTH"
+
+#: ../../getting_started/demo_NucleoL476.rst:44
+#: ../../getting_started/demo_NucleoL476.rst:44
+msgid "0x1A"
+msgstr "0x1A"
+
+#: ../../getting_started/demo_NucleoL476.rst:45
+#: ../../getting_started/demo_NucleoL476.rst:45
+msgid "EXCH_RESPONSE_DELAY"
+msgstr "EXCH_RESPONSE_DELAY"
+
+#: ../../getting_started/demo_NucleoL476.rst:47
+#: ../../getting_started/demo_NucleoL476.rst:47
+msgid "0x30"
+msgstr "0x30"
+
+#: ../../getting_started/demo_NucleoL476.rst:48
+#: ../../getting_started/demo_NucleoL476.rst:48
+msgid "PING_RX_DELAY"
+msgstr "PING_RX_DELAY"
+
+#: ../../getting_started/demo_NucleoL476.rst:50
+#: ../../getting_started/demo_NucleoL476.rst:50
+msgid "0x31"
+msgstr "0x31"
+
+#: ../../getting_started/demo_NucleoL476.rst:51
+#: ../../getting_started/demo_NucleoL476.rst:51
+msgid "PING_RX_LENGTH"
+msgstr "PING_RX_LENGTH"
+
+#: ../../getting_started/demo_NucleoL476.rst:56
+#: ../../getting_started/demo_NucleoL476.rst:56
+msgid "Build the application"
+msgstr "Construction de l'application"
+
+#: ../../getting_started/demo_NucleoL476.rst:70
+#: ../../getting_started/demo_NucleoL476.rst:70
+msgid "The firmware files are installed in OpenWize/*_install* directory"
+msgstr "Les fichiers du firmware sont installés dans le répertoire OpenWize/*_install*"
+
+#: ../../getting_started/demo_NucleoL476.rst:83
+#: ../../getting_started/demo_NucleoL476.rst:83
+msgid "Load and run the firmware"
+msgstr "Chargez et lancez le firmware"
+
+#: ../../getting_started/demo_NucleoL476.rst:85
+#: ../../getting_started/demo_NucleoL476.rst:85
+msgid "To be able to load and run the demo application, you will need an ST Nucleo-L476 board and USB-to-UART converter."
+msgstr "Pour charger et lancer l'application demo, tu auras besoin d'une carte ST Nucleo-L476 et d'une convertisseur UBS-to-UART."
+
+#: ../../getting_started/demo_NucleoL476.rst:88
+#: ../../getting_started/demo_NucleoL476.rst:88
+msgid "Connect your Nucleo-L476RG board to your computer"
+msgstr "Connectez votre carte Nucleo-L476RG à votre ordinateur."
+
+#: ../../getting_started/demo_NucleoL476.rst:89
+#: ../../getting_started/demo_NucleoL476.rst:89
+msgid "Connect the USB-to-UART to your computer"
+msgstr "Connectez votre convertisseur USB-to-UART à votre ordinateur."
+
+#: ../../getting_started/demo_NucleoL476.rst:90
+#: ../../getting_started/demo_NucleoL476.rst:90
+msgid "Check ST-Link probe id"
+msgstr "Vérifier l'ID de la sonde ST-Link"
+
+#: ../../getting_started/demo_NucleoL476.rst:97
+#: ../../getting_started/demo_NucleoL476.rst:97
+msgid "You should get something like that :"
+msgstr "Vous devriez avoir quelque chose comme ça :"
+
+#: ../../getting_started/demo_NucleoL476.rst:139
+#: ../../getting_started/demo_NucleoL476.rst:139
+msgid "In this example, the probe id id 0 :"
+msgstr "Dans cet exemple, l'ID de la sonde 0 :"
+
+#: ../../getting_started/demo_NucleoL476.rst:148
+#: ../../getting_started/demo_NucleoL476.rst:148
+msgid "Then, upload the firmware onto the board"
+msgstr "Ensuite, téléchargez le firmware sur la carte"
+
+#: ../../getting_started/demo_NucleoL476.rst:155
+#: ../../getting_started/demo_NucleoL476.rst:155
+msgid "You should be able to the *Logger* messages on *ttyACM0* and Wize frames on *ttyUSB0*."
+msgstr "Vous devriez pouvoir voir les messages *Logger* sur *ttyACM0* et les trames Wize sur *ttyUSB0*"
+
+#: ../../getting_started/demo_NucleoL476.rst:159
+#: ../../getting_started/demo_NucleoL476.rst:159
+msgid "Debug the demo application"
+msgstr "Déboguer l'application de démonstration"
+
+#: ../../getting_started/demo_NucleoL476.rst:161
+#: ../../getting_started/demo_NucleoL476.rst:161
+msgid "In the directory \"OpenWize/demo/project\", we provides Eclipse project files. Open the STMCube32 IDE and *Import* as *Existing Projects into Workspace*."
+msgstr "Dans le répertoire \"OpenWize/demo/project\", nous fournissons des fichiers de projet Eclipse. Ouvrez l'IDE STMCube32 et *Importez* comme *Projets existants dans l'espace de travail*."
+
+#: ../../getting_started/first_step.rst:3
+#: ../../getting_started/first_step.rst:3
+msgid "First steps"
+msgstr "Premières étapes"
+
+#: ../../getting_started/first_step.rst:6
+#: ../../getting_started/first_step.rst:6
+msgid "Cloning this repository"
+msgstr "Cloner ce dépôt"
+
+#: ../../getting_started/first_step.rst:14
+#: ../../getting_started/first_step.rst:14
+msgid "or alternatively"
+msgstr "ou encore"
+
+#: ../../getting_started/first_step.rst:26
+#: ../../getting_started/first_step.rst:26
+msgid "This will also clone the following required submodules :"
+msgstr "Cette opération clonera également les sous-modules requis suivants :"
+
+#: ../../getting_started/first_step.rst:32
+#: ../../getting_started/first_step.rst:32
+msgid "Submodule"
+msgstr "Sous-modules"
+
+#: ../../getting_started/first_step.rst:33
+#: ../../getting_started/first_step.rst:33
+msgid "Version"
+msgstr "Version"
+
+#: ../../getting_started/first_step.rst:34
+#: ../../getting_started/first_step.rst:34
+msgid "Destination (from third-party/)"
+msgstr "Destination"
+
+#: ../../getting_started/first_step.rst:35
+#: ../../getting_started/first_step.rst:35
+msgid "sha"
+msgstr "sha"
+
+#: ../../getting_started/first_step.rst:36
+#: ../../getting_started/first_step.rst:36
+msgid "FreeRTOS"
+msgstr "FreeRTOS"
+
+#: ../../getting_started/first_step.rst:37
+#: ../../getting_started/first_step.rst:37
+msgid "V10.4.4"
+msgstr "V10.4.4"
+
+#: ../../getting_started/first_step.rst:38
+#: ../../getting_started/first_step.rst:38
+msgid "rtos/FreeRTOS/FreeRTOS-Kernel"
+msgstr "rtos/FreeRTOS/FreeRTOS-Kernel"
+
+#: ../../getting_started/first_step.rst:39
+#: ../../getting_started/first_step.rst:39
+msgid "8de8a9da1aa9b036812a72fdcd7cbdefc2789365"
+msgstr "8de8a9da1aa9b036812a72fdcd7cbdefc2789365"
+
+#: ../../getting_started/first_step.rst:40
+#: ../../getting_started/first_step.rst:40
+msgid "cmsis core"
+msgstr "cmsis core"
+
+#: ../../getting_started/first_step.rst:41
+#: ../../getting_started/first_step.rst:41
+msgid "v5.4.0_cm4"
+msgstr "v5.4.0_cm4"
+
+#: ../../getting_started/first_step.rst:42
+#: ../../getting_started/first_step.rst:42
+msgid "firmware/STM32/cmsis_core"
+msgstr "firmware/STM32/cmsis_core"
+
+#: ../../getting_started/first_step.rst:43
+#: ../../getting_started/first_step.rst:43
+msgid "cb6d9400754e6c9050487dfa573949b61152ac99"
+msgstr "cb6d9400754e6c9050487dfa573949b61152ac99"
+
+#: ../../getting_started/first_step.rst:44
+#: ../../getting_started/first_step.rst:44
+msgid "cmsis device L4"
+msgstr "cmsis device L4"
+
+#: ../../getting_started/first_step.rst:45
+#: ../../getting_started/first_step.rst:45
+msgid "v1.5.1"
+msgstr "v1.5.1"
+
+#: ../../getting_started/first_step.rst:46
+#: ../../getting_started/first_step.rst:46
+msgid "firmware/STM32/cmsis_device_l4"
+msgstr "firmware/STM32/cmsis_device_l4"
+
+#: ../../getting_started/first_step.rst:47
+#: ../../getting_started/first_step.rst:47
+msgid "f42a6c319cc887c8a13f171d347294f2eabfab3b"
+msgstr "f42a6c319cc887c8a13f171d347294f2eabfab3b"
+
+#: ../../getting_started/first_step.rst:48
+#: ../../getting_started/first_step.rst:48
+msgid "stm32l4xx_hal_driver"
+msgstr "stm32l4xx_hal_driver"
+
+#: ../../getting_started/first_step.rst:49
+#: ../../getting_started/first_step.rst:49
+msgid "v1.10.0"
+msgstr "v1.10.0"
+
+#: ../../getting_started/first_step.rst:50
+#: ../../getting_started/first_step.rst:50
+msgid "firmware/STM32/stm32l4xx_hal_driver"
+msgstr "firmware/STM32/stm32l4xx_hal_driver"
+
+#: ../../getting_started/first_step.rst:51
+#: ../../getting_started/first_step.rst:51
+msgid "2737a6e3fdefa41570a29321afb6cd9c1de69b1c"
+msgstr "2737a6e3fdefa41570a29321afb6cd9c1de69b1c"
+
+#: ../../getting_started/first_step.rst:52
+#: ../../getting_started/first_step.rst:52
+msgid "CMock"
+msgstr "CMock"
+
+#: ../../getting_started/first_step.rst:53
+#: ../../getting_started/first_step.rst:53
+msgid "v2.5.2"
+msgstr "v2.5.2"
+
+#: ../../getting_started/first_step.rst:54
+#: ../../getting_started/first_step.rst:54
+msgid "testing/Unity/CMock"
+msgstr "testing/Unity/CMock"
+
+#: ../../getting_started/first_step.rst:55
+#: ../../getting_started/first_step.rst:55
+msgid "150573c742ce15061a0b675aa0f8e29c85008062"
+msgstr "150573c742ce15061a0b675aa0f8e29c85008062"
+
+#: ../../getting_started/first_step.rst:56
+#: ../../getting_started/first_step.rst:56
+msgid "Tinycrypt"
+msgstr "Tinycrypt"
+
+#: ../../getting_started/first_step.rst:57
+#: ../../getting_started/first_step.rst:57
+msgid "master branch"
+msgstr "master branch"
+
+#: ../../getting_started/first_step.rst:58
+#: ../../getting_started/first_step.rst:58
+msgid "libraries/Tinycrypt/tinycrypt"
+msgstr "libraries/Tinycrypt/tinycrypt"
+
+#: ../../getting_started/first_step.rst:59
+#: ../../getting_started/first_step.rst:59
+msgid "5969b0e0f572a15ed95dc272e57104faeb5eb6b0"
+msgstr "5969b0e0f572a15ed95dc272e57104faeb5eb6b0"
+
+#: ../../getting_started/first_step.rst:63
+#: ../../getting_started/first_step.rst:63
+msgid "Install the STM32Cube IDE"
+msgstr "Installez l'IDE STM32Cube"
+
+#: ../../getting_started/first_step.rst:74
+#: ../../getting_started/first_step.rst:74
+msgid "Go to the STMicroelectronic web page (`STM32CubeIDE`_), on *STM32CubeIDE Generic Linux Installer* line, select the version |STMCubeIdeVersion| and download it. Unzip the zip file somewhere in temporary directory, then execute the resulting file (\"|STMCubeIdeExecutable|\") and follow the instruction."
+msgstr "Allez sur la page web de STMicroelectronic (`STM32CubeIDE`_), sur la ligne *STM32CubeIDE Generic Linux Installer*, sélectionnez la version |STMCubeIdeVersion| et téléchargez-la. Décompressez le fichier zip quelque part dans un répertoire temporaire, puis exécutez le fichier résultant (``STMCubeIdeExecutable|``) et suivez les instructions."
+
+#: ../../getting_started/first_step.rst:77
+#: ../../getting_started/first_step.rst:77
+msgid "Note that preferred installation path as \"|PreferdInstPath|\"."
+msgstr "Notez que le chemin d'installation préféré est \"|PreferdInstPath|\"."
+
+#: ../../getting_started/first_step.rst:79
+#: ../../getting_started/first_step.rst:79
+msgid "After few minutes, the STM32CubeIDE installation is completed."
+msgstr "Après quelques minutes, l'installation du STM32CubeIDE est terminée."
+
+#: ../../getting_started/first_step.rst:82
+#: ../../getting_started/first_step.rst:82
+msgid "Setup environment variables"
+msgstr "Configurer les variables d'environnement"
+
+#: ../../getting_started/first_step.rst:84
+#: ../../getting_started/first_step.rst:84
+msgid "Environment variables :"
+msgstr "Variables d'environnement"
+
+#: ../../getting_started/first_step.rst:86
+#: ../../getting_started/first_step.rst:86
+msgid "CROSS_TOOL_PATH : give the main path of the cross-toolchain, which is used and mandatory by the cmake build system."
+msgstr "CROSS_TOOL_PATH : donne le chemin principal du cross-toolchain, qui est utilisé et obligatoire par le système de construction cmake."
+
+#: ../../getting_started/first_step.rst:88
+#: ../../getting_started/first_step.rst:88
+msgid "ST_PROG_PATH : give the main path of the STM32Cube programmer tool. This tool is used to upload the binary firmware on the target board from command line, so not required with the IDE."
+msgstr "ST_PROG_PATH : donne le chemin principal de l'outil du programmateur STM32Cube. Cet outil est utilisé pour télécharger le firmware binaire sur la carte cible à partir de la ligne de commande, il n'est donc pas nécessaire avec l'IDE."
+
+#: ../../getting_started/first_step.rst:91
+#: ../../getting_started/first_step.rst:91
+msgid "JLINK_PROG_PATH : give the main path of the Segger programmer tool. This tool is used to upload the binary firmware on the target board from command line, so not required with the IDE."
+msgstr "JLINK_PROG_PATH : donne le chemin principal de l'outil du programmateur Segger. Cet outil est utilisé pour télécharger le firmware binaire sur la carte cible à partir de la ligne de commande, il n'est donc pas nécessaire avec l'IDE."
+
+#: ../../getting_started/first_step.rst:95
+#: ../../getting_started/first_step.rst:95
+msgid "The easy way to set these variables is to run the provided script in OpenWize/tools/scripts. This script will create all necessary to set these environment variables on new console or terminal."
+msgstr "Le moyen le plus simple de définir ces variables est d'exécuter le script fourni dans OpenWize/tools/scripts. Ce script créera tout ce qui est nécessaire pour définir ces variables d'environnement sur une nouvelle console ou un nouveau terminal."
+
+#: ../../getting_started/first_step.rst:98
+#: ../../getting_started/first_step.rst:98
+msgid "In a console, run the script :"
+msgstr "Dans la console, lancez le script :"
+
+#: ../../getting_started/first_step.rst:105
+#: ../../getting_started/first_step.rst:105
+msgid "and follow the instructions."
+msgstr "et suivez les instructions"
+
+#: ../../getting_started/first_step.rst:108
+#: ../../getting_started/first_step.rst:108
+msgid "It's also possible to \"un-install\" :"
+msgstr "C'est aussi possible de \"désinstaller\" :"
+
+#: ../../getting_started/first_step.rst:115
+#: ../../getting_started/first_step.rst:115
+msgid "Run this script only the first time. Next, in each new open console, these environment variables will be automatically set."
+msgstr "Exécutez ce script uniquement la première fois. Ensuite, dans chaque nouvelle console ouverte, ces variables d'environnement seront automatiquement définies."
+
+#: ../../getting_started/index.rst:4
+msgid "Getting started"
+msgstr "Pour commencer"
+
+#: ../../getting_started/requirement.rst:3
+#: ../../getting_started/requirement.rst:3
+msgid "Requirement"
+msgstr "Exigence"
+
+#: ../../getting_started/requirement.rst:5
+#: ../../getting_started/requirement.rst:5
+msgid "The OpenWize stack is basically developed to target STMicroelectronic MCU, based on ARM-M cpu core. For convenience reasons, we use the STM32CubeIDE as an IDE. It comes with all necessary to compile, load and debug firmware on that ST MCU. This IDE can be downloaded from STMicroelectronics website (`STM32CubeIDE`_)."
+msgstr "La stack OpenWize est essentiellement développée pour cibler les MCU de STMicroelectronic, basés sur le cœur du processeur ARM-M. Pour des raisons pratiques, nous utilisons le STM32CubeIDE comme IDE. Il est livré avec tout ce qui est nécessaire pour compiler, charger et déboguer un firmware sur ce MCU ST. Cet IDE peut être téléchargé sur le site de STMicroelectronics (`STM32CubeIDE`_)."
+
+#: ../../getting_started/requirement.rst:10
+#: ../../getting_started/requirement.rst:10
+msgid "The build system is based on *cmake* and *make* tools which rely on the cross-toolchain provided by the STM32CubeIDE. We provide a little bash script \"set_env.sh\" in \"tools/script\" to help you to setup some environment variables."
+msgstr "Le système de construction est basé sur les outils *cmake* et *make* qui s'appuient sur le cross-toolchain fourni par le STM32CubeIDE. Nous fournissons un petit script bash \"set_env.sh\" dans \"tools/script\" pour vous aider à configurer certaines variables d'environnement."
+
+#: ../../getting_started/requirement.rst:15
+#: ../../getting_started/requirement.rst:15
+msgid "Restriction"
+msgstr "Restriction"
+
+#: ../../getting_started/requirement.rst:17
+#: ../../getting_started/requirement.rst:17
+msgid "The whole development and tests have been done under Linux operating system, Windows is not supported."
+msgstr "L'ensemble du développement et des tests a été réalisé sous le système d'exploitation Linux, Windows n'est pas supporté."
+
+#: ../../getting_started/requirement.rst:21
+#: ../../getting_started/requirement.rst:21
+msgid "Minimum version"
+msgstr "Version minimale"
+
+#: ../../getting_started/requirement.rst:23
+#: ../../getting_started/requirement.rst:23
+msgid "The following table gives the minimum recommended versions to be able to build the OpenWize stack."
+msgstr "Le tableau suivant indique les versions minimales recommandées pour pouvoir construire la stack OpenWize."
+
+#: ../../getting_started/requirement.rst:29
+#: ../../getting_started/requirement.rst:29
+msgid "Host"
+msgstr "Host"
+
+#: ../../getting_started/requirement.rst:30
+#: ../../getting_started/requirement.rst:30
+msgid "Linux Ubuntu 18.04"
+msgstr "Linux Ubuntu 18.04"
+
+#: ../../getting_started/requirement.rst:31
+#: ../../getting_started/requirement.rst:31
+msgid "There are no special requirement. It should works on any Linux distribution."
+msgstr "Il n'y a pas d'exigence particulière. Il devrait fonctionner sur n'importe quelle distribution Linux."
+
+#: ../../getting_started/requirement.rst:32
+#: ../../getting_started/requirement.rst:32
+msgid "Git"
+msgstr "Git"
+
+#: ../../getting_started/requirement.rst:33
+#: ../../getting_started/requirement.rst:33
+msgid "2.24"
+msgstr "2.24"
+
+#: ../../getting_started/requirement.rst:34
+#: ../../getting_started/requirement.rst:40
+#: ../../getting_started/requirement.rst:43
+#: ../../getting_started/requirement.rst:34
+#: ../../getting_started/requirement.rst:40
+#: ../../getting_started/requirement.rst:43
+msgid "There are no special requirement."
+msgstr "Il n'y a pas d'exigence particulière"
+
+#: ../../getting_started/requirement.rst:35
+#: ../../getting_started/requirement.rst:35
+msgid "Cmake"
+msgstr "Cmake"
+
+#: ../../getting_started/requirement.rst:36
+#: ../../getting_started/requirement.rst:36
+msgid "3.13.2"
+msgstr "3.13.2"
+
+#: ../../getting_started/requirement.rst:37
+#: ../../getting_started/requirement.rst:37
+msgid "The CMakeLists.txt and *xxx*.cmake files are based on cmake version greater equal than 3.12"
+msgstr "Les fichiers CMakeLists.txt et *xxx*.cmake sont basés sur une version de cmake supérieure ou égale à 3.12."
+
+#: ../../getting_started/requirement.rst:38
+#: ../../getting_started/requirement.rst:38
+msgid "Make"
+msgstr "Make"
+
+#: ../../getting_started/requirement.rst:39
+#: ../../getting_started/requirement.rst:39
+msgid "4.1"
+msgstr "4.1"
+
+#: ../../getting_started/requirement.rst:41
+#: ../../getting_started/requirement.rst:41
+msgid "Cross-toolchain"
+msgstr "Cross-toolchain"
+
+#: ../../getting_started/requirement.rst:42
+#: ../../getting_started/requirement.rst:42
+msgid "7.3.1 (arm-non-eabi-gcc) and 2.30.0 (binutils)"
+msgstr "7.3.1 (arm-non-eabi-gcc) and 2.30.0 (binutils)"
+
+#: ../../getting_started/requirement.rst:44
+#: ../../getting_started/requirement.rst:44
+msgid "Newlib"
+msgstr "Newlib"
+
+#: ../../getting_started/requirement.rst:45
+#: ../../getting_started/requirement.rst:45
+msgid "3.0.0"
+msgstr "3.0.0"
+
+#: ../../getting_started/requirement.rst:46
+#: ../../getting_started/requirement.rst:46
+msgid "This is the versions packaged with the cross-toolchain."
+msgstr "Il s'agit des versions rassemblées avec le cross-toolchain."
+
+#: ../../getting_started/requirement.rst:48
+#: ../../getting_started/requirement.rst:48
+msgid "Note that `Git`_, `Cmake`_ and `Make`_ are usually already installed on basic Linux Distribution, so there is nothing more to do."
+msgstr "Notez que `Git`_, `Cmake`_ et `Make`_ sont généralement déjà installés sur la distribution Linux de base, il n'y a donc rien de plus à faire."
