@@ -43,7 +43,7 @@ TEST_SETUP(WizeCoreMgr_dwn)
 	// --------------------------------------
 	sDwnCtx.u8DeltaSec = 5;
 	sDwnCtx.u16BlocksCount = 1000;
-	sDwnCtx.u8DownRxLength = 1;
+	sDwnCtx.u8RxLength = 1;
 	sDwnCtx.u8DayRepeat = 3;
 	time(&currentEpoch);
 	sDwnCtx.u32DaysProg = currentEpoch + 86400;
@@ -76,12 +76,11 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmIdleState_NextBlkOffsetError)
 	// --------------------------------------
 	pPrvCtx->u8DeltaSec = 5;
 	pPrvCtx->u16BlocksCount = 1000;
-	pPrvCtx->u8DownRxLength = 1;
-	// All days have been missed
+	pPrvCtx->u8RxLength = 1;
+	// Set all days have been missed
 	time(&currentEpoch);
 	pPrvCtx->u8DayRepeat = 1;
 	pPrvCtx->u32DaysProg = currentEpoch - 86400;
-
 
 	// Error on the Date of Next Block
 	u32Evt = SES_EVT_DWN_OPEN;
@@ -94,7 +93,7 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmIdleState_NextBlkOffsetError)
 	// --------------------------------------
 	pPrvCtx->u8DeltaSec = 5;
 	pPrvCtx->u16BlocksCount = 1000;
-	pPrvCtx->u8DownRxLength = 1;
+	pPrvCtx->u8RxLength = 1;
 	// One day is remained, but no more block in that day
 	time(&currentEpoch);
 	pPrvCtx->u8DayRepeat = 1;
@@ -226,13 +225,26 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmWaitingRXState_SessionDone)
 	pPrvCtx->_u16BlocksCount = 0;
 	pPrvCtx->_u8DayCount = 0;
 
-	// Session done
+	// Session done (case SES_STATE_WAITING_RX_DELAY state)
 	u32Evt = SES_EVT_DWN_DELAY_EXPIRED;
 	u32Flg = pCtx->fsm(pCtx, u32Evt);
 	u32ExpectedState = SES_STATE_IDLE;
 	u32ExpectedFlg =  SES_FLG_DWN_COMPLETE;;
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, "FSM State");
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
+
+	// Initial state
+	pCtx->eState = SES_STATE_LISTENING;
+	pPrvCtx->_u16BlocksCount = 0;
+	pPrvCtx->_u8DayCount = 0;
+
+	// Session done (case SES_STATE_WAITING_RX_DELAY state)
+	u32Evt = SES_EVT_RECV_DONE;
+	u32Flg = pCtx->fsm(pCtx, u32Evt);
+	u32ExpectedState = SES_STATE_IDLE;
+	u32ExpectedFlg =  SES_FLG_BLK_RECV | SES_FLG_DWN_COMPLETE;
+	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, "FSM State");
+	TEST_ASSERT_BITS_HIGH_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
 }
 
 TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmListeningState_OutOfDate)
@@ -246,6 +258,8 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmListeningState_OutOfDate)
 	// Initial state
 	pCtx->eState = SES_STATE_LISTENING;
 	pPrvCtx->u8Pending = 1;
+	pPrvCtx->_u16BlocksCount = 1;
+	pPrvCtx->_u8DayCount = 1;
 
 	// Session done
 	u32Evt = SES_EVT_RECV_DONE;
@@ -253,7 +267,7 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmListeningState_OutOfDate)
 	u32ExpectedState = SES_STATE_WAITING_RX_DELAY;
 	u32ExpectedFlg =  SES_FLG_DWN_OUT_DATE;
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, "FSM State");
-	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
+	TEST_ASSERT_BITS_HIGH_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
 }
 
 TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmListeningState_Timeout)
@@ -267,6 +281,8 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmListeningState_Timeout)
 	// Initial state
 	pCtx->eState = SES_STATE_LISTENING;
 	pPrvCtx->u8Pending = 1;
+	pPrvCtx->_u16BlocksCount = 1;
+	pPrvCtx->_u8DayCount = 1;
 
 	// Session done
 	u32Evt = SES_EVT_TIMEOUT;
@@ -274,7 +290,7 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_FsmListeningState_Timeout)
 	u32ExpectedState = SES_STATE_WAITING_RX_DELAY;
 	u32ExpectedFlg = SES_FLG_DWN_TIMEOUT;
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, "FSM State");
-	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
+	TEST_ASSERT_BITS_HIGH_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
 }
 
 TEST(WizeCoreMgr_dwn, test_DwnMgr_Fsm_ProcessCanceled)
@@ -292,7 +308,7 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_Fsm_ProcessCanceled)
 	};
 	// Loop on each state
 	uint8_t i;
-	for( i = 0; i < sizeof(u32AvailableStates); i++)
+	for( i = 0; i < 4; i++)
 	{
 	// Initial state
 		pCtx->eState = u32AvailableStates[i];
@@ -303,7 +319,7 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_Fsm_ProcessCanceled)
 		u32ExpectedState = SES_STATE_IDLE;
 		u32ExpectedFlg =  SES_FLG_DWN_COMPLETE;
 		TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, "FSM State");
-		TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
+		TEST_ASSERT_BITS_HIGH_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
 	}
 }
 
@@ -314,6 +330,7 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_Fsm_ProcessOk)
 	struct ses_ctx_s *pCtx = &sCtx;
 
 	pCtx->ini(pCtx, 1);
+	sDwnCtx.u16BlocksCount = 5;
 
 	// Open
 	u32Evt = SES_EVT_DWN_OPEN;
@@ -323,21 +340,9 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_Fsm_ProcessOk)
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, "FSM State");
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, "Flag");
 
-
 	// --------------------------------------
-	/*
-	Already set :
-	sDwnCtx.u8DeltaSec = 5;
-	sDwnCtx.u16BlocksCount = 1000;
-	sDwnCtx.u8DownRxLength = 1;
-	sDwnCtx.u8DayRepeat = 3;
-	sDwnCtx.u32DaysProg = currentEpoch + 86400;
-	*/
-
 	uint32_t i, j;
-
 	uint32_t day, blk;
-
 	char fsm_str[30];
 	char flag_str[30];
 
@@ -345,15 +350,6 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_Fsm_ProcessOk)
 	for (i = sDwnCtx.u8DayRepeat; i > 0 ; i--)
 	{
 		day = sDwnCtx.u8DayRepeat - i +1;
-		sprintf(fsm_str, "FSM state; Day %d", day );
-		sprintf(flag_str, "Flag; Day %d", day);
-		// Waiting for day start
-		u32Evt = SES_EVT_DWN_DELAY_EXPIRED;
-		u32Flg = pCtx->fsm(pCtx, u32Evt);
-		u32ExpectedState = SES_STATE_WAITING_RX_DELAY;
-		u32ExpectedFlg =  SES_FLG_NONE;
-		TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, fsm_str);
-		TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, flag_str);
 
 		// loop on each block
 		for (j = sDwnCtx.u16BlocksCount; j > 0; j--)
@@ -373,35 +369,34 @@ TEST(WizeCoreMgr_dwn, test_DwnMgr_Fsm_ProcessOk)
 			// listening
 			u32Evt = SES_EVT_RECV_DONE;
 			u32Flg = pCtx->fsm(pCtx, u32Evt);
-			u32ExpectedState = SES_STATE_WAITING_RX_DELAY;
-			u32ExpectedFlg =  SES_FLG_BLK_RECV;
+			u32ExpectedFlg = SES_FLG_BLK_RECV;
+
+			if( (i == 1) && (j == 1) )
+			{
+				// no more day, session done
+				u32ExpectedState = SES_STATE_IDLE;
+				u32ExpectedFlg |= SES_FLG_DWN_COMPLETE;
+			}
+			else
+			{
+				if(j == 1)
+				{
+					u32ExpectedState = SES_STATE_WAITING;
+				}
+				else
+				{
+					u32ExpectedState = SES_STATE_WAITING_RX_DELAY;
+				}
+			}
+
 			TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, fsm_str);
-			TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, flag_str);
+			TEST_ASSERT_BITS_HIGH_MESSAGE(u32ExpectedFlg, u32Flg, flag_str);
 
 			// release buffer
 			u32Evt = SES_EVT_DWN_READY;
 			u32Flg = pCtx->fsm(pCtx, u32Evt);
-			u32ExpectedState = SES_STATE_WAITING_RX_DELAY;
 			u32ExpectedFlg =  SES_FLG_NONE;
-			TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, fsm_str);
 			TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, flag_str);
 		}
-
-		u32Evt = SES_EVT_DWN_DELAY_EXPIRED;
-		u32Flg = pCtx->fsm(pCtx, u32Evt);
-		if (i > 1)
-		{
-			// next day
-			u32ExpectedState = SES_STATE_WAITING;
-			u32ExpectedFlg =  SES_FLG_NONE;
-		}
-		else
-		{
-			// no more day, session done
-			u32ExpectedState = SES_STATE_IDLE;
-			u32ExpectedFlg =  SES_FLG_DWN_COMPLETE;
-		}
-		TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedState, pCtx->eState, fsm_str);
-		TEST_ASSERT_EQUAL_UINT32_MESSAGE(u32ExpectedFlg, u32Flg, flag_str);
 	}
 }

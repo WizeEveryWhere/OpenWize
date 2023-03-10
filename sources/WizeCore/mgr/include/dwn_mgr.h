@@ -63,39 +63,33 @@ extern "C" {
  */
 struct dwn_mgr_ctx_s
 {
-	net_msg_t sRecvMsg;
+    uint8_t aRecvBuff[RECV_BUFFER_SZ]
+		__attribute__ ((aligned (8))); /**< Buffer that hold the received frame */
 
-    uint8_t aRecvBuff[RECV_BUFFER_SZ]  __attribute__ ((aligned (8)));
+    net_msg_t sRecvMsg;          /**< Receive message content */
 
+    // from anndownload
+    uint8_t u8ChannelId;         /**< The download channel id */
+	uint8_t u8ModulationId;      /**< The download modulation id */
+	uint16_t u16BlocksCount;     /**< The total number of block */
+    uint32_t u32DaysProg;        /**< The first day (Unix epoch) */
+	uint8_t  u8DayRepeat;        /**< The number of time the session is repeated */
+	uint8_t  u8DeltaSec;         /**< Period between two block (in second) */
 
-    uint32_t u32DaysProg;
-	uint8_t  u8DayRepeat;
-	uint8_t  u8DeltaSec; // [ 5s @WM4800, 10s @WM2400; 255s]
-	uint16_t u16BlocksCount;
+	// Internal variables
+	uint8_t u8Pending;           /**< A received block is pending */
+    uint8_t u8RxLength;          /**< Listening block window duration (in second) */
+    int16_t i16DeltaRxMs;        /**< Offset to listening window (in millisecond) */
+	uint16_t u16InitDelayMinMs;  /**<  */
 
+	uint16_t _u16BlocksCount;    /**< Remaining block */
+	uint32_t _u32DayNext;        /**< The next day date */
+	uint8_t  _u8DayCount;        /**< Remaining day */
 
-    uint8_t u8ChannelId;
-	uint8_t u8ModulationId;
-
-
-    uint8_t u8DownRxLength;     // [0.5s/1s; 255s]
-
-
-	uint8_t u8Pending;
-
-
-	uint32_t u32InitDelayMin;
-
-	uint32_t _u32DayNext;
-	uint16_t _u16BlocksCount;
-	uint8_t  _u8DayCount;
-
-
-	uint32_t _u32NextBlkDelay;
-
-	uint32_t _u32RemainInDay;
-	uint32_t _u32RemainInBlock;
-
+	// TODO : Not used
+	uint32_t _u32RemainInDay;    /**< NC */
+	uint32_t _u32RemainInBlock;  /**< NC */
+	uint32_t _u32NextBlkDelay;   /**< NC */
 };
 
 void DwnMgr_Setup(struct ses_ctx_s *pCtx);

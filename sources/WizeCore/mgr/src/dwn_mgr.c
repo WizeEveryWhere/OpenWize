@@ -50,6 +50,7 @@ extern "C" {
 static void _dwn_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl);
 static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt);
 
+static int32_t _dwn_mgr_nextday_(struct ses_ctx_s *pCtx);
 static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx);
 
 /*!
@@ -180,7 +181,7 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				}
 				pCtx->eState = SES_STATE_WAITING_RX_DELAY;
 			}
-			break;
+			//break;
 		case SES_STATE_WAITING_RX_DELAY:  // From SES_STATE_WAITING_RX_DELAY : SES_FLG_DWN_ERROR
 			if (u32Evt & SES_EVT_DWN_DELAY_EXPIRED)
 			{
@@ -196,8 +197,9 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					}
 					else
 					{
-						// Listen					
-						if ( NetMgr_Listen(&(pPrvCtx->sRecvMsg), 1000*pPrvCtx->u8DownRxLength, NET_LISTEN_TYPE_ONE) )
+						// Listen
+						pPrvCtx->sRecvMsg.u8Type = APP_DOWNLOAD;
+						if ( NetMgr_Listen(&(pPrvCtx->sRecvMsg), 1000*pPrvCtx->u8RxLength, NET_LISTEN_TYPE_ONE) )
 						{
 							// failed : keep it under WAITIN_RX_DELAY to try for the next block
 							//pCtx->eState = SES_STATE_IDLE;
@@ -209,33 +211,16 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				}
 				else
 				{
-					// Stop periodic timer
-					TimeEvt_TimerStop(&pCtx->sTimeEvt);
-					// check if there are remaining day
-					if (pPrvCtx->_u8DayCount)
+					/*
+					 * From _dwn_mgr_nextday_ call :
+					 * - pCtx->eState is set to SES_STATE_WAITING or SES_STATE_IDLE
+					 * - periodic timer is stopped
+					 * - absolute timer is started (if required)
+					 */
+					if ( _dwn_mgr_nextday_(pCtx) )
 					{
-						pPrvCtx->_u8DayCount--;
-						pPrvCtx->_u32DayNext += 86400;
-						pPrvCtx->_u16BlocksCount = pPrvCtx->u16BlocksCount;
-
-						// Program the next receiving day
-						TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ABSOLUTE);
-						if ( TimeEvt_TimerStart(
-								&pCtx->sTimeEvt,
-								pPrvCtx->_u32DayNext, 0,
-								(uint32_t)SES_EVT_DWN_DELAY_EXPIRED
-								))
-						{
-							pCtx->eState = SES_STATE_IDLE;
-							u32BackEvt = SES_FLG_DWN_ERROR;
-							break;
-						}
-						pCtx->eState = SES_STATE_WAITING;
-					}
-					else
-					{
-						// Session is done
-						pCtx->eState = SES_STATE_IDLE;
+						u32BackEvt = SES_FLG_DWN_ERROR;
+						break;
 					}
 				}
 			}
@@ -265,6 +250,22 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				pCtx->eState = SES_STATE_WAITING_RX_DELAY;
 				u32BackEvt |= SES_FLG_DWN_TIMEOUT;
 			}
+
+			if (!pPrvCtx->_u16BlocksCount)
+			{
+				/*
+				 * From _dwn_mgr_nextday_ call :
+				 * - pCtx->eState is set to SES_STATE_WAITING or SES_STATE_IDLE
+				 * - periodic timer is stopped
+				 * - absolute timer is started (if required)
+				 */
+				if ( _dwn_mgr_nextday_(pCtx) )
+				{
+					u32BackEvt = SES_FLG_DWN_ERROR;
+					break;
+				}
+			}
+
 			break;
 		default:
 			break;
@@ -284,12 +285,56 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 /******************************************************************************/
 /*!
  * @static
+ * @brief This function
+ *
+ * @param [in] pCtx    Pointer in the current context
+ *
+ * @retval -1 Filed to start the timer
+ *          0 Otherwise
+ *
+ */
+static int32_t _dwn_mgr_nextday_(struct ses_ctx_s *pCtx)
+{
+	struct dwn_mgr_ctx_s *pPrvCtx = (struct dwn_mgr_ctx_s*)pCtx->pPrivate;
+	// Stop periodic timer
+	TimeEvt_TimerStop(&pCtx->sTimeEvt);
+	// check if there are remaining day
+	if (pPrvCtx->_u8DayCount)
+	{
+		pPrvCtx->_u8DayCount--;
+		pPrvCtx->_u32DayNext += 86400;
+		pPrvCtx->_u16BlocksCount = pPrvCtx->u16BlocksCount;
+
+		// Program the next receiving day
+		TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ABSOLUTE);
+		if ( TimeEvt_TimerStart(
+				&pCtx->sTimeEvt,
+				pPrvCtx->_u32DayNext, 0,
+				(uint32_t)SES_EVT_DWN_DELAY_EXPIRED
+				))
+		{
+			pCtx->eState = SES_STATE_IDLE;
+			// Error
+			return -1;
+		}
+		pCtx->eState = SES_STATE_WAITING;
+	}
+	else
+	{
+		// Session is done
+		pCtx->eState = SES_STATE_IDLE;
+	}
+	return 0;
+}
+
+/*!
+ * @static
  * @brief This function adjust context parameters in case download windows has
  *        already been started
  *
  * @param [in] pCtx    Pointer in the current context
  *
- * @retval offset value of the next block
+ * @retval offset value (in second) of the next block
  *         -1 if there is no more block or day in download windows
  */
 static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx)
@@ -305,9 +350,9 @@ static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx)
 	pCtx->_u32DayNext = pCtx->u32DaysProg;
 	pCtx->_u16BlocksCount = pCtx->u16BlocksCount;
 
-	pCtx->_u32RemainInDay = 86400 - ( (pCtx->u16BlocksCount - 1 )* pCtx->u8DeltaSec + pCtx->u8DownRxLength);
+	pCtx->_u32RemainInDay = 86400 - ( (pCtx->u16BlocksCount - 1 )* pCtx->u8DeltaSec + pCtx->u8RxLength);
 	pCtx->_u32RemainInDay *= 1000;
-	pCtx->_u32RemainInBlock = pCtx->u8DeltaSec - pCtx->u8DownRxLength;
+	pCtx->_u32RemainInBlock = pCtx->u8DeltaSec - pCtx->u8RxLength;
 	pCtx->_u32RemainInBlock *= 1000;
 
 	// some day, some block have already been passed, so adjust that
@@ -350,22 +395,24 @@ static int32_t _dwn_mgr_adjustInit_(struct dwn_mgr_ctx_s *pCtx)
 	}
 
 
-	// the current download day has already begun
+	// the current download day has already began
 	if (currentEpoch > pCtx->_u32DayNext)
 	{
 		// get the next starting block time
 		i32NextBlkOffset = pCtx->u8DeltaSec - (currentEpoch - pCtx->_u32DayNext)%pCtx->u8DeltaSec;
+
+		// check if delay to next block is enough
+		if (i32NextBlkOffset < pCtx->u16InitDelayMinMs)
+		{
+			// if not enough then by pass one block more
+			i32NextBlkOffset += pCtx->u8DeltaSec;
+			pCtx->_u16BlocksCount--;
+		}
 	}
+	// the current download day has not began
 	else // currentEpoch <= pPrvCtx->_u32DayNext
 	{
 		i32NextBlkOffset = 0;
-	}
-
-	// check in enough
-	if (i32NextBlkOffset < pCtx->u32InitDelayMin)
-	{
-		i32NextBlkOffset += pCtx->u8DeltaSec;
-		pCtx->_u16BlocksCount--;
 	}
 
 	return i32NextBlkOffset;
