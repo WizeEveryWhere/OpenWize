@@ -2,13 +2,6 @@
 
 uint8_t gLoggerLevel;
 
-/*
-TEST_GROUP_RUNNER(WizeCoreMgr_net)
-{
-    RUN_TEST_CASE(WizeCoreMgr_net, test_NetMgr_xxx);
-}
-*/
-
 TEST_GROUP_RUNNER(WizeCoreMgr_time)
 {
     RUN_TEST_CASE(WizeCoreMgr_time, test_TimeMgr_CurValChanged);

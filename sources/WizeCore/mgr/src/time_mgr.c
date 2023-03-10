@@ -70,17 +70,17 @@ static uint32_t _time_mgr_check_upd_time_(struct time_upd_s *pCtx, uint32_t cur_
  * @retval TIME_FLG_CLOCK_ADJ (see @link time_flg_e::TIME_FLG_CLOCK_ADJ @endlink)
  * @retval TIME_FLG_OFFSET_ADJ (see @link time_flg_e::TIME_FLG_OFFSET_ADJ @endlink)
  * @retval TIME_FLG_DRIFT_ADJ (see @link time_flg_e::TIME_FLG_DRIFT_ADJ @endlink)
- * @retval TIME_FLG_DAY_PASSED (see @link time_flg_e::TIME_FLG_DAY_PASSED @endlink)
  * @retval TIME_FLG_CLOCK_CHANGE (see @link time_flg_e::TIME_FLG_CLOCK_CHANGE @endlink)
  * @retval TIME_FLG_OFFSET_CHANGE (see @link time_flg_e::TIME_FLG_OFFSET_CHANGE @endlink)
  * @retval TIME_FLG_DRIFT_CHANGE (see @link time_flg_e::TIME_FLG_DRIFT_CHANGE @endlink)
  *
  */
-uint32_t TimeMgr_Main(time_upd_ctx_t *pCtx, uint8_t bNewDay)
+uint32_t TimeMgr_Main(struct time_upd_ctx_s *pCtx, uint8_t bNewDay)
 {
 	uint32_t eRet = TIME_FLG_NONE;
 	time_t t;
 	// update epoch with current epoch
+	// TODO : change 'time' call to '_get_current_time'
 	time( &t );
 	t -=  pCtx->u32OffsetToUnix;
 

@@ -14,7 +14,7 @@ TEST_GROUP(WizeCoreMgr_time);
 
 /******************************************************************************/
 #define EPOCH_UNIX_TO_OURS 1356998400U
-time_upd_ctx_t sTimeCtx;
+struct time_upd_ctx_s sTimeCtx;
 struct time_upd_s sTimeUpdCtx;
 uint32_t CurEpoch;
 uint16_t CurOffset;

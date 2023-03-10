@@ -46,27 +46,6 @@ extern "C" {
 #include "net_mgr.h"
 #include "logger.h"
 
-typedef enum {
-
-	SES_LOG_NONE           = 0,
-	SES_LOG_CMD_RECV_READ  = 1,
-	SES_LOG_CMD_RECV_WRITE,
-	SES_LOG_CMD_RECV_KEY,
-	SES_LOG_CMD_RECV_EXEC,
-	SES_LOG_CMD_RECV_ANN,
-
-	SES_LOG_PONG_RECV ,
-	SES_LOG_BLK_RECV,
-	SES_LOG_DATA_SENT,
-	SES_LOG_RSP_SENT,
-	SES_LOG_PING_SENT,
-
-	SES_LOG_FINE_ADJUST,
-	SES_LOG_COARSE_ADJUST,
-	SES_LOG_DAY_PASSED,
-	SES_LOG_DAYLIGHT_CHG,
-} ses_log_e;
-
 /*!
  * @brief This enum define session state
  */
@@ -99,13 +78,6 @@ typedef enum
 	SES_FLG_CMD_RECV          = 0x00000010, /*!< Command has been received */
 	SES_FLG_PONG_RECV         = 0x00000020, /*!< Pong has been received*/
 	SES_FLG_BLK_RECV          = 0x00000040, /*!< SW Block has been received */
-
-	// -------------------------------------------------------------------------
-	SES_FLG_OTHER_MSK         = 0x000FFF00,
-	// -------------------------------------------------------------------------
-	SES_FLG_FULL_POWER        = 0x00000000,
-	SES_FLG_PERIODIC_INST     = 0x00000000,
-	SES_FLG_DAY_PASSED        = 0x00000000,
 
 	// -------------------------------------------------------------------------
 	SES_FLG_SES_MSK           = 0xFFF00000,
@@ -152,14 +124,6 @@ typedef enum
 	SES_EVT_RECV_DONE             = NET_EVENT_RECV_DONE,
 	SES_EVT_FRM_PASSED            = NET_EVENT_FRM_PASSED,
 	SES_EVT_TIMEOUT               = NET_EVENT_TIMEOUT,
-
-	// -------------------------------------------------------------------------
-	SES_EVT_EXT_MSK               = 0x000FFF00,
-	// -------------------------------------------------------------------------
-	SES_EVT_DAY_PASSED            = 0x00000000, // Events from Time Mgr signaling a day passed
-	//SES_EVT_TIME_ADJUST           = 0x00000000,
-	//SES_EVT_FULL_POWER            = 0x00000000,
-	//SES_EVT_PERIODIC_INST         = 0x00000000,
 
 	// -------------------------------------------------------------------------
 	SES_EVT_SES_MSK               = 0xFFF00000,
@@ -217,13 +181,6 @@ struct ses_ctx_s
 
 /******************************************************************************/
 
-static const char * const _ses_name_str_[] =
-{
-	[SES_INST] = "INST",
-	[SES_ADM]  = "ADM",
-	[SES_DWN]  = "DWN",
-};
-
 static const char * const _ses_state_str_[] =
 {
 	[SES_STATE_DISABLE]            = "DISABLE",
@@ -231,29 +188,8 @@ static const char * const _ses_state_str_[] =
 	[SES_STATE_SENDING]            = "SENDING",
 	[SES_STATE_LISTENING]          = "LISTENING",
 	[SES_STATE_WAITING]            = "WAITING",
-	[SES_STATE_WAITING_RX_DELAY]   = "WAITING_RX_DELAY",
-	[SES_STATE_WAITING_TX_DELAY]   = "WAITING_TX_DELAY",
-};
-
-static const char * const _ses_log_str_[] =
-{
-	[SES_LOG_NONE]           = "...",
-	[SES_LOG_CMD_RECV_READ]  = "READ",
-	[SES_LOG_CMD_RECV_WRITE] = "WRITE",
-	[SES_LOG_CMD_RECV_KEY]   = "KEY",
-	[SES_LOG_CMD_RECV_EXEC]  = "EXEC",
-	[SES_LOG_CMD_RECV_ANN]   = "ANN",
-
-	[SES_LOG_PONG_RECV]      = "PONG",
-	[SES_LOG_BLK_RECV]       = "BLK",
-	[SES_LOG_DATA_SENT]      = "DATA",
-	[SES_LOG_RSP_SENT]       = "RSP",
-	[SES_LOG_PING_SENT]      = "PING",
-
-	[SES_LOG_FINE_ADJUST]    = "FINE ADJ",
-	[SES_LOG_COARSE_ADJUST]  = "COARSE ADJ",
-	[SES_LOG_DAY_PASSED]     = "DAY PASSED",
-	[SES_LOG_DAYLIGHT_CHG]   = "DAYLIGHT CHG"
+	[SES_STATE_WAITING_RX_DELAY]   = "WAIT_RX_DELAY",
+	[SES_STATE_WAITING_TX_DELAY]   = "WAIT_TX_DELAY",
 };
 
 #ifdef __cplusplus

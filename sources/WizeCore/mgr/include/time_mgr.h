@@ -58,6 +58,12 @@ typedef enum
 	TIME_FLG_CLOCK_CHANGE  = 0x10, /*!< The CLOCK parameter change has been took into account */
 	TIME_FLG_OFFSET_CHANGE = 0x20, /*!< The OFFSET parameter change has been took into account */
 	TIME_FLG_DRIFT_CHANGE  = 0x40, /*!< The DRIFT parameter change has been took into account */
+	// ---
+	TIME_FLG_DAY_PASSED    = 0x80,  /*!< A new day event occurs */
+	// ---
+	// convenient mask
+	TIME_FLG_TIME_ADJ      = 0x0F,
+	TIME_FLG_TIME_CHANGE   = 0x70,
 } time_flg_e;
 
 /*!
@@ -69,8 +75,8 @@ struct time_upd_s
 	union {
 		uint16_t drift;
 		struct {
-			int8_t  value;  //!< Drift correction value
 			uint8_t period; //!< Drift correction period
+			int8_t  value;  //!< Drift correction value
 		};
 	}drift_;
 
@@ -86,17 +92,21 @@ struct time_upd_s
 	}state_;
 } ;
 
-typedef struct
+/*!
+ * @brief This struct define the time update internal context
+ */
+struct time_upd_ctx_s
 {
+	void *hTask;
 	uint32_t u32Epoch;
 	uint32_t u32OffsetToUnix;
 	uint32_t *pCurEpoch;
 	uint16_t *pCurOffset;
 	uint16_t *pCurDrift;
 	struct time_upd_s *pTimeUpd;
-} time_upd_ctx_t;
+};
 
-uint32_t TimeMgr_Main(time_upd_ctx_t *pCtx, uint8_t bNewDay);
+uint32_t TimeMgr_Main(struct time_upd_ctx_s *pCtx, uint8_t bNewDay);
 
 
 /*! @} */
