@@ -69,7 +69,6 @@ void AdmMgr_Setup(struct ses_ctx_s *pCtx)
 	assert(pCtx);
 	pPrvCtx = (struct adm_mgr_ctx_s*)pCtx->pPrivate;
 	assert(pPrvCtx);
-	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
 
 	pCtx->ini = _adm_mgr_ini_;
 	pCtx->fsm = _adm_mgr_fsm_;
@@ -94,13 +93,14 @@ void AdmMgr_Setup(struct ses_ctx_s *pCtx)
 static void _adm_mgr_ini_(struct ses_ctx_s *pCtx, uint8_t bCtrl)
 {
 	struct adm_mgr_ctx_s *pPrvCtx;
+
 	assert(pCtx);
+	pCtx->eState = (bCtrl)?(SES_STATE_IDLE):(SES_STATE_DISABLE);
+
 	pPrvCtx = (struct adm_mgr_ctx_s*)pCtx->pPrivate;
 	assert(pPrvCtx);
-
 	pPrvCtx->u8ByPassCmd = 0;
 	pPrvCtx->u8Pending = ADM_RSP_NONE;
-	pCtx->eState = (bCtrl)?(SES_STATE_IDLE):(SES_STATE_DISABLE);
 }
 
 /*!
@@ -149,6 +149,7 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 		case SES_STATE_IDLE: // From SES_STATE_IDLE : SES_FLG_ADM_ERROR
 			if (u32Evt & SES_EVT_ADM_OPEN)
 			{
+				TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT);
 				pPrvCtx->u8Pending = ADM_RSP_NONE;
 				// send DATA
 				if ( NetMgr_Send( &(pPrvCtx->sDataMsg), 1000 ) )

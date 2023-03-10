@@ -68,7 +68,6 @@ void InstMgr_Setup(struct ses_ctx_s *pCtx)
 	assert(pCtx);
 	pPrvCtx = (struct inst_mgr_ctx_s*)pCtx->pPrivate;
 	assert(pPrvCtx);
-	assert( 0 == TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT) );
 
 	pCtx->ini = _inst_mgr_ini_;
 	pCtx->fsm = _inst_mgr_fsm_;
@@ -146,6 +145,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 		case SES_STATE_IDLE: // From SES_STATE_IDLE : SES_FLG_INST_ERROR, SES_FLG_NONE
 			if (u32Evt & SES_EVT_INST_OPEN)
 			{
+				TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_ONESHOT);
 				pPrvCtx->u8Pending = 0;
 				// send INST PING request
 				if ( NetMgr_Send( &(pPrvCtx->sCmdMsg), 1000 ) )
