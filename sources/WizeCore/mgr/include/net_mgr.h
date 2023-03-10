@@ -106,6 +106,7 @@ struct wize_ctx_s
 
 void NetMgr_Setup(phydev_t *pPhyDev, wize_net_t *pWizeNet);
 int32_t NetMgr_Init(void);
+int32_t NetMgr_Uninit(void);
 
 int32_t NetMgr_Open(void *hTaskToNotify);
 int32_t NetMgr_Close(void);

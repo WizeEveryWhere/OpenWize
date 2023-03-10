@@ -47,14 +47,39 @@ extern "C" {
  */
 
 // Define the net_mgr stack size
-#define NET_MGR_TASK_STACK_SIZE 300
+#ifndef NET_MGR_TASK_STACK_SIZE
+	#define NET_MGR_TASK_STACK_SIZE 300
+#endif
+
 // Define the net_mgr task prority
-#define NET_MGR_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
+#ifndef NET_MGR_TASK_PRIORITY
+	#if defined(configMAX_PRIORITIES)
+		#define NET_MGR_TASK_PRIORITY (UBaseType_t)(configMAX_PRIORITIES - 2)
+	#else
+		#define NET_MGR_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY + 5)
+	#endif
+#endif
 
 // Define the timeout on trying to acquire net_dev
-#define NET_DEV_ACQUIRE_TIMEOUT() 5
+#ifndef NET_DEV_ACQUIRE_TIMEOUT
+	#define NET_DEV_ACQUIRE_TIMEOUT() 5
+#endif
+
 // Define the timeout on trying to acquire net_mgr
-#define NET_MGR_ACQUIRE_TIMEOUT() 10
+#ifndef NET_MGR_ACQUIRE_TIMEOUT
+	#define NET_MGR_ACQUIRE_TIMEOUT() 10
+#endif
+
+// Define the number of retries in case of "Phy get received" failure
+#ifndef _NET_MGR_RECV_RETRIES_
+	#define _NET_MGR_RECV_RETRIES_ 3
+#endif
+
+// Define the number of retries in case of "Phy transmit" failure
+#ifndef _NET_MGR_TRANS_RETRIES_
+	#define _NET_MGR_TRANS_RETRIES_ 3
+#endif
+
 // Define the timeout to "be notified" by an event
 #define NET_MGR_EVT_TIMEOUT() 0xFFFFFFFF
 
@@ -62,11 +87,6 @@ extern "C" {
 #define _NET_MGR_EXPAND_TMO_MSK_ 0x10
 // Define the mask when the "ready to listen again" is notified
 #define _NET_MGR_REARM_LISTEN_ 0x20
-
-// Define the number of retries in case of "Phy get received" failure
-#define _NET_MGR_RECV_RETRIES_ 3
-// Define the number of retries in case of "Phy transmit" failure
-#define _NET_MGR_TRANS_RETRIES_ 3
 
 /******************************************************************************/
 // Static context variables
@@ -189,24 +209,24 @@ int32_t NetMgr_Uninit(void)
 int32_t NetMgr_Open(void *hTaskToNotify)
 {
 	// try to acquire the Net Mgr
-	if ( xSemaphoreTake( sWizeCtx.hMutex, NET_MGR_ACQUIRE_TIMEOUT()) == 0 )
+	if ( sys_mutex_acquire( sWizeCtx.hMutex, NET_MGR_ACQUIRE_TIMEOUT()) == 0 )
 	{
 		return NET_STATUS_BUSY;
 	}
 	// Try to Init device
 	if (NetMgr_Init() != NET_STATUS_OK )
 	{
-		xSemaphoreGive(sWizeCtx.hMutex);
+		sys_mutex_release(sWizeCtx.hMutex);
 		return NET_STATUS_ERROR;
 	}
 
-	sWizeCtx.hOwner = xTaskGetCurrentTaskHandle( );
+	sWizeCtx.hOwner = sys_get_pid( );
 #ifdef NET_MGR_OWNER_IS_CALLER
 	sWizeCtx.hCaller = sWizeCtx.hOwner;
 #else
 	sWizeCtx.hCaller = hTaskToNotify;
 #endif
-	xSemaphoreGive(sNetDev.hLock);
+	sys_binsen_release(sNetDev.hLock);
 
 	return NET_STATUS_OK;
 }
@@ -220,15 +240,15 @@ int32_t NetMgr_Open(void *hTaskToNotify)
 int32_t NetMgr_Close(void)
 {
 	// check if caller own the NetMgr mutex
-	if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+	if (sWizeCtx.hOwner == sys_get_pid( ) )
 	{
 		// Try to take the netdev_t lock, to ensure the resource is free
-		if ( xSemaphoreTake(sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) == pdTRUE)
+		if ( sys_binsen_acquire(sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) == pdTRUE)
 		{
 			NetMgr_Uninit();
 			sWizeCtx.hCaller = NULL;
 			sWizeCtx.hOwner = NULL;
-			xSemaphoreGive(sWizeCtx.hMutex);
+			sys_mutex_release(sWizeCtx.hMutex);
 			return NET_STATUS_OK;
 		}
 	}
@@ -251,18 +271,18 @@ int32_t NetMgr_SetUplink(phy_chan_e eChannel, phy_mod_e eMod)
 
 #ifdef NET_MGR_OWNER_IS_CALLER
 	// check if caller own the NetMgr mutex
-	if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+	if (sWizeCtx.hOwner == sys_get_pid( ) )
 #endif
 	{
 		// try to acquire the Net Dev
-		if ( xSemaphoreTake( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+		if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
 		{
 			eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_UPLINK_CH, (uint32_t)eChannel);
 			if ( eStatus == NETDEV_STATUS_OK)
 			{
 				eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_UPLINK_MOD, (uint32_t)eMod);
 			}
-			xSemaphoreGive(sNetDev.hLock);
+			sys_binsen_release(sNetDev.hLock);
 		}
 	}
 	return eStatus;
@@ -284,18 +304,18 @@ int32_t NetMgr_SetDwlink(phy_chan_e eChannel, phy_mod_e eMod)
 
 #ifdef NET_MGR_OWNER_IS_CALLER
 	// check if caller own the NetMgr mutex
-	if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+	if (sWizeCtx.hOwner == sys_get_pid( ) )
 #endif
 	{
 		// try to acquire the Net Dev
-		if ( xSemaphoreTake( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+		if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
 		{
 			eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_DWLINK_CH, (uint32_t)eChannel);
 			if ( eStatus == NETDEV_STATUS_OK)
 			{
 				eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_DWLINK_MOD, (uint32_t)eMod);
 			}
-			xSemaphoreGive(sNetDev.hLock);
+			sys_binsen_release(sNetDev.hLock);
 		}
 	}
 	return eStatus;
@@ -317,14 +337,14 @@ int32_t NetMgr_Ioctl(uint32_t eCtl, uint32_t args)
 
 #ifdef NET_MGR_OWNER_IS_CALLER
 	// check if caller own the NetMgr mutex
-	if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+	if (sWizeCtx.hOwner == sys_get_pid( ) )
 #endif
 	{
 		// try to acquire the Net Dev
-		if ( xSemaphoreTake( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+		if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
 		{
 			eStatus = WizeNet_Ioctl(&sNetDev, eCtl, args);
-			xSemaphoreGive(sNetDev.hLock);
+			sys_binsen_release(sNetDev.hLock);
 		}
 	}
 	return eStatus;
@@ -361,14 +381,14 @@ int32_t NetMgr_Send(net_msg_t *pxNetMsg, uint32_t u32TimeOut)
 		eStatus = NET_STATUS_BUSY;
 #ifdef NET_MGR_OWNER_IS_CALLER
 		// check if caller own the NetMgr mutex
-		if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+		if (sWizeCtx.hOwner == sys_get_pid( ) )
 #endif
 		{
 			// try to acquire the Net Dev
-			if ( xSemaphoreTake( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+			if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
 			{
 #ifndef NET_MGR_OWNER_IS_CALLER
-				sWizeCtx.hCaller = xTaskGetCurrentTaskHandle( );
+				sWizeCtx.hCaller = sys_get_pid( );
 #endif
 				sWizeCtx.pBuffDesc = (void*)pxNetMsg;
 				sWizeCtx.u8Type = pxNetMsg->u8Type;
@@ -424,14 +444,14 @@ int32_t NetMgr_Listen(net_msg_t *pxNetMsg, uint32_t u32TimeOut, net_listen_type_
 		eStatus = NET_STATUS_BUSY;
 #ifdef NET_MGR_OWNER_IS_CALLER
 		// check if caller own the NetMgr mutex
-		if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+		if (sWizeCtx.hOwner == sys_get_pid( ) )
 #endif
 		{
 			// try to acquire the Net Dev
-			if ( xSemaphoreTake( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT())  )
+			if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT())  )
 			{
 #ifndef NET_MGR_OWNER_IS_CALLER
-				sWizeCtx.hCaller = xTaskGetCurrentTaskHandle( );
+				sWizeCtx.hCaller = sys_get_pid( );
 #endif
 				sWizeCtx.pBuffDesc = (void*)pxNetMsg;
 				sWizeCtx.u8Type = pxNetMsg->u8Type;
@@ -466,12 +486,12 @@ int32_t NetMgr_ListenReady(void)
 
 #ifdef NET_MGR_OWNER_IS_CALLER
 		// check if caller own the NetMgr mutex
-	if (sWizeCtx.hOwner == xTaskGetCurrentTaskHandle( ) )
+	if (sWizeCtx.hOwner == sys_get_pid( ) )
 #else
-	if( sWizeCtx.hCaller == xTaskGetCurrentTaskHandle( ) )
+	if( sWizeCtx.hCaller == sys_get_pid( ) )
 #endif
 	{
-		xTaskNotify(sWizeCtx.hTask, _NET_MGR_REARM_LISTEN_, eSetBits);
+		sys_flag_set(sWizeCtx.hTask, _NET_MGR_REARM_LISTEN_);
 		eStatus = NET_STATUS_OK;
 	}
 	return eStatus;
@@ -501,7 +521,7 @@ static void _net_mgr_main_(void const * argument)
 		bAbort = 0;
 
 		// waiting for event : timeout ...
-		if ( xTaskNotifyWait(0, ULONG_MAX, &u32Evt, NET_MGR_EVT_TIMEOUT()) == 1 )
+		if ( sys_flag_wait(&u32Evt, NET_MGR_EVT_TIMEOUT()) == 1 )
 		{
 			// Treat NetDev state
 			switch (sNetDev.eState)
@@ -565,7 +585,7 @@ static void _net_mgr_main_(void const * argument)
 
 		if (bError || bAbort)
 		{
-			xSemaphoreGive(sNetDev.hLock);
+			sys_binsen_release(sNetDev.hLock);
 		}
 	}
 }
@@ -580,9 +600,7 @@ static void _net_mgr_main_(void const * argument)
  */
 static void _net_mgr_evtCb_(uint32_t evt)
 {
-	BaseType_t xHigherPriorityTaskWoken;
-	xTaskNotifyFromISR(sWizeCtx.hTask, evt, eSetBits, &xHigherPriorityTaskWoken );
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+	sys_flag_set_isr(sWizeCtx.hTask, evt);
 }
 
 /*!
@@ -599,7 +617,7 @@ static inline void _net_mgr_notify_caller_(uint32_t evt)
 	{
 		if (evt != NET_EVENT_NONE)
 		{
-			xTaskNotify(sWizeCtx.hCaller, evt, eSetBits);
+			sys_flag_set(sWizeCtx.hCaller, evt);
 		}
 	}
 }
@@ -637,12 +655,12 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 	if (u32Evt & NETDEV_EVT_TX_COMPLETE)
 	{
 		TimeEvt_TimerStop(&sWizeCtx.sTimeOut);
-		WizeNet_Ioctl(&sNetDev, NETDEV_CTL_PHY_CMD, PHY_CTL_CMD_SLEEP);
-		xSemaphoreGive(sNetDev.hLock);
+		WizeNet_Ioctl(pNetDev, NETDEV_CTL_PHY_CMD, PHY_CTL_CMD_SLEEP);
+		sys_binsen_release(pNetDev->hLock);
 		u32BackEvt |= NET_EVENT_SEND_DONE;
 		LOG_FRM_OUT(
-				((wize_net_t*)sNetDev.pCtx)->aSendBuff,
-				((wize_net_t*)sNetDev.pCtx)->aSendBuff[0]+1
+				((wize_net_t*)pNetDev->pCtx)->aSendBuff,
+				((wize_net_t*)pNetDev->pCtx)->aSendBuff[0]+1
 				);
 	}
 
@@ -697,13 +715,13 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 					{
 						// Stop time event
 						TimeEvt_TimerStop(&sWizeCtx.sTimeOut);
-						WizeNet_Ioctl(&sNetDev, NETDEV_CTL_PHY_CMD, PHY_CTL_CMD_SLEEP);
-						xSemaphoreGive(sNetDev.hLock);
+						WizeNet_Ioctl(pNetDev, NETDEV_CTL_PHY_CMD, PHY_CTL_CMD_SLEEP);
+						sys_binsen_release(pNetDev->hLock);
 					}
 					u32BackEvt |= NET_EVENT_RECV_DONE;
 					LOG_FRM_IN(
-							((wize_net_t*)sNetDev.pCtx)->aRecvBuff,
-							((wize_net_t*)sNetDev.pCtx)->aRecvBuff[0]+1
+							((wize_net_t*)pNetDev->pCtx)->aRecvBuff,
+							((wize_net_t*)pNetDev->pCtx)->aRecvBuff[0]+1
 							);
 				}
 				else // received message doesn't match
