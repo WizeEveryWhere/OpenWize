@@ -207,9 +207,9 @@ uint32_t sys_flag_take(uint32_t timeout)
 }
 
 static FORCE_INLINE
-uint32_t sys_get_pid(void)
+void* sys_get_pid(void)
 {
-    return (uint32_t)xTaskGetCurrentTaskHandle();
+    return (void*)xTaskGetCurrentTaskHandle();
 }
 #endif // OS_FreeRTOS == 1
 
@@ -299,13 +299,18 @@ uint32_t sys_flag_take(uint32_t timeout)
 }
 
 static FORCE_INLINE
-uint32_t sys_get_pid(void)
+void* sys_get_pid(void)
 {
     while(0);
-    return 1;
+    return (void*)1;
 }
 #endif // defined ( __OS__ )
 /*=============================================================================*/
+
+#define sys_binsen_acquire sys_mutex_acquire
+#define sys_binsen_acquire_isr sys_mutex_acquire_isr
+#define sys_binsen_release sys_mutex_release
+#define sys_binsen_release_isr sys_mutex_release_isr
 
 #ifdef __cplusplus
 }
