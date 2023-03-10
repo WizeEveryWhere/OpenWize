@@ -401,8 +401,7 @@ TEST(WizeCoreNet, test_NetApi_Send)
 	_clean_state_();
 
 	// Proto err
-	Wize_ProtoBuild_StopIgnore();
-	Wize_ProtoBuild_ExpectAnyArgsAndReturn(PROTO_FAILED);
+	Wize_ProtoBuild_IgnoreAndReturn(PROTO_FAILED);
 	//sWizeCtx.sProtoCtx.sProtoConfig.u8TransLenMax = 0;
 	i32Ret = WizeNet_Send(&sNetDev, &sNetMsg);
 	TEST_ASSERT_EQUAL(NETDEV_STATUS_ERROR, i32Ret);
@@ -434,7 +433,7 @@ TEST(WizeCoreNet, test_NetApi_Recv)
 	_clean_state_();
 
 	// Proto err
-	Wize_ProtoExtract_ExpectAnyArgsAndReturn(PROTO_FAILED);
+	Wize_ProtoExtract_IgnoreAndReturn(PROTO_FAILED);
 	//sWizeCtx.sProtoCtx.sProtoConfig.u8RecvLenMax = 0;
 	i32Ret = WizeNet_Recv(&sNetDev, &sNetMsg);
 	TEST_ASSERT_EQUAL(NETDEV_STATUS_ERROR, i32Ret);
