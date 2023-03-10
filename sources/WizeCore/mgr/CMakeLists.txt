@@ -44,4 +44,6 @@ if(BUILD_TEST)
     # set the DUT module
     set(DUT_MODULE ${MODULE_NAME})
     add_subdirectory(unittest)
+    # Special case for NetMgr
+    add_subdirectory(unittest/special_net_case)
 endif()
