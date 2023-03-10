@@ -3,7 +3,7 @@ option( HAL_MODULE_ENABLED "Enable HAL module " ON)
 option( HAL_CORTEX_MODULE_ENABLED "Enable HAL CORTEX" ON )
 option( HAL_RCC_MODULE_ENABLED "Enable HAL RCC" ON )
 option( HAL_GPIO_MODULE_ENABLED "Enable HAL GPIO" ON )
-option( HAL_I2C_MODULE_ENABLED "Enable HAL I2C" ON )
+option( HAL_I2C_MODULE_ENABLED "Enable HAL I2C" OFF )
 option( HAL_ADC_MODULE_ENABLED "Enable HAL ADC" OFF )
 option( HAL_SPI_MODULE_ENABLED "Enable HAL SPI" OFF )
 option( HAL_UART_MODULE_ENABLED "Enable HAL UART" ON )
@@ -33,7 +33,7 @@ option( USE_HAL_UART_REGISTER_CALLBACKS "Enable Register callback for UART" OFF 
 option( USE_HAL_USART_REGISTER_CALLBACKS "Enable Register callback for USART" OFF )
 option( USE_HAL_WWDG_REGISTER_CALLBACKS "Enable Register callback for WWDG" OFF )
 ### LL config
-option( USE_FULL_LL_DRIVER "Enable LL full driver" ON )
+option( USE_FULL_LL_DRIVER "Enable LL full driver" OFF )
 ### System Configuration
 set( HSE_VALUE "8000000U" )
 set( HSE_STARTUP_TIMEOUT "100U" )

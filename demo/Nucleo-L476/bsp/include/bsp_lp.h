@@ -80,6 +80,7 @@ typedef enum {
 
 void BSP_LowPower_Enter(lp_mode_e eLpMode);
 
+void BSP_LowPower_OnStandbyShutdwnEnter(lp_mode_e eLpMode);
 void BSP_LowPower_OnStopEnter(lp_mode_e eLpMode);
 void BSP_LowPower_OnStopExit(lp_mode_e eLpMode);
 

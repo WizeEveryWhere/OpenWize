@@ -56,6 +56,10 @@ extern "C" {
 #include <bsp_i2c.h>
 #endif
 
+#ifdef USE_LPTIMER
+#include <bsp_lptimer.h>
+#endif
+
 #ifdef HAS_BSP_PWRLINE
 #include <bsp_pwrlines.h>
 #endif

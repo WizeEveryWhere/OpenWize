@@ -20,7 +20,7 @@ target_sources(${MODULE_NAME}
         gen/parameters_cfg.c
         gen/parameters_default.c
     )
-    
+
 # Add include dir    
 target_include_directories(
     ${MODULE_NAME} 

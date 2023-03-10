@@ -177,7 +177,7 @@ With :
 TEST(Samples_Decomp, test_Decomp_Allocator_Fail)
 {
 	// TODO :
-	printf(" *** TODO *** ");
+	TEST_IGNORE_MESSAGE("No test available : TODO");
 }
 
 TEST(Samples_Decomp, test_Decomp_AllocateDictSize_Fail)
@@ -220,7 +220,7 @@ TEST(Samples_Decomp, test_Decomp_AllocateCntSize_Fail)
 TEST(Samples_Decomp, test_Decomp_TooLargeFile_Fail)
 {
 	// TODO :
-	printf(" *** TODO *** ");
+	TEST_IGNORE_MESSAGE("No test available : TODO");
 }
 /******************************************************************************/
 

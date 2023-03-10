@@ -101,6 +101,7 @@ extern void _timer_set_handler(const uint8_t u8TimerId, pfTimeEvt_HandlerCB_t co
 extern void _timer_start(const uint8_t u8TimerId, uint64_t u64Value);
 extern void _timer_stop(const uint8_t u8TimerId);
 extern void _get_current_time_ms(uint64_t *u64MsTime);
+extern void _get_current_time(time_t *t);
 extern void _set_current_time(time_t t);
 
 #if defined ( __OS__ ) && ( OS_FreeRTOS == 1 )

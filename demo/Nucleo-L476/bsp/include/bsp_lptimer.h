@@ -1,6 +1,6 @@
 /**
-  * @file: perf_utils.h
-  * @brief: This file implement the HW cycle counter read (if any)
+  * @file bsp_lptimer.h
+  * @brief This file defines functions to deal with LPTim as simple timer.
   * 
   * @details
   *
@@ -21,38 +21,37 @@
   *
   * @par Revision history
   *
-  * @par 1.0.0 : 2019/12/25 [GBI]
+  * @par 1.0.0 : 2020/08/29[GBI]
   * Initial version
   *
   *
   */
 
 /*!
- * @addtogroup perf
- * @ingroup device
+ * @addtogroup lptimer
+ * @ingroup bsp
  * @{
  */
 
-#ifndef _PERF_UTILS_H_
-#define _PERF_UTILS_H_
+#ifndef _BSP_LPTIMER_H_
+#define _BSP_LPTIMER_H_
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <stdint.h>
+#include "common.h"
 
-void __cycle_counter_enable__(uint8_t en);
-void __cycle_counter_reset__(void);
+extern pfHandlerCB_t pfLptim1Event;
+extern pfHandlerCB_t pfLptim2Event;
 
-#if defined(__x86_64__)
-uint64_t __cycle_counter_read__(void);
-#else
-uint32_t __cycle_counter_read__(void);
-#endif
+uint32_t BSP_LpTimer_Start(const uint8_t u8TimerId, uint32_t u32Elapse);
+uint32_t BSP_LpTimer_Stop(const uint8_t u8TimerId);
+void BSP_LpTimer_SetHandler (const uint8_t u8TimerId, pfHandlerCB_t const pfCb);
+
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* _PERF_UTILS_H_ */
+#endif /* _BSP_LPTIMER_H_ */
 
 /*! @} */

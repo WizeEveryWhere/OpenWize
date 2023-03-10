@@ -177,6 +177,7 @@ struct rcc_clk_state_s
 {
 	uint32_t ahb1_clk;
 	uint32_t ahb2_clk;
+	uint32_t ahb3_clk;
 	uint32_t apb1r1_clk;
 	uint32_t apb1r2_clk;
 	uint32_t apb2_clk;
@@ -184,6 +185,10 @@ struct rcc_clk_state_s
 
 static struct rcc_clk_state_s _rcc_clk_state_;
 
+void BSP_LowPower_OnStandbyShutdwnEnter(lp_mode_e eLpMode)
+{
+	(void)eLpMode;
+}
 
 void BSP_LowPower_OnStopEnter(lp_mode_e eLpMode)
 {
@@ -230,7 +235,7 @@ void BSP_LowPower_OnStopEnter(lp_mode_e eLpMode)
 	RCC->APB1ENR2 = 0;
 	RCC->APB2ENR = 0;
 	RCC->AHB2ENR = 0;
-	// Disable the FLASH
+	// Disable the FLASH => require run code and remap vector in SRAM
 
 }
 
@@ -291,6 +296,52 @@ i2c_dev_t i2c_SSD1306 =
 
 #endif
 #endif
+
+/******************************************************************************/
+// LPTIM related call-back handler
+
+#ifdef USE_LPTIMER
+
+#if defined(HAL_LPTIM_MODULE_ENABLED)
+
+#if defined (LPTIM1)
+extern LPTIM_HandleTypeDef hlptim1;
+#endif
+
+#if defined (LPTIM2)
+extern LPTIM_HandleTypeDef hlptim2;
+#endif
+
+#endif
+
+#if defined(HAL_LPTIM_MODULE_ENABLED)
+
+#if defined (LPTIM1)
+pfHandlerCB_t pfLptim1Event = NULL;
+#endif
+
+#if defined (LPTIM2)
+pfHandlerCB_t pfLptim2Event = NULL;
+#endif
+
+void HAL_LPTIM_CompareMatchCallback(LPTIM_HandleTypeDef *hlptim)
+{
+#if defined (LPTIM1)
+	if ( (hlptim == &hlptim1) && (pfLptim1Event) )
+	{
+		pfLptim1Event();
+	}
+#endif
+#if defined (LPTIM2)
+	if ( (hlptim == &hlptim2) && (pfLptim2Event) )
+	{
+		pfLptim2Event();
+	}
+#endif
+}
+#endif
+#endif
+
 /*******************************************************************************/
 
 /*!

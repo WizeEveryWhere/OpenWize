@@ -4,7 +4,7 @@ cmake_minimum_required( VERSION 3.12 )
 set(BOARD_NAME "ST L476 Board")
 set(APP_NAME "Demo Wize App")
 
-#add_compile_definitions("HAS_NO_BANNER=1")
+# add_compile_definitions("HAS_NO_BANNER=1")
 add_compile_definitions(USE_RTOS_TRACE=1)
 add_compile_definitions(LOGGER_HAS_COLOR=1)
 add_compile_definitions(LOGGER_USE_FWRITE=1)
@@ -12,7 +12,13 @@ add_compile_definitions(DUMP_CORE_HAS_TRACE=1)
 add_compile_definitions(DUMP_CORE_HAS_FAULT_STATUS_REGISTER=1)
 add_compile_definitions(L6VERS=L6VER_WIZE_REV_1_2)
 add_compile_definitions(HAS_LPOWER=1)
-#add_compile_definitions("_POSIX_TIMERS")
+
+# add_compile_definitions(USE_SPI=1)
+# add_compile_definitions(USE_I2C=1)
+
+add_compile_definitions(COM_SWAP_PINS=1)
+
+# add_compile_definitions("_POSIX_TIMERS")
 
 add_compile_options(-Wall -ffunction-sections -fdata-sections -fstack-usage)
 

@@ -63,6 +63,9 @@ void HAL_MspInit(void)
 	#if defined(HAL_WWDG_MODULE_ENABLED)
 		__HAL_DBGMCU_FREEZE_WWDG();
 	#endif
+#endif
+
+#ifdef LOWPOWER_DEBUG
 	HAL_DBGMCU_EnableDBGStandbyMode();
 	HAL_DBGMCU_EnableDBGStopMode();
 	HAL_DBGMCU_EnableDBGSleepMode();

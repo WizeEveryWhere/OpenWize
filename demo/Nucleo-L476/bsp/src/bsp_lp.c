@@ -137,7 +137,72 @@ __attribute__((weak)) const uint16_t u16LpPuPortB = 0;
 __attribute__((weak)) const uint16_t u16LpPdPortB = 0;
 __attribute__((weak)) const uint16_t u16LpPuPortC = 0;
 __attribute__((weak)) const uint16_t u16LpPdPortC = 0;
+#if defined(GPIOD)
+__attribute__((weak)) const uint16_t u16LpPuPortD = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortD = 0;
+#endif
+#if defined(GPIOE)
+__attribute__((weak)) const uint16_t u16LpPuPortE = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortE = 0;
+#endif
+#if defined(GPIOF)
+__attribute__((weak)) const uint16_t u16LpPuPortF = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortF = 0;
+#endif
+#if defined(GPIOG)
+__attribute__((weak)) const uint16_t u16LpPuPortG = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortG = 0;
+#endif
+__attribute__((weak)) const uint16_t u16LpPuPortH = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortH = 0;
+#if defined(GPIOI)
+__attribute__((weak)) const uint16_t u16LpPuPortI = 0;
+__attribute__((weak)) const uint16_t u16LpPdPortI = 0;
+#endif
 
+static void _bsp_lp_setup_pupd_(void);
+
+static void _bsp_lp_setup_pupd_(void)
+{
+	/* Set PU/PD on port A */
+	WRITE_REG(PWR->PUCRA, u16LpPuPortA);
+	WRITE_REG(PWR->PDCRA, u16LpPuPortA);
+	/* Set PU/PD on port B */
+	WRITE_REG(PWR->PUCRB, u16LpPuPortA);
+	WRITE_REG(PWR->PDCRB, u16LpPuPortA);
+	/* Set PU/PD on port C */
+	WRITE_REG(PWR->PUCRC, u16LpPuPortA);
+	WRITE_REG(PWR->PDCRC, u16LpPuPortA);
+
+#if defined(GPIOD)
+	/* Set PU/PD on port D */
+	WRITE_REG(PWR->PUCRD, u16LpPuPortD);
+	WRITE_REG(PWR->PDCRD, u16LpPuPortD);
+#endif
+#if defined(GPIOE)
+	/* Set PU/PD on port E */
+	WRITE_REG(PWR->PUCRE, u16LpPuPortE);
+	WRITE_REG(PWR->PDCRE, u16LpPuPortE);
+#endif
+#if defined(GPIOF)
+	/* Set PU/PD on port F */
+	WRITE_REG(PWR->PUCRF, u16LpPuPortF);
+	WRITE_REG(PWR->PDCRF, u16LpPuPortF);
+#endif
+#if defined(GPIOG)
+	/* Set PU/PD on port G */
+	WRITE_REG(PWR->PUCRG, u16LpPuPortG);
+	WRITE_REG(PWR->PDCRG, u16LpPuPortG);
+#endif
+	/* Set PU/PD on port H */
+	WRITE_REG(PWR->PUCRH, u16LpPuPortH);
+	WRITE_REG(PWR->PDCRH, u16LpPuPortH);
+#if defined(GPIOI)
+	/* Set PU/PD on port I */
+	WRITE_REG(PWR->PUCRI, u16LpPuPortI);
+	WRITE_REG(PWR->PDCRI, u16LpPuPortI);
+#endif
+}
 
 /*!
  * @}
@@ -154,14 +219,15 @@ void BSP_LowPower_Enter (lp_mode_e eLpMode)
 {
 	if (eLpMode < LP_NB_MODE)
 	{
-		CLEAR_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
-		HAL_SuspendTick();
 		if ( eLpMode > LP_SHTDWN_MODE ) // SLEEP,
 		{
+			// TODO : it will no longer stay in sleep mode due to tick and systick interrupt
 			HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
 		}
 		else
 		{
+			CLEAR_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
+			HAL_SuspendTick();
 			if (eLpMode > LP_STOP2_MODE) // STDBY and SHUTDOWN modes
 			{
 				if (u8WkupPinEn)
@@ -169,23 +235,20 @@ void BSP_LowPower_Enter (lp_mode_e eLpMode)
 					/* Init wake-up pin and polarity */
 					CLEAR_BIT(PWR->CR3, u8WkupPinEn );
 					CLEAR_BIT(PWR->CR4, u8WkupPinPoll );
-					/* Set PU/PD on port A */
-					WRITE_REG(PWR->PUCRA, u16LpPuPortA);
-					WRITE_REG(PWR->PDCRA, u16LpPuPortA);
-					/* Set PU/PD on port B */
-					WRITE_REG(PWR->PUCRB, u16LpPuPortA);
-					WRITE_REG(PWR->PDCRB, u16LpPuPortA);
-					/* Set PU/PD on port C */
-					WRITE_REG(PWR->PUCRC, u16LpPuPortA);
-					WRITE_REG(PWR->PDCRC, u16LpPuPortA);
+					/* Set PU/PD on ports  */
+					_bsp_lp_setup_pupd_();
 					/* Set wake-up pin polarity */
 					SET_BIT(PWR->CR4, u8WkupPinPoll );
-					/* Enable wake-up pin, internal wake-up line and  SRAM2 retention*/
+					/* Enable wake-up pin, internal wake-up line, SRAM2 retention and PU/PD */
 					SET_BIT(PWR->CR3, u8WkupPinEn | PWR_CR3_EIWF | PWR_CR3_RRS | PWR_CR3_APC);
 					/* Clear Wake-up Status */
 					WRITE_REG(PWR->SCR, 0x11F);
 					/* Set LP mode */
 					MODIFY_REG(PWR->CR1, PWR_CR1_LPMS, eLpMode );
+
+					/* If required, do something before enter in standby or shutdown */
+					BSP_LowPower_OnStandbyShutdwnEnter(eLpMode);
+
 					/* Set SLEEPDEEP bit of Cortex System Control Register */
 					SET_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));
 					__WFI();
@@ -201,11 +264,20 @@ void BSP_LowPower_Enter (lp_mode_e eLpMode)
 				CLEAR_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));
 				BSP_LowPower_OnStopExit(eLpMode);
 			}
+			HAL_ResumeTick();
+			SET_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
 		}
-
-		HAL_ResumeTick();
-		SET_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
 	}
+}
+
+__attribute__((weak)) void BSP_LowPower_OnStandbyShutdwnEnter(lp_mode_e eLpMode)
+{
+	(void)eLpMode;
+	/*
+	 * Warning, at this point :
+	 * - SYS_TICK is disable, so RTOS is stalled
+	 * - HAL tick is suspend, so HAL timeout is stalled
+	 */
 }
 
 __attribute__((weak)) void BSP_LowPower_OnStopEnter(lp_mode_e eLpMode)
