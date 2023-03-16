@@ -29,7 +29,8 @@ OpenWize
    api_doc/index.rst
    contributing/index.rst
    advanced_documentation/index.rst
-     
+   feedback.rst
+
 
 * :ref:`genindex`
 * :ref:`modindex`
