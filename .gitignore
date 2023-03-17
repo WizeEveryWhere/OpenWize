@@ -3,3 +3,4 @@
 /_install*
 /aBuild*
 /aInstall*
+/demo/Nucleo-L476/app/gen/*.xml
