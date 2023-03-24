@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ParamCfg xmlns:tns="http://www.grdf.fr/smart-solutions/TU/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.grdf.fr/smart-solutions/TU/1.0.0/Parameter.xsd "> 
+  
+<ParameterList>
+    <!-- ******************************************************************* -->
+    <!-- Logger Parameters -->
+    <!-- ******************************************************************* -->
+    <Parameter id="FD" loc="RW" rem="NA" size="1"
+               ref="REF_N" 
+               name="LOGGER_LEVEL" 
+               desc="Get or Set the Logger level (see logger_level_e for details)">
+        0x00</Parameter>
+    <Parameter id="FE" loc="RW" rem="NA" size="1"
+               ref="REF_N" 
+               name="LOGGER_TIME_OPT" 
+               desc="Get or Set the Logger time option (see logger_tstamp_e for details)">
+        0x00</Parameter>
+</ParameterList>
+
+</tns:ParamCfg>
