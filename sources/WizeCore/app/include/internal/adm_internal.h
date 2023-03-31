@@ -121,7 +121,9 @@ struct adm_config_s{
 		};
 	};
 	uint8_t ClkFreqAutoAdjRssi;   /*!< Clock and Frequency Offset Auto-Adjustment received frame RSSI min.*/
-
+	// ----
+	uint16_t MField;
+	// ----
 	uint32_t u32DwnDayProgWinMin; /*!< Minimum delay between the AnnDownload and the day of the first block */
 	uint32_t u32DwnDayProgWinMax; /*!< Maximum delay between the AnnDownload and the day of the first block */
 	uint32_t u32MntWinDuration;   /*!< Maintenance window duration from 00:00 UTC */
@@ -129,9 +131,11 @@ struct adm_config_s{
 	uint32_t u32DwnDeltaSecMin;   /*!< Minimum deltaSec accepted  */
 	uint32_t u32DwnBlkDurMod;     /*!< Duration of one block */
 	uint32_t u32DwnBlkNbMax;      /*!< Maximum number of block accepted */
-
-	uint16_t MField;
-
+	// ----
+	uint8_t *pLastWriteParamIds;  /*!< Pointer on table holding the last written parameters id */
+	uint8_t *pLastReadParamIds;   /*!< Pointer on table holding the last read parameters id */
+	uint8_t u8LastWriteParamNb;   /*!< Number of last written parameters */
+	uint8_t u8LastReadParamNb;    /*!< Number of last read parameters */
 };
 
 void AdmInt_SetupDefaultConfig(void);

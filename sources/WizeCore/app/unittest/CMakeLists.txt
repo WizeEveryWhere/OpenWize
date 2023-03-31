@@ -84,7 +84,7 @@ if(${DUT_NAME}_UNITTEST_SOURCES )
 			${WIZECORE_NET_INC_PATH}
 			${WIZECORE_PROTO_INC_PATH}
 			${RTOS_INC_PATH} 
-	)	
+	)
 endif()
 
 ################################################################################

@@ -45,22 +45,19 @@ extern "C" {
 
 #include "parameters.h"
 #include "parameters_lan_ids.h"
+#include "crypto.h"
 
 #include "net_api_private.h"
 #include "net_mgr.h"
 
-#include "inst_mgr.h"
-#include "adm_mgr.h"
-#include "dwn_mgr.h"
-#include "time_mgr.h"
-
 #include "ses_dispatcher.h"
 
-#include "wize_app.h"
-
-#include "crypto.h"
-
 /******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
+
 #ifdef WIZEAPI_NOT_BLOCKING
 	#ifndef WIZEAPI_INST_REQ_TMO
 		#define WIZEAPI_INST_REQ_TMO 2 // in RTOS cycles
@@ -116,10 +113,21 @@ extern "C" {
 // -------------------------------
 
 // Wize Api Time Task
-#define TIME_MGR_TASK_STACK_SIZE 300
-#define TIME_MGR_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
+#ifndef TIME_MGR_TASK_STACK_SIZE
+	#define TIME_MGR_TASK_STACK_SIZE 300
+#endif
 
-#define TIME_MGR_EVT_PERIOD() 1000 // period in ms
+#ifndef TIME_MGR_TASK_PRIORITY
+#if defined(configMAX_PRIORITIES)
+	#define TIME_MGR_TASK_PRIORITY (UBaseType_t)(configMAX_PRIORITIES - 3)
+#else
+	#define TIME_MGR_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY + 4)
+#endif
+#endif
+
+#ifndef TIME_MGR_EVT_PERIOD
+	#define TIME_MGR_EVT_PERIOD() 1000 // period in ms
+#endif
 
 #define TIME_MGR_TASK_NAME timemgr
 #define TIME_MGR_TASK_FCT _time_mgr_main_
@@ -128,49 +136,109 @@ SYS_TASK_CREATE_DEF(timemgr, TIME_MGR_TASK_STACK_SIZE, TIME_MGR_TASK_PRIORITY);
 // -------------------------------
 
 // Wize Api Session Task
-#ifndef WIZEAPI_STACK_SIZE
-	#define WIZEAPI_STACK_SIZE 400
+#ifndef SES_MGR_STACK_SIZE
+	#define SES_MGR_STACK_SIZE 400
 #endif
 
-#ifndef WIZEAPI_PRIORITY
-	#define WIZEAPI_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
+#ifndef SES_MGR_PRIORITY
+#if defined(configMAX_PRIORITIES)
+	#define SES_MGR_PRIORITY (UBaseType_t)(configMAX_PRIORITIES - 3)
+#else
+	#define SES_MGR_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY + 4)
+#endif
 #endif
 
-#define WIZEAPI_TASK_NAME wizeapi
-#define WIZEAPI_TASK_FCT _wizeapi_ses_main_
+#define SES_MGR_TASK_NAME sesmgr
+#define SES_MGR_TASK_FCT _ses_mgr_main_
 
-SYS_TASK_CREATE_DEF(wizeapi, WIZEAPI_STACK_SIZE, WIZEAPI_PRIORITY);
+SYS_TASK_CREATE_DEF(wizeapi, SES_MGR_STACK_SIZE, SES_MGR_PRIORITY);
 
 SYS_BINSEM_CREATE_DEF(wizeapi_inst);
 SYS_BINSEM_CREATE_DEF(wizeapi_adm);
 SYS_BINSEM_CREATE_DEF(wizeapi_dwn);
 
+/*!
+ * @}
+ * @endcond
+ */
+
 /******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 static wize_net_t sNetCtx;
 static struct ses_disp_ctx_s sSesDispCtx;
-static struct time_upd_s sTimeUpdCtx;
+static struct time_upd_ctx_s sTimeCtx;
 
-static struct adm_mgr_ctx_s sAdmCtx;
-static struct inst_mgr_ctx_s sInstCtx;
-static struct dwn_mgr_ctx_s sDwnCtx;
+static struct adm_mgr_ctx_s *_pAdmCtx_;
+static struct inst_mgr_ctx_s *_pInstCtx_;
+static struct dwn_mgr_ctx_s *_pDwnCtx_;
 
 static void *hTimeMgrTask;
-static void *hWizeApiTask;
-static void *hWizeApiLock[SES_NB];
-static void *hWizeApiCaller[SES_NB];
+static void *hTimeMgrCaller;
 
+static void *hSesMgrTask;
+static void *hSesMgrLock[SES_NB];
+static void *hSesMgrCaller[SES_NB];
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
-static void _time_mgr_main_(void const * argument);
-static void _wizeapi_ses_main_(void const * argument);
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
-static wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint8_t u8Type);
+static void _time_mgr_main_(void const * argument);
+static void _ses_mgr_main_(void const * argument);
+
+static
+wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint8_t u8Type);
 
 inline
 static uint32_t _wizeapi_get_frm_duration_(uint16_t u8Len, uint8_t bIsUpLink);
 
+/*!
+ * @}
+ * @endcond
+ */
 
 /******************************************************************************/
+/*!
+ * @brief This function set the device identification
+ *
+ * @param[in] sDevId The device identification to set
+ *
+ * @retval return wize_api_ret_e::WIZE_API_SUCCESS (0)
+ */
+wize_api_ret_e WizeApi_SetDeviceId(device_id_t *pDevId)
+{
+	struct proto_ctx_s *pProtoCtx = NULL;
+	pProtoCtx = &(sNetCtx.sProtoCtx);
+	memcpy(pProtoCtx->aDeviceManufID, pDevId->aDevInfo, MFIELD_SZ);
+	memcpy(pProtoCtx->aDeviceAddr, pDevId->aAddr, AFIELD_SZ);
+	return WIZE_API_SUCCESS;
+}
+
+/*!
+ * @brief This function get the device identification
+ *
+ * @param[in] pDevId Pointer on the device identification holder
+ *
+ * @retval return wize_api_ret_e::WIZE_API_SUCCESS (0)
+  */
+wize_api_ret_e WizeApi_GetDeviceId(device_id_t *pDevId)
+{
+	struct proto_ctx_s *pProtoCtx = NULL;
+	pProtoCtx = &(sNetCtx.sProtoCtx);
+	memcpy(pDevId->aManuf, pProtoCtx->aDeviceManufID, MFIELD_SZ);
+	memcpy(pDevId->aAddr, pProtoCtx->aDeviceAddr, AFIELD_SZ);
+	return WIZE_API_SUCCESS;
+}
+
 /******************************************************************************/
 /*!
  * @brief This function start a INST (PING/PONG) session
@@ -186,13 +254,13 @@ wize_api_ret_e WizeApi_ExecPing(uint8_t *pData, uint8_t u8Size)
 {
 	wize_api_ret_e eRet = WIZE_API_ACCESS_TIMEOUT;
 	// Ensure that only one request at the time
-	if ( xSemaphoreTake( hWizeApiLock[SES_INST], WIZEAPI_INST_REQ_TMO ) )
+	if ( sys_binsen_acquire( hSesMgrLock[SES_INST], WIZEAPI_INST_REQ_TMO ) )
 	{
 		eRet = _wizeapi_ses_preinit_(pData, u8Size, APP_INSTALL);
 		if ( eRet == WIZE_API_SUCCESS)
 		{
-			hWizeApiCaller[SES_INST] = xTaskGetCurrentTaskHandle( );
-			xTaskNotify(hWizeApiTask, SES_EVT_INST_OPEN, eSetBits);
+			hSesMgrCaller[SES_INST] = sys_get_pid( );
+			sys_flag_set(hSesMgrTask, SES_EVT_INST_OPEN);
 		}
 	}
 	return eRet;
@@ -215,14 +283,13 @@ wize_api_ret_e WizeApi_Send(uint8_t *pData, uint8_t u8Size, uint8_t bPrio)
 {
 	wize_api_ret_e eRet = WIZE_API_ACCESS_TIMEOUT;
 	// Ensure that only one request at the time
-	if ( xSemaphoreTake( hWizeApiLock[SES_ADM], WIZEAPI_ADM_REQ_TMO ) )
+	if ( sys_binsen_acquire( hSesMgrLock[SES_ADM], WIZEAPI_ADM_REQ_TMO ) )
 	{
 		eRet = _wizeapi_ses_preinit_(pData, u8Size, ( (bPrio)?(APP_DATA_PRIO):(APP_DATA) ) );
-		//hCaller[SES_ADM] = xTaskGetCurrentTaskHandle( );
 		if ( eRet == WIZE_API_SUCCESS)
 		{
-			hWizeApiCaller[SES_ADM] = xTaskGetCurrentTaskHandle( );
-			xTaskNotify(hWizeApiTask, SES_EVT_ADM_OPEN, eSetBits);
+			hSesMgrCaller[SES_ADM] = sys_get_pid( );
+			sys_flag_set(hSesMgrTask, SES_EVT_ADM_OPEN);
 		}
 	}
 	return eRet;
@@ -239,109 +306,115 @@ wize_api_ret_e WizeApi_Download(void)
 {
 	wize_api_ret_e eRet = WIZE_API_ACCESS_TIMEOUT;
 	// Ensure that only one request at the time
-	if ( xSemaphoreTake( hWizeApiLock[SES_DWN], WIZEAPI_DWN_REQ_TMO ) )
+	if ( sys_binsen_acquire( hSesMgrLock[SES_DWN], WIZEAPI_DWN_REQ_TMO ) )
 	{
 		eRet = _wizeapi_ses_preinit_(NULL, 0, APP_DOWNLOAD);
-		//hCaller[SES_ADM] = xTaskGetCurrentTaskHandle( );
 		if ( eRet == WIZE_API_SUCCESS)
 		{
-			hWizeApiCaller[SES_DWN] = xTaskGetCurrentTaskHandle( );
-			xTaskNotify(hWizeApiTask, SES_EVT_DWN_OPEN, eSetBits);
+			hSesMgrCaller[SES_DWN] = sys_get_pid( );
+			sys_flag_set(hSesMgrTask, SES_EVT_DWN_OPEN);
 		}
 	}
 	return eRet;
 }
 
+/*!
+ * @brief Notify an event to the Session Manager
+ *
+ * @param [in] evt The event to notify
+ *
+ * @retval None
+ */
 void WizeApi_Notify(uint32_t evt)
 {
-	xTaskNotify(hWizeApiTask, evt, eSetBits);
+	sys_flag_set(hSesMgrTask, evt);
 }
 
 /*!
- * @brief This function setup the wize stack
- **
+ * @brief This function enable/disable the Wize Stack
+ *
  * @retval None
-  */
-
-void WizeApi_Setup(phydev_t *pPhyDev)
+ */
+void WizeApi_Enable(uint8_t bFlag)
 {
-	// Create the Time Manager task
-	hTimeMgrTask = SYS_TASK_CREATE_CALL(timemgr, _time_mgr_main_, &sTimeUpdCtx);
-	assert(hTimeMgrTask);
+	SesDisp_Init(&sSesDispCtx, bFlag);
+}
 
-	// Create session locks
-	hWizeApiLock[SES_INST] = SYS_BINSEM_CREATE_CALL(wizeapi_inst);
-	assert(hWizeApiLock[SES_INST]);
-	hWizeApiCaller[SES_INST] = NULL;
+/*!
+ * @brief This function get the current state of the given session
+ *
+ * @param [in] eSesId The session Id (see ses_type_t)
+ *
+ * @retval the session current state (see ses_state_e)
+ */
+uint32_t WizeApi_GetState(uint8_t eSesId)
+{
+	return (uint32_t)( (eSesId < SES_NB)?(sSesDispCtx.sSesCtx[eSesId].eState):(-1) );
+}
 
-	hWizeApiLock[SES_ADM] = SYS_BINSEM_CREATE_CALL(wizeapi_adm);
-	assert(hWizeApiLock[SES_ADM]);
-	hWizeApiCaller[SES_ADM] = NULL;
+/*!
+ * @brief This function setup the Wize stack
+ *
+ * @param [in,out] pPhyDev  Pointer on the phydev context
+ * @param [in,out] pInstCtx Pointer on Install session context
+ * @param [in,out] pAdmCtx  Pointer on Admin session context
+ * @param [in,out] pDwnCtx  Pointer on Download session context
+ *
+ * @retval None
+ */
+void WizeApi_SesMgr_Setup(
+	phydev_t *pPhyDev,
+	struct inst_mgr_ctx_s *pInstCtx,
+	struct adm_mgr_ctx_s *pAdmCtx,
+	struct dwn_mgr_ctx_s *pDwnCtx
+	)
+{
+	assert(pInstCtx);
+	assert(pAdmCtx);
+	assert(pDwnCtx);
 
-	hWizeApiLock[SES_DWN] = SYS_BINSEM_CREATE_CALL(wizeapi_dwn);
-	assert(hWizeApiLock[SES_DWN]);
-	hWizeApiCaller[SES_DWN] = NULL;
+	_pInstCtx_ = pInstCtx;
+	_pAdmCtx_  = pAdmCtx;
+	_pDwnCtx_  = pDwnCtx;
 
-	// Create the Session dispatcher task
-	hWizeApiTask = SYS_TASK_CREATE_CALL(wizeapi, WIZEAPI_TASK_FCT, NULL);
-	assert(hWizeApiTask);
+	// Setup the session dispacher
+	sSesDispCtx.sSesCtx[SES_INST].pPrivate = _pInstCtx_;
+	sSesDispCtx.sSesCtx[SES_ADM].pPrivate = _pAdmCtx_;
+	sSesDispCtx.sSesCtx[SES_DWN].pPrivate = _pDwnCtx_;
+	SesDisp_Setup(&sSesDispCtx);
 
 	// Setup Network Manager
 	NetMgr_Setup(pPhyDev, &sNetCtx);
 
-	// Setup the session dispacher
-	sSesDispCtx.sSesCtx[SES_INST].pPrivate = &(sInstCtx);
-	sSesDispCtx.sSesCtx[SES_ADM].pPrivate = &(sAdmCtx);
-	sSesDispCtx.sSesCtx[SES_DWN].pPrivate = &(sDwnCtx);
-	SesDisp_Setup(&sSesDispCtx);
+	// Create session locks
+	hSesMgrLock[SES_INST] = SYS_BINSEM_CREATE_CALL(wizeapi_inst);
+	assert(hSesMgrLock[SES_INST]);
+	hSesMgrCaller[SES_INST] = NULL;
 
-	WizeApp_Init(&sAdmCtx.sCmdMsg, &sAdmCtx.sRspMsg, &sInstCtx.sRspMsg, &sDwnCtx.sRecvMsg);
+	hSesMgrLock[SES_ADM] = SYS_BINSEM_CREATE_CALL(wizeapi_adm);
+	assert(hSesMgrLock[SES_ADM]);
+	hSesMgrCaller[SES_ADM] = NULL;
 
-	sSesDispCtx.hTask = hWizeApiTask;
-}
+	hSesMgrLock[SES_DWN] = SYS_BINSEM_CREATE_CALL(wizeapi_dwn);
+	assert(hSesMgrLock[SES_DWN]);
+	hSesMgrCaller[SES_DWN] = NULL;
 
-/******************************************************************************/
-
-void WizeApi_Enable(uint8_t bFlag)
-{
-
-}
-
-/*!
- * @brief This function Clear the Time Update state
- *
- * @return None
- */
-void WizeApi_CtxClear(void)
-{
-	memset((void*)(&sNetCtx), 0, sizeof(sNetCtx));
-	BSP_Rtc_Backup_Write(0, (uint32_t)0);
-	BSP_Rtc_Backup_Write(1, (uint32_t)0);
+	// Create the Session dispatcher task
+	hSesMgrTask = SYS_TASK_CREATE_CALL(wizeapi, SES_MGR_TASK_FCT, NULL);
+	assert(hSesMgrTask);
 }
 
 /*!
- * @brief This function Restore the Time Update state
+ * @brief This function notify the given task of the give event
  *
- * @return None
- */
-void WizeApi_CtxRestore(void)
-{
-	((uint32_t*)&sTimeUpdCtx)[0] = BSP_Rtc_Backup_Read(0);
-	((uint32_t*)&sTimeUpdCtx)[1] = BSP_Rtc_Backup_Read(1);
-}
-
-/*!
- * @brief This function Save the Time Update state
+ * @details This function  is called by the Session manager task to notify caller
+ * of session back event. This is weak function.
  *
- * @return None
+ * @param [in] hSesCaller Task handler to notify
+ * @param [in] u32Flg     Event to notify
+ *
+ * @retval None
  */
-void WizeApi_CtxSave(void)
-{
-	BSP_Rtc_Backup_Write(0, ((uint32_t*)&sTimeUpdCtx)[0]);
-	BSP_Rtc_Backup_Write(1, ((uint32_t*)&sTimeUpdCtx)[1]);
-}
-
-
 __attribute__((weak))
 void WizeApi_OnSesFlag(void *hSesCaller, uint32_t u32Flg)
 {
@@ -351,6 +424,158 @@ void WizeApi_OnSesFlag(void *hSesCaller, uint32_t u32Flg)
 	}
 }
 
+/******************************************************************************/
+// Some convenient function
+
+/*!
+ * @brief This function cancel the given session
+ *
+ * @param [in] eSesId The session Id (see ses_type_t)
+ *
+ * @retval None
+ */
+inline
+void WizeApi_Cancel(uint8_t eSesId)
+{
+	if(eSesId < SES_NB)
+	{
+		WizeApi_Notify( (SES_EVT_INST_CANCEL << (4 *eSesId)) );
+	}
+}
+
+/*!
+ * @brief This function cancel the Install session
+ *
+ * @retval None
+ */
+inline
+void WizeApi_ExecPing_Cancel(void)
+{
+	WizeApi_Notify(SES_EVT_INST_CANCEL);
+}
+
+/*!
+ * @brief This function cancel the Admin session
+ *
+ * @retval None
+ */
+inline
+void WizeApi_Send_Cancel(void)
+{
+	WizeApi_Notify(SES_EVT_ADM_CANCEL);
+}
+
+/*!
+ * @brief This function cancel the Download session
+ *
+ * @retval None
+ */
+inline
+void WizeApi_Download_Cancel(void)
+{
+	WizeApi_Notify(SES_EVT_DWN_CANCEL);
+}
+/******************************************************************************/
+
+/*!
+ * @brief This function Clear the Time Update state
+ *
+ * @return None
+ */
+__attribute__((weak))
+void WizeApi_CtxClear(void)
+{
+	memset((void*)(&sNetCtx), 0, sizeof(sNetCtx));
+	/*
+	 * TODO :
+	BSP_Rtc_Backup_Write(0, (uint32_t)0);
+	BSP_Rtc_Backup_Write(1, (uint32_t)0);
+	*/
+}
+
+/*!
+ * @brief This function Restore the Time Update state
+ *
+ * @return None
+ */
+__attribute__((weak))
+void WizeApi_CtxRestore(void)
+{
+	/*
+	 * TODO :
+	((uint32_t*)&sTimeUpdCtx)[0] = BSP_Rtc_Backup_Read(0);
+	((uint32_t*)&sTimeUpdCtx)[1] = BSP_Rtc_Backup_Read(1);
+	*/
+}
+
+/*!
+ * @brief This function Save the Time Update state
+ *
+ * @return None
+ */
+__attribute__((weak))
+void WizeApi_CtxSave(void)
+{
+	/*
+	 * TODO :
+	BSP_Rtc_Backup_Write(0, ((uint32_t*)&sTimeUpdCtx)[0]);
+	BSP_Rtc_Backup_Write(1, ((uint32_t*)&sTimeUpdCtx)[1]);
+	*/
+}
+
+/******************************************************************************/
+/******************************************************************************/
+/*!
+ * @brief This function registered a task to get back time event
+ *
+ * @param [in] hTask  Task handler to register
+ *
+ * @retval None
+ */
+void WizeApi_TimeMgr_Register(void *hTask)
+{
+	hTimeMgrCaller = hTask;
+}
+
+/*!
+ * @brief This function setup the Wize stack
+ *
+ * @param [in,out] pTimeUpdCtx Pointer on the tume_upd context
+ *
+ * @retval None
+ */
+void WizeApi_TimeMgr_Setup(struct time_upd_s *pTimeUpdCtx)
+{
+	sTimeCtx.pTimeUpd = pTimeUpdCtx;
+	assert(sTimeCtx.pTimeUpd);
+
+	TimeEvt_Setup();
+	// Create the Time Manager task
+	hTimeMgrTask = SYS_TASK_CREATE_CALL(timemgr, TIME_MGR_TASK_FCT, NULL);
+	assert(hTimeMgrTask);
+	hTimeMgrCaller = NULL;
+}
+
+/*!
+ * @brief This function notify the previously registered task of the give event
+ *
+ * @details This function is called by the Time manager task to notify the
+ * registered task of time back event. This is weak function.
+ *
+ * @param [in] u32Flg  Event to notify
+ *
+ * @retval None
+ */
+__attribute__((weak))
+void WizeApi_OnTimeFlag(uint32_t u32Flg)
+{
+	if(hTimeMgrCaller)
+	{
+		sys_flag_set(hTimeMgrCaller, u32Flg);
+	}
+}
+
+/******************************************************************************/
 /******************************************************************************/
 
 extern void _time_wakeup_enable(void);
@@ -362,6 +587,7 @@ extern void _time_update_set_handler(pfTimeEvt_HandlerCB_t const pfCb);
 
 static void _time_mgr_evtCb_(void);
 
+/******************************************************************************/
 /*!
  * @static
  * @brief This is the main task function, as FSM that treat events from periodic
@@ -373,29 +599,28 @@ static void _time_mgr_evtCb_(void);
  */
 static void _time_mgr_main_(void const * argument)
 {
-	time_upd_ctx_t sCtx;
 	uint32_t ulPeriod = pdMS_TO_TICKS(TIME_MGR_EVT_PERIOD());
 	uint32_t bNewDay = 0;
 	uint32_t eRet = 0;
 
-	sCtx.pTimeUpd = (struct time_upd_s *)argument;
-	sCtx.pCurEpoch  = (uint32_t*)Param_GetAddOf(CLOCK_CURRENT_EPOC);
-	sCtx.pCurOffset = (uint16_t*)Param_GetAddOf(CLOCK_OFFSET_CORRECTION);
-	sCtx.pCurDrift  = (uint16_t*)Param_GetAddOf(CLOCK_DRIFT_CORRECTION);
-	sCtx.u32OffsetToUnix = EPOCH_UNIX_TO_OURS;
+	assert(sTimeCtx.pTimeUpd);
 
-	assert(sCtx.pTimeUpd);
-	assert(sCtx.pCurEpoch);
-	assert(sCtx.pCurOffset);
-	assert(sCtx.pCurDrift);
+	sTimeCtx.u32OffsetToUnix = EPOCH_UNIX_TO_OURS;
+	sTimeCtx.pCurEpoch  = (uint32_t*)Param_GetAddOf(CLOCK_CURRENT_EPOC);
+	sTimeCtx.pCurOffset = (uint16_t*)Param_GetAddOf(CLOCK_OFFSET_CORRECTION);
+	sTimeCtx.pCurDrift  = (uint16_t*)Param_GetAddOf(CLOCK_DRIFT_CORRECTION);
+	assert(sTimeCtx.pCurEpoch);
+	assert(sTimeCtx.pCurOffset);
+	assert(sTimeCtx.pCurDrift);
 
+	sTimeCtx.hTask = sys_get_pid();
 	// register the wakeup cb
 	_time_update_set_handler(_time_mgr_evtCb_);
 	_time_wakeup_enable();
 
 	while (1)
 	{
-		eRet = TimeMgr_Main(&sCtx, bNewDay);
+		eRet = TimeMgr_Main(&sTimeCtx, bNewDay);
 		if (bNewDay)
 		{
 			LOG_INF("TIME day update\n");
@@ -405,17 +630,18 @@ static void _time_mgr_main_(void const * argument)
 			}
 			// reprogram periodic wake-up timer
 			_time_wakeup_reload();
+			eRet |= TIME_FLG_DAY_PASSED;
 		}
 		else
 		{
 			if(eRet & TIME_FLG_CLOCK_CHANGE)
 			{
 				LOG_INF("TIME EPOCH corr. req.\n");
-				if ( sCtx.pTimeUpd->state_.clock_init == 0 )
+				if ( sTimeCtx.pTimeUpd->state_.clock_init == 0 )
 				{
 					// first clock time setup, so set it immediately
 					_time_wakeup_force();
-					sCtx.pTimeUpd->state_.clock_init = 1;
+					sTimeCtx.pTimeUpd->state_.clock_init = 1;
 				}
 			}
 			if(eRet & TIME_FLG_OFFSET_CHANGE)
@@ -427,8 +653,14 @@ static void _time_mgr_main_(void const * argument)
 				LOG_INF("TIME DRIFT corr. changed\n");
 			}
 		}
+
+		if(eRet != TIME_FLG_NONE)
+		{
+			WizeApi_OnTimeFlag(eRet);
+		}
+
 		// waiting for event
-		bNewDay = ulTaskNotifyTake(pdTRUE, ulPeriod);
+		bNewDay = sys_flag_take(ulPeriod);
 	}
 }
 
@@ -440,11 +672,8 @@ static void _time_mgr_main_(void const * argument)
  */
 static void _time_mgr_evtCb_(void)
 {
-	BaseType_t xHigherPriorityTaskWoken;
-	vTaskNotifyGiveFromISR(hTimeMgrTask, &xHigherPriorityTaskWoken );
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+	sys_flag_give_isr(hTimeMgrTask);
 }
-
 
 /******************************************************************************/
 
@@ -457,7 +686,7 @@ static void _time_mgr_evtCb_(void)
  *
  * @return None
  */
-static void  _wizeapi_ses_main_(void const * argument)
+static void  _ses_mgr_main_(void const * argument)
 {
 	const uint32_t _ses_filter_msk_[SES_NB] =
 	{
@@ -465,34 +694,36 @@ static void  _wizeapi_ses_main_(void const * argument)
 		(SES_FLG_ADM_MSK | SES_FLG_SENDRECV_ADM_MSK),
 		(SES_FLG_DWN_MSK | SES_FLG_SENDRECV_DWN_MSK)
 	};
-	struct ses_disp_ctx_s *pCtx = &sSesDispCtx;
+
 	uint32_t ulEvent;
 	uint32_t u32Flag;
 	uint32_t ulBckFlg;
 	uint8_t i;
 
-	SesDisp_Init(pCtx, 1);
+	SesDisp_Init(&sSesDispCtx, 1);
 
+	sSesDispCtx.hTask = sys_get_pid();
 	for (i = 0; i < SES_NB; i++)
 	{
-		xSemaphoreGive(hWizeApiLock[i]);
+		sys_binsen_release(hSesMgrLock[i]);
+		sSesDispCtx.sSesCtx[i].hTask = sSesDispCtx.hTask;
 	}
 
 	while(1)
 	{
 		if (sys_flag_wait(&ulEvent, WIZEAPI_SES_DISP_TMO))
 		{
-			u32Flag = SesDisp_Fsm(pCtx, ulEvent);
+			u32Flag = SesDisp_Fsm(&sSesDispCtx, ulEvent);
 			for (i = 0; i < SES_NB; i++)
 			{
 				ulBckFlg = u32Flag & _ses_filter_msk_[i];
 				if (ulBckFlg)
 				{
-					WizeApi_OnSesFlag(hWizeApiCaller[i], ulBckFlg);
+					WizeApi_OnSesFlag(hSesMgrCaller[i], ulBckFlg);
 					if ( ulBckFlg & SES_FLG_SES_COMPLETE_MSK )
 					{
-						hWizeApiCaller[i] = NULL;
-						xSemaphoreGive(hWizeApiLock[i]);
+						hSesMgrCaller[i] = NULL;
+						sys_binsen_release(hSesMgrLock[i]);
 					}
 				}
 			}
@@ -523,52 +754,57 @@ static wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint
 		{
 			return WIZE_API_INVALID_PARAM;
 		}
-		pMsg = &sInstCtx.sCmdMsg;
+		pMsg = &_pInstCtx_->sCmdMsg;
 		memcpy(pMsg->pData, pData, u8Size);
 		pMsg->u8Size = u8Size;
 		pMsg->u8Type = u8Type;
 		pMsg->u16Id++;
 		pMsg->u8KeyId = 0;
-		Param_Access(PING_RX_DELAY, (uint8_t*)&(sInstCtx.u8InstRxDelay), 0);
-		Param_Access(PING_RX_LENGTH, (uint8_t*)&(sInstCtx.u8InstRxLength), 0);
+		Param_Access(PING_RX_DELAY, (uint8_t*)&(_pInstCtx_->u8InstRxDelay), 0);
+		Param_Access(PING_RX_LENGTH, (uint8_t*)&(_pInstCtx_->u8InstRxLength), 0);
 
 		sSesDispCtx.u32InstDurationMs = _wizeapi_get_frm_duration_(u8Size, 1);
-		sSesDispCtx.u32InstDurationMs += sInstCtx.u8InstRxDelay*1000;
-		sSesDispCtx.u32InstDurationMs += sInstCtx.u8InstRxLength*1000;
+		sSesDispCtx.u32InstDurationMs += _pInstCtx_->u8InstRxDelay*1000;
+		sSesDispCtx.u32InstDurationMs += _pInstCtx_->u8InstRxLength*1000;
 	}
 	else if ( (u8Type == APP_DATA) || (u8Type == APP_DATA_PRIO))
 	{
+		/*
+		 * TODO : case DATA_PRIO
+		 * - if INST session is running, cancel then restart the session
+		 * - if DWN session is running and required time is too short then standby the session
+		 */
 		Param_Access(L7TRANSMIT_LENGTH_MAX, (uint8_t*)&u8TxLenMax, 0);
 		if ( (pData == NULL) || (u8Size > u8TxLenMax) )
 		{
 			return WIZE_API_INVALID_PARAM;
 		}
-		pMsg = &sAdmCtx.sDataMsg;
+		pMsg = &_pAdmCtx_->sDataMsg;
 		memcpy(pMsg->pData, pData, u8Size);
 		pMsg->u8Size = u8Size;
 		pMsg->u8Type = u8Type;
 		pMsg->u16Id++;
 		Param_Access(CIPH_CURRENT_KEY,    (uint8_t*)&(pMsg->u8KeyId), 0);
-		Param_Access(EXCH_RX_DELAY,       (uint8_t*)&(sAdmCtx.u8ExchRxDelay), 0);
-		Param_Access(EXCH_RESPONSE_DELAY, (uint8_t*)&(sAdmCtx.u8ExchRespDelay), 0);
-		Param_Access(EXCH_RX_LENGTH,      (uint8_t*)&(sAdmCtx.u8ExchRxLength), 0);
+		Param_Access(EXCH_RX_DELAY,       (uint8_t*)&(_pAdmCtx_->u8ExchRxDelay), 0);
+		Param_Access(EXCH_RESPONSE_DELAY, (uint8_t*)&(_pAdmCtx_->u8ExchRespDelay), 0);
+		Param_Access(EXCH_RX_LENGTH,      (uint8_t*)&(_pAdmCtx_->u8ExchRxLength), 0);
 
 		Param_Access(L7RECEIVE_LENGTH_MAX, (uint8_t*)&u8RxLenMax, 0);
 
-		sAdmCtx.u8ByPassCmd = (sAdmCtx.u8ExchRxLength)?(0):(1);
+		_pAdmCtx_->u8ByPassCmd = (_pAdmCtx_->u8ExchRxLength)?(0):(1);
 
 		sSesDispCtx.u32DataDurationMs = _wizeapi_get_frm_duration_(u8Size, 1);
 		sSesDispCtx.u32CmdDurationMs = _wizeapi_get_frm_duration_(u8RxLenMax, 0);
-		sSesDispCtx.u32CmdDurationMs += sAdmCtx.u8ExchRxDelay*1000;
+		sSesDispCtx.u32CmdDurationMs += _pAdmCtx_->u8ExchRxDelay*1000;
 		sSesDispCtx.u32RspDurationMs = _wizeapi_get_frm_duration_(u8TxLenMax, 1);
-		sSesDispCtx.u32RspDurationMs += sAdmCtx.u8ExchRespDelay*1000;
+		sSesDispCtx.u32RspDurationMs += _pAdmCtx_->u8ExchRespDelay*1000;
 
 		pMsg->Option_b.App = 1;
 	}
 	else if (u8Type == APP_DOWNLOAD)
 	{
-		admin_cmd_anndownload_t *pAnnReq = (admin_cmd_anndownload_t*)(sAdmCtx.sCmdMsg.pData);
-		admin_rsp_t *pAnnRsp = (admin_rsp_t*)(sAdmCtx.sRspMsg.pData);
+		admin_cmd_anndownload_t *pAnnReq = (admin_cmd_anndownload_t*)(_pAdmCtx_->sCmdMsg.pData);
+		admin_rsp_t *pAnnRsp = (admin_rsp_t*)(_pAdmCtx_->sRspMsg.pData);
 
 		// check that previous anndownload is valid
 		int32_t isNotValid;
@@ -583,15 +819,16 @@ static wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint
 
 		// Set the klog
 		Crypto_WriteKey( pAnnReq->L7Klog, KEY_LOG_ID);
-		sDwnCtx.u8ChannelId    = (pAnnReq->L7ChannelId -100)/10;
-		sDwnCtx.u16BlocksCount = __ntohs( *(uint16_t*)(pAnnReq->L7BlocksCount) );
-		sDwnCtx.u8ModulationId = pAnnReq->L7ModulationId;
-		sDwnCtx.u8DayRepeat    = pAnnReq->L7DayRepeat;
-		sDwnCtx.u8DeltaSec     = pAnnReq->L7DeltaSec;
-		sDwnCtx.u32DaysProg    = __ntohl( *(uint32_t*)(pAnnReq->L7DaysProg) ) + EPOCH_UNIX_TO_OURS;
+		_pDwnCtx_->u8ChannelId    = (pAnnReq->L7ChannelId -100)/10;
+		_pDwnCtx_->u16BlocksCount = __ntohs( *(uint16_t*)(pAnnReq->L7BlocksCount) );
+		_pDwnCtx_->u8ModulationId = pAnnReq->L7ModulationId;
+		_pDwnCtx_->u8DayRepeat    = pAnnReq->L7DayRepeat;
+		_pDwnCtx_->u8DeltaSec     = pAnnReq->L7DeltaSec;
+		_pDwnCtx_->u32DaysProg    = __ntohl( *(uint32_t*)(pAnnReq->L7DaysProg) ) + EPOCH_UNIX_TO_OURS;
 
-		sDwnCtx.u32InitDelayMin = sAdmCtx.u8ExchRespDelay +1;
-		sDwnCtx.u8DownRxLength = 1;
+		_pDwnCtx_->u16InitDelayMinMs = _pAdmCtx_->u8ExchRespDelay*1000 +1;
+		_pDwnCtx_->u8RxLength = 1;
+		_pDwnCtx_->i16DeltaRxMs = 0;
 	}
 	else
 	{

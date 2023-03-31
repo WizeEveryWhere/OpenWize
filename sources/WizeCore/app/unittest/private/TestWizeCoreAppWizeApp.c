@@ -27,14 +27,19 @@ TEST_GROUP(WizeCoreApp_wizeapp);
 /******************************************************************************/
 extern uint8_t gLoggerLevel;
 
-static struct adm_mgr_ctx_s sAdmCtx;
-static struct inst_mgr_ctx_s sInstCtx;
-static struct dwn_mgr_ctx_s sDwnCtx;
-static struct ses_disp_ctx_s sSesDispCtx;
-static struct ping_reply_ctx_s *pPingReplyCtx;
+extern struct inst_mgr_ctx_s sInstCtx;
+extern struct adm_mgr_ctx_s sAdmCtx;
+extern struct dwn_mgr_ctx_s sDwnCtx;
 
 /******************************************************************************/
 uint8_t init_test = 0;
+
+uint8_t _AdmInt_PreCmd_Stub_(net_msg_t *pReqMsg, net_msg_t *pRspMsg, int cmock_num_calls)
+{
+
+	return 1;
+}
+
 
 /******************************************************************************/
 TEST_SETUP(WizeCoreApp_wizeapp)
@@ -69,20 +74,10 @@ TEST_SETUP(WizeCoreApp_wizeapp)
 	InstInt_End_IgnoreAndReturn(0);
 
 	// ----
-	sSesDispCtx.sSesCtx[SES_INST].pPrivate = &(sInstCtx);
-	sSesDispCtx.sSesCtx[SES_ADM].pPrivate = &(sAdmCtx);
-	sSesDispCtx.sSesCtx[SES_DWN].pPrivate = &(sDwnCtx);
-	SesDisp_Setup(&sSesDispCtx);
-	SesDisp_Init(&sSesDispCtx, 1);
 
 	if (init_test)
 	{
-		WizeApp_Init(
-			&sAdmCtx.sCmdMsg,
-			&sAdmCtx.sRspMsg,
-			&sInstCtx.sRspMsg,
-			&sDwnCtx.sRecvMsg
-		);
+		WizeApp_Init();
 	}
 }
 
@@ -97,28 +92,11 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_Init)
 	AdmInt_PreCmd_IgnoreAndReturn(1);
 	AdmInt_PostCmd_IgnoreAndReturn(ADM_WRITE_PARAM);
 
-	WizeApp_Init(NULL, &sAdmCtx.sRspMsg, &sInstCtx.sRspMsg, &sDwnCtx.sRecvMsg);
 	ret = WizeApp_Common(SES_FLG_CMD_RECV);
 	ret = WizeApp_Common(SES_FLG_RSP_SENT);
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(0, ret, "Return");
 
-
-	WizeApp_Init(&sAdmCtx.sCmdMsg, NULL, &sInstCtx.sRspMsg, &sDwnCtx.sRecvMsg);
-	ret = WizeApp_Common(SES_FLG_CMD_RECV);
-	ret = WizeApp_Common(SES_FLG_RSP_SENT);
-	TEST_ASSERT_EQUAL_UINT32_MESSAGE(0, ret, "Return");
-
-	WizeApp_Init(&sAdmCtx.sCmdMsg, &sAdmCtx.sRspMsg, NULL, &sDwnCtx.sRecvMsg);
-	ret = WizeApp_Common(SES_FLG_CMD_RECV);
-	ret = WizeApp_Common(SES_FLG_RSP_SENT);
-	TEST_ASSERT_EQUAL_UINT32_MESSAGE(0, ret, "Return");
-
-	WizeApp_Init(&sAdmCtx.sCmdMsg, &sAdmCtx.sRspMsg, &sInstCtx.sRspMsg, NULL);
-	ret = WizeApp_Common(SES_FLG_CMD_RECV);
-	ret = WizeApp_Common(SES_FLG_RSP_SENT);
-	TEST_ASSERT_EQUAL_UINT32_MESSAGE(0, ret, "Return");
-
-	WizeApp_Init(&sAdmCtx.sCmdMsg, &sAdmCtx.sRspMsg, &sInstCtx.sRspMsg, &sDwnCtx.sRecvMsg);
+	WizeApp_Init();
 	ret = WizeApp_Common(SES_FLG_CMD_RECV);
 	ret = WizeApp_Common(SES_FLG_RSP_SENT);
 	TEST_ASSERT_EQUAL_UINT32_MESSAGE(ADM_WRITE_PARAM, ret, "Return");
@@ -131,7 +109,7 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_CommonXXX)
 	uint32_t ulEvent;
 	uint32_t ulRet, ulExpected;
 
-	ulEvent = SES_EVT_DAY_PASSED;
+	ulEvent = SES_FLG_CMD_RECV;
 	ulRet = WizeApp_Common(ulEvent);
 
 	TEST_IGNORE_MESSAGE("No test available : TODO");
@@ -164,18 +142,22 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_CommonXXX)
 
 TEST(WizeCoreApp_wizeapp, test_WizeApp_TimeXXX)
 {
+	uint32_t ret;
 	//TEST_ASSERT_TRUE_MESSAGE(0, "No test available : TODO");
     TEST_IGNORE_MESSAGE("No test available : TODO");
+    ret = WizeApp_Time();
 
 }
 
 TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyNoPendRSP)
 {
 	uint32_t ret;
-	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.sRspMsg.pData);
+	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.aSendBuff);
 
 	pRsp->L7ErrorCode = 0;
 	pRsp->L7ErrorParam = 0;
+	pRsp->L7ResponseId = ADM_ANNDOWNLOAD;
+	sAdmCtx.aRecvBuff[0] = ADM_ANNDOWNLOAD;
 
 	// No pending RSP
 	WizeApp_AnnReady(1, 1);
@@ -186,7 +168,7 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyNoPendRSP)
 TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyNotAnn)
 {
 	uint32_t ret;
-	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.sRspMsg.pData);
+	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.aSendBuff);
 
 	pRsp->L7ErrorCode = 0;
 	pRsp->L7ErrorParam = 0;
@@ -195,7 +177,8 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyNotAnn)
 	AdmInt_PreCmd_IgnoreAndReturn(0);
 
 	// RSP is not ADM_ANNDOWNLOAD
-	sAdmCtx.sCmdMsg.pData[0] = ADM_EXECINSTPING;
+	sAdmCtx.aRecvBuff[0] = ADM_EXECINSTPING;
+
 	ret = WizeApp_Common(SES_FLG_CMD_RECV);
 
 	pRsp->L7ResponseId = ADM_EXECINSTPING;
@@ -207,7 +190,7 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyNotAnn)
 TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyIdMismatch)
 {
 	uint32_t ret;
-	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.sRspMsg.pData);
+	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.aSendBuff);
 
 	pRsp->L7ErrorCode = 0;
 	pRsp->L7ErrorParam = 0;
@@ -216,8 +199,9 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyIdMismatch)
 	AdmInt_PreCmd_IgnoreAndReturn(0);
 
 	// CMD an RSP Id mismatch
-	sAdmCtx.sCmdMsg.pData[0] = ADM_EXECINSTPING;
-	pRsp->L7ResponseId = ADM_ANNDOWNLOAD;
+	pRsp->L7ResponseId = ADM_EXECINSTPING;
+	sAdmCtx.aRecvBuff[0] = ADM_ANNDOWNLOAD;
+
 	ret = WizeApp_Common(SES_FLG_CMD_RECV);
 	WizeApp_AnnReady(1, 1);
 	TEST_ASSERT_EQUAL_UINT8_MESSAGE(0, pRsp->L7ErrorCode, "Err Code");
@@ -227,7 +211,7 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyIdMismatch)
 TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyHasErrCode)
 {
 	uint32_t ret;
-	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.sRspMsg.pData);
+	admin_rsp_err_t *pRsp = (admin_rsp_err_t *)(sAdmCtx.aSendBuff);
 
 	pRsp->L7ErrorCode = 0;
 	pRsp->L7ErrorParam = 0;
@@ -236,7 +220,7 @@ TEST(WizeCoreApp_wizeapp, test_WizeApp_AnnReadyHasErrCode)
 	AdmInt_PreCmd_IgnoreAndReturn(0);
 
 	// Error Code is set
-	sAdmCtx.sCmdMsg.pData[0] = ADM_ANNDOWNLOAD;
+	sAdmCtx.aRecvBuff[0] = ADM_ANNDOWNLOAD;
 	pRsp->L7ResponseId = ADM_ANNDOWNLOAD;
 	ret = WizeApp_Common(SES_FLG_CMD_RECV);
 

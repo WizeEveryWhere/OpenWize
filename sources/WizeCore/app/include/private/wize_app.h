@@ -1,6 +1,7 @@
 /**
   * @file wize_app.h
-  * @brief // TODO This file ...
+  * @brief This file implement some convenient functions to deal with the Wize
+  *        application layer.
   * 
   * @details
   *
@@ -21,7 +22,7 @@
   *
   * @par Revision history
   *
-  * @par 1.0.0 : 2022/11/05 [TODO: your name]
+  * @par 1.0.0 : 2022/11/05 [GBI]
   * Initial version
   *
   */
@@ -32,9 +33,23 @@
 extern "C" {
 #endif
 
-#include "net_api.h"
-#include "app_layer.h"
+#include <stdint.h>
 
+#include "wize_api.h"
+#include "inst_internal.h"
+#include "adm_internal.h"
+
+/******************************************************************************/
+extern uint16_t gu16PeriodInstCnt;
+extern uint16_t gu16FullPowerCnt;
+
+extern struct inst_mgr_ctx_s sInstCtx;
+extern struct adm_mgr_ctx_s sAdmCtx;
+extern struct dwn_mgr_ctx_s sDwnCtx;
+extern struct time_upd_s sTimeUpdCtx;
+extern struct ping_reply_ctx_s sPingReply;
+
+/******************************************************************************/
 /*!
  * @brief This enumeration define
  */
@@ -56,14 +71,26 @@ typedef enum
 	WIZEAPP_INFO_PERIO_INST = 0x2000,
 } wizeapp_info_e;
 
-void WizeApp_Init(net_msg_t *pCmdMsg, net_msg_t *pRspMsg, net_msg_t *pPongMsg, net_msg_t *pBlkMsg);
+typedef enum
+{
+	WIZEAPP_ADM_CMD_PEND  = 0x01,
+	WIZEAPP_ADM_RSP_PEND  = 0x02,
+} wizeapp_adm_pending_e;
 
+/******************************************************************************/
+// ---
+// weak functions
 uint8_t WizeApp_OnDwnBlkRecv(uint16_t u16Id, const uint8_t *pData);
-uint8_t WizeApp_OnDwnComplete(void);
 uint8_t WizeApp_AnnCheckFwInfo(admin_cmd_anndownload_t *pAnn);
-void WizeApp_AnnReady(uint8_t eErrCode, uint8_t u8ErrorParam);
 
+// ---
+void WizeApp_Init(void);
+wize_api_ret_e WizeApp_Install(void);
+wize_api_ret_e WizeApp_Send(uint8_t *pData, uint8_t u8Size);
+wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size);
+void WizeApp_AnnReady(uint8_t eErrCode, uint8_t u8ErrorParam);
 uint32_t WizeApp_Common(uint32_t ulEvent);
+uint32_t WizeApp_Time(void);
 
 #ifdef __cplusplus
 }

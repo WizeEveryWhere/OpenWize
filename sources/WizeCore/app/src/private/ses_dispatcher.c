@@ -59,7 +59,7 @@ static uint32_t _check_ability_(struct ses_disp_ctx_s *pCtx);
 // From these flags, it indicates that Net resource is available
 const uint32_t u32ReleaseMsk =
 	SES_FLG_DATA_SENT | SES_FLG_CMD_RECV | SES_FLG_RSP_SENT
-	| SES_FLG_BLK_RECV
+	| SES_FLG_BLK_RECV | SES_FLG_DWN_TIMEOUT | SES_FLG_DWN_OUT_DATE
 	| SES_FLG_PING_SENT
 	| SES_FLG_SES_COMPLETE_MSK
 	;
@@ -114,28 +114,17 @@ void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bCtrl)
 	}
 	for (i = 0; i < SES_NB; i++)
 	{
-		pCtx->sSesCtx[i].ini(&pCtx->sSesCtx[i], bCtrl);
 		TimeEvt_TimerStop( &(pCtx->sSesCtx[i].sTimeEvt) );
+		pCtx->sSesCtx[i].ini(&pCtx->sSesCtx[i], bCtrl);
 	}
 }
 
 /*!
  * @static
  * @brief This function is the session dispatcher FSM that treat all events
- * from "outside" (Wize API, NetMgr, TimeEvt)?
+ * from "outside" (Wize API, NetMgr, TimeEvt).
  *
- * @details :
- *
- *
- *
- *
- * @param [in] pCtx     Pointer on the current session dispatcher context
- * @param [in] u32Event Received event to treat
- *
- * @return ORed Events (or flags) from each session (ADM, INST, DWN)
- */
-
-/*
+ * @details
  * Use case 1 : maintenance window is defined
  * |             |       Already Open       |
  * |  Request    |  DWN   |  ADM   |  INST  |
@@ -149,7 +138,7 @@ void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bCtrl)
  *   X : forbidden
  *   A : accept
  *   (a) : DATA only (no CMD, no RSP)
- *   (b) : after DWN session but during the maintenance window
+ *   (b) : after DWN session but during the maintenance window (main application responsibility).
  *
  * Use case 2 : no maintenance window is defined
  * |             |       Already Open       |
@@ -164,10 +153,13 @@ void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bCtrl)
  *   X : forbidden
  *   A : accept
  *   (1) : only if one of DATA or DATA+CMD or DATA+CMD+RSP timing is compatible with DWN ones
- *   (2) : only if INST timing is compatible with DWN ones, else next day
+ *   (2) : only if INST timing is compatible with DWN ones, else next day (main application responsibility).
  *
+ * @param [in] pCtx     Pointer on the current session dispatcher context
+ * @param [in] u32Event Received event to treat
+ *
+ * @return OR-ed Events (or flags) from each session (ADM, INST, DWN)
  */
-
 uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 {
 	uint32_t ulEvt;
@@ -247,7 +239,9 @@ uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 		// Who should become active ?
 		if (ulEvt & SES_EVT_DWN_DELAY_EXPIRED)
 		{
-			if( pCtx->sSesCtx[SES_DWN].eState == SES_STATE_WAITING_RX_DELAY)
+			if( (pCtx->sSesCtx[SES_DWN].eState == SES_STATE_WAITING_RX_DELAY)
+					|| (pCtx->sSesCtx[SES_DWN].eState == SES_STATE_WAITING)
+				)
 			{
 				pCtx->pActive = &(pCtx->sSesCtx[SES_DWN]);
 			}
@@ -419,12 +413,18 @@ uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 
 	if ( ulSesFlg & SES_FLG_INST_COMPLETE )
 	{
-		pCtx->forbidden_msk &= ~(SES_EVT_INST_MSK);
+		if (pCtx->sSesCtx[SES_ADM].eState == SES_STATE_IDLE)
+		{
+			pCtx->forbidden_msk &= ~(SES_EVT_INST_MSK | SES_EVT_ADM_MSK);
+		}
 	}
 
 	if (ulSesFlg & SES_FLG_ADM_COMPLETE )
 	{
-		pCtx->forbidden_msk &= ~(SES_EVT_ADM_MSK);
+		if (pCtx->sSesCtx[SES_INST].eState == SES_STATE_IDLE)
+		{
+			pCtx->forbidden_msk &= ~(SES_EVT_INST_MSK | SES_EVT_ADM_MSK);
+		}
 	}
 
 	if (ulSesFlg & SES_FLG_DWN_COMPLETE )
@@ -507,39 +507,7 @@ static uint32_t _ses_disp_get_param_(void)
  * @brief This function check the ability to run concurrently an other session
  * (INST or ADM) during a download session
  *
- * @details
- * Use case 1 : maintenance window is defined
- * |             |       Already Open       |
- * |  Request    |  DWN   |  ADM   |  INST  |
- * |  --------:  | :----: | :----: | :----: |
- * |  DWN        |  X     |  X     |    X   |
- * |  ADM        |  A (a) |  X     |    X   |
- * |  INST       |  X     |  X     |    X   |
- * |  EXECPING   |  X     |  A     |    X   |
- * |  PERIO PING |  A (b) |  X     |    X   |
- *
- *   X : forbidden
- *   A : accept
- *   (a) : DATA only (no CMD, no RSP)
- *   (b) : after DWN session but during the maintenance window
- *
- * Use case 2 : no maintenance window is defined
- * |             |       Already Open       |
- * |  Request    |  DWN   |  ADM   | INST   |
- * |  --------:  | :----: | :----: | :----: |
- * |  DWN        |  X     |  X     |    X   |
- * |  ADM        |  A (1) |  X     |    X   |
- * |  INST       |  A (2) |  X     |    X   |
- * |  EXECPING   |  X     |  A     |    X   |
- * |  PERIO PING |  A (2) |  X     |    X   |
- *
- *   X : forbidden
- *   A : accept
- *   (1) : only if one of DATA or DATA+CMD or DATA+CMD+RSP timing is compatible with DWN ones
- *   (2) : only if INST timing is compatible with DWN ones, else next day
- *
- * @param [in]
- * @param [in]
+ * @param [in] pCtx The session dispatcher context
  *
  * @return  The "forbidden" mask
  */

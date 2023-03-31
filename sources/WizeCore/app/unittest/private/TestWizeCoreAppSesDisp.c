@@ -43,7 +43,7 @@ static void _config_dwn_(void)
 	// --------------------------------------
 	sDwnCtx.u8DeltaSec = 5;
 	sDwnCtx.u16BlocksCount = 1000;
-	sDwnCtx.u8DownRxLength = 1;
+	sDwnCtx.u8RxLength = 1;
 	sDwnCtx.u8DayRepeat = 3;
 	time(&currentEpoch);
 	sDwnCtx.u32DaysProg = currentEpoch + 86400;
@@ -465,12 +465,6 @@ TEST(WizeCoreApp_sesdisp, test_SesDisp_ActiveDWNGetNetEvent)
 	// loop on each day
 	for (i = sDwnCtx.u8DayRepeat; i > 0 ; i--)
 	{
-		// Waiting for day start
-		ret = SesDisp_Fsm(pCtx, SES_EVT_DWN_DELAY_EXPIRED);
-		expected = SES_FLG_NONE;
-		TEST_ASSERT_EQUAL_UINT32_MESSAGE(expected, ret, "Return");
-		TEST_ASSERT_NULL_MESSAGE(pCtx->pActive, "pActive");
-
 		// loop on each block
 		for (j = sDwnCtx.u16BlocksCount; j > 0; j--)
 		{
@@ -481,43 +475,46 @@ TEST(WizeCoreApp_sesdisp, test_SesDisp_ActiveDWNGetNetEvent)
 			TEST_ASSERT_EQUAL_PTR_MESSAGE(&(pCtx->sSesCtx[SES_DWN]), pCtx->pActive, "pActive");
 
 			// listening
-			ret = SesDisp_Fsm(pCtx, SES_EVT_RECV_DONE);
-			expected = SES_FLG_BLK_RECV;
-			TEST_ASSERT_EQUAL_UINT32_MESSAGE(expected, ret, "Return");
+			if ( j == 3)
+			{
+				// timeout
+				ret = SesDisp_Fsm(pCtx, SES_EVT_TIMEOUT);
+				expected = SES_FLG_DWN_TIMEOUT;
+			}
+			else if ( j == 5)
+			{
+				// out of date
+				ret = SesDisp_Fsm(pCtx, SES_EVT_RECV_DONE);
+				expected = SES_FLG_DWN_OUT_DATE;
+			}
+			else
+			{
+				// receive block
+				ret = SesDisp_Fsm(pCtx, SES_EVT_RECV_DONE);
+				expected = SES_FLG_BLK_RECV;
+			}
+			TEST_ASSERT_BITS_HIGH_MESSAGE(expected, ret, "Return");
 			TEST_ASSERT_NULL_MESSAGE(pCtx->pActive, "pActive");
+
+			if ( (i == 1) && (j == 1) )
+			{
+				// no more day, session done
+				expected =  SES_FLG_DWN_COMPLETE;
+				TEST_ASSERT_BITS_HIGH_MESSAGE(expected, ret, "Return");
+				TEST_ASSERT_NULL_MESSAGE(pCtx->pActive, "pActive");
+			}
 
 			// release buffer
-			ret = SesDisp_Fsm(pCtx, SES_EVT_DWN_READY);
-			expected = SES_FLG_NONE;
-			TEST_ASSERT_EQUAL_UINT32_MESSAGE(expected, ret, "Return");
-			TEST_ASSERT_NULL_MESSAGE(pCtx->pActive, "pActive");
-		}
-
-		ret = SesDisp_Fsm(pCtx, SES_EVT_DWN_DELAY_EXPIRED);
-		if (i > 1)
-		{
-			// next day
-			expected =  SES_FLG_NONE;
-			TEST_ASSERT_EQUAL_UINT32_MESSAGE(expected, ret, "Return");
-			TEST_ASSERT_NULL_MESSAGE(pCtx->pActive, "pActive");
-		}
-		else
-		{
-			// no more day, session done
-			expected =  SES_FLG_DWN_COMPLETE;
-			TEST_ASSERT_EQUAL_UINT32_MESSAGE(expected, ret, "Return");
-			TEST_ASSERT_NULL_MESSAGE(pCtx->pActive, "pActive");
+			if ( j != 6)
+			{
+				ret = SesDisp_Fsm(pCtx, SES_EVT_DWN_READY);
+				expected = SES_FLG_NONE;
+				TEST_ASSERT_EQUAL_UINT32_MESSAGE(expected, ret, "Return");
+				TEST_ASSERT_NULL_MESSAGE(pCtx->pActive, "pActive");
+			}
+			// else // next block (5) will be "out of date"
 		}
 	}
 }
 
 /******************************************************************************/
-// Test that the right session gets its related event
-
-TEST(WizeCoreApp_sesdisp, test_SesDisp_GetRelatatedEvent)
-{
-	uint32_t ret, expected;
-	struct ses_disp_ctx_s *pCtx = &sSesDispCtx;
-	TEST_IGNORE_MESSAGE("No test available : TODO");
-}
-

@@ -50,7 +50,17 @@ extern "C" {
 #include <machine/endian.h>
 
 /******************************************************************************/
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 __attribute__((weak)) struct adm_config_s sAdmConfig;
+
+#define LAST_WRITE_PARAM_NB_MAX 128
+#define LAST_READ_PARAM_NB_MAX 224
+
+static uint8_t aLastWriteParamIds[LAST_WRITE_PARAM_NB_MAX];
+static uint8_t aLastReadParamIds[LAST_READ_PARAM_NB_MAX];
 
 const struct adm_config_s sAdmConfigDefault =
 {
@@ -61,18 +71,27 @@ const struct adm_config_s sAdmConfigDefault =
 	.ClkFreqAutoAdj = 0,
 	.ClkFreqAutoAdjRssi = 0,
 
+	// .MField = pProtoCtx->aDeviceManufID
 	.u32DwnDayProgWinMin = DWN_DAY_PROG_WIN_MIN,
 	.u32DwnDayProgWinMax = DWN_DAY_PROG_WIN_MAX,
-	.u32DwnDeltaSecMin = DWN_DELTA_SEC_MIN_WM2400,
-	.u32DwnBlkDurMod = DWN_BLK_DURATION_WM2400,
-	.u32DwnBlkNbMax = DWN_NB_BLK_MAX,
-	.u32MntWinDuration = MNT_WIN_DURATION,
+	.u32DwnDeltaSecMin   = DWN_DELTA_SEC_MIN_WM2400,
+	.u32DwnBlkDurMod     = DWN_BLK_DURATION_WM2400,
+	.u32DwnBlkNbMax      = DWN_NB_BLK_MAX,
+	.u32MntWinDuration   = MNT_WIN_DURATION,
 
-	// .MField = pProtoCtx->aDeviceManufID
+	.pLastWriteParamIds  = aLastWriteParamIds,
+	.pLastReadParamIds   = aLastReadParamIds,
 };
 
+/*!
+ * @}
+ * @endcond
+ */
 /******************************************************************************/
-
+/*!
+  * @brief This function initialize the default Admin. config. structure.
+  * is not executed here.
+  */
 void AdmInt_SetupDefaultConfig(void)
 {
 	memcpy(&sAdmConfig, &sAdmConfigDefault, sizeof(struct adm_config_s));
@@ -192,6 +211,7 @@ void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 
 	uint8_t *pIn = &(pReqMsg->pData[1]);
 	uint8_t *pOut = pRspMsg->pData;
+	uint8_t *pLastReadIds = sAdmConfig.pLastReadParamIds;
 
 	// Warning : the response buffer size must equal the L7TransLenMax
 	Param_Access(L7TRANSMIT_LENGTH_MAX, (uint8_t*)(&u8L7TransLenMax), 0);
@@ -204,6 +224,11 @@ void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 	{
 		u8ParamId = pIn[idx];
 
+		// Keep trace of the last written parameters ids
+		*pLastReadIds = u8ParamId;
+		pLastReadIds++;
+
+		// check if parameter exist
 		if (Param_IsValidId(u8ParamId))
 		{
 			// check that parameter size is not exceed the end of buffer (don(t forget the paramId)
@@ -256,6 +281,7 @@ void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 			break;
 		}
 	}
+	sAdmConfig.u8LastReadParamNb = pLastReadIds - sAdmConfig.pLastReadParamIds;
 }
 
 /*!
@@ -414,14 +440,7 @@ void AdmInt_Anndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	/**********************************************************************/
 	AdmInt_AnnCheckSession(pReqMsg, pRspMsg);
-	/*
-	// Check if it's internal FW
-	if ( !AdmInt_AnnIsExtFw(pReqMsg))
-	{
-		// Internal FW
-		AdmInt_AnnCheckIntFW(pReqMsg, pRspMsg);
-	}
-	*/
+
 	// Check if error
 	if (((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode != ADM_NONE)
 	{
@@ -710,121 +729,6 @@ uint8_t AdmInt_AnnCheckIntFW(admin_ann_fw_info_t *pFwInfo, uint8_t *u8ErrorParam
 	return eErrCode;
 }
 
-
-#if 0
-/*!
-  * @brief This function check and validate the firmware parameters to be download
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  * @return None
-  */
-void AdmInt_AnnCheckIntFW(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	admin_cmd_anndownload_t *pIn = (admin_cmd_anndownload_t*)(pReqMsg->pData);
-	uint8_t *pOut = pRspMsg->pData;
-
-	uint8_t aTemp[4];
-	uint16_t u16BlksCnt;
-	int8_t i8Cmp;
-	do
-	{
-		if (((admin_rsp_t*)pOut)->L7ErrorCode != ADM_NONE)
-		{
-			break;
-		}
-
-		/**********************************************************************/
-		// Check MField
-		i8Cmp = memcmp(pIn->L7MField, (void*)(&sAdmConfig.MField), sizeof(pIn->L7MField));
-		if ( i8Cmp != 0 )
-		{
-			((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_ILLEGAL_VALUE;
-			((admin_rsp_err_t*)pOut)->L7ErrorParam = ANN_FIELD_ID_L7MField;
-			break;
-		}
-
-		/**********************************************************************/
-		// Check Blocks Count
-		if(!sAdmConfig.AnnBlocksNB)
-		{
-			u16BlksCnt = __ntohs(*(uint16_t*)(pIn->L7BlocksCount));
-			if (u16BlksCnt > sAdmConfig.u32DwnBlkNbMax )
-			{
-				((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_ILLEGAL_VALUE;
-				((admin_rsp_err_t*)pOut)->L7ErrorParam = ANN_FIELD_ID_L7BlocksCount;
-				break;
-			}
-		}
-
-		/**********************************************************************/
-		// Check HW version matching
-		if (!sAdmConfig.AnnHwId)
-		{
-			Param_Access(VERS_HW_TRX, aTemp, 0);
-			i8Cmp = memcmp(pIn->L7DcHwId, aTemp, sizeof(pIn->L7DcHwId));
-			if ( i8Cmp != 0 )
-			{
-				((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_INCORRECT_HW_VER;
-				((admin_rsp_err_t*)pOut)->L7ErrorParam = aTemp[0];
-				break;
-			}
-		}
-
-		/**********************************************************************/
-		// Check Initial SW version
-		if(!sAdmConfig.AnnSwVerIni)
-		{
-			Param_Access(VERS_FW_TRX, aTemp, 0);
-			i8Cmp = memcmp(pIn->L7SwVersionIni, aTemp, sizeof(pIn->L7SwVersionIni));
-			if ( i8Cmp != 0 )
-			{
-				((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_INCORRECT_INI_SW_VER;
-				((admin_rsp_err_t*)pOut)->L7ErrorParam = aTemp[0];
-				break;
-			}
-		}
-
-		/**********************************************************************/
-		// Check Target SW version
-		if(!sAdmConfig.AnnSwVerTgt)
-		{
-			i8Cmp = memcmp(pIn->L7SwVersionTarget, aTemp, sizeof(pIn->L7SwVersionIni));
-			if (  i8Cmp == 0 ) // target version already download
-			{
-				((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_TGT_VER_DWL;
-				((admin_rsp_err_t*)pOut)->L7ErrorParam = aTemp[0];
-				break;
-			}
-			else if (  i8Cmp < 0 ) // target version is lower than current one
-			{
-				((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_TGT_SW_VER;
-				((admin_rsp_err_t*)pOut)->L7ErrorParam = aTemp[0];
-				break;
-			}
-		}
-
-	} while(0);
-}
-
-/*!
-  * @brief This function check if the current AnnDown is for external FW
-  *
-  * @param [in] pReqMsg Pointer on request message
-  * @retval     1 : if it is an external FW
-  * @retval     0 : otherwise
-  */
-__attribute__((weak))
-int32_t AdmInt_AnnIsExtFw(admin_cmd_anndownload_t *pAnn)
-{
-	if ( pAnn->L7DayRepeat & 0x80 )
-	{
-		return 1;
-	}
-	return  0;
-}
-#endif
-
 /*!
   * @brief This function check if a local update is currently in progress
   *
@@ -875,6 +779,31 @@ uint8_t AdmInt_PostCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 			}
 			ret = pRspMsg->pData[0];
 		}
+		/*
+		// TODO : finish it
+		// Auto adjust clk
+		if (sAdmConfig.ClkAutoAdm)
+		{
+			// check that RSSi is best enough
+			if (pReqMsg->u8Rssi >= sAdmConfig.ClkFreqAutoAdjRssi)
+			{
+				int32_t tmp = (int32_t)(pReqMsg->u32Epoch & 0xFFFF);
+				if (tmp > pReqMsg->u16Tstamp)
+				{
+					tmp -= pReqMsg->u16Tstamp;
+				}
+				else
+				{
+					tmp = pReqMsg->u16Tstamp - temp ;
+				}
+
+
+				Param_Access(CLOCK_CURRENT_EPOC, (uint8_t*)&( tmp ), 1);
+
+
+			}
+		}
+		*/
 	}
 	return ret;
 }
@@ -906,6 +835,7 @@ void AdmInt_PostWriteParam(net_msg_t *pReqMsg)
 	uint8_t u8ParamId;
 	// update the position with header
 	uint8_t *pIn = &(pReqMsg->pData[1]);
+	uint8_t *pLastWriteIds = sAdmConfig.pLastWriteParamIds;
 
 	while (pIn < &(pReqMsg->pData[pReqMsg->u8Size]))
 	{
@@ -917,7 +847,12 @@ void AdmInt_PostWriteParam(net_msg_t *pReqMsg)
 		Param_RemoteAccess(u8ParamId, pIn, 1);
 		// get the parameter and update the position
 		pIn += Param_GetSize(u8ParamId);
+
+		// Keep trace of the last written parameters ids
+		*pLastWriteIds = u8ParamId;
+		pLastWriteIds++;
 	}
+	sAdmConfig.u8LastWriteParamNb = pLastWriteIds - sAdmConfig.pLastWriteParamIds;
 }
 
 /*!

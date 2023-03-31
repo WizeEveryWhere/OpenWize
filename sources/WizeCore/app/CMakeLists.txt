@@ -20,7 +20,7 @@ target_sources(${MODULE_NAME}
 # Add include dir    
 target_include_directories(
     ${MODULE_NAME} 
-    PRIVATE
+    PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include/internal 
         ${CMAKE_CURRENT_SOURCE_DIR}/include/private
         ${CMAKE_BINARY_DIR}    

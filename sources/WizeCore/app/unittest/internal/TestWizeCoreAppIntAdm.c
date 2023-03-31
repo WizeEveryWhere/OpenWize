@@ -137,6 +137,8 @@ TEST_SETUP(WizeCoreAppInt_adm)
 
 	trans_len_max = 120;
 	local_update_pending = -1;
+
+	AdmInt_SetupDefaultConfig();
 	sAdmConfig.MField = (uint16_t)MF;
 	sAdmConfig.u32MntWinDuration = MNT_WIN_DURATION;
 }
@@ -290,8 +292,6 @@ TEST(WizeCoreAppInt_adm, test_AdmInt_WriteKeyBadId)
 	TEST_ASSERT_EQUAL_UINT8_MESSAGE(KEY_ILLEGAL_VALUE, gpErrRsp->L7ErrorCode, "Error code");
 	TEST_ASSERT_EQUAL_UINT8_MESSAGE(0,  gpErrRsp->L7ErrorParam, "Error param");
 	TEST_ASSERT_EQUAL_UINT8_MESSAGE(sizeof(admin_rsp_err_t), gsRspMsg.u8Size, "Rsp size");
-
-	AdmInt_SetupDefaultConfig();
 }
 
 TEST(WizeCoreAppInt_adm, test_AdmInt_WriteKeyBadIdByPassKeyId)
@@ -313,8 +313,6 @@ TEST(WizeCoreAppInt_adm, test_AdmInt_WriteKeyBadIdByPassKeyId)
 	TEST_ASSERT_EQUAL_UINT8_MESSAGE(KEY_ILLEGAL_VALUE, gpErrRsp->L7ErrorCode, "Error code");
 	TEST_ASSERT_EQUAL_UINT8_MESSAGE(0,  gpErrRsp->L7ErrorParam, "Error param");
 	TEST_ASSERT_EQUAL_UINT8_MESSAGE(sizeof(admin_rsp_err_t), gsRspMsg.u8Size, "Rsp size");
-
-	AdmInt_SetupDefaultConfig();
 }
 /******************************************************************************/
 // ADM_EXECINSTPING
@@ -789,6 +787,6 @@ TEST(WizeCoreAppInt_adm, test_AdmInt_PreCmdAlreadyTreat)
 
 TEST(WizeCoreAppInt_adm, test_AdmInt_PostCmd)
 {
-
+	TEST_IGNORE_MESSAGE("No test available : TODO");
 }
 

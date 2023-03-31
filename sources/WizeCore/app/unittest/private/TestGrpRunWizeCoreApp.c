@@ -27,8 +27,6 @@ TEST_GROUP_RUNNER(WizeCoreApp_sesdisp)
 	RUN_TEST_CASE(WizeCoreApp_sesdisp, test_SesDisp_ActiveADMGetNetEvent);
 	RUN_TEST_CASE(WizeCoreApp_sesdisp, test_SesDisp_ActiveDWNGetNetEvent);
 
-	RUN_TEST_CASE(WizeCoreApp_sesdisp, test_SesDisp_GetRelatatedEvent);
-
 }
 
 TEST_GROUP_RUNNER(WizeCoreApp_wizeapp)

@@ -45,24 +45,12 @@ uint8_t _Param_Access_Stub_(uint8_t u8_Id, uint8_t* p_Data, uint8_t u8_Dir, int 
 	return 1;
 }
 
-net_msg_t *_pCmdMsg;
-net_msg_t *_pRspMsg;
-net_msg_t *_pPongMsg;
-net_msg_t *_pBlkMsg;
-
-void _WizeApp_Init_Stub_(net_msg_t *pCmdMsg, net_msg_t *pRspMsg, net_msg_t *pPongMsg, net_msg_t *pBlkMsg, int cmock_num_calls)
-{
-	_pCmdMsg = pCmdMsg;
-	_pRspMsg = pRspMsg;
-	_pPongMsg = pPongMsg;
-	_pBlkMsg = pBlkMsg;
-}
 /******************************************************************************/
 static void _fill_ann_(void);
 
 static void _fill_ann_(void)
 {
-	admin_cmd_anndownload_t *pReq = (admin_cmd_anndownload_t*)(_pCmdMsg->pData);
+	admin_cmd_anndownload_t *pReq = (admin_cmd_anndownload_t*)(sAdmCtx.aRecvBuff);
 	pReq->L7CommandId = ADM_ANNDOWNLOAD;
 	*(uint16_t*)pReq->L7SwVersionIni = __htons( (uint16_t)(0x0000) );
 	*(uint16_t*)pReq->L7SwVersionTarget = __htons( (uint16_t)(0x0001) );
@@ -83,11 +71,11 @@ static void _fill_ann_(void)
 	pReq->L7DeltaSec = 5;
 
 	// -----
-	_pCmdMsg->u8KeyId = KEY_CHG_ID;
-	_pCmdMsg->u8Size = sizeof(admin_cmd_anndownload_t);
+	sAdmCtx.sCmdMsg.u8KeyId = KEY_CHG_ID;
+	sAdmCtx.sCmdMsg.u8Size = sizeof(admin_cmd_anndownload_t);
 
-	((admin_rsp_t*)(_pRspMsg->pData))->L7ResponseId = ADM_ANNDOWNLOAD;
-	((admin_rsp_t*)(_pRspMsg->pData))->L7ErrorCode = ADM_NONE;
+	((admin_rsp_t*)(sAdmCtx.aSendBuff))->L7ResponseId = ADM_ANNDOWNLOAD;
+	((admin_rsp_t*)(sAdmCtx.aSendBuff))->L7ErrorCode = ADM_NONE;
 }
 
 /******************************************************************************/
@@ -132,11 +120,8 @@ TEST_SETUP(WizeCoreApp_wizeapi)
 	NetMgr_Setup_Ignore();
 	TimeMgr_Main_IgnoreAndReturn(0);
 
-	// App
-	WizeApp_Init_Stub(_WizeApp_Init_Stub_);
-
 	// --
-	WizeApi_Setup(NULL);
+	WizeApi_SesMgr_Setup(NULL, &sInstCtx, &sAdmCtx, &sDwnCtx);
 }
 
 TEST_TEAR_DOWN(WizeCoreApp_wizeapi)
