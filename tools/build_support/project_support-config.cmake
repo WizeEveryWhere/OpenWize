@@ -93,6 +93,11 @@ if(BUILD_OPENWIZE)
 endif(BUILD_OPENWIZE)
 
 #################################################################################
+if(BUILD_INTEGRATION_TEST)   
+	message(STATUS "Add iTest Build ")
+	add_subdirectory(tests/iTests)
+endif(BUILD_INTEGRATION_TEST)
+
 if(ENABLE_NATIVE_UNITTEST)
     list(APPEND CMAKE_PREFIX_PATH ${TOOL_BUILD_SUPPORT}/external_helper)
     list(APPEND CMAKE_PREFIX_PATH ${TOOL_BUILD_SUPPORT}/native_helper)

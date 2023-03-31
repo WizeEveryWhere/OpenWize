@@ -95,7 +95,8 @@ function(add_unittest)
         set(ADD_UNITTEST_NAME ${ADD_UNITTEST_DUT}_utest)
     endif() 
 
-    #message("\nxxx ADD_UNITTEST_DUT      : ${ADD_UNITTEST_DUT}")
+    #message("xxx ADD_UNITTEST_NAME     : ${ADD_UNITTEST_NAME}")
+    #message("xxx ADD_UNITTEST_DUT      : ${ADD_UNITTEST_DUT}")
     #message("xxx ADD_UNITTEST_SOURCES  : ${ADD_UNITTEST_SOURCES}")
     #message("xxx ADD_UNITTEST_MOCKLIST : ${ADD_UNITTEST_MOCKLIST}")
     
@@ -143,9 +144,15 @@ function(add_unittest)
         endif()
     endif()
 
+	if(DUT_INCLUDES)
+	    target_include_directories(
+	        ${ADD_UNITTEST_NAME} PUBLIC
+	        ${DUT_INCLUDES} 
+	    )	
+	endif()
+
     target_include_directories(
         ${ADD_UNITTEST_NAME} PUBLIC
-        ${DUT_INCLUDES} 
         ${UNITY_INCLUDES}
     )
     
