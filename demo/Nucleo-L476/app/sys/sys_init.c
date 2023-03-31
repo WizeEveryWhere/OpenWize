@@ -57,6 +57,7 @@ extern "C" {
 #include "phy_layer_private.h"
 
 #include "wize_api.h"
+#include "wize_app.h"
 
 /*!
  * @brief This is the context for the uart use as fake phy
@@ -84,7 +85,7 @@ void Sys_Init(void)
   	/* Show the welcome message */
 #ifndef HAS_NO_BANNER
   	printf("\n###########################################################\n");
-  	printf("%s\n", WIZE_ALLIANCE_BANNER);
+  	printf("%s\n", OPEN_WIZE_BANNER);
   	printf("\n###########################################################\n");
 #endif
 
@@ -104,10 +105,11 @@ void Sys_Init(void)
 	// Init storage
 	Storage_Init(0);
 
-   	// Setup Time Event
-  	TimeEvt_Setup();
-	// setup wize device
-	WizeApi_Setup(&sPhyDev);
+   	// Setup Time manager
+	WizeApi_TimeMgr_Setup(&sTimeUpdCtx);
+	// Setup Session manager
+	WizeApi_SesMgr_Setup(&sPhyDev, &sInstCtx, &sAdmCtx, &sDwnCtx);
+
   	WizeApi_Enable(1);
 }
 

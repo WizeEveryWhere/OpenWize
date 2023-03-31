@@ -79,45 +79,90 @@ SYS_TASK_CREATE_DEF(main, APP_STACK_SIZE, APP_PRIORITY);
   */
 void App_Init(void)
 {
+	WizeApp_Init();
 	hTask = SYS_TASK_CREATE_CALL(main, APP_TASK_FCT, NULL);
 }
 
 /**
   * @static
   * @brief  This is the demo application task
+  *
+  * @details The task periodically request a PING/PONG or Send a DATA (as admin
+  * session). The DATA or ADM session period is 2 s. The PING/PONG session
+  * period is 9x the DATA period.
+  *
   */
 static void Main_Task(void const * argument)
 {
 	(void)argument;
+	const uint32_t tmo = 0xFFFFFFFF;
+	uint32_t ulEvent;
+
+	wize_api_ret_e eApiRet;
+
+	uint32_t ret;
+	uint8_t state = 1;
 
 	uint8_t i;
 	uint8_t pData[50];
 	uint8_t u8Size;
 
-	// Set the L6App
-	pData[0] = 0x05;
-	// Set the rest of the message
-	strncpy(&pData[1], "Hello World!", 50);
-	u8Size = strlen( (char*)pData) ;
-
 	i = 0;
 	while(1)
 	{
-		LOG_INF("---------- \n");
-		switch(i)
+		LOG_INF("-------- \n");
+		if (state)
 		{
-			case 0:
-				LOG_INF("Main Install\n");
-				WizeApi_ExecPing();
-				break;
-			default :
-				LOG_INF("Main Data %d\n", i);
-				WizeApi_SendEx(pData, u8Size, APP_DATA);
-				break;
+			switch(i)
+			{
+				case 0:
+					LOG_INF("Main start PING/PONG session\n");
+					*((inst_ping_t*)pData) = InstInt_Init(&sPingReply);
+					eApiRet = WizeApi_ExecPing(pData, sizeof(inst_ping_t));
+					if ( eApiRet != WIZE_API_SUCCESS)
+					{
+						LOG_ERR("Ping/Pong failed");
+					}
+					break;
+				default :
+					LOG_INF("Main start DATA session\n");
+					// Set the L6App
+					pData[0] = 0x05;
+					// Set the rest of the message
+					strncpy(&pData[1], "Hello World!", 50);
+					u8Size = strlen( (char*)pData) ;
+					eApiRet = WizeApi_Send(pData, u8Size, APP_DATA);
+					if ( eApiRet != WIZE_API_SUCCESS)
+					{
+						LOG_ERR("DATA failed");
+					}
+					break;
+			}
+			if ( eApiRet == WIZE_API_SUCCESS)
+			{
+				state = 0;
+			}
+			i++;
+			if(i > 9) {i = 0;}
 		}
-		i++;
-		if(i > 9) {i = 0;}
-		msleep(2000);
+
+		sys_flag_wait(&ulEvent, tmo);
+		ret = WizeApp_Common(ulEvent);
+
+		if (ulEvent & SES_FLG_SES_COMPLETE_MSK)
+		{
+			if (ulEvent & SES_FLG_SES_ERROR_MSK)
+			{
+				LOG_DBG("Session Error\n");
+			}
+			else
+			{
+				LOG_DBG("Session Success\n");
+			}
+			msleep(2000);
+			state = 1;
+		}
+		//else { }
 	}
 }
 /******************************************************************************/

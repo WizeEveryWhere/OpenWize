@@ -44,19 +44,15 @@ extern "C" {
 #include <stdlib.h>
 #include <limits.h>
 
-#include "FreeRTOS.h"
-#include "task.h"
-
 #include "bsp.h"
+#include "rtos_macro.h"
 
 #include "parameters_cfg.h"
 #include "parameters.h"
 #include "crypto.h"
 
-#include "wize_banner.h"
 #include "wize_api.h"
-
-#include "rtos_macro.h"
+#include "wize_app.h"
 
 #ifdef __cplusplus
 }
