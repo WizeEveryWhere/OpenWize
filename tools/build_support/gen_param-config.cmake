@@ -16,12 +16,12 @@ function(gen_param)
     cmake_parse_arguments(GEN_PARAM 
         "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
-    if(GENERATE_PARAM)        
-        message("Generate default parameters")
-    
+    if(GENERATE_PARAM)
+        message("   -----------------------------")
+        message("   -> Generate Parameters Tables")
         # Check if required SOURCE is given
         if(GEN_PARAM_SOURCE STREQUAL "")
-            message(FATAL_ERROR "Can't generate parameters without SOURCE dir")
+            message(FATAL_ERROR "Can't generate parameters without SOURCE files")
         endif()
         
         # Check if required SOURCE is given
@@ -44,17 +44,24 @@ function(gen_param)
         if(NOT XMLMERGE)
             message(FATAL_ERROR "xmlmerge not found!\nInstall it :\n\t sudo apt-get install gwenhywfar-tools\n")
         endif()
+
+        message("      -> From :")
+        string(REPLACE " " ";" PARAM_XML_FILE_LIST ${GEN_PARAM_SOURCE})
+        foreach(file_name ${PARAM_XML_FILE_LIST})
+            message("         - ${file_name}")
+        endforeach()
         
         execute_process (
             COMMAND 
-                bash -c "xmlmerge ${GEN_PARAM_SOURCE}/DefaultParams.xml ${GEN_PARAM_SOURCE}/DefaultRestr.xml -o ${GEN_PARAM_SOURCE}/MergedParam.xml"
+                bash -c "mkdir -p ${GEN_PARAM_DESTINATION}/gen; xmlmerge --compact -o ${GEN_PARAM_DESTINATION}/gen/.MergedParam.xml ${GEN_PARAM_SOURCE}"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             )
 
         execute_process (
             COMMAND 
-                bash -c "export IS_VERBOSE_ENV=${verbo}; export PATH=$PATH:./tools/scripts/gen_param:./third-party/.OpenWize/tools/scripts/gen_param; gen_table.sh --in ${GEN_PARAM_SOURCE}/MergedParam.xml --dest ${GEN_PARAM_DESTINATION};"
+                bash -c "export IS_VERBOSE_ENV=${verbo}; export PATH=$PATH:./tools/scripts/gen_param:./third-party/.OpenWize/tools/scripts/gen_param; gen_table.sh --in ${GEN_PARAM_DESTINATION}/gen/.MergedParam.xml --dest ${GEN_PARAM_DESTINATION};"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             )
+        message("   -----------------------------")
     endif()
 endfunction()

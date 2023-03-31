@@ -64,7 +64,7 @@ cat << EOF > ${toFile}
   * 
   * @details
   *
-  * @copyright 2019, GRDF, Inc.  All rights reserved.
+  * @copyright 2023, GRDF, Inc.  All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
   * modification, are permitted (subject to the limitations in the disclaimer
@@ -495,6 +495,23 @@ function usage {
 ################################################################################
 #
 
+# Clean input merged xml file
+function clean_merged_xml() {
+    inFile=$1;
+    mList=($( grep -n "<ParameterList>" ${inFile} | sed 's/:<ParameterList>//g' )); 
+    unset 'mList[0]';
+    for l in ${mList[@]}
+    do 
+        sed -i "${l}s/<ParameterList>/<\!-- Start -->/g" ${inFile}; 
+    done;
+    mList=($( grep -n "</ParameterList>" ${inFile} | sed 's/:<\/ParameterList>//g' )); 
+    unset 'mList[-1]';
+    for l in ${mList[@]}
+    do 
+        sed -i "${l}s/<\/ParameterList>/<\!-- End -->/g" ${inFile};
+    done;
+}
+
 # header and source file name
 header_FileName="parameters_cfg.h";
 source_FileName="parameters_cfg.c";
@@ -610,8 +627,12 @@ then
     usage;
 else 
     xmlFile="${INPUT_FILE}";
-
+    # clean imput xml file (after merged)
+    echo "      -> Cleaning imput xml file (after merged)";
+    clean_merged_xml ${xmlFile};
+    
     # check input xml is conformed to the xsd file
+    echo "      -> Check if input xml is conformed to the xsd file";
     xmlstarlet val -e -q --xsd ${xFile} ${xmlFile}
     RES=$?
     

@@ -118,10 +118,13 @@ typedef enum {
 	PHY_CTL_SET_TX_FREQ_OFF   , /*!< Set the TX frequency Offset */
 	PHY_CTL_SET_TX_POWER      , /*!< Set the TX Power */
 	PHY_CTL_SET_PA            , /*!< Enable/Disable the PA (if any) */
+	PHY_CTL_SET_PWR_ENTRY     , /*!< Set the calibrate values for a specific Power entry */
 
 	PHY_CTL_GET_TX_FREQ_OFF   , /*!< Get the TX frequency Offset */
 	PHY_CTL_GET_TX_POWER      , /*!< Get the TX Power */
 	PHY_CTL_GET_PA            , /*!< Get the PA state */
+	PHY_CTL_GET_PWR_ENTRY     , /*!< Get the calibrate values for a specific Power entry */
+
 	PHY_CTL_GET_FREQ_ERR      , /*!< Get the frequency error */
 	PHY_CTL_GET_RSSI          , /*!< Get the RX RSSI */
 	PHY_CTL_GET_NOISE         , /*!< Get the TX Noise */

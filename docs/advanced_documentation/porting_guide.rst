@@ -20,7 +20,7 @@ Prepare your module
 - Create the files *src/phy_layer.c* and *src/phy_layer_private.c*.
 - Create the *CMakeLists.txt*
 
-Then, that should gives something like :
+Then, that should give something like :
 
 :: 
 
@@ -35,7 +35,7 @@ Then, that should gives something like :
 Implement the low level driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In *phy_layer_private.h* and *phy_layer_private.c* integrate all requirement (function, defines, typedef, ...) to drive at low level your device. Its content is very dependent of your device behavior.   
+In *phy_layer_private.h* and *phy_layer_private.c* integrate all requirements (function, defines, typedef, ...) to drive at low level your device. Its content depends strongly on the behavior of your device. 
 
 Implement the phy driver
 ^^^^^^^^^^^^^^^^^^^^^^^^

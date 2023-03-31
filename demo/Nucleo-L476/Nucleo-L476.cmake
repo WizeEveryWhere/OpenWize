@@ -59,9 +59,14 @@ endif(USE_FREERTOS)
 ################################################################################
 # Generate parameters 
 # (only if "-DGENERATE_PARAM=ON" is added on cmake command line)
+set(DEFAULT_CFG_FILE_DIR "sources/app/cfg")
+set(PARAM_XML_FILE_LIST "")
+set(PARAM_XML_FILE_LIST "${PARAM_XML_FILE_LIST} ${DEFAULT_CFG_FILE_DIR}/LANParams.xml")
+set(PARAM_XML_FILE_LIST "${PARAM_XML_FILE_LIST} ${DEFAULT_CFG_FILE_DIR}/LoggerParams.xml")
+set(PARAM_XML_FILE_LIST "${PARAM_XML_FILE_LIST} ${DEFAULT_CFG_FILE_DIR}/DefaultRestr.xml")
 find_package(gen_param REQUIRED)
 gen_param(
-    SOURCE demo/Nucleo-L476/app/cfg
+    SOURCE ${PARAM_XML_FILE_LIST}
     DESTINATION demo/Nucleo-L476/app
     )
 

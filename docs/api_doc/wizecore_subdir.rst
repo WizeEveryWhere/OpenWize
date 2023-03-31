@@ -18,7 +18,7 @@
 
 
 ``net``
-   *net* implement a kind of low-level driver to : 
+   *net* implements a kind of low-level driver to : 
 
    - drive the protocol in *proto*
    - provide an abstract layer to higher level, with function like "send(...)" or "recev(...)".
@@ -27,16 +27,16 @@
    *net* depends on *proto* 
 
 ``mgr``
-   *mgr* implement four managers :
+   *mgr* implements four managers :
 
    - *adm_mgr*, *inst_mgr* and *dwn_mgr* manage respectively the administration, installation and download sessions. Their role is mainly to ensure the session timing correctness.
    
-   - *net_mgr* is a kind of high level driver for the *net* module. In particular, it manage the net+phy resources in thread-safe manner and ensure the timing correctness in the "send" and "listen" windows.
+   - *net_mgr* is a kind of high level driver for the *net* module. In particular, it manages the net+phy resources in thread-safe manner and ensure the timing correctness in the "send" and "listen" windows.
 
    *mgr* depends on *net*, *TimeEvt*, *Logger* and *FreeRTOS*.
 
 ``app``
-   *app* implement application layer of the Wize protocol and provide an API to the rest of application firmware.
+   *app* implements application layer of the Wize protocol and provide an API to the rest of application firmware.
 
    - provide API to send DATA message and execute an installation (PING/PONG) session
    - open/close administration, installation and download sessions.
