@@ -189,7 +189,7 @@ import sphinx_rtd_theme
 extensions = [
 	'sphinx_rtd_theme',
 	'sphinx.ext.intersphinx',
-	'breathe',
+#	'breathe',
 	#'sphinxcontrib.moderncmakedomain',
 ]
 # pip install sphinxcontrib-moderncmakedomain
@@ -216,7 +216,7 @@ rst_epilog = """
 # ------------------------------------------------------------------------------
 
 # Breathe Configuration
-
+"""
 import subprocess
 subprocess.call('doxygen', shell=True)
 
@@ -228,8 +228,7 @@ breathe_projects = {
 }
 
 breathe_default_project = "OpenWize Developer Documentation"
-
-
+"""
 # ------------------------------------------------------------------------------
 # OpenWize'up doc link
 
