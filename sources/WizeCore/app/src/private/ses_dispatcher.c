@@ -487,6 +487,14 @@ static uint32_t _ses_disp_get_param_(void)
 	Param_Access(L7RECEIVE_LENGTH_MAX,  &(sProto_Cfg.u8RecvLenMax), 0 );
 	Param_Access(L6NetwIdSelect,        &(sProto_Cfg.u8NetId), 0 );
 
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+	Param_Access(L6_EXCH_DIS_FLT, &(sProto_Cfg.filterDisL6), 0);
+	Param_Access(L2_EXCH_DIS_FLT, &(sProto_Cfg.filterDisL2), 0);
+#else
+	sProto_Cfg.filterDisL2 = 0;
+	sProto_Cfg.filterDisL6 = 0;
+#endif
+
 	sProto_Cfg.AppInst = L6APP_INST;
 	sProto_Cfg.AppAdm = L6APP_ADM;
 #ifdef L6App
@@ -494,10 +502,12 @@ static uint32_t _ses_disp_get_param_(void)
 #else
 	sProto_Cfg.AppData = 0xFE;
 #endif
-	sProto_Cfg.filterDisL2 = 0;
-	sProto_Cfg.filterDisL6 = 0;
-
-	ret |= NetMgr_Ioctl(NETDEV_CTL_CFG_PROTO, (uint32_t)(&sProto_Cfg));
+	//ret |= NetMgr_Ioctl(NETDEV_CTL_CFG_PROTO, (uint32_t)(&sProto_Cfg));
+	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_L6FLT_DIS, (uint32_t)(sProto_Cfg.filterDisL6));
+	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_L2FLT_DIS, (uint32_t)(sProto_Cfg.filterDisL2));
+	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_RECVLEN, (uint32_t)(sProto_Cfg.u8RecvLenMax));
+	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_TRANSLEN, (uint32_t)(sProto_Cfg.u8TransLenMax));
+	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_NETWID, (uint32_t)(sProto_Cfg.u8NetId));
 
 	return ret;
 }

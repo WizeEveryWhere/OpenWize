@@ -48,7 +48,7 @@ extern "C" {
 
 // Define the net_mgr stack size
 #ifndef NET_MGR_TASK_STACK_SIZE
-	#define NET_MGR_TASK_STACK_SIZE 300
+	#define NET_MGR_TASK_STACK_SIZE 1200
 #endif
 
 // Define the net_mgr task prority
@@ -719,10 +719,20 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 						sys_binsen_release(pNetDev->hLock);
 					}
 					u32BackEvt |= NET_EVENT_RECV_DONE;
-					LOG_FRM_IN(
-							((wize_net_t*)pNetDev->pCtx)->aRecvBuff,
-							((wize_net_t*)pNetDev->pCtx)->aRecvBuff[0]+1
-							);
+					if (((wize_net_t*)pNetDev->pCtx)->aRecvBuff[0] == 255)
+					{
+						LOG_FRM_IN(
+								((wize_net_t*)pNetDev->pCtx)->aRecvBuff,
+								25
+								);
+					}
+					else
+					{
+						LOG_FRM_IN(
+								((wize_net_t*)pNetDev->pCtx)->aRecvBuff,
+								((wize_net_t*)pNetDev->pCtx)->aRecvBuff[0]+1
+								);
+					}
 				}
 				else // received message doesn't match
 				{

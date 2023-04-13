@@ -151,7 +151,8 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				// Start the timer for the first download day
 				if ( TimeEvt_TimerStart(
 						&pCtx->sTimeEvt,
-						pPrvCtx->_u32DayNext + i32NextBlkOffset, 0,
+						pPrvCtx->_u32DayNext + i32NextBlkOffset,
+						pPrvCtx->i16DeltaRxMs,
 						(uint32_t)SES_EVT_DWN_DELAY_EXPIRED
 						)
 					)
@@ -171,7 +172,8 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_PERIODIC);
 				if ( TimeEvt_TimerStart(
 						&pCtx->sTimeEvt,
-						pPrvCtx->u8DeltaSec, 0,
+						pPrvCtx->u8DeltaSec,
+						pPrvCtx->i16DeltaRxMs,
 						(uint32_t)SES_EVT_DWN_DELAY_EXPIRED
 						))
 				{

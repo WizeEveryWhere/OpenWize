@@ -76,6 +76,8 @@ typedef enum
 	NETDEV_CTL_SET_NETWID,     /*!< Set the network ID */
 	NETDEV_CTL_SET_DWNID,      /*!< Set the download ID */
 	NETDEV_CTL_SET_DEVID,      /*!< Set the device ID */
+	NETDEV_CTL_SET_L6FLT_DIS,  /*!< Set the L6 filter disable  */
+	NETDEV_CTL_SET_L2FLT_DIS,  /*!< Set the L2 filter disable  */
 
 	NETDEV_CTL_CFG_MEDIUM,     /*!< Configure the medium */
 	NETDEV_CTL_CFG_PROTO,      /*!< Configure the protocol */

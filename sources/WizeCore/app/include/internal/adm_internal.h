@@ -47,8 +47,8 @@ extern "C" {
 	#define DWN_DELTA_SEC_MIN_WM2400 10 // in s
 	#define DWN_DELTA_SEC_MIN_WM4800 5  // in s
 #else
-	#define DWN_DELTA_SEC_MIN_WM2400 2 // in s
-	#define DWN_DELTA_SEC_MIN_WM4800 1 // in s
+	#define DWN_DELTA_SEC_MIN_WM2400 5 // in s
+	#define DWN_DELTA_SEC_MIN_WM4800 3 // in s
 #endif
 
 #ifndef DWN_BLK_DURATION_WM2400
@@ -83,6 +83,17 @@ extern "C" {
 struct adm_config_s{
 	uint8_t state;                 /*!< ADM config state*/
 	union {
+		uint8_t ClkFreqAutoAdj;     /*!< Clock and Frequency Offset Auto-Adjustment */
+		struct
+		{
+			uint8_t ClkAutoPong:1;  /*!< Coarse clock auto-adjust on PONG. 1: enable, 0: disable */
+			uint8_t ClkAutoAdm:1;   /*!< Fine clock auto-adjust on ADM CMD. 1: enable, 0: disable */
+			uint8_t FreqAutoPong:1; /*!< Frequency Offset auto-adjust on PONG. 1: enable, 0: disable */
+		};
+	};
+	uint8_t ClkFreqAutoAdjRssi;   /*!< Clock and Frequency Offset Auto-Adjustment received frame RSSI min.*/
+	// ----
+	union {
 		uint8_t filterDisAnn;      /*!< ADM Reception Filter disable*/
 		struct
 		{
@@ -98,7 +109,7 @@ struct adm_config_s{
 		uint8_t filterDisParam;      /*!< ADM Reception Filter disable*/
 		struct
 		{
-			// TODO :
+			// TODO : implement it
 			uint8_t ParamBypassWO:1; /*!< Read parameter WO filter. 0: enable, 1: disable */
 			uint8_t ParamBypassRO:1; /*!< Write parameter RO filter. 0: enable, 1: disable */
 		};
@@ -111,16 +122,6 @@ struct adm_config_s{
 			uint8_t KeyChgBypassUse:1;  /*!< Key chg filter. 0: enable, 1: disable */
 		};
 	};
-	union {
-		uint8_t ClkFreqAutoAdj;     /*!< Clock and Frequency Offset Auto-Adjustment */
-		struct
-		{
-			uint8_t ClkAutoPong:1;  /*!< Coarse clock auto-adjust on PONG. 1: enable, 0: disable */
-			uint8_t ClkAutoAdm:1;   /*!< Fine clock auto-adjust on ADM CMD. 1: enable, 0: disable */
-			uint8_t FreqAutoPong:1; /*!< Frequency Offset auto-adjust on PONG. 1: enable, 0: disable */
-		};
-	};
-	uint8_t ClkFreqAutoAdjRssi;   /*!< Clock and Frequency Offset Auto-Adjustment received frame RSSI min.*/
 	// ----
 	uint16_t MField;
 	// ----
@@ -139,6 +140,7 @@ struct adm_config_s{
 };
 
 void AdmInt_SetupDefaultConfig(void);
+void AdmInt_SetupConfig(void);
 uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 void AdmInt_Unknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg);

@@ -65,19 +65,19 @@ static uint8_t aLastReadParamIds[LAST_READ_PARAM_NB_MAX];
 const struct adm_config_s sAdmConfigDefault =
 {
 	.state = 1,
+	.ClkFreqAutoAdj = 0,
+	.ClkFreqAutoAdjRssi = 0,
 	.filterDisAnn = 0,
 	.filterDisParam = 0,
 	.filterDisKey = 0,
-	.ClkFreqAutoAdj = 0,
-	.ClkFreqAutoAdjRssi = 0,
 
 	// .MField = pProtoCtx->aDeviceManufID
 	.u32DwnDayProgWinMin = DWN_DAY_PROG_WIN_MIN,
 	.u32DwnDayProgWinMax = DWN_DAY_PROG_WIN_MAX,
+	.u32MntWinDuration   = MNT_WIN_DURATION,
 	.u32DwnDeltaSecMin   = DWN_DELTA_SEC_MIN_WM2400,
 	.u32DwnBlkDurMod     = DWN_BLK_DURATION_WM2400,
 	.u32DwnBlkNbMax      = DWN_NB_BLK_MAX,
-	.u32MntWinDuration   = MNT_WIN_DURATION,
 
 	.pLastWriteParamIds  = aLastWriteParamIds,
 	.pLastReadParamIds   = aLastReadParamIds,
@@ -95,6 +95,47 @@ const struct adm_config_s sAdmConfigDefault =
 void AdmInt_SetupDefaultConfig(void)
 {
 	memcpy(&sAdmConfig, &sAdmConfigDefault, sizeof(struct adm_config_s));
+}
+
+/*!
+  * @brief This function initialize the default Admin. config. structure.
+  * is not executed here.
+  */
+void AdmInt_SetupConfig(void)
+{
+	AdmInt_SetupDefaultConfig();
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+	uint8_t tmp[4];
+	/* Set the min RSSI to Auto-Adjust Clock and Frequency offset
+	 * step : 0.5 dBm
+	 * 255 :  -20.0 dBm
+	 *   0 : -147.5 dBm
+	 * dBm     = (hex_val * 0.5) - 147.5
+	 * hex_val = (dBm + 147.5)*2
+	 *
+	 * -85 dBm : 125
+	*/
+	Param_Access(AUTO_ADJ_CLK_FREQ, tmp, 0);
+	sAdmConfig.ClkFreqAutoAdj     = (uint8_t)tmp[0];
+	sAdmConfig.ClkFreqAutoAdjRssi = (uint8_t)tmp[1];
+
+	Param_Access(ADM_ANN_DIS_FLT,   (uint8_t*)&(sAdmConfig.filterDisAnn), 0);
+	Param_Access(ADM_PARAM_DIS_FLT, (uint8_t*)&(sAdmConfig.filterDisParam), 0);
+	Param_Access(ADM_KEY_DIS_FLT,   (uint8_t*)&(sAdmConfig.filterDisKey), 0);
+
+	Param_Access(DWN_DAY_PRG_WIN_MIN, tmp, 0);
+	sAdmConfig.u32DwnDayProgWinMin = __ntohl(*(uint32_t*)tmp);
+	Param_Access(DWN_DAY_PRG_WIN_MAX, tmp, 0);
+	sAdmConfig.u32DwnDayProgWinMax = __ntohl(*(uint32_t*)tmp);
+	Param_Access(MNT_WINDOW_DURATION, tmp, 0);
+	sAdmConfig.u32MntWinDuration   = __ntohl(*(uint32_t*)tmp);
+	Param_Access(DWN_DELTA_SEC_MIN, tmp, 0);
+	sAdmConfig.u32DwnDeltaSecMin   = __ntohl(*(uint32_t*)tmp);
+	Param_Access(DWN_BLK_DURATION_MOD, tmp, 0);
+	sAdmConfig.u32DwnBlkDurMod     = __ntohl(*(uint32_t*)tmp);
+	Param_Access(DWN_BLK_NB_MAX, tmp, 0);
+	sAdmConfig.u32DwnBlkNbMax      = __ntohl(*(uint32_t*)tmp);
+#endif
 }
 
 /******************************************************************************/

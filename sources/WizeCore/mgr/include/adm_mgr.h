@@ -89,6 +89,8 @@ struct adm_mgr_ctx_s
 
 	uint8_t u8Pending;                 /**< Received command is pending */
 	uint8_t u8ByPassCmd;               /**< Bypass the Received command */
+
+    int16_t i16DeltaRxMs;              /**< Offset to listening window (in millisecond) */
 };
 
 void AdmMgr_Setup(struct ses_ctx_s *pCtx);

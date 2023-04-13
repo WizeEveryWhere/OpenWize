@@ -515,7 +515,13 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						pCtx->sProtoCtx.sProtoConfig.DwnId[1] = (uint8_t)(args >> 8);
 						pCtx->sProtoCtx.sProtoConfig.DwnId[2] = (uint8_t)(args );
 						break;
-
+						/*--------------------------------------------------------*/
+					case NETDEV_CTL_SET_L6FLT_DIS:
+						pCtx->sProtoCtx.sProtoConfig.filterDisL6 = (uint8_t)args;
+						break;
+					case NETDEV_CTL_SET_L2FLT_DIS:
+						pCtx->sProtoCtx.sProtoConfig.filterDisL2 = (uint8_t)args;
+						break;
 					/*--------------------------------------------------------*/
 					case NETDEV_CTL_SET_DEVID:
 						if( (void*)args == NULL)
@@ -535,7 +541,6 @@ int32_t WizeNet_Ioctl(netdev_t* pNetdev, uint32_t eCtl, uint32_t args)
 						memcpy((uint8_t*)args, pCtx->sProtoCtx.aDeviceManufID, MFIELD_SZ);
 						memcpy(&(((uint8_t*)args)[MFIELD_SZ]), pCtx->sProtoCtx.aDeviceAddr, AFIELD_SZ);
 						break;
-					/*--------------------------------------------------------*/
 					default:
 						break;
 				}

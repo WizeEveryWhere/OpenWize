@@ -538,6 +538,22 @@ void WizeApi_TimeMgr_Register(void *hTask)
 }
 
 /*!
+ * @brief Request for Time Update
+ *
+ * @retval None
+ */
+void WizeApi_TimeMgr_Update(uint32_t u32usDelay)
+{
+// FIXME
+#define LSE_CLK_DIV2 16384UL
+
+	uint32_t cycDelay = (u32usDelay * LSE_CLK_DIV2) / 1000000;
+	//_time_wakeup_force(cycDelay);
+	cycDelay += (cycDelay)?(0):(1);
+	sys_flag_set(hTimeMgrTask, cycDelay);
+}
+
+/*!
  * @brief This function setup the Wize stack
  *
  * @param [in,out] pTimeUpdCtx Pointer on the tume_upd context
@@ -580,7 +596,7 @@ void WizeApi_OnTimeFlag(uint32_t u32Flg)
 
 extern void _time_wakeup_enable(void);
 extern void _time_wakeup_reload(void);
-extern void _time_wakeup_force(void);
+extern void _time_wakeup_force(uint32_t wakup_cycles);
 extern void _time_update_set_handler(pfTimeEvt_HandlerCB_t const pfCb);
 
 // TIME_FLG_DAY_PASSED    = 0x10, /*!< A new day is passed */
@@ -602,6 +618,7 @@ static void _time_mgr_main_(void const * argument)
 	uint32_t ulPeriod = pdMS_TO_TICKS(TIME_MGR_EVT_PERIOD());
 	uint32_t bNewDay = 0;
 	uint32_t eRet = 0;
+	uint32_t cycDelay = 2;
 
 	assert(sTimeCtx.pTimeUpd);
 
@@ -623,7 +640,7 @@ static void _time_mgr_main_(void const * argument)
 		eRet = TimeMgr_Main(&sTimeCtx, bNewDay);
 		if (bNewDay)
 		{
-			LOG_INF("TIME day update\n");
+			LOG_DBG("TIME day update\n");
 			if(eRet & 0x0F )
 			{
 				LOG_INF("TIME correction proceed\n");
@@ -636,21 +653,31 @@ static void _time_mgr_main_(void const * argument)
 		{
 			if(eRet & TIME_FLG_CLOCK_CHANGE)
 			{
-				LOG_INF("TIME EPOCH corr. req.\n");
+				LOG_DBG("TIME EPOCH corr. req.\n");
+
 				if ( sTimeCtx.pTimeUpd->state_.clock_init == 0 )
 				{
-					// first clock time setup, so set it immediately
-					_time_wakeup_force();
+					// First clock time setup, so set it immediately
+					/*
+					 * Note :
+					 * The following function force an RTC Wake-Up, which will
+					 * have to effect to set the local "bNewDay" variable on
+					 * the "next turn". Then, the function "TimeMgr_Main" will
+					 * effectively correct the RTC clock with the new value.
+					 *
+					 */
+					LOG_DBG("...in %d cyc.\n", cycDelay);
+					_time_wakeup_force(cycDelay);
 					sTimeCtx.pTimeUpd->state_.clock_init = 1;
 				}
 			}
 			if(eRet & TIME_FLG_OFFSET_CHANGE)
 			{
-				LOG_INF("TIME OFFSET corr. req.\n");
+				LOG_DBG("TIME OFFSET corr. req.\n");
 			}
 			if(eRet & TIME_FLG_DRIFT_CHANGE)
 			{
-				LOG_INF("TIME DRIFT corr. changed\n");
+				LOG_DBG("TIME DRIFT corr. changed\n");
 			}
 		}
 
@@ -660,7 +687,16 @@ static void _time_mgr_main_(void const * argument)
 		}
 
 		// waiting for event
-		bNewDay = sys_flag_take(ulPeriod);
+		//bNewDay = sys_flag_take(ulPeriod);
+		if ( sys_flag_wait(&cycDelay, ulPeriod) )
+		{
+			bNewDay = (cycDelay)?(0):(1);
+		}
+		else
+		{
+			bNewDay = 0;
+			cycDelay = 2;
+		}
 	}
 }
 
@@ -672,7 +708,8 @@ static void _time_mgr_main_(void const * argument)
  */
 static void _time_mgr_evtCb_(void)
 {
-	sys_flag_give_isr(hTimeMgrTask);
+	//sys_flag_give_isr(hTimeMgrTask);
+	sys_flag_set_isr(hTimeMgrTask, 0);
 }
 
 /******************************************************************************/
@@ -791,6 +828,15 @@ static wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint
 
 		Param_Access(L7RECEIVE_LENGTH_MAX, (uint8_t*)&u8RxLenMax, 0);
 
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+		int16_t tmp;
+		Param_Access(ADM_RECEPTION_OFFSET, (uint8_t*)&(tmp), 0);
+		_pAdmCtx_->i16DeltaRxMs = __ntohs(tmp);
+		// FIXME
+		//_pAdmCtx_->i16DeltaRxMs &= (_pAdmCtx_->i16DeltaRxMs < 0)?(0xFFC1):(0x003F);
+#else
+		_pAdmCtx_->i16DeltaRxMs = 0;
+#endif
 		_pAdmCtx_->u8ByPassCmd = (_pAdmCtx_->u8ExchRxLength)?(0):(1);
 
 		sSesDispCtx.u32DataDurationMs = _wizeapi_get_frm_duration_(u8Size, 1);
@@ -817,6 +863,29 @@ static wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint
 			return WIZE_API_INVALID_PARAM;
 		}
 
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+		int16_t tmp;
+		Param_Access(DWN_RECEPTION_OFFSET, (uint8_t*)&(tmp), 0);
+		_pDwnCtx_->i16DeltaRxMs = __ntohs(tmp);
+		// FIXME
+		//_pDwnCtx_->i16DeltaRxMs &= (_pDwnCtx_->i16DeltaRxMs < 0)?(0xFC01):(0x03FF);
+#else
+		_pDwnCtx_->i16DeltaRxMs = 0;
+#endif
+		// FIXME : not very clean
+		sNetCtx.sProtoCtx.sProtoConfig.DwnId[0] = pAnnReq->L7DwnId[0];
+		sNetCtx.sProtoCtx.sProtoConfig.DwnId[1] = pAnnReq->L7DwnId[1];
+		sNetCtx.sProtoCtx.sProtoConfig.DwnId[2] = pAnnReq->L7DwnId[2];
+		/*
+		uint32_t args = pAnnReq->L7DwnId[0] << 16 | pAnnReq->L7DwnId[1] << 8 | pAnnReq->L7DwnId[2];
+		NetMgr_Open(NULL);
+		if ( NetMgr_Ioctl(NETDEV_CTL_SET_DWNID, args) != NET_STATUS_OK )
+		{
+			return WIZE_API_FAILED;
+		}
+		NetMgr_Close();
+		*/
+
 		// Set the klog
 		Crypto_WriteKey( pAnnReq->L7Klog, KEY_LOG_ID);
 		_pDwnCtx_->u8ChannelId    = (pAnnReq->L7ChannelId -100)/10;
@@ -827,8 +896,10 @@ static wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint
 		_pDwnCtx_->u32DaysProg    = __ntohl( *(uint32_t*)(pAnnReq->L7DaysProg) ) + EPOCH_UNIX_TO_OURS;
 
 		_pDwnCtx_->u16InitDelayMinMs = _pAdmCtx_->u8ExchRespDelay*1000 +1;
-		_pDwnCtx_->u8RxLength = 1;
-		_pDwnCtx_->i16DeltaRxMs = 0;
+		// FIXME :
+		//_pDwnCtx_->u8RxLength = 1;
+		//_pDwnCtx_->i16DeltaRxMs = 0;
+
 	}
 	else
 	{

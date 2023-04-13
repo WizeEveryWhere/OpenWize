@@ -142,6 +142,7 @@ void WizeApi_Download_Cancel(void);
 
 /******************************************************************************/
 void WizeApi_TimeMgr_Register(void *hTask);
+void WizeApi_TimeMgr_Update(uint32_t wakup_cycles);
 void WizeApi_TimeMgr_Setup(struct time_upd_s *pTimeUpdCtx);
 void WizeApi_OnTimeFlag(uint32_t u32Flg);
 

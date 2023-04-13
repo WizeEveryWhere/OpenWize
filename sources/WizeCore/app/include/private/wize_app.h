@@ -48,6 +48,7 @@ extern struct adm_mgr_ctx_s sAdmCtx;
 extern struct dwn_mgr_ctx_s sDwnCtx;
 extern struct time_upd_s sTimeUpdCtx;
 extern struct ping_reply_ctx_s sPingReply;
+extern struct adm_config_s sAdmConfig;
 
 /******************************************************************************/
 /*!

@@ -77,6 +77,7 @@ struct inst_mgr_ctx_s sInstCtx;
  *          Optionally : sCmdMsg.u16Id, sRspMsg.u16Id, aRecvBuff, aSendBuff
  *
  */
+// Must be saved (part only)
 struct adm_mgr_ctx_s sAdmCtx;
 
 /*!
@@ -97,6 +98,9 @@ struct time_upd_s sTimeUpdCtx;
  */
 struct ping_reply_ctx_s sPingReply;
 
+
+struct adm_config_s sAdmConfig;
+
 /******************************************************************************/
 /*!
  * @cond INTERNAL
@@ -105,6 +109,7 @@ struct ping_reply_ctx_s sPingReply;
 static uint32_t _u32InitMask_;
 static uint8_t  _bPendAction_;
 
+static struct timeval _get_adjust_clock_offset_(void);
 static inline uint8_t _is_periodic_inst_req_(void);
 static inline uint8_t _is_full_power_req_(void);
 
@@ -203,6 +208,9 @@ void WizeApp_Init(void)
 	gu16FullPowerCnt = 0;
 	_bPendAction_ = 0;
 	_u32InitMask_ = 0xFFFFFFFF;
+	AdmInt_SetupConfig();
+	// FIXME : not very clean
+	sDwnCtx.u8RxLength = sAdmConfig.u32DwnBlkDurMod / 1000;
 }
 
 /*!
@@ -426,7 +434,62 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 	{
 		if ( !(ulEvent & SES_FLG_INST_ERROR) )
 		{
-			InstInt_End( &sPingReply );
+			uint8_t u8NbPong = InstInt_End( &sPingReply );
+			if (u8NbPong)
+			{
+				if(sPingReply.pBest->xPingReply.RssiDownstream <= sAdmConfig.ClkFreqAutoAdjRssi)
+				{
+					uint32_t tmp;
+					// Adjust frequency offset
+					if (sAdmConfig.FreqAutoPong)
+					{
+						tmp = (uint32_t)__htons(sPingReply.pBest->i16PongFreqOff);
+						Param_Access(TX_FREQ_OFFSET, (uint8_t*)&( tmp ), 1);
+					}
+					// Adjust current clock
+					if (sAdmConfig.ClkAutoPong)
+					{
+						struct timeval diff = _get_adjust_clock_offset_();
+
+						// Adjust the PING_LAST_EPOCH
+						/*
+						FIXME :
+						tmp = sPingReply.pBest->tmRecvEpoch.tv_sec - sPingReply.u32PingEpoch;
+						sPingReply.u32PingEpoch = sPingReply.pBest->u32PongEpoch - tmp;
+						tmp = __htonl( sPingReply.u32PingEpoch );
+						Param_Access(PING_LAST_EPOCH, (uint8_t*)&(tmp), 1);
+						*/
+
+						/*
+						 * The RTC sub-second register is read-only, so we need
+						 * to wait until the next "second transition"
+						 */
+						/*
+						 *  Maybe we should add some microsecond or millisecond
+						 *  to take into account :
+						 *  - the all computation time
+						 *    - before calling "_get_adjust_clock_offset_"
+						 *    - during "_get_adjust_clock_offset_"
+						 *    - until "_get_adjust_clock_offset_" return
+						 *  - the interrupt and event propagation time after the
+						 *    CLOCK_CURRENT_EPOC register is set
+						 *
+						 */
+						// Compute the new values
+						if (diff.tv_usec)
+						{
+							diff.tv_sec += 1;
+						}
+						// Compute the new CLOCK_CURRENT_EPOC
+						tmp = __htonl(sPingReply.pBest->u32PongEpoch + diff.tv_sec);
+						// Setup the CLOCK_CURRENT_EPOC
+						Param_Access(CLOCK_CURRENT_EPOC, (uint8_t*)&( tmp ), 1);
+
+						// wait for "wait_ms"
+						WizeApi_TimeMgr_Update(diff.tv_usec);
+					}
+				}
+			}
 			if ( _bPendAction_ & WIZEAPP_ADM_RSP_PEND)
 			{
 				if (sAdmCtx.aRecvBuff[0] == ADM_EXECINSTPING)
@@ -528,6 +591,67 @@ uint32_t WizeApp_Time(void)
 }
 
 /******************************************************************************/
+/*!
+ * @static
+ * @brief This function get the offset to be applied to the new clock received
+ *        from a Pong frame.
+ *
+ * @details It compute the difference between time "now" and the pong frame
+ *          reception time. Furthermore, it take into account the pong frame
+ *          duration (126 ms).
+ *
+ * @return the offset as timeval structure (second and microsecond)
+ *
+ */
+static struct timeval _get_adjust_clock_offset_(void)
+{
+	struct timeval diff;
+
+#ifdef HAS_HIRES_TIME_MEAS
+	/*
+	// get microsecond from Ping EOF
+	uint32_t pingEOFus = HiResTime_Get(2);
+	// Compute delta between Ping EOF and the best Pong EOF
+	delta = sPingReply.pBest->tmRecvEpoch.tv_usec - pingEOFus;
+	 */
+
+	// Get microsecond now
+	HiResTime_Capture(1);
+	// Compute delta between "now" and the best Pong EOF
+	uint32_t delta = HiResTime_Get(1) - sPingReply.pBest->tmRecvEpoch.tv_usec;
+	diff.tv_sec = delta / 1000000;
+	diff.tv_usec = delta % 1000000;
+
+#else
+
+	struct timeval now;
+	gettimeofday(&now, NULL);
+
+	// diff.tv_sec if ever >= 0
+	diff.tv_sec = now.tv_sec - sPingReply.pBest->tmRecvEpoch.tv_sec;
+
+	// diff.tv_usec could be <= 0
+	if (now.tv_usec > sPingReply.pBest->tmRecvEpoch.tv_usec)
+	{
+		diff.tv_usec = now.tv_usec - sPingReply.pBest->tmRecvEpoch.tv_usec;
+	}
+	else
+	{
+		diff.tv_usec = sPingReply.pBest->tmRecvEpoch.tv_usec - now.tv_usec;
+		diff.tv_usec = 1000000 - diff.tv_usec;
+	}
+#endif
+
+	// take into account the PONG frame duration
+	diff.tv_usec += 128000;
+
+	// Compute the new values
+	diff.tv_sec += (diff.tv_usec / 1000000);
+	diff.tv_usec %= 1000000;
+
+	return diff;
+}
+
 /*!
  * @static
  * @brief This function update "Periodic Install" counter

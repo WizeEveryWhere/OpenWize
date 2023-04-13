@@ -84,7 +84,33 @@ typedef enum {
     PING_REPLY7 = 0x3C, //!< Response 7 received for the last connectivity test
     PING_REPLY8 = 0x3D, //!< Response 8 received for the last connectivity test (Weakess L7RssiDown)
     EXECPING_PERIODE = 0x3E, //!< Periodic time of execping sending by the device, in months
-    LAST_ID = EXECPING_PERIODE, //!< Don't remove, it marks the end of table.
+	// ---
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+	AUTO_ADJ_CLK_FREQ    = 0xDA, //!< Clock and Frequency Offset Auto-Adjustment. MSB : control, LSB : RSSI min. level (see struct adm_config_s).
+	// ---
+	ADM_ANN_DIS_FLT      = 0xDD, //!< ADM ANN Reception Filter disable (see struct adm_config_s)
+    ADM_PARAM_DIS_FLT    = 0xDE, //!< ADM R/W parameters Reception Filter disable (see struct adm_config_s)
+    ADM_KEY_DIS_FLT      = 0xDF, //!< ADM Key Change Reception Filter disable (see struct adm_config_s)
+	// ---
+	DWN_DAY_PRG_WIN_MIN  = 0xE0, //!< Minimum delay between the AnnDownload and the day of the first block (see struct adm_config_s)
+    DWN_DAY_PRG_WIN_MAX  = 0xE1, //!< Maximum delay between the AnnDownload and the day of the first block (see struct adm_config_s)
+    MNT_WINDOW_DURATION  = 0xE2, //!< Maintenance Window duration in second from 00:00:00 UTC (see struct adm_config_s)
+	// ---
+	DWN_DELTA_SEC_MIN    = 0xE3, //!< Minimum deltaSec accepted in second (see struct adm_config_s)
+    DWN_BLK_DURATION_MOD = 0xE4, //!< Duration of one block in ms (see struct adm_config_s)
+    DWN_BLK_NB_MAX       = 0xE5, //!< Maximum number of block accepted (see struct adm_config_s)
+	// ---
+	ADM_RECEPTION_OFFSET = 0xEA, //!< Offset to start RX before (in ms) (MSB first, Signed number limited to +/-63ms).
+    DWN_RECEPTION_OFFSET = 0xEB, //!< Offset to start RX before (in ms) (MSB first, Signed number limited to +/-1000ms).
+	// ---
+	L2_EXCH_DIS_FLT      = 0xEE, //!< L2 Reception Filter disable (see struct proto_config_s)
+    L6_EXCH_DIS_FLT      = 0xEF, //!< L6 Reception Filter disable (see struct proto_config_s)
+	// ---
+	LAST_ID = L6_EXCH_DIS_FLT, //!< Don't remove, it marks the end of table.
+#else
+	LAST_ID = EXECPING_PERIODE, //!< Don't remove, it marks the end of table.
+#endif
+
 }param_lan_ids_e;
 
 /******************************************************************************/

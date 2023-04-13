@@ -75,8 +75,8 @@ struct time_upd_s
 	union {
 		uint16_t drift;
 		struct {
-			uint8_t period; //!< Drift correction period
 			int8_t  value;  //!< Drift correction value
+			uint8_t period; //!< Drift correction period
 		};
 	}drift_;
 

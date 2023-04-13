@@ -273,7 +273,8 @@ static uint32_t _adm_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 						// FIXME : with MCU low frequency, take into account the time required to initialize the PHY device
 						if ( TimeEvt_TimerStart(
 								&pCtx->sTimeEvt,
-								pPrvCtx->u8ExchRxDelay, 0,
+								pPrvCtx->u8ExchRxDelay,
+								pPrvCtx->i16DeltaRxMs,
 								(uint32_t)SES_EVT_ADM_DELAY_EXPIRED
 								))
 						{
