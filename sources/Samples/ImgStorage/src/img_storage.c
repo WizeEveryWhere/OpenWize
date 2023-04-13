@@ -343,9 +343,10 @@ inline void ImgStore_SetPending(img_pend_e ePend)
   */
 int8_t ImgStore_Init(uint16_t u16NbExpectedBlk)
 {
-	if (u16NbExpectedBlk > BLOCK_NB || ( sImgMgrCtx.eImgPend != PENDING_NONE) )
+	uint16_t max_blk_nb = (sImgMgrCtx.u32Size / BLOCK_SZ);
+	if (u16NbExpectedBlk > max_blk_nb || ( sImgMgrCtx.eImgPend != PENDING_NONE) )
 	{
-		// the given expected number of block exceed the reserved area
+		// the given expected number of block exceed the reserved area or uninit.
 		return 1;
 	}
 	// erase the memory area
@@ -370,13 +371,14 @@ int8_t ImgStore_Init(uint16_t u16NbExpectedBlk)
   * @brief  Initialize the image manager context.
   *
   * @param [in] u32ImgAdd  Software Image address (64 bits aligned)
+  * @param [in] u32ImgSize Software Image max. size (64 bits aligned)
   * @param [in] pfWrite    Function pointer on write sub function
   * @param [in] pfErase    Function pointer on erase sub function
   *
   * @retval  0 Success
   * @retval  1 Failed (at least one of given parameters is out of range)
   */
-int8_t ImgStore_Setup(uint32_t u32ImgAdd, pfWriteFlash_t pfWrite, pfEraseFlash_t pfErase)
+int8_t ImgStore_Setup(uint32_t u32ImgAdd, uint32_t u32ImgSize, pfWriteFlash_t pfWrite, pfEraseFlash_t pfErase)
 {
 	if (u32ImgAdd & 0x7 || pfErase == NULL || pfWrite == NULL)
 	{
@@ -389,7 +391,7 @@ int8_t ImgStore_Setup(uint32_t u32ImgAdd, pfWriteFlash_t pfWrite, pfEraseFlash_t
 		return 1;
 	}
 	sImgMgrCtx.u32Addr = u32ImgAdd;
-	sImgMgrCtx.u32Size = IMG_MAX_SZ; //IMG_NB_PAGES;
+	sImgMgrCtx.u32Size = u32ImgSize;
 	sImgMgrCtx.eImgPend = PENDING_NONE;
 	sImgMgrCtx.erase = pfErase; //&BSP_Flash_EraseArea;
 	sImgMgrCtx.write = pfWrite; //&BSP_Flash_Write;

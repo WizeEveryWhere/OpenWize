@@ -62,7 +62,7 @@ uint16_t ImgStore_GetMaxBlockNb(void);
 img_pend_e ImgStore_GetPending(void);
 void ImgStore_SetPending(img_pend_e ePend);
 int8_t ImgStore_Init(uint16_t u16NbExpectedBlk);
-int8_t ImgStore_Setup(uint32_t u32ImgAdd, pfWriteFlash_t pfWrite, pfEraseFlash_t pfErase);
+int8_t ImgStore_Setup(uint32_t u32ImgAdd, uint32_t u32ImgSize, pfWriteFlash_t pfWrite, pfEraseFlash_t pfErase);
 
 
 #ifdef __cplusplus
