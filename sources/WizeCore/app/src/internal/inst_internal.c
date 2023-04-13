@@ -44,7 +44,6 @@ extern "C" {
 
 #include <stddef.h>
 #include <string.h>
-#include <time.h>
 #include <machine/endian.h>
 
 /*
@@ -109,7 +108,8 @@ inst_ping_t InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx)
 		// set all to the "worst" value (0 represent the worst rssi -147.5 dBm )
 		ping_reply_ctx->aPingReplyList[idx].xPingReply.RssiUpstream = 0;
 		ping_reply_ctx->aPingReplyList[idx].xPingReply.RssiDownstream = 0;
-		ping_reply_ctx->aPingReplyList[idx].u32RecvEpoch = 0;
+		ping_reply_ctx->aPingReplyList[idx].tmRecvEpoch.tv_sec = 0;
+		ping_reply_ctx->aPingReplyList[idx].tmRecvEpoch.tv_usec = 0;
 		ping_reply_ctx->aPingReplyList[idx].u32PongEpoch = 0;
 		ping_reply_ctx->aPingReplyList[idx].i16PongFreqOff = 0;
 
@@ -124,9 +124,10 @@ inst_ping_t InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx)
 	Param_Access(PING_RX_DELAY, (uint8_t*)&(sInstPing.L7PingRxDelay), 0);
 	Param_Access(PING_RX_LENGTH, (uint8_t*)&(sInstPing.L7PingRxLength), 0);
 
-	time_t t;
-	time(&t);
-	ping_reply_ctx->u32PingEpoch = t - EPOCH_UNIX_TO_OURS;// TODO : time take stack but doesn't release it
+	time( (time_t *)(&ping_reply_ctx->u32PingEpoch) );
+#ifdef HAS_HIRES_TIME_MEAS
+	HiResTime_EnDis(1);
+#endif
 	return sInstPing;
 }
 
@@ -141,10 +142,9 @@ inst_ping_t InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx)
 void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 {
 	// warning RSSI => 255 : best; 0 : worst
-	uint8_t idx;
-	time_t t;
 	ping_reply_list_t *pCurrent;
 	ping_reply_list_t *pNew;
+	uint8_t idx;
 
 	// increment the number of received pong
 	if (ping_reply_ctx->u8NbPong < 255) {
@@ -194,11 +194,14 @@ void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pNetMsg)
 	// fill the new one
 	memcpy(&(pNew->xPingReply), pNetMsg->pData, 8);
 	pNew->xPingReply.RssiDownstream = pNetMsg->u8Rssi;
-    time(&t);
-	pNew->u32RecvEpoch = t - EPOCH_UNIX_TO_OURS;
 	pNew->u32PongEpoch = pNetMsg->u32Epoch;
 	pNew->i16PongFreqOff = pNetMsg->i16TxFreqOffset;
 
+#ifdef HAS_HIRES_TIME_MEAS
+	pNew->tmRecvEpoch.tv_usec = HiResTime_Get(4);
+#else
+	gettimeofday(&pNew->tmRecvEpoch, NULL);
+#endif
 	// insert between pCurrent and pCurrent->pNext
 	pNew->pNext = pCurrent->pNext;
 	pCurrent->pNext = pNew;
@@ -224,32 +227,13 @@ uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx)
 	if (ping_reply_ctx->u8NbPong > 0)
 	{
 		uint32_t tmp;
-		uint32_t diff_time;
-		if(ping_reply_ctx->pBest->xPingReply.RssiDownstream > ping_reply_ctx->sPingReplyConfig.AutoAdj_Rssi)
-		{
-			if (ping_reply_ctx->sPingReplyConfig.AutoClk)
-			{
-				// Adjust the Last Install request epoch to the new one
-				diff_time = ping_reply_ctx->pBest->u32RecvEpoch - ping_reply_ctx->u32PingEpoch;
-				ping_reply_ctx->u32PingEpoch = ping_reply_ctx->pBest->u32PongEpoch - diff_time;
-				// Setup the CLOCK_CURRENT_EPOC
-				tmp = __htonl(ping_reply_ctx->pBest->u32PongEpoch);
-				Param_Access(CLOCK_CURRENT_EPOC, (uint8_t*)&( tmp ), 1);
-			}
-			if (ping_reply_ctx->sPingReplyConfig.AutoFreq)
-			{
-				tmp = (uint32_t)__htons(ping_reply_ctx->pBest->i16PongFreqOff);
-				Param_Access(TX_FREQ_OFFSET, (uint8_t*)&( tmp ), 1);
-			}
-		}
-
 		for (idx = (NB_PING_REPLPY-1); idx >= 0; idx--)
 		{
 			Param_Access(PING_REPLY1 + idx, (uint8_t*)&(pCurrent->xPingReply), 1);
 			pCurrent = pCurrent->pNext;
 		}
 
-		tmp = __htonl(ping_reply_ctx->u32PingEpoch);
+		tmp = __htonl( ping_reply_ctx->u32PingEpoch - EPOCH_UNIX_TO_OURS );
 		Param_Access(PING_LAST_EPOCH, (uint8_t*)&(tmp), 1);
 		Param_Access(PING_NBFOUND, (uint8_t*)&(ping_reply_ctx->u8NbPong), 1);
 

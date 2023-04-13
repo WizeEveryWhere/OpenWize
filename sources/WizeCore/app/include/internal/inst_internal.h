@@ -43,6 +43,7 @@ extern "C" {
 #include "app_layer.h"
 
 #include <stdint.h>
+#include <time.h>
 
 /*!
  * @cond INTERNAL
@@ -55,22 +56,6 @@ extern "C" {
  * @}
  * @endcond
  */
-
-/*!
- * @brief This struct defines the ping_reply configuration.
- */
-struct ping_reply_config_s{
-	union {
-		uint8_t AutoAdj_ClkFreq;     /*!< Clock and Frequency Offset Auto-Adjustment */
-		struct
-		{
-			uint8_t AutoClk:1;  /*!< Coarse clock auto-adjust on PONG. 1: enable, 0: disable */
-			uint8_t AutoFreq:1; /*!< Frequency Offset auto-adjust on PONG. 1: enable, 0: disable */
-		} ;
-	};
-	uint8_t AutoAdj_Rssi;   /*!< Clock and Frequency Offset Auto-Adjustment received frame RSSI min.*/
-};
-
 
 /*!
  * @brief This struct defines the ping_reply element
@@ -86,10 +71,10 @@ typedef struct {
  */
 typedef struct ping_reply_list_s{
 	struct ping_reply_list_s *pNext; /*!< Pointer on the next element */
+	struct timeval tmRecvEpoch;      /*!< Epoch of received Pong (in ms) */
 	ping_reply_t xPingReply;         /*!< Content values of the received pong */
-	uint32_t u32RecvEpoch;           /*!< Pong Reception Epoch */
-	uint32_t u32PongEpoch;           /*!< Pong Send Epoch */
-	int16_t i16PongFreqOff;          /*!< Pong Frequency offset */
+	uint32_t u32PongEpoch;           /*!< Pong content Epoch */
+	int16_t i16PongFreqOff;          /*!< Pong content Frequency offset */
 } ping_reply_list_t;
 
 /*!
@@ -100,9 +85,8 @@ struct ping_reply_ctx_s
 	ping_reply_list_t aPingReplyList[NB_PING_REPLPY]; /*!< Table of received Pong */
 	ping_reply_list_t *pWorst;                        /*!< Pointer on the worst RSSI */
 	ping_reply_list_t *pBest;                         /*!< Pointer on the best RSSI */
-	uint32_t u32PingEpoch;                            /*!< Ping Send Epoch */
+	uint32_t u32PingEpoch;                            /*!< Epoch of sent Ping */
 	uint8_t u8NbPong;                                 /*!< Number of received Pong */
-	struct ping_reply_config_s sPingReplyConfig;      /*!< ping_reply configuration */
 };
 
 inst_ping_t InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx);
