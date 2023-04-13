@@ -60,6 +60,7 @@ typedef enum
 } logger_level_e;
 
 #ifdef LOGGER_HAS_COLOR
+#define LOG_COLOR_EN_MSK 0x80 //!< Enable/Disable Color mask
 /*!
  * This enum define the logger level id, mainly use for add color
  */
@@ -87,7 +88,6 @@ typedef enum
 	LOG_TSTAMP_HIRES = 0x2, //!< Add Timestamp (epoch) plus millisecond to the log output
 	LOG_TSTAMP_TRUNC = 0x4, //!< Truncate Timestamp on 5 digits
 } logger_tstamp_e;
-
 
 extern uint8_t gLoggerLevel;
 

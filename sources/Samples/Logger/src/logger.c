@@ -216,30 +216,35 @@ void Logger_Post(uint8_t level, char *format, ...)
 				p += len;
 //#define LOGGER_HAS_COLOR
 #ifdef LOGGER_HAS_COLOR
-				// fill the color (opening part)
-				len = snprintf((char*) p, max, color_str[level] );
-				max -= len + sizeof(END_ESC);
-				p += len;
-				if (max > 0)
+				if (sLoggerCtx.u8Tstmp & LOG_COLOR_EN_MSK)
+				{
+					// fill the color (opening part)
+					len = snprintf((char*) p, max, color_str[level] );
+					max -= len + sizeof(END_ESC);
+					p += len;
+					if (max > 0)
+					{
+						// fill the message
+						len = vsnprintf((char*) p, max, format, args);
+						if (len > max)
+						{
+							p += max;
+							*(p-1) = '\n';
+						}
+						else
+						{
+							p += len;
+						}
+					}
+					// fill the color (ending part)
+					len = snprintf((char*) p, sizeof(END_ESC), END_ESC);
+				}
+				else
+#endif
 				{
 					// fill the message
 					len = vsnprintf((char*) p, max, format, args);
-					if (len > max)
-					{
-						p += max;
-						*(p-1) = '\n';
-					}
-					else
-					{
-						p += len;
-					}
 				}
-				// fill the color (ending part)
-				len = snprintf((char*) p, sizeof(END_ESC), END_ESC);
-#else
-				// fill the message
-				len = vsnprintf((char*) p, max, format, args);
-#endif
 			}
 #ifdef LOGGER_USE_FWRITE
 			sLoggerCtx.aPoolLen[id] = (uint8_t)( p - sLoggerCtx.aPoolBuffer[id] +  len );
