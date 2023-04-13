@@ -68,6 +68,9 @@
 
 /* ########################## Assert Selection ############################## */
 #cmakedefine USE_FULL_ASSERT              (@USE_FULL_ASSERT@)
+
+/* ########################## LL Selection ############################## */
+#cmakedefine USE_FULL_LL_DRIVER
  
 /* ################## Register callback feature configuration ############### */
 #cmakedefine USE_HAL_ADC_REGISTER_CALLBACKS        1U
