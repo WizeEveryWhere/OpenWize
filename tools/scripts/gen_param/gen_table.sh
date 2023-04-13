@@ -124,7 +124,10 @@ function printIDs {
     local mID=$2;
     local name=$3;
     local desc=$4;
-    printf "    %s = 0x%s, //!< %s\n" "${name}" "${mID}" "${desc}" >> ${hFile};
+    #printf "    %s = 0x%s, //!< %s\n" "${name}" "${mID}" "${desc}" >> ${hFile};
+    #printf "    %s = 0x%s, /*!< %s */\n" "${name}" "${mID}" ${desc[@]} >> ${hFile};
+    printf "    %s = 0x%s, " "${name}" "${mID}" >> ${hFile};
+    printf "/*!< %s */\n" "${desc}" >> ${hFile};
 }
 
 # Print one line of parameter value table (in the value file)
@@ -142,7 +145,7 @@ function printVal {
     #echo "value = ${value}; size = ${size}"
     #printf "value = ${value}; size = ${size}\n"
 
-    if ! [[ ${value} =~ ${re} ]]
+    if ! [[ ${value} =~ ${re} ]] # It's an hex format value 
     then
         #echo "value = ${value}; size = ${size}"
         for i in $(seq 0 $((${size} -1)) )
@@ -158,10 +161,11 @@ function printVal {
                 #echo "... is a string"
             fi
         done
-        printf " //!< %s\n   " "${desc}" >> ${vFile};
+        #printf " //!< %s\n   " "${desc}" >> ${vFile};
+        printf " /*!< %s*/\n   " "${desc}" >> ${vFile};
         #printf "\n" >> ${vFile};
         
-    else
+    else # It's an decimal format value 
         #echo "value = ${value}; size = ${size}"
         if [[ ${size} -gt 1 ]] 
         then 
@@ -182,7 +186,7 @@ function printVal {
                 v=$(( ${v} >> 8))
             done
         fi
-        printf " //!< %s\n   " "${desc}" >> ${vFile};
+        printf " /*!< %s*/\n   " "${desc}" >> ${vFile};
         #printf "\n" >> ${vFile};
     fi
 }
@@ -195,11 +199,13 @@ function printVal {
 # in : the acces file 
 # in : the value file
 # in : the header file
+# in : the setup file
 function buildParametersTables {
     local mFile=$1;
     local sFile=$2;
     local vFile=$3;
     local hFile=$4;
+    local tFile=$5;
 
     ###########################################################################
     local field="Parameter";
@@ -236,6 +242,15 @@ function buildParametersTables {
     printf "/*!\n * @brief This array define the parameter default value\n */\n" >> ${vFile};
     printf "const uint8_t a_ParamDefault[] = {\n   " >> ${vFile};
     
+    # print setup file header
+    if [[ ${generate_setup} == "1" ]]
+    then
+        printf "\n/******************************************************************************/\n" >> ${tFile};
+        printf "\n#ifndef ATTR_PARAM_TABLE\n#define ATTR_PARAM_TABLE()\n#endif\n" >> ${tFile};
+        printf "/*!\n * @brief This array define the parameter default value\n */\n" >> ${tFile};
+        printf "ATTR_PARAM_TABLE()\n" >> ${tFile};
+        printf "const uint8_t aParamSetup[] = {\n   " >> ${tFile};
+    fi
     ##
     local i=0;
     local j=0;
@@ -298,6 +313,11 @@ function buildParametersTables {
             # Print the parameter value 
             printVal "${vFile}" "${value}" ${size} "${desc}";
             
+            if [[ ${generate_setup} == "1" ]]
+            then
+                printVal "${tFile}" "${value}" ${size} "${desc}";
+            fi
+            
             if [[ ${is_silent} == 0 ]]
             then
                 printf "Id [%s] = %s // %s \n" "${mID}" "${value}" "${desc}";
@@ -334,6 +354,11 @@ function buildParametersTables {
     printf "}param_ids_e;\n" >> ${hFile};
     
     printf "};\n" >> ${vFile};
+    
+    if [[ ${generate_setup} == "1" ]]
+    then
+        printf "};\n" >> ${tFile};
+    fi
 }
 
 #===============================================================================
@@ -498,13 +523,13 @@ function usage {
 # Clean input merged xml file
 function clean_merged_xml() {
     inFile=$1;
-    mList=($( grep -n "<ParameterList>" ${inFile} | sed 's/:<ParameterList>//g' )); 
+    mList=($( grep -n "<ParameterList>" ${inFile} | sed 's/:\s*<ParameterList>\s*//g' )); 
     unset 'mList[0]';
     for l in ${mList[@]}
     do 
         sed -i "${l}s/<ParameterList>/<\!-- Start -->/g" ${inFile}; 
     done;
-    mList=($( grep -n "</ParameterList>" ${inFile} | sed 's/:<\/ParameterList>//g' )); 
+    mList=($( grep -n "</ParameterList>" ${inFile} | sed 's/:\s*<\/ParameterList>\s*//g' )); 
     unset 'mList[-1]';
     for l in ${mList[@]}
     do 
@@ -516,6 +541,8 @@ function clean_merged_xml() {
 header_FileName="parameters_cfg.h";
 source_FileName="parameters_cfg.c";
 value_FileName="parameters_default.c";
+setup_FileName="parameters_setup.c";
+generate_setup=0;
 
 function build_tables(){
 
@@ -555,9 +582,8 @@ extern "C" {
     printf "%s\n" "${source_str_head}" >> ${sourceFile};
     printf "#include \"%s\"\n\n" "${header_FileName}" >> ${sourceFile};
     
-    
     ###########################################################################
-    # Start:Value file build        
+    # Start:Value file build
     valueFile="${DEST_PATH}/gen/${value_FileName}";
     
     # value definitions
@@ -565,10 +591,19 @@ extern "C" {
     local value_str_foot=""
     printHeaders "${xmlFile}(${tag})" "${valueFile}";
     printf "%s\n\n" "${value_str_head}" >> ${valueFile};
-    
+
+    ###########################################################################
+    # Start:Setup file build
+    setupFile="${DEST_PATH}/gen/${setup_FileName}";
+    # Generate setup file
+    if [[ ${generate_setup} == "1" ]]
+    then
+        printHeaders "${xmlFile}(${tag})" "${setupFile}";
+        printf "%s\n\n" "${value_str_head}" >> ${setupFile};
+    fi
     ###########################################################################
     # Access tables build    
-    buildParametersTables "${xmlFile}" "${sourceFile}" "${valueFile}" "${headerFile}";
+    buildParametersTables "${xmlFile}" "${sourceFile}" "${valueFile}" "${headerFile}" "${setupFile}";
     
     ###########################################################################
     # Restriction tables build
@@ -585,6 +620,14 @@ extern "C" {
     ###########################################################################
     # End:Value file build    
     printFooter "${valueFile}" "${value_str_foot}";
+
+    ###########################################################################
+    # End:Setup file build    
+    if [[ ${generate_setup} == "1" ]]
+    then
+        printFooter "${setupFile}" "${value_str_foot}";
+    fi
+    ###########################################################################
 }
 
 # 
@@ -615,6 +658,10 @@ case $1 in
         ;;
     --dest)
         shift; DEST_PATH="$1"; shift;
+        ;;
+    --setup)
+        generate_setup=1;
+        shift;
         ;;
     *)
         shift;;

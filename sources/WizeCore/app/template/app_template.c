@@ -27,6 +27,79 @@ static inline void _dwn_complete_(void);
 
 /******************************************************************************/
 
+/*
+ * return :
+ * - Timeout
+ * - Session Error
+ * - Nb pong
+ * - Is ADM_WRITE_PARAM
+ */
+#define LO_ITF_TMO_EVT 0xFFFFFFFF
+
+const uint32_t session_mask[SES_NB] =
+{
+	[SES_INST] = SES_FLG_INST_MSK,
+	[SES_ADM]  = SES_FLG_ADM_MSK,
+	[SES_DWN]  = SES_FLG_DWN_MSK
+};
+
+int32_t _wait_session_complete_(ses_type_t eSesId)
+{
+	uint32_t ret;
+	uint32_t ulEvent;
+	uint32_t mask;
+
+	if( eSesId < SES_NB)
+	{
+		mask = session_mask[eSesId];
+		do
+		{
+			if ( sys_flag_wait(&ulEvent, LO_ITF_TMO_EVT) == 0 )
+			{
+				// Timeout
+				return -1;
+			}
+
+			ret = WizeApp_Common(ulEvent);
+			ulEvent &= mask & SES_FLG_SES_COMPLETE_MSK;
+		} while ( !(ulEvent) );
+
+		ulEvent &= mask & SES_FLG_SES_ERROR_MSK;
+		if ( !(ulEvent) )
+		{
+			if(eSesId == SES_ADM)
+			{
+				if (ret == ADM_WRITE_PARAM)
+				{
+					return 1;
+				}
+				else if (ret == ADM_ANNDOWNLOAD)
+				{
+					sys_flag_set(hUpdateTask, UPDATE_REQ(UPDATE_REQ_START) );
+				}
+			}
+			return 0;
+		}
+	}
+	return -1;
+}
+
+
+uint8_t App_GetAdmCmd(uint8_t *pData, uint8_t *rssi)
+{
+	uint8_t size = 0;
+	if(pData && rssi)
+	{
+		if ( ((admin_rsp_t*)sAdmCtx.aSendBuff)->L7ErrorCode == ADM_NONE )
+		{
+			size = sAdmCtx.sCmdMsg.u8Size - 1;
+			*rssi = sAdmCtx.sCmdMsg.u8Rssi;
+			memcpy(pData, &(sAdmCtx.aRecvBuff[1]), size);
+		}
+	}
+	return size;
+}
+
 void App_Process(uint32_t u32Evt)
 {
 	uint32_t ret;

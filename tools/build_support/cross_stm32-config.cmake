@@ -50,8 +50,9 @@ macro(set_cross_stm32)
     set(COMMON_FLAGS "${COMMON_FLAGS} -D${VENDOR_MCU}")
     
     set(COMMON_LINKER_FLAGS "")
-    set(COMMON_LINKER_FLAGS " -Wl,--gc-sections -static ")
-
+    #set(COMMON_LINKER_FLAGS " -Wl,--gc-sections -static ")
+    set(COMMON_LINKER_FLAGS " -static ")
+    
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMMON_FLAGS}")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMMON_FLAGS}")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${COMMON_LINKER_FLAGS}")

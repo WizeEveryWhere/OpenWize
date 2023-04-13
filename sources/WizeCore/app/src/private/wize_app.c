@@ -77,7 +77,6 @@ struct inst_mgr_ctx_s sInstCtx;
  *          Optionally : sCmdMsg.u16Id, sRspMsg.u16Id, aRecvBuff, aSendBuff
  *
  */
-// Must be saved (part only)
 struct adm_mgr_ctx_s sAdmCtx;
 
 /*!

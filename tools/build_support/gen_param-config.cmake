@@ -53,7 +53,7 @@ function(gen_param)
         
         execute_process (
             COMMAND 
-                bash -c "mkdir -p ${GEN_PARAM_DESTINATION}/gen; xmlmerge --compact -o ${GEN_PARAM_DESTINATION}/gen/.MergedParam.xml ${GEN_PARAM_SOURCE}"
+                bash -c "mkdir -p ${GEN_PARAM_DESTINATION}/gen; xmlmerge -o ${GEN_PARAM_DESTINATION}/gen/.MergedParam.xml ${GEN_PARAM_SOURCE}"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             )
 
