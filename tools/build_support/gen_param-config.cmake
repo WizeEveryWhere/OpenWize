@@ -11,7 +11,7 @@ cmake_dependent_option(GENERATE_PARAM_VERBOSE "Enable verbosity when generate pa
 #   
 function(gen_param)
     set(options "")
-    set(oneValueArgs SOURCE DESTINATION)
+    set(oneValueArgs SOURCE DESTINATION OPT)
     set(multiValueArgs "")
     cmake_parse_arguments(GEN_PARAM 
         "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
@@ -28,6 +28,12 @@ function(gen_param)
         if(GEN_PARAM_DESTINATION STREQUAL "")
             message(FATAL_ERROR "Can't generate parameters without DESTINATION dir")
         endif()
+        
+        if(GEN_PARAM_OPT)
+            set(opt " --setup ")
+        else()
+            set(opt "")
+        endif()        
         
         if(GENERATE_PARAM_VERBOSE)
             set(verbo 1)
@@ -59,7 +65,7 @@ function(gen_param)
 
         execute_process (
             COMMAND 
-                bash -c "export IS_VERBOSE_ENV=${verbo}; export PATH=$PATH:./tools/scripts/gen_param:./third-party/.OpenWize/tools/scripts/gen_param; gen_table.sh --in ${GEN_PARAM_DESTINATION}/gen/.MergedParam.xml --dest ${GEN_PARAM_DESTINATION};"
+                bash -c "export IS_VERBOSE_ENV=${verbo}; export PATH=$PATH:./tools/scripts/gen_param:./third-party/.OpenWize/tools/scripts/gen_param; gen_table.sh ${opt} --in ${GEN_PARAM_DESTINATION}/gen/.MergedParam.xml --dest ${GEN_PARAM_DESTINATION};"
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
             )
         message("   -----------------------------")

@@ -513,6 +513,7 @@ function buildRestrictionsTables {
 #===============================================================================
 function usage {
     echo "Usage is :"
+    echo " --setup"
     echo " --in xml_file"
     echo " --dest dest_dir (Optional, default is :.)"
 }
@@ -690,6 +691,10 @@ else
         exit 0;
     else 
         mkdir -p "${DEST_PATH}/gen";
+        if [[ ${generate_setup} == "1" ]]
+        then
+            echo "      -> Setup file will be also generated";
+        fi
         build_tables;
     fi
 fi
