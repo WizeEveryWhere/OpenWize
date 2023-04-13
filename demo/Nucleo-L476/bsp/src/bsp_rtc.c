@@ -266,9 +266,10 @@ void BSP_Rtc_Time_UpdateDaylight(daylight_sav_e daylight_sav)
   * @brief This function force the RTC wake-up interrupt (in one second)
   *
   */
-void BSP_Rtc_Time_ForceNotify(void)
+void BSP_Rtc_Time_ForceNotify(uint32_t wakup_cycles)
 {
-	HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 1, RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
+	HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, wakup_cycles, RTC_WAKEUPCLOCK_RTCCLK_DIV2);
+	//HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 1, RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
 	/*
 	 *  The following should be better, but hal_rtc check that WUTF flag,
 	 *  indicating that wakeup timer reload.

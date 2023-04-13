@@ -140,9 +140,14 @@ dev_res_e BSP_Flash_Write(uint32_t u32Address, uint64_t *pData, uint32_t u32NbDw
 	{
 		eRet = DEV_SUCCESS;
 		u32TgtAdd = u32Address;
+
+		uint64_t data;
 		for (i = 0; i <u32NbDword; i++)
 		{
-			if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, u32TgtAdd, pData[i]) != HAL_OK)
+			// FIXME : bad!!! but it's seems required that pData is aligned on 8 bytes
+			memcpy((void*)&data, (void*)&(pData[i]), 8);
+
+			if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, u32TgtAdd, data) != HAL_OK)
 			{
 				eRet = DEV_FAILURE;
 				//err_code = HAL_FLASH_GetError();

@@ -75,6 +75,8 @@ extern uint8_t ascii2hex(uint16_t u16Char);
 extern uint16_t hex2ascii(uint8_t u8Hex);
 
 extern void msleep(uint32_t milisecond);
+extern void usleep(uint32_t microsecond);
+
 extern void Error_Handler(void);
 extern void BSP_Init(uint32_t u32BootState);
 

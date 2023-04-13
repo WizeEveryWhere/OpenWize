@@ -74,7 +74,7 @@ time_t BSP_Rtc_Time_Read(void);
 
 void BSP_Rtc_Time_UpdateDaylight(daylight_sav_e dayligth_sav);
 void BSP_Rtc_Time_Update (time_t t);
-void BSP_Rtc_Time_ForceNotify(void);
+void BSP_Rtc_Time_ForceNotify(uint32_t wakup_cycles);
 void BSP_Rtc_Alarm_ForceNotify(void);
 
 void BSP_Rtc_Time_Update_SetCallback (pfEventCB_t const pfCb);

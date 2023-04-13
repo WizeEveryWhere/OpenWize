@@ -102,6 +102,17 @@ uint16_t hex2ascii(uint8_t u8Hex)
 //inline __attribute__((always_inline))
 void msleep(uint32_t milisecond) { HAL_Delay(milisecond); }
 
+/*!
+  * @brief Wait for (inaccurate) microsecond
+  *
+  * @param [in] microsecond Number of microsecond to wait
+  */
+void usleep(uint32_t microsecond)
+{
+	uint32_t cnt = microsecond * ( SystemCoreClock / 1000000);
+	while(cnt) { cnt--; }
+}
+
 /******************************************************************************/
 /* Libc print wrapper functions */
 /******************************************************************************/

@@ -96,6 +96,10 @@ _settimeofday(const struct timeval *tp, const struct timezone *tzp)
 	(void)tzp;
 	if (tp)
 	{
+		/*
+		 * Note :
+		 * The RTC_SSR (Sub Second register) is read-only.
+		*/
 		/* Ask the host for the seconds since the Unix epoch.  */
 		BSP_Rtc_Time_Write( tp->tv_sec );
 	}
