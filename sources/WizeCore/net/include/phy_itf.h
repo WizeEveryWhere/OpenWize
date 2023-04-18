@@ -131,6 +131,8 @@ typedef enum {
 	PHY_CTL_GET_ERR           , /*!< Get the Last error id */
 	PHY_CTL_GET_STR_ERR       , /*!< Get the Last error string */
 
+	PHY_CTL_GET_STATE         , /*!< Get Phy device state */
+
 	PHY_CTL_SPE         = 0x40,
 	PHY_CTL_SPE_TEST_MODE     , /*!< Test mode (if any) */
 

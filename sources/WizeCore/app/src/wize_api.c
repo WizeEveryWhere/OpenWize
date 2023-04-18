@@ -485,7 +485,8 @@ void WizeApi_Download_Cancel(void)
 __attribute__((weak))
 void WizeApi_CtxClear(void)
 {
-	memset((void*)(&sNetCtx), 0, sizeof(sNetCtx));
+	// FIXME: TODO : clear the deivce info
+	// memset((void*)(&sNetCtx), 0, sizeof(sNetCtx));
 	/*
 	 * TODO :
 	BSP_Rtc_Backup_Write(0, (uint32_t)0);
