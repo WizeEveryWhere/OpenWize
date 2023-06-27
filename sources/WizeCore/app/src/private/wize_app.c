@@ -241,7 +241,7 @@ inline
 wize_api_ret_e WizeApp_Send(uint8_t *pData, uint8_t u8Size)
 {
 	// Start ADM Data session
-	return WizeApi_Send(pData, u8Size, APP_DATA);
+	return WizeApi_Send(pData, u8Size, 0);
 }
 
 /*!
@@ -257,7 +257,7 @@ inline
 wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size)
 {
 	// Start ADM Data Prio session
-	return WizeApi_Send(pData, u8Size, APP_DATA_PRIO);
+	return WizeApi_Send(pData, u8Size, 1);
 }
 
 /******************************************************************************/
@@ -336,7 +336,7 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 		// treat CMD and prepare RSP
 		uint8_t rsp_available = AdmInt_PreCmd( &(sAdmCtx.sCmdMsg), &(sAdmCtx.sRspMsg) );
 
-		// response not yet available (EXECPING or ANNDOWN external FW case)
+		// response not yet available (EXECPING or ANNDOWN FW cases)
 		if ( rsp_available == 0)
 		{
 			_bPendAction_ |= WIZEAPP_ADM_RSP_PEND;
@@ -353,14 +353,16 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 					break;
 			}
 		}
-		// response is available or already treated
+		// response is available or already treated (READ_PARAM, WRITE_PARAM, WRITE_KEY cases)
 		else
 		{
-			if ( rsp_available == 1) // response is available
+			// response is available
+			if ( rsp_available == 1)
 			{
 				_bPendAction_ |= WIZEAPP_ADM_CMD_PEND;
 			}
-			else if ( rsp_available == 2) // action already done
+			// action already done
+			else if ( rsp_available == 2)
 			{
 				_bPendAction_ &= ~(WIZEAPP_ADM_CMD_PEND | WIZEAPP_ADM_RSP_PEND);
 			}

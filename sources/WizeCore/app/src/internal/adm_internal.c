@@ -154,10 +154,11 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	uint8_t ret = RSP_READY;
 	// check if CMD Id has not previously been received
-	if (pReqMsg->u16Id != pRspMsg->u16Id)
+	if ( (pReqMsg->u16Id != pRspMsg->u16Id) || ( (pReqMsg->u16Id == pRspMsg->u16Id) && (pRspMsg->u32Epoch == 0) ) )
 	{
 		pRspMsg->u8Type = APP_ADMIN;
 		pRspMsg->u16Id = pReqMsg->u16Id;
+		pRspMsg->u8KeyId = pReqMsg->u8KeyId;
 
 		// prepare the header
 		((admin_rsp_t*)(pRspMsg->pData))->L7ResponseId = pReqMsg->pData[0];
@@ -419,6 +420,7 @@ void AdmInt_WriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 
 		if (!sAdmConfig.KeyChgBypassUse)
 		{
+			pRspMsg->u8KeyId = KEY_CHG_ID;
 			if (pReqMsg->u8KeyId != KEY_CHG_ID)
 			{
 				// key change is not used

@@ -159,9 +159,11 @@ uint8_t Wize_ProtoExtract(
 		// all other
 		else
 		{
-			if (pCtx->u8Size > 0x15)
+			// here pCtx->u8Size is the size of L2 frame (i.e. L-Field)
+			if (pCtx->u8Size > (L2_EXCH_FIELDS_LEN + L6_EXCH_FIELDS_LEN) )
 			{
-				if (pCtx->u8Size <= pCtx->sProtoConfig.u8RecvLenMax)
+				// u8RecvLenMax + L6 fields length + L2 fields length (without LField)
+				if (pCtx->u8Size <= (pCtx->sProtoConfig.u8RecvLenMax + L2_EXCH_FIELDS_LEN + L6_EXCH_FIELDS_LEN) )
 				{
 					u8Ret = _exchange_extract(pCtx, pNetMsg);
 				}
@@ -205,6 +207,8 @@ uint8_t Wize_ProtoBuild(
     if (pCtx && pNetMsg && pCtx->pBuffer && pNetMsg->pData)
     {
 		pCtx->u8Size = 0;
+
+		// here pNetMsg->u8Size is the size of L7 frame
 		if (pNetMsg->u8Size > 0x0)
 		{
 			if (pNetMsg->u8Size <= pCtx->sProtoConfig.u8TransLenMax)
@@ -222,7 +226,8 @@ uint8_t Wize_ProtoBuild(
 		}
 		else
 		{
-			u8Ret = PROTO_FRAME_SZ_ERR;
+			u8Ret = PROTO_APP_MSG_SZ_ERR;
+			//u8Ret = PROTO_FRAME_SZ_ERR;
 		}
     }
     return u8Ret;
