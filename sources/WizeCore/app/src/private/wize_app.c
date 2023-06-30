@@ -668,16 +668,20 @@ static inline uint8_t _is_periodic_inst_req_(void)
 
 	Param_Access(EXECPING_PERIODE, &temp, 0);
 	v = temp*30;
-	if (gu16PeriodInstCnt >= v)
+
+	if (v) // If periodic PING/PONG is enable
 	{
-		// request for periodic install
-		return 1;
+		if (gu16PeriodInstCnt >= v)
+		{
+			// request for periodic install
+			return 1;
+		}
+		else
+		{
+			gu16PeriodInstCnt++;
+		}
 	}
-	else
-	{
-		gu16PeriodInstCnt++;
-		return 0;
-	}
+	return 0;
 }
 
 /*!
