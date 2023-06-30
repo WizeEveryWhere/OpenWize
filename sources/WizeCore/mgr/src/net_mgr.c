@@ -80,6 +80,11 @@ extern "C" {
 	#define _NET_MGR_TRANS_RETRIES_ 3
 #endif
 
+// Define the timeout expand in ms
+#ifndef NET_MGR_TMO_EXPAND
+	#define NET_MGR_TMO_EXPAND 900 // 847
+#endif
+
 // Define the timeout to "be notified" by an event
 #define NET_MGR_EVT_TIMEOUT() 0xFFFFFFFF
 
@@ -172,7 +177,7 @@ int32_t NetMgr_Init(void)
 		{
 			eStatus = WizeNet_Init(&sNetDev, &_net_mgr_evtCb_);
 		}
-		sWizeCtx.i16ExpandTmo = 900;
+		sWizeCtx.i16ExpandTmo = NET_MGR_TMO_EXPAND;
 	}
 	return eStatus;
 }
@@ -666,7 +671,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 
 	if(u32Evt & NETDEV_EVT_RX_STARTED)
 	{
-		if (sWizeCtx.eListenType == NET_LISTEN_TYPE_DETECT)
+		if (sWizeCtx.eListenType & NET_LISTEN_TYPE_DETECT)
 		{
 			sWizeCtx.u8Detected |= 0x01;
 		}
@@ -675,7 +680,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 	if(u32Evt & NETDEV_EVT_RX_COMPLETE)
 	{
 		// ensure to not overwriting net_msg_t buffer
-		if ( sWizeCtx.bListenPend && sWizeCtx.eListenType == NET_LISTEN_TYPE_MANY)
+		if ( sWizeCtx.bListenPend && (sWizeCtx.eListenType & NET_LISTEN_TYPE_MANY) )
 		{
 			// try to listen again
 			eStatus = _net_mgr_listen_with_retry_(pNetDev, sWizeCtx.u8RecvRetries);
@@ -695,7 +700,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 			{
 				if (pxNetMsg->u8Type == sWizeCtx.u8Type)
 				{
-					if (sWizeCtx.eListenType == NET_LISTEN_TYPE_MANY)
+					if (sWizeCtx.eListenType & NET_LISTEN_TYPE_MANY)
 					{
 						eStatus = _net_mgr_listen_with_retry_(pNetDev, sWizeCtx.u8RecvRetries);
 						if ( eStatus != NETDEV_STATUS_OK )
@@ -781,7 +786,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 
 	if (u32Evt & NETDEV_EVT_TIMEOUT)
 	{
-		if (sWizeCtx.eListenType == NET_LISTEN_TYPE_DETECT)
+		if (sWizeCtx.eListenType & NET_LISTEN_TYPE_DETECT)
 		{
 			// check if we have already expand the timeout or detected starting frame
 			if ( !(sWizeCtx.u8Detected) || (sWizeCtx.u8Detected & _NET_MGR_EXPAND_TMO_MSK_) )

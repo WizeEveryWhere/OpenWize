@@ -76,9 +76,10 @@ typedef enum {
  */
 typedef enum
 {
-	NET_LISTEN_TYPE_ONE    = 0x01, /**< One matching message until timeout */
-	NET_LISTEN_TYPE_DETECT = 0x02, /**< One matching message, extend timeout if detect occurs */
-	NET_LISTEN_TYPE_MANY   = 0x03, /**< Many matching messages until timeout*/
+	NET_LISTEN_TYPE_ONE    = 0x00, /**< One matching message until timeout */
+	NET_LISTEN_TYPE_MANY   = 0x01, /**< Many matching messages until timeout*/
+	// ---
+	NET_LISTEN_TYPE_DETECT = 0x02, /**< Extend timeout if detect occurs */
 } net_listen_type_e;
 
 /*!

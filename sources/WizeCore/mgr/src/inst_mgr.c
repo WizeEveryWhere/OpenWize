@@ -196,7 +196,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 			if (u32Evt & SES_EVT_INST_DELAY_EXPIRED)
 			{
 				pPrvCtx->sRspMsg.u8Type = APP_INSTALL;
-				if ( NetMgr_Listen(&(pPrvCtx->sRspMsg), 1000*pPrvCtx->u8InstRxLength, NET_LISTEN_TYPE_MANY) )
+				if ( NetMgr_Listen(&(pPrvCtx->sRspMsg), 1000*pPrvCtx->u8InstRxLength, NET_LISTEN_TYPE_MANY | NET_LISTEN_TYPE_DETECT) )
 				{
 					// failed, go back into IDLE
 					pCtx->eState = SES_STATE_IDLE;
