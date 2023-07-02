@@ -20,4 +20,29 @@
 #define GIT_COMMIT_SUBJECT "@GIT_COMMIT_SUBJECT@"
 #define GIT_COMMIT_BODY @GIT_COMMIT_BODY@
 
+struct fw_info_s 
+{
+    unsigned char version[4];
+    unsigned long sha_digest;
+    char *date;
+    unsigned char dirty;
+    char tag[];
+};
+const fw_info_s sFwInfo = 
+{
+    .version = 
+    {    
+        (uint8_t)GIT_FW_VER_TYPE, 
+        (uint8_t)GIT_FW_VER_MAJ,
+        (uint8_t)GIT_FW_VER_MIN,
+        (uint8_t)GIT_FW_VER_REV,
+    },
+    .sha_digest = (uint32_t)GIT_DESCRIBE,
+    .date = GIT_COMMIT_DATE_ISO8601,
+    .dirty = GIT_IS_DIRTY,
+    .tag = #GIT_TAG   
+};
+
+
+
 #endif /* _VERSION_H_ */

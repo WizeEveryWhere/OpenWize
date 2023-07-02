@@ -167,7 +167,7 @@ function(gitinfo _working_dir)
                 set(GIT_FW_VER_MIN_V 99)
                 set(GIT_FW_VER_MAJ_V 99)
                 set(GIT_FW_VER_TYPE_V UNK)
-                set(ENV{GIT_TAG} "\"${GIT_FW_VER_TYPE_V}.${GIT_FW_VER_MAJ_V}.${GIT_FW_VER_MIN_V}.${GIT_FW_VER_REV_V}\" // undefined" )            
+                set(ENV{GIT_TAG} \"${GIT_FW_VER_TYPE_V}.${GIT_FW_VER_MAJ_V}.${GIT_FW_VER_MIN_V}.${GIT_FW_VER_REV_V}\"\ //\ undefined )
             endif()
             
             set(ENV{GIT_FW_VER_REV} ${GIT_FW_VER_REV_V})
