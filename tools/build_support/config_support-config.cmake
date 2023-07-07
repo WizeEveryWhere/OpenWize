@@ -1,11 +1,8 @@
 ################################################################################
 # Get the input configuration file
 macro(get_cfg)  
-    # Setup GIT info
-    gitinfo("${TOP_DIR}")
     # Setup cfg
     message("****************************************")
-    version_from_git(${TOOL_BUILD_SUPPORT} "version.h")
 
     if(NOT BUILD_CFG)
         # Check if an empty file with app name exist in the current build dir  
@@ -27,6 +24,10 @@ macro(get_cfg)
     
 	# Add ".cmake" file
     include("${build_cfg_file}")
+
+    # Setup GIT info
+    gitinfo("${TOP_DIR}")
+    version_from_git(${TOOL_BUILD_SUPPORT} "version.h")
 
     message(STATUS "End of Selected build config")
     message("****************************************")
