@@ -579,6 +579,21 @@ static uint8_t _exchange_extract(
     uint8_t l7_start = l6_start + sizeof(l6_exch_header_t);
     uint8_t l_size = l6_end - l7_start;
 
+    // Check that CRC match
+    if (pCtx->sProtoConfig.filterDisL2_b.Crc == 0 )
+    {
+		// compute the CRC
+		if ( ! CRC_Compute(pCtx->pBuffer, u8Size +1 - CRC_SZ , &u16_Crc) )
+		{
+			return PROTO_INTERNAL_CRC_ERR;
+		}
+
+		// check if CRC match
+		if ( ! CRC_Check(__ntohs(*((uint16_t*)(pL2f->Crc))), u16_Crc) )
+		{
+			return PROTO_FRAME_CRC_ERR;
+		}
+    }
 
     // Check that AField match
     if (pCtx->sProtoConfig.filterDisL2_b.AField == 0 )
@@ -595,22 +610,6 @@ static uint8_t _exchange_extract(
         {
             return PROTO_FRAME_PASS_INF;
         }
-    }
-
-    // Check that CRC match
-    if (pCtx->sProtoConfig.filterDisL2_b.Crc == 0 )
-    {
-		// compute the CRC
-		if ( ! CRC_Compute(pCtx->pBuffer, u8Size +1 - CRC_SZ , &u16_Crc) )
-		{
-			return PROTO_INTERNAL_CRC_ERR;
-		}
-
-		// check if CRC match
-		if ( ! CRC_Check(__ntohs(*((uint16_t*)(pL2f->Crc))), u16_Crc) )
-		{
-			return PROTO_FRAME_CRC_ERR;
-		}
     }
 
     // Check that CiField match
