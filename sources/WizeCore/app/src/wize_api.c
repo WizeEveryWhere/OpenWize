@@ -478,54 +478,56 @@ void WizeApi_Download_Cancel(void)
 /******************************************************************************/
 
 /*!
- * @brief This function Clear the Time Update state
+ * @brief This function Clear the WizeApi context
  *
  * @return None
  */
 __attribute__((weak))
 void WizeApi_CtxClear(void)
 {
-	// FIXME: TODO : clear the deivce info
-	// memset((void*)(&sNetCtx), 0, sizeof(sNetCtx));
-	/*
-	 * TODO :
-	BSP_Rtc_Backup_Write(0, (uint32_t)0);
-	BSP_Rtc_Backup_Write(1, (uint32_t)0);
-	*/
 }
 
 /*!
- * @brief This function Restore the Time Update state
+ * @brief This function Restore the WizeApi context
  *
  * @return None
  */
 __attribute__((weak))
 void WizeApi_CtxRestore(void)
 {
-	/*
-	 * TODO :
-	((uint32_t*)&sTimeUpdCtx)[0] = BSP_Rtc_Backup_Read(0);
-	((uint32_t*)&sTimeUpdCtx)[1] = BSP_Rtc_Backup_Read(1);
-	*/
 }
 
 /*!
- * @brief This function Save the Time Update state
+ * @brief This function Save the WizeApi context
  *
  * @return None
  */
 __attribute__((weak))
 void WizeApi_CtxSave(void)
 {
-	/*
-	 * TODO :
-	BSP_Rtc_Backup_Write(0, ((uint32_t*)&sTimeUpdCtx)[0]);
-	BSP_Rtc_Backup_Write(1, ((uint32_t*)&sTimeUpdCtx)[1]);
-	*/
 }
 
 /******************************************************************************/
 /******************************************************************************/
+/*!
+ * @brief This function notify the previously registered task of the give event
+ *
+ * @details This function is called by the Time manager task to notify the
+ * registered task of time back event. This is weak function.
+ *
+ * @param [in] u32Flg  Event to notify
+ *
+ * @retval None
+ */
+__attribute__((weak))
+void WizeApi_OnTimeFlag(uint32_t u32Flg)
+{
+	if(hTimeMgrCaller)
+	{
+		sys_flag_set(hTimeMgrCaller, u32Flg);
+	}
+}
+
 /*!
  * @brief This function registered a task to get back time event
  *
@@ -533,6 +535,7 @@ void WizeApi_CtxSave(void)
  *
  * @retval None
  */
+__attribute__((weak))
 void WizeApi_TimeMgr_Register(void *hTask)
 {
 	hTimeMgrCaller = hTask;
@@ -571,25 +574,6 @@ void WizeApi_TimeMgr_Setup(struct time_upd_s *pTimeUpdCtx)
 	hTimeMgrTask = SYS_TASK_CREATE_CALL(timemgr, TIME_MGR_TASK_FCT, NULL);
 	assert(hTimeMgrTask);
 	hTimeMgrCaller = NULL;
-}
-
-/*!
- * @brief This function notify the previously registered task of the give event
- *
- * @details This function is called by the Time manager task to notify the
- * registered task of time back event. This is weak function.
- *
- * @param [in] u32Flg  Event to notify
- *
- * @retval None
- */
-__attribute__((weak))
-void WizeApi_OnTimeFlag(uint32_t u32Flg)
-{
-	if(hTimeMgrCaller)
-	{
-		sys_flag_set(hTimeMgrCaller, u32Flg);
-	}
 }
 
 /******************************************************************************/

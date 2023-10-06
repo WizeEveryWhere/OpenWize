@@ -109,6 +109,9 @@ typedef enum
 	SES_FLG_SES_ERROR_MSK     = 0x22200000, /*!< Error Session mask */
 	// -------------------------------------------------------------------------
 	SES_FLG_UNKNOWN_ERROR     = SES_FLG_SES_ERROR_MSK,
+	// -------------------------------------------------------------------------
+	SES_FLG_AVAILABLE_MSK     = 0x000FFF00, /*!< Available bits mask */
+	// -------------------------------------------------------------------------
 } ses_flg_e;
 
 /*!
@@ -189,21 +192,11 @@ struct ses_ctx_s
 };
 
 /******************************************************************************/
-
-static const char * const _ses_state_str_[] =
-{
-	[SES_STATE_DISABLE]            = "DISABLE",
-	[SES_STATE_IDLE]               = "IDLE",
-	[SES_STATE_SENDING]            = "SENDING",
-	[SES_STATE_LISTENING]          = "LISTENING",
-	[SES_STATE_WAITING]            = "WAITING",
-	[SES_STATE_WAITING_RX_DELAY]   = "WAIT_RX_DELAY",
-	[SES_STATE_WAITING_TX_DELAY]   = "WAIT_TX_DELAY",
-};
+extern const char * const _ses_state_str_[];
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* _SES_DISPATCHER_H_ */
+#endif /* _SES_COMMON_H_ */
 
 /*! @} */

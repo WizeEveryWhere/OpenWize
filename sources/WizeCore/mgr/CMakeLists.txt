@@ -14,6 +14,7 @@ target_sources(${MODULE_NAME}
         src/inst_mgr.c
         src/dwn_mgr.c
         src/net_mgr.c
+        src/ses_common.c
     )
 
 # Add include dir    

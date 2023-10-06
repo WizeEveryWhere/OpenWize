@@ -77,7 +77,20 @@ extern "C" {
  * - If the couple (Gateway, MLAN id) is already in the list, this pong is discarded
  */
 
+/*!
+ * @cond INTERNAL
+ * @{
+ */
 
+#ifdef HAS_HIRES_TIME_MEAS
+extern int32_t HiResTime_EnDis(uint8_t bEnable);
+extern uint32_t HiResTime_Get(register uint8_t id);
+#endif
+
+/*!
+ * @}
+ * @endcond
+ */
 /******************************************************************************/
 
 /*!

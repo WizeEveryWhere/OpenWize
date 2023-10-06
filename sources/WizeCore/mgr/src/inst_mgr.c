@@ -177,12 +177,6 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					pCtx->eState = SES_STATE_WAITING_RX_DELAY;
 					u32BackEvt |= SES_FLG_PING_SENT;
 					LOG_INF("PING sent\n");
-					LOG_DBG("\t-> DwnCh: %x; DwnMod: %x; RxRelay: %x; RxLen: %x\n"
-						, pPrvCtx->sCmdMsg.pData[0]
-						, pPrvCtx->sCmdMsg.pData[1]
-						, pPrvCtx->sCmdMsg.pData[2]
-						, pPrvCtx->sCmdMsg.pData[3]
-						);
 				}
 			}
 			if (u32Evt & SES_EVT_TIMEOUT)
