@@ -220,12 +220,17 @@ void Logger_Post(uint8_t level, char *format, ...)
 				{
 					// fill the color (opening part)
 					len = snprintf((char*) p, max, color_str[level] );
-					max -= len + sizeof(END_ESC);
+					// In the following the '-1' is to remove ending '\0' (due to the #define)
+					max -= len + sizeof(END_ESC) - 1;
 					p += len;
 					if (max > 0)
 					{
 						// fill the message
 						len = vsnprintf((char*) p, max, format, args);
+						p += len;
+						p--;
+
+						/*
 						if (len > max)
 						{
 							p += max;
@@ -235,9 +240,13 @@ void Logger_Post(uint8_t level, char *format, ...)
 						{
 							p += len;
 						}
+						*/
 					}
 					// fill the color (ending part)
 					len = snprintf((char*) p, sizeof(END_ESC), END_ESC);
+					// add new line
+					*(p + len) = '\n';
+					len++;
 				}
 				else
 #endif
