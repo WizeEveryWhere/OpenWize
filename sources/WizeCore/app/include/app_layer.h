@@ -265,14 +265,20 @@ typedef enum
  */
 typedef struct
 {
+	//uint32_t u32PreDwnId; /**< The previous download session id */
+	uint32_t u32Type;     /**< The download fw type */
 	uint32_t u32DwnId;    /**< The download session id */
+
 	uint16_t u16SwVerIni; /**< The expected initial SW version  */
 	uint16_t u16SwVerTgt; /**< The target SW version */
+	uint16_t u16MField;   /**< The manufacturer code */
 	uint16_t u16DcHwId;   /**< The expected HW version */
 	uint16_t u16BlkCnt;   /**< The number of block to download */
-	uint8_t  u8DayRepeat; /**<  The number of repeat days */
+
+	uint8_t  u8DayRepeat; /**< The number of repeat days */
 	uint8_t  u8DeltaSec;  /**< The delta in second between SW block */
 	uint32_t u32DaysProg; /**< Eppch of the programmed first day to download */
+
 	uint32_t u32HashSW;   /**< The Hash computed on the entire downloaded SW */
 } admin_ann_fw_info_t;
 
