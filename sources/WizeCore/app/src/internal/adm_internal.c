@@ -200,8 +200,15 @@ uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 				ret = RSP_NOT_READY;
 				break;
 			default :
+			{
+#ifdef HAS_CUSTOM_ADM_CMD
+				AdmInt_Custom(pReqMsg, pRspMsg);
+				break;
+#else
 				AdmInt_Unknown(pReqMsg, pRspMsg);
 				break;
+#endif
+			}
 		}
 	}
 	else // CMD was previously processed
@@ -545,17 +552,6 @@ void AdmInt_AnnCheckSession(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 			break;
 		}
 		/**********************************************************************/
-		// Check MField
-		if (sAdmConfig.MField)
-		{
-			if ( memcmp(pIn->L7MField, (void*)(&sAdmConfig.MField), sizeof(pIn->L7MField)) != 0 )
-			{
-				((admin_rsp_err_t*)pOut)->L7ErrorCode = ANN_ILLEGAL_VALUE;
-				((admin_rsp_err_t*)pOut)->L7ErrorParam = ANN_FIELD_ID_L7MField;
-				break;
-			}
-		}
-		/**********************************************************************/
 		// Check Key used for this message
 		if (!sAdmConfig.KeyChgBypassUse)
 		{
@@ -708,6 +704,20 @@ uint8_t AdmInt_AnnCheckIntFW(admin_ann_fw_info_t *pFwInfo, uint8_t *u8ErrorParam
 	*u8ErrorParam = 0;
 	do
 	{
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+		Param_Access(ADM_ANN_DIS_FLT,   (uint8_t*)&(sAdmConfig.filterDisAnn), 0);
+#endif
+		/**********************************************************************/
+		// Check MField
+		if (sAdmConfig.MField)
+		{
+			if ( pFwInfo->u16MField != sAdmConfig.MField )
+			{
+				eErrCode = ANN_ILLEGAL_VALUE;
+				*u8ErrorParam = ANN_FIELD_ID_L7MField;
+				break;
+			}
+		}
 		/**********************************************************************/
 		// Check Blocks Count
 		if(!sAdmConfig.AnnBlocksNB)
@@ -800,6 +810,7 @@ uint8_t AdmInt_PostCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 		// Check if no error, then do action
 		if (((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode == ADM_NONE)
 		{
+			ret = pRspMsg->pData[0];
 			switch (pRspMsg->pData[0]) //L7CommandId
 			{
 				case ADM_WRITE_PARAM :
@@ -818,9 +829,13 @@ uint8_t AdmInt_PostCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 					AdmInt_PostExecping(pReqMsg);
 					break;
 				default :
+#ifdef HAS_CUSTOM_ADM_CMD
+					AdmInt_PostCustom(pReqMsg);
+#else
+					ret = 0;
+#endif
 					break;
 			}
-			ret = pRspMsg->pData[0];
 		}
 		/*
 		// TODO : finish it

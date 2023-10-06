@@ -106,12 +106,27 @@ struct adm_config_s sAdmConfig;
  * @cond INTERNAL
  * @{
  */
+#ifdef HAS_HIRES_TIME_MEAS
+extern void HiResTime_Capture(register uint8_t id);
+extern uint32_t HiResTime_Get(register uint8_t id);
+#endif
+
+
+#define PING_FORMAT_LOG_DBG() "\t-> DwnCh: %x; DwnMod: %x; RxDelay: %x; RxLen: %x\n"
+#define PONG_FORMAT_LOG_DBG() " <- K: %02x %02x %02x %02x %02x %02x; MLAN: %02x; RSSI "
+#define PONG_FORMAT_RSSI_AS_FLOAT() "U:-%d.%d; D:-%d.%d\n"
+#define PONG_FORMAT_RSSI_AS_HEX()   "U:%02x; D:%02x\n"
+#define RSSI_TO_FLOAT_DBM(u8Val) ((u8Val) / 2 + 20) , ( (u8Val) % 2)*5
+
+static const uint8_t pong_log_dbg_rssi_as_float = 1;
+
 static uint32_t _u32InitMask_;
 static uint8_t  _bPendAction_;
 
 static struct timeval _get_adjust_clock_offset_(void);
 static inline uint8_t _is_periodic_inst_req_(void);
 static inline uint8_t _is_full_power_req_(void);
+static void _adm_ann_to_fw_info(admin_ann_fw_info_t *pFwAnnInfo, admin_cmd_anndownload_t *pAnn);
 
 /*!
  * @}
@@ -167,7 +182,7 @@ __attribute__((weak))
 uint8_t WizeApp_AnnCheckFwInfo(admin_cmd_anndownload_t *pAnn)
 {
 	(void)pAnn;
-	/* Check ANNDOWNLOAD to update FW for an external device
+	/* Check ANNDOWNLOAD to update the FW
 	 *
 	 * In this case the response is marked as "not yet available". The maximum
 	 * delay allowed is less than ExchRespDelay (between 1 and 255 second)
@@ -196,7 +211,6 @@ uint8_t WizeApp_AnnCheckFwInfo(admin_cmd_anndownload_t *pAnn)
 	 */
 	return 0;
 }
-
 /******************************************************************************/
 
 /*!
@@ -258,6 +272,32 @@ wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size)
 {
 	// Start ADM Data Prio session
 	return WizeApi_Send(pData, u8Size, 1);
+}
+
+/*!
+ * @brief Convenient function that call the "WizeApi_Download" function.
+ *
+ * @return (see WizeApi_Download)
+ *
+ */
+inline
+wize_api_ret_e WizeApp_Download(void)
+{
+	// Start Download session
+	return WizeApi_Download();
+}
+
+/*!
+ * @brief Convenient function that call the "WizeApi_Download_Cancel" function.
+ *
+ * @return (see WizeApi_Download_Cancel)
+ *
+ */
+inline
+void WizeApp_Download_Cancel(void)
+{
+	// Start Download session
+	WizeApi_Download_Cancel();
 }
 
 /******************************************************************************/
@@ -352,6 +392,7 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 				default:
 					break;
 			}
+			ret = sAdmCtx.aRecvBuff[0];
 		}
 		// response is available or already treated (READ_PARAM, WRITE_PARAM, WRITE_KEY cases)
 		else
@@ -411,21 +452,52 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 
 	/*------------------------------------------------------------------------*/
 	// INST back flag
+	if (ulEvent & SES_FLG_PING_SENT)
+	{
+		inst_ping_t *pPing = (inst_ping_t *)(sInstCtx.aSendBuff);
+		LOG_DBG(
+			PING_FORMAT_LOG_DBG()
+			, pPing->L7DownChannel
+			, pPing->L7DownMod
+			, pPing->L7PingRxDelay
+			, pPing->L7PingRxLength
+		);
+	}
+
 	if (ulEvent & SES_FLG_PONG_RECV)
 	{
 		inst_pong_t *pPong = (inst_pong_t *)(sInstCtx.aRecvBuff);
-		LOG_DBG(
-			"\t<- K: %02x %02x %02x %02x %02x %02x; MLAN: %02x; RSSI up: %02x; dwn: %02x\n"
-			, pPong->L7ConcentId[0]
-			, pPong->L7ConcentId[1]
-			, pPong->L7ConcentId[2]
-			, pPong->L7ConcentId[3]
-			, pPong->L7ConcentId[4]
-			, pPong->L7ConcentId[5]
-			, pPong->L7ModemId
-			, pPong->L7RssiUpstream
-			, sInstCtx.sRspMsg.u8Rssi
+
+		if (pong_log_dbg_rssi_as_float)
+		{
+			LOG_DBG(
+				PONG_FORMAT_LOG_DBG()PONG_FORMAT_RSSI_AS_FLOAT()
+				, pPong->L7ConcentId[0]
+				, pPong->L7ConcentId[1]
+				, pPong->L7ConcentId[2]
+				, pPong->L7ConcentId[3]
+				, pPong->L7ConcentId[4]
+				, pPong->L7ConcentId[5]
+				, pPong->L7ModemId
+				, RSSI_TO_FLOAT_DBM(pPong->L7RssiUpstream)
+				, RSSI_TO_FLOAT_DBM(sInstCtx.sRspMsg.u8Rssi)
 			);
+		}
+		else
+		{
+			LOG_DBG(
+				PONG_FORMAT_LOG_DBG()PONG_FORMAT_RSSI_AS_HEX()
+				, pPong->L7ConcentId[0]
+				, pPong->L7ConcentId[1]
+				, pPong->L7ConcentId[2]
+				, pPong->L7ConcentId[3]
+				, pPong->L7ConcentId[4]
+				, pPong->L7ConcentId[5]
+				, pPong->L7ModemId
+				, (pPong->L7RssiUpstream)
+				, (sInstCtx.sRspMsg.u8Rssi)
+			);
+		}
 		// treat the received message that should be store in sRspMsg
 		InstInt_Add(&sPingReply, &(sInstCtx.sRspMsg) );
 		// signal that PONG msg has been treated, buffer is ready
@@ -593,6 +665,7 @@ uint32_t WizeApp_Time(void)
 }
 
 /******************************************************************************/
+
 /*!
  * @static
  * @brief This function get the offset to be applied to the new clock received
@@ -693,7 +766,6 @@ static inline uint8_t _is_periodic_inst_req_(void)
  */
 static inline uint8_t _is_full_power_req_(void)
 {
-	uint8_t temp;
 	uint16_t v;
 
 	Param_Access(TX_DELAY_FULLPOWER,  (uint8_t*)&(v), 0 );
@@ -710,6 +782,7 @@ static inline uint8_t _is_full_power_req_(void)
 		return 0;
 	}
 }
+
 /******************************************************************************/
 
 /*! @} */
