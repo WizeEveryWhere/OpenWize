@@ -65,7 +65,17 @@ struct time_evt_ctx_s sTimeEvtCtx;
  * @{
  */
 
+/*
 SYS_MUTEX_CREATE_DEF(timeevt);
+#define SETUP_LOCK() SYS_MUTEX_CREATE_CALL(timeevt)
+*/
+SYS_BINSEM_CREATE_DEF(timeevt);
+#define SETUP_LOCK() SYS_BINSEM_CREATE_CALL(timeevt);
+
+#define LOCK_ISR() sys_mutex_acquire_isr(sTimeEvtCtx.pLock)
+#define UNLOCK_ISR() sys_mutex_release_isr(sTimeEvtCtx.pLock)
+#define LOCK() sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO)
+#define UNLOCK() sys_mutex_release(sTimeEvtCtx.pLock)
 
 void _reset(struct time_evt_ctx_s *pCtx);
 void* _current(struct time_evt_ctx_s *pCtx);
@@ -99,9 +109,9 @@ uint8_t TimeEvt_TimerInit(time_evt_t *pTimeEvt, void (*pvTaskHandle)(uint32_t ev
 	{
 		if (pTimeEvt->pNext)
 		{
-			sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
+			LOCK();
 			_remove(&sTimeEvtCtx, pTimeEvt);
-			sys_mutex_release(sTimeEvtCtx.pLock);
+			UNLOCK();
 		}
 		pTimeEvt->eCfg = eCfg;
 		pTimeEvt->u64InitVal = 0;
@@ -152,7 +162,7 @@ uint8_t TimeEvt_TimerStart(time_evt_t *pTimeEvt, uint32_t u32Value, int16_t i16D
 		p->u32Event = u32Event;
 		p->u64InitVal = u64temp;
 		p->u64Value = u64temp;
-		sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
+		LOCK();
 		// Stop Alarm
 		_timer_stop(TIME_EVT_ALARM_ID);
 		_get_current_time_ms(&u64temp);
@@ -178,7 +188,7 @@ uint8_t TimeEvt_TimerStart(time_evt_t *pTimeEvt, uint32_t u32Value, int16_t i16D
 		{
 			_timer_start(TIME_EVT_ALARM_ID, sTimeEvtCtx.pCurrent->u64Value);
 		}
-		sys_mutex_release(sTimeEvtCtx.pLock);
+		UNLOCK();
 	}
 	else
 	{
@@ -198,7 +208,7 @@ void TimeEvt_TimerStop(time_evt_t *pTimeEvt)
 	uint64_t u64Now;
 	if (pTimeEvt)
 	{
-		sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
+		LOCK();
 		if ( sTimeEvtCtx.pCurrent == pTimeEvt)
 		{
 			_timer_stop(TIME_EVT_ALARM_ID);
@@ -215,7 +225,7 @@ void TimeEvt_TimerStop(time_evt_t *pTimeEvt)
 		{
 			_remove(&sTimeEvtCtx, pTimeEvt);
 		}
-		sys_mutex_release(sTimeEvtCtx.pLock);
+		UNLOCK();
 	}
 }
 
@@ -229,7 +239,7 @@ void TimeEvt_TimerStop(time_evt_t *pTimeEvt)
 void TimeEvt_Setup(void)
 {
 	// create the mutex
-	sTimeEvtCtx.pLock = SYS_MUTEX_CREATE_CALL(timeevt);
+	sTimeEvtCtx.pLock = SETUP_LOCK();
 	assert(sTimeEvtCtx.pLock);
 	TimeEvt_Init();
 	// register RTC Alarm cb
@@ -247,6 +257,7 @@ void TimeEvt_Init(void)
 	_timer_stop(TIME_EVT_ALARM_ID);
 	// clear the internal list
 	_reset(&sTimeEvtCtx);
+	UNLOCK();
 }
 
 /*!
@@ -261,8 +272,7 @@ void TimeEvt_UpdateTime(time_t t)
 	uint64_t u64TimeMs;
 	struct time_evt_s *p;
 
-	sys_mutex_acquire(sTimeEvtCtx.pLock, TIME_EVT_LOCK_TMO);
-	//sys_mutex_acquire_isr(sTimeEvtCtx.pLock);
+	LOCK();
 	p = sTimeEvtCtx.pCurrent;
 	if (p != NULL)
 	{
@@ -306,8 +316,7 @@ void TimeEvt_UpdateTime(time_t t)
 	{
 		_timer_start(TIME_EVT_ALARM_ID, p->u64Value);
 	}
-	sys_mutex_release(sTimeEvtCtx.pLock);
-	//sys_mutex_release_isr(sTimeEvtCtx.pLock);
+	UNLOCK();
 }
 
 /*!
@@ -319,8 +328,8 @@ void TimeEvt_EventHandler(void)
 {
 	time_evt_t *pCurrent, *p;
 	uint64_t u64Now;
-	sys_mutex_acquire_isr(sTimeEvtCtx.pLock);
 
+	LOCK_ISR();
 	if (sTimeEvtCtx.pCurrent != NULL)
 	{
 		_get_current_time_ms(&u64Now);
@@ -362,7 +371,7 @@ void TimeEvt_EventHandler(void)
 	{
 		_timer_stop(TIME_EVT_ALARM_ID);
 	}
-	sys_mutex_release_isr(sTimeEvtCtx.pLock);
+	UNLOCK_ISR();
 }
 
 /******************************************************************************/
