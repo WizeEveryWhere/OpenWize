@@ -94,6 +94,24 @@ function(setup_install)
             PUBLIC_HEADER DESTINATION  ${SETUP_INSTALL_PREFIX}include 
             PRIVATE_HEADER DESTINATION  ${SETUP_INSTALL_PREFIX}include/private
         )
+    
+    install(TARGETS ${SETUP_INSTALL_TARGET}
+            CONFIGURATIONS MinSizeRel
+            COMPONENT rel 
+            ARCHIVE DESTINATION  ${SETUP_INSTALL_PREFIX}lib 
+            RUNTIME DESTINATION  ${SETUP_INSTALL_PREFIX}bin 
+            PUBLIC_HEADER DESTINATION  ${SETUP_INSTALL_PREFIX}include 
+            PRIVATE_HEADER DESTINATION  ${SETUP_INSTALL_PREFIX}include/private
+        )
+    
+    install(TARGETS ${SETUP_INSTALL_TARGET}
+            CONFIGURATIONS RelWithDebInfo
+            COMPONENT rel 
+            ARCHIVE DESTINATION  ${SETUP_INSTALL_PREFIX}lib 
+            RUNTIME DESTINATION  ${SETUP_INSTALL_PREFIX}bin 
+            PUBLIC_HEADER DESTINATION  ${SETUP_INSTALL_PREFIX}include 
+            PRIVATE_HEADER DESTINATION  ${SETUP_INSTALL_PREFIX}include/private
+        )
 endfunction(setup_install)
 
 ################################################################################
