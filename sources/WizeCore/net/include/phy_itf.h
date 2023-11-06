@@ -45,6 +45,70 @@ extern "C" {
  * @cond INTERNAL
  * @{
  */
+/******************************************************************************/
+
+#if defined (USE_PHY_LAYER_TRACE)
+#ifndef TRACE_PHY_LAYER
+#define TRACE_PHY_LAYER(...) fprintf (stdout, __VA_ARGS__ )
+#endif
+#else
+#define TRACE_PHY_LAYER(...)
+#endif
+
+#ifndef PHY_TMR_GET_CURRENT
+	#define PHY_TMR_GET_CURRENT() 0
+#endif
+
+#ifndef PHY_TMR_CAPTURE_POWER_ON
+	#define PHY_TMR_CAPTURE_POWER_ON()
+#endif
+
+#ifndef PHY_TMR_CAPTURE_READY
+	#define PHY_TMR_CAPTURE_READY()
+#endif
+
+#ifndef PHY_TMR_CAPTURE_ENTERING_IT
+	#define PHY_TMR_CAPTURE_ENTERING_IT()
+#endif
+
+#ifndef PHY_TMR_CAPTURE_LEAVING_IT
+	#define PHY_TMR_CAPTURE_LEAVING_IT()
+#endif
+
+#ifndef PHY_TMR_CAPTURE_PREAMBLE_DETECTED
+	#define PHY_TMR_CAPTURE_PREAMBLE_DETECTED()
+#endif
+
+#ifndef PHY_TMR_CAPTURE_SYNCH_DETECTED
+	#define PHY_TMR_CAPTURE_SYNCH_DETECTED()
+#endif
+
+#ifndef PHY_TMR_CAPTURE_TX_COMPLETE
+	#define PHY_TMR_CAPTURE_TX_COMPLETE()
+#endif
+
+#ifndef PHY_TMR_CAPTURE_RX_COMPLETE
+	#define PHY_TMR_CAPTURE_RX_COMPLETE()
+#endif
+
+/******************************************************************************/
+#ifndef DEFAULT_MOD
+	/*! Define the default modulation (just for initialization) */
+	#define DEFAULT_MOD PHY_WM2400
+#endif
+#ifndef DEFAULT_CH
+	/*! Define the default channel (just for initialization) */
+	#define DEFAULT_CH PHY_CH120
+#endif
+#ifndef DEFAULT_TX_POWER
+	/*! Define the default TX power (just for initialization) */
+	#define DEFAULT_TX_POWER PHY_PMAX_minus_0db
+#endif
+#ifndef DEFAULT_TX_FREQ_OFFSET
+	/*! Define the default TX frequency offset (just for initialization) */
+	#define DEFAULT_TX_FREQ_OFFSET 0
+#endif
+
 //------------------------------------------------------------------------------
 #define PHY_WM2400_PREAMBLE_DATA 0x5555
 #define PHY_WM2400_PREAMBLE_SIZE 16
@@ -77,23 +141,6 @@ extern "C" {
 #define PHY_CHANNEL_WIDTH (12500) // in hertz
 #define PHY_FREQUENCY_CH(i) (PHY_FREQUENCY_BASE + i*PHY_CHANNEL_WIDTH)
 
-/******************************************************************************/
-#ifndef DEFAULT_MOD
-	/*! Define the default modulation (just for initialization) */
-	#define DEFAULT_MOD PHY_WM2400
-#endif
-#ifndef DEFAULT_CH
-	/*! Define the default channel (just for initialization) */
-	#define DEFAULT_CH PHY_CH120
-#endif
-#ifndef DEFAULT_TX_POWER
-	/*! Define the default TX power (just for initialization) */
-	#define DEFAULT_TX_POWER PHY_PMAX_minus_0db
-#endif
-#ifndef DEFAULT_TX_FREQ_OFFSET
-	/*! Define the default TX frequency offset (just for initialization) */
-	#define DEFAULT_TX_FREQ_OFFSET 0
-#endif
 /*!
  * @}
  * @endcond
@@ -157,6 +204,7 @@ typedef enum {
 	PHY_TST_MODE_PER_RX = 0x2,  /*!< PER RX test mode */
 	PHY_TST_MODE_TX     = 0x3,  /*!< TX test mode */
 	//PHY_TST_MODE_PER_TX = 0x4,  /*!<  */
+	PHY_TST_MODE_CLKOUT = 0x8, /*!< Set CLK output in gpio */
 	//
 	PHY_NB_TST_MODE,
 } phy_test_mode_e;
@@ -214,20 +262,24 @@ struct phydev_s {
     phydev_evt_cb_t pfEvtCb;      /*!< Event notifier callback function */
     void *pCbParam;
 
-    // private field
+    // configuration / control
 	phy_chan_e  eChannel;          /*!< Current Channel */
 	phy_mod_e   eModulation;       /*!< Current modulation */
 	phy_power_e eTxPower;          /*!< Current TX power */
-	int16_t     i16TxFreqOffset;   /*!< Current Frequency offset */
+	uint8_t     bCrcOn;            /*!< Enable/Disable PHY crc computation */
+	uint8_t     bPreSyncOn;        /*!< Enable/Disable interrupt on PREMABLE and SYNCHRO */
+	phy_test_mode_e eTestMode;     /*!< Current Test mode (internal)*/
 
+	int16_t     i16TxFreqOffset;   /*!< Current Frequency offset (in Hz) */
+	int16_t     i16RssiOffset;     /*!< Current RSSI offset (in 0.25 dB)*/
+
+	// measurement
 	uint16_t    u16_Noise;         /*!< Last noise measured */
 	uint16_t    u16_Rssi;          /*!< Last RSSI measured */
 	int16_t     u16_Ferr;          /*!< Last frequency error measured */
 
-	uint8_t     bCrcOn;            /*!< Enable/Disable PHY crc computation */
-	uint8_t     bPreSyncOn;        /*!< Enable/Disable interrupt on PREMABLE and SYNCHRO */
-
-	phy_test_mode_e eTestMode;     /*!< Current Test mode (internal)*/
+	uint32_t    u32_SetupTime;      /*!< Setup duration in uS (taken cold reset and PHY_ON state) */
+	uint32_t    u32_PktTime;        /*!< Packet duration in uS (taken between the start of PREAMBLE and EOF) */
 };
 
 #ifdef __cplusplus
