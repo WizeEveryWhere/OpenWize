@@ -43,6 +43,7 @@ extern "C" {
 #include "rs.h"
 #include <string.h>
 #include <time.h>
+#include <sys/time.h>
 #include <machine/endian.h>
 
 /******************************************************************************/
@@ -456,6 +457,10 @@ static uint8_t _download_extract(
     uint8_t l7_start = l6_start + sizeof(l6_down_header_t);
     uint8_t l_size = l6_end - l7_start;
 
+    // Get current time
+    struct timeval tp;
+    gettimeofday(&tp, NULL);
+
     // Compute and applied RS
 
     RS_Init();
@@ -495,7 +500,7 @@ static uint8_t _download_extract(
 
     // compute HKlog
     memcpy(pCtr, &(pCtx->pBuffer[1]), CTR_SIZE);
-    if ( Crypto_AES128_CMAC( aHash, &(pCtx->pBuffer[l7_start + PADDING_SZ]), l_size - PADDING_SZ, pCtr, KEY_LOG_ID ) != CRYPTO_OK)
+    if ( Crypto_AES128_CMAC( aHash, &(pCtx->pBuffer[1 + CTR_SIZE]), l_size - PADDING_SZ, pCtr, KEY_LOG_ID ) != CRYPTO_OK)
     {
         return PROTO_INTERNAL_HASH_ERR;
     }
@@ -522,9 +527,8 @@ static uint8_t _download_extract(
     memcpy(pNetMsg->pData, &(pCtx->pBuffer[l7_start]), l_size);
 
     pNetMsg->u8Type = APP_DOWNLOAD;
-    time_t t;
-    time(&t);
-    pNetMsg->u32Epoch = t;
+
+    pNetMsg->u32Epoch = tp.tv_sec;
     pNetMsg->u16Tstamp = (uint16_t)(pNetMsg->u32Epoch);
 
     return PROTO_SUCCESS;
@@ -579,6 +583,10 @@ static uint8_t _exchange_extract(
     uint8_t l7_start = l6_start + sizeof(l6_exch_header_t);
     uint8_t l_size = l6_end - l7_start;
 
+    // Get current time
+    struct timeval tp;
+    gettimeofday(&tp, NULL);
+
     // Check that CRC match
     if (pCtx->sProtoConfig.filterDisL2_b.Crc == 0 )
     {
@@ -595,18 +603,19 @@ static uint8_t _exchange_extract(
 		}
     }
 
-    // Check that AField match
-    if (pCtx->sProtoConfig.filterDisL2_b.AField == 0 )
+    // Check that MField match
+    if (pCtx->sProtoConfig.filterDisL2_b.MField == 0 )
     {
-        if ( memcmp(pL2h->Afield, pCtx->aDeviceAddr, AFIELD_SZ) )
+        if ( memcmp(pL2h->Mfield, pCtx->aDeviceManufID, MFIELD_SZ) )
         {
             return PROTO_FRAME_PASS_INF;
         }
     }
-    // Check that MFiled match
-    if (pCtx->sProtoConfig.filterDisL2_b.MField == 0 )
+
+    // Check that AField match
+    if (pCtx->sProtoConfig.filterDisL2_b.AField == 0 )
     {
-        if ( memcmp(pL2h->Mfield, pCtx->aDeviceManufID, MFIELD_SZ) )
+        if ( memcmp(pL2h->Afield, pCtx->aDeviceAddr, AFIELD_SZ) )
         {
             return PROTO_FRAME_PASS_INF;
         }
@@ -765,9 +774,7 @@ static uint8_t _exchange_extract(
     		pNetMsg->u8Type = APP_ADMIN;
         }
         pNetMsg->u16Tstamp = __ntohs( *((uint16_t*)(pL6f->L6TStamp)) );
-        time_t t;
-        time(&t);
-        pNetMsg->u32Epoch = t;
+        pNetMsg->u32Epoch = tp.tv_sec;
     }
 
     // fill net_msg
@@ -935,11 +942,12 @@ static uint8_t _exchange_build(
     memcpy( pL6f->L6HashKenc, aHash, L6_HASH_KENC_SZ );
 
     // Set L6TStamp
-    time_t t;
-    time(&t);
-    *(uint16_t*)(pL6f->L6TStamp) = __htons((uint16_t)t);
-    pNetMsg->u16Tstamp = (uint16_t)t;
-    pNetMsg->u32Epoch = (uint32_t)t;
+    struct timeval tp;
+    gettimeofday(&tp, NULL);
+    // FIXME : remove EPOCH_UNIX_TO_OURS from tp.tv_sec ?
+    *(uint16_t*)(pL6f->L6TStamp) = __htons((uint16_t)(tp.tv_sec));
+    pNetMsg->u16Tstamp = (uint16_t)(tp.tv_sec);
+    pNetMsg->u32Epoch = (uint32_t)(tp.tv_sec);
 
     l_size += L6_HASH_KENC_SZ + L6_TSTAMP_SZ;
 
