@@ -89,6 +89,10 @@ struct adm_config_s{
 			uint8_t ClkAutoPong:1;  /*!< Coarse clock auto-adjust on PONG. 1: enable, 0: disable */
 			uint8_t ClkAutoAdm:1;   /*!< Fine clock auto-adjust on ADM CMD. 1: enable, 0: disable */
 			uint8_t FreqAutoPong:1; /*!< Frequency Offset auto-adjust on PONG. 1: enable, 0: disable */
+			uint8_t :1;
+			uint8_t ClkAutoPongOneShot:1;   /*!< Coarse clock auto-adjust on PONG. 1: One Shot, 0: Every time */
+			uint8_t ClkAutoPongGwErrCorr:1; /*!< Adjust error due to the Gateway on clock auto-adjust 1: Enable, 0: Disable */
+			uint8_t FreqAutoPongOneShot:1;  /*!< Frequency Offset auto-adjust on PONG. 1: One Shot, 0: Every time */
 		};
 	};
 	uint8_t ClkFreqAutoAdjRssi;   /*!< Clock and Frequency Offset Auto-Adjustment received frame RSSI min.*/
@@ -139,8 +143,17 @@ struct adm_config_s{
 	uint8_t u8LastReadParamNb;    /*!< Number of last read parameters */
 };
 
+/******************************************************************************/
+
 void AdmInt_SetupDefaultConfig(void);
 void AdmInt_SetupConfig(void);
+
+void AdmInt_AnnCheckSession(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+int32_t AdmInt_AnnIsLocalUpdate(void);
+uint8_t AdmInt_AnnCheckIntFW(admin_ann_fw_info_t *pFwInfo, uint8_t *u8ErrorParam);
+
+/******************************************************************************/
+
 uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 void AdmInt_Unknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
@@ -149,17 +162,17 @@ void AdmInt_WriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 void AdmInt_Execping(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 void AdmInt_Anndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
 
-void AdmInt_AnnCheckSession(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-
-int32_t AdmInt_AnnIsLocalUpdate(void);
-uint8_t AdmInt_AnnCheckIntFW(admin_ann_fw_info_t *pFwInfo, uint8_t *u8ErrorParam);
+/******************************************************************************/
 
 uint8_t AdmInt_PostCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
-void AdmInt_PostReadParam(net_msg_t *pReqMsg);
-void AdmInt_PostWriteParam(net_msg_t *pReqMsg);
-void AdmInt_PostWriteKey(net_msg_t *pReqMsg);
-void AdmInt_PostExecping(net_msg_t *pReqMsg);
-void AdmInt_PostAnndownload(net_msg_t *pReqMsg);
+void AdmInt_PostUnknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_PostReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_PostWriteParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_PostWriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_PostExecping(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+void AdmInt_PostAnndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg);
+
+/******************************************************************************/
 
 #ifdef __cplusplus
 }

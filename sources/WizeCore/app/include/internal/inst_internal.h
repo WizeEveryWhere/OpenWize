@@ -44,6 +44,7 @@ extern "C" {
 
 #include <stdint.h>
 #include <time.h>
+#include <sys/time.h>
 
 /*!
  * @cond INTERNAL
@@ -61,21 +62,27 @@ extern "C" {
  * @brief This struct defines the ping_reply element
  */
 typedef struct {
-	uint8_t GatewayId[6];   /**< The gateway Id (big endian) */
-	uint8_t ModemId;        /**< The modem Id */
-	uint8_t RssiUpstream;   /**< The upstream RSSI */
-	uint8_t RssiDownstream; /**< The downstream RSSI (of the received frame) */
+	uint8_t GatewayId[6];       /**< The gateway Id (big endian) */
+	uint8_t ModemId;            /**< The modem Id */
+	uint8_t RssiUpstream;       /**< The upstream RSSI */
+	uint8_t RssiDownstream;     /**< The downstream RSSI (of the received frame) */
+	// ---
+	int16_t i16PongFreqOff;     /*!< Pong content Frequency offset */
+	uint32_t u32PongEpoch;      /*!< Pong content Epoch (relative to 2013-01-01_00:00:00*/
+	struct timeval tmRecvEpoch; /*!< Epoch of received Pong (relative to local time) (in ms or us for HiResTimer)*/
 } ping_reply_t;
 /*!
  * @brief This struct defines the ping_reply element list.
  */
 typedef struct ping_reply_list_s{
 	struct ping_reply_list_s *pNext; /*!< Pointer on the next element */
-	struct timeval tmRecvEpoch;      /*!< Epoch of received Pong (in ms) */
 	ping_reply_t xPingReply;         /*!< Content values of the received pong */
-	uint32_t u32PongEpoch;           /*!< Pong content Epoch */
-	int16_t i16PongFreqOff;          /*!< Pong content Frequency offset */
 } ping_reply_list_t;
+
+typedef struct {
+	struct timeval tmErr;            /*!< Error second and microsecond to be applied to the current time/epoch */
+	struct timeval tmFrom;           /*!< Current time at which the correction has been computed */
+} epoch_error_t;
 
 /*!
  * @brief This struct defines the ping_reply context.
@@ -85,12 +92,18 @@ struct ping_reply_ctx_s
 	ping_reply_list_t aPingReplyList[NB_PING_REPLPY]; /*!< Table of received Pong */
 	ping_reply_list_t *pWorst;                        /*!< Pointer on the worst RSSI */
 	ping_reply_list_t *pBest;                         /*!< Pointer on the best RSSI */
-	uint32_t u32PingEpoch;                            /*!< Epoch of sent Ping */
+	epoch_error_t sEpochErr;                          /*!< Epoch error correction to be applied */
+	struct timeval tmPingEpoch;                              /*!< Epoch of sent Ping (relative to local time) */
+	uint8_t bGwErrCorr;                               /*!< Enable (1 / Disable (0) the correction of gateway error */
 	uint8_t u8NbPong;                                 /*!< Number of received Pong */
 };
 
 inst_ping_t InstInt_Init(struct ping_reply_ctx_s *ping_reply_ctx);
 uint8_t InstInt_End(struct ping_reply_ctx_s *ping_reply_ctx);
+
+void InstInt_Fill(ping_reply_t *pPingReply, net_msg_t *pNetMsg);
+uint8_t InstInt_Insert(struct ping_reply_ctx_s *ping_reply_ctx, ping_reply_t *pPingReply);
+
 void InstInt_Add(struct ping_reply_ctx_s *ping_reply_ctx, net_msg_t *pxNetMsg);
 
 #ifdef __cplusplus

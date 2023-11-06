@@ -66,10 +66,17 @@ typedef enum
 
 	WIZEAPP_INFO_FINE_ADJ   = 0x0100,
 	WIZEAPP_INFO_COARSE_ADJ = 0x0200,
-	WIZEAPP_INFO_DAY_PASSED = 0x0400,
-	WIZEAPP_INFO_DAYLI_CHG  = 0x0800,
+
 	WIZEAPP_INFO_FULL_POWER = 0x1000,
 	WIZEAPP_INFO_PERIO_INST = 0x2000,
+	WIZEAPP_INFO_DAYLI_CHG  = 0x4000,
+
+	WIZEAPP_INFO_DAY_PASSED = 0x8000,
+	// ---
+	WIZEAPP_INFO_CMD_MSK    = 0x00FF,
+	WIZEAPP_INFO_CLOCK_MSK  = 0x0300,
+	WIZEAPP_INFO_OTHER_MSK  = 0x7000,
+	WIZEAPP_INFO_RSP_MSK    = 0x80000000,
 } wizeapp_info_e;
 
 typedef enum
@@ -89,8 +96,12 @@ void WizeApp_Init(void);
 wize_api_ret_e WizeApp_Install(void);
 wize_api_ret_e WizeApp_Send(uint8_t *pData, uint8_t u8Size);
 wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size);
+wize_api_ret_e WizeApp_Download(void);
+void WizeApp_Download_Cancel(void);
+
 void WizeApp_AnnReady(uint8_t eErrCode, uint8_t u8ErrorParam);
 uint32_t WizeApp_Common(uint32_t ulEvent);
+//uint8_t WizeApp_GetAdmCmd(uint8_t *pData, uint8_t *rssi);
 uint32_t WizeApp_Time(void);
 
 #ifdef __cplusplus

@@ -96,7 +96,7 @@ struct time_upd_s sTimeUpdCtx;
 /*!
  * @brief This structure is used to hold the temporary installation data.
  */
-struct ping_reply_ctx_s sPingReply;
+struct ping_reply_ctx_s sPingReplyCtx;
 
 
 struct adm_config_s sAdmConfig;
@@ -107,16 +107,18 @@ struct adm_config_s sAdmConfig;
  * @{
  */
 #ifdef HAS_HIRES_TIME_MEAS
-extern void HiResTime_Capture(register uint8_t id);
-extern uint32_t HiResTime_Get(register uint8_t id);
+extern int32_t BSP_HiResTmr_EnDis(uint8_t bEnable);
+extern void BSP_HiResTmr_Capture(register uint8_t id);
+extern uint32_t BSP_HiResTmr_Get(register uint8_t id);
 #endif
 
-
+#define BEST_PONG_FORMAT_LOG_INF() "Best: %02x%02x%02x%02x%02x%02x:%02x "
 #define PING_FORMAT_LOG_DBG() "\t-> DwnCh: %x; DwnMod: %x; RxDelay: %x; RxLen: %x\n"
 #define PONG_FORMAT_LOG_DBG() " <- K: %02x %02x %02x %02x %02x %02x; MLAN: %02x; RSSI "
-#define PONG_FORMAT_RSSI_AS_FLOAT() "U:-%d.%d; D:-%d.%d\n"
-#define PONG_FORMAT_RSSI_AS_HEX()   "U:%02x; D:%02x\n"
-#define RSSI_TO_FLOAT_DBM(u8Val) ((u8Val) / 2 + 20) , ( (u8Val) % 2)*5
+
+#define PONG_FORMAT_RSSI_AS_FLOAT() "U:-%d.%d; D:-%d.%d"
+#define PONG_FORMAT_RSSI_AS_HEX()   "U:%02x; D:%02x"
+#define RSSI_TO_FLOAT_DBM(u8Val) ((255 - u8Val) / 2 + 20) , ( (255 - u8Val) % 2)*5
 
 static const uint8_t pong_log_dbg_rssi_as_float = 1;
 
@@ -126,7 +128,6 @@ static uint8_t  _bPendAction_;
 static struct timeval _get_adjust_clock_offset_(void);
 static inline uint8_t _is_periodic_inst_req_(void);
 static inline uint8_t _is_full_power_req_(void);
-static void _adm_ann_to_fw_info(admin_ann_fw_info_t *pFwAnnInfo, admin_cmd_anndownload_t *pAnn);
 
 /*!
  * @}
@@ -223,12 +224,10 @@ void WizeApp_Init(void)
 	_bPendAction_ = 0;
 	_u32InitMask_ = 0xFFFFFFFF;
 	AdmInt_SetupConfig();
-	// FIXME : not very clean
-	sDwnCtx.u8RxLength = sAdmConfig.u32DwnBlkDurMod / 1000;
 }
 
 /*!
- * @brief Convenient function that initialize an "sPingReply" structure and
+ * @brief Convenient function that initialize an "sPingReplyCtx" structure and
  *        call the "WizeApi_ExecPing"function.
  *
  * @return (see WizeApi_ExecPing)
@@ -237,8 +236,14 @@ void WizeApp_Init(void)
 //inline
 wize_api_ret_e WizeApp_Install(void)
 {
+	// Update internal sAdmConfig
+	uint8_t clk_auto_cfg[2];
+	Param_Access(AUTO_ADJ_CLK_FREQ, clk_auto_cfg, 0);
+	sAdmConfig.ClkFreqAutoAdj       = clk_auto_cfg[0];
+	sAdmConfig.ClkFreqAutoAdjRssi   = clk_auto_cfg[1];
 	// Start Install session
-	inst_ping_t sPing = InstInt_Init(&sPingReply);
+	sPingReplyCtx.bGwErrCorr = sAdmConfig.ClkAutoPongGwErrCorr;
+	inst_ping_t sPing = InstInt_Init(&sPingReplyCtx);
 	return WizeApi_ExecPing((uint8_t*)&sPing, sizeof(inst_ping_t));
 }
 
@@ -283,6 +288,8 @@ wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size)
 inline
 wize_api_ret_e WizeApp_Download(void)
 {
+	// FIXME : not very clean
+	sDwnCtx.u8RxLength = sAdmConfig.u32DwnBlkDurMod / 1000;
 	// Start Download session
 	return WizeApi_Download();
 }
@@ -387,6 +394,7 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 					WizeApp_Install();
 					break;
 				case ADM_ANNDOWNLOAD:
+					_bPendAction_ |= WIZEAPP_ADM_CMD_PEND;
 					WizeApp_AnnCheckFwInfo( (admin_cmd_anndownload_t*)(sAdmCtx.aRecvBuff));
 					break;
 				default:
@@ -466,104 +474,120 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 
 	if (ulEvent & SES_FLG_PONG_RECV)
 	{
-		inst_pong_t *pPong = (inst_pong_t *)(sInstCtx.aRecvBuff);
+		ping_reply_t sPingReply;
+		// Fill sPingReply with pong info
+		InstInt_Fill(&sPingReply, &(sInstCtx.sRspMsg));
+		// signal that PONG msg has been treated, buffer is ready
+		WizeApi_Notify(SES_EVT_INST_READY);
 
 		if (pong_log_dbg_rssi_as_float)
 		{
 			LOG_DBG(
-				PONG_FORMAT_LOG_DBG()PONG_FORMAT_RSSI_AS_FLOAT()
-				, pPong->L7ConcentId[0]
-				, pPong->L7ConcentId[1]
-				, pPong->L7ConcentId[2]
-				, pPong->L7ConcentId[3]
-				, pPong->L7ConcentId[4]
-				, pPong->L7ConcentId[5]
-				, pPong->L7ModemId
-				, RSSI_TO_FLOAT_DBM(pPong->L7RssiUpstream)
-				, RSSI_TO_FLOAT_DBM(sInstCtx.sRspMsg.u8Rssi)
+				PONG_FORMAT_LOG_DBG()PONG_FORMAT_RSSI_AS_FLOAT()"\n"
+				, sPingReply.GatewayId[0]
+				, sPingReply.GatewayId[1]
+				, sPingReply.GatewayId[2]
+				, sPingReply.GatewayId[3]
+				, sPingReply.GatewayId[4]
+				, sPingReply.GatewayId[5]
+				, sPingReply.ModemId
+				, RSSI_TO_FLOAT_DBM(sPingReply.RssiUpstream)
+				, RSSI_TO_FLOAT_DBM(sPingReply.RssiDownstream)
 			);
 		}
 		else
 		{
 			LOG_DBG(
-				PONG_FORMAT_LOG_DBG()PONG_FORMAT_RSSI_AS_HEX()
-				, pPong->L7ConcentId[0]
-				, pPong->L7ConcentId[1]
-				, pPong->L7ConcentId[2]
-				, pPong->L7ConcentId[3]
-				, pPong->L7ConcentId[4]
-				, pPong->L7ConcentId[5]
-				, pPong->L7ModemId
-				, (pPong->L7RssiUpstream)
-				, (sInstCtx.sRspMsg.u8Rssi)
+				PONG_FORMAT_LOG_DBG()PONG_FORMAT_RSSI_AS_HEX()"\n"
+				, sPingReply.GatewayId[0]
+				, sPingReply.GatewayId[1]
+				, sPingReply.GatewayId[2]
+				, sPingReply.GatewayId[3]
+				, sPingReply.GatewayId[4]
+				, sPingReply.GatewayId[5]
+				, sPingReply.ModemId
+				, (sPingReply.RssiUpstream)
+				, (sPingReply.RssiDownstream)
 			);
 		}
-		// treat the received message that should be store in sRspMsg
-		InstInt_Add(&sPingReply, &(sInstCtx.sRspMsg) );
-		// signal that PONG msg has been treated, buffer is ready
-		WizeApi_Notify(SES_EVT_INST_READY);
+		// Insert it into the list
+		InstInt_Insert(&sPingReplyCtx, &sPingReply);
 	}
 
 	if (ulEvent & SES_FLG_INST_COMPLETE)
 	{
 		if ( !(ulEvent & SES_FLG_INST_ERROR) )
 		{
-			uint8_t u8NbPong = InstInt_End( &sPingReply );
-			if (u8NbPong)
+			register ping_reply_t *pPingReply = &(sPingReplyCtx.pBest->xPingReply);
+			if (sPingReplyCtx.u8NbPong)
 			{
-				if(sPingReply.pBest->xPingReply.RssiDownstream <= sAdmConfig.ClkFreqAutoAdjRssi)
+				LOG_INF(
+					BEST_PONG_FORMAT_LOG_INF()PONG_FORMAT_RSSI_AS_FLOAT()" E:%d; F:%d\n"
+					, pPingReply->GatewayId[0]
+					, pPingReply->GatewayId[1]
+					, pPingReply->GatewayId[2]
+					, pPingReply->GatewayId[3]
+					, pPingReply->GatewayId[4]
+					, pPingReply->GatewayId[5]
+					, pPingReply->ModemId
+					, RSSI_TO_FLOAT_DBM(pPingReply->RssiUpstream)
+					, RSSI_TO_FLOAT_DBM(pPingReply->RssiDownstream)
+					, pPingReply->u32PongEpoch
+					, pPingReply->i16PongFreqOff
+				);
+
+				uint32_t *pParam = (uint32_t*)Param_GetAddOf(CLOCK_CURRENT_EPOC);
+				InstInt_End( &sPingReplyCtx );
+
+				if(pPingReply->RssiDownstream <= sAdmConfig.ClkFreqAutoAdjRssi)
 				{
-					uint32_t tmp;
-					// Adjust frequency offset
-					if (sAdmConfig.FreqAutoPong)
-					{
-						tmp = (uint32_t)__htons(sPingReply.pBest->i16PongFreqOff);
-						Param_Access(TX_FREQ_OFFSET, (uint8_t*)&( tmp ), 1);
-					}
 					// Adjust current clock
 					if (sAdmConfig.ClkAutoPong)
 					{
-						struct timeval diff = _get_adjust_clock_offset_();
+						register uint32_t usDelay = 1;
+						if (sPingReplyCtx.sEpochErr.tmErr.tv_usec)
+						{
+							sPingReplyCtx.sEpochErr.tmErr.tv_sec += 1;
+							usDelay = 1000000 - sPingReplyCtx.sEpochErr.tmErr.tv_usec;
+						}
 
-						// Adjust the PING_LAST_EPOCH
-						/*
-						FIXME :
-						tmp = sPingReply.pBest->tmRecvEpoch.tv_sec - sPingReply.u32PingEpoch;
-						sPingReply.u32PingEpoch = sPingReply.pBest->u32PongEpoch - tmp;
-						tmp = __htonl( sPingReply.u32PingEpoch );
-						Param_Access(PING_LAST_EPOCH, (uint8_t*)&(tmp), 1);
-						*/
-
+						// Compute and preset the new CLOCK_CURRENT_EPOC
+						*pParam = __htonl( (pPingReply->u32PongEpoch + sPingReplyCtx.sEpochErr.tmErr.tv_sec) );
 						/*
 						 * The RTC sub-second register is read-only, so we need
 						 * to wait until the next "second transition"
 						 */
-						/*
-						 *  Maybe we should add some microsecond or millisecond
-						 *  to take into account :
-						 *  - the all computation time
-						 *    - before calling "_get_adjust_clock_offset_"
-						 *    - during "_get_adjust_clock_offset_"
-						 *    - until "_get_adjust_clock_offset_" return
-						 *  - the interrupt and event propagation time after the
-						 *    CLOCK_CURRENT_EPOC register is set
-						 *
-						 */
-						// Compute the new values
-						if (diff.tv_usec)
-						{
-							diff.tv_sec += 1;
-						}
-						// Compute the new CLOCK_CURRENT_EPOC
-						tmp = __htonl(sPingReply.pBest->u32PongEpoch + diff.tv_sec);
-						// Setup the CLOCK_CURRENT_EPOC
-						Param_Access(CLOCK_CURRENT_EPOC, (uint8_t*)&( tmp ), 1);
+						// wait for "filled second"
+						WizeApi_TimeMgr_Update(usDelay);
+						/* FIXME : Should we adjust the PING_LAST_EPOCH ? */
 
-						// wait for "wait_ms"
-						WizeApi_TimeMgr_Update(diff.tv_usec);
 					}
+					// Adjust frequency offset
+					if (sAdmConfig.FreqAutoPong)
+					{
+						uint16_t tmp;
+						tmp = (uint16_t)__htons(pPingReply->i16PongFreqOff);
+						Param_Access(TX_FREQ_OFFSET, (uint8_t*)&( tmp ), 1);
+					}
+
+				#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+					uint8_t clk_auto_cfg[2];
+					if (sAdmConfig.ClkAutoPongOneShot && sAdmConfig.ClkAutoPong)
+					{
+						sAdmConfig.ClkAutoPong = 0;
+					}
+					if (sAdmConfig.FreqAutoPongOneShot && sAdmConfig.FreqAutoPong)
+					{
+						sAdmConfig.FreqAutoPongOneShot = 0;
+					}
+					clk_auto_cfg[0] = sAdmConfig.ClkFreqAutoAdj;
+					clk_auto_cfg[1] = sAdmConfig.ClkFreqAutoAdjRssi;
+					Param_Access(AUTO_ADJ_CLK_FREQ, clk_auto_cfg, 1);
+				#endif
+
 				}
 			}
+
 			if ( _bPendAction_ & WIZEAPP_ADM_RSP_PEND)
 			{
 				if (sAdmCtx.aRecvBuff[0] == ADM_EXECINSTPING)
@@ -577,6 +601,9 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 				}
 				ret = ADM_EXECINSTPING;
 			}
+#ifdef HAS_HIRES_TIME_MEAS
+			BSP_HiResTmr_EnDis(0);
+#endif
 			// Install session is complete without error, so clear the "periodic install" counter
 			gu16PeriodInstCnt = 0;
 		}
@@ -665,68 +692,6 @@ uint32_t WizeApp_Time(void)
 }
 
 /******************************************************************************/
-
-/*!
- * @static
- * @brief This function get the offset to be applied to the new clock received
- *        from a Pong frame.
- *
- * @details It compute the difference between time "now" and the pong frame
- *          reception time. Furthermore, it take into account the pong frame
- *          duration (126 ms).
- *
- * @return the offset as timeval structure (second and microsecond)
- *
- */
-static struct timeval _get_adjust_clock_offset_(void)
-{
-	struct timeval diff;
-
-#ifdef HAS_HIRES_TIME_MEAS
-	/*
-	// get microsecond from Ping EOF
-	uint32_t pingEOFus = HiResTime_Get(2);
-	// Compute delta between Ping EOF and the best Pong EOF
-	delta = sPingReply.pBest->tmRecvEpoch.tv_usec - pingEOFus;
-	 */
-
-	// Get microsecond now
-	HiResTime_Capture(1);
-	// Compute delta between "now" and the best Pong EOF
-	uint32_t delta = HiResTime_Get(1) - sPingReply.pBest->tmRecvEpoch.tv_usec;
-	diff.tv_sec = delta / 1000000;
-	diff.tv_usec = delta % 1000000;
-
-#else
-
-	struct timeval now;
-	gettimeofday(&now, NULL);
-
-	// diff.tv_sec if ever >= 0
-	diff.tv_sec = now.tv_sec - sPingReply.pBest->tmRecvEpoch.tv_sec;
-
-	// diff.tv_usec could be <= 0
-	if (now.tv_usec > sPingReply.pBest->tmRecvEpoch.tv_usec)
-	{
-		diff.tv_usec = now.tv_usec - sPingReply.pBest->tmRecvEpoch.tv_usec;
-	}
-	else
-	{
-		diff.tv_usec = sPingReply.pBest->tmRecvEpoch.tv_usec - now.tv_usec;
-		diff.tv_usec = 1000000 - diff.tv_usec;
-	}
-#endif
-
-	// take into account the PONG frame duration
-	diff.tv_usec += 128000;
-
-	// Compute the new values
-	diff.tv_sec += (diff.tv_usec / 1000000);
-	diff.tv_usec %= 1000000;
-
-	return diff;
-}
-
 /*!
  * @static
  * @brief This function update "Periodic Install" counter
@@ -739,6 +704,7 @@ static inline uint8_t _is_periodic_inst_req_(void)
 	uint8_t temp;
 	uint16_t v;
 
+	// FIXME : EXECPING_PERIODE in month + random value in days between 0 to 30
 	Param_Access(EXECPING_PERIODE, &temp, 0);
 	v = temp*30;
 

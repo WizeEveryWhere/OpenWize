@@ -103,7 +103,10 @@ void AdmInt_SetupDefaultConfig(void)
   */
 void AdmInt_SetupConfig(void)
 {
-	AdmInt_SetupDefaultConfig();
+	if(!sAdmConfig.state)
+	{
+		AdmInt_SetupDefaultConfig();
+	}
 #ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
 	uint8_t tmp[4];
 	/* Set the min RSSI to Auto-Adjust Clock and Frequency offset
@@ -137,373 +140,7 @@ void AdmInt_SetupConfig(void)
 	sAdmConfig.u32DwnBlkNbMax      = __ntohl(*(uint32_t*)tmp);
 #endif
 }
-
 /******************************************************************************/
-/*!
-  * @brief This function treat the command and build the response. The command
-  * is not executed here.
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  *
-  * @retval RSP_NOT_READY (see @link admin_rsp_status_e::RSP_NOT_READY @endlink)
-  * @retval RSP_READY (see @link admin_rsp_status_e::RSP_READY @endlink)
-  * @retval RSP_ALREADY_DONE (see @link admin_rsp_status_e::RSP_ALREADY_DONE @endlink)
-  */
-uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	uint8_t ret = RSP_READY;
-	// check if CMD Id has not previously been received
-	if ( (pReqMsg->u16Id != pRspMsg->u16Id) || ( (pReqMsg->u16Id == pRspMsg->u16Id) && (pRspMsg->u32Epoch == 0) ) )
-	{
-		pRspMsg->u8Type = APP_ADMIN;
-		pRspMsg->u16Id = pReqMsg->u16Id;
-		pRspMsg->u8KeyId = pReqMsg->u8KeyId;
-
-		// prepare the header
-		((admin_rsp_t*)(pRspMsg->pData))->L7ResponseId = pReqMsg->pData[0];
-		((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode  = ADM_NONE;
-		((admin_rsp_t*)(pRspMsg->pData))->L7Rssi       = pReqMsg->u8Rssi;
-		Param_Access(VERS_FW_TRX, (uint8_t*)(((admin_rsp_t*)(pRspMsg->pData))->L7SwVersion), 0);
-		pRspMsg->u8Size = sizeof(admin_rsp_t);
-
-		switch (pReqMsg->pData[0]) //L7CommandId
-		{
-			case ADM_READ_PARAM :
-				AdmInt_ReadParam(pReqMsg, pRspMsg);
-				break;
-			case ADM_WRITE_PARAM :
-				AdmInt_WriteParam(pReqMsg, pRspMsg);
-				break;
-			case ADM_WRITE_KEY :
-				if(!sAdmConfig.state)
-				{
-					AdmInt_SetupDefaultConfig();
-				}
-				AdmInt_WriteKey(pReqMsg, pRspMsg);
-				break;
-			case ADM_ANNDOWNLOAD :
-				if(!sAdmConfig.state)
-				{
-					AdmInt_SetupDefaultConfig();
-				}
-				AdmInt_Anndownload(pReqMsg, pRspMsg);
-				// Check if error
-				if (((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode == ADM_NONE)
-				{
-					ret = RSP_NOT_READY;
-				}
-				break;
-			case ADM_EXECINSTPING :
-				// response not yet available
-				//pRspMsg->pData[0] = ~(pReqMsg->pData[0]);
-				ret = RSP_NOT_READY;
-				break;
-			default :
-			{
-#ifdef HAS_CUSTOM_ADM_CMD
-				AdmInt_Custom(pReqMsg, pRspMsg);
-				break;
-#else
-				AdmInt_Unknown(pReqMsg, pRspMsg);
-				break;
-#endif
-			}
-		}
-	}
-	else // CMD was previously processed
-	{
-		// if RSP is available, send it (previously build RSP)
-		// else, build RSP => EXEC_PING case only
-		if (pReqMsg->pData[0] == ADM_EXECINSTPING)
-		{
-			// build rsp
-			AdmInt_Execping(pReqMsg, pRspMsg);
-		}
-		ret = RSP_ALREADY_DONE;
-	}
-	return ret;
-}
-
-/******************************************************************************/
-
-/*!
-  * @brief This function treat the L7 unknown command
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  *
-  * @return None
-  */
-__attribute__((weak))
-void AdmInt_Unknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ErrorCode = ADM_UNK_CMD;
-	pRspMsg->u8Size = sizeof(admin_rsp_cmderr_t);
-}
-
-/*!
-  * @brief This function treat the L7 read parameter
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  * @return None
-  */
-void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	uint8_t idx;
-	uint8_t u8L7TransLenMax;
-
-	uint8_t u8ParamId;
-	uint8_t u8ParamSz;
-	uint8_t u8NbParam;
-
-	uint8_t *pIn = &(pReqMsg->pData[1]);
-	uint8_t *pOut = pRspMsg->pData;
-	uint8_t *pLastReadIds = sAdmConfig.pLastReadParamIds;
-
-	// Warning : the response buffer size must equal the L7TransLenMax
-	Param_Access(L7TRANSMIT_LENGTH_MAX, (uint8_t*)(&u8L7TransLenMax), 0);
-
-	u8NbParam = pReqMsg->u8Size - 1; // -1 for L7CommandId
-
-	// update the position with header
-	pOut += sizeof(admin_rsp_t);
-	for (idx = 0; idx < u8NbParam; idx++)
-	{
-		u8ParamId = pIn[idx];
-
-		// Keep trace of the last written parameters ids
-		*pLastReadIds = u8ParamId;
-		pLastReadIds++;
-
-		// check if parameter exist
-		if (Param_IsValidId(u8ParamId))
-		{
-			// check that parameter size is not exceed the end of buffer (don(t forget the paramId)
-			u8ParamSz = Param_GetSize(u8ParamId);
-			if ( (pOut + u8ParamSz +1) > (pRspMsg->pData + u8L7TransLenMax -1) )
-			{
-				// parameter size doesn't fit into the remaining buffer size
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_LENGTH_EXCEED;
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = pOut + u8ParamSz +1 - pRspMsg->pData;
-				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-				break;
-			}
-
-			// set the parameter id into the response
-			*pOut = u8ParamId;
-			// update the position
-			pOut += 1;
-			pRspMsg->u8Size += 1;
-
-			// fill the parameter value
-			if ( !(Param_RemoteAccess(u8ParamId, pOut, 0)) )
-			{
-				// check the access
-				if ( NA == Param_GetRemAccess(u8ParamId) )
-				{
-					// parameter doesn't exist
-					((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_UNK_PARAM;
-				}
-				else
-				{
-					// unauthorized access
-					((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_ACCES_DENIED;
-				}
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
-				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-				break;
-			}
-			else {
-				pRspMsg->u8Size += u8ParamSz;
-			}
-			// update the position
-			pOut += u8ParamSz;
-		}
-		else
-		{
-			// parameter doesn't exist
-			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_UNK_PARAM;
-			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
-			pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-			break;
-		}
-	}
-	sAdmConfig.u8LastReadParamNb = pLastReadIds - sAdmConfig.pLastReadParamIds;
-}
-
-/*!
-  * @brief This function treat the L7 write parameter
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  * @return None
-  */
-void AdmInt_WriteParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	uint8_t u8ParamId;
-	uint8_t u8ParamSz;
-	param_access_e eAccess;
-
-	uint8_t *pIn = &(pReqMsg->pData[1]);
-	uint8_t *pOut = pRspMsg->pData;
-
-	// update the position with header
-	pOut += sizeof(admin_rsp_t);
-	while (pIn < &(pReqMsg->pData[pReqMsg->u8Size]))
-	{
-		// get paramId
-		u8ParamId = *pIn;
-		if (Param_IsValidId(u8ParamId))
-		{
-			// update the position
-			pIn++;
-			if ( ! (Param_CheckConformity(u8ParamId, pIn)) )
-			{
-				// the parameter value doesn't conform
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_ILLEGAL_VALUE;
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
-				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-				break;
-			}
-			else
-			{
-				eAccess = Param_GetRemAccess(u8ParamId);
-				if ( !(eAccess & WO) )
-				{
-					if (eAccess == NA)
-					{
-						// parameter doesn't exist
-						((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_UNK_PARAM;
-					}
-					else
-					{
-						// unauthorized access
-						((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_ACCES_DENIED;
-					}
-					((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
-					pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-					break;
-				}
-			}
-			// get the parameter
-			u8ParamSz = Param_GetSize(u8ParamId);
-			// update the position
-			pIn += u8ParamSz;
-		}
-		else
-		{
-			// parameter doesn't exist
-			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_UNK_PARAM;
-			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
-			pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-			break;
-		}
-	}
-}
-
-/*!
-  * @brief This function treat the L7 write key
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  * @return None
-  */
-void AdmInt_WriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	admin_cmd_writekey_t *pIn = (admin_cmd_writekey_t*)(pReqMsg->pData);
-
-	do
-	{
-		if ( pReqMsg->u8Size != sizeof(admin_cmd_writekey_t) )
-		{
-			// bad frame size
-			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_INCORRECT_FRM_LEN;
-			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = pReqMsg->u8Size;
-			pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-			break;
-		}
-
-		if (!sAdmConfig.KeyChgBypassUse)
-		{
-			pRspMsg->u8KeyId = KEY_CHG_ID;
-			if (pReqMsg->u8KeyId != KEY_CHG_ID)
-			{
-				// key change is not used
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_KCHG_NOT_USED;
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = pReqMsg->u8KeyId;
-				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-				break;
-			}
-		}
-
-		if( !sAdmConfig.WriteKeyBypassId )
-		{
-			if ( (pIn->L7KeyId != 0x01) && (pIn->L7KeyId != 0x02) )
-			{
-				// other keys are forbidden
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_ILLEGAL_VALUE;
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = 0;
-				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-			}
-		}
-		else
-		{
-			if ( (pIn->L7KeyId == 0) || (pIn->L7KeyId >= KEY_MAX_NB) )
-			{
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_ILLEGAL_VALUE;
-				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = 0;
-				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-			}
-		}
-	} while(0);
-}
-
-/*!
-  * @brief This function treat the L7 exec_ping
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  * @return None
-  */
-void AdmInt_Execping(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	uint8_t *pOut = pRspMsg->pData;
-
-	// Fill rsp
-	Param_Access(PING_NBFOUND, &(((admin_rsp_execinstping_t*)pOut)->L7NbPong), 0);
-	Param_Access(PING_REPLY1, &(((admin_rsp_execinstping_t*)pOut)->L7Pong[0][0]), 0);
-	Param_Access(PING_REPLY2, &(((admin_rsp_execinstping_t*)pOut)->L7Pong[1][0]), 0);
-	Param_Access(PING_REPLY3, &(((admin_rsp_execinstping_t*)pOut)->L7Pong[2][0]), 0);
-	pRspMsg->u8Size = sizeof(admin_rsp_execinstping_t);
-}
-
-/*!
-  * @brief This function treat the L7 ann_download
-  *
-  * @param [in,out] pReqMsg Pointer on request message
-  * @param [in,out] pRspMsg Pointer on response message
-  * @return None
-  */
-void AdmInt_Anndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
-{
-	/**********************************************************************/
-	AdmInt_AnnCheckSession(pReqMsg, pRspMsg);
-
-	// Check if error
-	if (((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode != ADM_NONE)
-	{
-		// error
-		pRspMsg->u8Size = sizeof(admin_rsp_err_t);
-	}
-	else
-	{
-		// no error
-		pRspMsg->u8Size = sizeof(admin_rsp_t);
-	}
-}
-
 /*!
   * @brief This function check and validate the download session parameters
   *
@@ -511,6 +148,7 @@ void AdmInt_Anndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
   * @param [in,out] pRspMsg Pointer on response message
   * @return None
   */
+__attribute__((weak))
 void AdmInt_AnnCheckSession(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	admin_cmd_anndownload_t *pIn = (admin_cmd_anndownload_t*)(pReqMsg->pData);
@@ -794,6 +432,373 @@ int32_t AdmInt_AnnIsLocalUpdate(void)
 }
 
 /******************************************************************************/
+/******************************************************************************/
+/*!
+  * @brief This function treat the command and build the response. The command
+  * is not executed here.
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  *
+  * @retval RSP_NOT_READY (see @link admin_rsp_status_e::RSP_NOT_READY @endlink)
+  * @retval RSP_READY (see @link admin_rsp_status_e::RSP_READY @endlink)
+  * @retval RSP_ALREADY_DONE (see @link admin_rsp_status_e::RSP_ALREADY_DONE @endlink)
+  */
+uint8_t AdmInt_PreCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	uint8_t ret = RSP_READY;
+	// check if CMD Id has not previously been received
+	if ( (pReqMsg->u16Id != pRspMsg->u16Id) || ( (pReqMsg->u16Id == pRspMsg->u16Id) && (pRspMsg->u32Epoch == 0) ) )
+	{
+		pRspMsg->u8Type = APP_ADMIN;
+		pRspMsg->u16Id = pReqMsg->u16Id;
+		pRspMsg->u8KeyId = pReqMsg->u8KeyId;
+
+		// prepare the header
+		((admin_rsp_t*)(pRspMsg->pData))->L7ResponseId = pReqMsg->pData[0];
+		((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode  = ADM_NONE;
+		((admin_rsp_t*)(pRspMsg->pData))->L7Rssi       = pReqMsg->u8Rssi;
+		Param_Access(VERS_FW_TRX, (uint8_t*)(((admin_rsp_t*)(pRspMsg->pData))->L7SwVersion), 0);
+		pRspMsg->u8Size = sizeof(admin_rsp_t);
+
+		switch (pReqMsg->pData[0]) //L7CommandId
+		{
+			case ADM_READ_PARAM :
+				AdmInt_ReadParam(pReqMsg, pRspMsg);
+				break;
+			case ADM_WRITE_PARAM :
+				AdmInt_WriteParam(pReqMsg, pRspMsg);
+				break;
+			case ADM_WRITE_KEY :
+				AdmInt_SetupConfig();
+				AdmInt_WriteKey(pReqMsg, pRspMsg);
+				break;
+			case ADM_ANNDOWNLOAD :
+				AdmInt_SetupConfig();
+				AdmInt_Anndownload(pReqMsg, pRspMsg);
+				// Check if error
+				if (((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode == ADM_NONE)
+				{
+					ret = RSP_NOT_READY;
+				}
+				break;
+			case ADM_EXECINSTPING :
+				// response not yet available
+				//pRspMsg->pData[0] = ~(pReqMsg->pData[0]);
+				ret = RSP_NOT_READY;
+				break;
+			default :
+			{
+#ifdef HAS_CUSTOM_ADM_CMD
+				AdmInt_Custom(pReqMsg, pRspMsg);
+				break;
+#else
+				AdmInt_Unknown(pReqMsg, pRspMsg);
+				break;
+#endif
+			}
+		}
+	}
+	else // CMD was previously processed
+	{
+		// if RSP is available, send it (previously build RSP)
+		// else, build RSP => EXEC_PING case only
+		if (pReqMsg->pData[0] == ADM_EXECINSTPING)
+		{
+			// build rsp
+			AdmInt_Execping(pReqMsg, pRspMsg);
+		}
+		ret = RSP_ALREADY_DONE;
+	}
+	return ret;
+}
+
+/******************************************************************************/
+
+/*!
+  * @brief This function treat the L7 unknown command
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  *
+  * @return None
+  */
+__attribute__((weak))
+void AdmInt_Unknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	((admin_rsp_cmderr_t*)(pRspMsg->pData))->L7ErrorCode = ADM_UNK_CMD;
+	pRspMsg->u8Size = sizeof(admin_rsp_cmderr_t);
+}
+
+/*!
+  * @brief This function treat the L7 read parameter
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  * @return None
+  */
+__attribute__((weak))
+void AdmInt_ReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	uint8_t idx;
+	uint8_t u8L7TransLenMax;
+
+	uint8_t u8ParamId;
+	uint8_t u8ParamSz;
+	uint8_t u8NbParam;
+
+	uint8_t *pIn = &(pReqMsg->pData[1]);
+	uint8_t *pOut = pRspMsg->pData;
+	uint8_t *pLastReadIds = sAdmConfig.pLastReadParamIds;
+
+	// Warning : the response buffer size must equal the L7TransLenMax
+	Param_Access(L7TRANSMIT_LENGTH_MAX, (uint8_t*)(&u8L7TransLenMax), 0);
+
+	u8NbParam = pReqMsg->u8Size - 1; // -1 for L7CommandId
+
+	// update the position with header
+	pOut += sizeof(admin_rsp_t);
+	for (idx = 0; idx < u8NbParam; idx++)
+	{
+		u8ParamId = pIn[idx];
+
+		// Keep trace of the last written parameters ids
+		*pLastReadIds = u8ParamId;
+		pLastReadIds++;
+
+		// check if parameter exist
+		if (Param_IsValidId(u8ParamId))
+		{
+			// check that parameter size is not exceed the end of buffer (don(t forget the paramId)
+			u8ParamSz = Param_GetSize(u8ParamId);
+			if ( (pOut + u8ParamSz +1) > (pRspMsg->pData + u8L7TransLenMax -1) )
+			{
+				// parameter size doesn't fit into the remaining buffer size
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_LENGTH_EXCEED;
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = pOut + u8ParamSz +1 - pRspMsg->pData;
+				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+				break;
+			}
+
+			// set the parameter id into the response
+			*pOut = u8ParamId;
+			// update the position
+			pOut += 1;
+			pRspMsg->u8Size += 1;
+
+			// fill the parameter value
+			if ( !(Param_RemoteAccess(u8ParamId, pOut, 0)) )
+			{
+				// check the access
+				if ( NA == Param_GetRemAccess(u8ParamId) )
+				{
+					// parameter doesn't exist
+					((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_UNK_PARAM;
+				}
+				else
+				{
+					// unauthorized access
+					((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_ACCES_DENIED;
+				}
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
+				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+				break;
+			}
+			else {
+				pRspMsg->u8Size += u8ParamSz;
+			}
+			// update the position
+			pOut += u8ParamSz;
+		}
+		else
+		{
+			// parameter doesn't exist
+			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = READ_UNK_PARAM;
+			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
+			pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+			break;
+		}
+	}
+	sAdmConfig.u8LastReadParamNb = pLastReadIds - sAdmConfig.pLastReadParamIds;
+}
+
+/*!
+  * @brief This function treat the L7 write parameter
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  * @return None
+  */
+__attribute__((weak))
+void AdmInt_WriteParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	uint8_t u8ParamId;
+	uint8_t u8ParamSz;
+	param_access_e eAccess;
+
+	uint8_t *pIn = &(pReqMsg->pData[1]);
+	uint8_t *pOut = pRspMsg->pData;
+
+	// update the position with header
+	pOut += sizeof(admin_rsp_t);
+	while (pIn < &(pReqMsg->pData[pReqMsg->u8Size]))
+	{
+		// get paramId
+		u8ParamId = *pIn;
+		if (Param_IsValidId(u8ParamId))
+		{
+			// update the position
+			pIn++;
+			if ( ! (Param_CheckConformity(u8ParamId, pIn)) )
+			{
+				// the parameter value doesn't conform
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_ILLEGAL_VALUE;
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
+				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+				break;
+			}
+			else
+			{
+				eAccess = Param_GetRemAccess(u8ParamId);
+				if ( !(eAccess & WO) )
+				{
+					if (eAccess == NA)
+					{
+						// parameter doesn't exist
+						((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_UNK_PARAM;
+					}
+					else
+					{
+						// unauthorized access
+						((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_ACCES_DENIED;
+					}
+					((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
+					pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+					break;
+				}
+			}
+			// get the parameter
+			u8ParamSz = Param_GetSize(u8ParamId);
+			// update the position
+			pIn += u8ParamSz;
+		}
+		else
+		{
+			// parameter doesn't exist
+			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = WRITE_UNK_PARAM;
+			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = u8ParamId;
+			pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+			break;
+		}
+	}
+}
+
+/*!
+  * @brief This function treat the L7 write key
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  * @return None
+  */
+__attribute__((weak))
+void AdmInt_WriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	admin_cmd_writekey_t *pIn = (admin_cmd_writekey_t*)(pReqMsg->pData);
+
+	do
+	{
+		if ( pReqMsg->u8Size != sizeof(admin_cmd_writekey_t) )
+		{
+			// bad frame size
+			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_INCORRECT_FRM_LEN;
+			((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = pReqMsg->u8Size;
+			pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+			break;
+		}
+
+		if (!sAdmConfig.KeyChgBypassUse)
+		{
+			pRspMsg->u8KeyId = KEY_CHG_ID;
+			if (pReqMsg->u8KeyId != KEY_CHG_ID)
+			{
+				// key change is not used
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_KCHG_NOT_USED;
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = pReqMsg->u8KeyId;
+				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+				break;
+			}
+		}
+
+		if( !sAdmConfig.WriteKeyBypassId )
+		{
+			if ( (pIn->L7KeyId != 0x01) && (pIn->L7KeyId != 0x02) )
+			{
+				// other keys are forbidden
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_ILLEGAL_VALUE;
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = 0;
+				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+			}
+		}
+		else
+		{
+			if ( (pIn->L7KeyId == 0) || (pIn->L7KeyId >= KEY_MAX_NB) )
+			{
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorCode = KEY_ILLEGAL_VALUE;
+				((admin_rsp_err_t*)pRspMsg->pData)->L7ErrorParam = 0;
+				pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+			}
+		}
+	} while(0);
+}
+
+/*!
+  * @brief This function treat the L7 exec_ping
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  * @return None
+  */
+__attribute__((weak))
+void AdmInt_Execping(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	uint8_t *pOut = pRspMsg->pData;
+
+	// Fill rsp
+	Param_Access(PING_NBFOUND, &(((admin_rsp_execinstping_t*)pOut)->L7NbPong), 0);
+	Param_Access(PING_REPLY1, &(((admin_rsp_execinstping_t*)pOut)->L7Pong[0][0]), 0);
+	Param_Access(PING_REPLY2, &(((admin_rsp_execinstping_t*)pOut)->L7Pong[1][0]), 0);
+	Param_Access(PING_REPLY3, &(((admin_rsp_execinstping_t*)pOut)->L7Pong[2][0]), 0);
+	pRspMsg->u8Size = sizeof(admin_rsp_execinstping_t);
+}
+
+/*!
+  * @brief This function treat the L7 ann_download
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  * @return None
+  */
+__attribute__((weak))
+void AdmInt_Anndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	/**********************************************************************/
+	AdmInt_AnnCheckSession(pReqMsg, pRspMsg);
+
+	// Check if error
+	if (((admin_rsp_t*)(pRspMsg->pData))->L7ErrorCode != ADM_NONE)
+	{
+		// error
+		pRspMsg->u8Size = sizeof(admin_rsp_err_t);
+	}
+	else
+	{
+		// no error
+		pRspMsg->u8Size = sizeof(admin_rsp_t);
+	}
+}
+
+/******************************************************************************/
+/******************************************************************************/
 /*!
   * @brief This function executed the pending CMD action if any
 
@@ -814,24 +819,25 @@ uint8_t AdmInt_PostCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 			switch (pRspMsg->pData[0]) //L7CommandId
 			{
 				case ADM_WRITE_PARAM :
-					AdmInt_PostWriteParam(pReqMsg);
+					AdmInt_PostWriteParam(pReqMsg, pRspMsg);
 					break;
 				case ADM_WRITE_KEY :
-					AdmInt_PostWriteKey(pReqMsg);
+					AdmInt_PostWriteKey(pReqMsg, pRspMsg);
 					break;
 				case ADM_ANNDOWNLOAD :
-					AdmInt_PostAnndownload(pReqMsg);
+					AdmInt_PostAnndownload(pReqMsg, pRspMsg);
 					break;
 				case ADM_READ_PARAM :
-					AdmInt_PostReadParam(pReqMsg);
+					AdmInt_PostReadParam(pReqMsg, pRspMsg);
 					break;
 				case ADM_EXECINSTPING :
-					AdmInt_PostExecping(pReqMsg);
+					AdmInt_PostExecping(pReqMsg, pRspMsg);
 					break;
 				default :
 #ifdef HAS_CUSTOM_ADM_CMD
-					AdmInt_PostCustom(pReqMsg);
+					AdmInt_PostCustom(pReqMsg, pRspMsg);
 #else
+					AdmInt_PostUnknown(pReqMsg, pRspMsg);
 					ret = 0;
 #endif
 					break;
@@ -867,6 +873,20 @@ uint8_t AdmInt_PostCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 }
 
 /******************************************************************************/
+/*!
+  * @brief This function execute the Unknown action
+  *
+  * @param [in,out] pReqMsg Pointer on request message
+  * @param [in,out] pRspMsg Pointer on response message
+  *
+  * @return None
+  */
+__attribute__((weak))
+void AdmInt_PostUnknown(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
+{
+	(void)pReqMsg;
+	(void)pRspMsg;
+}
 
 /*!
   * @brief This function execute the Read Parameter action
@@ -876,9 +896,10 @@ uint8_t AdmInt_PostCmd(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
   * @return None
   */
 __attribute__((weak))
-void AdmInt_PostReadParam(net_msg_t *pReqMsg)
+void AdmInt_PostReadParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	(void)pReqMsg;
+	(void)pRspMsg;
 }
 
 /*!
@@ -888,8 +909,10 @@ void AdmInt_PostReadParam(net_msg_t *pReqMsg)
   *
   * @return None
   */
-void AdmInt_PostWriteParam(net_msg_t *pReqMsg)
+__attribute__((weak))
+void AdmInt_PostWriteParam(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
+	(void)pRspMsg;
 	uint8_t u8ParamId;
 	// update the position with header
 	uint8_t *pIn = &(pReqMsg->pData[1]);
@@ -920,8 +943,10 @@ void AdmInt_PostWriteParam(net_msg_t *pReqMsg)
   *
   * @return None
   */
-void AdmInt_PostWriteKey(net_msg_t *pReqMsg)
+__attribute__((weak))
+void AdmInt_PostWriteKey(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
+	(void)pRspMsg;
 	uint8_t u8KeyId;
 
 	u8KeyId = ((admin_cmd_writekey_t*)(pReqMsg->pData))->L7KeyId;
@@ -950,9 +975,10 @@ void AdmInt_PostWriteKey(net_msg_t *pReqMsg)
   * @return None
   */
 __attribute__((weak))
-void AdmInt_PostExecping(net_msg_t *pReqMsg)
+void AdmInt_PostExecping(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	(void)pReqMsg;
+	(void)pRspMsg;
 }
 
 /*!
@@ -963,9 +989,10 @@ void AdmInt_PostExecping(net_msg_t *pReqMsg)
   * @return None
   */
 __attribute__((weak))
-void AdmInt_PostAnndownload(net_msg_t *pReqMsg)
+void AdmInt_PostAnndownload(net_msg_t *pReqMsg, net_msg_t *pRspMsg)
 {
 	(void)pReqMsg;
+	(void)pRspMsg;
 }
 
 /******************************************************************************/

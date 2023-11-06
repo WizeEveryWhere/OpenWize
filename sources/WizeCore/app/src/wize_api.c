@@ -548,13 +548,9 @@ void WizeApi_TimeMgr_Register(void *hTask)
  */
 void WizeApi_TimeMgr_Update(uint32_t u32usDelay)
 {
-// FIXME
-#define LSE_CLK_DIV2 16384UL
-
-	uint32_t cycDelay = (u32usDelay * LSE_CLK_DIV2) / 1000000;
-	//_time_wakeup_force(cycDelay);
-	cycDelay += (cycDelay)?(0):(1);
-	sys_flag_set(hTimeMgrTask, cycDelay);
+	// Force immediate
+	sTimeCtx.pTimeUpd->state_.clock_init = 0;
+	sys_flag_set(hTimeMgrTask, u32usDelay);
 }
 
 /*!
@@ -588,6 +584,9 @@ extern void _time_update_set_handler(pfTimeEvt_HandlerCB_t const pfCb);
 
 static void _time_mgr_evtCb_(void);
 
+// FIXME
+#define LSE_CLK_DIV2 16384 //UL
+
 /******************************************************************************/
 /*!
  * @static
@@ -603,7 +602,7 @@ static void _time_mgr_main_(void const * argument)
 	uint32_t ulPeriod = pdMS_TO_TICKS(TIME_MGR_EVT_PERIOD());
 	uint32_t bNewDay = 0;
 	uint32_t eRet = 0;
-	uint32_t cycDelay = 2;
+	uint32_t usDelay = 0;
 
 	assert(sTimeCtx.pTimeUpd);
 
@@ -638,7 +637,12 @@ static void _time_mgr_main_(void const * argument)
 		{
 			if(eRet & TIME_FLG_CLOCK_CHANGE)
 			{
-				LOG_DBG("TIME EPOCH corr. req.\n");
+				//LOG_DBG("TIME EPOCH corr. req.\n");
+				LOG_DBG( "TIME EPOCH corr. req. to %d (local)\n",
+						//__ntohl(*(sTimeCtx.pCurEpoch))
+						sTimeCtx.pTimeUpd->value
+						+ sTimeCtx.u32OffsetToUnix
+					);
 
 				if ( sTimeCtx.pTimeUpd->state_.clock_init == 0 )
 				{
@@ -651,8 +655,10 @@ static void _time_mgr_main_(void const * argument)
 					 * effectively correct the RTC clock with the new value.
 					 *
 					 */
-					LOG_DBG("...in %d cyc.\n", cycDelay);
-					_time_wakeup_force(cycDelay);
+					uint64_t cycDelay;
+					cycDelay = (LSE_CLK_DIV2 * (uint64_t)usDelay) / 1000000 ;
+					LOG_DBG("...in %d us (%d cyc)\n", usDelay, (uint32_t)cycDelay);
+					_time_wakeup_force((uint32_t)cycDelay);
 					sTimeCtx.pTimeUpd->state_.clock_init = 1;
 				}
 			}
@@ -672,15 +678,14 @@ static void _time_mgr_main_(void const * argument)
 		}
 
 		// waiting for event
-		//bNewDay = sys_flag_take(ulPeriod);
-		if ( sys_flag_wait(&cycDelay, ulPeriod) )
+		if ( sys_flag_wait(&usDelay, ulPeriod) )
 		{
-			bNewDay = (cycDelay)?(0):(1);
+			bNewDay = (usDelay)?(0):(1);
 		}
 		else
 		{
 			bNewDay = 0;
-			cycDelay = 2;
+			usDelay = 120;
 		}
 	}
 }
@@ -876,7 +881,7 @@ static wize_api_ret_e _wizeapi_ses_preinit_(uint8_t *pData, uint8_t u8Size, uint
 		_pDwnCtx_->u8ChannelId    = (pAnnReq->L7ChannelId -100)/10;
 		_pDwnCtx_->u16BlocksCount = __ntohs( *(uint16_t*)(pAnnReq->L7BlocksCount) );
 		_pDwnCtx_->u8ModulationId = pAnnReq->L7ModulationId;
-		_pDwnCtx_->u8DayRepeat    = pAnnReq->L7DayRepeat;
+		_pDwnCtx_->u8DayRepeat    = pAnnReq->L7DayRepeat & 0x0F;
 		_pDwnCtx_->u8DeltaSec     = pAnnReq->L7DeltaSec;
 		_pDwnCtx_->u32DaysProg    = __ntohl( *(uint32_t*)(pAnnReq->L7DaysProg) ) + EPOCH_UNIX_TO_OURS;
 
