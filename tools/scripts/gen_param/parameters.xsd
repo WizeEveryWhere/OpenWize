@@ -134,7 +134,7 @@
     <!-- The Type of Description attribute -->
     <xs:simpleType name="DescType" >
         <xs:restriction base="xs:string">
-            <xs:maxLength value="400" />
+            <xs:maxLength value="800" />
         </xs:restriction>
     </xs:simpleType>
     
