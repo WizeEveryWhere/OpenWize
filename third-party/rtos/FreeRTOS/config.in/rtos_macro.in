@@ -207,6 +207,52 @@ uint32_t sys_flag_take(uint32_t timeout)
 }
 
 static FORCE_INLINE
+uint32_t sys_evtg_set(void *hEvtGrp, uint32_t mask)
+{
+    return xEventGroupSetBits(hEvtGrp, mask);
+}
+
+static FORCE_INLINE
+uint32_t sys_evtg_clear(void *hEvtGrp, uint32_t mask)
+{
+    return xEventGroupClearBits(hEvtGrp, mask);
+}
+
+static FORCE_INLINE
+uint32_t sys_evtg_wait(void *hEvtGrp, uint32_t mask, uint32_t timeout)
+{
+    return xEventGroupWaitBits(hEvtGrp, mask, pdTRUE, pdFALSE, timeout);
+}
+
+static FORCE_INLINE
+uint32_t sys_evtg_sync(void *hEvtGrp, uint32_t flags, uint32_t mask, uint32_t timeout)
+{
+    return xEventGroupSync(hEvtGrp, flags, mask, timeout);
+}
+
+static FORCE_INLINE
+uint32_t sys_queue_send(void *hQueue, void *pItem, uint32_t timeout)
+{
+    return xQueueSend(hQueue, pItem, timeout);
+}
+
+static FORCE_INLINE
+uint32_t sys_queue_send_isr(void *hQueue, void *pItem)
+{
+    uint32_t ret;
+    BaseType_t xHigherPriorityTaskWoken;
+    ret = xQueueSendFromISR(hQueue, pItem, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+    return ret;
+}
+
+static FORCE_INLINE
+uint32_t sys_queue_receive(void *hQueue, void *pItem, uint32_t timeout)
+{
+    return xQueueReceive(hQueue, pItem, timeout);
+}
+
+static FORCE_INLINE
 void* sys_get_pid(void)
 {
     return (void*)xTaskGetCurrentTaskHandle();
@@ -237,6 +283,8 @@ void* sys_get_pid(void)
 /*******************************************************************************/
 uint32_t sys_mutex_acquire(void *hMutex, uint32_t timeout)
 {
+    (void)hMutex;
+    (void)timeout;
     while(0);
     return 1;
 }
@@ -244,6 +292,7 @@ uint32_t sys_mutex_acquire(void *hMutex, uint32_t timeout)
 static FORCE_INLINE
 uint32_t sys_mutex_acquire_isr(void *hMutex)
 {
+    (void)hMutex;
     while(0);
     return 1;
 }
@@ -252,6 +301,7 @@ uint32_t sys_mutex_acquire_isr(void *hMutex)
 static FORCE_INLINE
 uint32_t sys_mutex_release(void *hMutex)
 {
+    (void)hMutex;
     while(0);
     return 1;
 }
@@ -259,6 +309,7 @@ uint32_t sys_mutex_release(void *hMutex)
 static FORCE_INLINE
 uint32_t sys_mutex_release_isr(void *hMutex)
 {
+    (void)hMutex;
     while(0);
     return 1;
 }
@@ -266,6 +317,8 @@ uint32_t sys_mutex_release_isr(void *hMutex)
 static FORCE_INLINE
 uint32_t sys_flag_set(void *hNotity, uint32_t flags)
 {
+    (void)hNotity;
+    (void)flags;
     while(0);
     return 1;
 }
@@ -273,6 +326,8 @@ uint32_t sys_flag_set(void *hNotity, uint32_t flags)
 static FORCE_INLINE
 uint32_t sys_flag_set_isr(void *hNotity, uint32_t flags)
 {
+    (void)hNotity;
+    (void)flags;
     while(0);
     return 1;
 }
@@ -280,6 +335,7 @@ uint32_t sys_flag_set_isr(void *hNotity, uint32_t flags)
 static FORCE_INLINE
 uint32_t sys_flag_give_isr(void *hNotity)
 {
+    (void)hNotity;
     while(0);
     return 1;
 }
@@ -287,6 +343,8 @@ uint32_t sys_flag_give_isr(void *hNotity)
 static FORCE_INLINE
 uint32_t sys_flag_wait(uint32_t *pFlags, uint32_t timeout)
 {
+    (void)pFlags;
+    (void)timeout;
     while(0);
     return 1;
 }
@@ -294,6 +352,75 @@ uint32_t sys_flag_wait(uint32_t *pFlags, uint32_t timeout)
 static FORCE_INLINE
 uint32_t sys_flag_take(uint32_t timeout)
 {
+    (void)timeout;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_evtg_set(void *hEvtGrp, uint32_t mask)
+{
+    (void)hEvtGrp;
+    (void)mask;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_evtg_clear(void *hEvtGrp, uint32_t mask)
+{
+    (void)hEvtGrp;
+    (void)mask;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_evtg_wait(void *hEvtGrp, uint32_t mask, uint32_t timeout)
+{
+    (void)hEvtGrp;
+    (void)mask;
+    (void)timeout;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_evtg_sync(void *hEvtGrp, uint32_t flags, uint32_t mask, uint32_t timeout)
+{
+    (void)hEvtGrp;
+    (void)flags;
+    (void)mask;
+    (void)timeout;  
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_queue_send(void *hQueue, void *pItem, uint32_t timeout)
+{
+    (void)hQueue;
+    (void)pItem;
+    (void)timeout;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_queue_send_isr(void *hQueue, void *pItem)
+{
+    (void)hQueue;
+    (void)pItem;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_queue_receive(void *hQueue, void *pItem, uint32_t timeout)
+{
+    (void)hQueue;
+    (void)pItem;
+    (void)timeout;
     while(0);
     return 1;
 }
