@@ -169,6 +169,7 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 			if (u32Evt & SES_EVT_DWN_DELAY_EXPIRED)
 			{
 				// Program the periodic receiving window
+#ifdef USE_DWN_PERIODIC
 				TimeEvt_TimerInit( &pCtx->sTimeEvt, pCtx->hTask, TIMEEVT_CFG_PERIODIC);
 				if ( TimeEvt_TimerStart(
 						&pCtx->sTimeEvt,
@@ -181,6 +182,7 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 					u32BackEvt = SES_FLG_DWN_ERROR;
 					break;
 				}
+#endif
 				pCtx->eState = SES_STATE_WAITING_RX_DELAY;
 			}
 			//break;
@@ -191,6 +193,21 @@ static uint32_t _dwn_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				if (pPrvCtx->_u16BlocksCount)
 				{
 					pPrvCtx->_u16BlocksCount--;
+#ifndef USE_DWN_PERIODIC
+					// Program the next receiving window
+					uint32_t u32NextBlkOffset = pPrvCtx->u8DeltaSec * (pPrvCtx->u16BlocksCount - pPrvCtx->_u16BlocksCount);
+					if ( TimeEvt_TimerStart(
+							&pCtx->sTimeEvt,
+							pPrvCtx->_u32DayNext + u32NextBlkOffset,
+							pPrvCtx->i16DeltaRxMs,
+							(uint32_t)SES_EVT_DWN_DELAY_EXPIRED
+							))
+					{
+						pCtx->eState = SES_STATE_IDLE;
+						u32BackEvt = SES_FLG_DWN_ERROR;
+						break;
+					}
+#endif
 					// Setup downlink
 					if ( NetMgr_SetDwlink(pPrvCtx->u8ChannelId, pPrvCtx->u8ModulationId))
 					{
