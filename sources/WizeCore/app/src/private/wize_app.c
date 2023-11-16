@@ -106,11 +106,6 @@ struct adm_config_s sAdmConfig;
  * @cond INTERNAL
  * @{
  */
-#ifdef HAS_HIRES_TIME_MEAS
-extern int32_t BSP_HiResTmr_EnDis(uint8_t bEnable);
-extern void BSP_HiResTmr_Capture(register uint8_t id);
-extern uint32_t BSP_HiResTmr_Get(register uint8_t id);
-#endif
 
 #define BEST_PONG_FORMAT_LOG_INF() "Best: %02x%02x%02x%02x%02x%02x:%02x "
 #define PING_FORMAT_LOG_DBG() "\t-> DwnCh: %x; DwnMod: %x; RxDelay: %x; RxLen: %x\n"
@@ -236,13 +231,16 @@ void WizeApp_Init(void)
 //inline
 wize_api_ret_e WizeApp_Install(void)
 {
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
 	// Update internal sAdmConfig
 	uint8_t clk_auto_cfg[2];
 	Param_Access(AUTO_ADJ_CLK_FREQ, clk_auto_cfg, 0);
 	sAdmConfig.ClkFreqAutoAdj       = clk_auto_cfg[0];
 	sAdmConfig.ClkFreqAutoAdjRssi   = clk_auto_cfg[1];
-	// Start Install session
+#endif
+	// Update internal sPingReplyCtx
 	sPingReplyCtx.bGwErrCorr = sAdmConfig.ClkAutoPongGwErrCorr;
+	// Start Install session
 	inst_ping_t sPing = InstInt_Init(&sPingReplyCtx);
 	return WizeApi_ExecPing((uint8_t*)&sPing, sizeof(inst_ping_t));
 }
@@ -601,9 +599,6 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 				}
 				ret = ADM_EXECINSTPING;
 			}
-#ifdef HAS_HIRES_TIME_MEAS
-			BSP_HiResTmr_EnDis(0);
-#endif
 			// Install session is complete without error, so clear the "periodic install" counter
 			gu16PeriodInstCnt = 0;
 		}
@@ -736,17 +731,20 @@ static inline uint8_t _is_full_power_req_(void)
 
 	Param_Access(TX_DELAY_FULLPOWER,  (uint8_t*)&(v), 0 );
 	v = __ntohs(v);
-	if (gu16FullPowerCnt >= v)
+	if (v)
 	{
-		// go back in full power
-		gu16FullPowerCnt = 0;
-		return 1;
+		if (gu16FullPowerCnt >= v)
+		{
+			// go back in full power
+			gu16FullPowerCnt = 0;
+			return 1;
+		}
+		else
+		{
+			gu16FullPowerCnt++;
+		}
 	}
-	else
-	{
-		gu16FullPowerCnt++;
-		return 0;
-	}
+	return 0;
 }
 
 /******************************************************************************/
