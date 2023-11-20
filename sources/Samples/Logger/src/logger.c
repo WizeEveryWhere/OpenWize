@@ -62,7 +62,7 @@ uint8_t gLoggerLevel = LOG_LV_QUIET;
 /* @def This macro define the logger stack size */
 #define LOGGER_TASK_STACK_SIZE 200
 /* @def This macro define the logger task priority */
-#define LOGGER_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+2)
+#define LOGGER_TASK_PRIORITY (UBaseType_t)(tskIDLE_PRIORITY+3)
 /* @def This macro define the number of item available in the logger message queue */
 #define LOGGER_QUEUE_MESSAGE_ITEM_NB 15
 /* @def This macro define the size of item in the logger message queue*/
@@ -149,6 +149,16 @@ inline void Logger_SetLevel(uint8_t u8LogLevel, uint8_t u8Tstmp)
 }
 
 /*!
+ * @brief This function get the Logger state
+ *
+ * @return the currently number of used or pending buffer
+ */
+int32_t Logger_IsBusy(void)
+{
+	return (int32_t)sys_queue_pending(sLoggerCtx.hQueue);
+}
+
+/*!
  * @brief This function "put" a raw string to the logger
  *
  * @param[in] str   Raw string
@@ -163,7 +173,7 @@ void Logger_Put(char *str, uint32_t u32Nb)
     uint8_t *p;
     if (str)
     {
-		if ( xSemaphoreTake(sLoggerCtx.hCntSem, 0xFFFFFFFF))
+		if ( sys_sem_acquire(sLoggerCtx.hCntSem, 0xFFFFFFFF))
 		{
 			id = _logger_acquire_id_();
 			if ( id >= 0 )
@@ -179,7 +189,7 @@ void Logger_Put(char *str, uint32_t u32Nb)
 #ifdef LOGGER_USE_FWRITE
 				sLoggerCtx.aPoolLen[id] = (uint8_t)len;
 #endif
-				xQueueSend(sLoggerCtx.hQueue, &id, 0xFFFFFFFF);
+				sys_queue_send(sLoggerCtx.hQueue, &id, 0xFFFFFFFF);
 			}
 		}
     }
@@ -201,7 +211,7 @@ void Logger_Post(uint8_t level, char *format, ...)
     uint32_t len;
     uint8_t *p;
 
-    if ( xSemaphoreTake(sLoggerCtx.hCntSem, 0xFFFFFFFF))
+    if ( sys_sem_acquire(sLoggerCtx.hCntSem, 0xFFFFFFFF))
     {
 		id = _logger_acquire_id_();
 		if ( id >= 0 )
@@ -259,7 +269,7 @@ void Logger_Post(uint8_t level, char *format, ...)
 			sLoggerCtx.aPoolLen[id] = (uint8_t)( p - sLoggerCtx.aPoolBuffer[id] +  len );
 #endif
 			va_end (args);
-			xQueueSend(sLoggerCtx.hQueue, &id, 0xFFFFFFFF);
+			sys_queue_send(sLoggerCtx.hQueue, &id, 0xFFFFFFFF);
 		}
     }
 }
@@ -284,7 +294,7 @@ void Logger_Frame(char *pStr, uint8_t *pData, uint8_t u8NbData)
 	{
 		return;
 	}
-    if ( xSemaphoreTake(sLoggerCtx.hCntSem, 0xFFFFFFFF))
+    if ( sys_sem_acquire(sLoggerCtx.hCntSem, 0xFFFFFFFF))
     {
 		id = _logger_acquire_id_();
 		if ( id >= 0 )
@@ -328,7 +338,7 @@ void Logger_Frame(char *pStr, uint8_t *pData, uint8_t u8NbData)
 			sLoggerCtx.aPoolLen[id] = (uint8_t)( p - sLoggerCtx.aPoolBuffer[id] +  len );
 #endif
 			//sLoggerCtx.aPoolBuffer[id][LOGGER_POOL_BUFFER_SIZE] = "\n";
-			xQueueSend(sLoggerCtx.hQueue, &id, 0xFFFFFFFF);
+			sys_queue_send(sLoggerCtx.hQueue, &id, 0xFFFFFFFF);
 		}
     }
 }
@@ -387,7 +397,7 @@ static int32_t _logger_acquire_id_()
 {
 	int32_t i;
 	// take mutex
-	xSemaphoreTake (sLoggerCtx.hMutex, 0xFFFFFFFF);
+	sys_mutex_acquire (sLoggerCtx.hMutex, 0xFFFFFFFF);
 	// try to find a free buffer
 	for (i = 0; i < LOGGER_QUEUE_MESSAGE_ITEM_NB; i++)
 	{
@@ -400,7 +410,7 @@ static int32_t _logger_acquire_id_()
 	}
 	if (i >= LOGGER_QUEUE_MESSAGE_ITEM_NB) { i = -1; }
     // release mutex
-	xSemaphoreGive(sLoggerCtx.hMutex);
+	sys_mutex_release(sLoggerCtx.hMutex);
 	return i;
 }
 
@@ -417,10 +427,10 @@ static void _logger_release_id_(int32_t id)
 	if (id >= 0 && id < LOGGER_QUEUE_MESSAGE_ITEM_NB)
 	{
 		// take mutex
-		xSemaphoreTake (sLoggerCtx.hMutex, 0xFFFFFFFF);
+		sys_mutex_acquire (sLoggerCtx.hMutex, 0xFFFFFFFF);
 		sLoggerCtx.aPoolLock[id] = 0;
 		// release mutex
-		xSemaphoreGive(sLoggerCtx.hMutex);
+		sys_mutex_release(sLoggerCtx.hMutex);
 	}
 }
 
@@ -439,7 +449,7 @@ static void _logger_main_(void const* argument)
     while(1)
     {
         /* Block to wait for the next string to print. */
-    	if ( xQueueReceive(sLoggerCtx.hQueue, &id, 0xFFFFFFFF) )
+    	if ( sys_queue_receive(sLoggerCtx.hQueue, &id, 0xFFFFFFFF) )
     	{
     		if (sLoggerCtx.pfOut)
     		{
@@ -450,7 +460,7 @@ static void _logger_main_(void const* argument)
 #endif
     		}
     		_logger_release_id_(id);
-    		xSemaphoreGive(sLoggerCtx.hCntSem);
+    		sys_sem_release(sLoggerCtx.hCntSem);
     	}
     }
 }

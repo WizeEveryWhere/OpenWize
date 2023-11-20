@@ -502,6 +502,16 @@ int32_t NetMgr_ListenReady(void)
 	return eStatus;
 }
 
+/*!
+ * @brief This function get the NetMgr state
+ *
+ * @return 1 if NetMgr is busy, o otherwise
+ */
+int32_t NetMgr_IsBusy(void)
+{
+	return (int32_t)sys_sem_pending(sNetDev.hLock);
+}
+
 /******************************************************************************/
 /*!
  * @static

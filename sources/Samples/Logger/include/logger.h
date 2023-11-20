@@ -100,6 +100,7 @@ void Logger_Setup(int32_t (*pfOut)(const char*, FILE*), FILE* pFile);
 #endif
 
 void Logger_SetLevel(uint8_t u8LogLevel, uint8_t u8Tstmp);
+int32_t Logger_IsBusy(void);
 void Logger_Put(char *str, uint32_t u32Nb);
 void Logger_Post(uint8_t level, char *format, ...);
 void Logger_Frame(char *pStr, uint8_t *pData, uint8_t u8NbData);
