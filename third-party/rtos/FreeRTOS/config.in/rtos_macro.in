@@ -140,8 +140,8 @@ static FORCE_INLINE void* sys_queue_create_##suffixe(void) \
 }
 
 /*******************************************************************************/
+/* Mutex */
 
-/* Acquire mutex */
 static FORCE_INLINE 
 uint32_t sys_mutex_acquire(void *hMutex, uint32_t timeout)
 {
@@ -155,7 +155,6 @@ uint32_t sys_mutex_acquire_isr(void *hMutex)
     return xSemaphoreTakeFromISR((SemaphoreHandle_t)hMutex, &xHigherPriorityTaskWoken );
 }
 
-/* Release mutex */
 static FORCE_INLINE
 uint32_t sys_mutex_release(void *hMutex)
 {
@@ -168,6 +167,30 @@ uint32_t sys_mutex_release_isr(void *hMutex)
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     return xSemaphoreGiveFromISR( (SemaphoreHandle_t)hMutex, &xHigherPriorityTaskWoken );
 }
+
+/*******************************************************************************/
+/* Semaphore */
+
+static FORCE_INLINE
+uint32_t sys_sem_acquire(void *hSem, uint32_t timeout)
+{
+    return xSemaphoreTake((SemaphoreHandle_t)hSem, timeout);
+}
+
+static FORCE_INLINE
+uint32_t sys_sem_release(void *hSem)
+{
+    return xSemaphoreGive((SemaphoreHandle_t)hSem);
+}
+
+static FORCE_INLINE
+uint32_t sys_sem_pending(void *hSem)
+{
+    return uxSemaphoreGetCount(hSem);
+}
+
+/*******************************************************************************/
+/* Flags */
 
 static FORCE_INLINE
 uint32_t sys_flag_set(void *hNotity, uint32_t flags)
@@ -206,6 +229,9 @@ uint32_t sys_flag_take(uint32_t timeout)
     return ulTaskNotifyTake(pdTRUE, timeout);
 }
 
+/*******************************************************************************/
+/* Event Group */
+
 static FORCE_INLINE
 uint32_t sys_evtg_set(void *hEvtGrp, uint32_t mask)
 {
@@ -230,6 +256,9 @@ uint32_t sys_evtg_sync(void *hEvtGrp, uint32_t flags, uint32_t mask, uint32_t ti
     return xEventGroupSync(hEvtGrp, flags, mask, timeout);
 }
 
+/*******************************************************************************/
+/* Queue */
+
 static FORCE_INLINE
 uint32_t sys_queue_send(void *hQueue, void *pItem, uint32_t timeout)
 {
@@ -251,6 +280,15 @@ uint32_t sys_queue_receive(void *hQueue, void *pItem, uint32_t timeout)
 {
     return xQueueReceive(hQueue, pItem, timeout);
 }
+
+static FORCE_INLINE
+uint32_t sys_queue_pending(void *hQueue)
+{
+    return uxQueueMessagesWaiting(hQueue);
+}
+
+/*******************************************************************************/
+/* Other */
 
 static FORCE_INLINE
 void* sys_get_pid(void)
@@ -281,6 +319,10 @@ void* sys_get_pid(void)
 #define SYS_QUEUE_CREATE_CALL(suffixe) (void*)1
 #define SYS_QUEUE_CREATE_DEF(suffixe, len, size)
 /*******************************************************************************/
+
+/*******************************************************************************/
+/* Mutex */
+
 uint32_t sys_mutex_acquire(void *hMutex, uint32_t timeout)
 {
     (void)hMutex;
@@ -313,6 +355,36 @@ uint32_t sys_mutex_release_isr(void *hMutex)
     while(0);
     return 1;
 }
+/*******************************************************************************/
+/* Semaphore */
+
+static FORCE_INLINE
+uint32_t sys_sem_acquire(void *hSem, uint32_t timeout)
+{
+    (void)hSem;
+    (void)timeout;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_sem_release(void *hSem)
+{
+    (void)hSem;
+    while(0);
+    return 1;
+}
+
+static FORCE_INLINE
+uint32_t sys_sem_pending(void *hSem)
+{
+    (void)hSem;
+    while(0);
+    return 0;
+}
+
+/*******************************************************************************/
+/* Flags */
 
 static FORCE_INLINE
 uint32_t sys_flag_set(void *hNotity, uint32_t flags)
@@ -357,6 +429,9 @@ uint32_t sys_flag_take(uint32_t timeout)
     return 1;
 }
 
+/*******************************************************************************/
+/* Event Group */
+
 static FORCE_INLINE
 uint32_t sys_evtg_set(void *hEvtGrp, uint32_t mask)
 {
@@ -396,6 +471,9 @@ uint32_t sys_evtg_sync(void *hEvtGrp, uint32_t flags, uint32_t mask, uint32_t ti
     return 1;
 }
 
+/*******************************************************************************/
+/* Queue */
+
 static FORCE_INLINE
 uint32_t sys_queue_send(void *hQueue, void *pItem, uint32_t timeout)
 {
@@ -426,11 +504,23 @@ uint32_t sys_queue_receive(void *hQueue, void *pItem, uint32_t timeout)
 }
 
 static FORCE_INLINE
+uint32_t sys_queue_pending(void *hQueue)
+{
+    (void)hQueue;
+    while(0);
+    return 0;
+}
+
+/*******************************************************************************/
+/* Other */
+
+static FORCE_INLINE
 void* sys_get_pid(void)
 {
     while(0);
     return (void*)1;
 }
+
 #endif // defined ( __OS__ )
 /*=============================================================================*/
 
