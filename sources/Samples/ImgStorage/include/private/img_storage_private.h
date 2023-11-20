@@ -64,25 +64,16 @@ extern "C" {
     #define FLASH_START_ADDRESS 0x08000000
 #endif
 
-#ifndef IMG_ADRR
-/*!
- * @def IMG_ADRR
- * @brief Define the beginning of the software binary image (FLASH_PAGE aligned).
- */
-	#define IMG_ADRR 0x0802C000
+#ifndef IMG_NB_PAGES
+	#define IMG_NB_PAGES 128
 #endif
 
-#ifndef IMG_MAX_SZ
 /*!
  * @def IMG_MAX_SZ
  * @brief Maximum size allowed to a software binary image (FLASH_PAGE aligned).
  */
-	//#define IMG_MAX_SZ 262144 //!< This is arbitrarily fixed 256ko (half of hyp.512ko flash memory)
+#define IMG_MAX_SZ (IMG_NB_PAGES * FLASH_PAGE_SIZE)
 
-	#define IMG_MAX_SZ 169984 //!< This is fixed to 83 pages (1/3 of hyp.512ko flash memory), 14336 bytes remains,
-#endif
-
-#define IMG_NB_PAGES IMG_MAX_SZ/FLASH_PAGE_SIZE // 128
 
 /*!
  * @brief Convenient macro to get the first address of a flash page
