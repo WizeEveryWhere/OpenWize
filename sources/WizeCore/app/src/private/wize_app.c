@@ -51,7 +51,7 @@ extern "C" {
  *          Depending on the low power mode, it could be required to save it in
  *          non-volatile memory or backup-register.
  */
-uint16_t gu16PeriodInstCnt;
+uint16_t gu16PeriodInstCnt __attribute__(( weak ));
 
 /*!
  * @brief This variable is used to hold the "full power" counter in day unit.
@@ -61,12 +61,12 @@ uint16_t gu16PeriodInstCnt;
  *          Depending on the low power mode, it could be required to save it in
  *          non-volatile memory or backup-register.
  */
-uint16_t gu16FullPowerCnt;
+uint16_t gu16FullPowerCnt __attribute__(( weak ));
 
 /*!
  * @brief This structure is used to hold the installation context information.
  */
-struct inst_mgr_ctx_s sInstCtx;
+struct inst_mgr_ctx_s sInstCtx __attribute__(( weak ));
 
 /*!
  * @brief This structure is used to hold the administration context information.
@@ -78,12 +78,12 @@ struct inst_mgr_ctx_s sInstCtx;
  *
  */
 // Must be saved (part only)
-struct adm_mgr_ctx_s sAdmCtx;
+struct adm_mgr_ctx_s sAdmCtx __attribute__(( weak ));
 
 /*!
  * @brief This structure is used to hold the download context information.
  */
-struct dwn_mgr_ctx_s sDwnCtx;
+struct dwn_mgr_ctx_s sDwnCtx __attribute__(( weak ));
 
 /*!
  * @brief This structure is used to hold the time management context information.
@@ -91,15 +91,17 @@ struct dwn_mgr_ctx_s sDwnCtx;
  * @details Depending on the low power mode, it could be required to save it in
  *          non-volatile memory or backup-register.
  */
-struct time_upd_s sTimeUpdCtx;
+struct time_upd_s sTimeUpdCtx __attribute__(( weak ));
 
 /*!
  * @brief This structure is used to hold the temporary installation data.
  */
-struct ping_reply_ctx_s sPingReplyCtx;
+struct ping_reply_ctx_s sPingReplyCtx __attribute__(( weak ));
 
-
-struct adm_config_s sAdmConfig;
+/*!
+ * @brief This structure is used to hold the admin. configuration
+ */
+struct adm_config_s sAdmConfig __attribute__(( weak ));
 
 /******************************************************************************/
 /*!
@@ -207,6 +209,7 @@ uint8_t WizeApp_AnnCheckFwInfo(admin_cmd_anndownload_t *pAnn)
 	 */
 	return 0;
 }
+/******************************************************************************/
 /******************************************************************************/
 
 /*!
