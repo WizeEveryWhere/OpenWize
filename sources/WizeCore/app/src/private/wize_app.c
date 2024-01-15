@@ -122,7 +122,6 @@ static const uint8_t pong_log_dbg_rssi_as_float = 1;
 static uint32_t _u32InitMask_;
 static uint8_t  _bPendAction_;
 
-static struct timeval _get_adjust_clock_offset_(void);
 static inline uint8_t _is_periodic_inst_req_(void);
 static inline uint8_t _is_full_power_req_(void);
 
@@ -131,26 +130,84 @@ static inline uint8_t _is_full_power_req_(void);
  * @endcond
  */
 
-//void onKeyA() __attribute__((weak, alias("onKeyBlank")));
 
 /******************************************************************************/
+
 /*!
- * @brief This is a "weak" function intend to implement the treatment of one
- *        FW block. It will be called by "WizeApp_Common" when a download block
- *        will be received. Its content is user defined.
+ * @brief This is a "weak" function intend to get the last ADM request
  *
- * @param [in] u16Id Identify the block number
- * @param [in] pData Pointer on the data block of fixed 210 bytes size.
+ * @param [out] pData  Pointer on output buffer
+ * @param [out] pOther Pointer on output of any other info
  *
- * @return 0
- *
+ * @retval size of ADM request message (L7 CMD)
+ * @retval 0 otherwise
  */
 __attribute__((weak))
-uint8_t WizeApp_OnDwnBlkRecv(uint16_t u16Id, const uint8_t *pData)
+uint8_t WizeApp_GetAdmReq(uint8_t *pData, uint8_t *pOther)
 {
-	(void)u16Id;
 	(void)pData;
+	(void)pOther;
 	return 0;
+}
+
+/*!
+ * @brief This is a "weak" function intend to get the INST request
+ *
+ * @param [out] pData  Pointer on output buffer
+ * @param [out] pOther Pointer on output of any other info
+ *
+ * @retval size of INST request message (L7 PING)
+ * @retval 0 otherwise
+ */
+__attribute__((weak))
+uint8_t WizeApp_GetInstReq(uint8_t *pData, uint8_t *pOther)
+{
+	(void)pOther;
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+	// Update internal sAdmConfig
+	uint8_t clk_auto_cfg[2];
+	Param_Access(AUTO_ADJ_CLK_FREQ, clk_auto_cfg, 0);
+	sAdmConfig.ClkFreqAutoAdj       = clk_auto_cfg[0];
+	sAdmConfig.ClkFreqAutoAdjRssi   = clk_auto_cfg[1];
+#endif
+	// Update internal sPingReplyCtx
+	sPingReplyCtx.bGwErrCorr = sAdmConfig.ClkAutoPongGwErrCorr;
+	inst_ping_t sPing = InstInt_Init(&sPingReplyCtx);
+	if (pData)
+	{
+		memcpy(pData, &sPing, sizeof(inst_ping_t));
+		return sizeof(inst_ping_t);
+	}
+	return 0;
+}
+
+/*!
+ * @brief This is a "weak" function intend to get the last FW info
+ *
+ * @param [out] pFwAnnInfo Pointer on output buffer
+ * @param [out] pOther Pointer on output of any other info
+ *
+ * @retval size of FW info
+ * @retval 0 otherwise,
+ */
+__attribute__((weak))
+uint8_t WizeApp_GetFwInfo(admin_ann_fw_info_t *pFwAnnInfo, uint8_t *pOther)
+{
+	(void)pFwAnnInfo;
+	(void)pOther;
+	return 0;
+}
+
+/*!
+ * @brief This is a "weak" function intend to get the FW info type
+ *
+ * @retval the firmware type
+ * @retval -1 otherwise
+ */
+__attribute__((weak))
+int32_t WizeApp_GetFwInfoType(void)
+{
+	return -1;
 }
 
 /*!
@@ -209,6 +266,26 @@ uint8_t WizeApp_AnnCheckFwInfo(admin_cmd_anndownload_t *pAnn)
 	 */
 	return 0;
 }
+
+/*!
+ * @brief This is a "weak" function intend to implement the treatment of one
+ *        FW block. It will be called by "WizeApp_Common" when a download block
+ *        will be received. Its content is user defined.
+ *
+ * @param [in] u16Id Identify the block number
+ * @param [in] pData Pointer on the data block of fixed 210 bytes size.
+ *
+ * @return 0
+ *
+ */
+__attribute__((weak))
+uint8_t WizeApp_OnDwnBlkRecv(uint16_t u16Id, const uint8_t *pData)
+{
+	(void)u16Id;
+	(void)pData;
+	return 0;
+}
+
 /******************************************************************************/
 /******************************************************************************/
 
@@ -225,74 +302,18 @@ void WizeApp_Init(void)
 }
 
 /*!
- * @brief Convenient function that initialize an "sPingReplyCtx" structure and
- *        call the "WizeApi_ExecPing"function.
- *
- * @return (see WizeApi_ExecPing)
- *
- */
-//inline
-wize_api_ret_e WizeApp_Install(void)
-{
-#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
-	// Update internal sAdmConfig
-	uint8_t clk_auto_cfg[2];
-	Param_Access(AUTO_ADJ_CLK_FREQ, clk_auto_cfg, 0);
-	sAdmConfig.ClkFreqAutoAdj       = clk_auto_cfg[0];
-	sAdmConfig.ClkFreqAutoAdjRssi   = clk_auto_cfg[1];
-#endif
-	// Update internal sPingReplyCtx
-	sPingReplyCtx.bGwErrCorr = sAdmConfig.ClkAutoPongGwErrCorr;
-	// Start Install session
-	inst_ping_t sPing = InstInt_Init(&sPingReplyCtx);
-	return WizeApi_ExecPing((uint8_t*)&sPing, sizeof(inst_ping_t));
-}
-
-/*!
- * @brief Convenient function that call "WizeApi_Send" for standard frame.
- *
- * @param [in] pData  Pointer on raw data to send
- * @param [in] u8Size Number of byte to send
- *
- * @return (see WizeApi_Send)
- *
- */
-inline
-wize_api_ret_e WizeApp_Send(uint8_t *pData, uint8_t u8Size)
-{
-	// Start ADM Data session
-	return WizeApi_Send(pData, u8Size, 0);
-}
-
-/*!
- * @brief Convenient function that call "WizeApi_Send" for priority frame.
- *
- * @param [in] pData  Pointer on raw data to send
- * @param [in] u8Size Number of byte to send
- *
- * @return (see WizeApi_Send)
- *
- */
-inline
-wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size)
-{
-	// Start ADM Data Prio session
-	return WizeApi_Send(pData, u8Size, 1);
-}
-
-/*!
  * @brief Convenient function that call the "WizeApi_Download" function.
  *
  * @return (see WizeApi_Download)
  *
  */
 inline
-wize_api_ret_e WizeApp_Download(void)
+wize_api_ret_e WizeApp_DownOpen(void)
 {
 	// FIXME : not very clean
 	sDwnCtx.u8RxLength = sAdmConfig.u32DwnBlkDurMod / 1000;
 	// Start Download session
-	return WizeApi_Download();
+	return WizeApi_SesOpen(NULL, 0, WIZE_API_DWN, NULL);
 }
 
 /*!
@@ -302,10 +323,10 @@ wize_api_ret_e WizeApp_Download(void)
  *
  */
 inline
-void WizeApp_Download_Cancel(void)
+void WizeApp_DownCancel(void)
 {
-	// Start Download session
-	WizeApi_Download_Cancel();
+	// Cancel Download session
+	WizeApi_SesClose(WIZE_API_DWN);
 }
 
 /******************************************************************************/
@@ -392,7 +413,7 @@ uint32_t WizeApp_Common(uint32_t ulEvent)
 			{
 				case ADM_EXECINSTPING:
 					// Start Install session
-					WizeApp_Install();
+					//WizeApp_Install();
 					break;
 				case ADM_ANNDOWNLOAD:
 					_bPendAction_ |= WIZEAPP_ADM_CMD_PEND;

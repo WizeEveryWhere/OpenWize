@@ -38,8 +38,6 @@ extern "C" {
 #include "dwn_mgr.h"
 
 #include "net_mgr.h"
-#include "parameters.h"
-#include "parameters_lan_ids.h"
 
 /*!
  * @addtogroup wize_app
@@ -53,7 +51,11 @@ extern "C" {
  * @{
  */
 
-static uint32_t _ses_disp_get_param_(void);
+void wrap_fill_medium_cfg(struct medium_cfg_s *pMediumCfg);
+void wrap_fill_proto_cfg(struct proto_config_s *pProto_Cfg);
+
+static uint32_t _cfg_net_mgr_medium_(void);
+static uint32_t _cfg_net_mgr_proto_(void);
 static uint32_t _check_ability_(struct ses_disp_ctx_s *pCtx);
 
 // From these flags, it indicates that Net resource is available
@@ -120,7 +122,6 @@ void SesDisp_Init(struct ses_disp_ctx_s *pCtx, uint8_t bCtrl)
 }
 
 /*!
- * @static
  * @brief This function is the session dispatcher FSM that treat all events
  * from "outside" (Wize API, NetMgr, TimeEvt).
  *
@@ -166,7 +167,7 @@ uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 	uint32_t ulSesFlg;
 
 	uint32_t ulBckFlg;
-	uint32_t filter_flg;
+	//uint32_t filter_flg;
 
 	uint32_t forbidden_msk;
 
@@ -368,10 +369,14 @@ uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 	if (eReqId != SES_NONE)
 	{
 		// Check if we should open and configure the Net device
-		if(!pCtx->u8ActiveSes)
+		if (!pCtx->u8ActiveSes)
 		{
 			NetMgr_Open(NULL);
-			if ( _ses_disp_get_param_() != NETDEV_STATUS_OK)
+			if ( _cfg_net_mgr_proto_() != NETDEV_STATUS_OK)
+			{
+				ulBckFlg = SES_FLG_UNKNOWN_ERROR;
+			}
+			if ( _cfg_net_mgr_medium_() != NETDEV_STATUS_OK)
 			{
 				ulBckFlg = SES_FLG_UNKNOWN_ERROR;
 			}
@@ -435,20 +440,20 @@ uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 	// At least one session is closed
 	if (ulSesFlg & SES_FLG_SES_COMPLETE_MSK)
 	{
-		if(pCtx->u8ActiveSes)
+		if (pCtx->u8ActiveSes)
 		{
 			pCtx->u8ActiveSes--;
 		}
 
-		if(!pCtx->u8ActiveSes)
+		if (!pCtx->u8ActiveSes)
 		{
 			NetMgr_Close();
 		}
 	}
 
 	//--------------------------------------------------------------------------
-	filter_flg = SES_FLG_RSP_SENT | SES_FLG_CMD_RECV | SES_FLG_BLK_RECV | SES_FLG_PONG_RECV;
-	filter_flg |= SES_FLG_SES_MSK;
+	//filter_flg = SES_FLG_RSP_SENT | SES_FLG_CMD_RECV | SES_FLG_BLK_RECV | SES_FLG_PONG_RECV;
+	//filter_flg |= SES_FLG_SES_MSK;
 
 	//ulBckFlg = (ulBckFlg | ulSesFlg) & filter_flg;
 	//ulSesFlg &= ~ulBckFlg;
@@ -461,55 +466,28 @@ uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 /******************************************************************************/
 /*!
  * @static
- * @brief This function get parameters from global table and setup internal variables.
+ * @brief This function configure the NetMgr medium part.
  *
  * @return The NetDev status
  */
-static uint32_t _ses_disp_get_param_(void)
+static uint32_t _cfg_net_mgr_medium_(void)
 {
-	uint32_t ret = NETDEV_STATUS_OK;
+    struct medium_cfg_s sMediumCfg;
+    wrap_fill_medium_cfg(&sMediumCfg);
+    return NetMgr_Ioctl(NETDEV_CTL_CFG_MEDIUM, (uint32_t)(&sMediumCfg));
+}
 
-	struct medium_cfg_s sMediumCfg;
+/*!
+ * @static
+ * @brief This function configure the NetMgr proto part.
+ *
+ * @return The NetDev status
+ */
+static uint32_t _cfg_net_mgr_proto_(void)
+{
 	struct proto_config_s sProto_Cfg;
-
-	Param_Access(RF_UPLINK_CHANNEL,    (uint8_t*)(&(sMediumCfg.eTxChannel)), 0 );
-	sMediumCfg.eTxChannel = (sMediumCfg.eTxChannel -100)/10;
-	Param_Access(RF_UPLINK_MOD,         (uint8_t*)(&(sMediumCfg.eTxModulation)), 0 );
-	Param_Access(TX_POWER,              (uint8_t*)(&(sMediumCfg.eTxPower)), 0 );
-	Param_Access(TX_FREQ_OFFSET,        (uint8_t*)&(sMediumCfg.i16TxFreqOffset), 0 );
-	sMediumCfg.i16TxFreqOffset = __ntohs(sMediumCfg.i16TxFreqOffset);
-	Param_Access(RF_DOWNLINK_CHANNEL,   (uint8_t*)(&(sMediumCfg.eRxChannel)), 0 );
-	sMediumCfg.eRxChannel = (sMediumCfg.eRxChannel -100)/10;
-	Param_Access(RF_DOWNLINK_MOD,       (uint8_t*)(&(sMediumCfg.eRxModulation)), 0 );
-	ret = NetMgr_Ioctl(NETDEV_CTL_CFG_MEDIUM, (uint32_t)(&sMediumCfg));
-
-	Param_Access(L7TRANSMIT_LENGTH_MAX, &(sProto_Cfg.u8TransLenMax), 0 );
-	Param_Access(L7RECEIVE_LENGTH_MAX,  &(sProto_Cfg.u8RecvLenMax), 0 );
-	Param_Access(L6NetwIdSelect,        &(sProto_Cfg.u8NetId), 0 );
-
-#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
-	Param_Access(L6_EXCH_DIS_FLT, &(sProto_Cfg.filterDisL6), 0);
-	Param_Access(L2_EXCH_DIS_FLT, &(sProto_Cfg.filterDisL2), 0);
-#else
-	sProto_Cfg.filterDisL2 = 0;
-	sProto_Cfg.filterDisL6 = 0;
-#endif
-
-	sProto_Cfg.AppInst = L6APP_INST;
-	sProto_Cfg.AppAdm = L6APP_ADM;
-#ifdef L6App
-	Param_Access(L6App,                 &(sProto_Cfg.AppData), 0 ) );
-#else
-	sProto_Cfg.AppData = 0xFE;
-#endif
-	//ret |= NetMgr_Ioctl(NETDEV_CTL_CFG_PROTO, (uint32_t)(&sProto_Cfg));
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_L6FLT_DIS, (uint32_t)(sProto_Cfg.filterDisL6));
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_L2FLT_DIS, (uint32_t)(sProto_Cfg.filterDisL2));
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_RECVLEN, (uint32_t)(sProto_Cfg.u8RecvLenMax));
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_TRANSLEN, (uint32_t)(sProto_Cfg.u8TransLenMax));
-	ret |= NetMgr_Ioctl(NETDEV_CTL_SET_NETWID, (uint32_t)(sProto_Cfg.u8NetId));
-
-	return ret;
+	wrap_fill_proto_cfg(&sProto_Cfg);
+    return NetMgr_Ioctl(NETDEV_CTL_CFG_PROTO, (uint32_t)(&sProto_Cfg));
 }
 
 /*!

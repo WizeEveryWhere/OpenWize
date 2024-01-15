@@ -157,7 +157,9 @@ typedef enum
 	SES_EVT_SES_CANCEL_MSK        = 0x22200000, /*!< Cancel session mask */
 	SES_EVT_SES_READY_MSK         = 0x44400000, /*!< Ready session mask */
 	SES_EVT_SES_DELAY_EXPIRED_MSK = 0x88800000, /*!< Delay Expired session mask */
-
+	// -------------------------------------------------------------------------
+	SES_EVT_AVAILABLE_MSK         = 0x000FFF00, /*!< Available bits mask */
+	// -------------------------------------------------------------------------
 } ses_evt_e;
 
 /*!

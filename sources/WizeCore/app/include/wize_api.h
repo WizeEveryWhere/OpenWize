@@ -65,6 +65,17 @@ typedef enum
 	WIZE_API_INVALID_PARAM,
 } wize_api_ret_e;
 
+/*!
+ * @brief This enum define the session type from Wize API
+ */
+typedef enum
+{
+	WIZE_API_INST,
+	WIZE_API_DATA,
+	WIZE_API_ALARM,
+	WIZE_API_DWN,
+} wize_api_ses_e;
+
 /*
 typedef enum
 {
@@ -118,15 +129,16 @@ static const char * const _ses_log_str_[] =
 };
 */
 /******************************************************************************/
+// ---
 wize_api_ret_e WizeApi_SetDeviceId(device_id_t *pDevId);
 wize_api_ret_e WizeApi_GetDeviceId(device_id_t *pDevId);
-
-wize_api_ret_e WizeApi_ExecPing(uint8_t *pData, uint8_t u8Size);
-wize_api_ret_e WizeApi_Send(uint8_t *pData, uint8_t u8Size, uint8_t bPrio);
-wize_api_ret_e WizeApi_Download(void);
+// ---
+wize_api_ret_e WizeApi_SesOpen(uint8_t *pData, uint8_t u8Size, uint8_t eType, void *hTask);
+wize_api_ret_e WizeApi_SesClose(uint8_t eType);
+uint32_t WizeApi_SesGetState(uint8_t eSesId);
+// ---
 void WizeApi_Notify(uint32_t evt);
 void WizeApi_Enable(uint8_t bFlag);
-uint32_t WizeApi_GetState(uint8_t eSesId);
 void WizeApi_SesMgr_Setup(
 	phydev_t *pPhyDev,
 	struct inst_mgr_ctx_s *pInstCtx,
@@ -134,12 +146,9 @@ void WizeApi_SesMgr_Setup(
 	struct dwn_mgr_ctx_s *pDwnCtx
 	);
 void WizeApi_OnSesFlag(void *hSesCaller, uint32_t u32Flg);
-
-void WizeApi_Cancel(uint8_t eSesId);
-void WizeApi_ExecPing_Cancel(void);
-void WizeApi_Send_Cancel(void);
-void WizeApi_Download_Cancel(void);
-
+// ---
+void WizeApi_FillMediumCfg(struct medium_cfg_s *pMediumCfg);
+void WizeApi_FillProtoCfg(struct proto_config_s *pProto_Cfg);
 /******************************************************************************/
 void WizeApi_OnTimeFlag(uint32_t u32Flg);
 void WizeApi_TimeMgr_Register(void *hTask);

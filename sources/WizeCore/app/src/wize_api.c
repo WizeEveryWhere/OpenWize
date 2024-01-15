@@ -181,6 +181,14 @@ static void *hTimeMgrCaller;
 static void *hSesMgrTask;
 static void *hSesMgrLock[SES_NB];
 static void *hSesMgrCaller[SES_NB];
+
+const static uint32_t u32SesMgrReqTmo[SES_NB] =
+{
+	[SES_INST] = WIZEAPI_INST_REQ_TMO,
+	[SES_ADM]  = WIZEAPI_ADM_REQ_TMO,
+	[SES_DWN]  = WIZEAPI_DWN_REQ_TMO
+};
+
 /*!
  * @}
  * @endcond
@@ -241,81 +249,108 @@ wize_api_ret_e WizeApi_GetDeviceId(device_id_t *pDevId)
 
 /******************************************************************************/
 /*!
- * @brief This function start a INST (PING/PONG) session
- *
- * @param [in] pData  Pointer on raw ping to send
- * @param [in] u8Size Number of byte to send
- *
- * @retval return wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine
- *         return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (1) if access is refused
- *         return wize_api_ret_e::WIZE_API_INVALID_PARAM (2) if given parameter(s) is/are invalid
- */
-wize_api_ret_e WizeApi_ExecPing(uint8_t *pData, uint8_t u8Size)
-{
-	wize_api_ret_e eRet = WIZE_API_ACCESS_TIMEOUT;
-	// Ensure that only one request at the time
-	if ( sys_binsen_acquire( hSesMgrLock[SES_INST], WIZEAPI_INST_REQ_TMO ) )
-	{
-		eRet = _wizeapi_ses_preinit_(pData, u8Size, APP_INSTALL);
-		if ( eRet == WIZE_API_SUCCESS)
-		{
-			hSesMgrCaller[SES_INST] = sys_get_pid( );
-			sys_flag_set(hSesMgrTask, SES_EVT_INST_OPEN);
-		}
-	}
-	return eRet;
-}
-
-/*!
- * @brief This function send a DATA message.
- *
- * @details : The L6APP has to be at pData[0]
+ * @brief This function start a session.
  *
  * @param [in] pData  Pointer on raw data to send
  * @param [in] u8Size Number of byte to send
- * @param [in] bPrio  Type of frame. 0 : DATA; DATA_PRIO for other values
+ * @param [in] eType  Type of session (see @link wize_api_ses_e @endlink)
+ * @param [in] hTask  Task handler to notify. If NULL, the caller will be notified.
  *
  * @retval return wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine
  *         return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (1) if access is refused
  *         return wize_api_ret_e::WIZE_API_INVALID_PARAM (2) if given parameter(s) is/are invalid
  */
-wize_api_ret_e WizeApi_Send(uint8_t *pData, uint8_t u8Size, uint8_t bPrio)
+wize_api_ret_e WizeApi_SesOpen(uint8_t *pData, uint8_t u8Size, uint8_t eType, void *hTask)
 {
 	wize_api_ret_e eRet = WIZE_API_ACCESS_TIMEOUT;
-	// Ensure that only one request at the time
-	if ( sys_binsen_acquire( hSesMgrLock[SES_ADM], WIZEAPI_ADM_REQ_TMO ) )
+
+	ses_type_t ses_type = SES_ADM;
+	app_type_e app_type = APP_DATA;
+	uint32_t evt;
+
+	switch(eType)
 	{
-		eRet = _wizeapi_ses_preinit_(pData, u8Size, ( (bPrio)?(APP_DATA_PRIO):(APP_DATA) ) );
+		case WIZE_API_ALARM:
+			app_type = APP_DATA_PRIO;
+		case WIZE_API_DATA:
+			break;
+		case WIZE_API_INST:
+			app_type = APP_INSTALL;
+			ses_type = SES_INST;
+			break;
+		case WIZE_API_DWN:
+			app_type = APP_DOWNLOAD;
+			ses_type = SES_DWN;
+			break;
+		default:
+			return WIZE_API_INVALID_PARAM;
+	}
+
+	// Ensure that only one request at the time
+	if ( sys_binsen_acquire( hSesMgrLock[ses_type], u32SesMgrReqTmo[ses_type] ) )
+	{
+		eRet = _wizeapi_ses_preinit_(pData, u8Size, app_type);
 		if ( eRet == WIZE_API_SUCCESS)
 		{
-			hSesMgrCaller[SES_ADM] = sys_get_pid( );
-			sys_flag_set(hSesMgrTask, SES_EVT_ADM_OPEN);
+			if (hTask)
+			{
+				hSesMgrCaller[ses_type] = hTask;
+			}
+			else
+			{
+				hSesMgrCaller[ses_type] = sys_get_pid( );
+			}
+			evt = (SES_EVT_INST_OPEN << (4 *ses_type));
+			sys_flag_set(hSesMgrTask, evt);
+		}
+		else
+		{
+			sys_binsen_release(hSesMgrLock[ses_type]);
 		}
 	}
 	return eRet;
 }
 
 /*!
- * @brief This function start a download session based on previously received ANN_DOWNLOAD
+ * @brief This function cancel the session given by its type
+ *
+ * @param [in] eType  Type of session (see @link wize_api_ses_e @endlink)
  *
  * @retval return wize_api_ret_e::WIZE_API_SUCCESS (0) if everything is fine
- *         return wize_api_ret_e::WIZE_API_ACCESS_TIMEOUT (1) if access is refused
  *         return wize_api_ret_e::WIZE_API_INVALID_PARAM (2) if given parameter(s) is/are invalid
  */
-wize_api_ret_e WizeApi_Download(void)
+wize_api_ret_e WizeApi_SesClose(uint8_t eType)
 {
-	wize_api_ret_e eRet = WIZE_API_ACCESS_TIMEOUT;
-	// Ensure that only one request at the time
-	if ( sys_binsen_acquire( hSesMgrLock[SES_DWN], WIZEAPI_DWN_REQ_TMO ) )
+	ses_type_t ses_type;
+	switch(eType)
 	{
-		eRet = _wizeapi_ses_preinit_(NULL, 0, APP_DOWNLOAD);
-		if ( eRet == WIZE_API_SUCCESS)
-		{
-			hSesMgrCaller[SES_DWN] = sys_get_pid( );
-			sys_flag_set(hSesMgrTask, SES_EVT_DWN_OPEN);
-		}
+		case WIZE_API_ALARM:
+		case WIZE_API_DATA:
+			ses_type = SES_ADM;
+			break;
+		case WIZE_API_INST:
+			ses_type = SES_INST;
+			break;
+		case WIZE_API_DWN:
+			ses_type = SES_DWN;
+			break;
+		default:
+			return WIZE_API_INVALID_PARAM;
 	}
-	return eRet;
+	sys_flag_set(hSesMgrTask, (SES_EVT_INST_CANCEL << (4 *ses_type)));
+	return WIZE_API_SUCCESS;
+}
+
+/*!
+ * @brief This function get the current state of the given session
+ *
+ * @param [in] eSesId The session Id (see ses_type_t)
+ *
+ * @retval the session current state (see ses_state_e)
+ */
+uint32_t WizeApi_SesGetState(uint8_t eSesId)
+{
+	return (uint32_t)( (eSesId < SES_NB)?(sSesDispCtx.sSesCtx[eSesId].eState):(-1) );
 }
 
 /*!
@@ -338,18 +373,6 @@ void WizeApi_Notify(uint32_t evt)
 void WizeApi_Enable(uint8_t bFlag)
 {
 	SesDisp_Init(&sSesDispCtx, bFlag);
-}
-
-/*!
- * @brief This function get the current state of the given session
- *
- * @param [in] eSesId The session Id (see ses_type_t)
- *
- * @retval the session current state (see ses_state_e)
- */
-uint32_t WizeApi_GetState(uint8_t eSesId)
-{
-	return (uint32_t)( (eSesId < SES_NB)?(sSesDispCtx.sSesCtx[eSesId].eState):(-1) );
 }
 
 /*!
@@ -428,53 +451,57 @@ void WizeApi_OnSesFlag(void *hSesCaller, uint32_t u32Flg)
 // Some convenient function
 
 /*!
- * @brief This function cancel the given session
+ * @brief This function fill the NetMgr medium structure from parameter table.
  *
- * @param [in] eSesId The session Id (see ses_type_t)
+ * @param [in] pMediumCfg Pointer on the destination buffer
  *
- * @retval None
  */
-inline
-void WizeApi_Cancel(uint8_t eSesId)
+void WizeApi_FillMediumCfg(struct medium_cfg_s *pMediumCfg)
 {
-	if(eSesId < SES_NB)
-	{
-		WizeApi_Notify( (SES_EVT_INST_CANCEL << (4 *eSesId)) );
-	}
+    struct medium_cfg_s sMediumCfg;
+    Param_Access(RF_DOWNLINK_MOD,       (uint8_t*)(&(pMediumCfg->eRxModulation)), 0 );
+    Param_Access(RF_UPLINK_MOD,         (uint8_t*)(&(pMediumCfg->eTxModulation)), 0 );
+	Param_Access(RF_UPLINK_CHANNEL,     (uint8_t*)(&(pMediumCfg->eTxChannel)), 0 );
+	sMediumCfg.eTxChannel = (pMediumCfg->eTxChannel -100)/10;
+	Param_Access(RF_DOWNLINK_CHANNEL,   (uint8_t*)(&(pMediumCfg->eRxChannel)), 0 );
+	sMediumCfg.eRxChannel = (pMediumCfg->eRxChannel -100)/10;
+	Param_Access(TX_FREQ_OFFSET,        (uint8_t*)&(pMediumCfg->i16TxFreqOffset), 0 );
+	sMediumCfg.i16TxFreqOffset = __ntohs(pMediumCfg->i16TxFreqOffset);
+	Param_Access(TX_POWER,              (uint8_t*)(&(pMediumCfg->eTxPower)), 0 );
 }
 
 /*!
- * @brief This function cancel the Install session
+ * @brief This function fill the NetMgr protocol structure from parameter table.
  *
- * @retval None
+ * @param [in] pProto_Cfg Pointer on the destination buffer
+ *
  */
-inline
-void WizeApi_ExecPing_Cancel(void)
+void WizeApi_FillProtoCfg(struct proto_config_s *pProto_Cfg)
 {
-	WizeApi_Notify(SES_EVT_INST_CANCEL);
+	Param_Access(L7TRANSMIT_LENGTH_MAX, &(pProto_Cfg->u8TransLenMax), 0 );
+	Param_Access(L7RECEIVE_LENGTH_MAX,  &(pProto_Cfg->u8RecvLenMax), 0 );
+	Param_Access(L6NetwIdSelect,        &(pProto_Cfg->u8NetId), 0 );
+
+	pProto_Cfg->AppInst = L6APP_INST;
+	pProto_Cfg->AppAdm  = L6APP_ADM;
+#ifdef L6App
+	Param_Access(L6App,                 &(pProto_Cfg->AppData), 0 ) );
+#else
+	pProto_Cfg->AppData = 0xFE;
+#endif
+
+#ifdef HAS_WIZE_CORE_EXTEND_PARAMETER
+	Param_Access(L6_EXCH_DIS_FLT, &(pProto_Cfg->filterDisL6), 0);
+	Param_Access(L2_EXCH_DIS_FLT, &(pProto_Cfg->filterDisL2), 0);
+#else
+	pProto_Cfg->filterDisL2 = 0;
+	pProto_Cfg->filterDisL6 = 0;
+#endif
 }
 
-/*!
- * @brief This function cancel the Admin session
- *
- * @retval None
- */
-inline
-void WizeApi_Send_Cancel(void)
-{
-	WizeApi_Notify(SES_EVT_ADM_CANCEL);
-}
+void wrap_fill_medium_cfg(void) __attribute__ ((weak, alias ("WizeApi_FillMediumCfg")));
+void wrap_fill_proto_cfg(void) __attribute__ ((weak, alias ("WizeApi_FillProtoCfg")));
 
-/*!
- * @brief This function cancel the Download session
- *
- * @retval None
- */
-inline
-void WizeApi_Download_Cancel(void)
-{
-	WizeApi_Notify(SES_EVT_DWN_CANCEL);
-}
 /******************************************************************************/
 
 /*!

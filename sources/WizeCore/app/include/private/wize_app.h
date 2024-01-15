@@ -88,16 +88,22 @@ typedef enum
 /******************************************************************************/
 // ---
 // weak functions
-uint8_t WizeApp_OnDwnBlkRecv(uint16_t u16Id, const uint8_t *pData);
+uint8_t WizeApp_GetAdmReq(uint8_t *pData, uint8_t *pOther);
+uint8_t WizeApp_GetInstReq(uint8_t *pData, uint8_t *pOther);
+uint8_t WizeApp_GetFwInfo(admin_ann_fw_info_t *pFwAnnInfo, uint8_t *pOther);
+int32_t WizeApp_GetFwInfoType(void);
 uint8_t WizeApp_AnnCheckFwInfo(admin_cmd_anndownload_t *pAnn);
+uint8_t WizeApp_OnDwnBlkRecv(uint16_t u16Id, const uint8_t *pData);
 
 // ---
 void WizeApp_Init(void);
-wize_api_ret_e WizeApp_Install(void);
-wize_api_ret_e WizeApp_Send(uint8_t *pData, uint8_t u8Size);
-wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size);
-wize_api_ret_e WizeApp_Download(void);
-void WizeApp_Download_Cancel(void);
+
+//wize_api_ret_e WizeApp_Install(void);
+//wize_api_ret_e WizeApp_Send(uint8_t *pData, uint8_t u8Size);
+//wize_api_ret_e WizeApp_Alarm(uint8_t *pData, uint8_t u8Size);
+
+wize_api_ret_e WizeApp_DownOpen(void);
+void WizeApp_DownCancel(void);
 
 void WizeApp_AnnReady(uint8_t eErrCode, uint8_t u8ErrorParam);
 uint32_t WizeApp_Common(uint32_t ulEvent);
