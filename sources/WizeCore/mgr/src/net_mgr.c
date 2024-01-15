@@ -111,7 +111,12 @@ static int32_t _net_mgr_try_abort_(netdev_t *pNetDev);
 // net_mgr Task, Mutex, BinSem
 SYS_TASK_CREATE_DEF(netmgr, NET_MGR_TASK_STACK_SIZE, NET_MGR_TASK_PRIORITY);
 SYS_MUTEX_CREATE_DEF(netmgr);
+
 SYS_BINSEM_CREATE_DEF(netdev);
+#define SETUP_LOCK_DEV() SYS_BINSEM_CREATE_CALL(netdev);
+#define LOCK_DEV() sys_mutex_acquire(sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT())
+#define UNLOCK_DEV() sys_mutex_release(sNetDev.hLock)
+
 /*!
  * @}
  * @endcond
@@ -139,7 +144,7 @@ void NetMgr_Setup(phydev_t *pPhyDev, wize_net_t *pWizeNet)
 
 	// Create a binary semaphore to lock the netdev_s resource
 	// Note : it is created in the 'empty' state, i.e. must give it before take it
-	sNetDev.hLock = SYS_BINSEM_CREATE_CALL(netdev);
+	sNetDev.hLock = SETUP_LOCK_DEV();
 	assert(sNetDev.hLock);
 
 	// Create a mutex to lock the net_mgr
@@ -231,8 +236,7 @@ int32_t NetMgr_Open(void *hTaskToNotify)
 #else
 	sWizeCtx.hCaller = hTaskToNotify;
 #endif
-	sys_binsen_release(sNetDev.hLock);
-
+	UNLOCK_DEV();
 	return NET_STATUS_OK;
 }
 
@@ -248,7 +252,7 @@ int32_t NetMgr_Close(void)
 	if (sWizeCtx.hOwner == sys_get_pid( ) )
 	{
 		// Try to take the netdev_t lock, to ensure the resource is free
-		if ( sys_binsen_acquire(sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) == pdTRUE)
+		if ( LOCK_DEV() == pdTRUE)
 		{
 			NetMgr_Uninit();
 			sWizeCtx.hCaller = NULL;
@@ -280,14 +284,14 @@ int32_t NetMgr_SetUplink(phy_chan_e eChannel, phy_mod_e eMod)
 #endif
 	{
 		// try to acquire the Net Dev
-		if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+		if ( LOCK_DEV() )
 		{
 			eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_UPLINK_CH, (uint32_t)eChannel);
 			if ( eStatus == NETDEV_STATUS_OK)
 			{
 				eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_UPLINK_MOD, (uint32_t)eMod);
 			}
-			sys_binsen_release(sNetDev.hLock);
+			UNLOCK_DEV();
 		}
 	}
 	return eStatus;
@@ -313,14 +317,14 @@ int32_t NetMgr_SetDwlink(phy_chan_e eChannel, phy_mod_e eMod)
 #endif
 	{
 		// try to acquire the Net Dev
-		if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+		if ( LOCK_DEV() )
 		{
 			eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_DWLINK_CH, (uint32_t)eChannel);
 			if ( eStatus == NETDEV_STATUS_OK)
 			{
 				eStatus = WizeNet_Ioctl(&sNetDev, NETDEV_CTL_SET_DWLINK_MOD, (uint32_t)eMod);
 			}
-			sys_binsen_release(sNetDev.hLock);
+			UNLOCK_DEV();
 		}
 	}
 	return eStatus;
@@ -346,10 +350,10 @@ int32_t NetMgr_Ioctl(uint32_t eCtl, uint32_t args)
 #endif
 	{
 		// try to acquire the Net Dev
-		if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+		if ( LOCK_DEV() )
 		{
 			eStatus = WizeNet_Ioctl(&sNetDev, eCtl, args);
-			sys_binsen_release(sNetDev.hLock);
+			UNLOCK_DEV();
 		}
 	}
 	return eStatus;
@@ -390,10 +394,13 @@ int32_t NetMgr_Send(net_msg_t *pxNetMsg, uint32_t u32TimeOut)
 #endif
 		{
 			// try to acquire the Net Dev
-			if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT()) )
+			if ( LOCK_DEV() )
 			{
 #ifndef NET_MGR_OWNER_IS_CALLER
-				sWizeCtx.hCaller = sys_get_pid( );
+				if (sWizeCtx.hCaller == NULL)
+				{
+					sWizeCtx.hCaller = sys_get_pid( );
+				}
 #endif
 				sWizeCtx.pBuffDesc = (void*)pxNetMsg;
 				sWizeCtx.u8Type = pxNetMsg->u8Type;
@@ -453,10 +460,13 @@ int32_t NetMgr_Listen(net_msg_t *pxNetMsg, uint32_t u32TimeOut, net_listen_type_
 #endif
 		{
 			// try to acquire the Net Dev
-			if ( sys_binsen_acquire( sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT())  )
+			if ( LOCK_DEV() )
 			{
 #ifndef NET_MGR_OWNER_IS_CALLER
-				sWizeCtx.hCaller = sys_get_pid( );
+				if (sWizeCtx.hCaller == NULL)
+				{
+					sWizeCtx.hCaller = sys_get_pid( );
+				}
 #endif
 				sWizeCtx.pBuffDesc = (void*)pxNetMsg;
 				sWizeCtx.u8Type = pxNetMsg->u8Type;
@@ -600,7 +610,7 @@ static void _net_mgr_main_(void const * argument)
 
 		if (bError || bAbort)
 		{
-			sys_binsen_release(sNetDev.hLock);
+			UNLOCK_DEV();
 		}
 	}
 }
@@ -671,7 +681,8 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 	{
 		TimeEvt_TimerStop(&sWizeCtx.sTimeOut);
 		WizeNet_Ioctl(pNetDev, NETDEV_CTL_PHY_CMD, PHY_CTL_CMD_SLEEP);
-		sys_binsen_release(pNetDev->hLock);
+		UNLOCK_DEV();
+
 		u32BackEvt |= NET_EVENT_SEND_DONE;
 		LOG_FRM_OUT(
 				((wize_net_t*)pNetDev->pCtx)->aSendBuff,
@@ -731,7 +742,7 @@ static uint32_t _net_mgr_fsm_(netdev_t *pNetDev, uint32_t u32Evt)
 						// Stop time event
 						TimeEvt_TimerStop(&sWizeCtx.sTimeOut);
 						WizeNet_Ioctl(pNetDev, NETDEV_CTL_PHY_CMD, PHY_CTL_CMD_SLEEP);
-						sys_binsen_release(pNetDev->hLock);
+						UNLOCK_DEV();
 					}
 					u32BackEvt |= NET_EVENT_RECV_DONE;
 					if (((wize_net_t*)pNetDev->pCtx)->aRecvBuff[0] == 255)
