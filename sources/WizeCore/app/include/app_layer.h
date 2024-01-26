@@ -101,8 +101,6 @@ typedef struct {
 typedef struct {
 	uint8_t L7ResponseId;   /**< Response id (in @link admin_cmd_id_e @endlink) */
 	uint8_t L7ErrorCode;    /**< Error code */
-	uint8_t L7SwVersion[2]; /**< The current SW version */
-	uint8_t L7Rssi;         /**< RSSI of the received message command */
 	uint8_t L7ErrorParam;   /**< Parameter Id on which error occurs */
 } admin_rsp_err_t;
 
