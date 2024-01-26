@@ -458,15 +458,14 @@ void WizeApi_OnSesFlag(void *hSesCaller, uint32_t u32Flg)
  */
 void WizeApi_FillMediumCfg(struct medium_cfg_s *pMediumCfg)
 {
-    struct medium_cfg_s sMediumCfg;
     Param_Access(RF_DOWNLINK_MOD,       (uint8_t*)(&(pMediumCfg->eRxModulation)), 0 );
     Param_Access(RF_UPLINK_MOD,         (uint8_t*)(&(pMediumCfg->eTxModulation)), 0 );
 	Param_Access(RF_UPLINK_CHANNEL,     (uint8_t*)(&(pMediumCfg->eTxChannel)), 0 );
-	sMediumCfg.eTxChannel = (pMediumCfg->eTxChannel -100)/10;
+	pMediumCfg->eTxChannel = (pMediumCfg->eTxChannel -100)/10;
 	Param_Access(RF_DOWNLINK_CHANNEL,   (uint8_t*)(&(pMediumCfg->eRxChannel)), 0 );
-	sMediumCfg.eRxChannel = (pMediumCfg->eRxChannel -100)/10;
+	pMediumCfg->eRxChannel = (pMediumCfg->eRxChannel -100)/10;
 	Param_Access(TX_FREQ_OFFSET,        (uint8_t*)&(pMediumCfg->i16TxFreqOffset), 0 );
-	sMediumCfg.i16TxFreqOffset = __ntohs(pMediumCfg->i16TxFreqOffset);
+	pMediumCfg->i16TxFreqOffset = __ntohs(pMediumCfg->i16TxFreqOffset);
 	Param_Access(TX_POWER,              (uint8_t*)(&(pMediumCfg->eTxPower)), 0 );
 }
 
