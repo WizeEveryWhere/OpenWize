@@ -116,6 +116,7 @@ SYS_BINSEM_CREATE_DEF(netdev);
 #define SETUP_LOCK_DEV() SYS_BINSEM_CREATE_CALL(netdev);
 #define LOCK_DEV() sys_mutex_acquire(sNetDev.hLock, NET_DEV_ACQUIRE_TIMEOUT())
 #define UNLOCK_DEV() sys_mutex_release(sNetDev.hLock)
+#define IS_LOCKED_DEV() (! (sys_sem_pending(sNetDev.hLock)))
 
 /*!
  * @}
@@ -251,6 +252,8 @@ int32_t NetMgr_Close(void)
 	// check if caller own the NetMgr mutex
 	if (sWizeCtx.hOwner == sys_get_pid( ) )
 	{
+		// force to unlock
+		UNLOCK_DEV();
 		// Try to take the netdev_t lock, to ensure the resource is free
 		if ( LOCK_DEV() == pdTRUE)
 		{
@@ -515,11 +518,11 @@ int32_t NetMgr_ListenReady(void)
 /*!
  * @brief This function get the NetMgr state
  *
- * @return 1 if NetMgr is busy, o otherwise
+ * @return -1 if NetMgr is busy, 0 otherwise
  */
 int32_t NetMgr_IsBusy(void)
 {
-	return (int32_t)sys_sem_pending(sNetDev.hLock);
+	return (int32_t)IS_LOCKED_DEV();
 }
 
 /******************************************************************************/
