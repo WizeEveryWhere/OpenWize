@@ -54,7 +54,7 @@ extern "C" {
 #include "wize_banner.h"
 
 #ifndef NOINIT_SECTION
-	#define NOINIT_SECTION(sec_name) __attribute__(( section(".noinit") )) __attribute__((used))
+	#define NOINIT_SECTION() __attribute__(( section(".noinit") )) __attribute__((used))
 #endif
 
 /******************************************************************************/
