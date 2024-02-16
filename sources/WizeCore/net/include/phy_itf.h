@@ -162,11 +162,13 @@ typedef enum {
  * @brief This define the available command to change the PHY state
  */
 typedef enum {
+	PHY_CTL_SET_RSSI_OFF      , /*!< Set the RSSI Offset */
 	PHY_CTL_SET_TX_FREQ_OFF   , /*!< Set the TX frequency Offset */
 	PHY_CTL_SET_TX_POWER      , /*!< Set the TX Power */
 	PHY_CTL_SET_PA            , /*!< Enable/Disable the PA (if any) */
 	PHY_CTL_SET_PWR_ENTRY     , /*!< Set the calibrate values for a specific Power entry */
 
+	PHY_CTL_GET_RSSI_OFF      , /*!< Get the RSSI Offset */
 	PHY_CTL_GET_TX_FREQ_OFF   , /*!< Get the TX frequency Offset */
 	PHY_CTL_GET_TX_POWER      , /*!< Get the TX Power */
 	PHY_CTL_GET_PA            , /*!< Get the PA state */
