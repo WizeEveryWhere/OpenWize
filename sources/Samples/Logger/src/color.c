@@ -46,7 +46,7 @@ extern "C" {
  */
 
 #ifdef LOGGER_HAS_COLOR
-const char *color_str[LOG_LV_ID_MAX] =
+const char * const color_str[LOG_LV_ID_MAX] =
 {
 	[LOG_LV_ID_QUIET]   = SGR(FGC(WHITE)),
 	[LOG_LV_ID_ERR]     = SGR(BOLD";"FGC(RED)),
