@@ -167,9 +167,10 @@ SYS_BINSEM_CREATE_DEF(wizeapi_dwn);
  * @cond INTERNAL
  * @{
  */
-static wize_net_t sNetCtx;
-static struct ses_disp_ctx_s sSesDispCtx;
-static struct time_upd_ctx_s sTimeCtx;
+
+NOINIT_SECTION() static wize_net_t sNetCtx;
+NOINIT_SECTION() static struct ses_disp_ctx_s sSesDispCtx;
+NOINIT_SECTION() static struct time_upd_ctx_s sTimeCtx;
 
 static struct adm_mgr_ctx_s *_pAdmCtx_;
 static struct inst_mgr_ctx_s *_pInstCtx_;

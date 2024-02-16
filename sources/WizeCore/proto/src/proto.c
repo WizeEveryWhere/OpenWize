@@ -259,10 +259,10 @@ void Wize_ProtoStats_RxUpdate(
 		{
 			uint32_t u32_temp;
 			// Stats on Rssi
-			if(u8Rssi > pStats->u8RxRssiMax) {
+			if ( IS_BEST_EQUAL(u8Rssi, pStats->u8RxRssiMax) ) {
 				pStats->u8RxRssiMax = u8Rssi;
 			}
-			if(u8Rssi < pStats->u8RxRssiMin) {
+			if ( IS_WORST(u8Rssi, pStats->u8RxRssiMin) ) {
 				pStats->u8RxRssiMin = u8Rssi;
 			}
 			u32_temp = (pStats->u8RxRssiAvg*pStats->u32RxNbFrmOK) + u8Rssi;
@@ -332,10 +332,10 @@ void Wize_ProtoStats_TxUpdate(
 		{
 			uint32_t u32_temp;
 			// Stats on Noise
-			if(u8Noise > pStats->u8TxNoiseMax) {
+			if ( IS_WORST(u8Noise, pStats->u8TxNoiseMax) ) {
 				pStats->u8TxNoiseMax = u8Noise;
 			}
-			if(u8Noise < pStats->u8TxNoiseMin) {
+			if ( IS_BEST_EQUAL(u8Noise, pStats->u8TxNoiseMin) ) {
 				pStats->u8TxNoiseMin = u8Noise;
 			}
 			u32_temp = (pStats->u8TxNoiseAvg*pStats->u32TxNbFrames) + u8Noise;
@@ -360,9 +360,9 @@ void Wize_ProtoStats_RxClear(
 	if (pCtx)
 	{
 		struct proto_stats_s *pStats = &(pCtx->sProtoStats);
-		pStats->u8RxRssiMax = 0;
-		pStats->u8RxRssiMin = 0;
+		pStats->u8RxRssiMax = WORST_RSSI;
 		pStats->u8RxRssiAvg = 0;
+		pStats->u8RxRssiMin = BEST_RSSI;
 		pStats->u8RxReserved = 0;
 		pStats->u32RxNbBytes = 0;
 		pStats->u32RxNbFrmOK = 0;
@@ -386,9 +386,9 @@ void Wize_ProtoStats_TxClear(
 	if (pCtx)
 	{
 		struct proto_stats_s *pStats = &(pCtx->sProtoStats);
-		pStats->u8TxNoiseMax = 0;
+		pStats->u8TxNoiseMax = BEST_RSSI;
 		pStats->u8TxNoiseAvg = 0;
-		pStats->u8TxNoiseMin = 0;
+		pStats->u8TxNoiseMin = WORST_RSSI;
 		pStats->u8TxReserved = 0;
 		pStats->u32TxNbFrames = 0;
 		pStats->u32TxNbBytes = 0;
