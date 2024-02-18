@@ -61,6 +61,44 @@ extern "C" {
 	#define L6APP_INST 0x02
 #endif
 
+#ifndef RSSI_REVERSED
+	/*
+	 * RSSI
+	 *   0 represent the worst one : -147.5 dBm
+	 * 255 represent the best one  : -20 dBm
+	 */
+#ifndef BEST_RSSI
+	#define BEST_RSSI  255
+#endif
+#ifndef WORST_RSSI
+	#define WORST_RSSI 0
+#endif
+#ifndef IS_WORST
+	#define IS_WORST(rssi_1, rssi_2) (rssi_1 < rssi_2)
+#endif
+#ifndef IS_BEST_EQUAL
+	#define IS_BEST_EQUAL(rssi_1, rssi_2) (rssi_1 >= rssi_2)
+#endif
+#else
+	/*
+	 * RSSI
+	 * 255 represent the worst one : -147.5 dBm
+	 *   0 represent the best one  : -20 dBm
+	 */
+#ifndef BEST_RSSI
+	#define BEST_RSSI  0
+#endif
+#ifndef WORST_RSSI
+	#define WORST_RSSI 255
+#endif
+#ifndef IS_WORST
+	#define IS_WORST(rssi_1, rssi_2) (rssi_1 > rssi_2)
+#endif
+#ifndef IS_BEST_EQUAL
+	#define IS_BEST_EQUAL(rssi_1, rssi_2) (rssi_1 <= rssi_2)
+#endif
+#endif
+
 //#ifdef WIZE_OPT_USE_CONST_ERR_MSG
 extern const char * const wize_err_msg[];
 //#endif

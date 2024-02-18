@@ -101,29 +101,6 @@ extern "C" {
 static void _get_adjust_clock_offset_(struct ping_reply_ctx_s *ping_reply_ctx);
 static uint32_t _error_estimator_(ping_reply_t *pPingReply);
 
-#ifndef RSSI_REVERSED
-/*
- * RSSI
- *   0 represent the worst one : -147.5 dBm
- * 255 represent the best one  : -20 dBm
- */
-#define BEST_RSSI  255
-#define WORST_RSSI 0
-#define IS_WORST(rssi_1, rssi_2) (rssi_1 < rssi_2)
-#define IS_BEST_EQUAL(rssi_1, rssi_2) (rssi_1 >= rssi_2)
-
-#else
-/*
- * RSSI
- * 255 represent the worst one : -147.5 dBm
- *   0 represent the best one  : -20 dBm
- */
-#define BEST_RSSI  0
-#define WORST_RSSI 255
-#define IS_WORST(rssi_1, rssi_2) (rssi_1 > rssi_2)
-#define IS_BEST_EQUAL(rssi_1, rssi_2) (rssi_1 <= rssi_2)
-
-#endif
 /*!
  * @}
  * @endcond

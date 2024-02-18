@@ -184,6 +184,8 @@ int32_t WizeNet_Send(netdev_t* pNetdev, net_msg_t *pNetMsg)
 				}
 				// FIXME : Noise measurement rise an interrupt
 				uint8_t u8Noise = 0; //pIf->pfGetNoise(pNetdev->pPhydev);
+				pIf->pfNoise(pNetdev->pPhydev, pConfig->eTxChannel, pConfig->eTxModulation);
+				pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_NOISE, (uint32_t)(&u8Noise));
 				if ( pIf->pfTx(pNetdev->pPhydev, pConfig->eTxChannel, pConfig->eTxModulation) )
 				{
 					pNetdev->eErrType = NETDEV_ERROR_PHY;
