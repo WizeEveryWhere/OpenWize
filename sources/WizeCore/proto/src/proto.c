@@ -944,8 +944,7 @@ static uint8_t _exchange_build(
     // Set L6TStamp
     struct timeval tp;
     gettimeofday(&tp, NULL);
-    // FIXME : remove EPOCH_UNIX_TO_OURS from tp.tv_sec ?
-    *(uint16_t*)(pL6f->L6TStamp) = __htons((uint16_t)(tp.tv_sec));
+    *(uint16_t*)(pL6f->L6TStamp) = __htons((uint16_t)(tp.tv_sec - EPOCH_UNIX_TO_OURS));
     pNetMsg->u16Tstamp = (uint16_t)(tp.tv_sec);
     pNetMsg->u32Epoch = (uint32_t)(tp.tv_sec);
 

@@ -61,6 +61,10 @@ extern "C" {
 	#define L6APP_INST 0x02
 #endif
 
+#ifndef EPOCH_UNIX_TO_OURS
+#define EPOCH_UNIX_TO_OURS 1356998400U // second between Unix Epoch and 01/01/2013-00:00:00
+#endif
+
 #ifndef RSSI_REVERSED
 	/*
 	 * RSSI
