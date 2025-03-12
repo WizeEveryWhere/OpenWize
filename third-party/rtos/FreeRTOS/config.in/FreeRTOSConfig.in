@@ -7,6 +7,8 @@
  extern uint32_t SystemCoreClock;
 #endif
 
+#include "FreeRTOSConfig_trace.h" 
+
 #cmakedefine configUSE_PREEMPTION               @configUSE_PREEMPTION@ 
 #cmakedefine configSUPPORT_STATIC_ALLOCATION    @configSUPPORT_STATIC_ALLOCATION@
 #cmakedefine configSUPPORT_DYNAMIC_ALLOCATION   @configSUPPORT_DYNAMIC_ALLOCATION@

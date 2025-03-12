@@ -65,6 +65,7 @@ endif(RTOS_PORT_PATH)
 generate_conf_file(FreeRTOSConfig)
 generate_conf_file(freertos_tasks_c_additions)
 generate_conf_file(rtos_macro)
+generate_conf_file(FreeRTOSConfig_trace)
 
 ################################################################################
 add_library(${MODULE_NAME} STATIC)

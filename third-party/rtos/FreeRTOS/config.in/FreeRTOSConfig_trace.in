@@ -1,6 +1,8 @@
 #ifndef FREERTOS_CONFIG_TRACE_H
 #define FREERTOS_CONFIG_TRACE_H
 
+@FreeRTOSTrace_header@
+
 #cmakedefine traceSTART() @traceSTART@
 #cmakedefine traceEND() @traceEND@
 #cmakedefine traceTASK_SWITCHED_IN() @traceTASK_SWITCHED_IN@
