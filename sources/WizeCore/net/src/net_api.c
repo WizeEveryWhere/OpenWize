@@ -164,6 +164,8 @@ int32_t WizeNet_Send(netdev_t* pNetdev, net_msg_t *pNetMsg)
 			pCtx->u8ProtoErr = Wize_ProtoBuild(&(pCtx->sProtoCtx), pNetMsg);
 			if ( !(pCtx->u8ProtoErr) )
 			{
+				int32_t ret = 0;
+				uint8_t u8Noise = 0;
 				uint8_t u8FrmSize = pCtx->sProtoCtx.u8Size;
 				if(pNetdev->pPhydev->bCrcOn == 1) {
 					u8FrmSize -= 2; // remove CRC
@@ -171,20 +173,21 @@ int32_t WizeNet_Send(netdev_t* pNetdev, net_msg_t *pNetMsg)
 				
 				pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_SET_TX_POWER, (uint32_t)pConfig->eTxPower);
 				pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_SET_TX_FREQ_OFF, (uint32_t)pConfig->i16TxFreqOffset);
-
-				if (pIf->pfSetSend(
+				ret = pIf->pfSetSend(
 						pNetdev->pPhydev,
 						&(pCtx->aSendBuff[1]), // to remove LEN field
 						(u8FrmSize)
-						))
+						);
+
+				ret |= pIf->pfNoise(pNetdev->pPhydev, pConfig->eTxChannel, pConfig->eTxModulation);
+
+				if ( ret )
 				{
 					pNetdev->eErrType = NETDEV_ERROR_PHY;
 					pNetdev->eState = NETDEV_STATE_ERROR;
 					return i32Ret;
 				}
-				// FIXME : Noise measurement rise an interrupt
-				uint8_t u8Noise = 0; //pIf->pfGetNoise(pNetdev->pPhydev);
-				pIf->pfNoise(pNetdev->pPhydev, pConfig->eTxChannel, pConfig->eTxModulation);
+
 				pIf->pfIoctl(pNetdev->pPhydev, PHY_CTL_GET_NOISE, (uint32_t)(&u8Noise));
 				if ( pIf->pfTx(pNetdev->pPhydev, pConfig->eTxChannel, pConfig->eTxModulation) )
 				{

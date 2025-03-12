@@ -409,6 +409,11 @@ int32_t NetMgr_Send(net_msg_t *pxNetMsg, uint32_t u32TimeOut)
 						eStatus = NET_STATUS_ERROR;
 					}
 				}
+
+				if (eStatus == NET_STATUS_ERROR)
+				{
+					sys_binsen_release(sNetDev.hLock);
+				}
 			}
 		}
 	}
@@ -471,6 +476,11 @@ int32_t NetMgr_Listen(net_msg_t *pxNetMsg, uint32_t u32TimeOut, net_listen_type_
 						_net_mgr_try_abort_(&sNetDev);
 						eStatus = NET_STATUS_ERROR;
 					}
+				}
+
+				if (eStatus == NET_STATUS_ERROR)
+				{
+					sys_binsen_release(sNetDev.hLock);
 				}
 			}
 		}

@@ -435,14 +435,15 @@ uint32_t SesDisp_Fsm(struct ses_disp_ctx_s *pCtx, uint32_t u32Event)
 	// At least one session is closed
 	if (ulSesFlg & SES_FLG_SES_COMPLETE_MSK)
 	{
-		if(pCtx->u8ActiveSes)
+		if (pCtx->u8ActiveSes)
 		{
 			pCtx->u8ActiveSes--;
 		}
 
-		if(!pCtx->u8ActiveSes)
+		if (!pCtx->u8ActiveSes)
 		{
 			NetMgr_Close();
+			pCtx->pActive = NULL;
 		}
 	}
 

@@ -126,6 +126,7 @@ typedef enum
 	 * or LISTENING state. Otherwise, something wrong happened.*/
 	// -------------------------------------------------------------------------
 	SES_EVT_NONE                  = NET_EVENT_NONE,       /*!< Net event none */
+	SES_EVT_ERROR                 = NET_EVENT_ERROR,      /*!< Net event error */
 	SES_EVT_SEND_DONE             = NET_EVENT_SEND_DONE,  /*!< Net event send done */
 	SES_EVT_RECV_DONE             = NET_EVENT_RECV_DONE,  /*!< Net event receive done */
 	SES_EVT_FRM_PASSED            = NET_EVENT_FRM_PASSED, /*!< Net event frame by-passed */

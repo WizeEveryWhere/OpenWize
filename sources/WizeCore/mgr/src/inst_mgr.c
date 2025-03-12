@@ -152,7 +152,7 @@ static uint32_t _inst_mgr_fsm_(struct ses_ctx_s *pCtx, uint32_t u32Evt)
 				{
 					// failed, go back into IDLE
 					pCtx->eState = SES_STATE_IDLE;
-					u32BackEvt = SES_FLG_INST_ERROR;
+					u32BackEvt = SES_FLG_INST_ERROR | SES_FLG_INST_COMPLETE;
 					break;
 				}
 				pCtx->eState = SES_STATE_SENDING;
