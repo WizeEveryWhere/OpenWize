@@ -92,12 +92,15 @@ struct logger_ctx_s
 	void* hMutex;    //<! Mutex use to lock access to the message buffer index
 	void* hQueue;    //<! Synchronization Queue between logger task and other caller task
 	void* hCntSem;   //<! Counting semaphore use to trace available buffer index
-	FILE* pFile;     //!< Output File pointer
+	FILE* pFile;     //<! Output File pointer
 #ifdef LOGGER_USE_FWRITE
-	int32_t (*pfOut)(const char*, size_t, size_t, FILE*); //!< Output function pointer
+	int32_t (*pfOut)(const char*, size_t, size_t, FILE*); //<! Output function pointer
 	uint8_t aPoolLen[LOGGER_QUEUE_MESSAGE_ITEM_NB]; //<! Message length available in Buffer
 #else // USE_FPUTS
-	int32_t (*pfOut)(const char*, FILE*); //!< Output function pointer
+	int32_t (*pfOut)(const char*, FILE*); //<! Output function pointer
+#endif
+#ifdef LOGGER_USE_ROTATE
+	int32_t i32;     //<! Last index for rotate logs
 #endif
 	uint8_t aPoolBuffer[LOGGER_QUEUE_MESSAGE_ITEM_NB][LOGGER_POOL_BUFFER_SIZE+1];
 													 //<! Buffer messages
@@ -131,6 +134,9 @@ void Logger_Setup(int32_t (*pfOut)(const char*, FILE*), FILE* pFile)
 
 	sLoggerCtx.pfOut = pfOut;
 	sLoggerCtx.pFile = pFile;
+#ifdef LOGGER_USE_ROTATE
+	sLoggerCtx.i32 = 0;
+#endif
 }
 
 
@@ -398,6 +404,30 @@ static int32_t _logger_acquire_id_()
 	int32_t i;
 	// take mutex
 	sys_mutex_acquire (sLoggerCtx.hMutex, 0xFFFFFFFF);
+
+#ifdef LOGGER_USE_ROTATE
+	// Get the last one
+	i = sLoggerCtx.i32;
+	int8_t again = 1;
+	do {
+		// this is not lock, so take it
+		if (sLoggerCtx.aPoolLock[i] == 0)
+		{
+			sLoggerCtx.aPoolLock[i] = 1;
+			sLoggerCtx.i32 = i + 1;
+			break;
+		}
+		// this is lock, so try the next one
+		i++;
+		if (i > LOGGER_QUEUE_MESSAGE_ITEM_NB)
+		{
+			i = 0;
+		}
+		again = sLoggerCtx.i32 - i;
+	}
+	while ( again );
+	if (!again) { i = -1; }
+#else
 	// try to find a free buffer
 	for (i = 0; i < LOGGER_QUEUE_MESSAGE_ITEM_NB; i++)
 	{
@@ -409,6 +439,7 @@ static int32_t _logger_acquire_id_()
 		}
 	}
 	if (i >= LOGGER_QUEUE_MESSAGE_ITEM_NB) { i = -1; }
+#endif
     // release mutex
 	sys_mutex_release(sLoggerCtx.hMutex);
 	return i;
